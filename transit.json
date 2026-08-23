@@ -1,0 +1,10 @@
+[
+ {"number":"125F","route":"Андижан - Хива","origin":"Андижан","origin_time":"15:36","days":"1256"},
+ {"number":"125","route":"Андижан - Ургенч","origin":"Андижан","origin_time":"15:36","days":"347"},
+ {"number":"129F","route":"Андижан - Термез","origin":"Андижан","origin_time":"16:30","days":"12357"},
+ {"number":"127F","route":"Андижан - Наманган - Кунград","origin":"Андижан","origin_time":"17:20","days":"236"},
+ {"number":"126","route":"Ургенч - Андижан","origin":"Ургенч","origin_time":"14:50","days":"145"},
+ {"number":"126F","route":"Хива - Андижан","origin":"Хива","origin_time":"15:15","days":"2367"},
+ {"number":"130F","route":"Термез - Андижан","origin":"Термез","origin_time":"17:15","days":"12346"},
+ {"number":"128F","route":"Кунград - Наманган - Андижан","origin":"Кунград","origin_time":"09:50","days":"145"}
+]

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ташкент — ближайшие поезда</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0E1A2B; --panel:#16263C; --line:#24384F;
+    --ivory:#EDE6D8; --steel:#7C90A8; --signal:#E8A33D; --clear:#5FB88A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--night); color:var(--ivory);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    min-height:100vh; padding:clamp(16px,4vw,40px);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto}
+
+  header{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  .place{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(28px,7vw,44px);letter-spacing:.02em;
+    line-height:1;text-transform:uppercase;
+  }
+  .place span{color:var(--steel);font-weight:300}
+  .clock{
+    font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,6vw,34px);
+    font-weight:500;font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .clock small{
+    display:block;font-size:11px;letter-spacing:.16em;color:var(--steel);
+    text-transform:uppercase;margin-top:6px;font-family:'IBM Plex Sans',sans-serif;
+  }
+
+  .modes{display:flex;margin:18px 0 4px;border:1px solid var(--line);width:fit-content}
+  .modes button{
+    background:none;border:0;color:var(--steel);cursor:pointer;
+    font-family:'IBM Plex Sans',sans-serif;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;transition:.18s;
+  }
+  .modes button[aria-pressed="true"]{background:var(--ivory);color:var(--night);font-weight:600}
+  .modes button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+  .cities{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .cities button{
+    background:none;border:1px solid var(--line);color:var(--steel);cursor:pointer;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;padding:7px 12px;transition:.18s;
+  }
+  .cities button[aria-pressed="true"]{border-color:var(--signal);color:var(--signal)}
+  .cities button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .st-tag{color:var(--steel)}
+
+  .board{margin-top:18px;border-top:1px solid var(--line);min-height:120px}
+  .row{
+    display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;
+    padding:16px 0;border-bottom:1px solid var(--line);animation:in .5s both;
+  }
+  .row:nth-child(1){animation-delay:.02s} .row:nth-child(2){animation-delay:.08s}
+  .row:nth-child(3){animation-delay:.14s} .row:nth-child(4){animation-delay:.20s}
+  .row:nth-child(5){animation-delay:.26s} .row:nth-child(6){animation-delay:.32s}
+  @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .num{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;
+    color:var(--steel);font-variant-numeric:tabular-nums;letter-spacing:.02em;
+  }
+  .dest{font-size:17px;font-weight:500;line-height:1.25}
+  .brand{
+    display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--night);background:var(--steel);padding:2px 6px;margin-right:8px;
+    vertical-align:2px;font-weight:600;
+  }
+  .brand.fast{background:var(--signal)}
+  .meta{font-size:13px;color:var(--steel);margin-top:5px}
+  .meta b{color:var(--ivory);font-weight:500}
+
+  .right{text-align:right;min-width:104px}
+  .time{
+    font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;
+    font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .in{
+    font-family:'Oswald',sans-serif;font-weight:300;font-size:13px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-top:7px;
+  }
+  .in b{font-weight:500;color:var(--clear);font-variant-numeric:tabular-nums}
+  .in.soon b{color:var(--signal)}
+  .tomorrow{color:var(--steel);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+  .empty{padding:28px 0;color:var(--steel);font-size:15px;line-height:1.6}
+
+  footer{
+    margin-top:26px;font-size:12px;line-height:1.6;color:var(--steel);
+    border-top:1px solid var(--line);padding-top:14px;
+  }
+
+  @media (max-width:480px){
+    .row{grid-template-columns:48px 1fr auto;gap:10px}
+    .num{font-size:18px} .dest{font-size:15px} .time{font-size:20px}
+  }
+  @media (prefers-reduced-motion:reduce){ .row{animation:none} *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="place" id="place">Ташкент <span>— пассажирский</span></div>
+    <div class="clock"><span id="clock">--:--:--</span><small>время местное</small></div>
+  </header>
+
+  <div class="modes" role="group" aria-label="Направление">
+    <button id="btn-dep" aria-pressed="true">Отправление</button>
+    <button id="btn-arr" aria-pressed="false">Прибытие</button>
+  </div>
+
+  <div class="cities" id="cities" role="group" aria-label="Город"></div>
+
+  <div class="board" id="board"></div>
+
+  <footer id="foot">Загрузка расписания…</footer>
+
+</div>
+
+<script>
+const TZ_OFFSET = 5;          // Ташкент, UTC+5, перевода часов нет
+const SHOW = 6;
+
+let DATA = null;
+let mode = 'departure';
+
+const STATION_NAMES = {
+  'tashkent-pass':   'Ташкент-Пассажирский',
+  'tashkent-yuzhny': 'Ташкент-Южный',
+  'samarkand':       'Самарканд',
+  'bukhara':         'Бухара',
+  'qarshi':          'Карши',
+  'urgench':         'Ургенч',
+  'andijan':         'Андижан',
+};
+
+const CITIES = [
+  {id:'tashkent', label:'Ташкент', match:s => s.startsWith('tashkent')},
+  {id:'samarkand', label:'Самарканд', match:s => s === 'samarkand'},
+  {id:'bukhara',  label:'Бухара',  match:s => s === 'bukhara'},
+  {id:'qarshi',   label:'Карши',   match:s => s === 'qarshi'},
+  {id:'urgench',  label:'Ургенч',  match:s => s === 'urgench'},
+  {id:'andijan',  label:'Андижан', match:s => s === 'andijan'},
+];
+let city = CITIES[0];
+
+/* ---- время в Ташкенте независимо от часового пояса устройства ---- */
+function tashkentNow(){
+  const d = new Date();
+  return new Date(d.getTime() + (d.getTimezoneOffset() + TZ_OFFSET * 60) * 60000);
+}
+
+const pad = n => String(n).padStart(2,'0');
+
+/* ---- ближайшие рейсы с учётом дней курсирования и перехода через полночь ---- */
+function upcoming(trains, direction){
+  const now = tashkentNow();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  const isoDay = d => d.getDay() === 0 ? 7 : d.getDay();   // 1=Пн … 7=Вс
+  const out = [];
+
+  for (const dayShift of [0, 1]){                          // сегодня и завтра
+    const day = new Date(now.getTime() + dayShift * 86400000);
+    for (const t of trains){
+      if (t.direction !== direction) continue;
+      if (!city.match(t.station)) continue;
+      if (!runsOn(t.days, day)) continue;
+
+      const [h, m] = t.time_local.split(':').map(Number);
+      const mins = h * 60 + m;
+      if (dayShift === 0 && mins < nowMin) continue;       // уже ушёл
+
+      out.push({...t, tomorrow: dayShift === 1, at: dayShift * 1440 + mins - nowMin});
+    }
+  }
+  return out.sort((a,b) => a.at - b.at).slice(0, SHOW);
+}
+
+/* дни курсирования: '1234567' по дням недели, либо 'even'/'odd' по числу месяца */
+function runsOn(days, date){
+  if (days === 'even') return date.getDate() % 2 === 0;
+  if (days === 'odd')  return date.getDate() % 2 === 1;
+  const iso = date.getDay() === 0 ? 7 : date.getDay();
+  return days.includes(String(iso));
+}
+
+function countdownText(mins){
+  if (mins <= 0) return {text:'отправляется', soon:true};
+  if (mins < 60) return {text:`${mins} мин`, soon:mins <= 15};
+  return {text:`${Math.floor(mins/60)} ч ${pad(mins%60)} мин`, soon:false};
+}
+
+function render(){
+  const board = document.getElementById('board');
+  if (!DATA){ return; }
+
+  const list = upcoming(DATA.trains, mode);
+  board.innerHTML = '';
+
+  if (!list.length){
+    board.innerHTML = '<div class="empty">В ближайшие сутки рейсов по этому направлению нет.</div>';
+    return;
+  }
+
+  for (const t of list){
+    const c = countdownText(t.at);
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `
+      <div class="num">${t.number}</div>
+      <div>
+        <div class="dest">${t.brand ? `<span class="brand${t.fast?' fast':''}">${t.brand}</span>` : ''}${t.title}</div>
+        <div class="meta"><span class="st-tag">${STATION_NAMES[t.station] || ''}${t.through ? ' · проходящий' : ''}</span>${t.tomorrow ? ' · <b>завтра</b>' : ''}</div>
+      </div>
+      <div class="right">
+        <div class="time">${t.time_local}</div>
+        <div class="in${c.soon?' soon':''}">через <b>${c.text}</b></div>
+      </div>`;
+    board.appendChild(row);
+  }
+}
+
+function tick(){
+  const d = tashkentNow();
+  document.getElementById('clock').textContent =
+    `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+async function load(){
+  try {
+    const r = await fetch('data/schedule.json', {cache:'no-cache'});
+    if (!r.ok) throw new Error(r.status);
+    DATA = await r.json();
+
+    const upd = new Date(DATA.generated_at);
+    document.getElementById('foot').innerHTML =
+      `${DATA.note}<br>Расписание обновлено ${upd.toLocaleDateString('ru-RU')}. Сверка с источником — еженедельно.`;
+    render();
+  } catch (e) {
+    document.getElementById('board').innerHTML =
+      '<div class="empty">Расписание не загрузилось. Обновите страницу — если не помогает, файл data/schedule.json ещё не собран.</div>';
+    document.getElementById('foot').textContent = '';
+  }
+}
+
+function buildCities(){
+  const box = document.getElementById('cities');
+  box.innerHTML = '';
+  CITIES.forEach(c => {
+    const b = document.createElement('button');
+    b.textContent = c.label;
+    b.setAttribute('aria-pressed', c === city);
+    b.onclick = () => {
+      city = c;
+      document.getElementById('place').innerHTML = c.label;
+      buildCities();
+      render();
+    };
+    box.appendChild(b);
+  });
+}
+
+document.getElementById('btn-dep').onclick = () => setMode('departure');
+document.getElementById('btn-arr').onclick = () => setMode('arrival');
+
+function setMode(m){
+  mode = m;
+  document.getElementById('btn-dep').setAttribute('aria-pressed', m==='departure');
+  document.getElementById('btn-arr').setAttribute('aria-pressed', m==='arrival');
+  render();
+}
+
+buildCities();
+load();
+tick();
+setInterval(tick, 1000);
+setInterval(render, 30000);
+</script>
+</body>
+</html>
