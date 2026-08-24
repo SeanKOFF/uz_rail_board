@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ташкент — ближайшие поезда</title>
+<title>Poyezdlar jadvali — O'zbekiston</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
@@ -152,18 +152,18 @@ let DATA = null;
 let mode = 'departure';
 
 const T = {
-  ru: {tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
-       tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
-       from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
-       error:'Расписание не загрузилось. Обновите страницу.',
-       note:'Время по расписанию. Задержки не учитываются.',
-       updated:d => 'Обновлено ' + d},
   uz: {tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
        tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
        from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
        error:'Jadval yuklanmadi. Sahifani yangilang.',
        note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
        updated:d => 'Yangilangan ' + d},
+  ru: {tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+       tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
+       from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
+       error:'Расписание не загрузилось. Обновите страницу.',
+       note:'Время по расписанию. Задержки не учитываются.',
+       updated:d => 'Обновлено ' + d},
   en: {tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
        tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
        from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
@@ -172,13 +172,40 @@ const T = {
        updated:d => 'Updated ' + d},
 };
 
-let lang = (navigator.language || 'ru').slice(0,2);
-if (!T[lang]) lang = 'ru';
+let lang = 'uz';                      // по умолчанию узбекский
 
 let NAMES = {};                       // ru -> {ru, uz, en}
 const cityName = ru => (NAMES[ru] && NAMES[ru][lang]) || ru;
 
 const STATION_LABEL = {
+  'tashkent': {ru:'Ташкент', uz:'Toshkent', en:'Tashkent'},
+  'tashkent-central': {ru:'Ташкент-Центральный', uz:'Toshkent-Markaziy', en:'Tashkent-Central'},
+  'tashkent-south': {ru:'Ташкент-Южный', uz:'Toshkent-Janubiy', en:'Tashkent-South'},
+  'navoi': {ru:'Навои', uz:'Navoiy', en:'Navoi'},
+  'jizzakh': {ru:'Джизак', uz:'Jizzax', en:'Jizzakh'},
+  'gulistan': {ru:'Гулистан', uz:'Guliston', en:'Gulistan'},
+  'kattakurgan': {ru:'Каттакурган', uz:'Kattaqoʻrgʻon', en:'Kattakurgan'},
+  'kyzyltepa': {ru:'Кызылтепа', uz:'Qiziltepa', en:'Kyzyltepa'},
+  'dashtobod': {ru:'Даштобод', uz:'Dashtobod', en:'Dashtobod'},
+  'namangan': {ru:'Наманган', uz:'Namangan', en:'Namangan'},
+  'kokand': {ru:'Коканд', uz:'Qoʻqon', en:'Kokand'},
+  'margilan': {ru:'Маргилан', uz:'Margʻilon', en:'Margilan'},
+  'pap': {ru:'Пап', uz:'Pop', en:'Pop'},
+  'chartak': {ru:'Чартак', uz:'Chortoq', en:'Chartak'},
+  'chust': {ru:'Чуст', uz:'Chust', en:'Chust'},
+  'angren': {ru:'Ангрен', uz:'Angren', en:'Angren'},
+  'kuva': {ru:'Кува', uz:'Quva', en:'Kuva'},
+  'altyaryk': {ru:'Алтыарык', uz:'Oltiariq', en:'Oltiariq'},
+  'khiva': {ru:'Хива', uz:'Xiva', en:'Khiva'},
+  'shavat': {ru:'Шават', uz:'Shovot', en:'Shovot'},
+  'khazarasp': {ru:'Хазарасп', uz:'Hazorasp', en:'Khazarasp'},
+  'nukus': {ru:'Нукус', uz:'Nukus', en:'Nukus'},
+  'kungrad': {ru:'Кунград', uz:'Qoʻngʻirot', en:'Kungrad'},
+  'denau': {ru:'Денау', uz:'Denov', en:'Denau'},
+  'kumkurgan': {ru:'Кумкурган', uz:'Qumqoʻrgʻon', en:'Kumkurgan'},
+  'sariosiyo': {ru:'Сарыасия', uz:'Sariosiyo', en:'Sariosiyo'},
+  'kitab': {ru:'Китаб', uz:'Kitob', en:'Kitab'},
+  'tukimachi': {ru:'Тукимачи', uz:'Toʻqimachi', en:'Tukimachi'},
   'tashkent-pass':   {ru:'Ташкент-Пассажирский', uz:'Toshkent-Passajir', en:'Tashkent-Passenger'},
   'tashkent-yuzhny': {ru:'Ташкент-Южный', uz:'Toshkent-Janubiy', en:'Tashkent-South'},
   'samarkand': {ru:'Самарканд', uz:'Samarqand', en:'Samarkand'},
@@ -189,15 +216,26 @@ const STATION_LABEL = {
 };
 const stationName = id => (STATION_LABEL[id] && STATION_LABEL[id][lang]) || id;
 
-const CITIES = [
-  {id:'tashkent',  ru:'Ташкент', match:s => s.startsWith('tashkent')},
-  {id:'samarkand', ru:'Самарканд', match:s => s === 'samarkand'},
-  {id:'bukhara',   ru:'Бухара', match:s => s === 'bukhara'},
-  {id:'qarshi',    ru:'Карши', match:s => s === 'qarshi'},
-  {id:'urgench',   ru:'Ургенч', match:s => s === 'urgench'},
-  {id:'andijan',   ru:'Андижан', match:s => s === 'andijan'},
-];
-let city = CITIES[0];
+/* Города собираются из самих данных: что пришло в schedule.json, то и
+   показываем. Ташкентские вокзалы сливаются в один город. */
+let CITIES = [];
+
+function buildCityList(trains){
+  const count = {};
+  trains.forEach(t => {
+    const id = t.station.startsWith('tashkent') ? 'tashkent' : t.station;
+    count[id] = (count[id] || 0) + 1;
+  });
+
+  CITIES = Object.keys(count)
+    .sort((a, b) => (a === 'tashkent' ? -1 : b === 'tashkent' ? 1 : count[b] - count[a]))
+    .map(id => ({
+      id,
+      ru: (STATION_LABEL[id] && STATION_LABEL[id].ru) || id,
+      match: id === 'tashkent' ? s => s.startsWith('tashkent') : s => s === id,
+    }));
+}
+let city = null;
 
 /* ---- время в Ташкенте независимо от часового пояса устройства ---- */
 function tashkentNow(){
@@ -300,6 +338,8 @@ async function load(){
       if (n.ok) NAMES = await n.json();
     } catch (e) { /* без справочника покажем русские названия */ }
 
+    buildCityList(DATA.trains);
+    city = CITIES[0];
     applyLang();
   } catch (e) {
     document.getElementById('board').innerHTML =
@@ -325,7 +365,7 @@ function applyLang(){
 function buildLangs(){
   const box = document.getElementById('langs');
   box.innerHTML = '';
-  [['ru','RU'],['uz','UZ'],['en','EN']].forEach(([code, label]) => {
+  [['uz','UZ'],['ru','RU'],['en','EN']].forEach(([code, label]) => {
     const b = document.createElement('button');
     b.textContent = label;
     b.dataset.lang = code;
