@@ -1,0 +1,50 @@
+name: Живое табло — ежечасно
+
+on:
+  schedule:
+    # Каждый час. Ключ не нужен: tm.md.uz открыт.
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install httpx
+
+      - name: Снять табло станций
+        run: python live.py | tee live.log
+
+      - name: Зафиксировать
+        run: |
+          if [[ -n "$(git status --porcelain data/live.json data/history.json)" ]]; then
+            git config user.name  "schedule-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add data/live.json data/history.json
+            git commit -m "Табло: $(date -u +%d.%m %H:%M) UTC"
+            # Ежечасные коммиты часто конфликтуют — подтягиваем и повторяем.
+            git pull --rebase --autostash || true
+            git push
+          else
+            echo "Изменений нет."
+          fi
+
+      - name: Отчёт
+        if: always()
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat live.log >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "нет вывода" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
