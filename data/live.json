@@ -275,26 +275,6 @@
  ],
  "samarkand": [
   {
-   "number": "058З",
-   "route": "САМАРКАНД - ШОВОТ",
-   "date": "25.08.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
-   "number": "130Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "25.08.2026",
-   "time_local": "02:40",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:40",
-   "deviation": null
-  },
-  {
    "number": "125Ф",
    "route": "САМАРКАНД - ХИВА",
    "date": "25.08.2026",
