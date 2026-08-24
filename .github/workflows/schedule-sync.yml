@@ -1,0 +1,75 @@
+name: Расписание — еженедельная сверка
+
+on:
+  schedule:
+    # Понедельник, 04:00 UTC = 09:00 по Ташкенту
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install httpx
+
+      - name: Сколько записей сейчас
+        id: before
+        run: |
+          n=$(python -c "import json;print(len(json.load(open('data/schedule.json'))['trains']))")
+          echo "count=$n" >> $GITHUB_OUTPUT
+          echo "В базе сейчас: $n"
+
+      - name: Собрать из Яндекса
+        env:
+          YANDEX_RASP_KEY: ${{ secrets.YANDEX_RASP_KEY }}
+        run: python build_yandex.py | tee build.log
+
+      - name: Проверить, что выдача не усохла
+        run: |
+          new=$(python -c "import json;print(len(json.load(open('seed_yandex.json'))))")
+          old=${{ steps.before.outputs.count }}
+          echo "Было $old, стало $new"
+          # Меньше 80% прежнего — скорее сбой источника, чем отмена рейсов.
+          if [ "$new" -lt $(( old * 80 / 100 )) ]; then
+            echo "::error::Выдача усохла: $new против $old. Данные не тронуты."
+            exit 1
+          fi
+
+      - name: Применить
+        run: |
+          cp seed_yandex.json seed.json
+          python i18n.py | tee -a build.log
+          rm -f schedule.db
+          python sync.py --seed | tee -a build.log
+
+      - name: Зафиксировать
+        run: |
+          if [[ -n "$(git status --porcelain data/ seed.json)" ]]; then
+            git config user.name  "schedule-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add data/ seed.json
+            git commit -m "Расписание: сверка $(date +%d.%m.%Y)"
+            git push
+          else
+            echo "Изменений нет."
+          fi
+
+      - name: Отчёт
+        if: always()
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat build.log >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "нет вывода" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
