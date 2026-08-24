@@ -31,6 +31,16 @@
     line-height:1;text-transform:uppercase;
   }
   .place span{color:var(--steel);font-weight:300}
+  .head-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+  .langs{display:flex;gap:4px}
+  .langs button{
+    background:none;border:0;color:var(--steel);cursor:pointer;
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.12em;padding:3px 7px;transition:.18s;
+  }
+  .langs button[aria-pressed="true"]{color:var(--signal)}
+  .langs button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
   .clock{
     font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,6vw,34px);
     font-weight:500;font-variant-numeric:tabular-nums;line-height:1;
@@ -115,7 +125,10 @@
 
   <header>
     <div class="place" id="place">Ташкент <span>— пассажирский</span></div>
-    <div class="clock"><span id="clock">--:--:--</span><small>время местное</small></div>
+    <div class="head-right">
+      <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
+      <div class="clock"><span id="clock">--:--:--</span><small id="tz-label"></small></div>
+    </div>
   </header>
 
   <div class="modes" role="group" aria-label="Направление">
@@ -138,23 +151,51 @@ const SHOW = 6;
 let DATA = null;
 let mode = 'departure';
 
-const STATION_NAMES = {
-  'tashkent-pass':   'Ташкент-Пассажирский',
-  'tashkent-yuzhny': 'Ташкент-Южный',
-  'samarkand':       'Самарканд',
-  'bukhara':         'Бухара',
-  'qarshi':          'Карши',
-  'urgench':         'Ургенч',
-  'andijan':         'Андижан',
+const T = {
+  ru: {tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+       tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
+       from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
+       error:'Расписание не загрузилось. Обновите страницу.',
+       note:'Время по расписанию. Задержки не учитываются.',
+       updated:d => 'Обновлено ' + d},
+  uz: {tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
+       tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
+       from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
+       error:'Jadval yuklanmadi. Sahifani yangilang.',
+       note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
+       updated:d => 'Yangilangan ' + d},
+  en: {tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
+       tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
+       from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
+       error:'Schedule failed to load. Please refresh.',
+       note:'Scheduled times. Delays are not reflected.',
+       updated:d => 'Updated ' + d},
 };
 
+let lang = (navigator.language || 'ru').slice(0,2);
+if (!T[lang]) lang = 'ru';
+
+let NAMES = {};                       // ru -> {ru, uz, en}
+const cityName = ru => (NAMES[ru] && NAMES[ru][lang]) || ru;
+
+const STATION_LABEL = {
+  'tashkent-pass':   {ru:'Ташкент-Пассажирский', uz:'Toshkent-Passajir', en:'Tashkent-Passenger'},
+  'tashkent-yuzhny': {ru:'Ташкент-Южный', uz:'Toshkent-Janubiy', en:'Tashkent-South'},
+  'samarkand': {ru:'Самарканд', uz:'Samarqand', en:'Samarkand'},
+  'bukhara':   {ru:'Бухара', uz:'Buxoro', en:'Bukhara'},
+  'qarshi':    {ru:'Карши', uz:'Qarshi', en:'Karshi'},
+  'urgench':   {ru:'Ургенч', uz:'Urganch', en:'Urgench'},
+  'andijan':   {ru:'Андижан', uz:'Andijon', en:'Andijan'},
+};
+const stationName = id => (STATION_LABEL[id] && STATION_LABEL[id][lang]) || id;
+
 const CITIES = [
-  {id:'tashkent', label:'Ташкент', match:s => s.startsWith('tashkent')},
-  {id:'samarkand', label:'Самарканд', match:s => s === 'samarkand'},
-  {id:'bukhara',  label:'Бухара',  match:s => s === 'bukhara'},
-  {id:'qarshi',   label:'Карши',   match:s => s === 'qarshi'},
-  {id:'urgench',  label:'Ургенч',  match:s => s === 'urgench'},
-  {id:'andijan',  label:'Андижан', match:s => s === 'andijan'},
+  {id:'tashkent',  ru:'Ташкент', match:s => s.startsWith('tashkent')},
+  {id:'samarkand', ru:'Самарканд', match:s => s === 'samarkand'},
+  {id:'bukhara',   ru:'Бухара', match:s => s === 'bukhara'},
+  {id:'qarshi',    ru:'Карши', match:s => s === 'qarshi'},
+  {id:'urgench',   ru:'Ургенч', match:s => s === 'urgench'},
+  {id:'andijan',   ru:'Андижан', match:s => s === 'andijan'},
 ];
 let city = CITIES[0];
 
@@ -199,9 +240,17 @@ function runsOn(days, date){
 }
 
 function countdownText(mins){
-  if (mins <= 0) return {text:'отправляется', soon:true};
-  if (mins < 60) return {text:`${mins} мин`, soon:mins <= 15};
-  return {text:`${Math.floor(mins/60)} ч ${pad(mins%60)} мин`, soon:false};
+  const t = T[lang];
+  if (mins <= 0) return {text:t.leaving, soon:true};
+  if (mins < 60) return {text:`${mins} ${t.min}`, soon:mins <= 15};
+  return {text:`${Math.floor(mins/60)} ${t.hr} ${pad(mins%60)} ${t.min}`, soon:false};
+}
+
+/* Заголовок рейса: по-русски берём готовый (там падеж), иначе собираем. */
+function trainTitle(t){
+  if (lang === 'ru' || !t.cities || !t.cities.length) return t.title;
+  const names = t.cities.map(cityName).join(' — ');
+  return t.direction === 'arrival' ? T[lang].from(names) : names;
 }
 
 function render(){
@@ -212,7 +261,7 @@ function render(){
   board.innerHTML = '';
 
   if (!list.length){
-    board.innerHTML = '<div class="empty">В ближайшие сутки рейсов по этому направлению нет.</div>';
+    board.innerHTML = `<div class="empty">${T[lang].empty}</div>`;
     return;
   }
 
@@ -223,12 +272,12 @@ function render(){
     row.innerHTML = `
       <div class="num">${t.number}</div>
       <div>
-        <div class="dest">${t.brand ? `<span class="brand${t.fast?' fast':''}">${t.brand}</span>` : ''}${t.title}</div>
-        <div class="meta"><span class="st-tag">${STATION_NAMES[t.station] || ''}${t.through ? ' · проходящий' : ''}</span>${t.tomorrow ? ' · <b>завтра</b>' : ''}</div>
+        <div class="dest">${t.brand ? `<span class="brand${t.fast?' fast':''}">${t.brand}</span>` : ''}${trainTitle(t)}</div>
+        <div class="meta"><span class="st-tag">${stationName(t.station)}${t.through ? ' · ' + T[lang].through : ''}</span>${t.tomorrow ? ` · <b>${T[lang].tomorrow}</b>` : ''}</div>
       </div>
       <div class="right">
         <div class="time">${t.time_local}</div>
-        <div class="in${c.soon?' soon':''}">через <b>${c.text}</b></div>
+        <div class="in${c.soon?' soon':''}">${T[lang].inPrefix} <b>${c.text}</b></div>
       </div>`;
     board.appendChild(row);
   }
@@ -246,15 +295,50 @@ async function load(){
     if (!r.ok) throw new Error(r.status);
     DATA = await r.json();
 
-    const upd = new Date(DATA.generated_at);
-    document.getElementById('foot').innerHTML =
-      `${DATA.note}<br>Расписание обновлено ${upd.toLocaleDateString('ru-RU')}. Сверка с источником — еженедельно.`;
-    render();
+    try {
+      const n = await fetch('data/names.json', {cache:'no-cache'});
+      if (n.ok) NAMES = await n.json();
+    } catch (e) { /* без справочника покажем русские названия */ }
+
+    applyLang();
   } catch (e) {
     document.getElementById('board').innerHTML =
-      '<div class="empty">Расписание не загрузилось. Обновите страницу — если не помогает, файл data/schedule.json ещё не собран.</div>';
+      `<div class="empty">${T[lang].error}</div>`;
     document.getElementById('foot').textContent = '';
   }
+}
+
+function applyLang(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('btn-dep').textContent = t.dep;
+  document.getElementById('btn-arr').textContent = t.arr;
+  document.getElementById('tz-label').textContent = t.tz;
+  document.getElementById('place').innerHTML = cityName(city.ru);
+  document.querySelectorAll('#langs button').forEach(b =>
+    b.setAttribute('aria-pressed', b.dataset.lang === lang));
+  if (DATA) setFooter();
+  buildCities();
+  render();
+}
+
+function buildLangs(){
+  const box = document.getElementById('langs');
+  box.innerHTML = '';
+  [['ru','RU'],['uz','UZ'],['en','EN']].forEach(([code, label]) => {
+    const b = document.createElement('button');
+    b.textContent = label;
+    b.dataset.lang = code;
+    b.setAttribute('aria-pressed', code === lang);
+    b.onclick = () => { lang = code; applyLang(); };
+    box.appendChild(b);
+  });
+}
+
+function setFooter(){
+  const upd = new Date(DATA.generated_at);
+  document.getElementById('foot').innerHTML =
+    `${T[lang].note}<br>${T[lang].updated(upd.toLocaleDateString(lang === 'uz' ? 'uz-UZ' : lang))}`;
 }
 
 function buildCities(){
@@ -262,11 +346,11 @@ function buildCities(){
   box.innerHTML = '';
   CITIES.forEach(c => {
     const b = document.createElement('button');
-    b.textContent = c.label;
+    b.textContent = cityName(c.ru);
     b.setAttribute('aria-pressed', c === city);
     b.onclick = () => {
       city = c;
-      document.getElementById('place').innerHTML = c.label;
+      document.getElementById('place').innerHTML = cityName(c.ru);
       buildCities();
       render();
     };
@@ -284,6 +368,7 @@ function setMode(m){
   render();
 }
 
+buildLangs();
 buildCities();
 load();
 tick();
