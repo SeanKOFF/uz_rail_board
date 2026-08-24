@@ -124,7 +124,7 @@
 <div class="wrap">
 
   <header>
-    <div class="place" id="place">Ташкент <span>— пассажирский</span></div>
+    <div class="place" id="place"></div>
     <div class="head-right">
       <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
       <div class="clock"><span id="clock">--:--:--</span><small id="tz-label"></small></div>
@@ -132,15 +132,15 @@
   </header>
 
   <div class="modes" role="group" aria-label="Направление">
-    <button id="btn-dep" aria-pressed="true">Отправление</button>
-    <button id="btn-arr" aria-pressed="false">Прибытие</button>
+    <button id="btn-dep" aria-pressed="true"></button>
+    <button id="btn-arr" aria-pressed="false"></button>
   </div>
 
   <div class="cities" id="cities" role="group" aria-label="Город"></div>
 
   <div class="board" id="board"></div>
 
-  <footer id="foot">Загрузка расписания…</footer>
+  <footer id="foot"></footer>
 
 </div>
 
@@ -177,6 +177,21 @@ let lang = 'uz';                      // по умолчанию узбекск�
 let NAMES = {};                       // ru -> {ru, uz, en}
 const cityName = ru => (NAMES[ru] && NAMES[ru][lang]) || ru;
 
+/* Уточнение вокзала внутри города: Ташкент-Южный, Бухара 1 */
+const QUAL = {
+  central: {ru:'Центральный', uz:'Markaziy', en:'Central'},
+  south:   {ru:'Южный',       uz:'Janubiy',  en:'South'},
+  north:   {ru:'Северный',    uz:'Shimoliy', en:'North'},
+  pass:    {ru:'Пасс.',       uz:'Pass.',    en:'Pass.'},
+};
+
+function withQual(city, q){
+  if (!q) return city;
+  if (/^\d+$/.test(q)) return city + ' ' + q;      // «Бухара 1»
+  const label = QUAL[q] && QUAL[q][lang];
+  return label ? city + '-' + label : city;
+}
+
 const STATION_LABEL = {
   'tashkent': {ru:'Ташкент', uz:'Toshkent', en:'Tashkent'},
   'tashkent-central': {ru:'Ташкент-Центральный', uz:'Toshkent-Markaziy', en:'Tashkent-Central'},
@@ -206,8 +221,6 @@ const STATION_LABEL = {
   'sariosiyo': {ru:'Сарыасия', uz:'Sariosiyo', en:'Sariosiyo'},
   'kitab': {ru:'Китаб', uz:'Kitob', en:'Kitab'},
   'tukimachi': {ru:'Тукимачи', uz:'Toʻqimachi', en:'Tukimachi'},
-  'tashkent-pass':   {ru:'Ташкент-Пассажирский', uz:'Toshkent-Passajir', en:'Tashkent-Passenger'},
-  'tashkent-yuzhny': {ru:'Ташкент-Южный', uz:'Toshkent-Janubiy', en:'Tashkent-South'},
   'samarkand': {ru:'Самарканд', uz:'Samarqand', en:'Samarkand'},
   'bukhara':   {ru:'Бухара', uz:'Buxoro', en:'Bukhara'},
   'qarshi':    {ru:'Карши', uz:'Qarshi', en:'Karshi'},
@@ -287,7 +300,9 @@ function countdownText(mins){
 /* Заголовок рейса: по-русски берём готовый (там падеж), иначе собираем. */
 function trainTitle(t){
   if (lang === 'ru' || !t.cities || !t.cities.length) return t.title;
-  const names = t.cities.map(cityName).join(' — ');
+  const names = t.cities
+    .map((c, i) => withQual(cityName(c), (t.quals || [])[i]))
+    .join(' — ');
   return t.direction === 'arrival' ? T[lang].from(names) : names;
 }
 
@@ -354,7 +369,9 @@ function applyLang(){
   document.getElementById('btn-dep').textContent = t.dep;
   document.getElementById('btn-arr').textContent = t.arr;
   document.getElementById('tz-label').textContent = t.tz;
-  document.getElementById('place').innerHTML = cityName(city.ru);
+  // До загрузки данных города ещё нет — заголовок остаётся пустым,
+  // это лучше, чем мигнуть чужим языком.
+  document.getElementById('place').innerHTML = city ? cityName(city.ru) : '';
   document.querySelectorAll('#langs button').forEach(b =>
     b.setAttribute('aria-pressed', b.dataset.lang === lang));
   if (DATA) setFooter();
@@ -387,7 +404,7 @@ function buildCities(){
   CITIES.forEach(c => {
     const b = document.createElement('button');
     b.textContent = cityName(c.ru);
-    b.setAttribute('aria-pressed', c === city);
+    b.setAttribute('aria-pressed', city ? c.id === city.id : false);
     b.onclick = () => {
       city = c;
       document.getElementById('place').innerHTML = cityName(c.ru);
@@ -409,7 +426,7 @@ function setMode(m){
 }
 
 buildLangs();
-buildCities();
+applyLang();          // подписи на месте до прихода данных
 load();
 tick();
 setInterval(tick, 1000);
