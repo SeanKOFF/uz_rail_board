@@ -153,16 +153,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "129Ф",
-   "route": "ТАШКЕНТ ЮЖ -ТЕРМИЗ",
-   "date": "24.08.2026",
-   "time_local": "23:43",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:43",
-   "deviation": null
-  },
-  {
    "number": "126Ч",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "25.08.2026",
@@ -223,6 +213,16 @@
    "deviation": null
   },
   {
+   "number": "125Ф",
+   "route": "ТАШКЕНТ ЮЖ -ХИВА",
+   "date": "25.08.2026",
+   "time_local": "22:35",
+   "platform": null,
+   "sold_out": true,
+   "planned": "22:35",
+   "deviation": null
+  },
+  {
    "number": "125Ч",
    "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
    "date": "25.08.2026",
@@ -233,13 +233,13 @@
    "deviation": null
   },
   {
-   "number": "125Ф",
-   "route": "ТАШКЕНТ ЮЖ -ХИВА",
+   "number": "129Ф",
+   "route": "ТАШКЕНТ ЮЖ -ТЕРМИЗ",
    "date": "25.08.2026",
-   "time_local": "22:35",
+   "time_local": "23:43",
    "platform": null,
-   "sold_out": true,
-   "planned": "22:35",
+   "sold_out": false,
+   "planned": "23:43",
    "deviation": null
   },
   {
