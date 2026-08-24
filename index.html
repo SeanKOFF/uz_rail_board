@@ -103,6 +103,15 @@
     letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-top:7px;
   }
   .in b{font-weight:500;color:var(--clear);font-variant-numeric:tabular-nums}
+  .dev{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+    color:var(--signal);margin-top:4px;
+  }
+  .platform{
+    font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--night);background:var(--clear);
+    display:inline-block;padding:2px 7px;margin-top:6px;font-weight:600;
+  }
   .in.soon b{color:var(--signal)}
   .tomorrow{color:var(--steel);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 
@@ -152,19 +161,19 @@ let DATA = null;
 let mode = 'departure';
 
 const T = {
-  uz: {tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
+  uz: {track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
        tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
        from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
        error:'Jadval yuklanmadi. Sahifani yangilang.',
        note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
        updated:d => 'Yangilangan ' + d},
-  ru: {tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+  ru: {track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
        tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
        from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
        error:'Расписание не загрузилось. Обновите страницу.',
        note:'Время по расписанию. Задержки не учитываются.',
        updated:d => 'Обновлено ' + d},
-  en: {tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
+  en: {track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
        tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
        from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
        error:'Schedule failed to load. Please refresh.',
@@ -175,6 +184,16 @@ const T = {
 let lang = 'uz';                      // по умолчанию узбекский
 
 let NAMES = {};                       // ru -> {ru, uz, en}
+let LIVE = {};                        // станция -> живые отправления
+
+/* Строка живого табло для рейса: платформа и отклонение по времени. */
+function liveOf(t){
+  const rows = LIVE[t.station];
+  if (!rows || t.direction !== 'departure') return null;
+  const digits = (t.number.match(/^\d+/) || [''])[0];
+  return rows.find(r => (r.number.match(/^\d+/) || [''])[0] === digits &&
+                        (r.time_local === t.time_local || r.planned === t.time_local)) || null;
+}
 const cityName = ru => (NAMES[ru] && NAMES[ru][lang]) || ru;
 
 /* Уточнение вокзала внутри города: Ташкент-Южный, Бухара 1 */
@@ -331,6 +350,17 @@ function render(){
       <div class="right">
         <div class="time">${t.time_local}</div>
         <div class="in${c.soon?' soon':''}">${T[lang].inPrefix} <b>${c.text}</b></div>
+        ${(() => {
+          const l = liveOf(t);
+          if (!l) return '';
+          const dev = l.deviation
+            ? `<div class="dev">${l.deviation > 0 ? '+' : ''}${l.deviation} ${T[lang].min}</div>`
+            : '';
+          const pf = l.platform
+            ? `<div class="platform">${T[lang].track} ${l.platform}</div>`
+            : '';
+          return dev + pf;
+        })()}
       </div>`;
     board.appendChild(row);
   }
@@ -352,6 +382,13 @@ async function load(){
       const n = await fetch('data/names.json', {cache:'no-cache'});
       if (n.ok) NAMES = await n.json();
     } catch (e) { /* без справочника покажем русские названия */ }
+
+    // Живое табло: платформы. Есть не для всех станций — без него
+    // страница работает как раньше.
+    try {
+      const l = await fetch('data/live.json', {cache:'no-cache'});
+      if (l.ok) LIVE = await l.json();
+    } catch (e) { /* необязательный слой */ }
 
     buildCityList(DATA.trains);
     city = CITIES[0];
