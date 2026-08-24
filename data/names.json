@@ -133,5 +133,75 @@
   "ru": "Душанбе",
   "uz": "Dushanbe",
   "en": "Dushanbe"
+ },
+ "Китаб": {
+  "ru": "Китаб",
+  "uz": "Kitob",
+  "en": "Kitab"
+ },
+ "Волжский": {
+  "ru": "Волжский",
+  "uz": "Voljskiy",
+  "en": "Volzhsky"
+ },
+ "Ангрен": {
+  "ru": "Ангрен",
+  "uz": "Angren",
+  "en": "Angren"
+ },
+ "Чартак": {
+  "ru": "Чартак",
+  "uz": "Chortoq",
+  "en": "Chartak"
+ },
+ "Чуст": {
+  "ru": "Чуст",
+  "uz": "Chust",
+  "en": "Chust"
+ },
+ "Каттакурган": {
+  "ru": "Каттакурган",
+  "uz": "Kattaqo'rg'on",
+  "en": "Kattakurgan"
+ },
+ "Кызылтепа": {
+  "ru": "Кызылтепа",
+  "uz": "Qiziltepa",
+  "en": "Kyzyltepa"
+ },
+ "Даштобод": {
+  "ru": "Даштобод",
+  "uz": "Dashtobod",
+  "en": "Dashtobod"
+ },
+ "Хазарасп": {
+  "ru": "Хазарасп",
+  "uz": "Hazorasp",
+  "en": "Khazarasp"
+ },
+ "Кува": {
+  "ru": "Кува",
+  "uz": "Quva",
+  "en": "Kuva"
+ },
+ "Алтыарык": {
+  "ru": "Алтыарык",
+  "uz": "Oltiariq",
+  "en": "Oltiariq"
+ },
+ "Денау": {
+  "ru": "Денау",
+  "uz": "Denov",
+  "en": "Denau"
+ },
+ "Кумкурган": {
+  "ru": "Кумкурган",
+  "uz": "Qumqo'rg'on",
+  "en": "Kumkurgan"
+ },
+ "Тукимачи": {
+  "ru": "Тукимачи",
+  "uz": "To'qimachi",
+  "en": "Tukimachi"
  }
 }
