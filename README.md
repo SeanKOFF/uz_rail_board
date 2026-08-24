@@ -115,16 +115,5 @@ python3 compare.py                           # сравнить с текущи�
 python3 live.py --show                       # табло станций
 ```
 
-## Живые табло: известные адреса
-
-Имена файлов на `tm.md.uz` непоследовательные — ранние станции получили
-короткие коды, поздние названы полностью. Вычислить нельзя, только
-подсмотреть в DevTools на странице станции.
-
-    tashkent-central  proxyS.php        urgench   proxyU.php
-    tashkent-south    proxyYu.php       bukhara   proxyB.php
-    samarkand         proxy.php         qarshi    proxyKarshi.php
-                                        andijan   proxyAndijon.php
-
 Платформы публикует только Ташкент и Андижан. Остальные станции дают
 даты и наличие мест.
