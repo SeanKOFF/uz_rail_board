@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS trains (
     via           TEXT,
     station       TEXT NOT NULL DEFAULT 'tashkent-pass',
     through       INTEGER NOT NULL DEFAULT 0,
+    cities        TEXT NOT NULL DEFAULT '[]',
+    quals         TEXT NOT NULL DEFAULT '[]',
     active        INTEGER NOT NULL DEFAULT 1,
     first_seen    TEXT NOT NULL,
     last_seen     TEXT NOT NULL,

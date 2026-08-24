@@ -163,11 +163,12 @@ def apply_changes(conn, added, changed, removed, now):
     for r in added:
         conn.execute("""INSERT INTO trains
             (number, direction, title, brand, fast, time_local, days, via,
-             station, through, active, first_seen, last_seen)
-            VALUES (?,?,?,?,?,?,?,?,?,?,1,?,?)""",
+             station, through, cities, quals, active, first_seen, last_seen)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,1,?,?)""",
             (r["number"], r["direction"], r["title"], r["brand"], int(r.get("fast", 0)),
              r["time_local"], r["days"], r["via"], r.get("station", STATION),
-             int(r.get("through", 0)), now, now))
+             int(r.get("through", 0)), json.dumps(r.get("cities", []), ensure_ascii=False),
+             json.dumps(r.get("quals", []), ensure_ascii=False), now, now))
         log(conn, now, "added", r, f'{r["time_local"]} {r["title"]}')
 
     for r, deltas in changed:
@@ -200,7 +201,8 @@ def log(conn, now, kind, r, detail):
 
 def export(conn):
     rows = conn.execute("""SELECT number, direction, title, brand, fast,
-                                  time_local, days, via, station, through
+                                  time_local, days, via, station, through,
+                                  cities, quals
                            FROM trains WHERE active = 1
                            ORDER BY time_local""").fetchall()
 
@@ -209,7 +211,9 @@ def export(conn):
         "generated_at": datetime.now(TZ).isoformat(timespec="seconds"),
         "source": SOURCE_URL,
         "note": "Время по расписанию. Фактические задержки не учитываются.",
-        "trains": [dict(r) | {"fast": bool(r["fast"]), "through": bool(r["through"])}
+        "trains": [dict(r) | {"fast": bool(r["fast"]), "through": bool(r["through"]),
+                              "cities": json.loads(r["cities"] or "[]"),
+                              "quals": json.loads(r["quals"] or "[]")}
                    for r in rows],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
