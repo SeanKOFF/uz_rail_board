@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-08-24T21:36:01+05:00",
+ "generated_at": "2026-08-24T21:47:34+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -8,8 +8,8 @@
    "number": "772Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "00:01",
    "days": "1234567",
    "via": null,
@@ -17,13 +17,16 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "712Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "00:02",
    "days": "1234567",
@@ -32,6 +35,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -47,6 +53,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -62,6 +71,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -77,6 +89,9 @@
    "through": false,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -92,6 +107,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -107,6 +125,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -122,6 +143,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -137,6 +161,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -152,6 +179,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -167,6 +197,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -182,6 +215,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -197,6 +233,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -212,6 +251,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -227,6 +269,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -242,6 +287,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -257,6 +305,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -272,6 +323,9 @@
    "through": false,
    "cities": [
     "Москва"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -287,6 +341,9 @@
    "through": false,
    "cities": [
     "Казань"
+   ],
+   "quals": [
+    "pass"
    ]
   },
   {
@@ -302,6 +359,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -317,6 +377,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -332,6 +395,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -347,6 +413,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -362,6 +431,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -377,6 +449,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -392,6 +467,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -407,6 +485,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -422,6 +503,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -437,6 +521,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -452,6 +539,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -467,6 +557,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -482,6 +575,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -497,6 +593,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -512,6 +611,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -527,6 +629,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -542,6 +647,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -557,6 +665,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -572,6 +683,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -587,6 +701,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -602,6 +719,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -617,6 +737,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -632,6 +755,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -647,6 +773,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -662,6 +791,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -677,6 +809,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -692,6 +827,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -707,13 +845,16 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "01:26",
    "days": "1234567",
@@ -722,13 +863,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "712Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "01:30",
    "days": "1234567",
@@ -737,6 +881,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -752,6 +899,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -767,6 +917,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -782,6 +935,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -797,6 +953,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -812,6 +971,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -827,6 +989,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -842,6 +1007,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -857,6 +1025,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -872,6 +1043,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -887,6 +1061,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -902,6 +1079,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -917,6 +1097,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -932,6 +1115,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -947,6 +1133,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -962,6 +1151,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -977,6 +1169,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -992,6 +1187,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1007,6 +1205,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1022,6 +1223,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1037,6 +1241,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1052,6 +1259,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1067,6 +1277,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1082,13 +1295,16 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "02:27",
    "days": "1234567",
@@ -1097,6 +1313,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1112,6 +1331,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1127,6 +1349,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1142,6 +1367,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1157,6 +1385,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1172,6 +1403,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1187,6 +1421,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1202,6 +1439,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1217,6 +1457,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1232,6 +1475,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1247,6 +1493,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1262,6 +1511,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1277,6 +1529,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1292,6 +1547,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1307,6 +1565,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1322,6 +1583,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1337,6 +1601,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1352,6 +1619,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1367,6 +1637,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1382,6 +1655,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1397,6 +1673,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1412,6 +1691,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1427,6 +1709,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1442,6 +1727,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1457,6 +1745,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1472,6 +1763,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1487,14 +1781,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "771Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "03:34",
    "days": "1234567",
    "via": null,
@@ -1502,6 +1799,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1517,6 +1817,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1532,6 +1835,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1547,6 +1853,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1562,6 +1871,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1577,6 +1889,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1592,6 +1907,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1607,6 +1925,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1622,6 +1943,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1637,6 +1961,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1652,6 +1979,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1667,6 +1997,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1682,6 +2015,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1697,6 +2033,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1712,6 +2051,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1727,6 +2069,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1742,6 +2087,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1757,6 +2105,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1772,6 +2123,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1787,6 +2141,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1802,6 +2159,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1817,14 +2177,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "771Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "04:09",
    "days": "1234567",
    "via": null,
@@ -1832,6 +2195,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1847,6 +2213,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1862,6 +2231,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1877,6 +2249,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1892,14 +2267,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "771Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "04:12",
    "days": "1234567",
    "via": null,
@@ -1907,6 +2285,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1922,6 +2303,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1937,6 +2321,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -1952,6 +2339,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -1967,6 +2357,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -1982,6 +2375,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1997,6 +2393,9 @@
    "through": false,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2012,6 +2411,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2027,6 +2429,9 @@
    "through": false,
    "cities": [
     "Москва"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2042,6 +2447,9 @@
    "through": false,
    "cities": [
     "Казань"
+   ],
+   "quals": [
+    "pass"
    ]
   },
   {
@@ -2057,6 +2465,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2072,6 +2483,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2087,14 +2501,17 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "771Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "05:11",
    "days": "1234567",
    "via": null,
@@ -2102,6 +2519,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2117,6 +2537,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2132,6 +2555,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2147,6 +2573,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2162,6 +2591,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2177,6 +2609,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2192,6 +2627,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2207,6 +2645,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2222,6 +2663,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2237,6 +2681,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2252,6 +2699,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2267,6 +2717,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2282,14 +2735,17 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "771Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "05:21",
    "days": "1234567",
    "via": null,
@@ -2297,13 +2753,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "711Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "05:21",
    "days": "1234567",
@@ -2312,6 +2771,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -2327,6 +2789,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2342,6 +2807,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2357,6 +2825,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2372,6 +2843,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2387,6 +2861,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2402,6 +2879,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2417,6 +2897,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2432,6 +2915,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2447,6 +2933,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2462,6 +2951,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2477,6 +2969,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2492,6 +2987,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2507,6 +3005,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2522,13 +3023,16 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "703Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "05:40",
    "days": "1234567",
@@ -2537,6 +3041,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -2552,6 +3059,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2567,6 +3077,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2582,6 +3095,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2597,6 +3113,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2612,6 +3131,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2627,14 +3149,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "778Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "06:10",
    "days": "12567",
    "via": null,
@@ -2642,6 +3167,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2657,6 +3185,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2672,13 +3203,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "711Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "06:18",
    "days": "1234567",
@@ -2687,13 +3221,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "711Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "06:21",
    "days": "1234567",
@@ -2702,6 +3239,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -2717,6 +3257,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2732,6 +3275,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2747,6 +3293,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2762,14 +3311,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "764Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "06:33",
    "days": "123456",
    "via": null,
@@ -2777,14 +3329,17 @@
    "through": false,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "774Ф",
    "direction": "departure",
    "title": "Китаб",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "06:33",
    "days": "7",
    "via": null,
@@ -2792,6 +3347,9 @@
    "through": false,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2807,6 +3365,9 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -2822,13 +3383,16 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "731Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "06:37",
    "days": "4567",
@@ -2837,6 +3401,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -2852,6 +3419,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -2867,6 +3437,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2882,6 +3455,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2897,6 +3473,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2912,6 +3491,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2927,6 +3509,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2942,6 +3527,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2957,6 +3545,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -2972,6 +3563,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2987,6 +3581,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -3002,14 +3599,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "departure",
    "title": "Хива",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "07:00",
    "days": "123456",
    "via": null,
@@ -3017,6 +3617,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3032,6 +3635,9 @@
    "through": false,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3047,6 +3653,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3062,6 +3671,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3077,6 +3689,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -3092,6 +3707,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -3107,6 +3725,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3122,6 +3743,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3137,14 +3761,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "751М",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "07:15",
    "days": "234567",
    "via": null,
@@ -3152,6 +3779,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3167,13 +3797,16 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "731Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "07:22",
    "days": "4567",
@@ -3182,6 +3815,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3197,6 +3833,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3212,13 +3851,16 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "731Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "07:27",
    "days": "4567",
@@ -3227,6 +3869,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3242,14 +3887,17 @@
    "through": false,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "766Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "07:30",
    "days": "1234567",
    "via": null,
@@ -3257,14 +3905,17 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "751М",
    "direction": "arrival",
    "title": "из Хивы",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "07:35",
    "days": "234567",
    "via": null,
@@ -3272,13 +3923,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "703Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "07:38",
    "days": "1234567",
@@ -3287,13 +3941,16 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "711Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "07:38",
    "days": "1234567",
@@ -3302,14 +3959,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "771Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "07:42",
    "days": "1234567",
    "via": null,
@@ -3317,14 +3977,17 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "751М",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "07:45",
    "days": "234567",
    "via": null,
@@ -3332,6 +3995,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3347,14 +4013,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "768Ф",
    "direction": "departure",
    "title": "Самарканд",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "07:55",
    "days": "1234567",
    "via": null,
@@ -3362,13 +4031,16 @@
    "through": false,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "730Ф",
    "direction": "departure",
    "title": "Андижан 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "08:10",
    "days": "1234567",
@@ -3377,13 +4049,16 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "703Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "08:10",
    "days": "1234567",
@@ -3392,13 +4067,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "711Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "08:10",
    "days": "1234567",
@@ -3407,6 +4085,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3422,6 +4103,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3437,13 +4121,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "731Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "08:20",
    "days": "4567",
@@ -3452,6 +4139,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3467,6 +4157,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3482,6 +4175,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3497,6 +4193,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3512,14 +4211,17 @@
    "through": false,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "778Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:23",
    "days": "12567",
    "via": null,
@@ -3527,6 +4229,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3542,6 +4247,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -3557,13 +4265,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "731Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "08:25",
    "days": "4567",
@@ -3572,14 +4283,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "770Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:30",
    "days": "1234567",
    "via": null,
@@ -3587,14 +4301,17 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "778Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:33",
    "days": "12567",
    "via": null,
@@ -3602,6 +4319,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3617,13 +4337,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "710Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "08:37",
    "days": "1234567",
@@ -3632,6 +4355,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -3647,6 +4373,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3662,14 +4391,17 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "764Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:46",
    "days": "123456",
    "via": null,
@@ -3677,14 +4409,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "774Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:46",
    "days": "7",
    "via": null,
@@ -3692,14 +4427,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "768Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:47",
    "days": "1234567",
    "via": null,
@@ -3707,14 +4445,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "768Ф",
    "direction": "departure",
    "title": "Самарканд",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:48",
    "days": "1234567",
    "via": null,
@@ -3722,14 +4463,17 @@
    "through": true,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "764Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:56",
    "days": "123456",
    "via": null,
@@ -3737,14 +4481,17 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "774Ф",
    "direction": "departure",
    "title": "Китаб",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "08:56",
    "days": "7",
    "via": null,
@@ -3752,13 +4499,16 @@
    "through": true,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "716Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "08:58",
    "days": "1234567",
@@ -3767,6 +4517,9 @@
    "through": false,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3782,14 +4535,17 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "752Ж",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "09:13",
    "days": "123456",
    "via": null,
@@ -3797,6 +4553,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3812,6 +4571,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -3827,14 +4589,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "departure",
    "title": "Хива",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "09:23",
    "days": "123456",
    "via": null,
@@ -3842,6 +4607,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3857,14 +4625,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "778Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:32",
    "days": "12567",
    "via": null,
@@ -3872,14 +4643,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "778Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:35",
    "days": "12567",
    "via": null,
@@ -3887,14 +4661,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "768Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:37",
    "days": "1234567",
    "via": null,
@@ -3902,14 +4679,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "768Ф",
    "direction": "departure",
    "title": "Самарканд",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:39",
    "days": "1234567",
    "via": null,
@@ -3917,6 +4697,9 @@
    "through": true,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3932,6 +4715,9 @@
    "through": false,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3947,13 +4733,16 @@
    "through": false,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "09:41",
    "days": "1234567",
@@ -3962,14 +4751,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "766Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:43",
    "days": "1234567",
    "via": null,
@@ -3977,13 +4769,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "710Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "09:44",
    "days": "1234567",
@@ -3992,13 +4787,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "703Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "09:46",
    "days": "1234567",
@@ -4007,13 +4805,16 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "711Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "09:46",
    "days": "1234567",
@@ -4022,13 +4823,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "703Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "09:49",
    "days": "1234567",
@@ -4037,13 +4841,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "711Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "09:49",
    "days": "1234567",
@@ -4052,14 +4859,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "766Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "09:53",
    "days": "1234567",
    "via": null,
@@ -4067,13 +4877,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "716Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "10:02",
    "days": "1234567",
@@ -4082,13 +4895,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "716Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "10:05",
    "days": "1234567",
@@ -4097,14 +4913,17 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "764Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:07",
    "days": "123456",
    "via": null,
@@ -4112,14 +4931,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "774Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:07",
    "days": "7",
    "via": null,
@@ -4127,14 +4949,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "778Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:10",
    "days": "12567",
    "via": null,
@@ -4142,14 +4967,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "774Ф",
    "direction": "departure",
    "title": "Китаб",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:17",
    "days": "7",
    "via": null,
@@ -4157,14 +4985,17 @@
    "through": true,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "768Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:25",
    "days": "1234567",
    "via": null,
@@ -4172,14 +5003,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "751М",
    "direction": "arrival",
    "title": "из Хивы",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "10:37",
    "days": "234567",
    "via": null,
@@ -4187,13 +5021,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "10:41",
    "days": "1234567",
@@ -4202,13 +5039,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "710Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "10:44",
    "days": "1234567",
@@ -4217,14 +5057,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "770Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:49",
    "days": "1234567",
    "via": null,
@@ -4232,14 +5075,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "10:54",
    "days": "123456",
    "via": null,
@@ -4247,6 +5093,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4262,6 +5111,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4277,14 +5129,17 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "751М",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "10:57",
    "days": "234567",
    "via": null,
@@ -4292,6 +5147,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4307,6 +5165,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4322,14 +5183,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "766Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:58",
    "days": "1234567",
    "via": null,
@@ -4337,14 +5201,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "770Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "10:59",
    "days": "1234567",
    "via": null,
@@ -4352,14 +5219,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "766Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "11:01",
    "days": "1234567",
    "via": null,
@@ -4367,6 +5237,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4382,13 +5255,16 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "716Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "11:02",
    "days": "1234567",
@@ -4397,6 +5273,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4412,13 +5291,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "703Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "11:07",
    "days": "1234567",
@@ -4427,13 +5309,16 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "711Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "11:07",
    "days": "1234567",
@@ -4442,13 +5327,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "716Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "11:09",
    "days": "1234567",
@@ -4457,6 +5345,9 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4472,13 +5363,16 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "703Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "11:10",
    "days": "1234567",
@@ -4487,13 +5381,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "711Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "11:10",
    "days": "1234567",
@@ -4502,14 +5399,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "departure",
    "title": "Хива",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "11:14",
    "days": "123456",
    "via": null,
@@ -4517,6 +5417,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4532,6 +5435,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -4547,6 +5453,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -4562,6 +5471,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4577,6 +5489,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4592,6 +5507,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4607,14 +5525,17 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "766Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "11:39",
    "days": "1234567",
    "via": null,
@@ -4622,6 +5543,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4637,6 +5561,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4652,6 +5579,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4667,13 +5597,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "11:46",
    "days": "1234567",
@@ -4682,6 +5615,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4697,6 +5633,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4712,6 +5651,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4727,6 +5669,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4742,6 +5687,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4757,6 +5705,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -4772,14 +5723,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "770Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "11:58",
    "days": "1234567",
    "via": null,
@@ -4787,6 +5741,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4802,13 +5759,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "710Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "12:00",
    "days": "1234567",
@@ -4817,14 +5777,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "770Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "12:01",
    "days": "1234567",
    "via": null,
@@ -4832,6 +5795,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4847,13 +5813,16 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "716Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "12:11",
    "days": "1234567",
@@ -4862,6 +5831,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -4877,6 +5849,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4892,13 +5867,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "703Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "12:19",
    "days": "1234567",
@@ -4907,13 +5885,16 @@
    "through": false,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "711Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "12:19",
    "days": "1234567",
@@ -4922,6 +5903,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4937,6 +5921,9 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -4952,13 +5939,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "730Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "12:29",
    "days": "1234567",
@@ -4967,13 +5957,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "716Ф",
    "direction": "departure",
    "title": "Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "12:30",
    "days": "1234567",
@@ -4982,13 +5975,16 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "730Ф",
    "direction": "departure",
    "title": "Андижан 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "12:33",
    "days": "1234567",
@@ -4997,14 +5993,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "770Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "12:36",
    "days": "1234567",
    "via": null,
@@ -5012,6 +6011,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5027,14 +6029,17 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "751М",
    "direction": "arrival",
    "title": "из Хивы",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "12:41",
    "days": "234567",
    "via": null,
@@ -5042,13 +6047,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "731Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "12:42",
    "days": "4567",
@@ -5057,6 +6065,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5072,6 +6083,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5087,6 +6101,9 @@
    "through": false,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5102,6 +6119,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5117,6 +6137,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -5132,6 +6155,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5147,14 +6173,17 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "751М",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "12:51",
    "days": "234567",
    "via": null,
@@ -5162,6 +6191,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5177,6 +6209,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5192,6 +6227,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5205,7 +6243,8 @@
    "via": null,
    "station": "tashkent-central",
    "through": false,
-   "cities": []
+   "cities": [],
+   "quals": []
   },
   {
    "number": "128Ф",
@@ -5220,13 +6259,16 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "730Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "13:20",
    "days": "1234567",
@@ -5235,6 +6277,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5250,13 +6295,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "730Ф",
    "direction": "departure",
    "title": "Андижан 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "13:23",
    "days": "1234567",
@@ -5265,6 +6313,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5280,6 +6331,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -5295,13 +6349,16 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "13:34",
    "days": "1234567",
@@ -5310,6 +6367,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5325,13 +6385,16 @@
    "through": false,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "710Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "13:38",
    "days": "1234567",
@@ -5340,6 +6403,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5355,6 +6421,9 @@
    "through": false,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5370,13 +6439,16 @@
    "through": false,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "716Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "13:59",
    "days": "1234567",
@@ -5385,14 +6457,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "14:06",
    "days": "123456",
    "via": null,
@@ -5400,13 +6475,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "730Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "14:14",
    "days": "1234567",
@@ -5415,14 +6493,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "departure",
    "title": "Хива",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "14:16",
    "days": "123456",
    "via": null,
@@ -5430,6 +6511,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5445,6 +6529,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5460,6 +6547,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5475,13 +6565,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "14:35",
    "days": "1234567",
@@ -5490,14 +6583,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "752Ж",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "14:36",
    "days": "123456",
    "via": null,
@@ -5505,6 +6601,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5518,7 +6617,8 @@
    "via": null,
    "station": "tashkent-central",
    "through": false,
-   "cities": []
+   "cities": [],
+   "quals": []
   },
   {
    "number": "302З",
@@ -5533,6 +6633,9 @@
    "through": false,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5548,6 +6651,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5563,6 +6669,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5578,14 +6687,17 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "751М",
    "direction": "arrival",
    "title": "из Хивы",
-   "brand": null,
-   "fast": false,
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
    "time_local": "15:06",
    "days": "234567",
    "via": null,
@@ -5593,14 +6705,17 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "769Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "15:09",
    "days": "1234567",
    "via": null,
@@ -5608,13 +6723,16 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "729Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "15:09",
    "days": "1234567",
@@ -5623,6 +6741,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5638,6 +6759,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -5653,6 +6777,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -5668,6 +6795,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5683,6 +6813,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5698,6 +6831,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5713,6 +6849,9 @@
    "through": false,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5728,14 +6867,17 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "769Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "15:44",
    "days": "1234567",
    "via": null,
@@ -5743,14 +6885,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "769Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "15:47",
    "days": "1234567",
    "via": null,
@@ -5758,6 +6903,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5773,6 +6921,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5788,13 +6939,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "729Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "16:00",
    "days": "1234567",
@@ -5803,6 +6957,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5818,13 +6975,16 @@
    "through": false,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "729Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "16:03",
    "days": "1234567",
@@ -5833,6 +6993,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5848,6 +7011,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5863,6 +7029,9 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5878,6 +7047,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5893,14 +7065,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "765Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "16:22",
    "days": "1234567",
    "via": null,
@@ -5908,6 +7083,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5923,6 +7101,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5938,6 +7119,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -5953,6 +7137,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -5968,6 +7155,9 @@
    "through": false,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5983,6 +7173,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -5998,14 +7191,17 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "769Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "16:46",
    "days": "1234567",
    "via": null,
@@ -6013,13 +7209,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "729Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "16:50",
    "days": "1234567",
@@ -6028,13 +7227,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "729Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "16:53",
    "days": "1234567",
@@ -6043,13 +7245,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "709Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "16:55",
    "days": "1234567",
@@ -6058,14 +7263,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "769Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "16:56",
    "days": "1234567",
    "via": null,
@@ -6073,14 +7281,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "765Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "16:57",
    "days": "1234567",
    "via": null,
@@ -6088,14 +7299,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "765Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "17:00",
    "days": "1234567",
    "via": null,
@@ -6103,6 +7317,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6118,6 +7335,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -6133,14 +7353,17 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "773Ф",
    "direction": "arrival",
    "title": "из Китаба",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "17:19",
    "days": "7",
    "via": null,
@@ -6148,6 +7371,9 @@
    "through": true,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6163,6 +7389,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6178,6 +7407,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6193,6 +7425,9 @@
    "through": false,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6208,6 +7443,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6223,6 +7461,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6238,6 +7479,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6253,6 +7497,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6268,6 +7515,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6283,6 +7533,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6298,6 +7551,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6313,14 +7569,17 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "763Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "17:29",
    "days": "123456",
    "via": null,
@@ -6328,14 +7587,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "773Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "17:29",
    "days": "7",
    "via": null,
@@ -6343,6 +7605,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6358,14 +7623,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "767Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "17:40",
    "days": "1234567",
    "via": null,
@@ -6373,6 +7641,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6388,13 +7659,16 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "709Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "17:52",
    "days": "1234567",
@@ -6403,6 +7677,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6418,6 +7695,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6433,13 +7713,16 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "709Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "17:56",
    "days": "1234567",
@@ -6448,14 +7731,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "765Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:05",
    "days": "1234567",
    "via": null,
@@ -6463,6 +7749,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6478,14 +7767,17 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "777Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:14",
    "days": "12567",
    "via": null,
@@ -6493,14 +7785,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "765Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:15",
    "days": "1234567",
    "via": null,
@@ -6508,6 +7803,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6523,6 +7821,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6538,6 +7839,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6553,6 +7857,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6568,6 +7875,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6583,14 +7893,17 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "767Ф",
    "direction": "arrival",
    "title": "из Самарканда",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:26",
    "days": "1234567",
    "via": null,
@@ -6598,6 +7911,9 @@
    "through": true,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6613,14 +7929,17 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "767Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:28",
    "days": "1234567",
    "via": null,
@@ -6628,6 +7947,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6643,6 +7965,9 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -6658,6 +7983,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -6673,14 +8001,17 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "763Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:39",
    "days": "123456",
    "via": null,
@@ -6688,14 +8019,17 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "773Ф",
    "direction": "arrival",
    "title": "из Китаба",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:39",
    "days": "7",
    "via": null,
@@ -6703,13 +8037,16 @@
    "through": true,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "715Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "18:40",
    "days": "1234567",
@@ -6718,14 +8055,17 @@
    "through": false,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "763Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:49",
    "days": "123456",
    "via": null,
@@ -6733,14 +8073,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "777Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:49",
    "days": "12567",
    "via": null,
@@ -6748,14 +8091,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "773Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:49",
    "days": "7",
    "via": null,
@@ -6763,6 +8109,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6778,14 +8127,17 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "777Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "18:52",
    "days": "12567",
    "via": null,
@@ -6793,6 +8145,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6808,6 +8163,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6823,13 +8181,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "709Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "19:13",
    "days": "1234567",
@@ -6838,14 +8199,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "769Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "19:17",
    "days": "1234567",
    "via": null,
@@ -6853,14 +8217,17 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "767Ф",
    "direction": "arrival",
    "title": "из Самарканда",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "19:18",
    "days": "1234567",
    "via": null,
@@ -6868,6 +8235,9 @@
    "through": true,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6883,14 +8253,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "767Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "19:19",
    "days": "1234567",
    "via": null,
@@ -6898,6 +8271,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6913,6 +8289,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -6928,13 +8307,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "709Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "19:23",
    "days": "1234567",
@@ -6943,6 +8325,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -6958,6 +8343,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6973,6 +8361,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6988,6 +8379,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7003,6 +8397,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7018,6 +8415,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7033,6 +8433,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7048,14 +8451,17 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "772Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "19:48",
    "days": "1234567",
    "via": null,
@@ -7063,6 +8469,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7078,14 +8487,17 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "777Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "19:51",
    "days": "12567",
    "via": null,
@@ -7093,14 +8505,17 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "777Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "20:01",
    "days": "12567",
    "via": null,
@@ -7108,13 +8523,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "715Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "20:08",
    "days": "1234567",
@@ -7123,14 +8541,17 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "767Ф",
    "direction": "arrival",
    "title": "из Самарканда",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "20:12",
    "days": "1234567",
    "via": null,
@@ -7138,6 +8559,9 @@
    "through": false,
    "cities": [
     "Самарканд"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7153,6 +8577,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -7168,13 +8595,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "715Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "20:24",
    "days": "1234567",
@@ -7183,13 +8613,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "709Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "20:25",
    "days": "1234567",
@@ -7198,6 +8631,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7213,13 +8649,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "709Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "20:28",
    "days": "1234567",
@@ -7228,14 +8667,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "765Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "20:30",
    "days": "1234567",
    "via": null,
@@ -7243,13 +8685,16 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "712Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "20:32",
    "days": "1234567",
@@ -7258,6 +8703,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7273,6 +8721,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7288,14 +8739,17 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "763Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "21:04",
    "days": "123456",
    "via": null,
@@ -7303,14 +8757,17 @@
    "through": false,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "773Ф",
    "direction": "arrival",
    "title": "из Китаба",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "21:04",
    "days": "7",
    "via": null,
@@ -7318,13 +8775,16 @@
    "through": false,
    "cities": [
     "Китаб"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "729Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
-   "brand": null,
+   "brand": "O'zbekiston",
    "fast": false,
    "time_local": "21:10",
    "days": "1234567",
@@ -7333,6 +8793,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7348,6 +8811,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7363,6 +8829,9 @@
    "through": false,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7378,13 +8847,16 @@
    "through": false,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "715Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "21:26",
    "days": "1234567",
@@ -7393,13 +8865,16 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "715Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "21:30",
    "days": "1234567",
@@ -7408,6 +8883,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7423,6 +8901,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7438,6 +8919,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7453,6 +8937,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7468,13 +8955,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "21:36",
    "days": "1234567",
@@ -7483,6 +8973,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7498,13 +8991,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "712Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "21:39",
    "days": "1234567",
@@ -7513,6 +9009,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7528,6 +9027,9 @@
    "through": false,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7543,13 +9045,16 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "709Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "21:54",
    "days": "1234567",
@@ -7558,6 +9063,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7573,6 +9081,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7588,6 +9099,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7603,6 +9117,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7618,6 +9135,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7633,6 +9153,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7648,6 +9171,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -7663,13 +9189,16 @@
    "through": true,
    "cities": [
     "Душанбе"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "709Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "21:57",
    "days": "1234567",
@@ -7678,14 +9207,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "772Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "22:13",
    "days": "1234567",
    "via": null,
@@ -7693,6 +9225,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7708,6 +9243,9 @@
    "through": true,
    "cities": [
     "Волжский"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7723,14 +9261,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "777Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "22:16",
    "days": "12567",
    "via": null,
@@ -7738,6 +9279,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7753,6 +9297,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7768,6 +9315,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7783,14 +9333,17 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "772Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "22:23",
    "days": "1234567",
    "via": null,
@@ -7798,6 +9351,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7813,6 +9369,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -7828,6 +9387,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -7843,6 +9405,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7858,6 +9423,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7873,6 +9441,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7888,6 +9459,9 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7903,6 +9477,9 @@
    "through": false,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7918,6 +9495,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -7933,13 +9513,16 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "22:36",
    "days": "1234567",
@@ -7948,6 +9531,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -7963,13 +9549,16 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "712Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "22:39",
    "days": "1234567",
@@ -7978,13 +9567,16 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
    "number": "715Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "22:43",
    "days": "1234567",
@@ -7993,6 +9585,9 @@
    "through": true,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8008,13 +9603,16 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "715Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "22:45",
    "days": "1234567",
@@ -8023,6 +9621,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -8038,6 +9639,9 @@
    "through": false,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8053,6 +9657,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8068,6 +9675,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8083,6 +9693,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8098,6 +9711,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8113,6 +9729,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8128,6 +9747,9 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8143,6 +9765,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8158,6 +9783,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8173,6 +9801,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8188,6 +9819,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8203,6 +9837,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8218,6 +9855,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8233,6 +9873,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8248,6 +9891,9 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8263,13 +9909,16 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "709Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "23:06",
    "days": "1234567",
@@ -8278,6 +9927,9 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8293,14 +9945,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
    "number": "772Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "23:22",
    "days": "1234567",
    "via": null,
@@ -8308,14 +9963,17 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
    "number": "772Ф",
    "direction": "departure",
    "title": "Бухара 1",
-   "brand": null,
-   "fast": false,
+   "brand": "Afrosiyob",
+   "fast": true,
    "time_local": "23:25",
    "days": "1234567",
    "via": null,
@@ -8323,6 +9981,9 @@
    "through": true,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8338,6 +9999,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -8353,6 +10017,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8368,6 +10035,9 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8383,13 +10053,16 @@
    "through": true,
    "cities": [
     "Кунград"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": null,
+   "brand": "Sharq",
    "fast": false,
    "time_local": "23:41",
    "days": "1234567",
@@ -8398,6 +10071,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -8413,6 +10089,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8428,6 +10107,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8443,6 +10125,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8458,6 +10143,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8473,6 +10161,9 @@
    "through": true,
    "cities": [
     "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -8488,6 +10179,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8503,6 +10197,9 @@
    "through": true,
    "cities": [
     "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -8518,6 +10215,9 @@
    "through": true,
    "cities": [
     "Сарыасия"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8533,6 +10233,9 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8548,6 +10251,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8563,6 +10269,9 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8578,6 +10287,9 @@
    "through": true,
    "cities": [
     "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -8593,13 +10305,16 @@
    "through": true,
    "cities": [
     "Ургенч"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
    "number": "715Ф",
    "direction": "arrival",
    "title": "из Карши",
-   "brand": null,
+   "brand": "Nasaf",
    "fast": false,
    "time_local": "23:54",
    "days": "1234567",
@@ -8608,6 +10323,9 @@
    "through": false,
    "cities": [
     "Карши"
+   ],
+   "quals": [
+    ""
    ]
   }
  ]
