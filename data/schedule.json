@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-08-23T23:07:03+05:00",
+ "generated_at": "2026-08-23T23:29:36+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -14,7 +14,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "095F",
@@ -26,7 +29,10 @@
    "days": "5",
    "via": "Наманган",
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "097F",
@@ -38,7 +44,10 @@
    "days": "6",
    "via": "Наманган",
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "123F",
@@ -50,7 +59,10 @@
    "days": "15",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "123F",
@@ -62,7 +74,10 @@
    "days": "15",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Волгоград"
+   ]
   },
   {
    "number": "092F",
@@ -74,7 +89,10 @@
    "days": "2",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "056",
@@ -86,7 +104,10 @@
    "days": "2356",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "056",
@@ -98,7 +119,10 @@
    "days": "2356",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "082F",
@@ -110,7 +134,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Сарыасия"
+   ]
   },
   {
    "number": "082F",
@@ -122,7 +149,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "080F",
@@ -134,7 +164,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "080F",
@@ -146,7 +179,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "091F",
@@ -158,7 +194,10 @@
    "days": "3",
    "via": "Наманган",
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "124F",
@@ -170,7 +209,10 @@
    "days": "37",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Волгоград"
+   ]
   },
   {
    "number": "126",
@@ -182,7 +224,10 @@
    "days": "145",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "126",
@@ -194,7 +239,10 @@
    "days": "145",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "058Z",
@@ -206,7 +254,10 @@
    "days": "125",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Шават"
+   ]
   },
   {
    "number": "058Z",
@@ -218,7 +269,10 @@
    "days": "125",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "712F",
@@ -230,7 +284,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "712F",
@@ -242,7 +299,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "076F",
@@ -254,7 +314,10 @@
    "days": "2",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "076F",
@@ -266,7 +329,10 @@
    "days": "2",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "125",
@@ -278,7 +344,10 @@
    "days": "2367",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "125",
@@ -290,7 +359,10 @@
    "days": "2367",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "712F",
@@ -302,7 +374,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "071F",
@@ -314,7 +389,10 @@
    "days": "even",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "071F",
@@ -326,7 +404,10 @@
    "days": "even",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Алат"
+   ]
   },
   {
    "number": "129",
@@ -338,7 +419,10 @@
    "days": "12346",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "129",
@@ -350,7 +434,10 @@
    "days": "12346",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "771F",
@@ -362,7 +449,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "082F",
@@ -374,7 +464,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Сарыасия"
+   ]
   },
   {
    "number": "082F",
@@ -386,7 +479,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "080F",
@@ -398,7 +494,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "080F",
@@ -410,7 +509,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "056",
@@ -422,7 +524,10 @@
    "days": "2356",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "056",
@@ -434,7 +539,10 @@
    "days": "2356",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "305",
@@ -446,7 +554,10 @@
    "days": "24",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Москва"
+   ]
   },
   {
    "number": "315G",
@@ -458,7 +569,10 @@
    "days": "7",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Казань"
+   ]
   },
   {
    "number": "096F",
@@ -470,7 +584,11 @@
    "days": "3",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ]
   },
   {
    "number": "123F",
@@ -482,7 +600,10 @@
    "days": "15",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Волгоград"
+   ]
   },
   {
    "number": "058Z",
@@ -494,7 +615,10 @@
    "days": "125",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Шават"
+   ]
   },
   {
    "number": "058Z",
@@ -506,7 +630,10 @@
    "days": "125",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "711F",
@@ -518,7 +645,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "771F",
@@ -530,7 +660,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "771F",
@@ -542,7 +675,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "076J",
@@ -554,7 +690,10 @@
    "days": "3",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "733F",
@@ -566,7 +705,10 @@
    "days": "13",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "129",
@@ -578,7 +720,10 @@
    "days": "12346",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "129",
@@ -590,7 +735,10 @@
    "days": "12346",
    "via": null,
    "station": "qarshi",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "778F",
@@ -602,7 +750,10 @@
    "days": "567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "076F",
@@ -614,7 +765,10 @@
    "days": "2",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "076F",
@@ -626,7 +780,10 @@
    "days": "2",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "125",
@@ -638,7 +795,10 @@
    "days": "2367",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "125",
@@ -650,7 +810,10 @@
    "days": "2367",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "764F",
@@ -662,7 +825,10 @@
    "days": "123456",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "774F",
@@ -674,7 +840,10 @@
    "days": "7",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Шахрисабз"
+   ]
   },
   {
    "number": "071F",
@@ -686,7 +855,10 @@
    "days": "even",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Алат"
+   ]
   },
   {
    "number": "094F",
@@ -698,7 +870,11 @@
    "days": "1",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ]
   },
   {
    "number": "098F",
@@ -710,7 +886,11 @@
    "days": "6",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ]
   },
   {
    "number": "054",
@@ -722,7 +902,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Кунград"
+   ]
   },
   {
    "number": "766F",
@@ -734,7 +917,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "771F",
@@ -746,7 +932,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "768F",
@@ -758,7 +947,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Самарканд"
+   ]
   },
   {
    "number": "730F",
@@ -770,7 +962,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "703F",
@@ -782,7 +977,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "703F",
@@ -794,7 +992,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "711F",
@@ -806,7 +1007,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "711F",
@@ -818,7 +1022,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "056J",
@@ -830,7 +1037,10 @@
    "days": "1457",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "058",
@@ -842,7 +1052,10 @@
    "days": "236",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Шават"
+   ]
   },
   {
    "number": "778F",
@@ -854,7 +1067,10 @@
    "days": "567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "778F",
@@ -866,7 +1082,10 @@
    "days": "567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "770F",
@@ -878,7 +1097,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "710F",
@@ -890,7 +1112,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "764F",
@@ -902,7 +1127,10 @@
    "days": "123456",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "764F",
@@ -914,7 +1142,10 @@
    "days": "123456",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "716F",
@@ -926,7 +1157,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "752",
@@ -938,7 +1172,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "752",
@@ -950,7 +1187,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "080",
@@ -962,7 +1202,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "082",
@@ -974,7 +1217,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Сарыассия"
+   ]
   },
   {
    "number": "766F",
@@ -986,7 +1232,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "766F",
@@ -998,7 +1247,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "764F",
@@ -1010,7 +1262,10 @@
    "days": "123456",
    "via": null,
    "station": "qarshi",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "778F",
@@ -1022,7 +1277,10 @@
    "days": "567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "768F",
@@ -1034,7 +1292,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "770F",
@@ -1046,7 +1307,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "770F",
@@ -1058,7 +1322,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "752",
@@ -1070,7 +1337,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "752",
@@ -1082,7 +1352,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "058Z",
@@ -1094,7 +1367,10 @@
    "days": "125",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Шават"
+   ]
   },
   {
    "number": "058Z",
@@ -1106,7 +1382,10 @@
    "days": "125",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "766F",
@@ -1118,7 +1397,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "710F",
@@ -1130,7 +1412,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "710F",
@@ -1142,7 +1427,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "711F",
@@ -1154,7 +1442,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "703F",
@@ -1166,7 +1457,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "716F",
@@ -1178,7 +1472,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "716F",
@@ -1190,7 +1487,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "770F",
@@ -1202,7 +1502,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "731F",
@@ -1214,7 +1517,10 @@
    "days": "4567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "733F",
@@ -1226,7 +1532,10 @@
    "days": "13",
    "via": "Наманган",
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "126",
@@ -1238,7 +1547,10 @@
    "days": "145",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "076F",
@@ -1250,7 +1562,10 @@
    "days": "2",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "076F",
@@ -1262,7 +1577,10 @@
    "days": "2",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "125",
@@ -1274,7 +1592,10 @@
    "days": "2367",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "125",
@@ -1286,7 +1607,10 @@
    "days": "2367",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "001X",
@@ -1298,7 +1622,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Алматы"
+   ]
   },
   {
    "number": "301Z",
@@ -1310,7 +1637,10 @@
    "days": "2",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Душанбе"
+   ]
   },
   {
    "number": "716F",
@@ -1322,7 +1652,10 @@
    "days": "1234567",
    "via": null,
    "station": "qarshi",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "752",
@@ -1334,7 +1667,10 @@
    "days": "1234567",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "752",
@@ -1346,7 +1682,10 @@
    "days": "1234567",
    "via": null,
    "station": "urgench",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "730F",
@@ -1358,7 +1697,10 @@
    "days": "1234567",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "094F",
@@ -1370,7 +1712,10 @@
    "days": "1",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "710F",
@@ -1382,7 +1727,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "001",
@@ -1394,7 +1742,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Алматы"
+   ]
   },
   {
    "number": "302Z",
@@ -1406,7 +1757,10 @@
    "days": "2",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Душанбе"
+   ]
   },
   {
    "number": "126",
@@ -1418,7 +1772,10 @@
    "days": "145",
    "via": null,
    "station": "urgench",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "769F",
@@ -1430,7 +1787,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "729F",
@@ -1442,7 +1802,10 @@
    "days": "1234567",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "125",
@@ -1454,7 +1817,10 @@
    "days": "1256",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "054F",
@@ -1466,7 +1832,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Кунград"
+   ]
   },
   {
    "number": "765F",
@@ -1478,7 +1847,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "129",
@@ -1490,7 +1862,10 @@
    "days": "12357",
    "via": null,
    "station": "andijan",
-   "through": false
+   "through": false,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "709F",
@@ -1502,7 +1877,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "769F",
@@ -1514,7 +1892,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "769F",
@@ -1526,7 +1907,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "767F",
@@ -1538,7 +1922,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "732F",
@@ -1550,7 +1937,10 @@
    "days": "3456",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "734F",
@@ -1562,7 +1952,11 @@
    "days": "27",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ]
   },
   {
    "number": "092F",
@@ -1574,7 +1968,11 @@
    "days": "1",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ]
   },
   {
    "number": "777F",
@@ -1586,7 +1984,10 @@
    "days": "567",
    "via": null,
    "station": "bukhara",
-   "through": false
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "765F",
@@ -1598,7 +1999,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "765F",
@@ -1610,7 +2014,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "763F",
@@ -1622,7 +2029,10 @@
    "days": "13456",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "763F",
@@ -1634,7 +2044,10 @@
    "days": "13456",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "769F",
@@ -1646,7 +2059,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "709F",
@@ -1658,7 +2074,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "709F",
@@ -1670,7 +2089,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "772F",
@@ -1682,7 +2104,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "777F",
@@ -1694,7 +2119,10 @@
    "days": "567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "777F",
@@ -1706,7 +2134,10 @@
    "days": "567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "767F",
@@ -1718,7 +2149,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Самарканд"
+   ]
   },
   {
    "number": "054F",
@@ -1730,7 +2164,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Кунград"
+   ]
   },
   {
    "number": "054F",
@@ -1742,7 +2179,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "715F",
@@ -1754,7 +2194,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "715F",
@@ -1766,7 +2209,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "765F",
@@ -1778,7 +2224,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "712F",
@@ -1790,7 +2239,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "763F",
@@ -1802,7 +2254,10 @@
    "days": "13456",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "773F",
@@ -1814,7 +2269,10 @@
    "days": "7",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Шахрисабз"
+   ]
   },
   {
    "number": "729F",
@@ -1826,7 +2284,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "080F",
@@ -1838,7 +2299,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Термез"
+   ]
   },
   {
    "number": "082F",
@@ -1850,7 +2314,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Сарыассия"
+   ]
   },
   {
    "number": "056",
@@ -1862,7 +2329,10 @@
    "days": "2356",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "058Z",
@@ -1874,7 +2344,10 @@
    "days": "147",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Шават"
+   ]
   },
   {
    "number": "126",
@@ -1886,7 +2359,10 @@
    "days": "145",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "126",
@@ -1898,7 +2374,10 @@
    "days": "145",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ургенч"
+   ]
   },
   {
    "number": "128",
@@ -1910,7 +2389,10 @@
    "days": "145",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "128",
@@ -1922,7 +2404,10 @@
    "days": "145",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Кунград"
+   ]
   },
   {
    "number": "772F",
@@ -1934,7 +2419,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "772F",
@@ -1946,7 +2434,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "777F",
@@ -1958,7 +2449,10 @@
    "days": "567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "072F",
@@ -1970,7 +2464,10 @@
    "days": "even",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Алат"
+   ]
   },
   {
    "number": "076F",
@@ -1982,7 +2479,10 @@
    "days": "1",
    "via": null,
    "station": "tashkent-yuzhny",
-   "through": false
+   "through": false,
+   "cities": [
+    "Хива"
+   ]
   },
   {
    "number": "093F",
@@ -1994,7 +2494,10 @@
    "days": "6",
    "via": "Коканд",
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Андижан"
+   ]
   },
   {
    "number": "709F",
@@ -2006,7 +2509,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "054F",
@@ -2018,7 +2524,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Кунград"
+   ]
   },
   {
    "number": "054F",
@@ -2030,7 +2539,10 @@
    "days": "1234567",
    "via": null,
    "station": "bukhara",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "712F",
@@ -2042,7 +2554,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Бухара"
+   ]
   },
   {
    "number": "712F",
@@ -2054,7 +2569,10 @@
    "days": "1234567",
    "via": null,
    "station": "samarkand",
-   "through": true
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ]
   },
   {
    "number": "715F",
@@ -2066,7 +2584,10 @@
    "days": "1234567",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Карши"
+   ]
   },
   {
    "number": "305F",
@@ -2078,7 +2599,10 @@
    "days": "24",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Москва"
+   ]
   },
   {
    "number": "315F",
@@ -2090,7 +2614,10 @@
    "days": "7",
    "via": null,
    "station": "tashkent-pass",
-   "through": false
+   "through": false,
+   "cities": [
+    "Казань"
+   ]
   }
  ]
 }

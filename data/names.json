@@ -1,0 +1,137 @@
+{
+ "Ташкент": {
+  "ru": "Ташкент",
+  "uz": "Toshkent",
+  "en": "Tashkent"
+ },
+ "Самарканд": {
+  "ru": "Самарканд",
+  "uz": "Samarqand",
+  "en": "Samarkand"
+ },
+ "Бухара": {
+  "ru": "Бухара",
+  "uz": "Buxoro",
+  "en": "Bukhara"
+ },
+ "Хива": {
+  "ru": "Хива",
+  "uz": "Xiva",
+  "en": "Khiva"
+ },
+ "Ургенч": {
+  "ru": "Ургенч",
+  "uz": "Urganch",
+  "en": "Urgench"
+ },
+ "Нукус": {
+  "ru": "Нукус",
+  "uz": "Nukus",
+  "en": "Nukus"
+ },
+ "Навои": {
+  "ru": "Навои",
+  "uz": "Navoiy",
+  "en": "Navoi"
+ },
+ "Андижан": {
+  "ru": "Андижан",
+  "uz": "Andijon",
+  "en": "Andijan"
+ },
+ "Карши": {
+  "ru": "Карши",
+  "uz": "Qarshi",
+  "en": "Karshi"
+ },
+ "Джизак": {
+  "ru": "Джизак",
+  "uz": "Jizzax",
+  "en": "Jizzakh"
+ },
+ "Термез": {
+  "ru": "Термез",
+  "uz": "Termiz",
+  "en": "Termez"
+ },
+ "Гулистан": {
+  "ru": "Гулистан",
+  "uz": "Guliston",
+  "en": "Gulistan"
+ },
+ "Коканд": {
+  "ru": "Коканд",
+  "uz": "Qo'qon",
+  "en": "Qo'qon"
+ },
+ "Маргилан": {
+  "ru": "Маргилан",
+  "uz": "Margilon",
+  "en": "Margilon"
+ },
+ "Пап": {
+  "ru": "Пап",
+  "uz": "Pop",
+  "en": "Pop"
+ },
+ "Наманган": {
+  "ru": "Наманган",
+  "uz": "Namangan",
+  "en": "Namangan"
+ },
+ "Кунград": {
+  "ru": "Кунград",
+  "uz": "Qo'ng'irot",
+  "en": "Kungrad"
+ },
+ "Шават": {
+  "ru": "Шават",
+  "uz": "Shovot",
+  "en": "Shovot"
+ },
+ "Алат": {
+  "ru": "Алат",
+  "uz": "Olot",
+  "en": "Olot"
+ },
+ "Сарыасия": {
+  "ru": "Сарыасия",
+  "uz": "Sariosiyo",
+  "en": "Sariosiyo"
+ },
+ "Сарыассия": {
+  "ru": "Сарыассия",
+  "uz": "Sariosiyo",
+  "en": "Sariosiyo"
+ },
+ "Шахрисабз": {
+  "ru": "Шахрисабз",
+  "uz": "Shahrisabz",
+  "en": "Shakhrisabz"
+ },
+ "Москва": {
+  "ru": "Москва",
+  "uz": "Moskva",
+  "en": "Moscow"
+ },
+ "Волгоград": {
+  "ru": "Волгоград",
+  "uz": "Volgograd",
+  "en": "Volgograd"
+ },
+ "Алматы": {
+  "ru": "Алматы",
+  "uz": "Almati",
+  "en": "Almaty"
+ },
+ "Казань": {
+  "ru": "Казань",
+  "uz": "Qozon",
+  "en": "Kazan"
+ },
+ "Душанбе": {
+  "ru": "Душанбе",
+  "uz": "Dushanbe",
+  "en": "Dushanbe"
+ }
+}
