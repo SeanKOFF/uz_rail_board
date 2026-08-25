@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "25.08.2026",
-   "time_local": "19:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "25.08.2026",
@@ -138,6 +128,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "17:55",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "26.08.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
    "deviation": null
   },
   {
@@ -274,26 +274,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "25.08.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
-   "number": "302З",
-   "route": "САМАРКАНД - ДУШАНБЕ 1",
-   "date": "25.08.2026",
-   "time_local": "19:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
   {
    "number": "777Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
@@ -435,8 +415,18 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "26.08.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
+   "deviation": null
+  },
+  {
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -445,8 +435,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -583,19 +573,19 @@
    "sold_out": false,
    "planned": "09:22",
    "deviation": null
+  },
+  {
+   "number": "302З",
+   "route": "САМАРКАНД - ДУШАНБЕ 1",
+   "date": "01.09.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
+   "deviation": null
   }
  ],
  "urgench": [
-  {
-   "number": "058Ь",
-   "route": "ШОВОТ - ТОШКЕНТ ЖА",
-   "date": "25.08.2026",
-   "time_local": "19:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": null
-  },
   {
    "number": "751М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
@@ -714,6 +704,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "11:54",
+   "deviation": null
+  },
+  {
+   "number": "058Ь",
+   "route": "ШОВОТ - ТОШКЕНТ ЖА",
+   "date": "28.08.2026",
+   "time_local": "19:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:20",
    "deviation": null
   },
   {
