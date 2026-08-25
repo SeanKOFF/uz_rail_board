@@ -435,8 +435,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -445,8 +445,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -462,6 +462,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "04:10",
+   "deviation": null
+  },
+  {
+   "number": "778Ф",
+   "route": "САМАРКАНД - БУХОРО 1",
+   "date": "27.08.2026",
+   "time_local": "08:33",
+   "platform": null,
+   "sold_out": false,
+   "planned": "08:33",
    "deviation": null
   },
   {
