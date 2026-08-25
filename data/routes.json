@@ -1,0 +1,4115 @@
+{
+ "054": {
+  "number": "054Ф",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "16:00",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "17:12",
+    "departure": "17:14",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "18:35",
+    "departure": "18:37",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "20:14",
+    "departure": "20:36",
+    "stop": 22,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "21:25",
+    "departure": "21:27",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "22:13",
+    "departure": "22:18",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "23:15",
+    "departure": "23:37",
+    "stop": 22,
+    "offset": 0
+   },
+   {
+    "code": "2900104",
+    "title": "Мискин",
+    "arrival": "03:57",
+    "departure": "04:27",
+    "stop": 30,
+    "offset": 1
+   },
+   {
+    "code": "2900103",
+    "title": "Туртгул",
+    "arrival": "04:55",
+    "departure": "05:03",
+    "stop": 8,
+    "offset": 1
+   },
+   {
+    "code": "2900102",
+    "title": "Элликала",
+    "arrival": "05:30",
+    "departure": "05:36",
+    "stop": 6,
+    "offset": 1
+   },
+   {
+    "code": "2902205",
+    "title": "Караозек",
+    "arrival": "06:56",
+    "departure": "06:58",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900970",
+    "title": "Нукус",
+    "arrival": "08:18",
+    "departure": "08:40",
+    "stop": 22,
+    "offset": 1
+   },
+   {
+    "code": "2900958",
+    "title": "Тахиаташ-Пристань",
+    "arrival": "08:56",
+    "departure": "08:59",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900830",
+    "title": "Ходжейли",
+    "arrival": "09:23",
+    "departure": "09:25",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900725",
+    "title": "Алтынкуль",
+    "arrival": "10:19",
+    "departure": "10:21",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900885",
+    "title": "Кунград",
+    "arrival": "10:48",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "056": {
+  "number": "056Ч",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "21:45",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "23:01",
+    "departure": "23:03",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "00:20",
+    "departure": "00:23",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "01:42",
+    "departure": "02:02",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "03:02",
+    "departure": "03:04",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "03:55",
+    "departure": "04:10",
+    "stop": 15,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "05:12",
+    "departure": "05:32",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900115",
+    "title": "Жайхун",
+    "arrival": "08:41",
+    "departure": "09:04",
+    "stop": 23,
+    "offset": 1
+   },
+   {
+    "code": "2900114",
+    "title": "Даутепа",
+    "arrival": "09:27",
+    "departure": "09:35",
+    "stop": 8,
+    "offset": 1
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "10:41",
+    "departure": "10:44",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "11:24",
+    "departure": "11:34",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900172",
+    "title": "Хива",
+    "arrival": "12:04",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "058": {
+  "number": "058З",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "21:45",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "23:01",
+    "departure": "23:03",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "00:20",
+    "departure": "00:23",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "01:42",
+    "departure": "02:02",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900806",
+    "title": "Джума",
+    "arrival": "02:27",
+    "departure": "02:31",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "03:02",
+    "departure": "03:04",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "03:55",
+    "departure": "04:10",
+    "stop": 15,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "05:12",
+    "departure": "05:32",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "10:41",
+    "departure": "10:44",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "11:24",
+    "departure": "11:54",
+    "stop": 30,
+    "offset": 1
+   },
+   {
+    "code": "2900844",
+    "title": "Шават",
+    "arrival": "12:28",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "071": {
+  "number": "071Ф",
+  "stops": [
+   {
+    "code": "2900831",
+    "title": "Алат",
+    "arrival": null,
+    "departure": "20:58",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900829",
+    "title": "Каракуль",
+    "arrival": "21:12",
+    "departure": "21:15",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900828",
+    "title": "Якатут",
+    "arrival": "21:37",
+    "departure": "21:40",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "22:21",
+    "departure": "22:51",
+    "stop": 30,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "23:25",
+    "departure": "23:46",
+    "stop": 21,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "00:18",
+    "departure": "00:24",
+    "stop": 6,
+    "offset": 1
+   },
+   {
+    "code": "2900814",
+    "title": "Зиевуддин",
+    "arrival": "00:43",
+    "departure": "00:45",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "01:27",
+    "departure": "01:29",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "02:21",
+    "departure": "02:45",
+    "stop": 24,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "04:24",
+    "departure": "04:26",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "05:45",
+    "departure": "05:47",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "07:03",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "072": {
+  "number": "072Ф",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "22:34",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "23:47",
+    "departure": "23:50",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "01:01",
+    "departure": "01:04",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "02:21",
+    "departure": "03:00",
+    "stop": 39,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "04:00",
+    "departure": "04:02",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900812",
+    "title": "Зирабулак",
+    "arrival": "04:20",
+    "departure": "04:34",
+    "stop": 14,
+    "offset": 1
+   },
+   {
+    "code": "2900814",
+    "title": "Зиевуддин",
+    "arrival": "04:53",
+    "departure": "04:55",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "05:12",
+    "departure": "05:17",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "05:49",
+    "departure": "05:54",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "06:28",
+    "departure": "07:18",
+    "stop": 50,
+    "offset": 1
+   },
+   {
+    "code": "2900828",
+    "title": "Якатут",
+    "arrival": "08:01",
+    "departure": "08:04",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900829",
+    "title": "Каракуль",
+    "arrival": "08:26",
+    "departure": "08:30",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900831",
+    "title": "Алат",
+    "arrival": "08:45",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "076": {
+  "number": "076Ф",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "22:34",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "23:47",
+    "departure": "23:50",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "01:01",
+    "departure": "01:04",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "02:21",
+    "departure": "03:00",
+    "stop": 39,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "04:00",
+    "departure": "04:02",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900812",
+    "title": "Зирабулак",
+    "arrival": "04:20",
+    "departure": "04:34",
+    "stop": 14,
+    "offset": 1
+   },
+   {
+    "code": "2900814",
+    "title": "Зиевуддин",
+    "arrival": "04:53",
+    "departure": "04:55",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "05:12",
+    "departure": "05:17",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "05:49",
+    "departure": "05:54",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "06:28",
+    "departure": "06:48",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "12:01",
+    "departure": "12:06",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "12:46",
+    "departure": "12:56",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900172",
+    "title": "Хива",
+    "arrival": "13:26",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "080": {
+  "number": "080Ф",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "21:13",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "22:29",
+    "departure": "22:31",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "23:48",
+    "departure": "23:50",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "01:09",
+    "departure": "01:22",
+    "stop": 13,
+    "offset": 1
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "03:34",
+    "departure": "03:54",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900855",
+    "title": "Дехконобод",
+    "arrival": "05:30",
+    "departure": "05:34",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900871",
+    "title": "Дарбанд",
+    "arrival": "07:58",
+    "departure": "08:03",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900872",
+    "title": "Бойсун",
+    "arrival": "08:29",
+    "departure": "08:39",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900874",
+    "title": "Тангимуш",
+    "arrival": "09:20",
+    "departure": "09:23",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "09:53",
+    "departure": "10:13",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900863",
+    "title": "Сурханы",
+    "arrival": "10:25",
+    "departure": "10:27",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900862",
+    "title": "Джаркурган",
+    "arrival": "10:49",
+    "departure": "10:52",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900255",
+    "title": "Термез",
+    "arrival": "11:17",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "082": {
+  "number": "082Ф",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "21:12",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "22:29",
+    "departure": "22:31",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "23:48",
+    "departure": "23:50",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "01:09",
+    "departure": "01:22",
+    "stop": 13,
+    "offset": 1
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "03:34",
+    "departure": "03:54",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900855",
+    "title": "Дехконобод",
+    "arrival": "05:30",
+    "departure": "05:34",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900871",
+    "title": "Дарбанд",
+    "arrival": "07:58",
+    "departure": "08:03",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900872",
+    "title": "Бойсун",
+    "arrival": "08:29",
+    "departure": "08:39",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900874",
+    "title": "Тангимуш",
+    "arrival": "09:20",
+    "departure": "09:23",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "09:53",
+    "departure": "10:24",
+    "stop": 31,
+    "offset": 1
+   },
+   {
+    "code": "2900866",
+    "title": "Шурчи",
+    "arrival": "10:48",
+    "departure": "10:51",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900780",
+    "title": "Денау",
+    "arrival": "11:08",
+    "departure": "11:22",
+    "stop": 14,
+    "offset": 1
+   },
+   {
+    "code": "2900868",
+    "title": "Сарыасия",
+    "arrival": "11:40",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "091": {
+  "number": "091Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "18:16",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "19:51",
+    "departure": "19:54",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "20:21",
+    "departure": "20:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "20:59",
+    "departure": "21:02",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "21:17",
+    "departure": "21:22",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "23:54",
+    "departure": "23:56",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "01:23",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "092": {
+  "number": "092Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "17:55",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "19:21",
+    "departure": "19:23",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "21:58",
+    "departure": "22:01",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "22:45",
+    "departure": "22:50",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "23:17",
+    "departure": "23:25",
+    "stop": 8,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "01:00",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "093": {
+  "number": "093Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "16:30",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "17:21",
+    "departure": "17:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "18:15",
+    "departure": "18:17",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "18:51",
+    "departure": "18:56",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "21:18",
+    "departure": "21:20",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "22:47",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "094": {
+  "number": "094Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "07:14",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "08:41",
+    "departure": "08:43",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "11:05",
+    "departure": "11:08",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "11:23",
+    "departure": "11:25",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "11:58",
+    "departure": "12:12",
+    "stop": 14,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "12:39",
+    "departure": "12:41",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "14:16",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "095": {
+  "number": "095Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "17:20",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "18:55",
+    "departure": "18:58",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "19:25",
+    "departure": "19:30",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "20:03",
+    "departure": "20:06",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "20:21",
+    "departure": "20:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "22:58",
+    "departure": "23:00",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "00:27",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "096": {
+  "number": "096Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "04:30",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "05:57",
+    "departure": "06:00",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "08:17",
+    "departure": "08:21",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "08:36",
+    "departure": "08:40",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "09:13",
+    "departure": "09:23",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "09:50",
+    "departure": "09:52",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "11:27",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "097": {
+  "number": "097Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "17:20",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "18:55",
+    "departure": "18:58",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "19:25",
+    "departure": "19:30",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "20:03",
+    "departure": "20:06",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "20:21",
+    "departure": "20:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "22:58",
+    "departure": "23:00",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "00:27",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "098": {
+  "number": "098Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "07:14",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "08:41",
+    "departure": "08:43",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "11:05",
+    "departure": "11:08",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "11:23",
+    "departure": "11:25",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "11:58",
+    "departure": "12:12",
+    "stop": 14,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "12:39",
+    "departure": "12:41",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "14:16",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "111": {
+  "number": "111Т",
+  "stops": [
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": null,
+    "departure": "03:00",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900739",
+    "title": "Тукимачи",
+    "arrival": "03:10",
+    "departure": "03:12",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "03:30",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "112": {
+  "number": "112Т",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "02:00",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900739",
+    "title": "Тукимачи",
+    "arrival": "02:10",
+    "departure": "02:12",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "02:30",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "123": {
+  "number": "123Ф",
+  "stops": [
+   {
+    "code": "2900879",
+    "title": "Каракалпакстан",
+    "arrival": "01:34",
+    "departure": "03:58",
+    "stop": 144,
+    "offset": 2
+   },
+   {
+    "code": "2900885",
+    "title": "Кунград",
+    "arrival": "08:46",
+    "departure": "09:13",
+    "stop": 27,
+    "offset": 2
+   },
+   {
+    "code": "2900970",
+    "title": "Нукус",
+    "arrival": "11:09",
+    "departure": "11:34",
+    "stop": 25,
+    "offset": 2
+   },
+   {
+    "code": "2900844",
+    "title": "Шават",
+    "arrival": "14:30",
+    "departure": "14:33",
+    "stop": 3,
+    "offset": 2
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "15:02",
+    "departure": "15:33",
+    "stop": 31,
+    "offset": 2
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "16:15",
+    "departure": "16:19",
+    "stop": 4,
+    "offset": 2
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "20:51",
+    "departure": "21:11",
+    "stop": 20,
+    "offset": 2
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "22:13",
+    "departure": "22:17",
+    "stop": 4,
+    "offset": 2
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "23:22",
+    "departure": "23:24",
+    "stop": 2,
+    "offset": 2
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "00:13",
+    "departure": "00:33",
+    "stop": 20,
+    "offset": 3
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "02:12",
+    "departure": "02:16",
+    "stop": 4,
+    "offset": 3
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "04:48",
+    "departure": null,
+    "stop": null,
+    "offset": 3
+   }
+  ],
+  "cut_before": 11,
+  "cut_after": 0
+ },
+ "124": {
+  "number": "124Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "00:10",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "02:37",
+    "departure": "02:40",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "04:30",
+    "departure": "04:58",
+    "stop": 28,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "05:47",
+    "departure": "05:52",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "06:41",
+    "departure": "06:46",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "07:15",
+    "departure": "07:20",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "07:47",
+    "departure": "08:17",
+    "stop": 30,
+    "offset": 0
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "13:26",
+    "departure": "13:52",
+    "stop": 26,
+    "offset": 0
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "14:32",
+    "departure": "15:42",
+    "stop": 70,
+    "offset": 0
+   },
+   {
+    "code": "2900844",
+    "title": "Шават",
+    "arrival": "16:11",
+    "departure": "16:14",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2901215",
+    "title": "Назархан",
+    "arrival": "16:30",
+    "departure": "16:32",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900970",
+    "title": "Нукус",
+    "arrival": "19:10",
+    "departure": "19:43",
+    "stop": 33,
+    "offset": 0
+   },
+   {
+    "code": "2900885",
+    "title": "Кунград",
+    "arrival": "21:35",
+    "departure": "22:00",
+    "stop": 25,
+    "offset": 0
+   },
+   {
+    "code": "2900879",
+    "title": "Каракалпакстан",
+    "arrival": "03:12",
+    "departure": "06:10",
+    "stop": 178,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 11
+ },
+ "125": {
+  "number": "125Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "15:36",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "16:27",
+    "departure": "16:32",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "17:21",
+    "departure": "17:24",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "17:58",
+    "departure": "18:03",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "20:25",
+    "departure": "20:27",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "21:54",
+    "departure": "22:35",
+    "stop": 41,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "23:47",
+    "departure": "23:50",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "01:01",
+    "departure": "01:04",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "02:21",
+    "departure": "03:00",
+    "stop": 39,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "04:00",
+    "departure": "04:02",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900812",
+    "title": "Зирабулак",
+    "arrival": "04:20",
+    "departure": "04:34",
+    "stop": 14,
+    "offset": 1
+   },
+   {
+    "code": "2900814",
+    "title": "Зиевуддин",
+    "arrival": "04:53",
+    "departure": "04:55",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "05:12",
+    "departure": "05:17",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "05:49",
+    "departure": "05:54",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "06:28",
+    "departure": "06:48",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "12:01",
+    "departure": "12:06",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "12:46",
+    "departure": "12:56",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900172",
+    "title": "Хива",
+    "arrival": "13:26",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "126": {
+  "number": "126Ч",
+  "stops": [
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": null,
+    "departure": "14:50",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900845",
+    "title": "Хазарасп",
+    "arrival": "15:32",
+    "departure": "15:37",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900104",
+    "title": "Мискин",
+    "arrival": "16:23",
+    "departure": "17:10",
+    "stop": 47,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "21:32",
+    "departure": "21:55",
+    "stop": 23,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "22:22",
+    "departure": "22:26",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "22:55",
+    "departure": "23:01",
+    "stop": 6,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "23:47",
+    "departure": "23:49",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "00:45",
+    "departure": "01:30",
+    "stop": 45,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "02:49",
+    "departure": "02:52",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "04:05",
+    "departure": "04:07",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "05:23",
+    "departure": "05:58",
+    "stop": 35,
+    "offset": 1
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "07:25",
+    "departure": "07:28",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "10:00",
+    "departure": "10:20",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "10:54",
+    "departure": "10:57",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "11:46",
+    "departure": "11:51",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "12:42",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "127": {
+  "number": "127Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "17:20",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "18:55",
+    "departure": "18:58",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "19:25",
+    "departure": "19:30",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "20:03",
+    "departure": "20:06",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "20:21",
+    "departure": "20:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "22:58",
+    "departure": "23:00",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "00:27",
+    "departure": "01:10",
+    "stop": 43,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "03:34",
+    "departure": "03:36",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "05:25",
+    "departure": "05:37",
+    "stop": 12,
+    "offset": 1
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "06:26",
+    "departure": "06:28",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900812",
+    "title": "Зирабулак",
+    "arrival": "06:46",
+    "departure": "06:50",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "07:22",
+    "departure": "07:25",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "07:57",
+    "departure": "07:59",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "08:33",
+    "departure": "08:58",
+    "stop": 25,
+    "offset": 1
+   },
+   {
+    "code": "2900104",
+    "title": "Мискин",
+    "arrival": "14:26",
+    "departure": "14:46",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900103",
+    "title": "Туртгул",
+    "arrival": "15:14",
+    "departure": "15:18",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900102",
+    "title": "Элликала",
+    "arrival": "15:45",
+    "departure": "15:48",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900970",
+    "title": "Нукус",
+    "arrival": "18:05",
+    "departure": "18:26",
+    "stop": 21,
+    "offset": 1
+   },
+   {
+    "code": "2900958",
+    "title": "Тахиаташ-Пристань",
+    "arrival": "18:42",
+    "departure": "18:44",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900830",
+    "title": "Ходжейли",
+    "arrival": "19:08",
+    "departure": "19:10",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900725",
+    "title": "Алтынкуль",
+    "arrival": "20:04",
+    "departure": "20:06",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900885",
+    "title": "Кунград",
+    "arrival": "20:33",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "128": {
+  "number": "128Ф",
+  "stops": [
+   {
+    "code": "2900885",
+    "title": "Кунград",
+    "arrival": null,
+    "departure": "11:00",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900830",
+    "title": "Ходжейли",
+    "arrival": "12:16",
+    "departure": "12:19",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900958",
+    "title": "Тахиаташ-Пристань",
+    "arrival": "12:44",
+    "departure": "12:46",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900970",
+    "title": "Нукус",
+    "arrival": "13:05",
+    "departure": "13:20",
+    "stop": 15,
+    "offset": 0
+   },
+   {
+    "code": "2900102",
+    "title": "Элликала",
+    "arrival": "15:42",
+    "departure": "15:47",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900103",
+    "title": "Туртгул",
+    "arrival": "16:14",
+    "departure": "16:17",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900104",
+    "title": "Мискин",
+    "arrival": "16:44",
+    "departure": "17:10",
+    "stop": 26,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "21:32",
+    "departure": "21:55",
+    "stop": 23,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "22:22",
+    "departure": "22:26",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "22:55",
+    "departure": "23:01",
+    "stop": 6,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "23:47",
+    "departure": "23:49",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "00:45",
+    "departure": "01:30",
+    "stop": 45,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "02:49",
+    "departure": "02:52",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "04:05",
+    "departure": "04:07",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "05:23",
+    "departure": "05:58",
+    "stop": 35,
+    "offset": 1
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "07:25",
+    "departure": "07:28",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "10:00",
+    "departure": "10:40",
+    "stop": 40,
+    "offset": 1
+   },
+   {
+    "code": "2900692",
+    "title": "Чуст",
+    "arrival": "10:55",
+    "departure": "11:00",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900940",
+    "title": "Наманган",
+    "arrival": "11:33",
+    "departure": "11:43",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900688",
+    "title": "Чартак",
+    "arrival": "12:10",
+    "departure": "12:12",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "13:47",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "129": {
+  "number": "129Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "16:30",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "17:21",
+    "departure": "17:26",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "18:15",
+    "departure": "18:17",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "18:51",
+    "departure": "18:56",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "21:18",
+    "departure": "21:20",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "22:47",
+    "departure": "23:43",
+    "stop": 56,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "00:55",
+    "departure": "00:58",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "02:09",
+    "departure": "02:13",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "03:30",
+    "departure": "03:48",
+    "stop": 18,
+    "offset": 1
+   },
+   {
+    "code": "2900205",
+    "title": "Гумбаз",
+    "arrival": "02:20",
+    "departure": "02:28",
+    "stop": 8,
+    "offset": 1
+   },
+   {
+    "code": "2900788",
+    "title": "Айрытам",
+    "arrival": "04:58",
+    "departure": "05:00",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "06:06",
+    "departure": "06:36",
+    "stop": 30,
+    "offset": 1
+   },
+   {
+    "code": "2900855",
+    "title": "Дехконобод",
+    "arrival": "08:12",
+    "departure": "08:15",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900861",
+    "title": "Окработ",
+    "arrival": "09:32",
+    "departure": "09:52",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900871",
+    "title": "Дарбанд",
+    "arrival": "10:39",
+    "departure": "10:44",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900872",
+    "title": "Бойсун",
+    "arrival": "11:10",
+    "departure": "11:15",
+    "stop": 5,
+    "offset": 1
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "12:22",
+    "departure": "12:32",
+    "stop": 10,
+    "offset": 1
+   },
+   {
+    "code": "2900863",
+    "title": "Сурханы",
+    "arrival": "12:44",
+    "departure": "12:46",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900862",
+    "title": "Джаркурган",
+    "arrival": "13:08",
+    "departure": "13:11",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900255",
+    "title": "Термез",
+    "arrival": "13:36",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "130": {
+  "number": "130Ф",
+  "stops": [
+   {
+    "code": "2900255",
+    "title": "Термез",
+    "arrival": null,
+    "departure": "17:10",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900862",
+    "title": "Джаркурган",
+    "arrival": "17:35",
+    "departure": "17:37",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900863",
+    "title": "Сурханы",
+    "arrival": "18:00",
+    "departure": "18:02",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "18:14",
+    "departure": "18:24",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900872",
+    "title": "Бойсун",
+    "arrival": "19:32",
+    "departure": "19:38",
+    "stop": 6,
+    "offset": 0
+   },
+   {
+    "code": "2900871",
+    "title": "Дарбанд",
+    "arrival": "20:04",
+    "departure": "20:09",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900861",
+    "title": "Окработ",
+    "arrival": "21:01",
+    "departure": "21:21",
+    "stop": 20,
+    "offset": 0
+   },
+   {
+    "code": "2900855",
+    "title": "Дехконобод",
+    "arrival": "22:35",
+    "departure": "22:38",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "00:07",
+    "departure": "00:27",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900788",
+    "title": "Айрытам",
+    "arrival": "01:21",
+    "departure": "01:28",
+    "stop": 7,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "02:26",
+    "departure": "02:40",
+    "stop": 14,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "03:59",
+    "departure": "04:01",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "05:14",
+    "departure": "05:17",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900002",
+    "title": "Ташкент-Южный",
+    "arrival": "06:42",
+    "departure": "07:14",
+    "stop": 32,
+    "offset": 1
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "08:41",
+    "departure": "08:43",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "11:05",
+    "departure": "11:08",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "11:42",
+    "departure": "11:45",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900709",
+    "title": "Алтыарык",
+    "arrival": "12:21",
+    "departure": "12:23",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "12:40",
+    "departure": "12:43",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "13:34",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "301": {
+  "number": "301З",
+  "stops": [
+   {
+    "code": "2900868",
+    "title": "Сарыасия",
+    "arrival": "23:05",
+    "departure": "23:09",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900780",
+    "title": "Денау",
+    "arrival": "23:27",
+    "departure": "23:30",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "00:16",
+    "departure": "00:41",
+    "stop": 25,
+    "offset": 1
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "06:34",
+    "departure": "06:54",
+    "stop": 20,
+    "offset": 1
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "08:42",
+    "departure": "09:22",
+    "stop": 40,
+    "offset": 1
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "11:01",
+    "departure": "11:03",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "12:26",
+    "departure": "12:28",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "13:51",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 1,
+  "cut_after": 0
+ },
+ "302": {
+  "number": "302З",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "14:48",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "16:11",
+    "departure": "16:13",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "17:30",
+    "departure": "17:41",
+    "stop": 11,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "19:18",
+    "departure": "19:48",
+    "stop": 30,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "21:36",
+    "departure": "21:56",
+    "stop": 20,
+    "offset": 0
+   },
+   {
+    "code": "2900864",
+    "title": "Кумкурган",
+    "arrival": "04:08",
+    "departure": "04:38",
+    "stop": 30,
+    "offset": 1
+   },
+   {
+    "code": "2900780",
+    "title": "Денау",
+    "arrival": "05:25",
+    "departure": "05:27",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900868",
+    "title": "Сарыасия",
+    "arrival": "05:45",
+    "departure": "05:47",
+    "stop": 2,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 1
+ },
+ "703": {
+  "number": "703Ф",
+  "stops": [
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": null,
+    "departure": "05:40",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "07:38",
+    "departure": "08:10",
+    "stop": 32,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "09:46",
+    "departure": "09:49",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "11:07",
+    "departure": "11:10",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "12:19",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "709": {
+  "number": "709Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "16:55",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "17:22",
+    "departure": "17:25",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "17:52",
+    "departure": "17:56",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "19:13",
+    "departure": "19:23",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "20:25",
+    "departure": "20:28",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "21:54",
+    "departure": "21:57",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "23:06",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "710": {
+  "number": "710Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "08:37",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "09:41",
+    "departure": "09:44",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "10:41",
+    "departure": "10:44",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "11:46",
+    "departure": "12:00",
+    "stop": 14,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "13:34",
+    "departure": "13:38",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "14:05",
+    "departure": "14:08",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "14:35",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "711": {
+  "number": "711Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "05:21",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "05:48",
+    "departure": "05:51",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "06:18",
+    "departure": "06:21",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "07:38",
+    "departure": "08:10",
+    "stop": 32,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "09:46",
+    "departure": "09:49",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "11:07",
+    "departure": "11:10",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "12:19",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "712": {
+  "number": "712Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "20:32",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "21:36",
+    "departure": "21:39",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "22:36",
+    "departure": "22:39",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "23:41",
+    "departure": "00:02",
+    "stop": 21,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "00:43",
+    "departure": "00:45",
+    "stop": 2,
+    "offset": 1
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "01:26",
+    "departure": "01:30",
+    "stop": 4,
+    "offset": 1
+   },
+   {
+    "code": "2900824",
+    "title": "Кызылтепа",
+    "arrival": "01:57",
+    "departure": "02:00",
+    "stop": 3,
+    "offset": 1
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "02:27",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "715": {
+  "number": "715Ф",
+  "stops": [
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": null,
+    "departure": "18:40",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "20:08",
+    "departure": "20:24",
+    "stop": 16,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "21:26",
+    "departure": "21:30",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "22:43",
+    "departure": "22:45",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "23:54",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "716": {
+  "number": "716Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "08:58",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "10:02",
+    "departure": "10:05",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "11:02",
+    "departure": "11:09",
+    "stop": 7,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "12:11",
+    "departure": "12:30",
+    "stop": 19,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "13:59",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "729": {
+  "number": "729Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "15:09",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900701",
+    "title": "Кува",
+    "arrival": "15:35",
+    "departure": "15:37",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "16:00",
+    "departure": "16:03",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "16:50",
+    "departure": "16:53",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "17:25",
+    "departure": "17:28",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "19:42",
+    "departure": "19:44",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "21:10",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "730": {
+  "number": "730Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "08:10",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "09:36",
+    "departure": "09:38",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "11:53",
+    "departure": "11:57",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "12:29",
+    "departure": "12:33",
+    "stop": 4,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "13:20",
+    "departure": "13:23",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900701",
+    "title": "Кува",
+    "arrival": "13:46",
+    "departure": "13:48",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "14:14",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "731": {
+  "number": "731Ф",
+  "stops": [
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": null,
+    "departure": "06:37",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "07:22",
+    "departure": "07:27",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900709",
+    "title": "Алтыарык",
+    "arrival": "07:44",
+    "departure": "07:46",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "08:20",
+    "departure": "08:25",
+    "stop": 5,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "08:57",
+    "departure": "09:00",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "11:14",
+    "departure": "11:16",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "12:42",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "732": {
+  "number": "732Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "17:55",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900679",
+    "title": "Ангрен",
+    "arrival": "19:21",
+    "departure": "19:23",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900693",
+    "title": "Пап",
+    "arrival": "21:58",
+    "departure": "22:01",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900880",
+    "title": "Коканд 1",
+    "arrival": "22:33",
+    "departure": "22:36",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900709",
+    "title": "Алтыарык",
+    "arrival": "23:10",
+    "departure": "23:12",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900920",
+    "title": "Маргилан",
+    "arrival": "23:29",
+    "departure": "23:32",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900680",
+    "title": "Андижан 1",
+    "arrival": "00:17",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "751": {
+  "number": "751М",
+  "stops": [
+   {
+    "code": "2900172",
+    "title": "Хива",
+    "arrival": null,
+    "departure": "07:15",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "07:35",
+    "departure": "07:45",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "10:37",
+    "departure": "10:57",
+    "stop": 20,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "12:41",
+    "departure": "12:51",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "15:06",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "752": {
+  "number": "752Ж",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "07:00",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "09:13",
+    "departure": "09:23",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "10:54",
+    "departure": "11:14",
+    "stop": 20,
+    "offset": 0
+   },
+   {
+    "code": "2900790",
+    "title": "Ургенч",
+    "arrival": "14:06",
+    "departure": "14:16",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900172",
+    "title": "Хива",
+    "arrival": "14:36",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "763": {
+  "number": "763Ф",
+  "stops": [
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": null,
+    "departure": "17:29",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "18:39",
+    "departure": "18:49",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "21:04",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "764": {
+  "number": "764Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "06:33",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "08:46",
+    "departure": "08:56",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "10:07",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "765": {
+  "number": "765Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "16:22",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "16:57",
+    "departure": "17:00",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "17:31",
+    "departure": "17:33",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "18:05",
+    "departure": "18:15",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "20:30",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "766": {
+  "number": "766Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "07:30",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "09:43",
+    "departure": "09:53",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900260",
+    "title": "Каттакурган-Пасс.",
+    "arrival": "10:25",
+    "departure": "10:27",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "10:58",
+    "departure": "11:01",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "11:39",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "767": {
+  "number": "767Ф",
+  "stops": [
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": null,
+    "departure": "17:40",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "18:26",
+    "departure": "18:28",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "18:52",
+    "departure": "18:54",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "19:18",
+    "departure": "19:19",
+    "stop": 1,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "20:12",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "768": {
+  "number": "768Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "07:55",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900850",
+    "title": "Гулистан",
+    "arrival": "08:47",
+    "departure": "08:48",
+    "stop": 1,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "09:11",
+    "departure": "09:13",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900720",
+    "title": "Джизак",
+    "arrival": "09:37",
+    "departure": "09:39",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "10:25",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "769": {
+  "number": "769Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "15:09",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "15:44",
+    "departure": "15:47",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "16:46",
+    "departure": "16:56",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "18:02",
+    "departure": "18:04",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "19:17",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "770": {
+  "number": "770Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "08:30",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "09:41",
+    "departure": "09:43",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "10:49",
+    "departure": "10:59",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "11:58",
+    "departure": "12:01",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "12:36",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "771": {
+  "number": "771Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "03:34",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "04:09",
+    "departure": "04:12",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "05:11",
+    "departure": "05:21",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "06:27",
+    "departure": "06:29",
+    "stop": 2,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "07:42",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "772": {
+  "number": "772Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "19:48",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900775",
+    "title": "Даштобод",
+    "arrival": "21:00",
+    "departure": "21:07",
+    "stop": 7,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "22:13",
+    "departure": "22:23",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "23:22",
+    "departure": "23:25",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "00:01",
+    "departure": null,
+    "stop": null,
+    "offset": 1
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "773": {
+  "number": "773Ф",
+  "stops": [
+   {
+    "code": "2900796",
+    "title": "Китаб",
+    "arrival": null,
+    "departure": "16:24",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "17:19",
+    "departure": "17:29",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "18:39",
+    "departure": "18:49",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "21:04",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "774": {
+  "number": "774Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "06:33",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "08:46",
+    "departure": "08:56",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900750",
+    "title": "Карши",
+    "arrival": "10:07",
+    "departure": "10:17",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900796",
+    "title": "Китаб",
+    "arrival": "11:12",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "777": {
+  "number": "777Ф",
+  "stops": [
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": null,
+    "departure": "18:14",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "18:49",
+    "departure": "18:52",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "19:51",
+    "departure": "20:01",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": "22:16",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ },
+ "778": {
+  "number": "778Ф",
+  "stops": [
+   {
+    "code": "2900001",
+    "title": "Ташкент-Центральный",
+    "arrival": null,
+    "departure": "06:10",
+    "stop": null,
+    "offset": 0
+   },
+   {
+    "code": "2900700",
+    "title": "Самарканд",
+    "arrival": "08:23",
+    "departure": "08:33",
+    "stop": 10,
+    "offset": 0
+   },
+   {
+    "code": "2900930",
+    "title": "Навои",
+    "arrival": "09:32",
+    "departure": "09:35",
+    "stop": 3,
+    "offset": 0
+   },
+   {
+    "code": "2900800",
+    "title": "Бухара 1",
+    "arrival": "10:10",
+    "departure": null,
+    "stop": null,
+    "offset": 0
+   }
+  ],
+  "cut_before": 0,
+  "cut_after": 0
+ }
+}
