@@ -150,6 +150,43 @@
   }
   .st-tag{color:var(--muted)}
 
+  /* ---- маршрут ---- */
+  .row.open{grid-template-areas:none;cursor:default}
+  .row[role="button"]{cursor:pointer}
+  .row[role="button"]:hover{border-color:var(--tile)}
+  .row[role="button"]:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
+  .route-wrap{grid-column:1/-1;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule)}
+
+  .route{list-style:none;position:relative;padding-left:18px}
+  /* Нитка маршрута: линия сквозь все остановки. */
+  .route::before{
+    content:'';position:absolute;left:4px;top:7px;bottom:7px;
+    width:1px;background:var(--rule);
+  }
+  .route li{
+    display:flex;align-items:baseline;gap:10px;padding:5px 0;
+    font-size:13px;position:relative;
+  }
+  .route li::before{
+    content:'';position:absolute;left:-18px;top:10px;
+    width:7px;height:7px;border-radius:50%;
+    background:var(--card);border:1.5px solid var(--rule);
+  }
+  .route li.here::before{background:var(--tile);border-color:var(--tile)}
+  .route li.here .rn{font-weight:600;color:var(--ink)}
+
+  .rt{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    font-variant-numeric:tabular-nums;min-width:96px;
+  }
+  .rn{color:var(--muted)}
+  .stop{
+    font-size:10px;color:var(--muted);border:1px solid var(--rule);
+    border-radius:3px;padding:1px 5px;margin-left:auto;white-space:nowrap;
+  }
+  .cut{font-size:11px;color:var(--muted);margin-top:8px;padding-left:18px}
+
   .empty{
     background:var(--card);border:1px solid var(--rule);border-radius:8px;
     padding:26px 20px;color:var(--muted);font-size:14px;line-height:1.6;
@@ -202,19 +239,19 @@ let DATA = null;
 let mode = 'departure';
 
 const T = {
-  uz: {track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
+  uz: {abroad:'Keyin yo\'nalish O\'zbekistondan tashqarida davom etadi', track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
        tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
        from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
        error:'Jadval yuklanmadi. Sahifani yangilang.',
        note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
        updated:d => 'Yangilangan ' + d},
-  ru: {track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+  ru: {abroad:'Дальше маршрут идёт за пределами Узбекистана', track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
        tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
        from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
        error:'Расписание не загрузилось. Обновите страницу.',
        note:'Время по расписанию. Задержки не учитываются.',
        updated:d => 'Обновлено ' + d},
-  en: {track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
+  en: {abroad:'The route continues outside Uzbekistan', track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
        tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
        from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
        error:'Schedule failed to load. Please refresh.',
@@ -226,6 +263,10 @@ let lang = 'uz';                      // по умолчанию узбекск�
 
 let NAMES = {};                       // ru -> {ru, uz, en}
 let LIVE = {};                        // станция -> живые отправления
+let ROUTES = {};                      // цифры номера -> маршрут
+let openRow = null;                   // какой рейс раскрыт
+
+const routeOf = t => ROUTES[(t.number.match(/^\d+/) || [''])[0]] || null;
 
 /* Строка живого табло для рейса: платформа и отклонение по времени. */
 function liveOf(t){
@@ -251,6 +292,15 @@ function withQual(city, q){
   const label = QUAL[q] && QUAL[q][lang];
   return label ? city + '-' + label : city;
 }
+
+const STATION_CODE = {
+  'tashkent-central':'2900001', 'tashkent-south':'2900002',
+  'samarkand':'2900700', 'bukhara':'2900800', 'navoi':'2900930',
+  'jizzakh':'2900720', 'gulistan':'2900850', 'qarshi':'2900750',
+  'andijan':'2900680', 'namangan':'2900940', 'kokand':'2900880',
+  'margilan':'2900920', 'urgench':'2900790', 'khiva':'2900172',
+  'nukus':'2900970',
+};
 
 const STATION_LABEL = {
   'tashkent': {ru:'Ташкент', uz:'Toshkent', en:'Tashkent'},
@@ -358,6 +408,26 @@ function countdownText(mins){
 }
 
 /* Заголовок рейса: по-русски берём готовый (там падеж), иначе собираем. */
+/* Маршрут под строкой. Текущая станция подсвечена: видно, где ты стоишь. */
+function routeHtml(t){
+  const r = routeOf(t);
+  if (!r) return '';
+  const here = STATION_CODE[t.station];
+
+  const items = r.stops.map(st => {
+    const mine = st.code === here;
+    const times = [st.arrival, st.departure].filter(Boolean).join(' — ');
+    const wait = st.stop ? `<span class="stop">${st.stop} ${T[lang].min}</span>` : '';
+    return `<li class="${mine ? 'here' : ''}">
+      <span class="rt">${times}</span>
+      <span class="rn">${st.title}</span>${wait}</li>`;
+  }).join('');
+
+  const cut = (r.cut_before + r.cut_after)
+    ? `<div class="cut">${T[lang].abroad}</div>` : '';
+  return `<ol class="route">${items}</ol>${cut}`;
+}
+
 function trainTitle(t){
   if (lang === 'ru' || !t.cities || !t.cities.length) return t.title;
   const names = t.cities
@@ -380,8 +450,21 @@ function render(){
 
   for (const t of list){
     const c = countdownText(t.at);
+    const key = t.number + t.time_local + t.direction;
+    const open = openRow === key;
+
     const row = document.createElement('div');
-    row.className = 'row';
+    row.className = 'row' + (open ? ' open' : '');
+    if (routeOf(t)) {
+      row.tabIndex = 0;
+      row.setAttribute('role', 'button');
+      row.setAttribute('aria-expanded', open);
+      const toggle = () => { openRow = open ? null : key; render(); };
+      row.onclick = toggle;
+      row.onkeydown = e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      };
+    }
     row.innerHTML = `
       <div class="num">${t.number}</div>
       <div>
@@ -403,7 +486,8 @@ function render(){
             : '';
           return dev + pf;
         })()}
-      </div>`;
+      </div>
+      ${open ? `<div class="route-wrap">${routeHtml(t)}</div>` : ''}`;
     board.appendChild(row);
   }
 }
@@ -431,6 +515,11 @@ async function load(){
       const l = await fetch('data/live.json', {cache:'no-cache'});
       if (l.ok) LIVE = await l.json();
     } catch (e) { /* необязательный слой */ }
+
+    try {
+      const rt = await fetch('data/routes.json', {cache:'no-cache'});
+      if (rt.ok) ROUTES = await rt.json();
+    } catch (e) { /* без маршрутов строки просто не раскрываются */ }
 
     buildCityList(DATA.trains);
     city = CITIES[0];
