@@ -153,23 +153,13 @@
  ],
  "tashkent-south": [
   {
-   "number": "082Ф",
-   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
+   "number": "125Ф",
+   "route": "ТАШКЕНТ ЮЖ -ХИВА",
    "date": "25.08.2026",
-   "time_local": "21:12",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:12",
-   "deviation": null
-  },
-  {
-   "number": "080Ф",
-   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
-   "date": "25.08.2026",
-   "time_local": "21:13",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:13",
+   "time_local": "22:35",
+   "platform": null,
+   "sold_out": true,
+   "planned": "22:35",
    "deviation": null
   },
   {
@@ -179,16 +169,6 @@
    "time_local": "22:35",
    "platform": "1",
    "sold_out": false,
-   "planned": "22:35",
-   "deviation": null
-  },
-  {
-   "number": "125Ф",
-   "route": "ТАШКЕНТ ЮЖ -ХИВА",
-   "date": "25.08.2026",
-   "time_local": "22:35",
-   "platform": null,
-   "sold_out": true,
    "planned": "22:35",
    "deviation": null
   },
@@ -240,6 +220,26 @@
    "platform": "3",
    "sold_out": false,
    "planned": "16:00",
+   "deviation": null
+  },
+  {
+   "number": "082Ф",
+   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
+   "date": "26.08.2026",
+   "time_local": "21:12",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:12",
+   "deviation": null
+  },
+  {
+   "number": "080Ф",
+   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
+   "date": "26.08.2026",
+   "time_local": "21:13",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:13",
    "deviation": null
   },
   {
@@ -560,7 +560,7 @@
    "date": "01.09.2026",
    "time_local": "03:00",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "03:00",
    "deviation": null
   },
