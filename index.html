@@ -470,9 +470,10 @@ function routeHtml(t){
     const mine = st.code === here;
     const times = [st.arrival, st.departure].filter(Boolean).join(' — ');
     const wait = st.stop ? `<span class="stop">${st.stop} ${T[lang].min}</span>` : '';
+    const name = (st.names && st.names[lang]) || st.title;
     return `<li class="${mine ? 'here' : ''}">
       <span class="rt">${times}</span>
-      <span class="rn">${st.title}</span>${wait}</li>`;
+      <span class="rn">${name}</span>${wait}</li>`;
   }).join('');
 
   const cut = (r.cut_before + r.cut_after)
