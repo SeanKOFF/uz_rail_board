@@ -19,9 +19,22 @@
     --tile:#1B8794;
     --saffron:#C4841F;
   }
+  /* Тёмная: та же майолика, но ночная — глубокий сине-зелёный вместо
+     бумаги, бирюза ярче, чтобы держать контраст на тёмном. */
+  [data-theme="dark"]{
+    --paper:#0E1D23;
+    --card:#162C34;
+    --ink:#E6EDEB;
+    --muted:#7D969D;
+    --rule:#23404A;
+    --tile:#37B4C1;
+    --saffron:#DFA43D;
+  }
+
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     background:var(--paper);
+    transition:background-color .25s, color .25s;
     color:var(--ink);
     font-family:'IBM Plex Sans',system-ui,sans-serif;
     min-height:100vh;
@@ -45,6 +58,16 @@
   .place span{color:var(--muted);font-weight:400}
 
   .head-right{display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+  .controls{display:flex;align-items:center;gap:8px}
+  .theme{
+    background:none;border:1px solid var(--rule);color:var(--muted);
+    cursor:pointer;width:26px;height:26px;border-radius:50%;
+    font-size:12px;line-height:1;display:grid;place-items:center;
+    transition:.16s;padding:0;
+  }
+  .theme:hover{border-color:var(--tile);color:var(--tile)}
+  .theme:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
   .langs{display:flex;gap:2px}
   .langs button{
     background:none;border:0;color:var(--muted);cursor:pointer;
@@ -68,6 +91,10 @@
   }
 
   /* ---- города ---- */
+  /* На широком экране города — ряд фишек. На узком они съедали треть
+     экрана, поэтому там сворачиваются в одну кнопку с текущим городом. */
+  .city-toggle{display:none}
+
   .cities{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
   .cities button{
     background:var(--card);border:1px solid var(--rule);color:var(--muted);
@@ -98,6 +125,7 @@
   .row{
     display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
     background:var(--card);border:1px solid var(--rule);border-radius:8px;
+    transition:background-color .25s, border-color .16s;
     padding:14px 16px;margin-bottom:7px;position:relative;overflow:hidden;
     animation:in .4s both;
   }
@@ -197,6 +225,25 @@
     border-top:1px solid var(--rule);padding-top:13px;
   }
 
+  @media (max-width:640px){
+    .city-toggle{
+      display:flex;align-items:center;gap:7px;width:100%;
+      background:var(--card);border:1px solid var(--rule);color:var(--ink);
+      cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+      font-size:15px;font-weight:600;padding:11px 14px;border-radius:8px;
+      margin-bottom:10px;text-align:left;
+    }
+    .city-toggle::after{
+      content:'⌄';margin-left:auto;color:var(--muted);font-size:15px;
+      line-height:1;transform:translateY(-3px);transition:transform .18s;
+    }
+    .city-toggle[aria-expanded="true"]::after{transform:translateY(1px) rotate(180deg)}
+    .city-toggle:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
+    .cities{display:none}
+    .cities.open{display:flex}
+  }
+
   @media (max-width:480px){
     .row{grid-template-columns:46px 1fr auto;gap:10px;padding:12px 13px}
     .num{font-size:13px} .dest{font-size:14px} .time{font-size:19px}
@@ -213,7 +260,10 @@
   <header>
     <div class="place" id="place"></div>
     <div class="head-right">
-      <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
+      <div class="controls">
+        <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
+        <button id="theme" class="theme" type="button" aria-pressed="false"></button>
+      </div>
       <div class="clock"><span id="clock">--:--:--</span><small id="tz-label"></small></div>
     </div>
   </header>
@@ -223,6 +273,8 @@
     <button id="btn-arr" aria-pressed="false"></button>
   </div>
 
+  <button id="city-toggle" class="city-toggle" type="button"
+          aria-expanded="false" aria-controls="cities"></button>
   <div class="cities" id="cities" role="group" aria-label="Город"></div>
 
   <div class="board" id="board"></div>
@@ -540,11 +592,34 @@ function applyLang(){
   // До загрузки данных города ещё нет — заголовок остаётся пустым,
   // это лучше, чем мигнуть чужим языком.
   document.getElementById('place').innerHTML = city ? cityName(city.ru) : '';
+  setCityToggle();
   document.querySelectorAll('#langs button').forEach(b =>
     b.setAttribute('aria-pressed', b.dataset.lang === lang));
   if (DATA) setFooter();
   buildCities();
   render();
+}
+
+/* Тема: по умолчанию как в системе, выбор запоминается, если браузер
+   разрешает хранилище. Если нет — просто не запоминается. */
+let theme = 'light';
+
+function readTheme(){
+  try {
+    const saved = localStorage.getItem('board-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch (e) { /* хранилище недоступно */ }
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark' : 'light';
+}
+
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', theme);
+  const b = document.getElementById('theme');
+  b.textContent = theme === 'dark' ? '☾' : '☀';
+  b.setAttribute('aria-pressed', theme === 'dark');
+  b.setAttribute('aria-label', theme === 'dark' ? 'Тёмная тема' : 'Светлая тема');
+  try { localStorage.setItem('board-theme', theme); } catch (e) { /* не страшно */ }
 }
 
 function buildLangs(){
@@ -566,9 +641,20 @@ function setFooter(){
     `${T[lang].note}<br>${T[lang].updated(upd.toLocaleDateString(lang === 'uz' ? 'uz-UZ' : lang))}`;
 }
 
+function setCityToggle(){
+  const b = document.getElementById('city-toggle');
+  if (city) b.textContent = cityName(city.ru);
+}
+
+function closeCityList(){
+  document.getElementById('cities').classList.remove('open');
+  document.getElementById('city-toggle').setAttribute('aria-expanded', false);
+}
+
 function buildCities(){
   const box = document.getElementById('cities');
   box.innerHTML = '';
+  setCityToggle();
   CITIES.forEach(c => {
     const b = document.createElement('button');
     b.textContent = cityName(c.ru);
@@ -576,6 +662,7 @@ function buildCities(){
     b.onclick = () => {
       city = c;
       document.getElementById('place').innerHTML = cityName(c.ru);
+      closeCityList();
       buildCities();
       render();
     };
@@ -592,6 +679,19 @@ function setMode(m){
   document.getElementById('btn-arr').setAttribute('aria-pressed', m==='arrival');
   render();
 }
+
+document.getElementById('city-toggle').onclick = () => {
+  const box = document.getElementById('cities');
+  const open = box.classList.toggle('open');
+  document.getElementById('city-toggle').setAttribute('aria-expanded', open);
+};
+
+theme = readTheme();
+applyTheme();
+document.getElementById('theme').onclick = () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  applyTheme();
+};
 
 buildLangs();
 applyLang();          // подписи на месте до прихода данных
