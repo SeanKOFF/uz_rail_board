@@ -23,6 +23,7 @@ import json
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 import httpx
@@ -199,6 +200,48 @@ def deviations(result):
     return found
 
 
+def weekday_check(result):
+    """Сверяет день недели с табло с нашими днями курсирования.
+
+    Ночные рейсы легко уезжают на сутки: перевозчик считает поезд
+    «вторничным», хотя отправляется он в 00:10 уже в среду. Источники
+    трактуют это по-разному, и ошибка тихая — время совпадает, а день нет.
+    """
+    f = ROOT / "data" / "schedule.json"
+    if not f.exists():
+        return []
+
+    days_of = {}
+    for t in json.loads(f.read_text(encoding="utf-8"))["trains"]:
+        if t["direction"] != "departure":
+            continue
+        digits = (re.match(r"^\d+", t["number"]) or [""])[0]
+        days_of.setdefault((t["station"], digits), set()).add(t["days"])
+
+    bad = []
+    for station, rows in result.items():
+        for r in rows:
+            digits = (re.match(r"^\d+", r["number"]) or [""])[0]
+            patterns = days_of.get((station, digits))
+            if not patterns:
+                continue
+            try:
+                d = datetime.strptime(r["date"], "%d.%m.%Y")
+            except ValueError:
+                continue
+            iso = str(d.isoweekday())
+
+            # Достаточно, чтобы день подходил хотя бы под один вариант:
+            # у встречных рейсов с теми же цифрами шаблоны разные.
+            ok = any(iso in pat if pat not in ("even", "odd")
+                     else (d.day % 2 == 0) == (pat == "even")
+                     for pat in patterns)
+            if not ok:
+                bad.append((station, r["number"], r["date"], r["time_local"],
+                            sorted(patterns)))
+    return bad
+
+
 HISTORY = ROOT / "data" / "history.json"
 
 
@@ -305,6 +348,15 @@ def main():
         print("Постоянное расхождение = разное расписание, а не опоздание.")
     else:
         print("\nВремя на табло совпадает с расписанием везде.")
+
+    wrong = weekday_check(result)
+    if wrong:
+        print(f"\nДень недели не совпадает с расписанием: {len(wrong)}")
+        for station, number, date, hhmm, pats in wrong:
+            print(f"  {station:<18} {number:<6} табло {date} {hhmm}, "
+                  f"у нас дни {','.join(pats)}")
+        print("Частая причина — рейсы сразу после полуночи: источники")
+        print("расходятся, считать ли их вчерашними или сегодняшними.")
 
     total = remember(result)
     if n:

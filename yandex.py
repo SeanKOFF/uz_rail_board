@@ -18,6 +18,7 @@ import json
 import os
 import sys
 import time
+import time
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
@@ -44,7 +45,11 @@ STATIONS = {
     "andijan":         "2900680",
 }
 
-DAYS_AHEAD = 7          # столько дней опрашиваем, чтобы вывести расписание
+# Опрашиваем две недели, а не одну: при семи днях каждый день недели
+# попадает в выборку ровно один раз, и любая дырка в данных источника
+# сразу даёт неверный шаблон. При четырнадцати каждый день встречается
+# дважды, и разовые пропуски видно.
+DAYS_AHEAD = 14
 PAUSE = 0.3             # пауза между запросами, вежливость к API
 
 
@@ -52,7 +57,8 @@ class RaspError(RuntimeError):
     pass
 
 
-def call(path, **params):
+def call(path, retries=4, **params):
+    """Запрос с повторами при 429: лимит отпускает через десятки секунд."""
     if not KEY:
         raise RaspError("Не задан YANDEX_RASP_KEY")
     params.update(apikey=KEY, format="json", lang="ru_RU")
@@ -66,7 +72,14 @@ def call(path, **params):
         raise RaspError("Ключ не принят (403). Возможно, он ещё не активирован "
                         "или не разрешён для этого метода.")
     if r.status_code == 429:
-        raise RaspError("Превышен лимит запросов (429). Попробуй позже.")
+        if retries > 0:
+            pause = 2 ** (5 - retries) * 5      # 5, 10, 20, 40 секунд
+            print(f"    лимит запросов, жду {pause} с...", flush=True)
+            time.sleep(pause)
+            return call(path, retries - 1, **{k: v for k, v in params.items()
+                                              if k not in ("apikey", "format", "lang")})
+        raise RaspError("Лимит запросов исчерпан (429). Ключ отпускает "
+                        "через сутки — попробуй завтра.")
     if r.status_code >= 400:
         # намеренно без URL — в нём ключ
         raise RaspError(f"HTTP {r.status_code} на /{path}/")

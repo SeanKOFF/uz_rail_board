@@ -100,6 +100,7 @@ def shift_days(days, by):
 def anchor_threads(code):
     """Рейсы через станцию-якорь с выведенными днями курсирования."""
     days_of = defaultdict(set)
+    counts = defaultdict(lambda: defaultdict(int))
     meta = {}
     today = date.today()
 
@@ -113,6 +114,7 @@ def anchor_threads(code):
                 if not uid:
                     continue
                 days_of[uid].add(day.isoweekday())
+                counts[uid][day.isoweekday()] += 1
                 meta.setdefault(uid, dict(
                     uid=uid,
                     number=(th.get("number") or "").strip(),
@@ -122,13 +124,21 @@ def anchor_threads(code):
             time.sleep(PAUSE)
 
     for uid, rec in meta.items():
-        rec["days"] = "".join(str(d) for d in sorted(days_of[uid]))
+        seen = days_of[uid]
+        rec["days"] = "".join(str(d) for d in sorted(seen))
+        # День, встретившийся один раз из двух возможных, — под вопросом:
+        # либо рейс через неделю, либо пропуск в данных источника.
+        once = sorted(d for d in seen if counts[uid][d] == 1)
+        rec["uncertain"] = once if len(seen) < 7 else []
     return meta
 
 
 def day_of(iso):
     """'2026-08-25T00:02:00' -> date(2026, 8, 25)."""
     return date.fromisoformat(iso[:10]) if iso and len(iso) >= 10 else None
+
+
+CACHE = ROOT / ".cache" / "threads"
 
 
 def route_stops(uid):
@@ -138,7 +148,18 @@ def route_stops(uid):
     так корректно обрабатываются и переход через полночь, и многосуточные
     рейсы вроде ташкентского на Москву.
     """
-    info = call("thread", uid=uid, show_systems="all")
+    # Маршрут меняется только вместе с графиком, то есть дважды в год.
+    # Держим на диске: это снимает почти всю нагрузку на ключ при
+    # повторных прогонах. Чтобы обновить — удалить папку .cache.
+    CACHE.mkdir(parents=True, exist_ok=True)
+    cached = CACHE / f"{re.sub(r'[^A-Za-z0-9_-]', '_', uid)}.json"
+
+    if cached.exists():
+        info = json.loads(cached.read_text(encoding="utf-8"))
+    else:
+        info = call("thread", uid=uid, show_systems="all")
+        cached.write_text(json.dumps(info, ensure_ascii=False), encoding="utf-8")
+
     raw = info.get("stops", [])
 
     first_day = next((day_of(st.get("departure") or st.get("arrival"))
@@ -203,8 +224,17 @@ def build(anchors):
             # Дни курсирования берём от первого якоря, где рейс встретился.
             meta.setdefault(uid, rec)
     print(f"Уникальных рейсов: {len(meta)}")
+    shaky = {uid: r for uid, r in meta.items() if r.get("uncertain")}
+    if shaky:
+        print(f"\nДни под вопросом (встретились раз из двух) — {len(shaky)}:")
+        DAY = {1:"Пн",2:"Вт",3:"Ср",4:"Чт",5:"Пт",6:"Сб",7:"Вс"}
+        for r in list(shaky.values())[:12]:
+            days = ",".join(DAY[d] for d in r["uncertain"])
+            print(f"  {r['number']:<7} {days:<16} {r['title'][:34]}")
+        print("Либо рейс раз в две недели, либо пропуск у источника.")
 
     rows = []
+    failures = []
     seen_stations = defaultdict(int)
 
     for i, (uid, rec) in enumerate(meta.items(), 1):
@@ -212,6 +242,7 @@ def build(anchors):
             stops = route_stops(uid)
         except Exception as e:
             print(f"  {rec['number']}: маршрут не получен ({e})", file=sys.stderr)
+            failures.append(rec["number"])
             continue
         time.sleep(PAUSE)
 
@@ -262,7 +293,7 @@ def build(anchors):
     if missing:
         print(f"В SHOW, но рейсов не нашлось: {', '.join(missing)}")
 
-    return rows
+    return rows, failures
 
 
 def main():
@@ -278,7 +309,7 @@ def main():
         if args.inventory:
             inventory(args.anchor.split(",")[0].strip())
             return
-        rows = build([a.strip() for a in args.anchor.split(",") if a.strip()])
+        rows, failures = build([a.strip() for a in args.anchor.split(",") if a.strip()])
     except RaspError as e:
         print(e, file=sys.stderr)
         sys.exit(1)
@@ -286,6 +317,15 @@ def main():
     if not rows:
         print("Ничего не собрано.", file=sys.stderr)
         sys.exit(1)
+
+    # Неполную выдачу применять нельзя: тихо затрёт хорошие данные.
+    if failures and args.apply:
+        print(f"\nНе получено маршрутов: {len(failures)} "
+              f"({', '.join(failures[:8])}).", file=sys.stderr)
+        print("Выдача неполная — seed.json не тронут. Повтори позже: "
+              "маршруты кэшируются, так что второй прогон почти "
+              "не расходует лимит.", file=sys.stderr)
+        sys.exit(2)
 
     out = ROOT / ("seed.json" if args.apply else "seed_yandex.json")
     out.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
