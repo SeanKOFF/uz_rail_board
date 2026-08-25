@@ -220,9 +220,18 @@
     padding:26px 20px;color:var(--muted);font-size:14px;line-height:1.6;
   }
 
+  /* Обязательное указание источника по условиям API Яндекс.Расписаний:
+     размер не меньше основного текста, цвет — как у основного текста.
+     Поэтому оформлено отдельно от подвала, а не вместе с ним. */
+  .attribution{
+    margin-top:20px;padding-top:14px;border-top:1px solid var(--rule);
+    font-size:14px;line-height:1.5;color:var(--ink);
+  }
+  .attribution a{color:var(--ink);text-decoration:underline}
+  .attribution a:hover{color:var(--tile)}
+
   footer{
-    margin-top:20px;font-size:12px;line-height:1.6;color:var(--muted);
-    border-top:1px solid var(--rule);padding-top:13px;
+    margin-top:6px;font-size:12px;line-height:1.6;color:var(--muted);
   }
 
   @media (max-width:640px){
@@ -278,6 +287,11 @@
   <div class="cities" id="cities" role="group" aria-label="Город"></div>
 
   <div class="board" id="board"></div>
+
+  <p class="attribution">
+    Данные предоставлены сервисом
+    <a href="https://rasp.yandex.ru/" target="_blank" rel="noopener">Яндекс Расписания</a>
+  </p>
 
   <footer id="foot"></footer>
 
