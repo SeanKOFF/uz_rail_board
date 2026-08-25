@@ -255,16 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "056Ч",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "26.08.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": true,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
    "number": "130Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "26.08.2026",
@@ -959,18 +949,7 @@
    "deviation": null
   }
  ],
- "qarshi": [
-  {
-   "number": "763Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "26.08.2026",
-   "time_local": "17:29",
-   "platform": null,
-   "sold_out": true,
-   "planned": "17:29",
-   "deviation": null
-  }
- ],
+ "qarshi": [],
  "andijan": [
   {
    "number": "125Ч",
