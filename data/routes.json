@@ -5,6 +5,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "16:00",
     "stop": null,
@@ -13,6 +18,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "17:12",
     "departure": "17:14",
     "stop": 2,
@@ -21,6 +31,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "18:35",
     "departure": "18:37",
     "stop": 2,
@@ -29,6 +44,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "20:14",
     "departure": "20:36",
     "stop": 22,
@@ -37,6 +57,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "21:25",
     "departure": "21:27",
     "stop": 2,
@@ -45,6 +70,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "22:13",
     "departure": "22:18",
     "stop": 5,
@@ -53,6 +83,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "23:15",
     "departure": "23:37",
     "stop": 22,
@@ -61,6 +96,11 @@
    {
     "code": "2900104",
     "title": "Мискин",
+    "names": {
+     "ru": "Мискин",
+     "uz": "Miskin",
+     "en": "Miskin"
+    },
     "arrival": "03:57",
     "departure": "04:27",
     "stop": 30,
@@ -69,6 +109,11 @@
    {
     "code": "2900103",
     "title": "Туртгул",
+    "names": {
+     "ru": "Туртгул",
+     "uz": "To'rtko'l",
+     "en": "Turtkul"
+    },
     "arrival": "04:55",
     "departure": "05:03",
     "stop": 8,
@@ -77,6 +122,11 @@
    {
     "code": "2900102",
     "title": "Элликала",
+    "names": {
+     "ru": "Элликала",
+     "uz": "Ellikqal'a",
+     "en": "Ellikkala"
+    },
     "arrival": "05:30",
     "departure": "05:36",
     "stop": 6,
@@ -85,6 +135,11 @@
    {
     "code": "2902205",
     "title": "Караозек",
+    "names": {
+     "ru": "Караозек",
+     "uz": "Qorao'zak",
+     "en": "Karauzyak"
+    },
     "arrival": "06:56",
     "departure": "06:58",
     "stop": 2,
@@ -93,6 +148,11 @@
    {
     "code": "2900970",
     "title": "Нукус",
+    "names": {
+     "ru": "Нукус",
+     "uz": "Nukus",
+     "en": "Nukus"
+    },
     "arrival": "08:18",
     "departure": "08:40",
     "stop": 22,
@@ -101,6 +161,11 @@
    {
     "code": "2900958",
     "title": "Тахиаташ-Пристань",
+    "names": {
+     "ru": "Тахиаташ-Пристань",
+     "uz": "Taxiatosh",
+     "en": "Takhiatash"
+    },
     "arrival": "08:56",
     "departure": "08:59",
     "stop": 3,
@@ -109,6 +174,11 @@
    {
     "code": "2900830",
     "title": "Ходжейли",
+    "names": {
+     "ru": "Ходжейли",
+     "uz": "Xo'jayli",
+     "en": "Khojeyli"
+    },
     "arrival": "09:23",
     "departure": "09:25",
     "stop": 2,
@@ -117,6 +187,11 @@
    {
     "code": "2900725",
     "title": "Алтынкуль",
+    "names": {
+     "ru": "Алтынкуль",
+     "uz": "Oltinko'l",
+     "en": "Oltinkul"
+    },
     "arrival": "10:19",
     "departure": "10:21",
     "stop": 2,
@@ -125,6 +200,11 @@
    {
     "code": "2900885",
     "title": "Кунград",
+    "names": {
+     "ru": "Кунград",
+     "uz": "Qo'ng'irot",
+     "en": "Kungrad"
+    },
     "arrival": "10:48",
     "departure": null,
     "stop": null,
@@ -140,6 +220,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "21:45",
     "stop": null,
@@ -148,6 +233,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "23:01",
     "departure": "23:03",
     "stop": 2,
@@ -156,6 +246,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "00:20",
     "departure": "00:23",
     "stop": 3,
@@ -164,6 +259,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "01:42",
     "departure": "02:02",
     "stop": 20,
@@ -172,6 +272,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "03:02",
     "departure": "03:04",
     "stop": 2,
@@ -180,6 +285,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "03:55",
     "departure": "04:10",
     "stop": 15,
@@ -188,6 +298,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "05:12",
     "departure": "05:32",
     "stop": 20,
@@ -196,6 +311,11 @@
    {
     "code": "2900115",
     "title": "Жайхун",
+    "names": {
+     "ru": "Жайхун",
+     "uz": "Jayxun",
+     "en": "Jayhun"
+    },
     "arrival": "08:41",
     "departure": "09:04",
     "stop": 23,
@@ -204,6 +324,11 @@
    {
     "code": "2900114",
     "title": "Даутепа",
+    "names": {
+     "ru": "Даутепа",
+     "uz": "Dovtepa",
+     "en": "Davtepa"
+    },
     "arrival": "09:27",
     "departure": "09:35",
     "stop": 8,
@@ -212,6 +337,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "10:41",
     "departure": "10:44",
     "stop": 3,
@@ -220,6 +350,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "11:24",
     "departure": "11:34",
     "stop": 10,
@@ -228,6 +363,11 @@
    {
     "code": "2900172",
     "title": "Хива",
+    "names": {
+     "ru": "Хива",
+     "uz": "Xiva",
+     "en": "Khiva"
+    },
     "arrival": "12:04",
     "departure": null,
     "stop": null,
@@ -243,6 +383,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "21:45",
     "stop": null,
@@ -251,6 +396,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "23:01",
     "departure": "23:03",
     "stop": 2,
@@ -259,6 +409,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "00:20",
     "departure": "00:23",
     "stop": 3,
@@ -267,6 +422,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "01:42",
     "departure": "02:02",
     "stop": 20,
@@ -275,6 +435,11 @@
    {
     "code": "2900806",
     "title": "Джума",
+    "names": {
+     "ru": "Джума",
+     "uz": "Juma",
+     "en": "Juma"
+    },
     "arrival": "02:27",
     "departure": "02:31",
     "stop": 4,
@@ -283,6 +448,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "03:02",
     "departure": "03:04",
     "stop": 2,
@@ -291,6 +461,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "03:55",
     "departure": "04:10",
     "stop": 15,
@@ -299,6 +474,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "05:12",
     "departure": "05:32",
     "stop": 20,
@@ -307,6 +487,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "10:41",
     "departure": "10:44",
     "stop": 3,
@@ -315,6 +500,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "11:24",
     "departure": "11:54",
     "stop": 30,
@@ -323,6 +513,11 @@
    {
     "code": "2900844",
     "title": "Шават",
+    "names": {
+     "ru": "Шават",
+     "uz": "Shovot",
+     "en": "Shovot"
+    },
     "arrival": "12:28",
     "departure": null,
     "stop": null,
@@ -338,6 +533,11 @@
    {
     "code": "2900831",
     "title": "Алат",
+    "names": {
+     "ru": "Алат",
+     "uz": "Olot",
+     "en": "Olot"
+    },
     "arrival": null,
     "departure": "20:58",
     "stop": null,
@@ -346,6 +546,11 @@
    {
     "code": "2900829",
     "title": "Каракуль",
+    "names": {
+     "ru": "Каракуль",
+     "uz": "Qorako'l",
+     "en": "Karakul"
+    },
     "arrival": "21:12",
     "departure": "21:15",
     "stop": 3,
@@ -354,6 +559,11 @@
    {
     "code": "2900828",
     "title": "Якатут",
+    "names": {
+     "ru": "Якатут",
+     "uz": "Yakkatut",
+     "en": "Yakkatut"
+    },
     "arrival": "21:37",
     "departure": "21:40",
     "stop": 3,
@@ -362,6 +572,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "22:21",
     "departure": "22:51",
     "stop": 30,
@@ -370,6 +585,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "23:25",
     "departure": "23:46",
     "stop": 21,
@@ -378,6 +598,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "00:18",
     "departure": "00:24",
     "stop": 6,
@@ -386,6 +611,11 @@
    {
     "code": "2900814",
     "title": "Зиевуддин",
+    "names": {
+     "ru": "Зиевуддин",
+     "uz": "Ziyovuddin",
+     "en": "Ziyovuddin"
+    },
     "arrival": "00:43",
     "departure": "00:45",
     "stop": 2,
@@ -394,6 +624,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "01:27",
     "departure": "01:29",
     "stop": 2,
@@ -402,6 +637,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "02:21",
     "departure": "02:45",
     "stop": 24,
@@ -410,6 +650,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "04:24",
     "departure": "04:26",
     "stop": 2,
@@ -418,6 +663,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "05:45",
     "departure": "05:47",
     "stop": 2,
@@ -426,6 +676,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "07:03",
     "departure": null,
     "stop": null,
@@ -441,6 +696,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "22:34",
     "stop": null,
@@ -449,6 +709,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "23:47",
     "departure": "23:50",
     "stop": 3,
@@ -457,6 +722,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "01:01",
     "departure": "01:04",
     "stop": 3,
@@ -465,6 +735,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "02:21",
     "departure": "03:00",
     "stop": 39,
@@ -473,6 +748,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "04:00",
     "departure": "04:02",
     "stop": 2,
@@ -481,6 +761,11 @@
    {
     "code": "2900812",
     "title": "Зирабулак",
+    "names": {
+     "ru": "Зирабулак",
+     "uz": "Zirabuloq",
+     "en": "Zirabulak"
+    },
     "arrival": "04:20",
     "departure": "04:34",
     "stop": 14,
@@ -489,6 +774,11 @@
    {
     "code": "2900814",
     "title": "Зиевуддин",
+    "names": {
+     "ru": "Зиевуддин",
+     "uz": "Ziyovuddin",
+     "en": "Ziyovuddin"
+    },
     "arrival": "04:53",
     "departure": "04:55",
     "stop": 2,
@@ -497,6 +787,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "05:12",
     "departure": "05:17",
     "stop": 5,
@@ -505,6 +800,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "05:49",
     "departure": "05:54",
     "stop": 5,
@@ -513,6 +813,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "06:28",
     "departure": "07:18",
     "stop": 50,
@@ -521,6 +826,11 @@
    {
     "code": "2900828",
     "title": "Якатут",
+    "names": {
+     "ru": "Якатут",
+     "uz": "Yakkatut",
+     "en": "Yakkatut"
+    },
     "arrival": "08:01",
     "departure": "08:04",
     "stop": 3,
@@ -529,6 +839,11 @@
    {
     "code": "2900829",
     "title": "Каракуль",
+    "names": {
+     "ru": "Каракуль",
+     "uz": "Qorako'l",
+     "en": "Karakul"
+    },
     "arrival": "08:26",
     "departure": "08:30",
     "stop": 4,
@@ -537,6 +852,11 @@
    {
     "code": "2900831",
     "title": "Алат",
+    "names": {
+     "ru": "Алат",
+     "uz": "Olot",
+     "en": "Olot"
+    },
     "arrival": "08:45",
     "departure": null,
     "stop": null,
@@ -552,6 +872,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "22:34",
     "stop": null,
@@ -560,6 +885,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "23:47",
     "departure": "23:50",
     "stop": 3,
@@ -568,6 +898,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "01:01",
     "departure": "01:04",
     "stop": 3,
@@ -576,6 +911,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "02:21",
     "departure": "03:00",
     "stop": 39,
@@ -584,6 +924,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "04:00",
     "departure": "04:02",
     "stop": 2,
@@ -592,6 +937,11 @@
    {
     "code": "2900812",
     "title": "Зирабулак",
+    "names": {
+     "ru": "Зирабулак",
+     "uz": "Zirabuloq",
+     "en": "Zirabulak"
+    },
     "arrival": "04:20",
     "departure": "04:34",
     "stop": 14,
@@ -600,6 +950,11 @@
    {
     "code": "2900814",
     "title": "Зиевуддин",
+    "names": {
+     "ru": "Зиевуддин",
+     "uz": "Ziyovuddin",
+     "en": "Ziyovuddin"
+    },
     "arrival": "04:53",
     "departure": "04:55",
     "stop": 2,
@@ -608,6 +963,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "05:12",
     "departure": "05:17",
     "stop": 5,
@@ -616,6 +976,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "05:49",
     "departure": "05:54",
     "stop": 5,
@@ -624,6 +989,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "06:28",
     "departure": "06:48",
     "stop": 20,
@@ -632,6 +1002,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "12:01",
     "departure": "12:06",
     "stop": 5,
@@ -640,6 +1015,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "12:46",
     "departure": "12:56",
     "stop": 10,
@@ -648,6 +1028,11 @@
    {
     "code": "2900172",
     "title": "Хива",
+    "names": {
+     "ru": "Хива",
+     "uz": "Xiva",
+     "en": "Khiva"
+    },
     "arrival": "13:26",
     "departure": null,
     "stop": null,
@@ -663,6 +1048,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "21:13",
     "stop": null,
@@ -671,6 +1061,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "22:29",
     "departure": "22:31",
     "stop": 2,
@@ -679,6 +1074,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "23:48",
     "departure": "23:50",
     "stop": 2,
@@ -687,6 +1087,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "01:09",
     "departure": "01:22",
     "stop": 13,
@@ -695,6 +1100,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "03:34",
     "departure": "03:54",
     "stop": 20,
@@ -703,6 +1113,11 @@
    {
     "code": "2900855",
     "title": "Дехконобод",
+    "names": {
+     "ru": "Дехконобод",
+     "uz": "Dehqonobod",
+     "en": "Dehkanabad"
+    },
     "arrival": "05:30",
     "departure": "05:34",
     "stop": 4,
@@ -711,6 +1126,11 @@
    {
     "code": "2900871",
     "title": "Дарбанд",
+    "names": {
+     "ru": "Дарбанд",
+     "uz": "Darband",
+     "en": "Darband"
+    },
     "arrival": "07:58",
     "departure": "08:03",
     "stop": 5,
@@ -719,6 +1139,11 @@
    {
     "code": "2900872",
     "title": "Бойсун",
+    "names": {
+     "ru": "Бойсун",
+     "uz": "Boysun",
+     "en": "Boysun"
+    },
     "arrival": "08:29",
     "departure": "08:39",
     "stop": 10,
@@ -727,6 +1152,11 @@
    {
     "code": "2900874",
     "title": "Тангимуш",
+    "names": {
+     "ru": "Тангимуш",
+     "uz": "Tangimush",
+     "en": "Tangimush"
+    },
     "arrival": "09:20",
     "departure": "09:23",
     "stop": 3,
@@ -735,6 +1165,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "09:53",
     "departure": "10:13",
     "stop": 20,
@@ -743,6 +1178,11 @@
    {
     "code": "2900863",
     "title": "Сурханы",
+    "names": {
+     "ru": "Сурханы",
+     "uz": "Surxon",
+     "en": "Surkhon"
+    },
     "arrival": "10:25",
     "departure": "10:27",
     "stop": 2,
@@ -751,6 +1191,11 @@
    {
     "code": "2900862",
     "title": "Джаркурган",
+    "names": {
+     "ru": "Джаркурган",
+     "uz": "Jarqo'rg'on",
+     "en": "Jarkurgan"
+    },
     "arrival": "10:49",
     "departure": "10:52",
     "stop": 3,
@@ -759,6 +1204,11 @@
    {
     "code": "2900255",
     "title": "Термез",
+    "names": {
+     "ru": "Термез",
+     "uz": "Termiz",
+     "en": "Termez"
+    },
     "arrival": "11:17",
     "departure": null,
     "stop": null,
@@ -774,6 +1224,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "21:12",
     "stop": null,
@@ -782,6 +1237,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "22:29",
     "departure": "22:31",
     "stop": 2,
@@ -790,6 +1250,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "23:48",
     "departure": "23:50",
     "stop": 2,
@@ -798,6 +1263,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "01:09",
     "departure": "01:22",
     "stop": 13,
@@ -806,6 +1276,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "03:34",
     "departure": "03:54",
     "stop": 20,
@@ -814,6 +1289,11 @@
    {
     "code": "2900855",
     "title": "Дехконобод",
+    "names": {
+     "ru": "Дехконобод",
+     "uz": "Dehqonobod",
+     "en": "Dehkanabad"
+    },
     "arrival": "05:30",
     "departure": "05:34",
     "stop": 4,
@@ -822,6 +1302,11 @@
    {
     "code": "2900871",
     "title": "Дарбанд",
+    "names": {
+     "ru": "Дарбанд",
+     "uz": "Darband",
+     "en": "Darband"
+    },
     "arrival": "07:58",
     "departure": "08:03",
     "stop": 5,
@@ -830,6 +1315,11 @@
    {
     "code": "2900872",
     "title": "Бойсун",
+    "names": {
+     "ru": "Бойсун",
+     "uz": "Boysun",
+     "en": "Boysun"
+    },
     "arrival": "08:29",
     "departure": "08:39",
     "stop": 10,
@@ -838,6 +1328,11 @@
    {
     "code": "2900874",
     "title": "Тангимуш",
+    "names": {
+     "ru": "Тангимуш",
+     "uz": "Tangimush",
+     "en": "Tangimush"
+    },
     "arrival": "09:20",
     "departure": "09:23",
     "stop": 3,
@@ -846,6 +1341,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "09:53",
     "departure": "10:24",
     "stop": 31,
@@ -854,6 +1354,11 @@
    {
     "code": "2900866",
     "title": "Шурчи",
+    "names": {
+     "ru": "Шурчи",
+     "uz": "Sho'rchi",
+     "en": "Shurchi"
+    },
     "arrival": "10:48",
     "departure": "10:51",
     "stop": 3,
@@ -862,6 +1367,11 @@
    {
     "code": "2900780",
     "title": "Денау",
+    "names": {
+     "ru": "Денау",
+     "uz": "Denov",
+     "en": "Denau"
+    },
     "arrival": "11:08",
     "departure": "11:22",
     "stop": 14,
@@ -870,6 +1380,11 @@
    {
     "code": "2900868",
     "title": "Сарыасия",
+    "names": {
+     "ru": "Сарыасия",
+     "uz": "Sariosiyo",
+     "en": "Sariosiyo"
+    },
     "arrival": "11:40",
     "departure": null,
     "stop": null,
@@ -885,6 +1400,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "18:16",
     "stop": null,
@@ -893,6 +1413,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "19:51",
     "departure": "19:54",
     "stop": 3,
@@ -901,6 +1426,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "20:21",
     "departure": "20:26",
     "stop": 5,
@@ -909,6 +1439,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "20:59",
     "departure": "21:02",
     "stop": 3,
@@ -917,6 +1452,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "21:17",
     "departure": "21:22",
     "stop": 5,
@@ -925,6 +1465,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "23:54",
     "departure": "23:56",
     "stop": 2,
@@ -933,6 +1478,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "01:23",
     "departure": null,
     "stop": null,
@@ -948,6 +1498,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "17:55",
     "stop": null,
@@ -956,6 +1511,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "19:21",
     "departure": "19:23",
     "stop": 2,
@@ -964,6 +1524,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "21:58",
     "departure": "22:01",
     "stop": 3,
@@ -972,6 +1537,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "22:45",
     "departure": "22:50",
     "stop": 5,
@@ -980,6 +1550,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "23:17",
     "departure": "23:25",
     "stop": 8,
@@ -988,6 +1563,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "01:00",
     "departure": null,
     "stop": null,
@@ -1003,6 +1583,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "16:30",
     "stop": null,
@@ -1011,6 +1596,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "17:21",
     "departure": "17:26",
     "stop": 5,
@@ -1019,6 +1609,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "18:15",
     "departure": "18:17",
     "stop": 2,
@@ -1027,6 +1622,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "18:51",
     "departure": "18:56",
     "stop": 5,
@@ -1035,6 +1635,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "21:18",
     "departure": "21:20",
     "stop": 2,
@@ -1043,6 +1648,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "22:47",
     "departure": null,
     "stop": null,
@@ -1058,6 +1668,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "07:14",
     "stop": null,
@@ -1066,6 +1681,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "08:41",
     "departure": "08:43",
     "stop": 2,
@@ -1074,6 +1694,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "11:05",
     "departure": "11:08",
     "stop": 3,
@@ -1082,6 +1707,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "11:23",
     "departure": "11:25",
     "stop": 2,
@@ -1090,6 +1720,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "11:58",
     "departure": "12:12",
     "stop": 14,
@@ -1098,6 +1733,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "12:39",
     "departure": "12:41",
     "stop": 2,
@@ -1106,6 +1746,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "14:16",
     "departure": null,
     "stop": null,
@@ -1121,6 +1766,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "17:20",
     "stop": null,
@@ -1129,6 +1779,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "18:55",
     "departure": "18:58",
     "stop": 3,
@@ -1137,6 +1792,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "19:25",
     "departure": "19:30",
     "stop": 5,
@@ -1145,6 +1805,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "20:03",
     "departure": "20:06",
     "stop": 3,
@@ -1153,6 +1818,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "20:21",
     "departure": "20:26",
     "stop": 5,
@@ -1161,6 +1831,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "22:58",
     "departure": "23:00",
     "stop": 2,
@@ -1169,6 +1844,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "00:27",
     "departure": null,
     "stop": null,
@@ -1184,6 +1864,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "04:30",
     "stop": null,
@@ -1192,6 +1877,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "05:57",
     "departure": "06:00",
     "stop": 3,
@@ -1200,6 +1890,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "08:17",
     "departure": "08:21",
     "stop": 4,
@@ -1208,6 +1903,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "08:36",
     "departure": "08:40",
     "stop": 4,
@@ -1216,6 +1916,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "09:13",
     "departure": "09:23",
     "stop": 10,
@@ -1224,6 +1929,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "09:50",
     "departure": "09:52",
     "stop": 2,
@@ -1232,6 +1942,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "11:27",
     "departure": null,
     "stop": null,
@@ -1247,6 +1962,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "17:20",
     "stop": null,
@@ -1255,6 +1975,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "18:55",
     "departure": "18:58",
     "stop": 3,
@@ -1263,6 +1988,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "19:25",
     "departure": "19:30",
     "stop": 5,
@@ -1271,6 +2001,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "20:03",
     "departure": "20:06",
     "stop": 3,
@@ -1279,6 +2014,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "20:21",
     "departure": "20:26",
     "stop": 5,
@@ -1287,6 +2027,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "22:58",
     "departure": "23:00",
     "stop": 2,
@@ -1295,6 +2040,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "00:27",
     "departure": null,
     "stop": null,
@@ -1310,6 +2060,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "07:14",
     "stop": null,
@@ -1318,6 +2073,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "08:41",
     "departure": "08:43",
     "stop": 2,
@@ -1326,6 +2086,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "11:05",
     "departure": "11:08",
     "stop": 3,
@@ -1334,6 +2099,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "11:23",
     "departure": "11:25",
     "stop": 2,
@@ -1342,6 +2112,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "11:58",
     "departure": "12:12",
     "stop": 14,
@@ -1350,6 +2125,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "12:39",
     "departure": "12:41",
     "stop": 2,
@@ -1358,6 +2138,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "14:16",
     "departure": null,
     "stop": null,
@@ -1373,6 +2158,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": null,
     "departure": "03:00",
     "stop": null,
@@ -1381,6 +2171,11 @@
    {
     "code": "2900739",
     "title": "Тукимачи",
+    "names": {
+     "ru": "Тукимачи",
+     "uz": "To'qimachi",
+     "en": "Tukimachi"
+    },
     "arrival": "03:10",
     "departure": "03:12",
     "stop": 2,
@@ -1389,6 +2184,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "03:30",
     "departure": null,
     "stop": null,
@@ -1404,6 +2204,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "02:00",
     "stop": null,
@@ -1412,6 +2217,11 @@
    {
     "code": "2900739",
     "title": "Тукимачи",
+    "names": {
+     "ru": "Тукимачи",
+     "uz": "To'qimachi",
+     "en": "Tukimachi"
+    },
     "arrival": "02:10",
     "departure": "02:12",
     "stop": 2,
@@ -1420,6 +2230,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "02:30",
     "departure": null,
     "stop": null,
@@ -1435,6 +2250,11 @@
    {
     "code": "2900879",
     "title": "Каракалпакстан",
+    "names": {
+     "ru": "Каракалпакстан",
+     "uz": "Qoraqalpog'iston",
+     "en": "Karakalpakstan"
+    },
     "arrival": "01:34",
     "departure": "03:58",
     "stop": 144,
@@ -1443,6 +2263,11 @@
    {
     "code": "2900885",
     "title": "Кунград",
+    "names": {
+     "ru": "Кунград",
+     "uz": "Qo'ng'irot",
+     "en": "Kungrad"
+    },
     "arrival": "08:46",
     "departure": "09:13",
     "stop": 27,
@@ -1451,6 +2276,11 @@
    {
     "code": "2900970",
     "title": "Нукус",
+    "names": {
+     "ru": "Нукус",
+     "uz": "Nukus",
+     "en": "Nukus"
+    },
     "arrival": "11:09",
     "departure": "11:34",
     "stop": 25,
@@ -1459,6 +2289,11 @@
    {
     "code": "2900844",
     "title": "Шават",
+    "names": {
+     "ru": "Шават",
+     "uz": "Shovot",
+     "en": "Shovot"
+    },
     "arrival": "14:30",
     "departure": "14:33",
     "stop": 3,
@@ -1467,6 +2302,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "15:02",
     "departure": "15:33",
     "stop": 31,
@@ -1475,6 +2315,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "16:15",
     "departure": "16:19",
     "stop": 4,
@@ -1483,6 +2328,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "20:51",
     "departure": "21:11",
     "stop": 20,
@@ -1491,6 +2341,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "22:13",
     "departure": "22:17",
     "stop": 4,
@@ -1499,6 +2354,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "23:22",
     "departure": "23:24",
     "stop": 2,
@@ -1507,6 +2367,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "00:13",
     "departure": "00:33",
     "stop": 20,
@@ -1515,6 +2380,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "02:12",
     "departure": "02:16",
     "stop": 4,
@@ -1523,6 +2393,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "04:48",
     "departure": null,
     "stop": null,
@@ -1538,6 +2413,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "00:10",
     "stop": null,
@@ -1546,6 +2426,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "02:37",
     "departure": "02:40",
     "stop": 3,
@@ -1554,6 +2439,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "04:30",
     "departure": "04:58",
     "stop": 28,
@@ -1562,6 +2452,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "05:47",
     "departure": "05:52",
     "stop": 5,
@@ -1570,6 +2465,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "06:41",
     "departure": "06:46",
     "stop": 5,
@@ -1578,6 +2478,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "07:15",
     "departure": "07:20",
     "stop": 5,
@@ -1586,6 +2491,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "07:47",
     "departure": "08:17",
     "stop": 30,
@@ -1594,6 +2504,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "13:26",
     "departure": "13:52",
     "stop": 26,
@@ -1602,6 +2517,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "14:32",
     "departure": "15:42",
     "stop": 70,
@@ -1610,6 +2530,11 @@
    {
     "code": "2900844",
     "title": "Шават",
+    "names": {
+     "ru": "Шават",
+     "uz": "Shovot",
+     "en": "Shovot"
+    },
     "arrival": "16:11",
     "departure": "16:14",
     "stop": 3,
@@ -1618,6 +2543,11 @@
    {
     "code": "2901215",
     "title": "Назархан",
+    "names": {
+     "ru": "Назархан",
+     "uz": "Nazarxon",
+     "en": "Nazarkhan"
+    },
     "arrival": "16:30",
     "departure": "16:32",
     "stop": 2,
@@ -1626,6 +2556,11 @@
    {
     "code": "2900970",
     "title": "Нукус",
+    "names": {
+     "ru": "Нукус",
+     "uz": "Nukus",
+     "en": "Nukus"
+    },
     "arrival": "19:10",
     "departure": "19:43",
     "stop": 33,
@@ -1634,6 +2569,11 @@
    {
     "code": "2900885",
     "title": "Кунград",
+    "names": {
+     "ru": "Кунград",
+     "uz": "Qo'ng'irot",
+     "en": "Kungrad"
+    },
     "arrival": "21:35",
     "departure": "22:00",
     "stop": 25,
@@ -1642,6 +2582,11 @@
    {
     "code": "2900879",
     "title": "Каракалпакстан",
+    "names": {
+     "ru": "Каракалпакстан",
+     "uz": "Qoraqalpog'iston",
+     "en": "Karakalpakstan"
+    },
     "arrival": "03:12",
     "departure": "06:10",
     "stop": 178,
@@ -1657,6 +2602,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "15:36",
     "stop": null,
@@ -1665,6 +2615,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "16:27",
     "departure": "16:32",
     "stop": 5,
@@ -1673,6 +2628,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "17:21",
     "departure": "17:24",
     "stop": 3,
@@ -1681,6 +2641,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "17:58",
     "departure": "18:03",
     "stop": 5,
@@ -1689,6 +2654,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "20:25",
     "departure": "20:27",
     "stop": 2,
@@ -1697,6 +2667,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "21:54",
     "departure": "22:35",
     "stop": 41,
@@ -1705,6 +2680,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "23:47",
     "departure": "23:50",
     "stop": 3,
@@ -1713,6 +2693,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "01:01",
     "departure": "01:04",
     "stop": 3,
@@ -1721,6 +2706,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "02:21",
     "departure": "03:00",
     "stop": 39,
@@ -1729,6 +2719,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "04:00",
     "departure": "04:02",
     "stop": 2,
@@ -1737,6 +2732,11 @@
    {
     "code": "2900812",
     "title": "Зирабулак",
+    "names": {
+     "ru": "Зирабулак",
+     "uz": "Zirabuloq",
+     "en": "Zirabulak"
+    },
     "arrival": "04:20",
     "departure": "04:34",
     "stop": 14,
@@ -1745,6 +2745,11 @@
    {
     "code": "2900814",
     "title": "Зиевуддин",
+    "names": {
+     "ru": "Зиевуддин",
+     "uz": "Ziyovuddin",
+     "en": "Ziyovuddin"
+    },
     "arrival": "04:53",
     "departure": "04:55",
     "stop": 2,
@@ -1753,6 +2758,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "05:12",
     "departure": "05:17",
     "stop": 5,
@@ -1761,6 +2771,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "05:49",
     "departure": "05:54",
     "stop": 5,
@@ -1769,6 +2784,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "06:28",
     "departure": "06:48",
     "stop": 20,
@@ -1777,6 +2797,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "12:01",
     "departure": "12:06",
     "stop": 5,
@@ -1785,6 +2810,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "12:46",
     "departure": "12:56",
     "stop": 10,
@@ -1793,6 +2823,11 @@
    {
     "code": "2900172",
     "title": "Хива",
+    "names": {
+     "ru": "Хива",
+     "uz": "Xiva",
+     "en": "Khiva"
+    },
     "arrival": "13:26",
     "departure": null,
     "stop": null,
@@ -1808,6 +2843,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": null,
     "departure": "14:50",
     "stop": null,
@@ -1816,6 +2856,11 @@
    {
     "code": "2900845",
     "title": "Хазарасп",
+    "names": {
+     "ru": "Хазарасп",
+     "uz": "Hazorasp",
+     "en": "Khazarasp"
+    },
     "arrival": "15:32",
     "departure": "15:37",
     "stop": 5,
@@ -1824,6 +2869,11 @@
    {
     "code": "2900104",
     "title": "Мискин",
+    "names": {
+     "ru": "Мискин",
+     "uz": "Miskin",
+     "en": "Miskin"
+    },
     "arrival": "16:23",
     "departure": "17:10",
     "stop": 47,
@@ -1832,6 +2882,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "21:32",
     "departure": "21:55",
     "stop": 23,
@@ -1840,6 +2895,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "22:22",
     "departure": "22:26",
     "stop": 4,
@@ -1848,6 +2908,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "22:55",
     "departure": "23:01",
     "stop": 6,
@@ -1856,6 +2921,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "23:47",
     "departure": "23:49",
     "stop": 2,
@@ -1864,6 +2934,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "00:45",
     "departure": "01:30",
     "stop": 45,
@@ -1872,6 +2947,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "02:49",
     "departure": "02:52",
     "stop": 3,
@@ -1880,6 +2960,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "04:05",
     "departure": "04:07",
     "stop": 2,
@@ -1888,6 +2973,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "05:23",
     "departure": "05:58",
     "stop": 35,
@@ -1896,6 +2986,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "07:25",
     "departure": "07:28",
     "stop": 3,
@@ -1904,6 +2999,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "10:00",
     "departure": "10:20",
     "stop": 20,
@@ -1912,6 +3012,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "10:54",
     "departure": "10:57",
     "stop": 3,
@@ -1920,6 +3025,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "11:46",
     "departure": "11:51",
     "stop": 5,
@@ -1928,6 +3038,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "12:42",
     "departure": null,
     "stop": null,
@@ -1943,6 +3058,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "17:20",
     "stop": null,
@@ -1951,6 +3071,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "18:55",
     "departure": "18:58",
     "stop": 3,
@@ -1959,6 +3084,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "19:25",
     "departure": "19:30",
     "stop": 5,
@@ -1967,6 +3097,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "20:03",
     "departure": "20:06",
     "stop": 3,
@@ -1975,6 +3110,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "20:21",
     "departure": "20:26",
     "stop": 5,
@@ -1983,6 +3123,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "22:58",
     "departure": "23:00",
     "stop": 2,
@@ -1991,6 +3136,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "00:27",
     "departure": "01:10",
     "stop": 43,
@@ -1999,6 +3149,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "03:34",
     "departure": "03:36",
     "stop": 2,
@@ -2007,6 +3162,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "05:25",
     "departure": "05:37",
     "stop": 12,
@@ -2015,6 +3175,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "06:26",
     "departure": "06:28",
     "stop": 2,
@@ -2023,6 +3188,11 @@
    {
     "code": "2900812",
     "title": "Зирабулак",
+    "names": {
+     "ru": "Зирабулак",
+     "uz": "Zirabuloq",
+     "en": "Zirabulak"
+    },
     "arrival": "06:46",
     "departure": "06:50",
     "stop": 4,
@@ -2031,6 +3201,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "07:22",
     "departure": "07:25",
     "stop": 3,
@@ -2039,6 +3214,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "07:57",
     "departure": "07:59",
     "stop": 2,
@@ -2047,6 +3227,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "08:33",
     "departure": "08:58",
     "stop": 25,
@@ -2055,6 +3240,11 @@
    {
     "code": "2900104",
     "title": "Мискин",
+    "names": {
+     "ru": "Мискин",
+     "uz": "Miskin",
+     "en": "Miskin"
+    },
     "arrival": "14:26",
     "departure": "14:46",
     "stop": 20,
@@ -2063,6 +3253,11 @@
    {
     "code": "2900103",
     "title": "Туртгул",
+    "names": {
+     "ru": "Туртгул",
+     "uz": "To'rtko'l",
+     "en": "Turtkul"
+    },
     "arrival": "15:14",
     "departure": "15:18",
     "stop": 4,
@@ -2071,6 +3266,11 @@
    {
     "code": "2900102",
     "title": "Элликала",
+    "names": {
+     "ru": "Элликала",
+     "uz": "Ellikqal'a",
+     "en": "Ellikkala"
+    },
     "arrival": "15:45",
     "departure": "15:48",
     "stop": 3,
@@ -2079,6 +3279,11 @@
    {
     "code": "2900970",
     "title": "Нукус",
+    "names": {
+     "ru": "Нукус",
+     "uz": "Nukus",
+     "en": "Nukus"
+    },
     "arrival": "18:05",
     "departure": "18:26",
     "stop": 21,
@@ -2087,6 +3292,11 @@
    {
     "code": "2900958",
     "title": "Тахиаташ-Пристань",
+    "names": {
+     "ru": "Тахиаташ-Пристань",
+     "uz": "Taxiatosh",
+     "en": "Takhiatash"
+    },
     "arrival": "18:42",
     "departure": "18:44",
     "stop": 2,
@@ -2095,6 +3305,11 @@
    {
     "code": "2900830",
     "title": "Ходжейли",
+    "names": {
+     "ru": "Ходжейли",
+     "uz": "Xo'jayli",
+     "en": "Khojeyli"
+    },
     "arrival": "19:08",
     "departure": "19:10",
     "stop": 2,
@@ -2103,6 +3318,11 @@
    {
     "code": "2900725",
     "title": "Алтынкуль",
+    "names": {
+     "ru": "Алтынкуль",
+     "uz": "Oltinko'l",
+     "en": "Oltinkul"
+    },
     "arrival": "20:04",
     "departure": "20:06",
     "stop": 2,
@@ -2111,6 +3331,11 @@
    {
     "code": "2900885",
     "title": "Кунград",
+    "names": {
+     "ru": "Кунград",
+     "uz": "Qo'ng'irot",
+     "en": "Kungrad"
+    },
     "arrival": "20:33",
     "departure": null,
     "stop": null,
@@ -2126,6 +3351,11 @@
    {
     "code": "2900885",
     "title": "Кунград",
+    "names": {
+     "ru": "Кунград",
+     "uz": "Qo'ng'irot",
+     "en": "Kungrad"
+    },
     "arrival": null,
     "departure": "11:00",
     "stop": null,
@@ -2134,6 +3364,11 @@
    {
     "code": "2900830",
     "title": "Ходжейли",
+    "names": {
+     "ru": "Ходжейли",
+     "uz": "Xo'jayli",
+     "en": "Khojeyli"
+    },
     "arrival": "12:16",
     "departure": "12:19",
     "stop": 3,
@@ -2142,6 +3377,11 @@
    {
     "code": "2900958",
     "title": "Тахиаташ-Пристань",
+    "names": {
+     "ru": "Тахиаташ-Пристань",
+     "uz": "Taxiatosh",
+     "en": "Takhiatash"
+    },
     "arrival": "12:44",
     "departure": "12:46",
     "stop": 2,
@@ -2150,6 +3390,11 @@
    {
     "code": "2900970",
     "title": "Нукус",
+    "names": {
+     "ru": "Нукус",
+     "uz": "Nukus",
+     "en": "Nukus"
+    },
     "arrival": "13:05",
     "departure": "13:20",
     "stop": 15,
@@ -2158,6 +3403,11 @@
    {
     "code": "2900102",
     "title": "Элликала",
+    "names": {
+     "ru": "Элликала",
+     "uz": "Ellikqal'a",
+     "en": "Ellikkala"
+    },
     "arrival": "15:42",
     "departure": "15:47",
     "stop": 5,
@@ -2166,6 +3416,11 @@
    {
     "code": "2900103",
     "title": "Туртгул",
+    "names": {
+     "ru": "Туртгул",
+     "uz": "To'rtko'l",
+     "en": "Turtkul"
+    },
     "arrival": "16:14",
     "departure": "16:17",
     "stop": 3,
@@ -2174,6 +3429,11 @@
    {
     "code": "2900104",
     "title": "Мискин",
+    "names": {
+     "ru": "Мискин",
+     "uz": "Miskin",
+     "en": "Miskin"
+    },
     "arrival": "16:44",
     "departure": "17:10",
     "stop": 26,
@@ -2182,6 +3442,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "21:32",
     "departure": "21:55",
     "stop": 23,
@@ -2190,6 +3455,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "22:22",
     "departure": "22:26",
     "stop": 4,
@@ -2198,6 +3468,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "22:55",
     "departure": "23:01",
     "stop": 6,
@@ -2206,6 +3481,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "23:47",
     "departure": "23:49",
     "stop": 2,
@@ -2214,6 +3494,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "00:45",
     "departure": "01:30",
     "stop": 45,
@@ -2222,6 +3507,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "02:49",
     "departure": "02:52",
     "stop": 3,
@@ -2230,6 +3520,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "04:05",
     "departure": "04:07",
     "stop": 2,
@@ -2238,6 +3533,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "05:23",
     "departure": "05:58",
     "stop": 35,
@@ -2246,6 +3546,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "07:25",
     "departure": "07:28",
     "stop": 3,
@@ -2254,6 +3559,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "10:00",
     "departure": "10:40",
     "stop": 40,
@@ -2262,6 +3572,11 @@
    {
     "code": "2900692",
     "title": "Чуст",
+    "names": {
+     "ru": "Чуст",
+     "uz": "Chust",
+     "en": "Chust"
+    },
     "arrival": "10:55",
     "departure": "11:00",
     "stop": 5,
@@ -2270,6 +3585,11 @@
    {
     "code": "2900940",
     "title": "Наманган",
+    "names": {
+     "ru": "Наманган",
+     "uz": "Namangan",
+     "en": "Namangan"
+    },
     "arrival": "11:33",
     "departure": "11:43",
     "stop": 10,
@@ -2278,6 +3598,11 @@
    {
     "code": "2900688",
     "title": "Чартак",
+    "names": {
+     "ru": "Чартак",
+     "uz": "Chortoq",
+     "en": "Chartak"
+    },
     "arrival": "12:10",
     "departure": "12:12",
     "stop": 2,
@@ -2286,6 +3611,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "13:47",
     "departure": null,
     "stop": null,
@@ -2301,6 +3631,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "16:30",
     "stop": null,
@@ -2309,6 +3644,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "17:21",
     "departure": "17:26",
     "stop": 5,
@@ -2317,6 +3657,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "18:15",
     "departure": "18:17",
     "stop": 2,
@@ -2325,6 +3670,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "18:51",
     "departure": "18:56",
     "stop": 5,
@@ -2333,6 +3683,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "21:18",
     "departure": "21:20",
     "stop": 2,
@@ -2341,6 +3696,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "22:47",
     "departure": "23:43",
     "stop": 56,
@@ -2349,6 +3709,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "00:55",
     "departure": "00:58",
     "stop": 3,
@@ -2357,6 +3722,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "02:09",
     "departure": "02:13",
     "stop": 4,
@@ -2365,6 +3735,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "03:30",
     "departure": "03:48",
     "stop": 18,
@@ -2373,6 +3748,11 @@
    {
     "code": "2900205",
     "title": "Гумбаз",
+    "names": {
+     "ru": "Гумбаз",
+     "uz": "Gumbaz",
+     "en": "Gumbaz"
+    },
     "arrival": "02:20",
     "departure": "02:28",
     "stop": 8,
@@ -2381,6 +3761,11 @@
    {
     "code": "2900788",
     "title": "Айрытам",
+    "names": {
+     "ru": "Айрытам",
+     "uz": "Ayritom",
+     "en": "Ayritom"
+    },
     "arrival": "04:58",
     "departure": "05:00",
     "stop": 2,
@@ -2389,6 +3774,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "06:06",
     "departure": "06:36",
     "stop": 30,
@@ -2397,6 +3787,11 @@
    {
     "code": "2900855",
     "title": "Дехконобод",
+    "names": {
+     "ru": "Дехконобод",
+     "uz": "Dehqonobod",
+     "en": "Dehkanabad"
+    },
     "arrival": "08:12",
     "departure": "08:15",
     "stop": 3,
@@ -2405,6 +3800,11 @@
    {
     "code": "2900861",
     "title": "Окработ",
+    "names": {
+     "ru": "Окработ",
+     "uz": "Oqrabot",
+     "en": "Okrabot"
+    },
     "arrival": "09:32",
     "departure": "09:52",
     "stop": 20,
@@ -2413,6 +3813,11 @@
    {
     "code": "2900871",
     "title": "Дарбанд",
+    "names": {
+     "ru": "Дарбанд",
+     "uz": "Darband",
+     "en": "Darband"
+    },
     "arrival": "10:39",
     "departure": "10:44",
     "stop": 5,
@@ -2421,6 +3826,11 @@
    {
     "code": "2900872",
     "title": "Бойсун",
+    "names": {
+     "ru": "Бойсун",
+     "uz": "Boysun",
+     "en": "Boysun"
+    },
     "arrival": "11:10",
     "departure": "11:15",
     "stop": 5,
@@ -2429,6 +3839,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "12:22",
     "departure": "12:32",
     "stop": 10,
@@ -2437,6 +3852,11 @@
    {
     "code": "2900863",
     "title": "Сурханы",
+    "names": {
+     "ru": "Сурханы",
+     "uz": "Surxon",
+     "en": "Surkhon"
+    },
     "arrival": "12:44",
     "departure": "12:46",
     "stop": 2,
@@ -2445,6 +3865,11 @@
    {
     "code": "2900862",
     "title": "Джаркурган",
+    "names": {
+     "ru": "Джаркурган",
+     "uz": "Jarqo'rg'on",
+     "en": "Jarkurgan"
+    },
     "arrival": "13:08",
     "departure": "13:11",
     "stop": 3,
@@ -2453,6 +3878,11 @@
    {
     "code": "2900255",
     "title": "Термез",
+    "names": {
+     "ru": "Термез",
+     "uz": "Termiz",
+     "en": "Termez"
+    },
     "arrival": "13:36",
     "departure": null,
     "stop": null,
@@ -2468,6 +3898,11 @@
    {
     "code": "2900255",
     "title": "Термез",
+    "names": {
+     "ru": "Термез",
+     "uz": "Termiz",
+     "en": "Termez"
+    },
     "arrival": null,
     "departure": "17:10",
     "stop": null,
@@ -2476,6 +3911,11 @@
    {
     "code": "2900862",
     "title": "Джаркурган",
+    "names": {
+     "ru": "Джаркурган",
+     "uz": "Jarqo'rg'on",
+     "en": "Jarkurgan"
+    },
     "arrival": "17:35",
     "departure": "17:37",
     "stop": 2,
@@ -2484,6 +3924,11 @@
    {
     "code": "2900863",
     "title": "Сурханы",
+    "names": {
+     "ru": "Сурханы",
+     "uz": "Surxon",
+     "en": "Surkhon"
+    },
     "arrival": "18:00",
     "departure": "18:02",
     "stop": 2,
@@ -2492,6 +3937,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "18:14",
     "departure": "18:24",
     "stop": 10,
@@ -2500,6 +3950,11 @@
    {
     "code": "2900872",
     "title": "Бойсун",
+    "names": {
+     "ru": "Бойсун",
+     "uz": "Boysun",
+     "en": "Boysun"
+    },
     "arrival": "19:32",
     "departure": "19:38",
     "stop": 6,
@@ -2508,6 +3963,11 @@
    {
     "code": "2900871",
     "title": "Дарбанд",
+    "names": {
+     "ru": "Дарбанд",
+     "uz": "Darband",
+     "en": "Darband"
+    },
     "arrival": "20:04",
     "departure": "20:09",
     "stop": 5,
@@ -2516,6 +3976,11 @@
    {
     "code": "2900861",
     "title": "Окработ",
+    "names": {
+     "ru": "Окработ",
+     "uz": "Oqrabot",
+     "en": "Okrabot"
+    },
     "arrival": "21:01",
     "departure": "21:21",
     "stop": 20,
@@ -2524,6 +3989,11 @@
    {
     "code": "2900855",
     "title": "Дехконобод",
+    "names": {
+     "ru": "Дехконобод",
+     "uz": "Dehqonobod",
+     "en": "Dehkanabad"
+    },
     "arrival": "22:35",
     "departure": "22:38",
     "stop": 3,
@@ -2532,6 +4002,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "00:07",
     "departure": "00:27",
     "stop": 20,
@@ -2540,6 +4015,11 @@
    {
     "code": "2900788",
     "title": "Айрытам",
+    "names": {
+     "ru": "Айрытам",
+     "uz": "Ayritom",
+     "en": "Ayritom"
+    },
     "arrival": "01:21",
     "departure": "01:28",
     "stop": 7,
@@ -2548,6 +4028,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "02:26",
     "departure": "02:40",
     "stop": 14,
@@ -2556,6 +4041,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "03:59",
     "departure": "04:01",
     "stop": 2,
@@ -2564,6 +4054,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "05:14",
     "departure": "05:17",
     "stop": 3,
@@ -2572,6 +4067,11 @@
    {
     "code": "2900002",
     "title": "Ташкент-Южный",
+    "names": {
+     "ru": "Ташкент-Южный",
+     "uz": "Toshkent-Janubiy",
+     "en": "Tashkent-South"
+    },
     "arrival": "06:42",
     "departure": "07:14",
     "stop": 32,
@@ -2580,6 +4080,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "08:41",
     "departure": "08:43",
     "stop": 2,
@@ -2588,6 +4093,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "11:05",
     "departure": "11:08",
     "stop": 3,
@@ -2596,6 +4106,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "11:42",
     "departure": "11:45",
     "stop": 3,
@@ -2604,6 +4119,11 @@
    {
     "code": "2900709",
     "title": "Алтыарык",
+    "names": {
+     "ru": "Алтыарык",
+     "uz": "Oltiariq",
+     "en": "Oltiariq"
+    },
     "arrival": "12:21",
     "departure": "12:23",
     "stop": 2,
@@ -2612,6 +4132,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "12:40",
     "departure": "12:43",
     "stop": 3,
@@ -2620,6 +4145,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "13:34",
     "departure": null,
     "stop": null,
@@ -2635,6 +4165,11 @@
    {
     "code": "2900868",
     "title": "Сарыасия",
+    "names": {
+     "ru": "Сарыасия",
+     "uz": "Sariosiyo",
+     "en": "Sariosiyo"
+    },
     "arrival": "23:05",
     "departure": "23:09",
     "stop": 4,
@@ -2643,6 +4178,11 @@
    {
     "code": "2900780",
     "title": "Денау",
+    "names": {
+     "ru": "Денау",
+     "uz": "Denov",
+     "en": "Denau"
+    },
     "arrival": "23:27",
     "departure": "23:30",
     "stop": 3,
@@ -2651,6 +4191,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "00:16",
     "departure": "00:41",
     "stop": 25,
@@ -2659,6 +4204,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "06:34",
     "departure": "06:54",
     "stop": 20,
@@ -2667,6 +4217,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "08:42",
     "departure": "09:22",
     "stop": 40,
@@ -2675,6 +4230,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "11:01",
     "departure": "11:03",
     "stop": 2,
@@ -2683,6 +4243,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "12:26",
     "departure": "12:28",
     "stop": 2,
@@ -2691,6 +4256,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "13:51",
     "departure": null,
     "stop": null,
@@ -2706,6 +4276,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "14:48",
     "stop": null,
@@ -2714,6 +4289,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "16:11",
     "departure": "16:13",
     "stop": 2,
@@ -2722,6 +4302,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "17:30",
     "departure": "17:41",
     "stop": 11,
@@ -2730,6 +4315,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "19:18",
     "departure": "19:48",
     "stop": 30,
@@ -2738,6 +4328,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "21:36",
     "departure": "21:56",
     "stop": 20,
@@ -2746,6 +4341,11 @@
    {
     "code": "2900864",
     "title": "Кумкурган",
+    "names": {
+     "ru": "Кумкурган",
+     "uz": "Qumqo'rg'on",
+     "en": "Kumkurgan"
+    },
     "arrival": "04:08",
     "departure": "04:38",
     "stop": 30,
@@ -2754,6 +4354,11 @@
    {
     "code": "2900780",
     "title": "Денау",
+    "names": {
+     "ru": "Денау",
+     "uz": "Denov",
+     "en": "Denau"
+    },
     "arrival": "05:25",
     "departure": "05:27",
     "stop": 2,
@@ -2762,6 +4367,11 @@
    {
     "code": "2900868",
     "title": "Сарыасия",
+    "names": {
+     "ru": "Сарыасия",
+     "uz": "Sariosiyo",
+     "en": "Sariosiyo"
+    },
     "arrival": "05:45",
     "departure": "05:47",
     "stop": 2,
@@ -2777,6 +4387,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": null,
     "departure": "05:40",
     "stop": null,
@@ -2785,6 +4400,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "07:38",
     "departure": "08:10",
     "stop": 32,
@@ -2793,6 +4413,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "09:46",
     "departure": "09:49",
     "stop": 3,
@@ -2801,6 +4426,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "11:07",
     "departure": "11:10",
     "stop": 3,
@@ -2809,6 +4439,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "12:19",
     "departure": null,
     "stop": null,
@@ -2824,6 +4459,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "16:55",
     "stop": null,
@@ -2832,6 +4472,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "17:22",
     "departure": "17:25",
     "stop": 3,
@@ -2840,6 +4485,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "17:52",
     "departure": "17:56",
     "stop": 4,
@@ -2848,6 +4498,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "19:13",
     "departure": "19:23",
     "stop": 10,
@@ -2856,6 +4511,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "20:25",
     "departure": "20:28",
     "stop": 3,
@@ -2864,6 +4524,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "21:54",
     "departure": "21:57",
     "stop": 3,
@@ -2872,6 +4537,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "23:06",
     "departure": null,
     "stop": null,
@@ -2887,6 +4557,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "08:37",
     "stop": null,
@@ -2895,6 +4570,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "09:41",
     "departure": "09:44",
     "stop": 3,
@@ -2903,6 +4583,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "10:41",
     "departure": "10:44",
     "stop": 3,
@@ -2911,6 +4596,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "11:46",
     "departure": "12:00",
     "stop": 14,
@@ -2919,6 +4609,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "13:34",
     "departure": "13:38",
     "stop": 4,
@@ -2927,6 +4622,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "14:05",
     "departure": "14:08",
     "stop": 3,
@@ -2935,6 +4635,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "14:35",
     "departure": null,
     "stop": null,
@@ -2950,6 +4655,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "05:21",
     "stop": null,
@@ -2958,6 +4668,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "05:48",
     "departure": "05:51",
     "stop": 3,
@@ -2966,6 +4681,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "06:18",
     "departure": "06:21",
     "stop": 3,
@@ -2974,6 +4694,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "07:38",
     "departure": "08:10",
     "stop": 32,
@@ -2982,6 +4707,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "09:46",
     "departure": "09:49",
     "stop": 3,
@@ -2990,6 +4720,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "11:07",
     "departure": "11:10",
     "stop": 3,
@@ -2998,6 +4733,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "12:19",
     "departure": null,
     "stop": null,
@@ -3013,6 +4753,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "20:32",
     "stop": null,
@@ -3021,6 +4766,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "21:36",
     "departure": "21:39",
     "stop": 3,
@@ -3029,6 +4779,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "22:36",
     "departure": "22:39",
     "stop": 3,
@@ -3037,6 +4792,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "23:41",
     "departure": "00:02",
     "stop": 21,
@@ -3045,6 +4805,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "00:43",
     "departure": "00:45",
     "stop": 2,
@@ -3053,6 +4818,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "01:26",
     "departure": "01:30",
     "stop": 4,
@@ -3061,6 +4831,11 @@
    {
     "code": "2900824",
     "title": "Кызылтепа",
+    "names": {
+     "ru": "Кызылтепа",
+     "uz": "Qiziltepa",
+     "en": "Kyzyltepa"
+    },
     "arrival": "01:57",
     "departure": "02:00",
     "stop": 3,
@@ -3069,6 +4844,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "02:27",
     "departure": null,
     "stop": null,
@@ -3084,6 +4864,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": null,
     "departure": "18:40",
     "stop": null,
@@ -3092,6 +4877,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "20:08",
     "departure": "20:24",
     "stop": 16,
@@ -3100,6 +4890,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "21:26",
     "departure": "21:30",
     "stop": 4,
@@ -3108,6 +4903,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "22:43",
     "departure": "22:45",
     "stop": 2,
@@ -3116,6 +4916,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "23:54",
     "departure": null,
     "stop": null,
@@ -3131,6 +4936,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "08:58",
     "stop": null,
@@ -3139,6 +4949,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "10:02",
     "departure": "10:05",
     "stop": 3,
@@ -3147,6 +4962,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "11:02",
     "departure": "11:09",
     "stop": 7,
@@ -3155,6 +4975,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "12:11",
     "departure": "12:30",
     "stop": 19,
@@ -3163,6 +4988,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "13:59",
     "departure": null,
     "stop": null,
@@ -3178,6 +5008,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "15:09",
     "stop": null,
@@ -3186,6 +5021,11 @@
    {
     "code": "2900701",
     "title": "Кува",
+    "names": {
+     "ru": "Кува",
+     "uz": "Quva",
+     "en": "Kuva"
+    },
     "arrival": "15:35",
     "departure": "15:37",
     "stop": 2,
@@ -3194,6 +5034,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "16:00",
     "departure": "16:03",
     "stop": 3,
@@ -3202,6 +5047,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "16:50",
     "departure": "16:53",
     "stop": 3,
@@ -3210,6 +5060,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "17:25",
     "departure": "17:28",
     "stop": 3,
@@ -3218,6 +5073,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "19:42",
     "departure": "19:44",
     "stop": 2,
@@ -3226,6 +5086,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "21:10",
     "departure": null,
     "stop": null,
@@ -3241,6 +5106,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "08:10",
     "stop": null,
@@ -3249,6 +5119,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "09:36",
     "departure": "09:38",
     "stop": 2,
@@ -3257,6 +5132,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "11:53",
     "departure": "11:57",
     "stop": 4,
@@ -3265,6 +5145,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "12:29",
     "departure": "12:33",
     "stop": 4,
@@ -3273,6 +5158,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "13:20",
     "departure": "13:23",
     "stop": 3,
@@ -3281,6 +5171,11 @@
    {
     "code": "2900701",
     "title": "Кува",
+    "names": {
+     "ru": "Кува",
+     "uz": "Quva",
+     "en": "Kuva"
+    },
     "arrival": "13:46",
     "departure": "13:48",
     "stop": 2,
@@ -3289,6 +5184,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "14:14",
     "departure": null,
     "stop": null,
@@ -3304,6 +5204,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": null,
     "departure": "06:37",
     "stop": null,
@@ -3312,6 +5217,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "07:22",
     "departure": "07:27",
     "stop": 5,
@@ -3320,6 +5230,11 @@
    {
     "code": "2900709",
     "title": "Алтыарык",
+    "names": {
+     "ru": "Алтыарык",
+     "uz": "Oltiariq",
+     "en": "Oltiariq"
+    },
     "arrival": "07:44",
     "departure": "07:46",
     "stop": 2,
@@ -3328,6 +5243,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "08:20",
     "departure": "08:25",
     "stop": 5,
@@ -3336,6 +5256,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "08:57",
     "departure": "09:00",
     "stop": 3,
@@ -3344,6 +5269,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "11:14",
     "departure": "11:16",
     "stop": 2,
@@ -3352,6 +5282,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "12:42",
     "departure": null,
     "stop": null,
@@ -3367,6 +5302,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "17:55",
     "stop": null,
@@ -3375,6 +5315,11 @@
    {
     "code": "2900679",
     "title": "Ангрен",
+    "names": {
+     "ru": "Ангрен",
+     "uz": "Angren",
+     "en": "Angren"
+    },
     "arrival": "19:21",
     "departure": "19:23",
     "stop": 2,
@@ -3383,6 +5328,11 @@
    {
     "code": "2900693",
     "title": "Пап",
+    "names": {
+     "ru": "Пап",
+     "uz": "Pop",
+     "en": "Pop"
+    },
     "arrival": "21:58",
     "departure": "22:01",
     "stop": 3,
@@ -3391,6 +5341,11 @@
    {
     "code": "2900880",
     "title": "Коканд 1",
+    "names": {
+     "ru": "Коканд 1",
+     "uz": "Qo'qon 1",
+     "en": "Kokand 1"
+    },
     "arrival": "22:33",
     "departure": "22:36",
     "stop": 3,
@@ -3399,6 +5354,11 @@
    {
     "code": "2900709",
     "title": "Алтыарык",
+    "names": {
+     "ru": "Алтыарык",
+     "uz": "Oltiariq",
+     "en": "Oltiariq"
+    },
     "arrival": "23:10",
     "departure": "23:12",
     "stop": 2,
@@ -3407,6 +5367,11 @@
    {
     "code": "2900920",
     "title": "Маргилан",
+    "names": {
+     "ru": "Маргилан",
+     "uz": "Marg'ilon",
+     "en": "Margilan"
+    },
     "arrival": "23:29",
     "departure": "23:32",
     "stop": 3,
@@ -3415,6 +5380,11 @@
    {
     "code": "2900680",
     "title": "Андижан 1",
+    "names": {
+     "ru": "Андижан 1",
+     "uz": "Andijon 1",
+     "en": "Andijan 1"
+    },
     "arrival": "00:17",
     "departure": null,
     "stop": null,
@@ -3430,6 +5400,11 @@
    {
     "code": "2900172",
     "title": "Хива",
+    "names": {
+     "ru": "Хива",
+     "uz": "Xiva",
+     "en": "Khiva"
+    },
     "arrival": null,
     "departure": "07:15",
     "stop": null,
@@ -3438,6 +5413,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "07:35",
     "departure": "07:45",
     "stop": 10,
@@ -3446,6 +5426,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "10:37",
     "departure": "10:57",
     "stop": 20,
@@ -3454,6 +5439,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "12:41",
     "departure": "12:51",
     "stop": 10,
@@ -3462,6 +5452,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "15:06",
     "departure": null,
     "stop": null,
@@ -3477,6 +5472,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "07:00",
     "stop": null,
@@ -3485,6 +5485,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "09:13",
     "departure": "09:23",
     "stop": 10,
@@ -3493,6 +5498,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "10:54",
     "departure": "11:14",
     "stop": 20,
@@ -3501,6 +5511,11 @@
    {
     "code": "2900790",
     "title": "Ургенч",
+    "names": {
+     "ru": "Ургенч",
+     "uz": "Urganch",
+     "en": "Urgench"
+    },
     "arrival": "14:06",
     "departure": "14:16",
     "stop": 10,
@@ -3509,6 +5524,11 @@
    {
     "code": "2900172",
     "title": "Хива",
+    "names": {
+     "ru": "Хива",
+     "uz": "Xiva",
+     "en": "Khiva"
+    },
     "arrival": "14:36",
     "departure": null,
     "stop": null,
@@ -3524,6 +5544,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": null,
     "departure": "17:29",
     "stop": null,
@@ -3532,6 +5557,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "18:39",
     "departure": "18:49",
     "stop": 10,
@@ -3540,6 +5570,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "21:04",
     "departure": null,
     "stop": null,
@@ -3555,6 +5590,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "06:33",
     "stop": null,
@@ -3563,6 +5603,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "08:46",
     "departure": "08:56",
     "stop": 10,
@@ -3571,6 +5616,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "10:07",
     "departure": null,
     "stop": null,
@@ -3586,6 +5636,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "16:22",
     "stop": null,
@@ -3594,6 +5649,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "16:57",
     "departure": "17:00",
     "stop": 3,
@@ -3602,6 +5662,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "17:31",
     "departure": "17:33",
     "stop": 2,
@@ -3610,6 +5675,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "18:05",
     "departure": "18:15",
     "stop": 10,
@@ -3618,6 +5688,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "20:30",
     "departure": null,
     "stop": null,
@@ -3633,6 +5708,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "07:30",
     "stop": null,
@@ -3641,6 +5721,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "09:43",
     "departure": "09:53",
     "stop": 10,
@@ -3649,6 +5734,11 @@
    {
     "code": "2900260",
     "title": "Каттакурган-Пасс.",
+    "names": {
+     "ru": "Каттакурган-Пасс.",
+     "uz": "Kattaqo'rg'on",
+     "en": "Kattakurgan"
+    },
     "arrival": "10:25",
     "departure": "10:27",
     "stop": 2,
@@ -3657,6 +5747,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "10:58",
     "departure": "11:01",
     "stop": 3,
@@ -3665,6 +5760,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "11:39",
     "departure": null,
     "stop": null,
@@ -3680,6 +5780,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": null,
     "departure": "17:40",
     "stop": null,
@@ -3688,6 +5793,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "18:26",
     "departure": "18:28",
     "stop": 2,
@@ -3696,6 +5806,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "18:52",
     "departure": "18:54",
     "stop": 2,
@@ -3704,6 +5819,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "19:18",
     "departure": "19:19",
     "stop": 1,
@@ -3712,6 +5832,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "20:12",
     "departure": null,
     "stop": null,
@@ -3727,6 +5852,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "07:55",
     "stop": null,
@@ -3735,6 +5865,11 @@
    {
     "code": "2900850",
     "title": "Гулистан",
+    "names": {
+     "ru": "Гулистан",
+     "uz": "Guliston",
+     "en": "Gulistan"
+    },
     "arrival": "08:47",
     "departure": "08:48",
     "stop": 1,
@@ -3743,6 +5878,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "09:11",
     "departure": "09:13",
     "stop": 2,
@@ -3751,6 +5891,11 @@
    {
     "code": "2900720",
     "title": "Джизак",
+    "names": {
+     "ru": "Джизак",
+     "uz": "Jizzax",
+     "en": "Jizzakh"
+    },
     "arrival": "09:37",
     "departure": "09:39",
     "stop": 2,
@@ -3759,6 +5904,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "10:25",
     "departure": null,
     "stop": null,
@@ -3774,6 +5924,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "15:09",
     "stop": null,
@@ -3782,6 +5937,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "15:44",
     "departure": "15:47",
     "stop": 3,
@@ -3790,6 +5950,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "16:46",
     "departure": "16:56",
     "stop": 10,
@@ -3798,6 +5963,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "18:02",
     "departure": "18:04",
     "stop": 2,
@@ -3806,6 +5976,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "19:17",
     "departure": null,
     "stop": null,
@@ -3821,6 +5996,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "08:30",
     "stop": null,
@@ -3829,6 +6009,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "09:41",
     "departure": "09:43",
     "stop": 2,
@@ -3837,6 +6022,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "10:49",
     "departure": "10:59",
     "stop": 10,
@@ -3845,6 +6035,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "11:58",
     "departure": "12:01",
     "stop": 3,
@@ -3853,6 +6048,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "12:36",
     "departure": null,
     "stop": null,
@@ -3868,6 +6068,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "03:34",
     "stop": null,
@@ -3876,6 +6081,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "04:09",
     "departure": "04:12",
     "stop": 3,
@@ -3884,6 +6094,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "05:11",
     "departure": "05:21",
     "stop": 10,
@@ -3892,6 +6107,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "06:27",
     "departure": "06:29",
     "stop": 2,
@@ -3900,6 +6120,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "07:42",
     "departure": null,
     "stop": null,
@@ -3915,6 +6140,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "19:48",
     "stop": null,
@@ -3923,6 +6153,11 @@
    {
     "code": "2900775",
     "title": "Даштобод",
+    "names": {
+     "ru": "Даштобод",
+     "uz": "Dashtobod",
+     "en": "Dashtobod"
+    },
     "arrival": "21:00",
     "departure": "21:07",
     "stop": 7,
@@ -3931,6 +6166,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "22:13",
     "departure": "22:23",
     "stop": 10,
@@ -3939,6 +6179,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "23:22",
     "departure": "23:25",
     "stop": 3,
@@ -3947,6 +6192,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "00:01",
     "departure": null,
     "stop": null,
@@ -3962,6 +6212,11 @@
    {
     "code": "2900796",
     "title": "Китаб",
+    "names": {
+     "ru": "Китаб",
+     "uz": "Kitob",
+     "en": "Kitab"
+    },
     "arrival": null,
     "departure": "16:24",
     "stop": null,
@@ -3970,6 +6225,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "17:19",
     "departure": "17:29",
     "stop": 10,
@@ -3978,6 +6238,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "18:39",
     "departure": "18:49",
     "stop": 10,
@@ -3986,6 +6251,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "21:04",
     "departure": null,
     "stop": null,
@@ -4001,6 +6271,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "06:33",
     "stop": null,
@@ -4009,6 +6284,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "08:46",
     "departure": "08:56",
     "stop": 10,
@@ -4017,6 +6297,11 @@
    {
     "code": "2900750",
     "title": "Карши",
+    "names": {
+     "ru": "Карши",
+     "uz": "Qarshi",
+     "en": "Karshi"
+    },
     "arrival": "10:07",
     "departure": "10:17",
     "stop": 10,
@@ -4025,6 +6310,11 @@
    {
     "code": "2900796",
     "title": "Китаб",
+    "names": {
+     "ru": "Китаб",
+     "uz": "Kitob",
+     "en": "Kitab"
+    },
     "arrival": "11:12",
     "departure": null,
     "stop": null,
@@ -4040,6 +6330,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": null,
     "departure": "18:14",
     "stop": null,
@@ -4048,6 +6343,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "18:49",
     "departure": "18:52",
     "stop": 3,
@@ -4056,6 +6356,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "19:51",
     "departure": "20:01",
     "stop": 10,
@@ -4064,6 +6369,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": "22:16",
     "departure": null,
     "stop": null,
@@ -4079,6 +6389,11 @@
    {
     "code": "2900001",
     "title": "Ташкент-Центральный",
+    "names": {
+     "ru": "Ташкент-Центральный",
+     "uz": "Toshkent-Markaziy",
+     "en": "Tashkent-Central"
+    },
     "arrival": null,
     "departure": "06:10",
     "stop": null,
@@ -4087,6 +6402,11 @@
    {
     "code": "2900700",
     "title": "Самарканд",
+    "names": {
+     "ru": "Самарканд",
+     "uz": "Samarqand",
+     "en": "Samarkand"
+    },
     "arrival": "08:23",
     "departure": "08:33",
     "stop": 10,
@@ -4095,6 +6415,11 @@
    {
     "code": "2900930",
     "title": "Навои",
+    "names": {
+     "ru": "Навои",
+     "uz": "Navoiy",
+     "en": "Navoi"
+    },
     "arrival": "09:32",
     "departure": "09:35",
     "stop": 3,
@@ -4103,6 +6428,11 @@
    {
     "code": "2900800",
     "title": "Бухара 1",
+    "names": {
+     "ru": "Бухара 1",
+     "uz": "Buxoro 1",
+     "en": "Bukhara 1"
+    },
     "arrival": "10:10",
     "departure": null,
     "stop": null,
