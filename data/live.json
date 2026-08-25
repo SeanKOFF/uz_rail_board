@@ -1,26 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "124Ф",
-   "route": "ТАШКЕНТ -ВОЛГАГРАД",
-   "date": "26.08.2026",
-   "time_local": "00:10",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "00:10",
-   "deviation": null
-  },
-  {
-   "number": "305Ф",
-   "route": "ТАШКЕНТ - МАСКВА",
-   "date": "26.08.2026",
-   "time_local": "00:32",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "00:32",
-   "deviation": null
-  },
-  {
    "number": "774Ф",
    "route": "ТАШКЕНТ -КАРШИ-ШАХРИСАБЗ",
    "date": "26.08.2026",
@@ -141,6 +121,16 @@
    "deviation": null
   },
   {
+   "number": "305Ф",
+   "route": "ТАШКЕНТ - МАСКВА",
+   "date": "28.08.2026",
+   "time_local": "00:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:32",
+   "deviation": null
+  },
+  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "28.08.2026",
@@ -148,6 +138,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "06:10",
+   "deviation": null
+  },
+  {
+   "number": "124Ф",
+   "route": "ТАШКЕНТ -ВОЛГАГРАД",
+   "date": "30.08.2026",
+   "time_local": "00:10",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:10",
    "deviation": null
   }
  ],
