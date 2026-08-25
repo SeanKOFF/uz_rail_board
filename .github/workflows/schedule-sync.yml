@@ -55,6 +55,12 @@ jobs:
           rm -f schedule.db
           python sync.py --seed | tee -a build.log
 
+      - name: Пересобрать маршруты
+        # Читает .cache/threads, который только что наполнил build_yandex.py.
+        # Без этого шага маршруты остаются от прошлого графика и разъезжаются
+        # с расписанием.
+        run: python routes.py | tee -a build.log
+
       - name: Зафиксировать
         run: |
           if [[ -n "$(git status --porcelain data/ seed.json)" ]]; then
