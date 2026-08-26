@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "26.08.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "26.08.2026",
@@ -118,6 +108,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "17:55",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "27.08.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
    "deviation": null
   },
   {
@@ -265,16 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "26.08.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
    "number": "126Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "27.08.2026",
@@ -305,8 +295,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -315,8 +305,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "27.08.2026",
    "time_local": "03:00",
    "platform": null,
@@ -392,6 +382,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "12:51",
+   "deviation": null
+  },
+  {
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "27.08.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
    "deviation": null
   },
   {
@@ -577,16 +577,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ж",
-   "route": "ХИВА - ТОШКЕНТ ЖА",
-   "date": "26.08.2026",
-   "time_local": "19:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": null
-  },
-  {
    "number": "751М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
    "date": "27.08.2026",
@@ -644,6 +634,16 @@
    "platform": null,
    "sold_out": false,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "056Ж",
+   "route": "ХИВА - ТОШКЕНТ ЖА",
+   "date": "27.08.2026",
+   "time_local": "19:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:20",
    "deviation": null
   },
   {
