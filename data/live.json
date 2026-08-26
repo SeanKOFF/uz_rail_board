@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ.",
-   "date": "26.08.2026",
-   "time_local": "14:41",
-   "platform": "2",
-   "sold_out": false,
-   "planned": "14:41",
-   "deviation": null
-  },
-  {
    "number": "732Ф",
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "26.08.2026",
@@ -118,6 +108,16 @@
    "platform": "6",
    "sold_out": false,
    "planned": "08:58",
+   "deviation": null
+  },
+  {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ.",
+   "date": "27.08.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
    "deviation": null
   },
   {
@@ -577,16 +577,6 @@
  ],
  "urgench": [
   {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "26.08.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:16",
-   "deviation": 6
-  },
-  {
    "number": "124Ф",
    "route": "ТОШКЕНТ-ЙУ - ВОЛЖСКИЙ",
    "date": "26.08.2026",
@@ -635,6 +625,16 @@
    "sold_out": false,
    "planned": "11:34",
    "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "ТОШКЕНТ-ЙУ - ХИВА",
+   "date": "27.08.2026",
+   "time_local": "14:22",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:16",
+   "deviation": 6
   },
   {
    "number": "126Ч",
