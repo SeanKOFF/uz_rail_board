@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-08-25T18:05:53+05:00",
+ "generated_at": "2026-08-26T20:20:08+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -524,6 +524,24 @@
    ],
    "quals": [
     "central"
+   ]
+  },
+  {
+   "number": "734F",
+   "direction": "arrival",
+   "title": "из Ташкента",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "01:00",
+   "days": "13",
+   "via": null,
+   "station": "andijan",
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3080,6 +3098,26 @@
    ],
    "quals": [
     "south"
+   ]
+  },
+  {
+   "number": "733F",
+   "direction": "departure",
+   "title": "Наманган — Ташкент",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "05:55",
+   "days": "13",
+   "via": null,
+   "station": "andijan",
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Ташкент"
+   ],
+   "quals": [
+    "",
+    ""
    ]
   },
   {
@@ -6107,6 +6145,24 @@
    ]
   },
   {
+   "number": "733F",
+   "direction": "arrival",
+   "title": "из Андижана",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "12:42",
+   "days": "13",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "130Ф",
    "direction": "departure",
    "title": "Андижан 1",
@@ -7716,6 +7772,26 @@
    ],
    "quals": [
     "1"
+   ]
+  },
+  {
+   "number": "734F",
+   "direction": "departure",
+   "title": "Наманган — Андижан",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "17:55",
+   "days": "27",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [
+    "Наманган",
+    "Андижан"
+   ],
+   "quals": [
+    "",
+    ""
    ]
   },
   {
