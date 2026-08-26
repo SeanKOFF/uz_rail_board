@@ -93,6 +93,35 @@ def build_names():
     return names
 
 
+def merge_extra(seed):
+    """Добавляет рейсы из extra.json, которых нет в выдаче Яндекса.
+
+    build_yandex.py --apply перезаписывает seed.json целиком, поэтому
+    ручные записи должны жить отдельным файлом и подмешиваться заново
+    после каждой сборки.
+
+    Если рейс появился у Яндекса — запись из extra.json пропускается,
+    иначе он задвоится на табло.
+    """
+    f = ROOT / "extra.json"
+    if not f.exists():
+        return 0, []
+
+    data = json.loads(f.read_text(encoding="utf-8"))
+    have = {(re.match(r"^\d+", r["number"]).group(0), r["direction"], r["station"])
+            for r in seed}
+
+    added, skipped = 0, []
+    for r in data.get("trains", []):
+        key = (re.match(r"^\d+", r["number"]).group(0), r["direction"], r["station"])
+        if key in have:
+            skipped.append(r["number"])
+            continue
+        seed.append(dict(r))
+        added += 1
+    return added, skipped
+
+
 def apply_brands(seed):
     """Проставляет бренды из brands.json — Яндекс их не отдаёт.
 
@@ -128,6 +157,7 @@ def main():
             lookup[normalize(form).lower()] = ru
 
     seed = json.loads((ROOT / "seed.json").read_text(encoding="utf-8"))
+    extra, dupes = merge_extra(seed)
     branded = apply_brands(seed)
     unknown = set()
 
@@ -159,6 +189,11 @@ def main():
     print(f"Записей: {len(seed)}, с распознанными городами: {filled}")
     with_brand = sum(1 for r in seed if r.get("brand"))
     print(f"Брендов проставлено: {branded} (всего с брендом: {with_brand})")
+    if extra:
+        print(f"Добавлено из extra.json: {extra}")
+    if dupes:
+        print(f"Пропущено — уже есть у Яндекса: {', '.join(sorted(set(dupes)))}")
+        print("Такие записи можно убрать из extra.json.")
     print(f"Справочник названий: {len(names)} городов → {out}")
     if unknown:
         print(f"Не распознано: {', '.join(sorted(unknown))}")

@@ -1,0 +1,64 @@
+{
+ "_note": "Рейсы, которых нет в выдаче Яндекса, но которые есть у УТЙ. Подмешиваются в seed.json скриптом i18n.py после каждой сборки — иначе build_yandex.py --apply затирает их целиком. Проверять раз в полгода: если рейс появится у Яндекса, запись отсюда надо убрать, иначе он задвоится.",
+
+ "_проверено": "25.08.2026 по выдаче eticket.railway.uz",
+
+ "trains": [
+  {
+   "number": "734F",
+   "direction": "departure",
+   "title": "Наманган — Андижан",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "17:55",
+   "days": "27",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [],
+   "quals": []
+  },
+  {
+   "number": "733F",
+   "direction": "arrival",
+   "title": "из Андижана",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "12:42",
+   "days": "13",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [],
+   "quals": []
+  },
+  {
+   "number": "733F",
+   "direction": "departure",
+   "title": "Наманган — Ташкент",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "05:55",
+   "days": "13",
+   "via": null,
+   "station": "andijan",
+   "through": false,
+   "cities": [],
+   "quals": []
+  },
+  {
+   "number": "734F",
+   "direction": "arrival",
+   "title": "из Ташкента",
+   "brand": "O'zbekiston",
+   "fast": false,
+   "time_local": "01:00",
+   "days": "13",
+   "via": null,
+   "station": "andijan",
+   "through": false,
+   "cities": [],
+   "quals": []
+  }
+ ]
+}
