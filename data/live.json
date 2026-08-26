@@ -577,16 +577,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ч",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "26.08.2026",
-   "time_local": "11:34",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:34",
-   "deviation": null
-  },
-  {
    "number": "125Ф",
    "route": "АНДИЖОН 1 - ХИВА",
    "date": "26.08.2026",
@@ -645,6 +635,16 @@
    "sold_out": false,
    "planned": "07:45",
    "deviation": -5
+  },
+  {
+   "number": "056Ч",
+   "route": "ТОШКЕНТ ЖА - ХИВА",
+   "date": "27.08.2026",
+   "time_local": "11:34",
+   "platform": null,
+   "sold_out": false,
+   "planned": "11:34",
+   "deviation": null
   },
   {
    "number": "126Ч",
@@ -739,26 +739,6 @@
  ],
  "bukhara": [
   {
-   "number": "751М",
-   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
-   "date": "26.08.2026",
-   "time_local": "10:57",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:57",
-   "deviation": null
-  },
-  {
-   "number": "752Ж",
-   "route": "БУХАРА -ХИВА",
-   "date": "26.08.2026",
-   "time_local": "11:14",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:14",
-   "deviation": null
-  },
-  {
    "number": "359Ж",
    "route": "БУХАРА -ХУДЖАНД",
    "date": "26.08.2026",
@@ -826,6 +806,26 @@
    "platform": null,
    "sold_out": false,
    "planned": "08:58",
+   "deviation": null
+  },
+  {
+   "number": "751М",
+   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
+   "date": "27.08.2026",
+   "time_local": "10:57",
+   "platform": null,
+   "sold_out": false,
+   "planned": "10:57",
+   "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "БУХАРА -ХИВА",
+   "date": "27.08.2026",
+   "time_local": "11:14",
+   "platform": null,
+   "sold_out": false,
+   "planned": "11:14",
    "deviation": null
   },
   {
