@@ -3,7 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Poyezdlar jadvali — O'zbekiston</title>
+<title>tabloda.uz — Poyezdlar jadvali</title>
+<meta name="description" content="O'zbekiston bo'ylab eng yaqin poyezdlar: jo'nash va kelish vaqtlari, yo'nalishlar, platformalar.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#16323B">
+
+<meta property="og:title" content="tabloda.uz — Poyezdlar jadvali">
+<meta property="og:description" content="Eng yaqin poyezdlar: 14 shahar, jo'nash va kelish.">
+<meta property="og:image" content="https://tabloda.uz/assets/og-image.png">
+<meta property="og:url" content="https://tabloda.uz/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
@@ -48,6 +61,16 @@
     display:flex;align-items:flex-end;justify-content:space-between;
     gap:16px;flex-wrap:wrap;padding-bottom:16px;
   }
+  .brandline{display:flex;flex-direction:column;gap:8px}
+  .mark{
+    display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+    font-family:'Unbounded',sans-serif;font-size:13px;font-weight:600;
+    color:var(--muted);letter-spacing:-.01em;width:fit-content;
+  }
+  .mark b{color:var(--tile);font-weight:600}
+  .mark:hover{color:var(--ink)}
+  .mark img{display:block;border-radius:6px}
+
   .place{
     font-family:'Unbounded',sans-serif;
     font-weight:600;
@@ -267,7 +290,13 @@
 <div class="wrap">
 
   <header>
-    <div class="place" id="place"></div>
+    <div class="brandline">
+      <a class="mark" href="./" aria-label="tabloda.uz">
+        <img src="assets/favicon.svg" alt="" width="26" height="26">
+        <span>tabloda<b>.uz</b></span>
+      </a>
+      <div class="place" id="place"></div>
+    </div>
     <div class="head-right">
       <div class="controls">
         <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
@@ -332,7 +361,23 @@ let LIVE = {};                        // станция -> живые отпра
 let ROUTES = {};                      // цифры номера -> маршрут
 let openRow = null;                   // какой рейс раскрыт
 
-const routeOf = t => ROUTES[(t.number.match(/^\d+/) || [''])[0]] || null;
+/* Маршрут для рейса. У встречных рейсов одинаковые цифры номера
+   (056Ч туда, 056Ж обратно), поэтому вариант выбирается по совпадению
+   времени на нашей станции — оно у них разное. */
+function routeOf(t){
+  const variants = ROUTES[(t.number.match(/^\d+/) || [''])[0]];
+  if (!variants || !variants.length) return null;
+
+  const here = STATION_CODE[t.station];
+  const field = t.direction === 'arrival' ? 'arrival' : 'departure';
+
+  const exact = variants.find(v =>
+    v.stops.some(st => st.code === here && st[field] === t.time_local));
+  if (exact) return exact;
+
+  // Времени не нашлось — берём хотя бы тот, где эта станция есть.
+  return variants.find(v => v.stops.some(st => st.code === here)) || null;
+}
 
 /* Строка живого табло для рейса: платформа и отклонение по времени. */
 function liveOf(t){
