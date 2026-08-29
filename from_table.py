@@ -54,19 +54,30 @@ def parse_days(raw):
 
 
 def classify(number, route):
-    """Скоростные — по номеру. 7xxF идут как Афросиёб, остальное без бренда."""
-    n = number.strip()
-    if re.match(r"^7\d\dF$", n):
-        return "Афросиёб", True
+    """Бренд по номеру не определяется — 710Ф это Sharq, 716Ф Nasaf,
+    730Ф O'zbekiston. Берётся только из выдачи поиска (build_station.py)."""
     return None, False
 
 
 # Родительный падеж для прибытий: «из Бухары», «из Андижана».
 INDECLINABLE = {"карши", "душанбе", "алматы", "сарыассия"}
 
+# Вторая часть дефисных названий — прилагательное, склоняется отдельно.
+ADJ = {"Южный": "Южного", "Северный": "Северного", "Центральный": "Центрального",
+       "Пасс.": "Пасс.", "Пассажирский": "Пассажирского"}
+
 def genitive(name):
     n = name.strip()
     low = n.lower()
+    # Составные и дефисные оставляем как есть: «из Ташкент-Южный»
+    # звучит хуже, чем «из Ташкента-Южного», но лучше, чем «Ташкент-Южныйа».
+    if "-" in n or " " in n:
+        # 'Ташкент-Южный' -> 'Ташкента-Южного', 'Бухара 1' -> 'Бухары 1'
+        head, sep, tail = n.partition("-")
+        if sep:
+            return genitive(head) + sep + ADJ.get(tail, tail)
+        head, _, tail = n.partition(" ")
+        return genitive(head) + " " + tail
     if low in INDECLINABLE:
         return "Сарыассии" if low == "сарыассия" else n
     if n.endswith("ия"):
