@@ -34,7 +34,7 @@ jobs:
             git config user.name  "schedule-bot"
             git config user.email "bot@users.noreply.github.com"
             git add data/live.json data/history.json
-            git commit -m "Табло: $(date -u +%d.%m %H:%M) UTC"
+            git commit -m "Табло: $(date -u '+%d.%m %H:%M') UTC"
             # Ежечасные коммиты часто конфликтуют — подтягиваем и повторяем.
             git pull --rebase --autostash || true
             git push

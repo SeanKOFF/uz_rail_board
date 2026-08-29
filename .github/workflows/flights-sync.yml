@@ -1,0 +1,51 @@
+name: Табло аэропортов — ежечасно
+
+on:
+  schedule:
+    # Смещено относительно железнодорожного, чтобы не толкаться
+    # в очереди за одну и ту же группу data-write.
+    - cron: '27 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Та же группа, что у ЖД: оба шага пишут в репозиторий.
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  flights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Зависимостей нет: live_flights.py на стандартной библиотеке.
+
+      - name: Снять табло аэропортов
+        run: python live_flights.py | tee flights.log
+
+      - name: Зафиксировать
+        run: |
+          if [[ -n "$(git status --porcelain data/flights_live.json)" ]]; then
+            git config user.name  "schedule-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add data/flights_live.json
+            git commit -m "Аэропорты: $(date -u '+%d.%m %H:%M') UTC"
+            git pull --rebase --autostash || true
+            git push
+          else
+            echo "Изменений нет."
+          fi
+
+      - name: Отчёт
+        if: always()
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat flights.log >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "нет вывода" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
