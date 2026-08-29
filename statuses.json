@@ -1,0 +1,16 @@
+{
+  "_": "Статусы по коду из live_flights.py. {time} подставляется из status_time; когда источник пишет xx:xx, времени нет — используется вариант _notime.",
+
+  "on_time":        {"uz": "Jadval bo'yicha",       "ru": "По расписанию",    "en": "On time"},
+  "arrived":        {"uz": "Parvoz yetib keldi",    "ru": "Прибыл",           "en": "Arrived"},
+  "departed":       {"uz": "Parvoz uchib ketdi",    "ru": "Вылетел",          "en": "Departed"},
+  "cancelled":      {"uz": "Parvoz bekor qilindi",  "ru": "Отменён",          "en": "Cancelled"},
+  "delayed":        {"uz": "Kechiktirildi",         "ru": "Задержан",         "en": "Delayed"},
+
+  "expected":       {"uz": "{time} da kutilmoqda",  "ru": "Ожидается в {time}", "en": "Expected at {time}"},
+  "delayed_until":  {"uz": "{time} gacha kechiktirildi", "ru": "Задержан до {time}", "en": "Delayed until {time}"},
+  "delayed_until_notime": {"uz": "Kechiktirildi",   "ru": "Задержан",         "en": "Delayed"},
+  "expected_notime":      {"uz": "Kutilmoqda",      "ru": "Ожидается",        "en": "Expected"},
+
+  "unknown":        {"uz": "—",                     "ru": "—",                "en": "—"}
+}

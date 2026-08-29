@@ -56,7 +56,7 @@ FIELDS = {
     "carrier": r'<span\s+class="desc[^"]*">\s*(.*?)\s*</span>',
     "terminal": r'<div class="terminal[^"]*">.*?<span>\s*(.*?)\s*</span>',
     "airline_iata": r'/airlines/([A-Z0-9]{2})\.png',
-    "baggage": r'<p class="check-in[^"]*">\s*(.*?)\s*</p>',
+    "baggage": r'<p class="check-in[^"]*">.*?<span[^>]*>\s*(.*?)\s*</span>',
     "codeshare": r'<div\s+class="flight-code-share[^"]*">\s*(.*?)\s*</div>',
 }
 
