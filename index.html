@@ -132,6 +132,22 @@
   .cities button:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
 
   /* ---- направление ---- */
+  /* переключатель разделов — компактно, чтобы не спорить
+     с вкладками .modes ниже */
+  .sections{display:flex;gap:6px;margin-top:4px}
+  .sections a{
+    display:inline-flex;align-items:center;gap:6px;
+    text-decoration:none;color:var(--muted);
+    font:500 14px/1 'IBM Plex Sans',sans-serif;
+    padding:7px 12px;border-radius:7px;
+    border:1px solid transparent;transition:.16s;
+  }
+  .sections a:hover{color:var(--ink);border-color:var(--rule)}
+  .sections a[aria-current="page"]{
+    color:var(--tile);border-color:var(--tile);font-weight:600;
+  }
+  .sections svg{width:15px;height:15px;flex:none}
+
   .modes{display:flex;gap:0;margin-bottom:6px;border-bottom:2px solid var(--rule)}
   .modes button{
     background:none;border:0;color:var(--muted);cursor:pointer;
@@ -295,6 +311,7 @@
         <img src="assets/favicon.svg" alt="" width="26" height="26">
         <span>tabloda<b>.uz</b></span>
       </a>
+      <nav class="sections" id="sections"></nav>
       <div class="place" id="place"></div>
     </div>
     <div class="head-right">
@@ -334,19 +351,19 @@ let DATA = null;
 let mode = 'departure';
 
 const T = {
-  uz: {abroad:'Keyin yo\'nalish O\'zbekistondan tashqarida davom etadi', track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
+  uz: {trains:'Poyezdlar', flights:'Samolyotlar', abroad:'Keyin yo\'nalish O\'zbekistondan tashqarida davom etadi', track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
        tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
        from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
        error:'Jadval yuklanmadi. Sahifani yangilang.',
        note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
        updated:d => 'Yangilangan ' + d},
-  ru: {abroad:'Дальше маршрут идёт за пределами Узбекистана', track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+  ru: {trains:'Поезда', flights:'Самолёты', abroad:'Дальше маршрут идёт за пределами Узбекистана', track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
        tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
        from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
        error:'Расписание не загрузилось. Обновите страницу.',
        note:'Время по расписанию. Задержки не учитываются.',
        updated:d => 'Обновлено ' + d},
-  en: {abroad:'The route continues outside Uzbekistan', track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
+  en: {trains:'Trains', flights:'Flights', abroad:'The route continues outside Uzbekistan', track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
        tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
        from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
        error:'Schedule failed to load. Please refresh.',
@@ -354,7 +371,17 @@ const T = {
        updated:d => 'Updated ' + d},
 };
 
-let lang = 'uz';                      // по умолчанию узбекский
+let lang = readLang();               // по умолчанию узбекский
+
+/* Язык запоминается тем же способом, что и тема. Ключ общий
+   с flights.html, чтобы разделы не сбрасывали выбор. */
+function readLang(){
+  try {
+    const saved = localStorage.getItem('board-lang');
+    if (saved === 'uz' || saved === 'ru' || saved === 'en') return saved;
+  } catch (e) { /* хранилище недоступно */ }
+  return 'uz';
+}
 
 let NAMES = {};                       // ru -> {ru, uz, en}
 let LIVE = {};                        // станция -> живые отправления
@@ -651,6 +678,10 @@ function applyLang(){
   document.getElementById('tz-label').textContent = t.tz;
   // До загрузки данных города ещё нет — заголовок остаётся пустым,
   // это лучше, чем мигнуть чужим языком.
+  document.getElementById('sections').innerHTML =
+    `<a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${T[lang].trains}</a>` +
+    `<a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${T[lang].flights}</a>`;
+
   document.getElementById('place').innerHTML = city ? cityName(city.ru) : '';
   setCityToggle();
   document.querySelectorAll('#langs button').forEach(b =>
@@ -690,7 +721,11 @@ function buildLangs(){
     b.textContent = label;
     b.dataset.lang = code;
     b.setAttribute('aria-pressed', code === lang);
-    b.onclick = () => { lang = code; applyLang(); };
+    b.onclick = () => {
+      lang = code;
+      try { localStorage.setItem('board-lang', code); } catch (e) { /* не страшно */ }
+      applyLang();
+    };
     box.appendChild(b);
   });
 }
