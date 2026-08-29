@@ -274,6 +274,19 @@
   }
 
   @media (max-width:640px){
+    /* Шапка в две колонки: слева логотип, разделы и город,
+       справа языки, тема и часы. Иначе на узком экране правая
+       часть переносится под заголовок. */
+    header{
+      display:grid;grid-template-columns:1fr auto;
+      align-items:start;gap:10px;
+    }
+    .brandline{grid-column:1;min-width:0}
+    .head-right{grid-column:2;align-items:flex-end}
+    .clock{font-size:clamp(17px,4.5vw,22px)}
+    .clock small{font-size:9px;letter-spacing:.1em}
+    .place{font-size:clamp(24px,7vw,34px)}
+
     .city-toggle{
       display:flex;align-items:center;gap:7px;width:100%;
       background:var(--card);border:1px solid var(--rule);color:var(--ink);
@@ -716,7 +729,7 @@ function applyTheme(){
 function buildLangs(){
   const box = document.getElementById('langs');
   box.innerHTML = '';
-  [['uz','UZ'],['ru','RU'],['en','EN']].forEach(([code, label]) => {
+  [['uz',"O'zb"],['ru','РУ'],['en','EN']].forEach(([code, label]) => {
     const b = document.createElement('button');
     b.textContent = label;
     b.dataset.lang = code;

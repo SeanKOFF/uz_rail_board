@@ -95,7 +95,7 @@
     background:none;border:0;color:var(--muted);cursor:pointer;
     font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
     padding:4px 7px;border-radius:3px;letter-spacing:.1em;
-    text-transform:uppercase;transition:.16s;
+    transition:.16s;
   }
   .langs button[aria-pressed="true"]{color:var(--tile);font-weight:600}
   .langs button:hover{color:var(--ink)}
@@ -235,6 +235,19 @@
   }
 
   @media (max-width:600px){
+    /* Шапка в две колонки: слева логотип, разделы и город,
+       справа языки, тема и часы. Иначе на узком экране правая
+       часть переносится под заголовок. */
+    header{
+      display:grid;grid-template-columns:1fr auto;
+      align-items:start;gap:10px;
+    }
+    .brandline{grid-column:1;min-width:0}
+    .head-right{grid-column:2;align-items:flex-end}
+    .clock{font-size:clamp(17px,4.5vw,22px)}
+    .clock small{font-size:9px;letter-spacing:.1em}
+    .place{font-size:clamp(24px,7vw,34px)}
+
     .city-toggle{
       display:flex;align-items:center;gap:7px;width:100%;
       background:var(--card);border:1px solid var(--rule);color:var(--ink);
@@ -300,7 +313,11 @@
 <script>
 const TZ_OFFSET = 5;          // Ташкент, UTC+5, перевода часов нет
 const SHOW = 12;              // сколько рейсов показываем
-const HORIZON_H = 24;         // горизонт планирования — сутки
+// На вылет приезжают заранее, встречающему хватает пары часов.
+const HORIZON_H = {departure: 5, arrival: 3};
+// Улетевший рейс из списка убираем сразу, прилетевший ещё полчаса
+// висит: встречающему полезно видеть, что борт уже сел.
+const GRACE_MIN = {departure: 0, arrival: 30};
 
 let DATA = null;              // {updated, flights:[...]}
 let CITIES = {};              // IATA -> {uz, ru, en}
@@ -401,14 +418,14 @@ const hhmm = iso => iso ? iso.slice(11, 16) : '';
 function upcoming(){
   if (!DATA) return [];
   const now = new Date();
-  const till = new Date(now.getTime() + HORIZON_H * 3600000);
+  const till = new Date(now.getTime() + HORIZON_H[mode] * 3600000);
+  const from = new Date(now.getTime() - GRACE_MIN[mode] * 60000);
 
   return DATA.flights
     .filter(f => f.airport === airport && f.event === mode)
     .filter(f => {
       const t = parseISO(f.estimated_at || f.scheduled_at);
-      // Небольшой запас назад: только что улетевшие ещё интересны.
-      return t && t > new Date(now.getTime() - 20 * 60000) && t < till;
+      return t && t > from && t < till;
     })
     .sort((a, b) => parseISO(a.estimated_at || a.scheduled_at)
                   - parseISO(b.estimated_at || b.scheduled_at))
@@ -565,8 +582,9 @@ document.getElementById('theme').addEventListener('click', () => {
   setTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
 });
 
+const LANG_LABEL = {uz:"O'zb", ru:'РУ', en:'EN'};
 document.getElementById('langs').innerHTML = ['uz','ru','en'].map(l =>
-  `<button data-l="${l}" aria-pressed="${l === lang}">${l}</button>`).join('');
+  `<button data-l="${l}" aria-pressed="${l === lang}">${LANG_LABEL[l]}</button>`).join('');
 
 document.getElementById('langs').addEventListener('click', e => {
   const b = e.target.closest('button');

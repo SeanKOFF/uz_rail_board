@@ -15,6 +15,7 @@
 """
 
 import argparse
+import html as html_mod
 import json
 import os
 import re
@@ -113,7 +114,7 @@ def to_iso(date_str, time_str):
 
 def clean(text):
     text = re.sub(r"<[^>]+>", " ", text)
-    text = text.replace("&nbsp;", " ").replace("&amp;", "&")
+    text = html_mod.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
 
 
