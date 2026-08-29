@@ -9,3 +9,4 @@ seed_yandex.json
 
 *.log
 __pycache__/
+*.bak
