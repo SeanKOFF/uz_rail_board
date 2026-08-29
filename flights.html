@@ -20,233 +20,83 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/common.css">
 <style>
-  /* Палитра та же, что на главной. Когда авиараздел устоится,
-     общую часть стоит вынести в assets/common.css. */
-  :root{
-    --paper:#EFF2F1;
-    --card:#FFFFFF;
-    --ink:#16323B;
-    --muted:#63797F;
-    --rule:#DBE2E1;
-    --tile:#1B8794;
-    --saffron:#C4841F;
-    --alarm:#B24A3C;
-  }
-  [data-theme="dark"]{
-    --paper:#0E1D23;
-    --card:#162C34;
-    --ink:#E6EDEB;
-    --muted:#7D969D;
-    --rule:#23404A;
-    --tile:#37B4C1;
-    --saffron:#DFA43D;
-    --alarm:#D9705F;
-  }
-
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--paper);
-    transition:background-color .25s, color .25s;
-    color:var(--ink);
-    font-family:'IBM Plex Sans',system-ui,sans-serif;
-    min-height:100vh;
-    padding:clamp(14px,3.5vw,36px);
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:840px;margin:0 auto}
-
-  /* ---- шапка ---- */
-  header{
-    display:flex;align-items:flex-end;justify-content:space-between;
-    gap:16px;flex-wrap:wrap;padding-bottom:16px;
-  }
-  .brandline{display:flex;flex-direction:column;gap:8px}
-  .mark{
-    display:inline-flex;align-items:center;gap:7px;text-decoration:none;
-    font-family:'Unbounded',sans-serif;font-size:13px;font-weight:600;
-    color:var(--muted);letter-spacing:-.01em;width:fit-content;
-  }
-  .mark b{color:var(--tile);font-weight:600}
-  .mark:hover{color:var(--ink)}
-  .mark img{display:block;border-radius:6px}
-
-  .place{
-    font-family:'Unbounded',sans-serif;
-    font-weight:600;
-    font-size:clamp(26px,6.5vw,40px);
-    letter-spacing:-.02em;
-    line-height:1;
-  }
-  .place span{color:var(--muted);font-weight:400}
-
-  .head-right{display:flex;flex-direction:column;align-items:flex-end;gap:9px}
-  .controls{display:flex;align-items:center;gap:8px}
-  .theme{
-    background:none;border:1px solid var(--rule);color:var(--muted);
-    cursor:pointer;width:26px;height:26px;border-radius:50%;
-    font-size:12px;line-height:1;display:grid;place-items:center;
-    transition:.16s;padding:0;
-  }
-  .theme:hover{border-color:var(--tile);color:var(--tile)}
-  .theme:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
-  .langs{display:flex;gap:2px}
-  .langs button{
-    background:none;border:0;color:var(--muted);cursor:pointer;
-    font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:600;
-    padding:4px 7px;border-radius:3px;letter-spacing:.1em;
-    transition:.16s;
-  }
-  .langs button[aria-pressed="true"]{color:var(--tile);font-weight:600}
-  .langs button:hover{color:var(--ink)}
-  .clock{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:clamp(20px,5vw,28px);font-weight:500;
-    font-variant-numeric:tabular-nums;line-height:1;color:var(--ink);
-  }
-  .clock small{
-    display:block;color:var(--muted);margin-top:5px;
-    letter-spacing:.14em;text-transform:uppercase;
-    font-size:10px;font-family:'IBM Plex Sans',sans-serif;
-  }
-
-  /* ---- переключатель разделов ---- */
-  .sections{display:flex;gap:6px;margin-top:4px}
-  .sections a{
-    display:inline-flex;align-items:center;gap:6px;
-    text-decoration:none;color:var(--muted);
-    font:500 14px/1 'IBM Plex Sans',sans-serif;
-    padding:7px 12px;border-radius:7px;
-    border:1px solid transparent;transition:.16s;
-  }
-  .sections a:hover{color:var(--ink);border-color:var(--rule)}
-  .sections a[aria-current="page"]{
-    color:var(--tile);border-color:var(--tile);font-weight:600;
-  }
-  .sections svg{width:15px;height:15px;flex:none}
-
-  /* ---- вылет / прилёт: вкладки, как на главной ---- */
-  .modes{display:flex;gap:0;margin-bottom:6px;border-bottom:2px solid var(--rule)}
-  .modes button{
-    background:none;border:0;color:var(--muted);cursor:pointer;
-    font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:600;
-    padding:9px 2px;margin-right:22px;position:relative;top:2px;
-    border-bottom:2px solid transparent;transition:.16s;
-  }
-  .modes button:hover{color:var(--ink)}
-  .modes button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--tile)}
-  .modes button:focus-visible{outline:2px solid var(--tile);outline-offset:3px}
-
-  /* ---- выбор аэропорта ---- */
-  .city-toggle{display:none}
-  .airports{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
-  .airports button{
-    background:var(--card);border:1px solid var(--rule);color:var(--muted);
-    cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
-    font-size:12px;font-weight:500;padding:7px 13px;
-    border-radius:20px;transition:.16s;
-  }
-  .airports button:hover{border-color:var(--tile);color:var(--ink)}
-  .airports button[aria-pressed="true"]{
-    background:var(--ink);border-color:var(--ink);
-    color:var(--card);font-weight:600;
-  }
-  .airports button:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
-
-  /* ---- табло: сетка и кегли как на главной ---- */
-  .board{margin-top:14px;min-height:120px}
-  .row{
+.row{
     display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
     background:var(--card);border:1px solid var(--rule);border-radius:8px;
     transition:background-color .25s, border-color .16s;
     padding:14px 16px;margin-bottom:7px;position:relative;overflow:hidden;
     animation:in .4s both;cursor:pointer;
   }
-  .row:nth-child(1){animation-delay:.02s} .row:nth-child(2){animation-delay:.06s}
-  .row:nth-child(3){animation-delay:.10s} .row:nth-child(4){animation-delay:.14s}
-  .row:nth-child(5){animation-delay:.18s} .row:nth-child(6){animation-delay:.22s}
-  @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-  .row:hover{border-color:var(--tile)}
-  .row:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
-  .row.open{cursor:default}
-
-  .num{
+.row:nth-child(1){animation-delay:.02s}
+.row:nth-child(2){animation-delay:.06s}
+.row:nth-child(3){animation-delay:.10s}
+.row:nth-child(4){animation-delay:.14s}
+.row:nth-child(5){animation-delay:.18s}
+.row:nth-child(6){animation-delay:.22s}
+@keyframes in{
+from{opacity:0;transform:translateY(4px)}
+to{opacity:1;transform:none}
+}
+.row:hover{border-color:var(--tile)}
+.row:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+.row.open{cursor:default}
+.num{
     font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
     color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:-.01em;
   }
-  .dest{font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
-  .meta{font-size:12px;color:var(--muted);margin-top:4px;
+.dest{font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.meta{font-size:12px;color:var(--muted);margin-top:4px;
         display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-  .meta .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex:none}
-  .meta .ok{color:var(--muted)}
-  .meta .ok .dot{background:var(--tile)}
-  .meta .warn{color:var(--saffron);font-weight:600}
-  .meta .warn .dot{background:var(--saffron)}
-  .meta .bad{color:var(--alarm);font-weight:600}
-  .meta .bad .dot{background:var(--alarm)}
-  .meta .state{display:inline-flex;align-items:center;gap:5px}
-
-  .right{text-align:right;min-width:96px}
-  .time{
+.meta .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex:none}
+.meta .ok{color:var(--muted)}
+.meta .ok .dot{background:var(--tile)}
+.meta .warn{color:var(--saffron);font-weight:600}
+.meta .warn .dot{background:var(--saffron)}
+.meta .bad{color:var(--alarm);font-weight:600}
+.meta .bad .dot{background:var(--alarm)}
+.meta .state{display:inline-flex;align-items:center;gap:5px}
+.right{text-align:right;min-width:96px}
+.time{
     font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;
     font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em;
   }
-  .time.moved{color:var(--muted);text-decoration:line-through;font-size:15px}
-  /* Фактическое время — шафраном, как отклонения у поездов. */
+.time.moved{color:var(--muted);text-decoration:line-through;font-size:15px}
+/* Фактическое время — шафраном, как отклонения у поездов. */
   .fact{
     font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;
     color:var(--saffron);font-variant-numeric:tabular-nums;
     line-height:1;letter-spacing:-.02em;margin-top:3px;
   }
-  .in{
+.in{
     font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;
     color:var(--muted);margin-top:5px;
   }
-  .in b{font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
-  .term{
+.in b{font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
+.term{
     display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--card);background:var(--ink);padding:3px 7px;border-radius:3px;
     margin-top:6px;font-weight:600;
   }
-
-  /* ---- раскрытие ---- */
+/* ---- раскрытие ---- */
   .detail{
     grid-column:1/-1;margin-top:14px;padding-top:14px;
     border-top:1px solid var(--rule);
     display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
     gap:12px 18px;
   }
-  .detail dt{
+.detail dt{
     font:400 10.5px/1 'IBM Plex Sans',sans-serif;color:var(--muted);
     text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;
   }
-  .detail dd{font-size:13.5px}
-
-  /* ---- низ ---- */
+.detail dd{font-size:13.5px}
+/* ---- низ ---- */
   .note{font-size:12px;color:var(--muted);margin:16px 0 0;line-height:1.6}
-  .source{font-size:12px;color:var(--muted);margin-top:14px}
-  .source a{color:var(--muted)}
-  footer{
-    margin-top:6px;font-size:12px;color:var(--muted);line-height:1.6;
-  }
-  .empty{
-    background:var(--card);border:1px dashed var(--rule);border-radius:8px;
-    padding:26px 18px;text-align:center;color:var(--muted);font-size:13.5px;
-  }
+.source{font-size:12px;color:var(--muted);margin-top:14px}
+.source a{color:var(--muted)}
+@media (max-width:600px){
 
-  @media (max-width:600px){
-    /* Шапка в две колонки: слева логотип, разделы и город,
-       справа языки, тема и часы. Иначе на узком экране правая
-       часть переносится под заголовок. */
-    header{
-      display:grid;grid-template-columns:1fr auto;
-      align-items:start;gap:10px;
-    }
-    .brandline{grid-column:1;min-width:0}
-    .head-right{grid-column:2;align-items:flex-end}
-    .clock{font-size:clamp(17px,4.5vw,22px)}
-    .clock small{font-size:9px;letter-spacing:.1em}
-    .place{font-size:clamp(24px,7vw,34px)}
 
     .city-toggle{
       display:flex;align-items:center;gap:7px;width:100%;
@@ -582,7 +432,7 @@ document.getElementById('theme').addEventListener('click', () => {
   setTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
 });
 
-const LANG_LABEL = {uz:"O'zb", ru:'РУ', en:'EN'};
+const LANG_LABEL = {uz:"O'ZB", ru:'РУ', en:'EN'};
 document.getElementById('langs').innerHTML = ['uz','ru','en'].map(l =>
   `<button data-l="${l}" aria-pressed="${l === lang}">${LANG_LABEL[l]}</button>`).join('');
 

@@ -1,0 +1,197 @@
+/* Общие стили обеих страниц. Правится здесь, а не в HTML:
+   раньше палитра и шапка дублировались, и любая правка
+   требовала синхронного редактирования двух файлов. */
+
+:root{
+  /* Майолика Регистана: глубокий сине-зелёный по светлой бумаге,
+     бирюза плитки для акцента, шафран только для срочного. */
+  --paper:#EFF2F1;
+  --card:#FFFFFF;
+  --ink:#16323B;
+  --muted:#63797F;
+  --rule:#DBE2E1;
+  --tile:#1B8794;
+  --saffron:#C4841F;
+  --alarm:#B24A3C;
+}
+
+/* Тёмная: та же майолика, но ночная — глубокий сине-зелёный вместо
+   бумаги, бирюза ярче, чтобы держать контраст на тёмном. */
+[data-theme="dark"]{
+  --paper:#0E1D23;
+  --card:#162C34;
+  --ink:#E6EDEB;
+  --muted:#7D969D;
+  --rule:#23404A;
+  --tile:#37B4C1;
+  --saffron:#DFA43D;
+  --alarm:#D9705F;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--paper);
+  transition:background-color .25s, color .25s;
+  color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  min-height:100vh;
+  padding:clamp(14px,3.5vw,36px);
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:840px;margin:0 auto}
+
+/* ---- шапка ---- */
+header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;padding-bottom:16px;
+}
+
+.brandline{display:flex;flex-direction:column;gap:8px}
+
+.mark{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-family:'Unbounded',sans-serif;font-size:13px;font-weight:600;
+  color:var(--muted);letter-spacing:-.01em;width:fit-content;
+}
+
+.mark b{color:var(--tile);font-weight:600}
+
+.mark:hover{color:var(--ink)}
+
+.mark img{display:block;border-radius:6px}
+
+.place{
+  font-family:'Unbounded',sans-serif;
+  font-weight:600;
+  font-size:clamp(26px,6.5vw,40px);
+  letter-spacing:-.02em;
+  line-height:1;
+}
+
+.place span{color:var(--muted);font-weight:400}
+
+.head-right{display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+
+.controls{display:flex;align-items:center;gap:8px}
+
+.theme{
+  background:none;border:1px solid var(--rule);color:var(--muted);
+  cursor:pointer;width:26px;height:26px;border-radius:50%;
+  font-size:12px;line-height:1;display:grid;place-items:center;
+  transition:.16s;padding:0;
+}
+
+.theme:hover{border-color:var(--tile);color:var(--tile)}
+
+.theme:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
+.langs{display:flex;gap:2px}
+
+.langs button{
+  background:none;border:0;color:var(--muted);cursor:pointer;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.1em;
+  padding:4px 7px;border-radius:3px;transition:.16s;
+}
+
+.langs button:hover{color:var(--ink)}
+
+.langs button[aria-pressed="true"]{color:var(--card);background:var(--tile)}
+
+.langs button:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
+.clock{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:clamp(20px,5vw,28px);font-weight:500;
+  font-variant-numeric:tabular-nums;line-height:1;color:var(--ink);
+}
+
+.clock small{
+  display:block;font-size:10px;letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;margin-top:5px;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+/* ---- направление ---- */
+/* переключатель разделов — компактно, чтобы не спорить
+   с вкладками .modes ниже */
+.sections{display:flex;gap:6px;margin-top:4px}
+
+.sections a{
+  display:inline-flex;align-items:center;gap:6px;
+  text-decoration:none;color:var(--muted);
+  font:500 14px/1 'IBM Plex Sans',sans-serif;
+  padding:7px 12px;border-radius:7px;
+  border:1px solid transparent;transition:.16s;
+}
+
+.sections a:hover{color:var(--ink);border-color:var(--rule)}
+
+.sections a[aria-current="page"]{
+  color:var(--tile);border-color:var(--tile);font-weight:600;
+}
+
+.sections svg{width:15px;height:15px;flex:none}
+
+.modes{display:flex;gap:0;margin-bottom:6px;border-bottom:2px solid var(--rule)}
+
+.modes button{
+  background:none;border:0;color:var(--muted);cursor:pointer;
+  font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:600;
+  padding:9px 2px;margin-right:22px;position:relative;top:2px;
+  border-bottom:2px solid transparent;transition:.16s;
+}
+
+.modes button:hover{color:var(--ink)}
+
+.modes button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--tile)}
+
+.modes button:focus-visible{outline:2px solid var(--tile);outline-offset:3px}
+
+/* ---- табло ---- */
+.board{margin-top:14px;min-height:120px}
+
+.empty{
+  background:var(--card);border:1px solid var(--rule);border-radius:8px;
+  padding:26px 20px;color:var(--muted);font-size:14px;line-height:1.6;
+}
+
+footer{
+  margin-top:6px;font-size:12px;line-height:1.6;color:var(--muted);
+}
+
+.cities, .airports{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+
+.cities button, .airports button{
+  background:var(--card);border:1px solid var(--rule);color:var(--muted);
+  cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+  font-size:12px;font-weight:500;padding:7px 13px;border-radius:20px;
+  transition:.16s;
+}
+
+.cities button:hover, .airports button:hover{border-color:var(--tile);color:var(--ink)}
+
+.cities button[aria-pressed="true"], .airports button[aria-pressed="true"]{
+  background:var(--ink);border-color:var(--ink);color:var(--card);font-weight:600;
+}
+
+.cities button:focus-visible, .airports button:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+
+.city-toggle{display:none}
+
+@media (max-width:640px){
+/* Шапка в две колонки: слева логотип, разделы и город,
+   справа языки, тема и часы. Иначе на узком экране правая
+   часть переносится под заголовок. */
+header{
+  display:grid;grid-template-columns:1fr auto;
+  align-items:start;gap:10px;
+}
+.brandline{grid-column:1;min-width:0}
+.head-right{grid-column:2;align-items:flex-end}
+.clock{font-size:clamp(17px,4.5vw,22px)}
+.clock small{font-size:9px;letter-spacing:.1em}
+.place{font-size:clamp(24px,7vw,34px)}
+}
