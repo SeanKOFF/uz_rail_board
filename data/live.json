@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "124Ф",
-   "route": "ТАШКЕНТ -ВОЛГАГРАД",
-   "date": "30.08.2026",
-   "time_local": "00:10",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "00:10",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "30.08.2026",
@@ -141,6 +131,16 @@
    "deviation": null
   },
   {
+   "number": "124Ф",
+   "route": "ТАШКЕНТ -ВОЛГАГРАД",
+   "date": "02.09.2026",
+   "time_local": "00:10",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:10",
+   "deviation": null
+  },
+  {
    "number": "305Ф",
    "route": "ТАШКЕНТ - МАСКВА",
    "date": "02.09.2026",
@@ -152,16 +152,6 @@
   }
  ],
  "tashkent-south": [
-  {
-   "number": "127Ф",
-   "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
-   "date": "30.08.2026",
-   "time_local": "01:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:10",
-   "deviation": null
-  },
   {
    "number": "126Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
@@ -264,36 +254,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "126Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "30.08.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "30.08.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
-   "number": "130Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "30.08.2026",
-   "time_local": "02:40",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:40",
-   "deviation": null
-  },
   {
    "number": "071Ф",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
@@ -728,16 +688,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "056Ж",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "30.08.2026",
-   "time_local": "01:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:09",
-   "deviation": null
-  },
   {
    "number": "329Щ",
    "route": "БУХАРА -ВОЛЖСКИЙ",
