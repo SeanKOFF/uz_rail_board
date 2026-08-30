@@ -1222,5 +1222,23 @@
   "planned": "05:32",
   "actual": "05:42",
   "deviation": 10
+ },
+ {
+  "at": "2026-08-30 17:24",
+  "station": "urgench",
+  "number": "752Ж",
+  "date": "31.08.2026",
+  "planned": "14:16",
+  "actual": "14:22",
+  "deviation": 6
+ },
+ {
+  "at": "2026-08-30 17:24",
+  "station": "bukhara",
+  "number": "056Ч",
+  "date": "31.08.2026",
+  "planned": "05:32",
+  "actual": "05:42",
+  "deviation": 10
  }
 ]
