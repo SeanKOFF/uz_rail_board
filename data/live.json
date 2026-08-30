@@ -255,46 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "071Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "30.08.2026",
-   "time_local": "02:45",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:45",
-   "deviation": null
-  },
-  {
-   "number": "125Ф",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "30.08.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": true,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "056Ж",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "30.08.2026",
-   "time_local": "04:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:10",
-   "deviation": null
-  },
-  {
-   "number": "124Ф",
-   "route": "САМАРКАНД - ВОЛЖСКИЙ",
-   "date": "30.08.2026",
-   "time_local": "04:58",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:58",
-   "deviation": null
-  },
-  {
    "number": "127Ф",
    "route": "САМАРКАНД - КУНГИРОТ",
    "date": "30.08.2026",
@@ -688,16 +648,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "329Щ",
-   "route": "БУХАРА -ВОЛЖСКИЙ",
-   "date": "30.08.2026",
-   "time_local": "03:38",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "БУХАРА -ХИВА",
