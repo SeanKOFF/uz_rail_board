@@ -225,46 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "058З",
-   "route": "САМАРКАНД - ШОВОТ",
-   "date": "31.08.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
-   "date": "31.08.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
-   "date": "31.08.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "129Ф",
-   "route": "САМАРКАНД - ТЕРМИЗ",
-   "date": "31.08.2026",
-   "time_local": "03:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:48",
-   "deviation": null
-  },
-  {
    "number": "764Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "31.08.2026",
