@@ -1303,5 +1303,14 @@
   "planned": "05:32",
   "actual": "05:42",
   "deviation": 10
+ },
+ {
+  "at": "2026-08-31 19:59",
+  "station": "bukhara",
+  "number": "056Ч",
+  "date": "01.09.2026",
+  "planned": "05:32",
+  "actual": "05:42",
+  "deviation": 10
  }
 ]
