@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-08-26T20:20:08+05:00",
+ "generated_at": "2026-08-31T15:11:26+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -137,7 +137,7 @@
    "brand": null,
    "fast": false,
    "time_local": "00:18",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -146,24 +146,6 @@
    ],
    "quals": [
     ""
-   ]
-  },
-  {
-   "number": "056Ч",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "00:20",
-   "days": "3467",
-   "via": null,
-   "station": "jizzakh",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
    ]
   },
   {
@@ -186,20 +168,20 @@
   },
   {
    "number": "056Ч",
-   "direction": "departure",
-   "title": "Хива",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
-   "time_local": "00:23",
+   "time_local": "00:20",
    "days": "3467",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Хива"
+    "Ташкент"
    ],
    "quals": [
-    ""
+    "south"
    ]
   },
   {
@@ -221,13 +203,31 @@
    ]
   },
   {
+   "number": "056Ч",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "00:23",
+   "days": "3467",
+   "via": null,
+   "station": "jizzakh",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "071Ф",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "00:24",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -365,18 +365,18 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "arrival",
-   "title": "из Кунграда",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "00:45",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "samarkand",
    "through": true,
    "cities": [
-    "Кунград"
+    "Хива"
    ],
    "quals": [
     ""
@@ -401,18 +401,18 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Кунграда",
    "brand": null,
    "fast": false,
    "time_local": "00:45",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "samarkand",
    "through": true,
    "cities": [
-    "Хива"
+    "Кунград"
    ],
    "quals": [
     ""
@@ -437,24 +437,6 @@
    ]
   },
   {
-   "number": "058Ь",
-   "direction": "arrival",
-   "title": "из Шавата",
-   "brand": null,
-   "fast": false,
-   "time_local": "00:49",
-   "days": "236",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Шават"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "056Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -467,6 +449,24 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "058Ь",
+   "direction": "arrival",
+   "title": "из Шавата",
+   "brand": null,
+   "fast": false,
+   "time_local": "00:49",
+   "days": "236",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Шават"
    ],
    "quals": [
     ""
@@ -545,6 +545,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "01:01",
+   "days": "2",
+   "via": null,
+   "station": "jizzakh",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
@@ -569,7 +587,7 @@
    "brand": null,
    "fast": false,
    "time_local": "01:01",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -600,20 +618,20 @@
   },
   {
    "number": "076Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
+   "direction": "departure",
+   "title": "Хива",
    "brand": null,
    "fast": false,
-   "time_local": "01:01",
+   "time_local": "01:04",
    "days": "2",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Ташкент"
+    "Хива"
    ],
    "quals": [
-    "south"
+    ""
    ]
   },
   {
@@ -659,7 +677,7 @@
    "brand": null,
    "fast": false,
    "time_local": "01:04",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -683,24 +701,6 @@
    "through": true,
    "cities": [
     "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "01:04",
-   "days": "2",
-   "via": null,
-   "station": "jizzakh",
-   "through": true,
-   "cities": [
-    "Хива"
    ],
    "quals": [
     ""
@@ -743,13 +743,13 @@
    ]
   },
   {
-   "number": "058Ь",
+   "number": "056Ж",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "01:09",
-   "days": "236",
+   "days": "1457",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -761,13 +761,13 @@
    ]
   },
   {
-   "number": "056Ж",
+   "number": "058Ь",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "01:09",
-   "days": "1457",
+   "days": "236",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -905,13 +905,13 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "01:30",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -941,13 +941,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "01:30",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -977,13 +977,13 @@
    ]
   },
   {
-   "number": "056Ч",
+   "number": "058З",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "01:42",
-   "days": "3467",
+   "days": "125",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -995,13 +995,13 @@
    ]
   },
   {
-   "number": "058З",
+   "number": "056Ч",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "01:42",
-   "days": "125",
+   "days": "3467",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -1031,24 +1031,6 @@
    ]
   },
   {
-   "number": "056Ч",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:02",
-   "days": "3467",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "058З",
    "direction": "departure",
    "title": "Шават",
@@ -1061,6 +1043,24 @@
    "through": true,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "056Ч",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:02",
+   "days": "3467",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Хива"
    ],
    "quals": [
     ""
@@ -1085,24 +1085,6 @@
    ]
   },
   {
-   "number": "058Ь",
-   "direction": "arrival",
-   "title": "из Шавата",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:11",
-   "days": "236",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Шават"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "056Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -1115,6 +1097,24 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "058Ь",
+   "direction": "arrival",
+   "title": "из Шавата",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:11",
+   "days": "236",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Шават"
    ],
    "quals": [
     ""
@@ -1157,13 +1157,13 @@
    ]
   },
   {
-   "number": "058Ь",
+   "number": "056Ж",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "02:15",
-   "days": "236",
+   "days": "1457",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -1175,13 +1175,13 @@
    ]
   },
   {
-   "number": "056Ж",
+   "number": "058Ь",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "02:15",
-   "days": "1457",
+   "days": "236",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -1211,6 +1211,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:21",
+   "days": "2",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
@@ -1235,7 +1253,7 @@
    "brand": null,
    "fast": false,
    "time_local": "02:21",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -1244,6 +1262,24 @@
    ],
    "quals": [
     "south"
+   ]
+  },
+  {
+   "number": "071Ф",
+   "direction": "arrival",
+   "title": "из Алата",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:21",
+   "days": "2467",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -1262,42 +1298,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "071Ф",
-   "direction": "arrival",
-   "title": "из Алата",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:21",
-   "days": "2457",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Алат"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:21",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
    ]
   },
   {
@@ -1415,7 +1415,7 @@
    "brand": null,
    "fast": false,
    "time_local": "02:45",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -1463,18 +1463,18 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "arrival",
-   "title": "из Кунграда",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "02:49",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Кунград"
+    "Хива"
    ],
    "quals": [
     ""
@@ -1499,18 +1499,18 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Кунграда",
    "brand": null,
    "fast": false,
    "time_local": "02:49",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Хива"
+    "Кунград"
    ],
    "quals": [
     ""
@@ -1535,31 +1535,13 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "02:52",
-   "days": "256",
-   "via": null,
-   "station": "jizzakh",
-   "through": true,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
-   "number": "126Ч",
-   "direction": "departure",
-   "title": "Андижан 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:52",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -1589,13 +1571,31 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "126Ч",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "02:52",
-   "days": "1347",
+   "days": "256",
+   "via": null,
+   "station": "jizzakh",
+   "through": true,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "128Ф",
+   "direction": "departure",
+   "title": "Андижан 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:52",
+   "days": "256",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -1643,6 +1643,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "03:00",
+   "days": "2",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "departure",
    "title": "Хива",
@@ -1667,7 +1685,7 @@
    "brand": null,
    "fast": false,
    "time_local": "03:00",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -1691,24 +1709,6 @@
    "through": true,
    "cities": [
     "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "03:00",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Хива"
    ],
    "quals": [
     ""
@@ -1913,24 +1913,6 @@
    ]
   },
   {
-   "number": "058Ь",
-   "direction": "arrival",
-   "title": "из Шавата",
-   "brand": null,
-   "fast": false,
-   "time_local": "03:53",
-   "days": "236",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Шават"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "056Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -1943,6 +1925,24 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "058Ь",
+   "direction": "arrival",
+   "title": "из Шавата",
+   "brand": null,
+   "fast": false,
+   "time_local": "03:53",
+   "days": "236",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Шават"
    ],
    "quals": [
     ""
@@ -1985,13 +1985,13 @@
    ]
   },
   {
-   "number": "056Ч",
+   "number": "058З",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "03:55",
-   "days": "3467",
+   "days": "125",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -2003,13 +2003,13 @@
    ]
   },
   {
-   "number": "058З",
+   "number": "056Ч",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "03:55",
-   "days": "125",
+   "days": "3467",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -2057,18 +2057,18 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "arrival",
-   "title": "из Кунграда",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "04:05",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "gulistan",
    "through": true,
    "cities": [
-    "Кунград"
+    "Хива"
    ],
    "quals": [
     ""
@@ -2093,18 +2093,18 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Кунграда",
    "brand": null,
    "fast": false,
    "time_local": "04:05",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "gulistan",
    "through": true,
    "cities": [
-    "Хива"
+    "Кунград"
    ],
    "quals": [
     ""
@@ -2129,13 +2129,13 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "04:07",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -2165,13 +2165,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "04:07",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -2219,42 +2219,6 @@
    ]
   },
   {
-   "number": "056Ч",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "04:10",
-   "days": "3467",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "058Ь",
-   "direction": "departure",
-   "title": "Ташкент-Южный",
-   "brand": null,
-   "fast": false,
-   "time_local": "04:10",
-   "days": "236",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
-   ]
-  },
-  {
    "number": "058З",
    "direction": "departure",
    "title": "Шават",
@@ -2291,6 +2255,42 @@
    ]
   },
   {
+   "number": "056Ч",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "04:10",
+   "days": "3467",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "058Ь",
+   "direction": "departure",
+   "title": "Ташкент-Южный",
+   "brand": null,
+   "fast": false,
+   "time_local": "04:10",
+   "days": "236",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "771Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
@@ -2315,7 +2315,7 @@
    "brand": null,
    "fast": false,
    "time_local": "04:24",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -2333,7 +2333,7 @@
    "brand": null,
    "fast": false,
    "time_local": "04:26",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "jizzakh",
    "through": true,
@@ -2543,78 +2543,6 @@
    ]
   },
   {
-   "number": "056Ч",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:12",
-   "days": "3467",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
-   ]
-  },
-  {
-   "number": "125Ф",
-   "direction": "arrival",
-   "title": "из Андижана 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:12",
-   "days": "2367",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
-   "number": "072Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:12",
-   "days": "1346",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
-   ]
-  },
-  {
-   "number": "125Ч",
-   "direction": "arrival",
-   "title": "из Андижана 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:12",
-   "days": "145",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
    "number": "058З",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
@@ -2651,6 +2579,78 @@
    ]
   },
   {
+   "number": "125Ф",
+   "direction": "arrival",
+   "title": "из Андижана 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:12",
+   "days": "2367",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "056Ч",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:12",
+   "days": "3467",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
+   "number": "072Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:12",
+   "days": "13567",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
+   "number": "125Ч",
+   "direction": "arrival",
+   "title": "из Андижана 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:12",
+   "days": "145",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
    "number": "130Ф",
    "direction": "arrival",
    "title": "из Термеза",
@@ -2663,6 +2663,42 @@
    "through": true,
    "cities": [
     "Термез"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "076Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:17",
+   "days": "2",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "125Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:17",
+   "days": "2367",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Хива"
    ],
    "quals": [
     ""
@@ -2687,31 +2723,13 @@
    ]
   },
   {
-   "number": "125Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:17",
-   "days": "2367",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "072Ф",
    "direction": "departure",
    "title": "Алат",
    "brand": null,
    "fast": false,
    "time_local": "05:17",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -2735,24 +2753,6 @@
    "through": true,
    "cities": [
     "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:17",
-   "days": "2",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Хива"
    ],
    "quals": [
     ""
@@ -2795,18 +2795,18 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "arrival",
-   "title": "из Кунграда",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "05:23",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "tashkent-south",
    "through": true,
    "cities": [
-    "Кунград"
+    "Хива"
    ],
    "quals": [
     ""
@@ -2831,18 +2831,18 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Кунграда",
    "brand": null,
    "fast": false,
    "time_local": "05:23",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "tashkent-south",
    "through": true,
    "cities": [
-    "Хива"
+    "Кунград"
    ],
    "quals": [
     ""
@@ -2885,18 +2885,18 @@
    ]
   },
   {
-   "number": "058Ь",
+   "number": "056Ж",
    "direction": "arrival",
-   "title": "из Шавата",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "05:29",
-   "days": "236",
+   "days": "1457",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Шават"
+    "Хива"
    ],
    "quals": [
     ""
@@ -2939,21 +2939,39 @@
    ]
   },
   {
-   "number": "056Ж",
+   "number": "058Ь",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Шавата",
    "brand": null,
    "fast": false,
    "time_local": "05:29",
+   "days": "236",
+   "via": null,
+   "station": "jizzakh",
+   "through": true,
+   "cities": [
+    "Шават"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "056Ж",
+   "direction": "departure",
+   "title": "Ташкент-Южный",
+   "brand": null,
+   "fast": false,
+   "time_local": "05:31",
    "days": "1457",
    "via": null,
    "station": "jizzakh",
    "through": true,
    "cities": [
-    "Хива"
+    "Ташкент"
    ],
    "quals": [
-    ""
+    "south"
    ]
   },
   {
@@ -2975,21 +2993,21 @@
    ]
   },
   {
-   "number": "056Ж",
+   "number": "058З",
    "direction": "departure",
-   "title": "Ташкент-Южный",
+   "title": "Шават",
    "brand": null,
    "fast": false,
-   "time_local": "05:31",
-   "days": "1457",
+   "time_local": "05:32",
+   "days": "125",
    "via": null,
-   "station": "jizzakh",
+   "station": "bukhara",
    "through": true,
    "cities": [
-    "Ташкент"
+    "Шават"
    ],
    "quals": [
-    "south"
+    ""
    ]
   },
   {
@@ -3005,24 +3023,6 @@
    "through": true,
    "cities": [
     "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "058З",
-   "direction": "departure",
-   "title": "Шават",
-   "brand": null,
-   "fast": false,
-   "time_local": "05:32",
-   "days": "125",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Шават"
    ],
    "quals": [
     ""
@@ -3071,7 +3071,7 @@
    "brand": null,
    "fast": false,
    "time_local": "05:45",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -3089,7 +3089,7 @@
    "brand": null,
    "fast": false,
    "time_local": "05:47",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -3121,13 +3121,13 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "05:58",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "tashkent-south",
    "through": true,
@@ -3157,13 +3157,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "05:58",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "tashkent-south",
    "through": true,
@@ -3283,6 +3283,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "06:28",
+   "days": "2",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
@@ -3307,7 +3325,7 @@
    "brand": null,
    "fast": false,
    "time_local": "06:28",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -3334,24 +3352,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "06:28",
-   "days": "2",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
    ]
   },
   {
@@ -3499,6 +3499,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "06:48",
+   "days": "2",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "departure",
    "title": "Хива",
@@ -3565,24 +3583,6 @@
    "through": true,
    "cities": [
     "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "06:48",
-   "days": "2",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Хива"
    ],
    "quals": [
     ""
@@ -3667,30 +3667,12 @@
    "brand": null,
    "fast": false,
    "time_local": "07:03",
-   "days": "2457",
+   "days": "2467",
    "via": null,
    "station": "tashkent-south",
    "through": false,
    "cities": [
     "Алат"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "058Ь",
-   "direction": "arrival",
-   "title": "из Шавата",
-   "brand": null,
-   "fast": false,
-   "time_local": "07:04",
-   "days": "236",
-   "via": null,
-   "station": "gulistan",
-   "through": true,
-   "cities": [
-    "Шават"
    ],
    "quals": [
     ""
@@ -3716,20 +3698,20 @@
   },
   {
    "number": "058Ь",
-   "direction": "departure",
-   "title": "Ташкент-Южный",
+   "direction": "arrival",
+   "title": "из Шавата",
    "brand": null,
    "fast": false,
-   "time_local": "07:06",
+   "time_local": "07:04",
    "days": "236",
    "via": null,
    "station": "gulistan",
    "through": true,
    "cities": [
-    "Ташкент"
+    "Шават"
    ],
    "quals": [
-    "south"
+    ""
    ]
   },
   {
@@ -3751,13 +3733,49 @@
    ]
   },
   {
-   "number": "098Ф",
+   "number": "058Ь",
+   "direction": "departure",
+   "title": "Ташкент-Южный",
+   "brand": null,
+   "fast": false,
+   "time_local": "07:06",
+   "days": "236",
+   "via": null,
+   "station": "gulistan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
+   "number": "751М",
+   "direction": "departure",
+   "title": "Ташкент-Центральный",
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
+   "time_local": "07:10",
+   "days": "234567",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
+   "number": "094Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "07:14",
-   "days": "6",
+   "days": "1",
    "via": null,
    "station": "tashkent-central",
    "through": false,
@@ -3769,13 +3787,13 @@
    ]
   },
   {
-   "number": "094Ф",
+   "number": "098Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "07:14",
-   "days": "1",
+   "days": "6",
    "via": null,
    "station": "tashkent-central",
    "through": false,
@@ -3805,31 +3823,13 @@
    ]
   },
   {
-   "number": "751М",
-   "direction": "departure",
-   "title": "Ташкент-Центральный",
-   "brand": "Jaloliddin Manguberdi",
-   "fast": true,
-   "time_local": "07:15",
-   "days": "234567",
-   "via": null,
-   "station": "khiva",
-   "through": false,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
    "number": "072Ф",
    "direction": "departure",
    "title": "Алат",
    "brand": null,
    "fast": false,
    "time_local": "07:18",
-   "days": "1346",
+   "days": "13567",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -3954,7 +3954,7 @@
    "title": "из Хивы",
    "brand": "Jaloliddin Manguberdi",
    "fast": true,
-   "time_local": "07:35",
+   "time_local": "07:30",
    "days": "234567",
    "via": null,
    "station": "urgench",
@@ -4003,6 +4003,24 @@
    ]
   },
   {
+   "number": "751М",
+   "direction": "departure",
+   "title": "Ташкент-Центральный",
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
+   "time_local": "07:40",
+   "days": "234567",
+   "via": null,
+   "station": "urgench",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
    "number": "771Ф",
    "direction": "arrival",
    "title": "из Бухары 1",
@@ -4018,24 +4036,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "751М",
-   "direction": "departure",
-   "title": "Ташкент-Центральный",
-   "brand": "Jaloliddin Manguberdi",
-   "fast": true,
-   "time_local": "07:45",
-   "days": "234567",
-   "via": null,
-   "station": "urgench",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
    ]
   },
   {
@@ -4219,24 +4219,6 @@
    ]
   },
   {
-   "number": "058Ь",
-   "direction": "arrival",
-   "title": "из Шавата",
-   "brand": null,
-   "fast": false,
-   "time_local": "08:22",
-   "days": "236",
-   "via": null,
-   "station": "tashkent-south",
-   "through": false,
-   "cities": [
-    "Шават"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "056Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -4249,6 +4231,24 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "058Ь",
+   "direction": "arrival",
+   "title": "из Шавата",
+   "brand": null,
+   "fast": false,
+   "time_local": "08:22",
+   "days": "236",
+   "via": null,
+   "station": "tashkent-south",
+   "through": false,
+   "cities": [
+    "Шават"
    ],
    "quals": [
     ""
@@ -5052,7 +5052,7 @@
    "title": "из Хивы",
    "brand": "Jaloliddin Manguberdi",
    "fast": true,
-   "time_local": "10:37",
+   "time_local": "10:38",
    "days": "234567",
    "via": null,
    "station": "bukhara",
@@ -5137,24 +5137,6 @@
    ]
   },
   {
-   "number": "126Ч",
-   "direction": "arrival",
-   "title": "из Ургенча",
-   "brand": null,
-   "fast": false,
-   "time_local": "10:54",
-   "days": "256",
-   "via": null,
-   "station": "kokand",
-   "through": true,
-   "cities": [
-    "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "126Ф",
    "direction": "arrival",
    "title": "из Хивы",
@@ -5167,6 +5149,24 @@
    "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "126Ч",
+   "direction": "arrival",
+   "title": "из Ургенча",
+   "brand": null,
+   "fast": false,
+   "time_local": "10:54",
+   "days": "256",
+   "via": null,
+   "station": "kokand",
+   "through": true,
+   "cities": [
+    "Ургенч"
    ],
    "quals": [
     ""
@@ -5191,13 +5191,13 @@
    ]
   },
   {
-   "number": "126Ч",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "10:57",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "kokand",
    "through": true,
@@ -5209,13 +5209,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "126Ч",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "10:57",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "kokand",
    "through": true,
@@ -5461,13 +5461,13 @@
    ]
   },
   {
-   "number": "056Ч",
+   "number": "058З",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "11:24",
-   "days": "3467",
+   "days": "125",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -5479,13 +5479,13 @@
    ]
   },
   {
-   "number": "058З",
+   "number": "056Ч",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
    "brand": null,
    "fast": false,
    "time_local": "11:24",
-   "days": "125",
+   "days": "3467",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -5659,24 +5659,6 @@
    ]
   },
   {
-   "number": "126Ч",
-   "direction": "arrival",
-   "title": "из Ургенча",
-   "brand": null,
-   "fast": false,
-   "time_local": "11:46",
-   "days": "256",
-   "via": null,
-   "station": "margilan",
-   "through": true,
-   "cities": [
-    "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "126Ф",
    "direction": "arrival",
    "title": "из Хивы",
@@ -5696,12 +5678,30 @@
   },
   {
    "number": "126Ч",
+   "direction": "arrival",
+   "title": "из Ургенча",
+   "brand": null,
+   "fast": false,
+   "time_local": "11:46",
+   "days": "256",
+   "via": null,
+   "station": "margilan",
+   "through": true,
+   "cities": [
+    "Ургенч"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "11:51",
-   "days": "256",
+   "days": "1347",
    "via": null,
    "station": "margilan",
    "through": true,
@@ -5713,13 +5713,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "126Ч",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "11:51",
-   "days": "1347",
+   "days": "256",
    "via": null,
    "station": "margilan",
    "through": true,
@@ -5749,6 +5749,24 @@
    ]
   },
   {
+   "number": "094Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": null,
+   "fast": false,
+   "time_local": "11:58",
+   "days": "1",
+   "via": null,
+   "station": "namangan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
    "number": "770Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
@@ -5774,24 +5792,6 @@
    "fast": false,
    "time_local": "11:58",
    "days": "6",
-   "via": null,
-   "station": "namangan",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
-   "number": "094Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "11:58",
-   "days": "1",
    "via": null,
    "station": "namangan",
    "through": true,
@@ -5875,13 +5875,13 @@
    ]
   },
   {
-   "number": "098Ф",
+   "number": "094Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "12:12",
-   "days": "6",
+   "days": "1",
    "via": null,
    "station": "namangan",
    "through": true,
@@ -5893,13 +5893,13 @@
    ]
   },
   {
-   "number": "094Ф",
+   "number": "098Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "12:12",
-   "days": "1",
+   "days": "6",
    "via": null,
    "station": "namangan",
    "through": true,
@@ -6109,24 +6109,6 @@
    ]
   },
   {
-   "number": "126Ч",
-   "direction": "arrival",
-   "title": "из Ургенча",
-   "brand": null,
-   "fast": false,
-   "time_local": "12:42",
-   "days": "256",
-   "via": null,
-   "station": "andijan",
-   "through": false,
-   "cities": [
-    "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "126Ф",
    "direction": "arrival",
    "title": "из Хивы",
@@ -6139,6 +6121,24 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "126Ч",
+   "direction": "arrival",
+   "title": "из Ургенча",
+   "brand": null,
+   "fast": false,
+   "time_local": "12:42",
+   "days": "256",
+   "via": null,
+   "station": "andijan",
+   "through": false,
+   "cities": [
+    "Ургенч"
    ],
    "quals": [
     ""
@@ -6181,6 +6181,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "12:46",
+   "days": "2",
+   "via": null,
+   "station": "urgench",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
@@ -6217,24 +6235,6 @@
    ]
   },
   {
-   "number": "076Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "12:46",
-   "days": "2",
-   "via": null,
-   "station": "urgench",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
-   ]
-  },
-  {
    "number": "751М",
    "direction": "departure",
    "title": "Ташкент-Центральный",
@@ -6253,13 +6253,13 @@
    ]
   },
   {
-   "number": "125Ф",
+   "number": "076Ф",
    "direction": "departure",
    "title": "Хива",
    "brand": null,
    "fast": false,
    "time_local": "12:56",
-   "days": "2367",
+   "days": "2",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -6271,13 +6271,13 @@
    ]
   },
   {
-   "number": "076Ф",
+   "number": "125Ф",
    "direction": "departure",
    "title": "Хива",
    "brand": null,
    "fast": false,
    "time_local": "12:56",
-   "days": "2",
+   "days": "2367",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -6375,24 +6375,6 @@
    ]
   },
   {
-   "number": "125Ф",
-   "direction": "arrival",
-   "title": "из Андижана 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "13:26",
-   "days": "2367",
-   "via": null,
-   "station": "khiva",
-   "through": false,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
    "number": "076Ф",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
@@ -6408,6 +6390,24 @@
    ],
    "quals": [
     "south"
+   ]
+  },
+  {
+   "number": "125Ф",
+   "direction": "arrival",
+   "title": "из Андижана 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "13:26",
+   "days": "2367",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6524,7 +6524,7 @@
    "title": "из Ташкента-Центрального",
    "brand": "Jaloliddin Manguberdi",
    "fast": true,
-   "time_local": "14:06",
+   "time_local": "14:12",
    "days": "123456",
    "via": null,
    "station": "urgench",
@@ -6555,21 +6555,21 @@
    ]
   },
   {
-   "number": "752Ж",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": "Jaloliddin Manguberdi",
-   "fast": true,
+   "number": "094Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": null,
+   "fast": false,
    "time_local": "14:16",
-   "days": "123456",
+   "days": "1",
    "via": null,
-   "station": "urgench",
-   "through": true,
+   "station": "andijan",
+   "through": false,
    "cities": [
-    "Хива"
+    "Ташкент"
    ],
    "quals": [
-    ""
+    "central"
    ]
   },
   {
@@ -6591,39 +6591,21 @@
    ]
   },
   {
-   "number": "094Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "14:16",
-   "days": "1",
-   "via": null,
-   "station": "andijan",
-   "through": false,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
-   "number": "124Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "14:32",
-   "days": "2367",
+   "number": "752Ж",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
+   "time_local": "14:22",
+   "days": "123456",
    "via": null,
    "station": "urgench",
    "through": true,
    "cities": [
-    "Ташкент"
+    "Хива"
    ],
    "quals": [
-    "central"
+    ""
    ]
   },
   {
@@ -6645,16 +6627,16 @@
    ]
   },
   {
-   "number": "752Ж",
+   "number": "124Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
-   "brand": "Jaloliddin Manguberdi",
-   "fast": true,
-   "time_local": "14:36",
-   "days": "123456",
+   "brand": null,
+   "fast": false,
+   "time_local": "14:39",
+   "days": "2367",
    "via": null,
-   "station": "khiva",
-   "through": false,
+   "station": "urgench",
+   "through": true,
    "cities": [
     "Ташкент"
    ],
@@ -6675,6 +6657,24 @@
    "through": false,
    "cities": [],
    "quals": []
+  },
+  {
+   "number": "752Ж",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": "Jaloliddin Manguberdi",
+   "fast": true,
+   "time_local": "14:42",
+   "days": "123456",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
   },
   {
    "number": "302З",
@@ -6839,24 +6839,6 @@
    ]
   },
   {
-   "number": "126Ф",
-   "direction": "departure",
-   "title": "Андижан 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "15:25",
-   "days": "2367",
-   "via": null,
-   "station": "khiva",
-   "through": false,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
    "number": "123Ф",
    "direction": "departure",
    "title": "Ташкент-Центральный",
@@ -6872,6 +6854,24 @@
    ],
    "quals": [
     "central"
+   ]
+  },
+  {
+   "number": "126Ф",
+   "direction": "departure",
+   "title": "Андижан 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "15:33",
+   "days": "2367",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -6965,24 +6965,6 @@
    ]
   },
   {
-   "number": "126Ф",
-   "direction": "arrival",
-   "title": "из Хивы",
-   "brand": null,
-   "fast": false,
-   "time_local": "15:55",
-   "days": "2367",
-   "via": null,
-   "station": "urgench",
-   "through": true,
-   "cities": [
-    "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "076Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -7055,6 +7037,24 @@
    ]
   },
   {
+   "number": "126Ф",
+   "direction": "arrival",
+   "title": "из Хивы",
+   "brand": null,
+   "fast": false,
+   "time_local": "16:03",
+   "days": "2367",
+   "via": null,
+   "station": "urgench",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "302З",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
@@ -7085,24 +7085,6 @@
    "through": true,
    "cities": [
     "Душанбе"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
-   "number": "126Ф",
-   "direction": "departure",
-   "title": "Андижан 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "16:15",
-   "days": "2367",
-   "via": null,
-   "station": "urgench",
-   "through": true,
-   "cities": [
-    "Андижан"
    ],
    "quals": [
     "1"
@@ -7142,6 +7124,24 @@
    ],
    "quals": [
     "central"
+   ]
+  },
+  {
+   "number": "126Ф",
+   "direction": "departure",
+   "title": "Андижан 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "16:23",
+   "days": "2367",
+   "via": null,
+   "station": "urgench",
+   "through": true,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
    ]
   },
   {
@@ -7739,13 +7739,13 @@
    ]
   },
   {
-   "number": "732Ф",
+   "number": "092Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "17:55",
-   "days": "3456",
+   "days": "1",
    "via": null,
    "station": "tashkent-central",
    "through": false,
@@ -7757,13 +7757,13 @@
    ]
   },
   {
-   "number": "092Ф",
+   "number": "732Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "17:55",
-   "days": "1",
+   "days": "3456",
    "via": null,
    "station": "tashkent-central",
    "through": false,
@@ -8299,24 +8299,6 @@
    ]
   },
   {
-   "number": "302З",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "19:18",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
    "number": "767Ф",
    "direction": "arrival",
    "title": "из Самарканда",
@@ -8332,6 +8314,24 @@
    ],
    "quals": [
     ""
+   ]
+  },
+  {
+   "number": "302З",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": null,
+   "fast": false,
+   "time_local": "19:18",
+   "days": "2",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
    ]
   },
   {
@@ -8353,13 +8353,13 @@
    ]
   },
   {
-   "number": "058Ь",
+   "number": "056Ж",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "19:20",
-   "days": "125",
+   "days": "3467",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -8371,13 +8371,13 @@
    ]
   },
   {
-   "number": "056Ж",
+   "number": "058Ь",
    "direction": "departure",
    "title": "Ташкент-Южный",
    "brand": null,
    "fast": false,
    "time_local": "19:20",
-   "days": "3467",
+   "days": "125",
    "via": null,
    "station": "urgench",
    "through": true,
@@ -8533,24 +8533,6 @@
    ]
   },
   {
-   "number": "302З",
-   "direction": "departure",
-   "title": "Душанбе 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "19:48",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Душанбе"
-   ],
-   "quals": [
-    "1"
-   ]
-  },
-  {
    "number": "772Ф",
    "direction": "departure",
    "title": "Бухара 1",
@@ -8563,6 +8545,24 @@
    "through": false,
    "cities": [
     "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "302З",
+   "direction": "departure",
+   "title": "Душанбе 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "19:48",
+   "days": "2",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Душанбе"
    ],
    "quals": [
     "1"
@@ -8965,60 +8965,6 @@
    ]
   },
   {
-   "number": "128Ф",
-   "direction": "arrival",
-   "title": "из Кунграда",
-   "brand": null,
-   "fast": false,
-   "time_local": "21:32",
-   "days": "145",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Кунград"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "126Ч",
-   "direction": "arrival",
-   "title": "из Ургенча",
-   "brand": null,
-   "fast": false,
-   "time_local": "21:32",
-   "days": "145",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "126Ф",
-   "direction": "arrival",
-   "title": "из Хивы",
-   "brand": null,
-   "fast": false,
-   "time_local": "21:32",
-   "days": "2367",
-   "via": null,
-   "station": "bukhara",
-   "through": true,
-   "cities": [
-    "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "076Ж",
    "direction": "arrival",
    "title": "из Хивы",
@@ -9037,24 +8983,6 @@
    ]
   },
   {
-   "number": "302З",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "21:36",
-   "days": "2",
-   "via": null,
-   "station": "qarshi",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
    "number": "712Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
@@ -9064,6 +8992,24 @@
    "days": "1234567",
    "via": null,
    "station": "gulistan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
+   "number": "302З",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": null,
+   "fast": false,
+   "time_local": "21:36",
+   "days": "2",
+   "via": null,
+   "station": "qarshi",
    "through": true,
    "cities": [
     "Ташкент"
@@ -9091,18 +9037,54 @@
    ]
   },
   {
-   "number": "056Ч",
-   "direction": "departure",
-   "title": "Хива",
+   "number": "126Ф",
+   "direction": "arrival",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
-   "time_local": "21:45",
-   "days": "2356",
+   "time_local": "21:40",
+   "days": "2367",
    "via": null,
-   "station": "tashkent-south",
-   "through": false,
+   "station": "bukhara",
+   "through": true,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "126Ч",
+   "direction": "arrival",
+   "title": "из Ургенча",
+   "brand": null,
+   "fast": false,
+   "time_local": "21:40",
+   "days": "145",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Ургенч"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "128Ф",
+   "direction": "arrival",
+   "title": "из Кунграда",
+   "brand": null,
+   "fast": false,
+   "time_local": "21:40",
+   "days": "145",
+   "via": null,
+   "station": "bukhara",
+   "through": true,
+   "cities": [
+    "Кунград"
    ],
    "quals": [
     ""
@@ -9121,6 +9103,24 @@
    "through": false,
    "cities": [
     "Шават"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "056Ч",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "21:45",
+   "days": "2356",
+   "via": null,
+   "station": "tashkent-south",
+   "through": false,
+   "cities": [
+    "Хива"
    ],
    "quals": [
     ""
@@ -9181,13 +9181,13 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "21:55",
-   "days": "145",
+   "days": "2367",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -9217,13 +9217,13 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
    "fast": false,
    "time_local": "21:55",
-   "days": "2367",
+   "days": "145",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -9403,7 +9403,7 @@
    "brand": null,
    "fast": false,
    "time_local": "22:21",
-   "days": "1346",
+   "days": "1356",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -9523,24 +9523,6 @@
    ]
   },
   {
-   "number": "072Ф",
-   "direction": "departure",
-   "title": "Алат",
-   "brand": null,
-   "fast": false,
-   "time_local": "22:34",
-   "days": "2357",
-   "via": null,
-   "station": "tashkent-south",
-   "through": false,
-   "cities": [
-    "Алат"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "076Ф",
    "direction": "departure",
    "title": "Хива",
@@ -9553,6 +9535,24 @@
    "through": false,
    "cities": [
     "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
+   "number": "072Ф",
+   "direction": "departure",
+   "title": "Алат",
+   "brand": null,
+   "fast": false,
+   "time_local": "22:34",
+   "days": "24567",
+   "via": null,
+   "station": "tashkent-south",
+   "through": false,
+   "cities": [
+    "Алат"
    ],
    "quals": [
     ""
@@ -9667,24 +9667,6 @@
    ]
   },
   {
-   "number": "715Ф",
-   "direction": "departure",
-   "title": "Ташкент-Центральный",
-   "brand": "Nasaf",
-   "fast": false,
-   "time_local": "22:45",
-   "days": "1234567",
-   "via": null,
-   "station": "gulistan",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
    "number": "092Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
@@ -9694,6 +9676,24 @@
    "days": "1",
    "via": null,
    "station": "namangan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
+   "number": "715Ф",
+   "direction": "departure",
+   "title": "Ташкент-Центральный",
+   "brand": "Nasaf",
+   "fast": false,
+   "time_local": "22:45",
+   "days": "1234567",
+   "via": null,
+   "station": "gulistan",
    "through": true,
    "cities": [
     "Ташкент"
@@ -9763,7 +9763,7 @@
    "brand": null,
    "fast": false,
    "time_local": "22:51",
-   "days": "1346",
+   "days": "1356",
    "via": null,
    "station": "bukhara",
    "through": true,
@@ -9775,18 +9775,18 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
    "direction": "arrival",
-   "title": "из Кунграда",
+   "title": "из Хивы",
    "brand": null,
    "fast": false,
    "time_local": "22:55",
-   "days": "145",
+   "days": "2367",
    "via": null,
    "station": "navoi",
    "through": true,
    "cities": [
-    "Кунград"
+    "Хива"
    ],
    "quals": [
     ""
@@ -9811,18 +9811,18 @@
    ]
   },
   {
-   "number": "126Ф",
+   "number": "128Ф",
    "direction": "arrival",
-   "title": "из Хивы",
+   "title": "из Кунграда",
    "brand": null,
    "fast": false,
    "time_local": "22:55",
-   "days": "2367",
+   "days": "145",
    "via": null,
    "station": "navoi",
    "through": true,
    "cities": [
-    "Хива"
+    "Кунград"
    ],
    "quals": [
     ""
@@ -9847,7 +9847,43 @@
    ]
   },
   {
-   "number": "128Ф",
+   "number": "126Ф",
+   "direction": "departure",
+   "title": "Андижан 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "23:01",
+   "days": "2367",
+   "via": null,
+   "station": "navoi",
+   "through": true,
+   "cities": [
+    "Андижан"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "058З",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "23:01",
+   "days": "147",
+   "via": null,
+   "station": "gulistan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
+   "number": "126Ч",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
@@ -9865,7 +9901,7 @@
    ]
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "direction": "departure",
    "title": "Андижан 1",
    "brand": null,
@@ -9898,24 +9934,6 @@
    ],
    "quals": [
     "south"
-   ]
-  },
-  {
-   "number": "126Ф",
-   "direction": "departure",
-   "title": "Андижан 1",
-   "brand": null,
-   "fast": false,
-   "time_local": "23:01",
-   "days": "2367",
-   "via": null,
-   "station": "navoi",
-   "through": true,
-   "cities": [
-    "Андижан"
-   ],
-   "quals": [
-    "1"
    ]
   },
   {
@@ -9938,20 +9956,20 @@
   },
   {
    "number": "058З",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
+   "direction": "departure",
+   "title": "Шават",
    "brand": null,
    "fast": false,
-   "time_local": "23:01",
+   "time_local": "23:03",
    "days": "147",
    "via": null,
    "station": "gulistan",
    "through": true,
    "cities": [
-    "Ташкент"
+    "Шават"
    ],
    "quals": [
-    "south"
+    ""
    ]
   },
   {
@@ -9967,24 +9985,6 @@
    "through": true,
    "cities": [
     "Хива"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "058З",
-   "direction": "departure",
-   "title": "Шават",
-   "brand": null,
-   "fast": false,
-   "time_local": "23:03",
-   "days": "147",
-   "via": null,
-   "station": "gulistan",
-   "through": true,
-   "cities": [
-    "Шават"
    ],
    "quals": [
     ""
@@ -10171,6 +10171,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "23:47",
+   "days": "1",
+   "via": null,
+   "station": "gulistan",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "arrival",
    "title": "из Андижана 1",
@@ -10195,7 +10213,7 @@
    "brand": null,
    "fast": false,
    "time_local": "23:47",
-   "days": "2357",
+   "days": "24567",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -10222,24 +10240,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "23:47",
-   "days": "1",
-   "via": null,
-   "station": "gulistan",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
    ]
   },
   {
@@ -10315,6 +10315,24 @@
    ]
   },
   {
+   "number": "076Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "23:50",
+   "days": "1",
+   "via": null,
+   "station": "gulistan",
+   "through": true,
+   "cities": [
+    "Хива"
+   ],
+   "quals": [
+    ""
+   ]
+  },
+  {
    "number": "125Ф",
    "direction": "departure",
    "title": "Хива",
@@ -10339,7 +10357,7 @@
    "brand": null,
    "fast": false,
    "time_local": "23:50",
-   "days": "2357",
+   "days": "24567",
    "via": null,
    "station": "gulistan",
    "through": true,
@@ -10363,24 +10381,6 @@
    "through": true,
    "cities": [
     "Ургенч"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
-   "number": "076Ф",
-   "direction": "departure",
-   "title": "Хива",
-   "brand": null,
-   "fast": false,
-   "time_local": "23:50",
-   "days": "1",
-   "via": null,
-   "station": "gulistan",
-   "through": true,
-   "cities": [
-    "Хива"
    ],
    "quals": [
     ""
