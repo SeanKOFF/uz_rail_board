@@ -275,56 +275,6 @@
  ],
  "samarkand": [
   {
-   "number": "128Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "05.09.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "126Ч",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "05.09.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "05.09.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": true,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
-   "number": "125Ф",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "05.09.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
-   "date": "05.09.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
    "number": "129Ф",
    "route": "САМАРКАНД - ТЕРМИЗ",
    "date": "05.09.2026",
@@ -708,16 +658,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "058Ь",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "05.09.2026",
-   "time_local": "01:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:09",
-   "deviation": null
-  },
   {
    "number": "359Щ",
    "route": "БУХАРА -ВОЛЖСКИЙ",
