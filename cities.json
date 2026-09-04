@@ -1,93 +1,493 @@
 {
   "_": "Названия направлений по IATA-коду. Источник (uzairports) отдаёт только узбекский, местами с ошибками и непереведёнными ключами вида airport.BGY. Здесь узбекский тоже задан явно, чтобы не зависеть от источника. Незнакомый код показывается как пришёл.",
-
-  "ADB": {"uz": "Izmir",            "ru": "Измир",              "en": "Izmir"},
-  "AER": {"uz": "Sochi",            "ru": "Сочи",               "en": "Sochi"},
-  "AKX": {"uz": "Aqtobe",           "ru": "Актобе",             "en": "Aktobe"},
-  "ALA": {"uz": "Olmaota",          "ru": "Алматы",             "en": "Almaty"},
-  "AMM": {"uz": "Amman",            "ru": "Амман",              "en": "Amman"},
-  "AUH": {"uz": "Abu-Dabi",         "ru": "Абу-Даби",           "en": "Abu Dhabi"},
-  "AYT": {"uz": "Antaliya",         "ru": "Анталья",            "en": "Antalya"},
-  "AZN": {"uz": "Andijon",          "ru": "Андижан",            "en": "Andijan"},
-  "BGY": {"uz": "Bergamo",          "ru": "Бергамо",            "en": "Bergamo"},
-  "BHK": {"uz": "Buxoro",           "ru": "Бухара",             "en": "Bukhara"},
-  "BSZ": {"uz": "Bishkek",          "ru": "Бишкек",             "en": "Bishkek"},
-  "BUS": {"uz": "Batumi",           "ru": "Батуми",             "en": "Batumi"},
-  "CAN": {"uz": "Guanchjou",        "ru": "Гуанчжоу",           "en": "Guangzhou"},
-  "CXR": {"uz": "Nha Trang",        "ru": "Нячанг",             "en": "Nha Trang"},
-  "DEL": {"uz": "Dehli",            "ru": "Дели",               "en": "Delhi"},
-  "DME": {"uz": "Moskva",           "ru": "Москва",             "en": "Moscow"},
-  "DOH": {"uz": "Doha",             "ru": "Доха",               "en": "Doha"},
-  "DXB": {"uz": "Dubay",            "ru": "Дубай",              "en": "Dubai"},
-  "DYU": {"uz": "Dushanbe",         "ru": "Душанбе",            "en": "Dushanbe"},
-  "ESB": {"uz": "Anqara",           "ru": "Анкара",             "en": "Ankara"},
-  "EVN": {"uz": "Yerevan",          "ru": "Ереван",             "en": "Yerevan"},
-  "FCO": {"uz": "Rim",              "ru": "Рим",                "en": "Rome"},
-  "FEG": {"uz": "Farg'ona",         "ru": "Фергана",            "en": "Fergana"},
-  "FRA": {"uz": "Frankfurt",        "ru": "Франкфурт",          "en": "Frankfurt"},
-  "GNJ": {"uz": "Ganja",            "ru": "Гянджа",             "en": "Ganja"},
-  "GOJ": {"uz": "Nijniy Novgorod",  "ru": "Нижний Новгород",    "en": "Nizhny Novgorod"},
-  "GRV": {"uz": "Grozniy",          "ru": "Грозный",            "en": "Grozny"},
-  "GYD": {"uz": "Boku",             "ru": "Баку",               "en": "Baku"},
-  "HGH": {"uz": "Xanchjou",         "ru": "Ханчжоу",            "en": "Hangzhou"},
-  "HKT": {"uz": "Phuket",           "ru": "Пхукет",             "en": "Phuket"},
-  "ICN": {"uz": "Seul",             "ru": "Сеул",               "en": "Seoul"},
-  "IKA": {"uz": "Tehron",           "ru": "Тегеран",            "en": "Tehran"},
-  "IKT": {"uz": "Irkutsk",          "ru": "Иркутск",            "en": "Irkutsk"},
-  "ISB": {"uz": "Islomobod",        "ru": "Исламабад",          "en": "Islamabad"},
-  "IST": {"uz": "Istanbul",         "ru": "Стамбул",            "en": "Istanbul"},
-  "IYO": {"uz": "Sariosiyo",        "ru": "Сариасия",           "en": "Sariosiyo"},
-  "JED": {"uz": "Jidda",            "ru": "Джидда",             "en": "Jeddah"},
-  "JFK": {"uz": "Nyu-York",         "ru": "Нью-Йорк",           "en": "New York"},
-  "KBL": {"uz": "Kobul",            "ru": "Кабул",              "en": "Kabul"},
-  "KHV": {"uz": "Xabarovsk",        "ru": "Хабаровск",          "en": "Khabarovsk"},
-  "KJA": {"uz": "Krasnoyarsk",      "ru": "Красноярск",         "en": "Krasnoyarsk"},
-  "KLV": {"uz": "Karlovi Vari",     "ru": "Карловы Вары",       "en": "Karlovy Vary"},
-  "KSN": {"uz": "Qo'stanay",        "ru": "Костанай",           "en": "Kostanay"},
-  "KSQ": {"uz": "Qarshi",           "ru": "Карши",              "en": "Karshi"},
-  "KUL": {"uz": "Kuala-Lumpur",     "ru": "Куала-Лумпур",       "en": "Kuala Lumpur"},
-  "KZN": {"uz": "Qozon",            "ru": "Казань",             "en": "Kazan"},
-  "LED": {"uz": "Sankt-Peterburg",  "ru": "Санкт-Петербург",    "en": "St. Petersburg"},
-  "LGW": {"uz": "London",           "ru": "Лондон",             "en": "London"},
-  "MCX": {"uz": "Maxachqal'a",      "ru": "Махачкала",          "en": "Makhachkala"},
-  "MED": {"uz": "Madina",           "ru": "Медина",             "en": "Medina"},
-  "MLE": {"uz": "Male",             "ru": "Мале",               "en": "Malé"},
-  "MRV": {"uz": "Mineralnie Vodi",  "ru": "Минеральные Воды",   "en": "Mineralnye Vody"},
-  "MSQ": {"uz": "Minsk",            "ru": "Минск",              "en": "Minsk"},
-  "MUC": {"uz": "Myunxen",          "ru": "Мюнхен",             "en": "Munich"},
-  "MXP": {"uz": "Milan",            "ru": "Милан",              "en": "Milan"},
-  "NCU": {"uz": "Nukus",            "ru": "Нукус",              "en": "Nukus"},
-  "NJC": {"uz": "Nijnevartovsk",    "ru": "Нижневартовск",      "en": "Nizhnevartovsk"},
-  "NMA": {"uz": "Namangan",         "ru": "Наманган",           "en": "Namangan"},
-  "NQZ": {"uz": "Ostona",           "ru": "Астана",             "en": "Astana"},
-  "NVI": {"uz": "Navoiy",           "ru": "Навои",              "en": "Navoi"},
-  "OMN": {"uz": "Zomin",            "ru": "Зомин",              "en": "Zomin"},
-  "OQN": {"uz": "Qo'qon",           "ru": "Коканд",             "en": "Kokand"},
-  "OSS": {"uz": "O'sh",             "ru": "Ош",                 "en": "Osh"},
-  "OVB": {"uz": "Novosibirsk",      "ru": "Новосибирск",        "en": "Novosibirsk"},
-  "PEE": {"uz": "Perm",             "ru": "Пермь",              "en": "Perm"},
-  "PEK": {"uz": "Pekin",            "ru": "Пекин",              "en": "Beijing"},
-  "PKX": {"uz": "Pekin",            "ru": "Пекин",              "en": "Beijing"},
-  "PVG": {"uz": "Shanxay",          "ru": "Шанхай",             "en": "Shanghai"},
-  "RBZ": {"uz": "Shahrisabz",       "ru": "Шахрисабз",          "en": "Shahrisabz"},
-  "RIX": {"uz": "Riga",             "ru": "Рига",               "en": "Riga"},
-  "SCO": {"uz": "Aqtau",            "ru": "Актау",              "en": "Aktau"},
-  "SGC": {"uz": "Surgut",           "ru": "Сургут",             "en": "Surgut"},
-  "SHJ": {"uz": "Sharja",           "ru": "Шарджа",             "en": "Sharjah"},
-  "SKD": {"uz": "Samarqand",        "ru": "Самарканд",          "en": "Samarkand"},
-  "SSH": {"uz": "Sharm ash-Shayx",  "ru": "Шарм-эль-Шейх",      "en": "Sharm El Sheikh"},
-  "SVO": {"uz": "Moskva",           "ru": "Москва",             "en": "Moscow"},
-  "SVX": {"uz": "Yekaterinburg",    "ru": "Екатеринбург",       "en": "Yekaterinburg"},
-  "SYX": {"uz": "Sanya",            "ru": "Санья",              "en": "Sanya"},
-  "TAS": {"uz": "Toshkent",         "ru": "Ташкент",            "en": "Tashkent"},
-  "TBS": {"uz": "Tbilisi",          "ru": "Тбилиси",            "en": "Tbilisi"},
-  "TLV": {"uz": "Tel-Aviv",         "ru": "Тель-Авив",          "en": "Tel Aviv"},
-  "TMJ": {"uz": "Termiz",           "ru": "Термез",             "en": "Termez"},
-  "UFA": {"uz": "Ufa",              "ru": "Уфа",                "en": "Ufa"},
-  "UGC": {"uz": "Urganch",          "ru": "Ургенч",             "en": "Urgench"},
-  "URC": {"uz": "Urumchi",          "ru": "Урумчи",             "en": "Urumqi"},
-  "VKO": {"uz": "Moskva",           "ru": "Москва",             "en": "Moscow"},
-  "WAW": {"uz": "Varshava",         "ru": "Варшава",            "en": "Warsaw"},
-  "XIY": {"uz": "Sian",             "ru": "Сиань",              "en": "Xi'an"},
-  "ZIA": {"uz": "Moskva",           "ru": "Москва",             "en": "Moscow"}
+  "ADB": {
+    "uz": "Izmir",
+    "ru": "Измир",
+    "en": "Izmir"
+  },
+  "AER": {
+    "uz": "Sochi",
+    "ru": "Сочи",
+    "en": "Sochi"
+  },
+  "AKX": {
+    "uz": "Aqtobe",
+    "ru": "Актобе",
+    "en": "Aktobe"
+  },
+  "ALA": {
+    "uz": "Olmaota",
+    "ru": "Алматы",
+    "en": "Almaty"
+  },
+  "AMM": {
+    "uz": "Amman",
+    "ru": "Амман",
+    "en": "Amman"
+  },
+  "AUH": {
+    "uz": "Abu-Dabi",
+    "ru": "Абу-Даби",
+    "en": "Abu Dhabi"
+  },
+  "AYT": {
+    "uz": "Antaliya",
+    "ru": "Анталья",
+    "en": "Antalya"
+  },
+  "AZN": {
+    "uz": "Andijon",
+    "ru": "Андижан",
+    "en": "Andijan"
+  },
+  "BGY": {
+    "uz": "Bergamo",
+    "ru": "Бергамо",
+    "en": "Bergamo"
+  },
+  "BHK": {
+    "uz": "Buxoro",
+    "ru": "Бухара",
+    "en": "Bukhara"
+  },
+  "BSZ": {
+    "uz": "Bishkek",
+    "ru": "Бишкек",
+    "en": "Bishkek"
+  },
+  "BUS": {
+    "uz": "Batumi",
+    "ru": "Батуми",
+    "en": "Batumi"
+  },
+  "CAN": {
+    "uz": "Guanchjou",
+    "ru": "Гуанчжоу",
+    "en": "Guangzhou"
+  },
+  "CDG": {
+    "uz": "Parij",
+    "ru": "Париж",
+    "en": "Paris"
+  },
+  "CXR": {
+    "uz": "Nha Trang",
+    "ru": "Нячанг",
+    "en": "Nha Trang"
+  },
+  "DEL": {
+    "uz": "Dehli",
+    "ru": "Дели",
+    "en": "Delhi"
+  },
+  "DME": {
+    "uz": "Moskva",
+    "ru": "Москва",
+    "en": "Moscow"
+  },
+  "DOH": {
+    "uz": "Doha",
+    "ru": "Доха",
+    "en": "Doha"
+  },
+  "DXB": {
+    "uz": "Dubay",
+    "ru": "Дубай",
+    "en": "Dubai"
+  },
+  "DYU": {
+    "uz": "Dushanbe",
+    "ru": "Душанбе",
+    "en": "Dushanbe"
+  },
+  "ESB": {
+    "uz": "Anqara",
+    "ru": "Анкара",
+    "en": "Ankara"
+  },
+  "EVN": {
+    "uz": "Yerevan",
+    "ru": "Ереван",
+    "en": "Yerevan"
+  },
+  "FCO": {
+    "uz": "Rim",
+    "ru": "Рим",
+    "en": "Rome"
+  },
+  "FEG": {
+    "uz": "Farg'ona",
+    "ru": "Фергана",
+    "en": "Fergana"
+  },
+  "FRA": {
+    "uz": "Frankfurt",
+    "ru": "Франкфурт",
+    "en": "Frankfurt"
+  },
+  "GNJ": {
+    "uz": "Ganja",
+    "ru": "Гянджа",
+    "en": "Ganja"
+  },
+  "GOJ": {
+    "uz": "Nijniy Novgorod",
+    "ru": "Нижний Новгород",
+    "en": "Nizhny Novgorod"
+  },
+  "GRV": {
+    "uz": "Grozniy",
+    "ru": "Грозный",
+    "en": "Grozny"
+  },
+  "GYD": {
+    "uz": "Boku",
+    "ru": "Баку",
+    "en": "Baku"
+  },
+  "HGH": {
+    "uz": "Xanchjou",
+    "ru": "Ханчжоу",
+    "en": "Hangzhou"
+  },
+  "HKT": {
+    "uz": "Phuket",
+    "ru": "Пхукет",
+    "en": "Phuket"
+  },
+  "ICN": {
+    "uz": "Seul",
+    "ru": "Сеул",
+    "en": "Seoul"
+  },
+  "IKA": {
+    "uz": "Tehron",
+    "ru": "Тегеран",
+    "en": "Tehran"
+  },
+  "IKT": {
+    "uz": "Irkutsk",
+    "ru": "Иркутск",
+    "en": "Irkutsk"
+  },
+  "ISB": {
+    "uz": "Islomobod",
+    "ru": "Исламабад",
+    "en": "Islamabad"
+  },
+  "IST": {
+    "uz": "Istanbul",
+    "ru": "Стамбул",
+    "en": "Istanbul"
+  },
+  "IYO": {
+    "uz": "Sariosiyo",
+    "ru": "Сариасия",
+    "en": "Sariosiyo"
+  },
+  "JED": {
+    "uz": "Jidda",
+    "ru": "Джидда",
+    "en": "Jeddah"
+  },
+  "JFK": {
+    "uz": "Nyu-York",
+    "ru": "Нью-Йорк",
+    "en": "New York"
+  },
+  "KBL": {
+    "uz": "Kobul",
+    "ru": "Кабул",
+    "en": "Kabul"
+  },
+  "KHI": {
+    "uz": "Karachi",
+    "ru": "Карачи",
+    "en": "Karachi"
+  },
+  "KHV": {
+    "uz": "Xabarovsk",
+    "ru": "Хабаровск",
+    "en": "Khabarovsk"
+  },
+  "KJA": {
+    "uz": "Krasnoyarsk",
+    "ru": "Красноярск",
+    "en": "Krasnoyarsk"
+  },
+  "KLV": {
+    "uz": "Karlovi Vari",
+    "ru": "Карловы Вары",
+    "en": "Karlovy Vary"
+  },
+  "KSN": {
+    "uz": "Qo'stanay",
+    "ru": "Костанай",
+    "en": "Kostanay"
+  },
+  "KSQ": {
+    "uz": "Qarshi",
+    "ru": "Карши",
+    "en": "Karshi"
+  },
+  "KUF": {
+    "uz": "Samara",
+    "ru": "Самара",
+    "en": "Samara"
+  },
+  "KUL": {
+    "uz": "Kuala-Lumpur",
+    "ru": "Куала-Лумпур",
+    "en": "Kuala Lumpur"
+  },
+  "KZN": {
+    "uz": "Qozon",
+    "ru": "Казань",
+    "en": "Kazan"
+  },
+  "LED": {
+    "uz": "Sankt-Peterburg",
+    "ru": "Санкт-Петербург",
+    "en": "St. Petersburg"
+  },
+  "LGW": {
+    "uz": "London",
+    "ru": "Лондон",
+    "en": "London"
+  },
+  "LHE": {
+    "uz": "Lahor",
+    "ru": "Лахор",
+    "en": "Lahore"
+  },
+  "LHR": {
+    "uz": "London",
+    "ru": "Лондон",
+    "en": "London"
+  },
+  "MCT": {
+    "uz": "Maskat",
+    "ru": "Маскат",
+    "en": "Muscat"
+  },
+  "MCX": {
+    "uz": "Maxachqal'a",
+    "ru": "Махачкала",
+    "en": "Makhachkala"
+  },
+  "MED": {
+    "uz": "Madina",
+    "ru": "Медина",
+    "en": "Medina"
+  },
+  "MLE": {
+    "uz": "Male",
+    "ru": "Мале",
+    "en": "Malé"
+  },
+  "MRV": {
+    "uz": "Mineralnie Vodi",
+    "ru": "Минеральные Воды",
+    "en": "Mineralnye Vody"
+  },
+  "MSQ": {
+    "uz": "Minsk",
+    "ru": "Минск",
+    "en": "Minsk"
+  },
+  "MUC": {
+    "uz": "Myunxen",
+    "ru": "Мюнхен",
+    "en": "Munich"
+  },
+  "MXP": {
+    "uz": "Milan",
+    "ru": "Милан",
+    "en": "Milan"
+  },
+  "NCU": {
+    "uz": "Nukus",
+    "ru": "Нукус",
+    "en": "Nukus"
+  },
+  "NJC": {
+    "uz": "Nijnevartovsk",
+    "ru": "Нижневартовск",
+    "en": "Nizhnevartovsk"
+  },
+  "NMA": {
+    "uz": "Namangan",
+    "ru": "Наманган",
+    "en": "Namangan"
+  },
+  "NQZ": {
+    "uz": "Ostona",
+    "ru": "Астана",
+    "en": "Astana"
+  },
+  "NRT": {
+    "uz": "Tokio",
+    "ru": "Токио",
+    "en": "Tokyo"
+  },
+  "NVI": {
+    "uz": "Navoiy",
+    "ru": "Навои",
+    "en": "Navoi"
+  },
+  "OMN": {
+    "uz": "Zomin",
+    "ru": "Зомин",
+    "en": "Zomin"
+  },
+  "OMS": {
+    "uz": "Omsk",
+    "ru": "Омск",
+    "en": "Omsk"
+  },
+  "OQN": {
+    "uz": "Qo'qon",
+    "ru": "Коканд",
+    "en": "Kokand"
+  },
+  "OSS": {
+    "uz": "O'sh",
+    "ru": "Ош",
+    "en": "Osh"
+  },
+  "OVB": {
+    "uz": "Novosibirsk",
+    "ru": "Новосибирск",
+    "en": "Novosibirsk"
+  },
+  "PEE": {
+    "uz": "Perm",
+    "ru": "Пермь",
+    "en": "Perm"
+  },
+  "PEK": {
+    "uz": "Pekin",
+    "ru": "Пекин",
+    "en": "Beijing"
+  },
+  "PKX": {
+    "uz": "Pekin",
+    "ru": "Пекин",
+    "en": "Beijing"
+  },
+  "PVG": {
+    "uz": "Shanxay",
+    "ru": "Шанхай",
+    "en": "Shanghai"
+  },
+  "RBZ": {
+    "uz": "Shahrisabz",
+    "ru": "Шахрисабз",
+    "en": "Shahrisabz"
+  },
+  "RIX": {
+    "uz": "Riga",
+    "ru": "Рига",
+    "en": "Riga"
+  },
+  "SCO": {
+    "uz": "Aqtau",
+    "ru": "Актау",
+    "en": "Aktau"
+  },
+  "SGC": {
+    "uz": "Surgut",
+    "ru": "Сургут",
+    "en": "Surgut"
+  },
+  "SHJ": {
+    "uz": "Sharja",
+    "ru": "Шарджа",
+    "en": "Sharjah"
+  },
+  "SKD": {
+    "uz": "Samarqand",
+    "ru": "Самарканд",
+    "en": "Samarkand"
+  },
+  "SSH": {
+    "uz": "Sharm ash-Shayx",
+    "ru": "Шарм-эль-Шейх",
+    "en": "Sharm El Sheikh"
+  },
+  "SVO": {
+    "uz": "Moskva",
+    "ru": "Москва",
+    "en": "Moscow"
+  },
+  "SVX": {
+    "uz": "Yekaterinburg",
+    "ru": "Екатеринбург",
+    "en": "Yekaterinburg"
+  },
+  "SYX": {
+    "uz": "Sanya",
+    "ru": "Санья",
+    "en": "Sanya"
+  },
+  "TAS": {
+    "uz": "Toshkent",
+    "ru": "Ташкент",
+    "en": "Tashkent"
+  },
+  "TBS": {
+    "uz": "Tbilisi",
+    "ru": "Тбилиси",
+    "en": "Tbilisi"
+  },
+  "TLV": {
+    "uz": "Tel-Aviv",
+    "ru": "Тель-Авив",
+    "en": "Tel Aviv"
+  },
+  "TMJ": {
+    "uz": "Termiz",
+    "ru": "Термез",
+    "en": "Termez"
+  },
+  "TZX": {
+    "uz": "Trabzon",
+    "ru": "Трабзон",
+    "en": "Trabzon"
+  },
+  "UFA": {
+    "uz": "Ufa",
+    "ru": "Уфа",
+    "en": "Ufa"
+  },
+  "UGC": {
+    "uz": "Urganch",
+    "ru": "Ургенч",
+    "en": "Urgench"
+  },
+  "URC": {
+    "uz": "Urumchi",
+    "ru": "Урумчи",
+    "en": "Urumqi"
+  },
+  "VKO": {
+    "uz": "Moskva",
+    "ru": "Москва",
+    "en": "Moscow"
+  },
+  "WAW": {
+    "uz": "Varshava",
+    "ru": "Варшава",
+    "en": "Warsaw"
+  },
+  "XIY": {
+    "uz": "Sian",
+    "ru": "Сиань",
+    "en": "Xi'an"
+  },
+  "ZIA": {
+    "uz": "Moskva",
+    "ru": "Москва",
+    "en": "Moscow"
+  }
 }

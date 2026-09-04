@@ -197,6 +197,18 @@ def main():
         }, f, ensure_ascii=False, indent=2)
     print(f"\nвсего {len(result)} → {a.out}")
 
+    # Незнакомый код направления показывается на сайте как есть,
+    # поэтому лучше узнать о нём здесь, а не от посетителя.
+    try:
+        with open('cities.json', encoding='utf-8') as f:
+            known = json.load(f)
+        missing = sorted({r['city_iata'] for r in result
+                          if r['city_iata'] and r['city_iata'] not in known})
+        if missing:
+            print(f"\nнет в cities.json: {', '.join(missing)}")
+    except FileNotFoundError:
+        pass
+
 
 if __name__ == "__main__":
     main()
