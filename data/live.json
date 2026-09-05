@@ -255,46 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "130Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "06.09.2026",
-   "time_local": "02:40",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:40",
-   "deviation": null
-  },
-  {
-   "number": "071Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "06.09.2026",
-   "time_local": "02:45",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:45",
-   "deviation": null
-  },
-  {
-   "number": "125Ф",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "06.09.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "056Ж",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "06.09.2026",
-   "time_local": "04:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:10",
-   "deviation": null
-  },
-  {
    "number": "124Ф",
    "route": "САМАРКАНД - ВОЛЖСКИЙ",
    "date": "06.09.2026",
