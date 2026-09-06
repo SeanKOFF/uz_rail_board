@@ -285,16 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "751М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "06.09.2026",
-   "time_local": "12:51",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:51",
-   "deviation": null
-  },
-  {
    "number": "777Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "06.09.2026",
@@ -597,26 +587,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ч",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "06.09.2026",
-   "time_local": "11:34",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:34",
-   "deviation": null
-  },
-  {
-   "number": "125Ф",
-   "route": "АНДИЖОН 1 - ХИВА",
-   "date": "06.09.2026",
-   "time_local": "12:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:56",
-   "deviation": null
-  },
-  {
    "number": "123Ф",
    "route": "ВОЛГОГР 1 - ТОШКЕНТ-ЙУ",
    "date": "06.09.2026",
@@ -828,16 +798,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "751М",
-   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
-   "date": "06.09.2026",
-   "time_local": "10:57",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:57",
-   "deviation": null
-  },
   {
    "number": "423Щ",
    "route": "БУХАРА -МОСКВА ПАВ",
