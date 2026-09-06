@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tabloda.uz — примерное положение поезда</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/common.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--tile);
+    text-decoration:none;font-weight:600;margin:4px 0 14px}
+  .back-link:hover{text-decoration:underline}
+  .map-card{background:var(--card);border:1px solid var(--rule);border-radius:14px;
+    overflow:hidden;margin-bottom:14px}
+  #leaflet-map{width:100%;height:min(60vh,420px)}
+  .train-head{font-weight:700;font-size:1.1rem;margin-bottom:2px}
+  .train-status{font-size:1rem;margin-bottom:12px;min-height:1.3em}
+  .approx-note{color:var(--muted);font-size:.82rem;margin-top:12px;line-height:1.45}
+  .no-data{color:var(--muted);padding:32px 0;text-align:center}
+
+  .leaflet-tooltip.stop-tooltip{
+    background:var(--card);color:var(--ink);border:1px solid var(--rule);
+    border-radius:6px;font-size:12px;font-family:inherit;padding:2px 7px;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+  }
+  .leaflet-tooltip.stop-tooltip::before{border-top-color:var(--rule)}
+
+  .train-marker-icon{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--saffron);border:2px solid var(--card);
+    box-shadow:0 0 0 2px var(--saffron);
+  }
+
+  [data-theme="dark"] .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.95) contrast(.9)}
+  [data-theme="dark"] .leaflet-container{background:#1a1a1a}
+  [data-theme="dark"] .leaflet-control-attribution{background:rgba(22,44,52,.8);color:var(--muted)}
+  [data-theme="dark"] .leaflet-control-attribution a{color:var(--tile)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brandline">
+      <a class="mark" href="./" aria-label="tabloda.uz">
+        <img src="assets/favicon.svg" alt="" width="26" height="26">
+        <span>tabloda<b>.uz</b></span>
+      </a>
+      <nav class="sections" id="sections"></nav>
+      <div class="place" id="place"></div>
+    </div>
+    <div class="head-right">
+      <div class="controls">
+        <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
+        <button id="theme" class="theme" type="button" aria-pressed="false"></button>
+      </div>
+      <div class="clock"><span id="clock">--:--:--</span><small id="tz-label"></small></div>
+    </div>
+  </header>
+
+  <a class="back-link" href="index.html" id="back-link">← Назад</a>
+
+  <div id="content">
+    <div class="no-data">Загрузка…</div>
+  </div>
+
+  <p class="attribution">
+    Данные предоставлены сервисом
+    <a href="https://rasp.yandex.ru/" target="_blank" rel="noopener">Яндекс Расписания</a>
+  </p>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const TZ_OFFSET = 5;
+function tashkentNow(){
+  const d = new Date();
+  return new Date(d.getTime() + (d.getTimezoneOffset() + TZ_OFFSET * 60) * 60000);
+}
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const d = tashkentNow();
+  document.getElementById('clock').textContent =
+    `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+/* ---- язык ---- */
+function getLang(){
+  try {
+    const saved = localStorage.getItem('board-lang');
+    if (saved === 'uz' || saved === 'ru' || saved === 'en') return saved;
+  } catch (e) { /* хранилище недоступно */ }
+  return 'uz';
+}
+let lang = getLang();
+
+const T = {
+  ru: {
+    trains:'Поезда', flights:'Самолёты', back:'← Назад к расписанию',
+    before: t => `Ещё не отправился из «${t}»`,
+    after:  t => `Прибыл на «${t}»`,
+    at:     t => `Стоит на станции «${t}»`,
+    between:(a,b,p) => `В пути: между «${a}» и «${b}» (${p}%)`,
+    noData: 'Не получилось определить маршрут этого рейса — недостаточно данных для карты.',
+    approx: 'Положение рассчитано по расписанию и может не совпадать с реальным — точных данных об опозданиях у большинства станций нет.',
+  },
+  uz: {
+    trains:'Poyezdlar', flights:'Parvozlar', back:'← Jadvalga qaytish',
+    before: t => `«${t}»dan hali jo'nab ketmagan`,
+    after:  t => `«${t}»ga yetib keldi`,
+    at:     t => `«${t}» bekatida turibdi`,
+    between:(a,b,p) => `Yo'lda: «${a}» va «${b}» orasida (${p}%)`,
+    noData: 'Bu reys uchun marshrutni aniqlab bo\u2018lmadi — xaritada ko\u2018rsatish uchun ma\u2019lumot yetarli emas.',
+    approx: 'Joylashuv jadval bo\u2018yicha hisoblangan va haqiqiy holatdan farq qilishi mumkin — aksariyat bekatlarda kechikish haqida aniq ma\u2019lumot yo\u2018q.',
+  },
+  en: {
+    trains:'Trains', flights:'Flights', back:'← Back to schedule',
+    before: t => `Not yet departed from "${t}"`,
+    after:  t => `Arrived at "${t}"`,
+    at:     t => `Stopped at "${t}"`,
+    between:(a,b,p) => `En route: between "${a}" and "${b}" (${p}%)`,
+    noData: 'Could not determine this train\u2019s route — not enough data to show on the map.',
+    approx: 'Position is estimated from the timetable and may not match reality — most stations have no real delay data.',
+  },
+};
+
+function applyLangStatic(){
+  document.documentElement.lang = lang;
+  document.getElementById('sections').innerHTML =
+    `<a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${T[lang].trains}</a>` +
+    `<a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${T[lang].flights}</a>`;
+  document.getElementById('back-link').textContent = T[lang].back;
+}
+
+function buildLangs(){
+  const box = document.getElementById('langs');
+  box.innerHTML = '';
+  ['uz','ru','en'].forEach(code => {
+    const b = document.createElement('button');
+    b.textContent = code.toUpperCase();
+    b.setAttribute('aria-pressed', code === lang);
+    b.onclick = () => {
+      lang = code;
+      try { localStorage.setItem('board-lang', lang); } catch (e) { /* не страшно */ }
+      applyLangStatic();
+      buildLangs();
+      onLangChange();
+    };
+    box.appendChild(b);
+  });
+}
+
+let theme = 'light';
+function readTheme(){
+  try {
+    const saved = localStorage.getItem('board-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch (e) { /* хранилище недоступно */ }
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark' : 'light';
+}
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('theme').setAttribute('aria-pressed', theme === 'dark');
+  try { localStorage.setItem('board-theme', theme); } catch (e) { /* не страшно */ }
+}
+
+/* ================== логика локации — порт locate_train.py ================== */
+
+function parseParams(){
+  const q = new URLSearchParams(location.search);
+  return {
+    number: q.get('number') || '',
+    here: q.get('here') || '',
+    dir: q.get('dir') || 'departure',
+    time: q.get('time') || '',
+    tomorrow: q.get('tomorrow') === '1',
+  };
+}
+
+function pickVariant(routes, numberDigits, hereCode, dir, timeLocal){
+  const variants = routes[numberDigits] || [];
+  const field = dir === 'arrival' ? 'arrival' : 'departure';
+  const exact = variants.find(v => v.stops.some(st => st.code === hereCode && st[field] === timeLocal));
+  if (exact) return exact;
+  return variants.find(v => v.stops.some(st => st.code === hereCode)) || null;
+}
+
+function findAnchor(variant, hereCode, dir, timeLocal){
+  const field = dir === 'arrival' ? 'arrival' : 'departure';
+  return variant.stops.find(st => st.code === hereCode && st[field] === timeLocal)
+      || variant.stops.find(st => st.code === hereCode) || null;
+}
+
+function toDt(anchorDateMs, hhmm, offsetDays, anchorOffsetDays){
+  if (!hhmm) return null;
+  const [h, m] = hhmm.split(':').map(Number);
+  const d = new Date(anchorDateMs + (offsetDays - anchorOffsetDays) * 86400000);
+  d.setHours(h, m, 0, 0);
+  return d;
+}
+
+function buildAnchors(rawStops, anchorDateMs, anchorOffsetDays, coordsByCode){
+  return rawStops
+    .map(st => ({ raw: st, coord: coordsByCode[st.code] }))
+    .filter(x => x.coord && x.coord.lat != null && x.coord.lon != null)
+    .map(x => ({
+      raw: x.raw,
+      lat: x.coord.lat,
+      lon: x.coord.lon,
+      arrivalDt: toDt(anchorDateMs, x.raw.arrival, x.raw.offset, anchorOffsetDays),
+      departureDt: toDt(anchorDateMs, x.raw.departure, x.raw.offset, anchorOffsetDays),
+    }));
+}
+
+function titleOf(a){
+  return (a.raw.names && a.raw.names[lang]) || a.raw.title;
+}
+
+function locateFromStops(anchors, now){
+  if (!anchors.length) return null;
+
+  for (const s of anchors){
+    if (s.arrivalDt && s.departureDt && s.arrivalDt <= now && now <= s.departureDt){
+      return { status: 'at', title: titleOf(s), lat: s.lat, lon: s.lon };
+    }
+  }
+
+  const first = anchors[0], last = anchors[anchors.length - 1];
+  const start = first.departureDt || first.arrivalDt;
+  const end = last.arrivalDt || last.departureDt;
+  if (now < start) return { status: 'before', title: titleOf(first), lat: first.lat, lon: first.lon };
+  if (now > end)   return { status: 'after',  title: titleOf(last),  lat: last.lat,  lon: last.lon };
+
+  for (let i = 0; i < anchors.length - 1; i++){
+    const a = anchors[i], b = anchors[i + 1];
+    const left = a.departureDt || a.arrivalDt;
+    const right = b.arrivalDt || b.departureDt;
+    if (left <= now && now <= right){
+      const frac = (now - left) / (right - left);
+      return {
+        status: 'between', from: titleOf(a), to: titleOf(b), frac,
+        lat: a.lat + (b.lat - a.lat) * frac,
+        lon: a.lon + (b.lon - a.lon) * frac,
+      };
+    }
+  }
+  return null;
+}
+
+function statusText(loc){
+  if (!loc) return '';
+  if (loc.status === 'before')  return T[lang].before(loc.title);
+  if (loc.status === 'after')   return T[lang].after(loc.title);
+  if (loc.status === 'at')      return T[lang].at(loc.title);
+  if (loc.status === 'between') return T[lang].between(loc.from, loc.to, Math.round(loc.frac * 100));
+  return '';
+}
+
+/* ================== карта (Leaflet + OpenStreetMap) ================== */
+
+function cssVar(name){
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+let anchors = null;
+let mapInstance = null, stopMarkers = [], doneLine = null, todoLine = null, trainMarker = null;
+
+function buildMap(){
+  mapInstance = L.map('leaflet-map', { scrollWheelZoom: true, attributionControl: false });
+  L.control.attribution({ prefix: false }).addTo(mapInstance);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '© OpenStreetMap',
+  }).addTo(mapInstance);
+
+  const muted = cssVar('--muted') || '#63797F';
+  const tileClr = cssVar('--tile') || '#1B8794';
+  const rule = cssVar('--rule') || '#DBE2E1';
+  const card = cssVar('--card') || '#FFFFFF';
+
+  stopMarkers = anchors.map(a => {
+    const m = L.circleMarker([a.lat, a.lon], {
+      radius: 5, color: muted, weight: 1.5, fillColor: card, fillOpacity: 1,
+    }).addTo(mapInstance);
+    m.bindTooltip(titleOf(a), { permanent: true, direction: 'top', offset: [0, -6], className: 'stop-tooltip' });
+    return m;
+  });
+
+  todoLine = L.polyline([], { color: rule, weight: 3 }).addTo(mapInstance);
+  doneLine = L.polyline([], { color: tileClr, weight: 3 }).addTo(mapInstance);
+
+  trainMarker = L.marker([anchors[0].lat, anchors[0].lon], {
+    icon: L.divIcon({ className: 'train-marker-icon', iconSize: [14, 14] }),
+  }).addTo(mapInstance);
+
+  const bounds = L.latLngBounds(anchors.map(a => [a.lat, a.lon]));
+  mapInstance.fitBounds(bounds, { padding: [32, 32] });
+}
+
+function updateDynamic(){
+  const now = tashkentNow();
+  const loc = locateFromStops(anchors, now);
+  document.getElementById('status-text').textContent = statusText(loc);
+  if (!loc) return;
+
+  trainMarker.setLatLng([loc.lat, loc.lon]);
+
+  let doneIdx = -1;
+  for (let i = 0; i < anchors.length; i++){
+    const dep = anchors[i].departureDt || anchors[i].arrivalDt;
+    if (dep && dep <= now) doneIdx = i; else break;
+  }
+  const pts = anchors.map(a => [a.lat, a.lon]);
+  doneLine.setLatLngs([...pts.slice(0, doneIdx + 1), [loc.lat, loc.lon]]);
+  todoLine.setLatLngs([[loc.lat, loc.lon], ...pts.slice(doneIdx + 1)]);
+}
+
+function onLangChange(){
+  if (!anchors) return;
+  document.getElementById('train-head').textContent =
+    `${window.__trainNumber} · ${titleOf(anchors[0])} → ${titleOf(anchors[anchors.length - 1])}`;
+  document.getElementById('approx-note').textContent = T[lang].approx;
+  stopMarkers.forEach((m, i) => m.setTooltipContent(titleOf(anchors[i])));
+  updateDynamic();
+}
+
+/* ================== сборка страницы ================== */
+let ROUTES = {}, STATION_COORDS = {};
+
+function init(){
+  const box = document.getElementById('content');
+  const p = parseParams();
+
+  if (!p.number || !p.here){
+    box.innerHTML = `<div class="no-data">${T[lang].noData}</div>`;
+    return;
+  }
+
+  const digits = (p.number.match(/^\d+/) || [''])[0];
+  const variant = pickVariant(ROUTES, digits, p.here, p.dir, p.time);
+  const anchor = variant && findAnchor(variant, p.here, p.dir, p.time);
+  if (!variant || !anchor){
+    box.innerHTML = `<div class="no-data">${T[lang].noData}</div>`;
+    return;
+  }
+
+  const now = tashkentNow();
+  const anchorDate = new Date(now.getTime() + (p.tomorrow ? 1 : 0) * 86400000);
+  anchorDate.setHours(0, 0, 0, 0);
+
+  anchors = buildAnchors(variant.stops, anchorDate.getTime(), anchor.offset, STATION_COORDS);
+  if (!anchors.length){
+    box.innerHTML = `<div class="no-data">${T[lang].noData}</div>`;
+    return;
+  }
+
+  window.__trainNumber = p.number;
+  box.innerHTML = `
+    <div class="train-head" id="train-head">${p.number} · ${titleOf(anchors[0])} → ${titleOf(anchors[anchors.length - 1])}</div>
+    <div class="train-status" id="status-text"></div>
+    <div class="map-card"><div id="leaflet-map"></div></div>
+    <div class="approx-note" id="approx-note">${T[lang].approx}</div>
+  `;
+
+  buildMap();
+  updateDynamic();
+  setInterval(updateDynamic, 20000);
+}
+
+async function load(){
+  try {
+    const [rt, sc] = await Promise.all([
+      fetch('data/routes.json', {cache:'no-cache'}),
+      fetch('data/station_coords.json', {cache:'no-cache'}),
+    ]);
+    ROUTES = rt.ok ? await rt.json() : {};
+    STATION_COORDS = sc.ok ? await sc.json() : {};
+  } catch (e) {
+    document.getElementById('content').innerHTML = `<div class="no-data">${T[lang].noData}</div>`;
+    return;
+  }
+  init();
+}
+
+applyLangStatic();
+buildLangs();
+theme = readTheme();
+applyTheme();
+document.getElementById('theme').onclick = () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  applyTheme();
+};
+setInterval(tick, 1000);
+tick();
+load();
+</script>
+</body>
+</html>

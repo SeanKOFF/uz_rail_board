@@ -414,7 +414,19 @@ function routeHtml(t){
 
   const cut = (r.cut_before + r.cut_after)
     ? `<div class="cut">${T[lang].abroad}</div>` : '';
-  return `<ol class="route">${items}</ol>${cut}`;
+
+  // Ссылка на карту — только если знаем код нашей станции (иначе
+  // локация на новой странице не определится).
+  const mapLabel = {ru:'Показать на карте', uz:'Xaritada koʻrsatish', en:'Show on map'}[lang];
+  const mapLink = here ? (() => {
+    const q = new URLSearchParams({
+      number: t.number, here, dir: t.direction,
+      time: t.time_local, tomorrow: t.tomorrow ? '1' : '0',
+    });
+    return `<a class="map-link" href="train-map.html?${q.toString()}">${mapLabel} →</a>`;
+  })() : '';
+
+  return `<ol class="route">${items}</ol>${cut}${mapLink}`;
 }
 
 function trainTitle(t){
