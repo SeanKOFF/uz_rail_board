@@ -10432,7 +10432,7 @@
    "days": "134567",
    "via": null,
    "station": "urgench",
-   "through": false,
+   "through": true,
    "cities": [
     "Хива"
    ],
@@ -10448,7 +10448,7 @@
    "days": "134567",
    "via": null,
    "station": "urgench",
-   "through": false,
+   "through": true,
    "cities": [
     "Бухара"
    ],
@@ -10498,7 +10498,7 @@
    "days": "234567",
    "via": null,
    "station": "urgench",
-   "through": false,
+   "through": true,
    "cities": [
     "Бухара"
    ],
@@ -10516,7 +10516,7 @@
    "days": "234567",
    "via": null,
    "station": "urgench",
-   "through": false,
+   "through": true,
    "cities": [
     "Хива"
    ],
