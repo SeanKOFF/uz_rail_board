@@ -127,7 +127,7 @@ to{opacity:1;transform:none}
   /* Дата у рейса за пределами горизонта: он не сегодня, и это
      должно быть видно сразу. */
   .meta .day{
-    font-size:10px;letter-spacing:.06em;
+    font-size:10px;letter-spacing:.06em;white-space:nowrap;
     color:var(--saffron);border:1px solid var(--saffron);
     border-radius:3px;padding:2px 5px;font-weight:600;
   }
@@ -193,7 +193,8 @@ const T = {
   uz: {
     trains:'Poyezdlar', flights:'Samolyotlar',
     dep:'Uchish', arr:'Qo\'nish', tz:'mahalliy vaqt',
-    tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat',
+    tomorrow:'ertaga', aftertomorrow:'indinga',
+    inPrefix:'', min:'daq', hr:'soat',
     now:'hozir', airport:'Aeroport',
     carrier:'Aviakompaniya', flight:'Reys', terminal:'Terminal',
     baggage:'Bagaj lentasi', checkin:'Ro\'yxatdan o\'tish',
@@ -208,7 +209,8 @@ const T = {
   ru: {
     trains:'Поезда', flights:'Самолёты',
     dep:'Вылет', arr:'Прилёт', tz:'время местное',
-    tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч',
+    tomorrow:'завтра', aftertomorrow:'послезавтра',
+    inPrefix:'через', min:'мин', hr:'ч',
     now:'сейчас', airport:'Аэропорт',
     carrier:'Авиакомпания', flight:'Рейс', terminal:'Терминал',
     baggage:'Багажная лента', checkin:'Стойки регистрации',
@@ -223,7 +225,8 @@ const T = {
   en: {
     trains:'Trains', flights:'Flights',
     dep:'Departures', arr:'Arrivals', tz:'local time',
-    tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h',
+    tomorrow:'tomorrow', aftertomorrow:'in 2 days',
+    inPrefix:'in', min:'min', hr:'h',
     now:'now', airport:'Airport',
     carrier:'Airline', flight:'Flight', terminal:'Terminal',
     baggage:'Baggage belt', checkin:'Check-in desks',
@@ -327,14 +330,30 @@ function detailHtml(f){
 }
 
 /* «завтра» или дата — для рейса за пределами горизонта. */
+/* Сколько суток до рейса: 0 — сегодня, 1 — завтра и так далее. */
+function daysAhead(iso){
+  const d = parseISO(iso);
+  if (!d) return null;
+  const day = x => new Date(x.getFullYear(), x.getMonth(), x.getDate());
+  return Math.round((day(d) - day(new Date())) / 86400000);
+}
+
+/* Дата в мете — только у рейсов не сегодня. */
 function dayLabel(iso){
   const d = parseISO(iso);
-  if (!d) return '';
-  const now = new Date();
-  const day = x => `${x.getFullYear()}-${x.getMonth()}-${x.getDate()}`;
-  const t = new Date(now.getTime() + 86400000);
-  if (day(d) === day(t)) return T[lang].tomorrow;
+  if (!d || daysAhead(iso) === 0) return '';
   return `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}`;
+}
+
+/* Под временем: обратный отсчёт, а для дальних рейсов — словами.
+   «через 43 ч 31 мин» ничего не говорит, «послезавтра» говорит. */
+function whenLabel(target, iso){
+  const words = inWords(target);
+  if (words) return words;
+  const ahead = daysAhead(iso);
+  if (ahead === 1) return T[lang].tomorrow;
+  if (ahead === 2) return T[lang].aftertomorrow;
+  return '';
 }
 
 function rowHtml(f, i){
@@ -361,7 +380,10 @@ function rowHtml(f, i){
       <div class="right">
         <div class="time${moved ? ' moved' : ''}">${planned}</div>
         ${moved ? `<div class="fact">${fact}</div>` : ''}
-        ${inWords(when) ? `<div class="in">${inWords(when)}</div>` : ''}
+        ${(() => {
+          const w = whenLabel(when, f.estimated_at || f.scheduled_at);
+          return w ? `<div class="in">${w}</div>` : '';
+        })()}
         ${f.terminal ? `<div class="term">${esc(f.terminal)}</div>` : ''}
       </div>
       ${open ? detailHtml(f) : ''}
