@@ -260,6 +260,9 @@ function inWords(target){
   const diff = Math.round((target - new Date()) / 60000);
   if (diff <= 0) return T[lang].now;
   if (diff < 60) return `${T[lang].inPrefix} <b>${diff}</b> ${T[lang].min}`.trim();
+  // Дальше полусуток обратный отсчёт бесполезен: «через 43 ч 31 мин»
+  // ничего не говорит. Там достаточно даты, она уже стоит в мете.
+  if (diff >= 12 * 60) return '';
   const h = Math.floor(diff / 60), m = diff % 60;
   return `${T[lang].inPrefix} <b>${h}</b> ${T[lang].hr} ${m} ${T[lang].min}`.trim();
 }
@@ -346,7 +349,7 @@ function rowHtml(f, i){
       <div class="right">
         <div class="time${moved ? ' moved' : ''}">${planned}</div>
         ${moved ? `<div class="fact">${fact}</div>` : ''}
-        <div class="in">${inWords(when)}</div>
+        ${inWords(when) ? `<div class="in">${inWords(when)}</div>` : ''}
         ${f.terminal ? `<div class="term">${esc(f.terminal)}</div>` : ''}
       </div>
       ${open ? detailHtml(f) : ''}
