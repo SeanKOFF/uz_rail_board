@@ -11034,5 +11034,135 @@
     ]
    ]
   }
+ ],
+ "707": [
+  {
+   "number": "707Ф",
+   "stops": [
+    {
+     "code": "2900172",
+     "title": "Хива",
+     "names": {
+      "ru": "Хива",
+      "uz": "Xiva",
+      "en": "Khiva"
+     },
+     "arrival": null,
+     "departure": "09:55",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900790",
+     "title": "Ургенч",
+     "names": {
+      "ru": "Ургенч",
+      "uz": "Urganch",
+      "en": "Urgench"
+     },
+     "arrival": null,
+     "departure": "10:20",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900800",
+     "title": "Бухара 1",
+     "names": {
+      "ru": "Бухара 1",
+      "uz": "Buxoro 1",
+      "en": "Bukhara 1"
+     },
+     "arrival": "14:32",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900172",
+     null,
+     "09:55"
+    ],
+    [
+     "2900790",
+     null,
+     "10:20"
+    ],
+    [
+     "2900800",
+     "14:32",
+     null
+    ]
+   ]
+  }
+ ],
+ "706": [
+  {
+   "number": "706Ф",
+   "stops": [
+    {
+     "code": "2900800",
+     "title": "Бухара 1",
+     "names": {
+      "ru": "Бухара 1",
+      "uz": "Buxoro 1",
+      "en": "Bukhara 1"
+     },
+     "arrival": null,
+     "departure": "15:45",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900790",
+     "title": "Ургенч",
+     "names": {
+      "ru": "Ургенч",
+      "uz": "Urganch",
+      "en": "Urgench"
+     },
+     "arrival": null,
+     "departure": "19:49",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900172",
+     "title": "Хива",
+     "names": {
+      "ru": "Хива",
+      "uz": "Xiva",
+      "en": "Khiva"
+     },
+     "arrival": "20:25",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900800",
+     null,
+     "15:45"
+    ],
+    [
+     "2900790",
+     null,
+     "19:49"
+    ],
+    [
+     "2900172",
+     "20:25",
+     null
+    ]
+   ]
+  }
  ]
 }

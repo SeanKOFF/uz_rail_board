@@ -10403,6 +10403,214 @@
    "quals": [
     ""
    ]
+  },
+  {
+   "number": "707Ф",
+   "direction": "departure",
+   "title": "Бухара 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "09:55",
+   "days": "134567",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "707Ф",
+   "direction": "arrival",
+   "title": "из Хивы",
+   "brand": null,
+   "fast": false,
+   "time_local": "10:20",
+   "days": "134567",
+   "via": null,
+   "station": "urgench",
+   "through": false,
+   "cities": [
+    "Хива"
+   ],
+   "quals": []
+  },
+  {
+   "number": "707Ф",
+   "direction": "departure",
+   "title": "Бухара 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "10:20",
+   "days": "134567",
+   "via": null,
+   "station": "urgench",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "707Ф",
+   "direction": "arrival",
+   "title": "из Хивы",
+   "brand": null,
+   "fast": false,
+   "time_local": "14:32",
+   "days": "134567",
+   "via": null,
+   "station": "bukhara",
+   "through": false,
+   "cities": [
+    "Хива"
+   ],
+   "quals": []
+  },
+  {
+   "number": "706Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "15:45",
+   "days": "234567",
+   "via": null,
+   "station": "bukhara",
+   "through": false,
+   "cities": [
+    "Хива"
+   ],
+   "quals": []
+  },
+  {
+   "number": "706Ф",
+   "direction": "arrival",
+   "title": "из Бухары 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "19:49",
+   "days": "234567",
+   "via": null,
+   "station": "urgench",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "706Ф",
+   "direction": "departure",
+   "title": "Хива",
+   "brand": null,
+   "fast": false,
+   "time_local": "19:49",
+   "days": "234567",
+   "via": null,
+   "station": "urgench",
+   "through": false,
+   "cities": [
+    "Хива"
+   ],
+   "quals": []
+  },
+  {
+   "number": "706Ф",
+   "direction": "arrival",
+   "title": "из Бухары 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "20:25",
+   "days": "234567",
+   "via": null,
+   "station": "khiva",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "701Ф",
+   "direction": "departure",
+   "title": "Ташкент-Центральный",
+   "brand": null,
+   "fast": false,
+   "time_local": "15:17",
+   "days": "1",
+   "via": null,
+   "station": "bukhara",
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
+  },
+  {
+   "number": "701Ф",
+   "direction": "arrival",
+   "title": "из Бухары 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "21:22",
+   "days": "1",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "702Ф",
+   "direction": "departure",
+   "title": "Бухара 1",
+   "brand": null,
+   "fast": false,
+   "time_local": "10:05",
+   "days": "2",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [
+    "Бухара"
+   ],
+   "quals": [
+    "1"
+   ]
+  },
+  {
+   "number": "702Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Центрального",
+   "brand": null,
+   "fast": false,
+   "time_local": "15:17",
+   "days": "2",
+   "via": null,
+   "station": "bukhara",
+   "through": false,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "central"
+   ]
   }
  ]
 }
