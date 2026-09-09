@@ -50,6 +50,16 @@
     "ru": "Бухара",
     "en": "Bukhara"
   },
+  "BKK": {
+    "uz": "Bangkok",
+    "ru": "Бангкок",
+    "en": "Bangkok"
+  },
+  "BOM": {
+    "uz": "Mumbay",
+    "ru": "Мумбаи",
+    "en": "Mumbai"
+  },
   "BSZ": {
     "uz": "Bishkek",
     "ru": "Бишкек",
@@ -74,6 +84,11 @@
     "uz": "Nha Trang",
     "ru": "Нячанг",
     "en": "Nha Trang"
+  },
+  "DAD": {
+    "uz": "Da Nang",
+    "ru": "Дананг",
+    "en": "Da Nang"
   },
   "DEL": {
     "uz": "Dehli",
@@ -155,6 +170,11 @@
     "ru": "Пхукет",
     "en": "Phuket"
   },
+  "HYD": {
+    "uz": "Haydarobod",
+    "ru": "Хайдарабад",
+    "en": "Hyderabad"
+  },
   "ICN": {
     "uz": "Seul",
     "ru": "Сеул",
@@ -219,6 +239,11 @@
     "uz": "Karlovi Vari",
     "ru": "Карловы Вары",
     "en": "Karlovy Vary"
+  },
+  "KRR": {
+    "uz": "Krasnodar",
+    "ru": "Краснодар",
+    "en": "Krasnodar"
   },
   "KSN": {
     "uz": "Qo'stanay",
@@ -375,6 +400,11 @@
     "ru": "Пекин",
     "en": "Beijing"
   },
+  "PRG": {
+    "uz": "Praga",
+    "ru": "Прага",
+    "en": "Prague"
+  },
   "PVG": {
     "uz": "Shanxay",
     "ru": "Шанхай",
@@ -439,6 +469,16 @@
     "uz": "Tbilisi",
     "ru": "Тбилиси",
     "en": "Tbilisi"
+  },
+  "TFU": {
+    "uz": "Chengdu",
+    "ru": "Чэнду",
+    "en": "Chengdu"
+  },
+  "TJM": {
+    "uz": "Tyumen",
+    "ru": "Тюмень",
+    "en": "Tyumen"
   },
   "TLV": {
     "uz": "Tel-Aviv",
