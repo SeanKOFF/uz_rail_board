@@ -186,7 +186,8 @@ const T = {
     carrier:'Aviakompaniya', flight:'Reys', terminal:'Terminal',
     baggage:'Bagaj lentasi', checkin:'Ro\'yxatdan o\'tish',
     codeshare:'Kodsherling', scheduled:'Jadval bo\'yicha',
-    empty:'Yaqin sutkada bu aeroportda reys yo\'q.',
+    empty:'Bu aeroport uchun reys ma\'lumoti yo\'q.',
+    beyond:h => `Yaqin ${h} soat ichida reys yo\'q. Keyingisi:`,
     error:'Jadval yuklanmadi. Sahifani yangilang.',
     note:'Vaqtlar mahalliy. Ma\'lumot aeroport tablosidan olinadi va soatiga bir marta yangilanadi.',
     source:'Manba: ',
@@ -200,7 +201,8 @@ const T = {
     carrier:'Авиакомпания', flight:'Рейс', terminal:'Терминал',
     baggage:'Багажная лента', checkin:'Стойки регистрации',
     codeshare:'Код-шеринг', scheduled:'По расписанию',
-    empty:'В ближайшие сутки рейсов из этого аэропорта нет.',
+    empty:'Рейсов из этого аэропорта нет.',
+    beyond:h => `В ближайшие ${h} ч рейсов нет. Следующий:`,
     error:'Расписание не загрузилось. Обновите страницу.',
     note:'Время местное. Данные с табло аэропортов, обновляются раз в час.',
     source:'Источник: ',
@@ -214,7 +216,8 @@ const T = {
     carrier:'Airline', flight:'Flight', terminal:'Terminal',
     baggage:'Baggage belt', checkin:'Check-in desks',
     codeshare:'Codeshare', scheduled:'Scheduled',
-    empty:'No flights from this airport within 24 hours.',
+    empty:'No flights listed for this airport.',
+    beyond:h => `No flights in the next ${h} h. Next one:`,
     error:'Schedule failed to load. Please refresh.',
     note:'Local time. Data from airport boards, updated hourly.',
     source:'Source: ',
@@ -266,20 +269,27 @@ const hhmm = iso => iso ? iso.slice(11, 16) : '';
 /* ---------- отбор ---------- */
 
 function upcoming(){
-  if (!DATA) return [];
+  if (!DATA) return {rows: [], next: null};
   const now = new Date();
   const till = new Date(now.getTime() + HORIZON_H[mode] * 3600000);
   const from = new Date(now.getTime() - GRACE_MIN[mode] * 60000);
 
-  return DATA.flights
+  const mine = DATA.flights
     .filter(f => f.airport === airport && f.event === mode)
-    .filter(f => {
-      const t = parseISO(f.estimated_at || f.scheduled_at);
-      return t && t > from && t < till;
-    })
-    .sort((a, b) => parseISO(a.estimated_at || a.scheduled_at)
-                  - parseISO(b.estimated_at || b.scheduled_at))
-    .slice(0, SHOW);
+    .map(f => [f, parseISO(f.estimated_at || f.scheduled_at)])
+    .filter(([, t]) => t)
+    .sort((a, b) => a[1] - b[1]);
+
+  const rows = mine.filter(([, t]) => t > from && t < till)
+                   .map(([f]) => f).slice(0, SHOW);
+
+  // У мелких аэропортов в окно часто не попадает ничего: у Навои
+  // три рейса за трое суток. Показываем ближайший за горизонтом,
+  // иначе страница выглядит сломанной.
+  const next = rows.length ? null
+    : (mine.find(([, t]) => t >= till) || [null])[0];
+
+  return {rows, next};
 }
 
 /* ---------- отрисовка ---------- */
@@ -301,6 +311,17 @@ function detailHtml(f){
     `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>`;
 }
 
+/* «завтра» или дата — для рейса за пределами горизонта. */
+function dayLabel(iso){
+  const d = parseISO(iso);
+  if (!d) return '';
+  const now = new Date();
+  const day = x => `${x.getFullYear()}-${x.getMonth()}-${x.getDate()}`;
+  const t = new Date(now.getTime() + 86400000);
+  if (day(d) === day(t)) return T[lang].tomorrow;
+  return `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}`;
+}
+
 function rowHtml(f, i){
   const planned = hhmm(f.scheduled_at);
   const fact = hhmm(f.estimated_at);
@@ -317,6 +338,8 @@ function rowHtml(f, i){
         <div class="dest">${esc(cityName(f.city_iata) || f.city)}</div>
         <div class="meta">
           <span>${esc(f.carrier || '')}</span>
+          ${dayLabel(f.estimated_at || f.scheduled_at)
+            ? `<span class="day">${dayLabel(f.estimated_at || f.scheduled_at)}</span>` : ''}
           ${status ? `<span class="state ${tone}"><i class="dot"></i>${esc(status)}</span>` : ''}
         </div>
       </div>
@@ -354,10 +377,16 @@ function render(){
     `<button data-code="${code}" aria-pressed="${code === airport}">${esc(cityName(code))}</button>`
   ).join('');
 
-  const list = upcoming();
-  document.getElementById('board').innerHTML = list.length
-    ? list.map(rowHtml).join('')
-    : `<div class="empty">${t.empty}</div>`;
+  const {rows, next} = upcoming();
+  const board = document.getElementById('board');
+  if (rows.length) {
+    board.innerHTML = rows.map(rowHtml).join('');
+  } else if (next) {
+    board.innerHTML =
+      `<div class="beyond">${t.beyond(HORIZON_H[mode])}</div>` + rowHtml(next, 0);
+  } else {
+    board.innerHTML = `<div class="empty">${t.empty}</div>`;
+  }
 
   document.getElementById('foot').textContent = DATA
     ? t.updated(new Date(DATA.updated).toLocaleString(
