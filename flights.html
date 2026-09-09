@@ -119,6 +119,18 @@ to{opacity:1;transform:none}
     .time{font-size:20px}
     .fact{font-size:20px}
   }
+
+  /* Пояснение, когда в горизонт не попало ни одного рейса. */
+  .beyond{
+    font-size:12.5px;color:var(--muted);margin:0 0 9px;line-height:1.5;
+  }
+  /* Дата у рейса за пределами горизонта: он не сегодня, и это
+     должно быть видно сразу. */
+  .meta .day{
+    font-size:10px;letter-spacing:.06em;
+    color:var(--saffron);border:1px solid var(--saffron);
+    border-radius:3px;padding:2px 5px;font-weight:600;
+  }
 </style>
 </head>
 <body>
