@@ -1735,5 +1735,23 @@
   "planned": "11:34",
   "actual": "11:39",
   "deviation": 5
+ },
+ {
+  "at": "2026-09-09 16:34",
+  "station": "urgench",
+  "number": "056Ч",
+  "date": "10.09.2026",
+  "planned": "11:34",
+  "actual": "11:39",
+  "deviation": 5
+ },
+ {
+  "at": "2026-09-09 16:34",
+  "station": "urgench",
+  "number": "706Ф",
+  "date": "10.09.2026",
+  "planned": "19:49",
+  "actual": "20:05",
+  "deviation": 16
  }
 ]
