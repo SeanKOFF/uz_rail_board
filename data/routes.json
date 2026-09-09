@@ -8947,21 +8947,8 @@
       "en": "Andijan 1"
      },
      "arrival": null,
-     "departure": "15:09",
+     "departure": "15:38",
      "stop": null,
-     "offset": 0
-    },
-    {
-     "code": "2900701",
-     "title": "Кува",
-     "names": {
-      "ru": "Кува",
-      "uz": "Quva",
-      "en": "Kuva"
-     },
-     "arrival": "15:35",
-     "departure": "15:37",
-     "stop": 2,
      "offset": 0
     },
     {
@@ -8972,9 +8959,9 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "16:00",
-     "departure": "16:03",
-     "stop": 3,
+     "arrival": null,
+     "departure": "16:11",
+     "stop": null,
      "offset": 0
     },
     {
@@ -8985,9 +8972,9 @@
       "uz": "Qo'qon 1",
       "en": "Kokand 1"
      },
-     "arrival": "16:50",
-     "departure": "16:53",
-     "stop": 3,
+     "arrival": null,
+     "departure": "16:43",
+     "stop": null,
      "offset": 0
     },
     {
@@ -8998,9 +8985,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "17:25",
-     "departure": "17:28",
-     "stop": 3,
+     "arrival": null,
+     "departure": "17:11",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9011,9 +8998,9 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "19:42",
-     "departure": "19:44",
-     "stop": 2,
+     "arrival": null,
+     "departure": "18:50",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9024,7 +9011,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "21:10",
+     "arrival": "19:53",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -9036,36 +9023,31 @@
     [
      "2900680",
      null,
-     "15:09"
-    ],
-    [
-     "2900701",
-     "15:35",
-     "15:37"
+     "15:38"
     ],
     [
      "2900920",
-     "16:00",
-     "16:03"
+     null,
+     "16:11"
     ],
     [
      "2900880",
-     "16:50",
-     "16:53"
+     null,
+     "16:43"
     ],
     [
      "2900693",
-     "17:25",
-     "17:28"
+     null,
+     "17:11"
     ],
     [
      "2900679",
-     "19:42",
-     "19:44"
+     null,
+     "18:50"
     ],
     [
      "2900001",
-     "21:10",
+     "19:53",
      null
     ]
    ]
@@ -9084,7 +9066,7 @@
       "en": "Tashkent-Central"
      },
      "arrival": null,
-     "departure": "08:10",
+     "departure": "09:20",
      "stop": null,
      "offset": 0
     },
@@ -9096,9 +9078,9 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "09:36",
-     "departure": "09:38",
-     "stop": 2,
+     "arrival": null,
+     "departure": "10:25",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9109,9 +9091,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "11:53",
-     "departure": "11:57",
-     "stop": 4,
+     "arrival": null,
+     "departure": "12:00",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9122,9 +9104,9 @@
       "uz": "Qo'qon 1",
       "en": "Kokand 1"
      },
-     "arrival": "12:29",
-     "departure": "12:33",
-     "stop": 4,
+     "arrival": null,
+     "departure": "12:28",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9135,22 +9117,9 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "13:20",
-     "departure": "13:23",
-     "stop": 3,
-     "offset": 0
-    },
-    {
-     "code": "2900701",
-     "title": "Кува",
-     "names": {
-      "ru": "Кува",
-      "uz": "Quva",
-      "en": "Kuva"
-     },
-     "arrival": "13:46",
-     "departure": "13:48",
-     "stop": 2,
+     "arrival": null,
+     "departure": "13:00",
+     "stop": null,
      "offset": 0
     },
     {
@@ -9161,7 +9130,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "14:14",
+     "arrival": "13:35",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -9173,36 +9142,31 @@
     [
      "2900001",
      null,
-     "08:10"
+     "09:20"
     ],
     [
      "2900679",
-     "09:36",
-     "09:38"
+     null,
+     "10:25"
     ],
     [
      "2900693",
-     "11:53",
-     "11:57"
+     null,
+     "12:00"
     ],
     [
      "2900880",
-     "12:29",
-     "12:33"
+     null,
+     "12:28"
     ],
     [
      "2900920",
-     "13:20",
-     "13:23"
-    ],
-    [
-     "2900701",
-     "13:46",
-     "13:48"
+     null,
+     "13:00"
     ],
     [
      "2900680",
-     "14:14",
+     "13:35",
      null
     ]
    ]
