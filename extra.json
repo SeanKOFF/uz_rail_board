@@ -5,7 +5,7 @@
 
  "trains": [
   {
-   "number": "734F",
+   "number": "734Ф",
    "direction": "departure",
    "title": "Наманган — Андижан",
    "brand": "O'zbekiston",
@@ -19,7 +19,7 @@
    "quals": []
   },
   {
-   "number": "733F",
+   "number": "733Ф",
    "direction": "arrival",
    "title": "из Андижана",
    "brand": "O'zbekiston",
@@ -33,7 +33,7 @@
    "quals": []
   },
   {
-   "number": "733F",
+   "number": "733Ф",
    "direction": "departure",
    "title": "Наманган — Ташкент",
    "brand": "O'zbekiston",
@@ -47,7 +47,7 @@
    "quals": []
   },
   {
-   "number": "734F",
+   "number": "734Ф",
    "direction": "arrival",
    "title": "из Ташкента",
    "brand": "O'zbekiston",
