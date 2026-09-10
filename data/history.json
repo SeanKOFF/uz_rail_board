@@ -1807,5 +1807,23 @@
   "planned": "19:49",
   "actual": "20:05",
   "deviation": 16
+ },
+ {
+  "at": "2026-09-10 05:55",
+  "station": "tashkent-central",
+  "number": "730Ф",
+  "date": "11.09.2026",
+  "planned": "08:10",
+  "actual": "09:20",
+  "deviation": 70
+ },
+ {
+  "at": "2026-09-10 05:55",
+  "station": "urgench",
+  "number": "056Ч",
+  "date": "10.09.2026",
+  "planned": "11:34",
+  "actual": "11:39",
+  "deviation": 5
  }
 ]
