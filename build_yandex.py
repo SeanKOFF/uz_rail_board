@@ -296,6 +296,74 @@ def build(anchors):
     return rows, failures
 
 
+# Поля, по которым нитки считаются одним и тем же рейсом.
+DEDUPE_KEY = ("number", "station", "direction", "time_local")
+WEEKDAYS = set("1234567")
+
+
+def dedupe_threads(rows):
+    """Схлопнуть дубли ниток одного рейса, объединив дни курсирования.
+
+    Яндекс отдаёт один рейс несколькими нитками: у 731Ф были дни "4567"
+    и "7", и в воскресенье он показывался на табло дважды. Различаться
+    у дублей могут только дни и uid. Любое другое расхождение означает
+    разные рейсы под одним номером — такие не трогаем, но печатаем,
+    чтобы это было видно в отчёте Actions.
+    """
+    groups = {}
+    for index, row in enumerate(rows):
+        groups.setdefault(tuple(row.get(f) for f in DEDUPE_KEY), []).append(index)
+
+    drop = set()
+    merged_days = {}
+
+    for key, members in groups.items():
+        if len(members) == 1:
+            continue
+        label = " | ".join(str(part) for part in key)
+
+        fields = set()
+        for index in members:
+            fields |= set(rows[index])
+        risky = []
+        for field in sorted(fields):
+            if field in ("days", "uid"):
+                continue
+            values = {json.dumps(rows[i].get(field), ensure_ascii=False,
+                                 sort_keys=True) for i in members}
+            if len(values) > 1:
+                risky.append(field)
+        if risky:
+            print(f"  Не схлопнуто {label}: различаются {', '.join(risky)}")
+            continue
+
+        day_sets = [set(rows[i].get("days") or "") for i in members]
+        if any(not days or not days <= WEEKDAYS for days in day_sets):
+            raw = ", ".join(repr(rows[i].get("days")) for i in members)
+            print(f"  Не схлопнуто {label}: дни не днями недели ({raw})")
+            continue
+
+        # Оставляем запись с самым широким набором дней, при равенстве первую.
+        winner = max(range(len(members)),
+                     key=lambda p: (len(day_sets[p]), -members[p]))
+        keep = members[winner]
+        merged_days[keep] = "".join(sorted(set().union(*day_sets)))
+        drop.update(i for i in members if i != keep)
+
+    if not drop:
+        return rows
+
+    result = []
+    for index, row in enumerate(rows):
+        if index in drop:
+            continue
+        if index in merged_days and merged_days[index] != row.get("days"):
+            row = dict(row, days=merged_days[index])
+        result.append(row)
+    print(f"Схлопнуто дублей ниток: {len(drop)}, осталось записей: {len(result)}")
+    return result
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--anchor", default="2900001,2900002",
@@ -326,6 +394,8 @@ def main():
               "маршруты кэшируются, так что второй прогон почти "
               "не расходует лимит.", file=sys.stderr)
         sys.exit(2)
+
+    rows = dedupe_threads(rows)
 
     out = ROOT / ("seed.json" if args.apply else "seed_yandex.json")
     out.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
