@@ -1,36 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "732Ф",
-   "route": "ТОШКЕНТ -АНДИЖАН",
-   "date": "11.09.2026",
-   "time_local": "17:55",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:55",
-   "deviation": null
-  },
-  {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "11.09.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "11.09.2026",
-   "time_local": "20:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "20:32",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "12.09.2026",
@@ -131,6 +101,36 @@
    "deviation": null
   },
   {
+   "number": "732Ф",
+   "route": "ТОШКЕНТ -АНДИЖАН",
+   "date": "12.09.2026",
+   "time_local": "17:55",
+   "platform": null,
+   "sold_out": false,
+   "planned": "17:55",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "12.09.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
+   "deviation": null
+  },
+  {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "12.09.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
+   "deviation": null
+  },
+  {
    "number": "124Ф",
    "route": "ТАШКЕНТ -ВОЛГОГРАД",
    "date": "13.09.2026",
@@ -152,26 +152,6 @@
   }
  ],
  "tashkent-south": [
-  {
-   "number": "082Ф",
-   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
-   "date": "11.09.2026",
-   "time_local": "21:12",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:12",
-   "deviation": null
-  },
-  {
-   "number": "080Ф",
-   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
-   "date": "11.09.2026",
-   "time_local": "21:13",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:13",
-   "deviation": null
-  },
   {
    "number": "125Ф",
    "route": "ТАШКЕНТ ЮЖ -ХИВА",
@@ -233,6 +213,26 @@
    "deviation": null
   },
   {
+   "number": "082Ф",
+   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
+   "date": "12.09.2026",
+   "time_local": "21:12",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:12",
+   "deviation": null
+  },
+  {
+   "number": "080Ф",
+   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
+   "date": "12.09.2026",
+   "time_local": "21:13",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:13",
+   "deviation": null
+  },
+  {
    "number": "127Ф",
    "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
    "date": "13.09.2026",
@@ -274,26 +274,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "11.09.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
-   "number": "777Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "11.09.2026",
-   "time_local": "20:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:01",
-   "deviation": null
-  },
   {
    "number": "359Щ",
    "route": "САМАРКАНД - ВОЛЖСКИЙ",
@@ -400,7 +380,7 @@
    "date": "12.09.2026",
    "time_local": "09:23",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "09:23",
    "deviation": null
   },
@@ -412,6 +392,26 @@
    "platform": null,
    "sold_out": false,
    "planned": "12:51",
+   "deviation": null
+  },
+  {
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "12.09.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
+   "deviation": null
+  },
+  {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "12.09.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
    "deviation": null
   },
   {
@@ -577,26 +577,6 @@
  ],
  "urgench": [
   {
-   "number": "058Ь",
-   "route": "ШОВОТ - ТОШКЕНТ ЖА",
-   "date": "11.09.2026",
-   "time_local": "19:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": null
-  },
-  {
-   "number": "706Ф",
-   "route": "БУХОРО 1 - ХИВА",
-   "date": "11.09.2026",
-   "time_local": "20:05",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "751М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
    "date": "12.09.2026",
@@ -664,6 +644,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "19:20",
+   "deviation": null
+  },
+  {
+   "number": "706Ф",
+   "route": "БУХОРО 1 - ХИВА",
+   "date": "12.09.2026",
+   "time_local": "20:05",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
    "deviation": null
   },
   {
@@ -844,7 +834,7 @@
    "date": "12.09.2026",
    "time_local": "11:14",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "11:14",
    "deviation": null
   },
@@ -1043,7 +1033,7 @@
   {
    "number": "763Ф",
    "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "11.09.2026",
+   "date": "12.09.2026",
    "time_local": "17:29",
    "platform": null,
    "sold_out": true,
@@ -1053,9 +1043,19 @@
  ],
  "andijan": [
   {
+   "number": "125Ч",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "12.09.2026",
+   "time_local": "15:36",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "15:36",
+   "deviation": null
+  },
+  {
    "number": "129Ф",
    "route": "ANDIJON - TOSHKENT",
-   "date": "11.09.2026",
+   "date": "12.09.2026",
    "time_local": "16:30",
    "platform": "1",
    "sold_out": false,
@@ -1065,21 +1065,11 @@
   {
    "number": "127Ф",
    "route": "ANDIJON - TOSHKENT",
-   "date": "11.09.2026",
+   "date": "12.09.2026",
    "time_local": "17:20",
    "platform": "1",
    "sold_out": false,
    "planned": "17:20",
-   "deviation": null
-  },
-  {
-   "number": "125Ч",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "12.09.2026",
-   "time_local": "15:36",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "15:36",
    "deviation": null
   }
  ]
