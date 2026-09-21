@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-09-14T14:20:21+05:00",
+ "generated_at": "2026-09-21T14:22:47+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -1229,24 +1229,6 @@
    ]
   },
   {
-   "number": "071Ф",
-   "direction": "arrival",
-   "title": "из Алата",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:21",
-   "days": "124567",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Алат"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "072Ф",
    "direction": "arrival",
    "title": "из Ташкента-Южного",
@@ -1262,6 +1244,24 @@
    ],
    "quals": [
     "south"
+   ]
+  },
+  {
+   "number": "071Ф",
+   "direction": "arrival",
+   "title": "из Алата",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:21",
+   "days": "124567",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Алат"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -6825,24 +6825,6 @@
    ]
   },
   {
-   "number": "780Ф",
-   "direction": "departure",
-   "title": "Самарканд",
-   "brand": null,
-   "fast": false,
-   "time_local": "14:30",
-   "days": "2",
-   "via": null,
-   "station": "tashkent-central",
-   "through": false,
-   "cities": [
-    "Самарканд"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "710Ф",
    "direction": "arrival",
    "title": "из Ташкента-Центрального",
@@ -7646,24 +7628,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "780Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Центрального",
-   "brand": null,
-   "fast": false,
-   "time_local": "16:43",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": false,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
    ]
   },
   {
@@ -9127,24 +9091,6 @@
    ]
   },
   {
-   "number": "779Ф",
-   "direction": "departure",
-   "title": "Ташкент-Центральный",
-   "brand": null,
-   "fast": false,
-   "time_local": "20:01",
-   "days": "2",
-   "via": null,
-   "station": "samarkand",
-   "through": false,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "central"
-   ]
-  },
-  {
    "number": "715Ф",
    "direction": "arrival",
    "title": "из Карши",
@@ -9916,24 +9862,6 @@
    ],
    "quals": [
     "1"
-   ]
-  },
-  {
-   "number": "779Ф",
-   "direction": "arrival",
-   "title": "из Самарканда",
-   "brand": null,
-   "fast": false,
-   "time_local": "22:16",
-   "days": "2",
-   "via": null,
-   "station": "tashkent-central",
-   "through": false,
-   "cities": [
-    "Самарканд"
-   ],
-   "quals": [
-    ""
    ]
   },
   {
