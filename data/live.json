@@ -1,26 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "124Ф",
-   "route": "ТАШКЕНТ -ВОЛГОГРАД",
-   "date": "23.09.2026",
-   "time_local": "00:10",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "00:10",
-   "deviation": null
-  },
-  {
-   "number": "305Ф",
-   "route": "ТАШКЕНТ - МОСКВА",
-   "date": "23.09.2026",
-   "time_local": "00:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "00:32",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "23.09.2026",
@@ -151,6 +131,26 @@
    "deviation": null
   },
   {
+   "number": "305Ф",
+   "route": "ТАШКЕНТ - МОСКВА",
+   "date": "25.09.2026",
+   "time_local": "00:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:32",
+   "deviation": null
+  },
+  {
+   "number": "124Ф",
+   "route": "ТАШКЕНТ -ВОЛГОГРАД",
+   "date": "27.09.2026",
+   "time_local": "00:10",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:10",
+   "deviation": null
+  },
+  {
    "number": "702Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "29.09.2026",
@@ -204,16 +204,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "076Ж",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "23.09.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
   {
    "number": "359Ж",
    "route": "САМАРКАНД - ХУДЖАНД",
