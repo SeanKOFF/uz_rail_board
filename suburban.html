@@ -166,7 +166,6 @@
     .city-toggle[aria-expanded="true"]::after{transform:translateY(1px) rotate(180deg)}
     .airports{display:none}
     .airports.open{display:flex}
-    .airports.stations{display:flex}
     .route{padding:14px 13px 10px}
     .dirs{grid-template-columns:1fr;gap:14px}
     .price{margin-left:0;width:100%}
@@ -218,10 +217,6 @@
     <button id="city-toggle" class="city-toggle" type="button"
             aria-expanded="false" aria-controls="airports"></button>
     <div class="airports" id="airports" role="group"></div>
-  </div>
-
-  <div id="stwrap">
-    <div class="airports stations" id="stations" role="group"></div>
   </div>
 
   <div class="board" id="board"></div>
@@ -562,55 +557,29 @@ function renderIssues(){
 const SHOW = 10;
 let savedStation;             // что уже лежит в localStorage
 
-/* Станции региона — концы рейсов его маршрутов, самые загруженные первыми. */
-function regionStations(slug){
-  const cnt = new Map();
-  for (const r of DATA.routes) {
-    if (!(r.regions || [r.region]).includes(slug)) continue;
-    for (const t of r.trains)
-      for (const s of tripEnds(r, t)) if (s != null) cnt.set(s, (cnt.get(s) || 0) + 1);
-  }
-  return [...cnt.keys()].sort((a, b) => cnt.get(b) - cnt.get(a) || stName(a).localeCompare(stName(b)));
-}
-
-/* Станция по умолчанию при смене региона. Узлы вроде Ташкента Южного
-   стоят в маршрутах нескольких регионов, и «самая загруженная» дала бы
-   то же табло, что было до клика. Берём первую станцию, все маршруты
-   которой основным регионом относятся к этому (у источника маршрут
-   может числиться сразу в двух: Ташкент–Гулистан в Сырдарье и Ташкенте). */
-function defaultStation(slug){
-  const home = new Map();     // станция -> основные регионы её маршрутов
+/* Станции табло — концы рейсов всех маршрутов. Регионов здесь нет:
+   у источника они пересекаются (Ташкент–Гулистан числится и в Сырдарье,
+   и в Ташкенте), и второй ряд выбора только путал. */
+function stationCounts(){
+  const c = new Map();
   for (const r of DATA.routes) for (const t of r.trains)
-    for (const s of tripEnds(r, t)) {
-      if (s == null) continue;
-      if (!home.has(s)) home.set(s, new Set());
-      home.get(s).add(r.region);
-    }
-  const sts = regionStations(slug);
-  return sts.find(s => { const h = home.get(s); return h && h.size === 1 && h.has(slug); })
-    ?? sts[0] ?? null;
+    for (const s of tripEnds(r, t)) if (s != null) c.set(s, (c.get(s) || 0) + 1);
+  return c;
 }
+const allStations = () => [...stationCounts().keys()]
+  .sort((a, b) => stName(a).localeCompare(stName(b), lang));
+const busiestStation = () => {
+  const c = stationCounts();
+  return [...c.keys()].sort((a, b) => c.get(b) - c.get(a) || a - b)[0] ?? null;
+};
 
-/* Регион и станция должны согласоваться. Станция без региона — из
-   сохранённого выбора: тогда переходим в её регион. Смена региона
-   кнопкой сразу выбирает станцию (defaultStation), так что «прыжка»
-   назад в регион старой станции не бывает. */
+/* Сохранённая станция могла исчезнуть из данных — тогда самая загруженная. */
 function fixSelection(){
-  const regs = (DATA.regions || []).filter(g => regionStations(g.slug).length);
-  if (!regs.length) return;
-  if (station != null && !regionStations(region).includes(station)) {
-    const g = regs.find(g => regionStations(g.slug).includes(station));
-    if (g) region = g.slug;
-  }
-  if (!regs.find(g => g.slug === region)) region = regs[0].slug;
-  const sts = regionStations(region);
-  if (!sts.includes(station)) station = sts[0];
+  if (!DATA.routes.length) return;
+  if (!stationCounts().has(station)) station = busiestStation();
   if (station !== savedStation) {
     savedStation = station;
-    try {
-      localStorage.setItem('board-station', String(station));
-      localStorage.setItem('board-region', region);
-    } catch {}
+    try { localStorage.setItem('board-station', String(station)); } catch {}
   }
 }
 
@@ -731,19 +700,19 @@ function render(){
 
   document.getElementById('pick').hidden = view === 'issues';
   document.getElementById('dirwrap').hidden = view !== 'board';
-  document.getElementById('stwrap').hidden = view !== 'board';
   if (!DATA) return;
 
   const regs = (DATA.regions || []).filter(g => regionRoutes(g.slug).length);
   if (!regs.find(g => g.slug === region) && regs.length) region = regs[0].slug;
-  document.getElementById('city-toggle').textContent = regName(region);
-  document.getElementById('airports').innerHTML = regs.map(g => {
+  document.getElementById('city-toggle').textContent =
+    view === 'board' ? (station != null ? stName(station) : '') : regName(region);
+  document.getElementById('airports').innerHTML = view === 'board' ? allStations().map(s =>
+    `<button data-st="${s}" aria-pressed="${s === station}">${esc(stName(s))}</button>`).join('')
+  : regs.map(g => {
     const bad = regionRoutes(g.slug).some(r => problemsOf(r.id).some(p => p.severity === 'critical'));
     return `<button data-slug="${g.slug}" aria-pressed="${g.slug === region}">${esc(regName(g.slug))}${bad ? ' <span style="color:var(--alarm)">●</span>' : ''}</button>`;
   }).join('');
 
-  document.getElementById('stations').innerHTML = regionStations(region).map(s =>
-    `<button data-st="${s}" aria-pressed="${s === station}">${esc(stName(s))}</button>`).join('');
   document.getElementById('board').innerHTML =
     view === 'board' ? renderBoard() : view === 'routes' ? renderRoutes() : renderIssues();
 
@@ -766,7 +735,7 @@ function openRoute(id){
   const r = routeById(id);
   if (!r) return;
   view = 'routes';
-  if (!(r.regions || [r.region]).includes(region)) { region = r.region; station = null; }
+  if (!(r.regions || [r.region]).includes(region)) region = r.region;
   try { localStorage.setItem('board-region', region); } catch {}
   render();
   const el = document.getElementById('route-' + id);
@@ -792,8 +761,8 @@ document.getElementById('board').addEventListener('keydown', e => {
 document.getElementById('airports').addEventListener('click', e => {
   const b = e.target.closest('button');
   if (!b) return;
-  region = b.dataset.slug;
-  station = DATA ? defaultStation(region) : null;
+  if (b.dataset.st) station = +b.dataset.st;
+  else region = b.dataset.slug;
   document.getElementById('airports').classList.remove('open');
   document.getElementById('city-toggle').setAttribute('aria-expanded', false);
   try { localStorage.setItem('board-region', region); } catch {}
@@ -805,12 +774,6 @@ document.getElementById('city-toggle').addEventListener('click', () => {
   document.getElementById('city-toggle').setAttribute('aria-expanded', open);
 });
 
-document.getElementById('stations').addEventListener('click', e => {
-  const b = e.target.closest('button');
-  if (!b) return;
-  station = +b.dataset.st;
-  render();
-});
 document.getElementById('btn-board').addEventListener('click', () => { view = 'board'; render(); });
 document.getElementById('btn-dep').addEventListener('click', () => { mode = 'departure'; render(); });
 document.getElementById('btn-arr').addEventListener('click', () => { mode = 'arrival'; render(); });
