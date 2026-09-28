@@ -499,7 +499,7 @@ document.getElementById('theme').addEventListener('click', () => {
   setTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
 });
 
-const LANG_LABEL = {uz:"O'ZB", ru:'РУ', en:'EN'};
+const LANG_LABEL = {uz:"O'Z", ru:'РУ', en:'EN'};
 document.getElementById('langs').innerHTML = ['uz','ru','en'].map(l =>
   `<button data-l="${l}" aria-pressed="${l === lang}">${LANG_LABEL[l]}</button>`).join('');
 

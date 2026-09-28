@@ -583,7 +583,7 @@ function applyTheme(){
 function buildLangs(){
   const box = document.getElementById('langs');
   box.innerHTML = '';
-  [['uz',"O'ZB"],['ru','РУ'],['en','EN']].forEach(([code, label]) => {
+  [['uz',"O'Z"],['ru','РУ'],['en','EN']].forEach(([code, label]) => {
     const b = document.createElement('button');
     b.textContent = label;
     b.dataset.lang = code;
