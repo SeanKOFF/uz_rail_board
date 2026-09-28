@@ -26,14 +26,16 @@ jobs:
       # Зависимостей нет: elektropoyezd.py на стандартной библиотеке.
 
       - name: Снять расписание электричек
-        run: python elektropoyezd.py | tee suburban.log
+        run: |
+          set -o pipefail
+          python elektropoyezd.py | tee suburban.log
 
       - name: Вынести отмены в аннотации
         # Отмены и пустые маршруты видны прямо на странице запуска,
         # без раскрытия лога.
         if: always()
         run: |
-          grep '^  ✗' suburban.log | sed 's/^  ✗ /::warning title=Электрички::/' || true
+          grep -E '^ *✗' suburban.log | sed -E 's/^ *✗ (\[)/::warning title=Электрички::\1/; s/^✗ /::error title=Электрички::/' || true
 
       - name: Зафиксировать
         run: |
