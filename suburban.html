@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tabloda.uz — Elektrichkalar jadvali</title>
+<meta name="description" content="O'zbekiston bo'ylab elektrichkalar jadvali: yo'nalishlar, jo'nash vaqtlari, bekor qilingan reyslar.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#16323B">
+
+<meta property="og:title" content="tabloda.uz — Elektrichkalar jadvali">
+<meta property="og:description" content="O'zbekiston bo'ylab elektrichkalar jadvali.">
+<meta property="og:image" content="https://tabloda.uz/assets/og-image.png">
+<meta property="og:url" content="https://tabloda.uz/suburban.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/common.css">
+<style>
+/* ---- карточка маршрута ---- */
+.route{
+    background:var(--card);border:1px solid var(--rule);border-radius:8px;
+    padding:16px 16px 12px;margin-bottom:10px;animation:in .4s both;
+    scroll-margin-top:16px;
+  }
+@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.route.flash{border-color:var(--tile)}
+.rhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rname{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.price{
+    margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:13px;
+    color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+.price b{color:var(--ink);font-weight:600}
+
+/* Сигналы у маршрута: коротко, одной строкой каждый. */
+.flags{list-style:none;margin:10px 0 2px;display:flex;flex-direction:column;gap:4px}
+.flags li{font-size:12.5px;line-height:1.45;display:flex;gap:7px;align-items:baseline}
+.flags .dot{width:7px;height:7px;border-radius:50%;flex:none;transform:translateY(-1px)}
+.flags .critical{color:var(--alarm);font-weight:600}
+.flags .critical .dot{background:var(--alarm)}
+.flags .warn{color:var(--saffron)}
+.flags .warn .dot{background:var(--saffron)}
+.flags .info{color:var(--muted)}
+.flags .info .dot{background:var(--rule)}
+
+/* ---- два направления рядом ---- */
+.dirs{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin-top:12px}
+.dirs.single{grid-template-columns:1fr}
+.dirh{
+    font:600 10.5px/1.3 'IBM Plex Sans',sans-serif;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.06em;
+    padding-bottom:6px;border-bottom:1px solid var(--rule);margin-bottom:2px;
+  }
+.trip{
+    display:grid;grid-template-columns:auto 1fr auto;gap:2px 12px;align-items:baseline;
+    padding:7px 0;border-bottom:1px dashed var(--rule);
+  }
+.trip:last-child{border-bottom:0}
+.trip .t{
+    font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;
+    font-variant-numeric:tabular-nums;letter-spacing:-.02em;
+  }
+.trip .arr{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);
+             font-variant-numeric:tabular-nums}
+.trip .n{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);text-align:right}
+.trip .sub{grid-column:1/-1;font-size:11.5px;color:var(--muted);line-height:1.4}
+.trip .sub b{font-weight:600}
+.trip.next .t{color:var(--tile)}
+.trip.next .sub b{color:var(--tile)}
+.trip.gone .t, .trip.gone .arr{color:var(--muted);opacity:.55}
+.trip.off .t, .trip.off .arr{color:var(--muted);opacity:.55}
+.trip.cancel .t{color:var(--alarm);text-decoration:line-through}
+.trip .bad{color:var(--alarm);font-weight:600}
+.trip .warn{color:var(--saffron);font-weight:600}
+
+/* ---- вкладка «Сложности» ---- */
+.issue{
+    background:var(--card);border:1px solid var(--rule);border-left-width:4px;
+    border-radius:8px;padding:13px 16px;margin-bottom:8px;cursor:pointer;
+    animation:in .4s both;
+  }
+.issue:hover{border-color:var(--tile)}
+.issue:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+.issue.critical{border-left-color:var(--alarm)}
+.issue.warn{border-left-color:var(--saffron)}
+.issue.info{border-left-color:var(--rule)}
+.issue .top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.issue .rname{font-size:15px}
+.issue .reg{font-size:12px;color:var(--muted)}
+.issue .flags{margin-top:7px}
+.group{
+    font:600 11px/1 'IBM Plex Sans',sans-serif;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin:18px 0 9px;
+  }
+.group:first-child{margin-top:4px}
+.modes .count{
+    display:inline-block;min-width:18px;padding:2px 6px;margin-left:6px;
+    border-radius:9px;background:var(--alarm);color:var(--card);
+    font-size:11px;line-height:1.2;text-align:center;
+  }
+
+.note{font-size:12px;color:var(--muted);margin:16px 0 0;line-height:1.6}
+.source{font-size:12px;color:var(--muted);margin-top:14px}
+.source a{color:var(--muted)}
+
+@media (max-width:600px){
+    .city-toggle{
+      display:flex;align-items:center;gap:7px;width:100%;
+      background:var(--card);border:1px solid var(--rule);color:var(--ink);
+      cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+      font-size:15px;font-weight:600;padding:11px 14px;
+      border-radius:8px;margin-bottom:10px;text-align:left;
+    }
+    .city-toggle::after{
+      content:'⌄';margin-left:auto;color:var(--muted);
+      font-size:15px;line-height:1;transform:translateY(-3px);
+      transition:transform .18s;
+    }
+    .city-toggle[aria-expanded="true"]::after{transform:translateY(1px) rotate(180deg)}
+    .airports{display:none}
+    .airports.open{display:flex}
+    .route{padding:14px 13px 10px}
+    .dirs{grid-template-columns:1fr;gap:14px}
+    .price{margin-left:0;width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brandline">
+      <a class="mark" href="./" aria-label="tabloda.uz">
+        <img src="assets/favicon.svg" alt="" width="26" height="26">
+        <span>tabloda<b>.uz</b></span>
+      </a>
+      <nav class="sections" id="sections"></nav>
+      <div class="place" id="place"></div>
+    </div>
+    <div class="head-right">
+      <div class="controls">
+        <div class="langs" id="langs" role="group" aria-label="Til / Language"></div>
+        <button id="theme" class="theme" type="button" aria-pressed="false"></button>
+      </div>
+      <div class="clock"><span id="clock">--:--:--</span><small id="tz-label"></small></div>
+    </div>
+  </header>
+
+  <div class="modes" role="group">
+    <button id="btn-routes" aria-pressed="true"></button>
+    <button id="btn-issues" aria-pressed="false"></button>
+  </div>
+
+  <div id="pick">
+    <button id="city-toggle" class="city-toggle" type="button"
+            aria-expanded="false" aria-controls="airports"></button>
+    <div class="airports" id="airports" role="group"></div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <p class="note" id="note"></p>
+  <p class="source" id="source"></p>
+
+  <footer id="foot"></footer>
+
+</div>
+
+<script>
+const TZ_OFFSET = 5;          // Ташкент, UTC+5, перевода часов нет
+
+let DATA = null;              // data/suburban.json
+let view = 'routes';          // routes | issues
+let region = 'toshkent';
+let lang = 'uz';
+
+const T = {
+  uz: {
+    trains:'Poyezdlar', suburban:'Elektrichkalar', flights:'Samolyotlar',
+    title:'Elektrichkalar', tz:'mahalliy vaqt',
+    routes:'Yo\'nalishlar', issues:'Muammolar',
+    min:'daq', hr:'soat', inPrefix:'', now:'hozir',
+    sum:'so\'m', child:'bola',
+    today:'bugun', tomorrow:'ertaga',
+    cancelled:'bekor qilingan', notToday:'bugun qatnamaydi',
+    gone:'jo\'nab ketdi', next:'keyingisi',
+    nextDay:'+1 kun',
+    groups:{critical:'Qatnov buzilgan', warn:'Ma\'lumotlarda chalkashlik', info:'Jadval xususiyatlari'},
+    noIssues:'Hozircha muammo yo\'q.',
+    empty:'Bu viloyatda yo\'nalish yo\'q.',
+    error:'Jadval yuklanmadi. Sahifani yangilang.',
+    note:'Vaqt tashuvchi jadvali bo\'yicha. Bekor qilish va kechikishlar tashuvchi ma\'lumotidan, soatiga bir marta yangilanadi. Chipta sotish tizimi sinov rejimida ishlamoqda.',
+    source:'Manba va chiptalar: ',
+    updated:d => 'Yangilangan ' + d,
+    days:['','Du','Se','Ch','Pa','Ju','Sh','Ya'],
+    p:{
+      cancelled:(x) => `№${x.train} (${x.dep}) ${x.when} bekor qilingan` + (x.reason ? `: ${x.reason}` : ''),
+      all_cancelled:(x) => `${cap(x.when)} barcha reyslar bekor qilingan`,
+      delayed:(x) => `№${x.train} ${x.minutes} daqiqa kechikmoqda (${x.when})`,
+      no_trains:(x) => 'Yo\'nalishda birorta reys yo\'q' + (x.listed ? '' : ' — umumiy ro\'yxatdan ham olib tashlangan'),
+      hidden_route:() => 'Yo\'nalish umumiy ro\'yxatda ko\'rinmaydi',
+      route_inactive:() => 'Yo\'nalish faol emas deb belgilangan',
+      train_inactive:(x) => `№${x.train} faol emas deb belgilangan`,
+      stations_swapped:(x) => `Manbada jo\'nash va kelish bekatlari almashib ketgan: ${x.trains.join(', ')}`,
+      stations_mismatch:(x) => `Reys yo\'nalish oxirlari orasida qatnamaydi: ${x.trains.join(', ')} — bekatni tekshiring`,
+      number_conflict:(x) => `№${x.train} bir nechta yo\'nalishda turli vaqt bilan: ${x.variants.join('; ')}`,
+      one_direction:() => 'Faqat bir tomonga qatnaydi',
+      not_daily:(x) => `№${x.train} (${x.dep}) har kuni emas: ${x.daysTxt}`,
+    },
+  },
+  ru: {
+    trains:'Поезда', suburban:'Электрички', flights:'Самолёты',
+    title:'Электрички', tz:'время местное',
+    routes:'Маршруты', issues:'Сложности',
+    min:'мин', hr:'ч', inPrefix:'через', now:'сейчас',
+    sum:'сум', child:'детский',
+    today:'сегодня', tomorrow:'завтра',
+    cancelled:'отменён', notToday:'сегодня не ходит',
+    gone:'ушёл', next:'ближайший',
+    nextDay:'+1 сут',
+    groups:{critical:'Движение нарушено', warn:'Путаница в данных', info:'Особенности расписания'},
+    noIssues:'Сейчас сложностей нет.',
+    empty:'В этом регионе маршрутов нет.',
+    error:'Расписание не загрузилось. Обновите страницу.',
+    note:'Время по расписанию перевозчика. Отмены и опоздания — по его же данным, обновляются раз в час. Продажа билетов у перевозчика работает в тестовом режиме.',
+    source:'Источник и билеты: ',
+    updated:d => 'Обновлено ' + d,
+    days:['','пн','вт','ср','чт','пт','сб','вс'],
+    p:{
+      cancelled:(x) => `№${x.train} (${x.dep}) ${x.when} отменён` + (x.reason ? `: ${x.reason}` : ''),
+      all_cancelled:(x) => `${cap(x.when)} отменены все рейсы`,
+      delayed:(x) => `№${x.train} опаздывает на ${x.minutes} мин (${x.when})`,
+      no_trains:(x) => 'В маршруте нет ни одного рейса' + (x.listed ? '' : ' — и он убран из общего списка'),
+      hidden_route:() => 'Маршрут скрыт из общего списка',
+      route_inactive:() => 'Маршрут помечен неактивным',
+      train_inactive:(x) => `№${x.train} помечен неактивным`,
+      stations_swapped:(x) => `У источника перепутаны станции отправления и прибытия: ${x.trains.join(', ')}`,
+      stations_mismatch:(x) => `Рейс идёт не между концами маршрута: ${x.trains.join(', ')} — проверьте станцию`,
+      number_conflict:(x) => `№${x.train} стоит в нескольких маршрутах с разным временем: ${x.variants.join('; ')}`,
+      one_direction:() => 'Рейсы только в одну сторону',
+      not_daily:(x) => `№${x.train} (${x.dep}) не каждый день: ${x.daysTxt}`,
+    },
+  },
+  en: {
+    trains:'Trains', suburban:'Suburban', flights:'Flights',
+    title:'Suburban', tz:'local time',
+    routes:'Routes', issues:'Issues',
+    min:'min', hr:'h', inPrefix:'in', now:'now',
+    sum:'UZS', child:'child',
+    today:'today', tomorrow:'tomorrow',
+    cancelled:'cancelled', notToday:'not running today',
+    gone:'departed', next:'next',
+    nextDay:'+1 day',
+    groups:{critical:'Service disrupted', warn:'Conflicting data', info:'Timetable notes'},
+    noIssues:'No issues right now.',
+    empty:'No routes in this region.',
+    error:'Schedule failed to load. Please refresh.',
+    note:'Operator timetable. Cancellations and delays come from the operator too, refreshed hourly. The operator\'s ticketing system is running in test mode.',
+    source:'Source and tickets: ',
+    updated:d => 'Updated ' + d,
+    days:['','Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+    p:{
+      cancelled:(x) => `No. ${x.train} (${x.dep}) cancelled ${x.when}` + (x.reason ? `: ${x.reason}` : ''),
+      all_cancelled:(x) => `All trains cancelled ${x.when}`,
+      delayed:(x) => `No. ${x.train} running ${x.minutes} min late (${x.when})`,
+      no_trains:(x) => 'No trains on this route' + (x.listed ? '' : ' — and it is hidden from the route list'),
+      hidden_route:() => 'Route is hidden from the route list',
+      route_inactive:() => 'Route is marked inactive',
+      train_inactive:(x) => `No. ${x.train} is marked inactive`,
+      stations_swapped:(x) => `Source has origin and destination swapped: ${x.trains.join(', ')}`,
+      stations_mismatch:(x) => `Train doesn't run between the route ends: ${x.trains.join(', ')} — check the station`,
+      number_conflict:(x) => `No. ${x.train} appears in several routes with different times: ${x.variants.join('; ')}`,
+      one_direction:() => 'One direction only',
+      not_daily:(x) => `No. ${x.train} (${x.dep}) not daily: ${x.daysTxt}`,
+    },
+  },
+};
+
+const SEV = {critical:0, warn:1, info:2};
+const cap = s => s ? s[0].toUpperCase() + s.slice(1) : s;
+const esc = s => String(s ?? '').replace(/[&<>"]/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- время ---------- */
+
+function nowLocal(){
+  const d = new Date();
+  return new Date(d.getTime() + d.getTimezoneOffset() * 60000 + TZ_OFFSET * 3600000);
+}
+const ymd = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const hm = s => { const [h, m] = s.split(':'); return +h * 60 + +m; };
+// ISO: 1 — понедельник … 7 — воскресенье
+const isoDay = d => d.getDay() || 7;
+
+function inWords(diff){
+  const t = T[lang];
+  if (diff <= 0) return t.now;
+  if (diff < 60) return `${t.inPrefix} <b>${diff}</b> ${t.min}`.trim();
+  const h = Math.floor(diff / 60), m = diff % 60;
+  return `${t.inPrefix} <b>${h}</b> ${t.hr} ${m} ${t.min}`.trim();
+}
+
+const durTxt = m => m >= 60
+  ? `${Math.floor(m / 60)} ${T[lang].hr} ${m % 60} ${T[lang].min}`
+  : `${m} ${T[lang].min}`;
+
+/* ---------- данные ---------- */
+
+const stName = id => {
+  const s = DATA.stations[String(id)];
+  return s ? (s[lang] || s.ru) : '';
+};
+const rName = r => r.name[lang] || r.name.ru;
+const regName = slug => {
+  const g = (DATA.regions || []).find(x => x.slug === slug);
+  return g ? (g.name[lang] || g.name.ru) : slug;
+};
+const routeById = id => DATA.routes.find(r => r.id === id);
+
+/* Концы рейса. Если источник просто поменял станции местами — верим
+   направлению (dir). Если станции другие (вокзал не тот, маршрут
+   короче) — показываем как есть: пассажиру это важнее. */
+function tripEnds(r, t){
+  const exp = t.dir === 'out' ? [r.from, r.to] : [r.to, r.from];
+  const same = (a, b) => a[0] === b[0] && a[1] === b[1];
+  const got = [t.from, t.to];
+  if (same(got, exp) || same(got, [exp[1], exp[0]])) return exp;
+  return got;
+}
+
+function dateWord(d){
+  if (!DATA) return d;
+  if (d === todayStr()) return T[lang].today;
+  if (d === tomorrowStr()) return T[lang].tomorrow;
+  return d.slice(8, 10) + '.' + d.slice(5, 7);
+}
+const todayStr = () => ymd(nowLocal());
+const tomorrowStr = () => { const d = nowLocal(); d.setDate(d.getDate() + 1); return ymd(d); };
+
+function problemText(p){
+  const f = T[lang].p[p.code];
+  if (!f) return p.code;
+  const x = {...p};
+  if (p.date) x.when = dateWord(p.date);
+  if (p.reason) x.reason = p.reason[lang] || p.reason.ru;
+  if (p.days) x.daysTxt = p.days.map(d => T[lang].days[d]).join(', ');
+  return f(x);
+}
+
+/* Проблемы, актуальные сейчас: отмены за прошедшие даты убираем —
+   файл мог не обновиться, а вчерашняя отмена никому не нужна. */
+function liveProblems(){
+  const today = todayStr();
+  return (DATA.problems || []).filter(p => !p.date || p.date >= today);
+}
+
+function problemsOf(id){
+  return liveProblems().filter(p => p.route === id)
+    .sort((a, b) => SEV[a.severity] - SEV[b.severity]);
+}
+
+function worst(ps){
+  return ps.reduce((w, p) => SEV[p.severity] < SEV[w] ? p.severity : w, 'info');
+}
+
+/* ---------- отрисовка ---------- */
+
+function flagsHtml(ps, withInfo){
+  const list = ps.filter(p => withInfo || p.severity !== 'info');
+  if (!list.length) return '';
+  return `<ul class="flags">${list.map(p =>
+    `<li class="${p.severity}"><i class="dot"></i><span>${esc(problemText(p))}</span></li>`).join('')}</ul>`;
+}
+
+function tripHtml(r, t, head, ctx){
+  const tt = T[lang];
+  const st = (t.status || {})[ctx.today] || {};
+  const stTomorrow = (t.status || {})[ctx.tomorrow] || {};
+  const runsToday = t.days.includes(ctx.dow);
+  const ends = tripEnds(r, t);
+  const cls = ['trip'];
+  const sub = [];
+
+  if (st.cancelled) {
+    cls.push('cancel');
+    const why = st.reason ? (st.reason[lang] || st.reason.ru) : '';
+    sub.push(`<span class="bad">${tt.cancelled}${why ? ' · ' + esc(why) : ''}</span>`);
+  } else if (!runsToday) {
+    cls.push('off');
+    sub.push(tt.notToday);
+  } else if (hm(t.dep) < ctx.nowMin) {
+    cls.push('gone');
+  } else if (ctx.firstNext === t.id) {
+    cls.push('next');
+    sub.push(inWords(hm(t.dep) - ctx.nowMin));
+  }
+  if (st.delay) sub.push(`<span class="warn">+${st.delay} ${tt.min}</span>`);
+  if (stTomorrow.cancelled) sub.push(`<span class="bad">${tt.tomorrow}: ${tt.cancelled}</span>`);
+  if (t.days.length < 7) sub.push(t.days.map(d => tt.days[d]).join(' '));
+  // Рейс идёт не между концами колонки — пишем, откуда и куда.
+  if (ends[0] !== head[0] || ends[1] !== head[1])
+    sub.push(`${esc(stName(ends[0]))} → ${esc(stName(ends[1]))}`);
+
+  return `<div class="${cls.join(' ')}">
+      <span class="t">${t.dep}</span>
+      <span class="arr">→ ${t.arr}${t.arr_next_day ? ' <small>' + tt.nextDay + '</small>' : ''} · ${durTxt(t.dur)}</span>
+      <span class="n">№${esc(t.number)}</span>
+      ${sub.length ? `<div class="sub">${sub.join(' · ')}</div>` : ''}
+    </div>`;
+}
+
+function routeHtml(r, i){
+  const tt = T[lang];
+  const now = nowLocal();
+  const ctx = {today: todayStr(), tomorrow: tomorrowStr(), dow: isoDay(now),
+               nowMin: now.getHours() * 60 + now.getMinutes()};
+  const ps = problemsOf(r.id);
+
+  const cols = ['out', 'in'].map(dir => {
+    const trains = r.trains.filter(t => t.dir === dir)
+      .sort((a, b) => hm(a.dep) - hm(b.dep));
+    if (!trains.length) return '';
+    // Заголовок — по фактическим концам рейсов, если они у всех
+    // одинаковы (Бекабад → Южный, хотя маршрут от Центрального).
+    const all = trains.map(t => tripEnds(r, t).join('>'));
+    const head = all.every(x => x === all[0]) ? all[0].split('>').map(Number)
+      : (dir === 'out' ? [r.from, r.to] : [r.to, r.from]);
+    // Ближайший — первый, что сегодня ходит, не отменён и ещё не ушёл.
+    const nx = trains.find(t => t.days.includes(ctx.dow)
+      && !((t.status || {})[ctx.today] || {}).cancelled && hm(t.dep) >= ctx.nowMin);
+    const c = {...ctx, firstNext: nx ? nx.id : null};
+    return `<div>
+        <div class="dirh">${esc(stName(head[0]))} → ${esc(stName(head[1]))}</div>
+        ${trains.map(t => tripHtml(r, t, head, c)).join('')}
+      </div>`;
+  }).filter(Boolean);
+
+  const price = r.price && r.price.adult
+    ? `<span class="price"><b>${r.price.adult.toLocaleString('ru-RU').replace(/,/g, ' ')}</b> ${tt.sum}` +
+      (r.price.child ? ` · ${tt.child} ${r.price.child.toLocaleString('ru-RU')}` : '') + '</span>'
+    : '';
+
+  return `<section class="route" id="route-${r.id}" style="animation-delay:${Math.min(i, 8) * .04}s">
+      <div class="rhead"><h2 class="rname">${esc(rName(r))}</h2>${price}</div>
+      ${flagsHtml(ps, true)}
+      ${cols.length ? `<div class="dirs${cols.length === 1 ? ' single' : ''}">${cols.join('')}</div>` : ''}
+    </section>`;
+}
+
+function regionRoutes(slug){
+  return DATA.routes.filter(r => (r.regions || [r.region]).includes(slug) && r.trains.length)
+    .sort((a, b) => a.id - b.id);
+}
+
+function renderRoutes(){
+  const rs = regionRoutes(region);
+  // Маршрут без рейсов карточкой не показываем, он есть во вкладке сложностей.
+  return rs.length ? rs.map(routeHtml).join('') : `<div class="empty">${T[lang].empty}</div>`;
+}
+
+function renderIssues(){
+  const tt = T[lang];
+  const byRoute = {};
+  liveProblems().forEach(p => (byRoute[p.route] = byRoute[p.route] || []).push(p));
+  const items = Object.entries(byRoute).map(([id, ps]) => ({r: routeById(+id), ps, sev: worst(ps)}))
+    .filter(x => x.r)
+    .sort((a, b) => SEV[a.sev] - SEV[b.sev] || a.r.id - b.r.id);
+  if (!items.length) return `<div class="empty">${tt.noIssues}</div>`;
+
+  let out = '';
+  for (const sev of ['critical', 'warn', 'info']) {
+    const grp = items.filter(x => x.sev === sev);
+    if (!grp.length) continue;
+    out += `<div class="group">${tt.groups[sev]} · ${grp.length}</div>`;
+    out += grp.map(({r, ps}) => `
+      <div class="issue ${sev}" data-route="${r.id}" role="button" tabindex="0">
+        <div class="top"><span class="rname">${esc(rName(r))}</span>
+          <span class="reg">${esc(regName(r.region))}</span></div>
+        ${flagsHtml(ps, true)}
+      </div>`).join('');
+  }
+  return out;
+}
+
+function render(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('place').textContent = view === 'routes' && DATA ? regName(region) : t.title;
+
+  document.getElementById('sections').innerHTML =
+    `<a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${t.trains}</a>
+     <a href="suburban.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="2"/><path d="M9 3l3 4 3-4M5 12h14M8 21l-2 1M16 21l2 1M9 17v.01M15 17v.01"/></svg>${t.suburban}</a>
+     <a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${t.flights}</a>`;
+
+  const nCrit = DATA ? new Set(liveProblems().filter(p => p.severity !== 'info').map(p => p.route)).size : 0;
+  document.getElementById('btn-routes').textContent = t.routes;
+  document.getElementById('btn-issues').innerHTML = t.issues +
+    (nCrit ? `<span class="count">${nCrit}</span>` : '');
+  document.getElementById('btn-routes').setAttribute('aria-pressed', view === 'routes');
+  document.getElementById('btn-issues').setAttribute('aria-pressed', view === 'issues');
+
+  document.getElementById('tz-label').textContent = t.tz;
+  document.getElementById('note').textContent = t.note;
+  document.getElementById('source').innerHTML = t.source +
+    '<a href="https://ticket.elektropoyezd.uz/schedule" target="_blank" rel="noopener">ticket.elektropoyezd.uz</a>';
+
+  document.getElementById('pick').hidden = view !== 'routes';
+  if (!DATA) return;
+
+  const regs = (DATA.regions || []).filter(g => regionRoutes(g.slug).length);
+  if (!regs.find(g => g.slug === region) && regs.length) region = regs[0].slug;
+  document.getElementById('city-toggle').textContent = regName(region);
+  document.getElementById('airports').innerHTML = regs.map(g => {
+    const bad = regionRoutes(g.slug).some(r => problemsOf(r.id).some(p => p.severity === 'critical'));
+    return `<button data-slug="${g.slug}" aria-pressed="${g.slug === region}">${esc(regName(g.slug))}${bad ? ' <span style="color:var(--alarm)">●</span>' : ''}</button>`;
+  }).join('');
+
+  document.getElementById('board').innerHTML = view === 'routes' ? renderRoutes() : renderIssues();
+
+  document.getElementById('foot').textContent = t.updated(new Date(DATA.updated).toLocaleString(
+    lang === 'en' ? 'en-GB' : lang === 'ru' ? 'ru-RU' : 'uz-UZ',
+    {day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit', timeZone:'Asia/Tashkent'}));
+}
+
+/* ---------- часы ---------- */
+
+function tick(){
+  const d = nowLocal();
+  document.getElementById('clock').textContent =
+    [d.getHours(), d.getMinutes(), d.getSeconds()].map(n => String(n).padStart(2, '0')).join(':');
+}
+
+/* ---------- события ---------- */
+
+function openRoute(id){
+  const r = routeById(id);
+  if (!r) return;
+  view = 'routes';
+  if (!(r.regions || [r.region]).includes(region)) region = r.region;
+  try { localStorage.setItem('board-region', region); } catch {}
+  render();
+  const el = document.getElementById('route-' + id);
+  if (el) {
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    el.classList.add('flash');
+    setTimeout(() => el.classList.remove('flash'), 1600);
+  }
+}
+
+document.getElementById('board').addEventListener('click', e => {
+  const it = e.target.closest('.issue');
+  if (it) openRoute(+it.dataset.route);
+});
+document.getElementById('board').addEventListener('keydown', e => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const it = e.target.closest('.issue');
+  if (!it) return;
+  e.preventDefault();
+  openRoute(+it.dataset.route);
+});
+
+document.getElementById('airports').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  region = b.dataset.slug;
+  document.getElementById('airports').classList.remove('open');
+  document.getElementById('city-toggle').setAttribute('aria-expanded', false);
+  try { localStorage.setItem('board-region', region); } catch {}
+  render();
+});
+
+document.getElementById('city-toggle').addEventListener('click', () => {
+  const open = document.getElementById('airports').classList.toggle('open');
+  document.getElementById('city-toggle').setAttribute('aria-expanded', open);
+});
+
+document.getElementById('btn-routes').addEventListener('click', () => { view = 'routes'; render(); });
+document.getElementById('btn-issues').addEventListener('click', () => { view = 'issues'; render(); });
+
+/* ---------- тема и язык ---------- */
+
+function setTheme(dark){
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const b = document.getElementById('theme');
+  b.textContent = dark ? '☾' : '☀';
+  b.setAttribute('aria-pressed', dark);
+  try { localStorage.setItem('board-theme', dark ? 'dark' : 'light'); } catch {}
+}
+document.getElementById('theme').addEventListener('click', () => {
+  setTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
+});
+
+const LANG_LABEL = {uz:"O'ZB", ru:'РУ', en:'EN'};
+document.getElementById('langs').innerHTML = ['uz','ru','en'].map(l =>
+  `<button data-l="${l}" aria-pressed="${l === lang}">${LANG_LABEL[l]}</button>`).join('');
+document.getElementById('langs').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  lang = b.dataset.l;
+  try { localStorage.setItem('board-lang', lang); } catch {}
+  document.querySelectorAll('#langs button').forEach(x =>
+    x.setAttribute('aria-pressed', x.dataset.l === lang));
+  render();
+});
+
+/* ---------- запуск ---------- */
+
+(async function init(){
+  try {
+    const l = localStorage.getItem('board-lang');
+    if (l === 'uz' || l === 'ru' || l === 'en') lang = l;
+    region = localStorage.getItem('board-region') || 'toshkent';
+    setTheme(localStorage.getItem('board-theme') === 'dark');
+  } catch {
+    setTheme(false);
+  }
+  if (location.hash === '#issues') view = 'issues';
+  document.querySelectorAll('#langs button').forEach(x =>
+    x.setAttribute('aria-pressed', x.dataset.l === lang));
+
+  tick();
+  setInterval(tick, 1000);
+  render();
+  // Раз в минуту пересчитываем «ближайший» и «через сколько».
+  setInterval(() => { if (DATA) render(); }, 60000);
+
+  try {
+    DATA = await fetch('data/suburban.json').then(r => r.json());
+    render();
+  } catch (err) {
+    document.getElementById('board').innerHTML = `<div class="empty">${T[lang].error}</div>`;
+    console.error(err);
+  }
+})();
+</script>
+</body>
+</html>

@@ -194,4 +194,10 @@ header{
 .clock{font-size:clamp(17px,4.5vw,22px)}
 .clock small{font-size:9px;letter-spacing:.1em}
 .place{font-size:clamp(24px,7vw,34px)}
+/* Три раздела с подписями на телефоне наезжают на часы: у текущего
+   подпись остаётся, у остальных — только значок. Текст не удалён,
+   а обнулён кеглем, поэтому скринридер его читает. */
+.sections{gap:4px}
+.sections a{padding:7px 10px}
+.sections a:not([aria-current="page"]){font-size:0;gap:0}
 }

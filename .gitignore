@@ -11,3 +11,4 @@ seed_yandex.json
 __pycache__/
 *.bak
 patch_*.py
+tests/*.json.gz

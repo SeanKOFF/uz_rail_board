@@ -191,7 +191,7 @@ let openRow = null;
 
 const T = {
   uz: {
-    trains:'Poyezdlar', flights:'Samolyotlar',
+    trains:'Poyezdlar', suburban:'Elektrichkalar', flights:'Samolyotlar',
     dep:'Uchish', arr:'Qo\'nish', tz:'mahalliy vaqt',
     tomorrow:'ertaga', aftertomorrow:'indinga',
     inPrefix:'', min:'daq', hr:'soat',
@@ -207,7 +207,7 @@ const T = {
     updated:d => 'Yangilangan ' + d,
   },
   ru: {
-    trains:'Поезда', flights:'Самолёты',
+    trains:'Поезда', suburban:'Электрички', flights:'Самолёты',
     dep:'Вылет', arr:'Прилёт', tz:'время местное',
     tomorrow:'завтра', aftertomorrow:'послезавтра',
     inPrefix:'через', min:'мин', hr:'ч',
@@ -223,7 +223,7 @@ const T = {
     updated:d => 'Обновлено ' + d,
   },
   en: {
-    trains:'Trains', flights:'Flights',
+    trains:'Trains', suburban:'Suburban', flights:'Flights',
     dep:'Departures', arr:'Arrivals', tz:'local time',
     tomorrow:'tomorrow', aftertomorrow:'in 2 days',
     inPrefix:'in', min:'min', hr:'h',
@@ -397,6 +397,7 @@ function render(){
 
   document.getElementById('sections').innerHTML =
     `<a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${t.trains}</a>
+     <a href="suburban.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="2"/><path d="M9 3l3 4 3-4M5 12h14M8 21l-2 1M16 21l2 1M9 17v.01M15 17v.01"/></svg>${t.suburban}</a>
      <a href="flights.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${t.flights}</a>`;
 
   document.getElementById('btn-dep').textContent = t.dep;

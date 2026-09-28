@@ -1,0 +1,115 @@
+LIST toshkent:1,2,3,4,5,6,28 sirdaryo:3,4,5,6 fargona:7,8,9 qashqadaryo:10,11 buxoro:11 surxondaryo:12,13,14 qoraqalpogiston:15,16,17,26 xorazm:17,27 samarqand:18 navoiy-viloyati:24 xiva:27
+R|1|toshkent|toshkent|Ташкент–Чинаркент|1|25|100:30000,50:16500|электропоезд (ЭП3Д)|1
+T|1|7201|outbound|1|25|08:47|10:33|106|1234567|1|0|||
+T|2|7202|inbound|25|1|10:53|12:32|99|1234567|1|0|||
+T|3|7203|outbound|1|25|12:15|13:53|98|1234567|1|0|||
+T|4|7204|inbound|25|1|14:19|15:52|93|1234567|1|0|||
+N 
+R|2|toshkent|toshkent|Ташкент–Ходжикент|1|24|100:10000,50:6500|электропоезд|1
+T|12|6442|inbound|24|1|05:20|07:44|144|1234567|1|0|||
+T|14|6440|inbound|24|1|06:25|08:53|148|1234567|1|0|||
+T|7|6429|outbound|1|24|07:46|10:01|135|1234567|1|0|||
+T|8|6430|inbound|24|1|10:24|12:43|139|1234567|1|0|||
+T|9|6435|outbound|1|24|13:32|15:53|141|1234567|1|0|||
+T|10|6436|inbound|24|1|16:12|18:23|131|1234567|1|0|||
+T|11|6437|outbound|1|24|16:50|19:03|133|1234567|1|0|||
+T|13|6441|outbound|1|24|18:55|21:19|144|1234567|1|0|||
+N 
+R|3|sirdaryo|sirdaryo,toshkent|Ташкент–Ховос|1|41|100:12000,50:7500|ҳаракатланувчи таркиб|1
+T|18|6453|inbound|41|1|04:00|07:17|197|1234567|1|0|||
+T|15|6412|outbound|1|41|09:21|12:30|189|1234567|1|0|||
+T|16|6411|inbound|41|1|13:05|16:31|206|1234567|1|0|||
+T|17|6454|outbound|1|41|19:00|22:51|231|1234567|1|0|||
+N 
+R|4|sirdaryo|sirdaryo,toshkent|Ташкент–Гулистан|1|38|100:12000,50:7500|ҳаракатланувчи таркиб|1
+T|19|6414|outbound|1|38|13:01|15:19|138|1234567|1|1|Texnik sabablarga ko'ra||
+T|20|6413|inbound|1|38|15:39|18:00|141|1234567|1|1|Texnik sabablarga ko'ra||
+N 
+CR uz 19 Texnik sabablarga ko'ra
+CR uz 20 Texnik sabablarga ko'ra
+CR en 19 Texnik sabablarga ko'ra
+CR en 20 Texnik sabablarga ko'ra
+R|5|sirdaryo|sirdaryo,toshkent|Ташкент–Сырдарья|1|35|100:12000,50:7500|ҳаракатланувчи таркиб|1
+T|22|6407|inbound|35|1|04:36|06:25|109|1234567|1|0|||
+T|21|6418|outbound|1|35|20:05|22:19|134|1234567|1|0|||
+N 
+R|6|sirdaryo|sirdaryo,toshkent|Ташкент–Бекабад|2|43|100:15000,50:9000|ҳаракатланувчи таркиб|1
+T|24|7049|inbound|43|1|06:00|09:16|196|1234567|1|0|||
+T|66|7050|outbound|2|43|18:34|21:38|184|1234567|1|0|||
+N 
+R|7|fargona|fargona|Коканд–Наманга|44|51|100:20000,50:11500|ҳаракатланувчи таркиб|1
+T|25|7094|outbound|44|51|14:00|16:21|141|1234567|1|0|||
+T|57|7092|inbound|44|51|17:00|19:11|131|1234567|1|0|||
+N 
+R|8|fargona|fargona|Коканд–Маргилан–Андижан|44|59|100:15000,50:9000|ҳаракатланувчи таркиб|1
+T|27|6312|outbound|44|59|05:50|08:33|163|1234567|1|0|||
+T|28|6313|inbound|59|44|17:10|19:45|155|1234567|1|0|||
+N 
+R|9|fargona|fargona|Коканд–Наманган–Андижан–Маргилан (кольцевой)|44|125|100:20000,50:11500|ҳаракатланувчи таркиб|1
+T|56|7091/93|outbound|44|64|05:30|13:18|468|1234567|1|0|||
+N 
+R|10|qashqadaryo|qashqadaryo|Карши–Шахрисабз|76|68|100:10000,50:6500|ҳаракатланувчи таркиб|1
+T|30|6317|inbound|68|76|05:20|07:44|144|1234567|1|0|||
+T|31|6318|outbound|76|68|16:51|19:13|142|1234567|1|0|||
+N 
+R|11|buxoro|buxoro,qashqadaryo|Карши–Бухара|76|84|100:12000,50:7500|ҳаракатланувчи таркиб|1
+T|32|6315|outbound|76|84|08:14|11:00|166|1234567|1|0|||
+T|33|6316|inbound|84|76|13:30|16:24|174|1234567|1|0|||
+N 
+R|12|surxondaryo|surxondaryo|Термез–Сариасия|85|95|100:15000,50:9000|ҳаракатланувчи таркиб|1
+T|39|6379|inbound|95|85|03:45|07:43|238|1234567|1|0|||
+T|34|6376|outbound|85|95|06:32|09:54|202|1234567|1|0|||
+T|35|6375|inbound|95|85|10:54|14:25|211|1234567|1|0|||
+T|36|6378|outbound|85|95|13:01|16:36|215|1234567|1|0|||
+T|37|6377|inbound|95|85|17:46|21:17|211|1234567|1|0|||
+T|38|6380|outbound|85|95|18:00|22:10|250|1234567|1|0|||
+N 
+R|13|surxondaryo|surxondaryo|Термез–Дарбанд|85|100|100:15000,50:9000|ҳаракатланувчи таркиб|1
+T|41|6381|inbound|100|85|05:36|08:41|185|1234567|1|0|||
+T|40|6382|outbound|85|100|16:02|19:16|194|1234567|1|0|||
+N 
+R|14|surxondaryo|surxondaryo|Термез–Сурхонобод|85|105|100:15000,50:9000|ҳаракатланувчи таркиб|1
+T|43|6384|inbound|105|85|05:05|07:40|155|1234567|1|0|||
+T|42|6383|outbound|85|105|18:10|20:45|155|1234567|1|0|||
+N 
+R|15|qoraqalpogiston|qoraqalpogiston|Кунград — Мискин|111|118|100:30000,50:19500|ҳаракатланувчи таркиб|1
+T|45|6352|inbound|118|106|04:27|10:48|381|1234567|1|0|||
+T|44|6351|outbound|106|118|12:40|18:53|373|1234567|1|0|||
+N 
+R|16|qoraqalpogiston|qoraqalpogiston|Кунград–Нукус|111|106|100:10000,50:6500|ҳаракатланувчи таркиб|1
+T|46|6356|outbound|111|106|12:40|14:53|133|1234567|1|0|||
+T|47|6355|inbound|106|111|15:13|18:53|220|1234567|1|0|||
+N 
+R|17|qoraqalpogiston|qoraqalpogiston,xorazm|Нукус–Ургенч|106|121|100:25000,50:14000|ҳаракатланувчи таркиб|1
+T|48|6354|outbound|106|121|05:50|09:15|205|123567|1|0|||
+T|69|6354|outbound|106|121|10:00|13:30|210|4|1|0|||
+T|49|6353|inbound|121|106|16:50|20:15|205|1234567|1|0|||
+N 
+R|18|samarqand|samarqand|Ургут–Самарканд|124|122|100:10000,50:6500|ҳаракатланувчи таркиб|1
+T|50|6202|outbound|124|122|06:30|07:34|64|1234567|1|0|||
+T|53|6203|inbound|122|124|18:20|19:24|64|1234567|1|0|||
+N 
+R|24|navoiy-viloyati|navoiy-viloyati|Навои – Учкудук|126|137|100:20000,50:11500|ҳаракатланувчи таркиб|1
+T|64|6462|outbound|126|137|05:30|11:01|331|135|1|0|||
+T|65|6461|inbound|126|137|14:50|21:01|371|135|1|0|||
+N 
+R|26|qoraqalpogiston|qoraqalpogiston|Нукус — Мискин|106|118|100:20000,50:11500|ҳаракатланувчи таркиб|1
+T|68|6352|inbound|106|118|04:27|08:18|231|1234567|1|0|||
+T|67|6351|outbound|106|118|15:13|18:53|220|1234567|1|0|||
+N 
+R|27|xiva|xiva,xorazm|Аэровокзал Ургенча – Хива|141|139|100:25000,50:14000||1
+T|72|7055|outbound|139|141|08:40|09:22|42|1234567|1|0|||
+T|73|7058|inbound|139|141|21:00|21:42|42|1234567|1|0|||
+N 
+R|28|toshkent|toshkent|Ташкент Южный–Parkent|1|142|100:10000,50:6500|Xarakatlanuvchi tarkib|1
+T|75|7208|inbound|142|1|06:47|08:08|81|1234567|1|0|||
+T|76|7207|outbound|142|1|18:24|19:37|73|234567|1|0|||
+N 
+R|29|fargona|fargona|Коканд — Наманган — Андижан|44|59|100:15000,50:9000|ҳаракатланувчи таркиб|1
+N 
+REG 1:toshkent:Ташкент:Toshkent:Tashkent;2:sirdaryo:Сырдарья:Sirdaryo:Sirdarya;3:fargona:Фергана:Farg'ona:Fergana;4:qashqadaryo:Кашкадарья:Qashqadaryo:Kashkadarya;5:buxoro:Бухара:Buxoro:Bukhara;6:surxondaryo:Сурхандарья:Surxondaryo:Surkhandarya;7:qoraqalpogiston:Каракалпакстан:Qoraqalpog'iston:Karakalpakstan;8:xorazm:Хорезм:Xorazm:Khorezm;9:samarqand:Самарканд:Samarqand:Samarkand;10:xiva:Хива:Xiva:Khiva;11:navoiy-viloyati:Навои:Navoiy:Navoi
+ST ru 1~Ташкент Южный;2~Ташкент-Центральный;24~Ходжикент;25~Чинаркент;35~Сырдарья;38~Гулистан;41~Ховас;43~Бекабад;44~Коканд (вокзал);51~Наманган;59~Андижан-1;64~Маргилан;68~Шахрисабз;76~Карши;84~Бухара;85~Термез;95~Сариасия;100~Дарбанд;105~Сурхонабад;106~Нукус;111~Кунград;118~Мискин;121~Ургенч;122~Самарканд;124~Ургут;125~Коканд (Кольцевой);126~Навои;137~Учкудук;139~Хива;141~Аэровокзал Ургенча – Хив;142~Parkent
+ST uz 1~Toshkent janubiy;2~Toshkent markaziy;24~Xojikent;25~Chinorkent;35~Sirdaryo;38~Guliston;41~Xovos;43~Bekobod;44~Qo'qon vokzal;51~Namangan vokzal;59~Andijon vokzal;64~Marg'ilon vokzal;68~Shahrisabz;76~Qarshi;84~Buxoro;85~Termiz;95~Sariosiyo;100~Darband;105~Surxonobod;106~Nukus;111~Qo'ng'irod;118~Miskin;121~Urgench;122~Samarqand;124~Urgut;125~Qo'qon vokzal ( Aylanma );126~Navoiy;137~Uchquduq;139~Xiva;141~Urganch Aerovokzal – Xiva;142~Parkent
+ST en 1~Tashkent South;2~Tashkent Central;24~Xojikent;25~Chinorkent;35~Sirdarya;38~Gulistan;41~Xovos;43~Bekobod;44~Qo'qon Station;51~Namangan;59~Andijon-1;64~Marg'ilon;68~Shahrisabz;76~Qarshi;84~Bukhara;85~Termez;95~Sariosiyo;100~Darband;105~Surxonobod;106~Nukus;111~Qo'ng'irot;118~Miskin;121~Urgench;122~Samarkand;124~Urgut;125~Kokand (Circular Route);126~Navoiy;137~Uchquduq;139~Khiva;141~Urganch Airport Terminal – Khiva;142~Parkent
+RN uz 1~Toshkent–Chinorkent;2~Toshkent–Xojikent;3~Toshkent–Xovos;4~Toshkent–Guliston;5~Toshkent–Sirdaryo;6~Toshkent–Bekobod;7~Qo'qon–Namangan;8~Qo'qon–Marg'ilon–Andijon;9~Qo'qon–Namangan–Andijon–Marg'ilon-Qo'qon (Aylanma);10~Qarshi–Shahrisabz;11~Qarshi–Buxoro;12~Termiz–Sariosiyo;13~Termiz–Darband;14~Termiz–Surxonobod;15~Qo'ng'irot-Miskin;16~Qo'ng'irot–Nukus;17~Nukus–Urgench;18~Urgut–Samarqand;24~Navoiy – Uchquduq;26~Nukus–Misin;27~Urganch Aerovokzal – Xiva;28~Toshkent janubiy-Parkent;29~Qo‘qon — Namangan — Andijon
+RN en 1~Tashkent–Chinarkent;2~Tashkent–Khodzhikent;3~Tashkent–Khovos;4~Tashkent–Gulistan;5~Tashkent–Sirdarya;6~Tashkent–Bekabad;7~Kokand–Namangan;8~Kokand–Margilan–Andijan;9~Kokand–Namangan–Andijan–Margilan ( Circular Route );10~Karshi–Shahrisabz;11~Karshi–Bukhara;12~Termez–Sariosia;13~Termez–Darband;14~Termez–Surkhanabad;15~Kungrad — Miskin;16~Kungrad–Nukus;17~Nukus–Urgench;18~Urgut–Samarkand;24~Navoiy – Uchquduq;26~Nukus — Miskin;27~Urganch Airport Terminal – Khiva;28~Tashkent South–Parkent;29~Kokand — Namangan — Andijan

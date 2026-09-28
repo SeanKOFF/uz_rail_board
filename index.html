@@ -201,19 +201,19 @@ let DATA = null;
 let mode = 'departure';
 
 const T = {
-  uz: {trains:'Poyezdlar', flights:'Samolyotlar', abroad:'Keyin yo\'nalish O\'zbekistondan tashqarida davom etadi', track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
+  uz: {trains:'Poyezdlar', suburban:'Elektrichkalar', flights:'Samolyotlar', abroad:'Keyin yo\'nalish O\'zbekistondan tashqarida davom etadi', track:'yo\'l', tz:'mahalliy vaqt', dep:'Jo\'nash', arr:'Kelish', through:'o\'tuvchi',
        tomorrow:'ertaga', inPrefix:'', min:'daq', hr:'soat', leaving:'jo\'namoqda',
        from:c => c + 'dan', empty:'Yaqin sutkada bu yo\'nalishda reyslar yo\'q.',
        error:'Jadval yuklanmadi. Sahifani yangilang.',
        note:'Jadval bo\'yicha vaqt. Kechikishlar hisobga olinmagan.',
        updated:d => 'Yangilangan ' + d},
-  ru: {trains:'Поезда', flights:'Самолёты', abroad:'Дальше маршрут идёт за пределами Узбекистана', track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
+  ru: {trains:'Поезда', suburban:'Электрички', flights:'Самолёты', abroad:'Дальше маршрут идёт за пределами Узбекистана', track:'путь', tz:'время местное', dep:'Отправление', arr:'Прибытие', through:'проходящий',
        tomorrow:'завтра', inPrefix:'через', min:'мин', hr:'ч', leaving:'отправляется',
        from:c => 'из ' + c, empty:'В ближайшие сутки рейсов по этому направлению нет.',
        error:'Расписание не загрузилось. Обновите страницу.',
        note:'Время по расписанию. Задержки не учитываются.',
        updated:d => 'Обновлено ' + d},
-  en: {trains:'Trains', flights:'Flights', abroad:'The route continues outside Uzbekistan', track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
+  en: {trains:'Trains', suburban:'Suburban', flights:'Flights', abroad:'The route continues outside Uzbekistan', track:'track', tz:'local time', dep:'Departures', arr:'Arrivals', through:'through train',
        tomorrow:'tomorrow', inPrefix:'in', min:'min', hr:'h', leaving:'departing',
        from:c => 'from ' + c, empty:'No trains in this direction within 24 hours.',
        error:'Schedule failed to load. Please refresh.',
@@ -546,6 +546,7 @@ function applyLang(){
   // это лучше, чем мигнуть чужим языком.
   document.getElementById('sections').innerHTML =
     `<a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${T[lang].trains}</a>` +
+    `<a href="suburban.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="2"/><path d="M9 3l3 4 3-4M5 12h14M8 21l-2 1M16 21l2 1M9 17v.01M15 17v.01"/></svg>${T[lang].suburban}</a>` +
     `<a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${T[lang].flights}</a>`;
 
   document.getElementById('place').innerHTML = city ? cityName(city.ru) : '';
