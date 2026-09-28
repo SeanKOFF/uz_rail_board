@@ -45,6 +45,8 @@ MIN_SHARE = 0.8
 
 PAUSE = 0.15  # между запросами, чтобы не долбить чужой сервер
 
+NAMES_FILE = "station_names.json"  # ручные названия станций поверх источника
+
 
 # ---------------------------------------------------------------- сеть
 
@@ -393,6 +395,29 @@ def problem_text_ru(p, names):
     return c
 
 
+# ---------------------------------------------------------- названия
+
+def apply_name_overrides(stations, path=NAMES_FILE):
+    """Ручные названия из station_names.json поверх источника.
+    Ключ — id станции, значение — {язык: название}; подменяются только
+    указанные языки. Возвращает (подставлено, нет в данных)."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            ov = json.load(f)
+    except FileNotFoundError:
+        return [], []
+    applied, unknown = [], []
+    for sid, names in ov.items():
+        if sid.startswith("_"):  # служебные ключи, например _comment
+            continue
+        if sid not in stations:
+            unknown.append(sid)
+            continue
+        stations[sid].update({l: v for l, v in names.items() if l in LANGS and v})
+        applied.append(sid)
+    return applied, unknown
+
+
 # ---------------------------------------------------------- запуск
 
 def main():
@@ -415,6 +440,7 @@ def main():
         return 1
 
     regions, stations, routes = build(lists, listed, hidden, details, today, tomorrow)
+    named, unknown = apply_name_overrides(stations)
     problems = find_problems(routes, today, tomorrow)
     n_trains = sum(len(r["trains"]) for r in routes)
 
@@ -452,6 +478,10 @@ def main():
         for p in problems:
             print(f"  {sev_mark[p['severity']]} [{p['route']:>2}] {names.get(p['route'], '?')}: "
                   f"{problem_text_ru(p, names)}")
+
+    if named or unknown:
+        print(f"\nНазвания станций: подставлено {len(named)}"
+              + (f", нет в данных: {', '.join(unknown)}" if unknown else ""))
 
     doc = {
         "updated": now.isoformat(timespec="seconds"),
