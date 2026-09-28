@@ -79,6 +79,47 @@
 .trip .bad{color:var(--alarm);font-weight:600}
 .trip .warn{color:var(--saffron);font-weight:600}
 
+/* ---- табло по станции: строка, как на странице поездов ---- */
+.row{
+    display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
+    background:var(--card);border:1px solid var(--rule);border-radius:8px;
+    padding:14px 16px;margin-bottom:7px;position:relative;overflow:hidden;
+    animation:in .4s both;
+  }
+.rail{position:absolute;left:0;bottom:0;height:2px;background:var(--tile);opacity:.55}
+.rail.soon{background:var(--saffron);opacity:1}
+.num{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+    color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:-.01em;
+  }
+.dest{font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.meta{font-size:12px;color:var(--muted);margin-top:4px}
+.meta b{color:var(--ink);font-weight:600}
+.st-tag{color:var(--muted)}
+.right{text-align:right;min-width:96px}
+.time{
+    font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;
+    font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em;
+  }
+.in{
+    font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;
+    color:var(--muted);margin-top:5px;
+  }
+.in b{font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
+.in.soon b{color:var(--saffron)}
+.dev{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+    color:var(--saffron);margin-top:3px;
+  }
+/* Время на другом конце рейса: там, где у поездов платформа. */
+.oth{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    font-variant-numeric:tabular-nums;margin-top:4px;
+  }
+.oth small{font-size:10px}
+.row.cancel .time{color:var(--alarm);text-decoration:line-through}
+.row .bad{color:var(--alarm);font-weight:600}
+
 /* ---- вкладка «Сложности» ---- */
 .issue{
     background:var(--card);border:1px solid var(--rule);border-left-width:4px;
@@ -125,9 +166,17 @@
     .city-toggle[aria-expanded="true"]::after{transform:translateY(1px) rotate(180deg)}
     .airports{display:none}
     .airports.open{display:flex}
+    .airports.stations{display:flex}
     .route{padding:14px 13px 10px}
     .dirs{grid-template-columns:1fr;gap:14px}
     .price{margin-left:0;width:100%}
+  }
+@media (max-width:480px){
+    .row{grid-template-columns:46px 1fr auto;gap:10px;padding:12px 13px}
+    .num{font-size:13px} .dest{font-size:14px} .time{font-size:19px}
+  }
+@media (prefers-reduced-motion:reduce){
+    .row{animation:none}
   }
 </style>
 </head>
@@ -153,14 +202,26 @@
   </header>
 
   <div class="modes" role="group">
-    <button id="btn-routes" aria-pressed="true"></button>
+    <button id="btn-board" aria-pressed="true"></button>
+    <button id="btn-routes" aria-pressed="false"></button>
     <button id="btn-issues" aria-pressed="false"></button>
+  </div>
+
+  <div id="dirwrap">
+    <div class="modes" role="group">
+      <button id="btn-dep" aria-pressed="true"></button>
+      <button id="btn-arr" aria-pressed="false"></button>
+    </div>
   </div>
 
   <div id="pick">
     <button id="city-toggle" class="city-toggle" type="button"
             aria-expanded="false" aria-controls="airports"></button>
     <div class="airports" id="airports" role="group"></div>
+  </div>
+
+  <div id="stwrap">
+    <div class="airports stations" id="stations" role="group"></div>
   </div>
 
   <div class="board" id="board"></div>
@@ -176,7 +237,9 @@
 const TZ_OFFSET = 5;          // Ташкент, UTC+5, перевода часов нет
 
 let DATA = null;              // data/suburban.json
-let view = 'routes';          // routes | issues
+let view = 'board';           // board | routes | issues
+let mode = 'departure';       // departure | arrival (для табло)
+let station = null;           // id станции табло
 let region = 'toshkent';
 let lang = 'uz';
 
@@ -185,6 +248,8 @@ const T = {
     trains:'Poyezdlar', suburban:'Elektrichkalar', flights:'Samolyotlar',
     title:'Elektrichkalar', tz:'mahalliy vaqt',
     routes:'Yo\'nalishlar', issues:'Muammolar',
+    board:'Tablo', dep:'Jo\'nash', arr:'Kelish', from:c => c + 'dan',
+    emptyStation:'Yaqin sutkada bu bekatda reyslar yo\'q.',
     min:'daq', hr:'soat', inPrefix:'', now:'hozir',
     sum:'so\'m', child:'bola',
     today:'bugun', tomorrow:'ertaga',
@@ -218,6 +283,8 @@ const T = {
     trains:'Поезда', suburban:'Электрички', flights:'Самолёты',
     title:'Электрички', tz:'время местное',
     routes:'Маршруты', issues:'Сложности',
+    board:'Табло', dep:'Отправление', arr:'Прибытие', from:c => 'из ' + c,
+    emptyStation:'В ближайшие сутки на этой станции рейсов нет.',
     min:'мин', hr:'ч', inPrefix:'через', now:'сейчас',
     sum:'сум', child:'детский',
     today:'сегодня', tomorrow:'завтра',
@@ -251,6 +318,8 @@ const T = {
     trains:'Trains', suburban:'Suburban', flights:'Flights',
     title:'Suburban', tz:'local time',
     routes:'Routes', issues:'Issues',
+    board:'Board', dep:'Departures', arr:'Arrivals', from:c => 'from ' + c,
+    emptyStation:'No trains at this station within 24 hours.',
     min:'min', hr:'h', inPrefix:'in', now:'now',
     sum:'UZS', child:'child',
     today:'today', tomorrow:'tomorrow',
@@ -488,10 +557,154 @@ function renderIssues(){
   return out;
 }
 
+/* ---------- табло по станции (как у поездов) ---------- */
+
+const SHOW = 10;
+let savedStation;             // что уже лежит в localStorage
+
+/* Станции региона — концы рейсов его маршрутов, самые загруженные первыми. */
+function regionStations(slug){
+  const cnt = new Map();
+  for (const r of DATA.routes) {
+    if (!(r.regions || [r.region]).includes(slug)) continue;
+    for (const t of r.trains)
+      for (const s of tripEnds(r, t)) if (s != null) cnt.set(s, (cnt.get(s) || 0) + 1);
+  }
+  return [...cnt.keys()].sort((a, b) => cnt.get(b) - cnt.get(a) || stName(a).localeCompare(stName(b)));
+}
+
+/* Станция по умолчанию при смене региона. Узлы вроде Ташкента Южного
+   стоят в маршрутах нескольких регионов, и «самая загруженная» дала бы
+   то же табло, что было до клика. Берём первую станцию, все маршруты
+   которой основным регионом относятся к этому (у источника маршрут
+   может числиться сразу в двух: Ташкент–Гулистан в Сырдарье и Ташкенте). */
+function defaultStation(slug){
+  const home = new Map();     // станция -> основные регионы её маршрутов
+  for (const r of DATA.routes) for (const t of r.trains)
+    for (const s of tripEnds(r, t)) {
+      if (s == null) continue;
+      if (!home.has(s)) home.set(s, new Set());
+      home.get(s).add(r.region);
+    }
+  const sts = regionStations(slug);
+  return sts.find(s => { const h = home.get(s); return h && h.size === 1 && h.has(slug); })
+    ?? sts[0] ?? null;
+}
+
+/* Регион и станция должны согласоваться. Станция без региона — из
+   сохранённого выбора: тогда переходим в её регион. Смена региона
+   кнопкой сразу выбирает станцию (defaultStation), так что «прыжка»
+   назад в регион старой станции не бывает. */
+function fixSelection(){
+  const regs = (DATA.regions || []).filter(g => regionStations(g.slug).length);
+  if (!regs.length) return;
+  if (station != null && !regionStations(region).includes(station)) {
+    const g = regs.find(g => regionStations(g.slug).includes(station));
+    if (g) region = g.slug;
+  }
+  if (!regs.find(g => g.slug === region)) region = regs[0].slug;
+  const sts = regionStations(region);
+  if (!sts.includes(station)) station = sts[0];
+  if (station !== savedStation) {
+    savedStation = station;
+    try {
+      localStorage.setItem('board-station', String(station));
+      localStorage.setItem('board-region', region);
+    } catch {}
+  }
+}
+
+/* Ближайшие рейсы на станции: сегодня и завтра, плюс вчерашние, что
+   прибывают после полуночи. `at` — минут до события. Отменённые остаются
+   в списке: пассажиру важнее знать, что рейса не будет. */
+function stationBoard(sid, md){
+  const now = nowLocal();
+  const nowMin = now.getHours() * 60 + now.getMinutes();
+  const out = [];
+  for (const shift of [-1, 0, 1]) {
+    const day = new Date(now.getTime() + shift * 86400000);
+    const date = ymd(day), dow = isoDay(day);
+    for (const r of DATA.routes) for (const t of r.trains) {
+      const [a, b] = tripEnds(r, t);
+      if ((md === 'departure' ? a : b) !== sid) continue;
+      if (!t.days.includes(dow)) continue;
+      const late = md === 'arrival' && t.arr_next_day ? 1 : 0;
+      if (shift + late > 1) continue;                 // дальше завтрашнего дня не смотрим
+      const at = shift * 1440 + hm(md === 'departure' ? t.dep : t.arr) + late * 1440 - nowMin;
+      if (at < 0 || at >= 2880) continue;
+      out.push({
+        r, t, at,
+        other: md === 'departure' ? b : a,
+        clock: md === 'departure' ? t.dep : t.arr,
+        oth: md === 'departure' ? t.arr : t.dep,
+        evDate: ymd(new Date(now.getTime() + (shift + late) * 86400000)),
+        st: (t.status || {})[date] || {},   // статус — по дате отправления
+      });
+    }
+  }
+  return out.sort((x, y) => x.at - y.at).slice(0, SHOW);
+}
+
+const pad2 = n => String(n).padStart(2, '0');
+function countdown(mins){
+  const t = T[lang];
+  if (mins <= 0) return {html: `<b>${t.now}</b>`, soon: true};
+  const txt = mins < 60 ? `${mins} ${t.min}` : `${Math.floor(mins / 60)} ${t.hr} ${pad2(mins % 60)} ${t.min}`;
+  return {html: `${t.inPrefix} <b>${txt}</b>`.trim(), soon: mins <= 15};
+}
+
+function boardRowHtml(e, md, sid){
+  const tt = T[lang];
+  const st = e.st;
+  const c = countdown(e.at);
+  // Кольцевой рейс: оба конца — эта станция, название берём у маршрута.
+  const ring = e.other === sid;
+  const name = ring ? rName(e.r) : stName(e.other);
+  const title = ring || md === 'departure' ? name : tt.from(name);
+
+  const meta = [`<span class="st-tag">${esc(stName(sid))}</span>`];
+  if (e.evDate !== todayStr()) meta.push(`<b>${dateWord(e.evDate)}</b>`);
+  if (e.t.days.length < 7) meta.push(e.t.days.map(d => tt.days[d]).join(' '));
+  if (st.cancelled) {
+    const why = st.reason ? (st.reason[lang] || st.reason.ru) : '';
+    meta.push(`<b class="bad">${tt.cancelled}${why ? ' · ' + esc(why) : ''}</b>`);
+  }
+
+  const rail = !st.cancelled && e.at <= 60
+    ? `<div class="rail${c.soon ? ' soon' : ''}" style="width:${Math.max(3, 100 - e.at * 100 / 60)}%"></div>` : '';
+  const oth = md === 'departure'
+    ? `→ ${e.oth}${e.t.arr_next_day ? ' <small>' + tt.nextDay + '</small>' : ''}`
+    : `← ${e.oth}`;
+
+  return `<div class="row${st.cancelled ? ' cancel' : ''}">
+      <div class="num">${esc(e.t.number).replace('/', '/<wbr>')}</div>
+      <div>
+        <div class="dest">${esc(title)}</div>
+        <div class="meta">${meta.join(' · ')}</div>
+      </div>
+      ${rail}
+      <div class="right">
+        <div class="time">${e.clock}</div>
+        ${st.cancelled ? '' : `<div class="in${c.soon ? ' soon' : ''}">${c.html}</div>`}
+        ${st.delay ? `<div class="dev">+${st.delay} ${tt.min}</div>` : ''}
+        <div class="oth">${oth}</div>
+      </div>
+    </div>`;
+}
+
+function renderBoard(){
+  const list = station == null ? [] : stationBoard(station, mode);
+  return list.length ? list.map(e => boardRowHtml(e, mode, station)).join('')
+    : `<div class="empty">${T[lang].emptyStation}</div>`;
+}
+
 function render(){
   const t = T[lang];
   document.documentElement.lang = lang;
-  document.getElementById('place').textContent = view === 'routes' && DATA ? regName(region) : t.title;
+  if (DATA) fixSelection();
+  document.getElementById('place').textContent = !DATA ? t.title
+    : view === 'routes' ? regName(region)
+    : view === 'board' && station != null ? stName(station) : t.title;
 
   document.getElementById('sections').innerHTML =
     `<a href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 11h14M8 20l-2 2M16 20l2 2M9 16v.01M15 16v.01"/></svg>${t.trains}</a>
@@ -499,9 +712,15 @@ function render(){
      <a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${t.flights}</a>`;
 
   const nCrit = DATA ? new Set(liveProblems().filter(p => p.severity !== 'info').map(p => p.route)).size : 0;
+  document.getElementById('btn-board').textContent = t.board;
+  document.getElementById('btn-dep').textContent = t.dep;
+  document.getElementById('btn-arr').textContent = t.arr;
   document.getElementById('btn-routes').textContent = t.routes;
   document.getElementById('btn-issues').innerHTML = t.issues +
     (nCrit ? `<span class="count">${nCrit}</span>` : '');
+  document.getElementById('btn-board').setAttribute('aria-pressed', view === 'board');
+  document.getElementById('btn-dep').setAttribute('aria-pressed', mode === 'departure');
+  document.getElementById('btn-arr').setAttribute('aria-pressed', mode === 'arrival');
   document.getElementById('btn-routes').setAttribute('aria-pressed', view === 'routes');
   document.getElementById('btn-issues').setAttribute('aria-pressed', view === 'issues');
 
@@ -510,7 +729,9 @@ function render(){
   document.getElementById('source').innerHTML = t.source +
     '<a href="https://ticket.elektropoyezd.uz/schedule" target="_blank" rel="noopener">ticket.elektropoyezd.uz</a>';
 
-  document.getElementById('pick').hidden = view !== 'routes';
+  document.getElementById('pick').hidden = view === 'issues';
+  document.getElementById('dirwrap').hidden = view !== 'board';
+  document.getElementById('stwrap').hidden = view !== 'board';
   if (!DATA) return;
 
   const regs = (DATA.regions || []).filter(g => regionRoutes(g.slug).length);
@@ -521,7 +742,10 @@ function render(){
     return `<button data-slug="${g.slug}" aria-pressed="${g.slug === region}">${esc(regName(g.slug))}${bad ? ' <span style="color:var(--alarm)">●</span>' : ''}</button>`;
   }).join('');
 
-  document.getElementById('board').innerHTML = view === 'routes' ? renderRoutes() : renderIssues();
+  document.getElementById('stations').innerHTML = regionStations(region).map(s =>
+    `<button data-st="${s}" aria-pressed="${s === station}">${esc(stName(s))}</button>`).join('');
+  document.getElementById('board').innerHTML =
+    view === 'board' ? renderBoard() : view === 'routes' ? renderRoutes() : renderIssues();
 
   document.getElementById('foot').textContent = t.updated(new Date(DATA.updated).toLocaleString(
     lang === 'en' ? 'en-GB' : lang === 'ru' ? 'ru-RU' : 'uz-UZ',
@@ -542,7 +766,7 @@ function openRoute(id){
   const r = routeById(id);
   if (!r) return;
   view = 'routes';
-  if (!(r.regions || [r.region]).includes(region)) region = r.region;
+  if (!(r.regions || [r.region]).includes(region)) { region = r.region; station = null; }
   try { localStorage.setItem('board-region', region); } catch {}
   render();
   const el = document.getElementById('route-' + id);
@@ -569,6 +793,7 @@ document.getElementById('airports').addEventListener('click', e => {
   const b = e.target.closest('button');
   if (!b) return;
   region = b.dataset.slug;
+  station = DATA ? defaultStation(region) : null;
   document.getElementById('airports').classList.remove('open');
   document.getElementById('city-toggle').setAttribute('aria-expanded', false);
   try { localStorage.setItem('board-region', region); } catch {}
@@ -580,6 +805,15 @@ document.getElementById('city-toggle').addEventListener('click', () => {
   document.getElementById('city-toggle').setAttribute('aria-expanded', open);
 });
 
+document.getElementById('stations').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  station = +b.dataset.st;
+  render();
+});
+document.getElementById('btn-board').addEventListener('click', () => { view = 'board'; render(); });
+document.getElementById('btn-dep').addEventListener('click', () => { mode = 'departure'; render(); });
+document.getElementById('btn-arr').addEventListener('click', () => { mode = 'arrival'; render(); });
 document.getElementById('btn-routes').addEventListener('click', () => { view = 'routes'; render(); });
 document.getElementById('btn-issues').addEventListener('click', () => { view = 'issues'; render(); });
 
@@ -616,11 +850,15 @@ document.getElementById('langs').addEventListener('click', e => {
     const l = localStorage.getItem('board-lang');
     if (l === 'uz' || l === 'ru' || l === 'en') lang = l;
     region = localStorage.getItem('board-region') || 'toshkent';
+    const s = localStorage.getItem('board-station');
+    station = s ? +s : null;
+    savedStation = station;
     setTheme(localStorage.getItem('board-theme') === 'dark');
   } catch {
     setTheme(false);
   }
   if (location.hash === '#issues') view = 'issues';
+  if (location.hash === '#routes') view = 'routes';
   document.querySelectorAll('#langs button').forEach(x =>
     x.setAttribute('aria-pressed', x.dataset.l === lang));
 
