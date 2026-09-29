@@ -22,6 +22,14 @@ from yandex import call, RaspError
 ROUTES = Path("data/routes.json")
 OUT = Path("data/station_coords.json")
 
+# express-код -> (широта, долгота): переопределяет то, что даёт Яндекс по
+# имени, когда его точка неверна. Только проверенные независимо координаты.
+MANUAL = {
+    # У Яндекса «Шават» — почти в 100 км от настоящего города (37 км
+    # северо-западнее Ургенча). Эта — из alta.ru, код станции 73810.
+    "2900844": (41.693212, 60.302163),
+}
+
 
 def our_stations():
     """Все express-коды и названия, что реально встречаются в маршрутах."""
@@ -66,6 +74,13 @@ def main():
     changed = []
 
     for code, title in ours.items():
+        if code in MANUAL:
+            lat, lon = MANUAL[code]
+            result[code] = {"title": title, "lat": lat, "lon": lon}
+            prev = old.get(code)
+            if prev and (prev.get("lat"), prev.get("lon")) != (lat, lon):
+                changed.append((code, title, prev.get("lat"), prev.get("lon"), lat, lon))
+            continue
         if title in by_title:
             lat, lon = by_title[title]
             result[code] = {"title": title, "lat": lat, "lon": lon}
