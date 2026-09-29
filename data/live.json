@@ -1,56 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ",
-   "date": "29.09.2026",
-   "time_local": "14:41",
-   "platform": "2",
-   "sold_out": false,
-   "planned": "14:41",
-   "deviation": null
-  },
-  {
-   "number": "302Ф",
-   "route": "Ташкент-душанбе",
-   "date": "29.09.2026",
-   "time_local": "14:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "14:48",
-   "deviation": null
-  },
-  {
-   "number": "092Ф",
-   "route": "ТОШКЕНТ -АНДИЖАН",
-   "date": "29.09.2026",
-   "time_local": "17:50",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:50",
-   "deviation": null
-  },
-  {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "29.09.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "29.09.2026",
-   "time_local": "20:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "20:32",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "30.09.2026",
@@ -151,6 +101,46 @@
    "deviation": null
   },
   {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "date": "30.09.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
+   "deviation": null
+  },
+  {
+   "number": "732Ф",
+   "route": "ТОШКЕНТ -АНДИЖАН",
+   "date": "30.09.2026",
+   "time_local": "17:50",
+   "platform": null,
+   "sold_out": false,
+   "planned": "17:50",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "30.09.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
+   "deviation": null
+  },
+  {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "30.09.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
+   "deviation": null
+  },
+  {
    "number": "702Ф",
    "route": "ТОШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "06.10.2026",
@@ -159,19 +149,19 @@
    "sold_out": false,
    "planned": "10:05",
    "deviation": null
+  },
+  {
+   "number": "302Ф",
+   "route": "Ташкент-душанбе",
+   "date": "06.10.2026",
+   "time_local": "14:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:48",
+   "deviation": null
   }
  ],
  "tashkent-south": [
-  {
-   "number": "054",
-   "route": "ТАШКЕНТ-КУНГИРАД",
-   "date": "29.09.2026",
-   "time_local": "16:00",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "16:00",
-   "deviation": null
-  },
   {
    "number": "082Ф",
    "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
@@ -253,6 +243,16 @@
    "deviation": null
   },
   {
+   "number": "054",
+   "route": "ТАШКЕНТ-КУНГИРАД",
+   "date": "30.09.2026",
+   "time_local": "16:00",
+   "platform": "3",
+   "sold_out": false,
+   "planned": "16:00",
+   "deviation": null
+  },
+  {
    "number": "125Ч",
    "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
    "date": "30.09.2026",
@@ -284,36 +284,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "29.09.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
-   "number": "302З",
-   "route": "САМАРКАНД - ДУШАНБЕ 1",
-   "date": "29.09.2026",
-   "time_local": "19:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
-   "number": "777Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "29.09.2026",
-   "time_local": "20:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:01",
-   "deviation": null
-  },
   {
    "number": "126Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
@@ -435,8 +405,28 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "30.09.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
+   "deviation": null
+  },
+  {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "30.09.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
+   "deviation": null
+  },
+  {
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "01.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -445,8 +435,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "01.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -583,69 +573,19 @@
    "sold_out": false,
    "planned": "13:09",
    "deviation": null
+  },
+  {
+   "number": "302З",
+   "route": "САМАРКАНД - ДУШАНБЕ 1",
+   "date": "06.10.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
+   "deviation": null
   }
  ],
  "urgench": [
-  {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "29.09.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
-  {
-   "number": "654Х",
-   "route": "БЕЙНЕУ - УРГАНЧ",
-   "date": "29.09.2026",
-   "time_local": "16:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
-   "number": "126Ф",
-   "route": "ХИВА - АНДИЖОН 1",
-   "date": "29.09.2026",
-   "time_local": "16:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:23",
-   "deviation": null
-  },
-  {
-   "number": "076Ж",
-   "route": "ХИВА - ТОШКЕНТ ЖА",
-   "date": "29.09.2026",
-   "time_local": "16:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:23",
-   "deviation": null
-  },
-  {
-   "number": "058Ь",
-   "route": "ШОВОТ - ТОШКЕНТ ЖА",
-   "date": "29.09.2026",
-   "time_local": "19:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": null
-  },
-  {
-   "number": "706Ф",
-   "route": "БУХОРО 1 - ХИВА",
-   "date": "29.09.2026",
-   "time_local": "20:05",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "751М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
@@ -687,6 +627,16 @@
    "deviation": null
   },
   {
+   "number": "752Ж",
+   "route": "ТОШКЕНТ-ЙУ - ХИВА",
+   "date": "30.09.2026",
+   "time_local": "14:22",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:22",
+   "deviation": null
+  },
+  {
    "number": "124Ф",
    "route": "ТОШКЕНТ-ЙУ - ВОЛЖСКИЙ",
    "date": "30.09.2026",
@@ -697,6 +647,16 @@
    "deviation": null
   },
   {
+   "number": "126Ф",
+   "route": "ХИВА - АНДИЖОН 1",
+   "date": "30.09.2026",
+   "time_local": "16:23",
+   "platform": null,
+   "sold_out": false,
+   "planned": "16:23",
+   "deviation": null
+  },
+  {
    "number": "056Ж",
    "route": "ХИВА - ТОШКЕНТ ЖА",
    "date": "30.09.2026",
@@ -704,6 +664,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "19:20",
+   "deviation": null
+  },
+  {
+   "number": "706Ф",
+   "route": "БУХОРО 1 - ХИВА",
+   "date": "30.09.2026",
+   "time_local": "20:05",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
    "deviation": null
   },
   {
@@ -757,6 +727,16 @@
    "deviation": null
   },
   {
+   "number": "058Ь",
+   "route": "ШОВОТ - ТОШКЕНТ ЖА",
+   "date": "02.10.2026",
+   "time_local": "19:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:20",
+   "deviation": null
+  },
+  {
    "number": "076Ф",
    "route": "ТОШКЕНТ ЖА - ХИВА",
    "date": "06.10.2026",
@@ -764,6 +744,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "12:56",
+   "deviation": null
+  },
+  {
+   "number": "076Ж",
+   "route": "ХИВА - ТОШКЕНТ ЖА",
+   "date": "06.10.2026",
+   "time_local": "16:23",
+   "platform": null,
+   "sold_out": false,
+   "planned": "16:23",
    "deviation": null
   }
  ],
@@ -854,7 +844,7 @@
    "date": "30.09.2026",
    "time_local": "11:14",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "11:14",
    "deviation": null
   },
@@ -1003,7 +993,7 @@
   {
    "number": "763Ф",
    "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "29.09.2026",
+   "date": "30.09.2026",
    "time_local": "17:29",
    "platform": null,
    "sold_out": true,
@@ -1015,7 +1005,7 @@
   {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
-   "date": "29.09.2026",
+   "date": "30.09.2026",
    "time_local": "15:36",
    "platform": "1",
    "sold_out": false,
@@ -1025,7 +1015,7 @@
   {
    "number": "129Ф",
    "route": "ANDIJON - TOSHKENT",
-   "date": "29.09.2026",
+   "date": "30.09.2026",
    "time_local": "16:30",
    "platform": "1",
    "sold_out": false,
@@ -1035,7 +1025,7 @@
   {
    "number": "127Ф",
    "route": "ANDIJON - TOSHKENT",
-   "date": "29.09.2026",
+   "date": "30.09.2026",
    "time_local": "17:20",
    "platform": "1",
    "sold_out": false,
