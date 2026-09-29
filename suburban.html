@@ -120,6 +120,33 @@
 .row.cancel .time{color:var(--alarm);text-decoration:line-through}
 .row .bad{color:var(--alarm);font-weight:600}
 
+/* ---- раскрытие остановок рейса (клик по строке табло) ---- */
+.row[role="button"]{cursor:pointer}
+.row[role="button"]:hover{border-color:var(--tile)}
+.row[role="button"]:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
+.stops-wrap{grid-column:1/-1;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule)}
+.stops{list-style:none;position:relative;padding-left:18px}
+.stops::before{
+    content:'';position:absolute;left:4px;top:7px;bottom:7px;
+    width:1px;background:var(--rule);
+  }
+.stops li{
+    display:flex;align-items:baseline;gap:10px;padding:5px 0;
+    font-size:13px;position:relative;
+  }
+.stops li::before{
+    content:'';position:absolute;left:-18px;top:10px;
+    width:7px;height:7px;border-radius:50%;
+    background:var(--card);border:1.5px solid var(--rule);
+  }
+.stops li.here::before{background:var(--tile);border-color:var(--tile)}
+.stops li.here .stop-name{font-weight:600;color:var(--ink)}
+.stop-time{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    font-variant-numeric:tabular-nums;min-width:96px;
+  }
+.stop-name{color:var(--muted)}
+
 /* ---- вкладка «Сложности» ---- */
 .issue{
     background:var(--card);border:1px solid var(--rule);border-left-width:4px;
@@ -235,6 +262,7 @@ let DATA = null;              // data/suburban.json
 let view = 'board';           // board | routes | issues
 let mode = 'departure';       // departure | arrival (для табло)
 let station = null;           // id станции табло
+let openRow = null;           // id раскрытого на табло рейса (t.id)
 let region = 'toshkent';
 let lang = 'uz';
 
@@ -622,10 +650,22 @@ function countdown(mins){
   return {html: `${t.inPrefix} <b>${txt}</b>`.trim(), soon: mins <= 15};
 }
 
+function stopsHtml(t, sid){
+  const items = t.stops.map(s => {
+    const times = [s.arr, s.dep].filter(Boolean).join(' — ');
+    return `<li class="${s.station === sid ? 'here' : ''}">
+      <span class="stop-time">${times}</span>
+      <span class="stop-name">${esc(stName(s.station))}</span></li>`;
+  }).join('');
+  return `<div class="stops-wrap"><ol class="stops">${items}</ol></div>`;
+}
+
 function boardRowHtml(e, md, sid){
   const tt = T[lang];
   const st = e.st;
   const c = countdown(e.at);
+  const hasStops = Array.isArray(e.t.stops) && e.t.stops.length > 0;
+  const open = hasStops && openRow === e.t.id;
   // Кольцевой рейс: оба конца — эта станция, название берём у маршрута.
   const ring = e.other === sid;
   const name = ring ? rName(e.r) : stName(e.other);
@@ -645,7 +685,10 @@ function boardRowHtml(e, md, sid){
     ? `→ ${e.oth}${e.t.arr_next_day ? ' <small>' + tt.nextDay + '</small>' : ''}`
     : `← ${e.oth}`;
 
-  return `<div class="row${st.cancelled ? ' cancel' : ''}">
+  const attrs = hasStops
+    ? ` data-train="${e.t.id}" role="button" tabindex="0" aria-expanded="${open}"`
+    : '';
+  return `<div class="row${st.cancelled ? ' cancel' : ''}${open ? ' open' : ''}"${attrs}>
       <div class="num">${esc(e.t.number).replace('/', '/<wbr>')}</div>
       <div>
         <div class="dest">${esc(title)}</div>
@@ -658,6 +701,7 @@ function boardRowHtml(e, md, sid){
         ${st.delay ? `<div class="dev">+${st.delay} ${tt.min}</div>` : ''}
         <div class="oth">${oth}</div>
       </div>
+      ${open ? stopsHtml(e.t, sid) : ''}
     </div>`;
 }
 
@@ -746,16 +790,23 @@ function openRoute(id){
   }
 }
 
+function toggleRow(id){
+  openRow = openRow === id ? null : id;
+  render();
+}
+
 document.getElementById('board').addEventListener('click', e => {
   const it = e.target.closest('.issue');
-  if (it) openRoute(+it.dataset.route);
+  if (it) { openRoute(+it.dataset.route); return; }
+  const row = e.target.closest('.row[data-train]');
+  if (row) toggleRow(+row.dataset.train);
 });
 document.getElementById('board').addEventListener('keydown', e => {
   if (e.key !== 'Enter' && e.key !== ' ') return;
   const it = e.target.closest('.issue');
-  if (!it) return;
-  e.preventDefault();
-  openRoute(+it.dataset.route);
+  if (it) { e.preventDefault(); openRoute(+it.dataset.route); return; }
+  const row = e.target.closest('.row[data-train]');
+  if (row) { e.preventDefault(); toggleRow(+row.dataset.train); }
 });
 
 document.getElementById('airports').addEventListener('click', e => {
