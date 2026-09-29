@@ -38,17 +38,6 @@
   }
 .price b{color:var(--ink);font-weight:600}
 
-/* Сигналы у маршрута: коротко, одной строкой каждый. */
-.flags{list-style:none;margin:10px 0 2px;display:flex;flex-direction:column;gap:4px}
-.flags li{font-size:12.5px;line-height:1.45;display:flex;gap:7px;align-items:baseline}
-.flags .dot{width:7px;height:7px;border-radius:50%;flex:none;transform:translateY(-1px)}
-.flags .critical{color:var(--alarm);font-weight:600}
-.flags .critical .dot{background:var(--alarm)}
-.flags .warn{color:var(--saffron)}
-.flags .warn .dot{background:var(--saffron)}
-.flags .info{color:var(--muted)}
-.flags .info .dot{background:var(--rule)}
-
 /* ---- два направления рядом ---- */
 .dirs{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin-top:12px}
 .dirs.single{grid-template-columns:1fr}
@@ -147,32 +136,6 @@
   }
 .stop-name{color:var(--muted)}
 
-/* ---- вкладка «Сложности» ---- */
-.issue{
-    background:var(--card);border:1px solid var(--rule);border-left-width:4px;
-    border-radius:8px;padding:13px 16px;margin-bottom:8px;cursor:pointer;
-    animation:in .4s both;
-  }
-.issue:hover{border-color:var(--tile)}
-.issue:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
-.issue.critical{border-left-color:var(--alarm)}
-.issue.warn{border-left-color:var(--saffron)}
-.issue.info{border-left-color:var(--rule)}
-.issue .top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.issue .rname{font-size:15px}
-.issue .reg{font-size:12px;color:var(--muted)}
-.issue .flags{margin-top:7px}
-.group{
-    font:600 11px/1 'IBM Plex Sans',sans-serif;color:var(--muted);
-    text-transform:uppercase;letter-spacing:.08em;margin:18px 0 9px;
-  }
-.group:first-child{margin-top:4px}
-.modes .count{
-    display:inline-block;min-width:18px;padding:2px 6px;margin-left:6px;
-    border-radius:9px;background:var(--alarm);color:var(--card);
-    font-size:11px;line-height:1.2;text-align:center;
-  }
-
 .note{font-size:12px;color:var(--muted);margin:16px 0 0;line-height:1.6}
 .source{font-size:12px;color:var(--muted);margin-top:14px}
 .source a{color:var(--muted)}
@@ -230,7 +193,6 @@
   <div class="modes" role="group">
     <button id="btn-board" aria-pressed="true"></button>
     <button id="btn-routes" aria-pressed="false"></button>
-    <button id="btn-issues" aria-pressed="false"></button>
   </div>
 
   <div id="dirwrap">
@@ -270,7 +232,7 @@ const T = {
   uz: {
     trains:'Poyezdlar', suburban:'Elektrichkalar', flights:'Samolyotlar',
     title:'Elektrichkalar', tz:'mahalliy vaqt',
-    routes:'Yo\'nalishlar', issues:'Muammolar',
+    routes:'Yo\'nalishlar',
     board:'Tablo', dep:'Jo\'nash', arr:'Kelish', from:c => c + 'dan',
     emptyStation:'Yaqin sutkada bu bekatda reyslar yo\'q.',
     min:'daq', hr:'soat', inPrefix:'', now:'hozir',
@@ -279,33 +241,17 @@ const T = {
     cancelled:'bekor qilingan', notToday:'bugun qatnamaydi',
     gone:'jo\'nab ketdi', next:'keyingisi',
     nextDay:'+1 kun',
-    groups:{critical:'Qatnov buzilgan', warn:'Ma\'lumotlarda chalkashlik', info:'Jadval xususiyatlari'},
-    noIssues:'Hozircha muammo yo\'q.',
     empty:'Bu viloyatda yo\'nalish yo\'q.',
     error:'Jadval yuklanmadi. Sahifani yangilang.',
     note:'Vaqt tashuvchi jadvali bo\'yicha. Bekor qilish va kechikishlar tashuvchi ma\'lumotidan, soatiga bir marta yangilanadi. Chipta sotish tizimi sinov rejimida ishlamoqda.',
     source:'Manba va chiptalar: ',
     updated:d => 'Yangilangan ' + d,
     days:['','Du','Se','Ch','Pa','Ju','Sh','Ya'],
-    p:{
-      cancelled:(x) => `№${x.train} (${x.dep}) ${x.when} bekor qilingan` + (x.reason ? `: ${x.reason}` : ''),
-      all_cancelled:(x) => `${cap(x.when)} barcha reyslar bekor qilingan`,
-      delayed:(x) => `№${x.train} ${x.minutes} daqiqa kechikmoqda (${x.when})`,
-      no_trains:(x) => 'Yo\'nalishda birorta reys yo\'q' + (x.listed ? '' : ' — umumiy ro\'yxatdan ham olib tashlangan'),
-      hidden_route:() => 'Yo\'nalish umumiy ro\'yxatda ko\'rinmaydi',
-      route_inactive:() => 'Yo\'nalish faol emas deb belgilangan',
-      train_inactive:(x) => `№${x.train} faol emas deb belgilangan`,
-      stations_swapped:(x) => `Manbada jo\'nash va kelish bekatlari almashib ketgan: ${x.trains.join(', ')}`,
-      stations_mismatch:(x) => `Reys yo\'nalish oxirlari orasida qatnamaydi: ${x.trains.join(', ')} — bekatni tekshiring`,
-      number_conflict:(x) => `№${x.train} bir nechta yo\'nalishda turli vaqt bilan: ${x.variants.join('; ')}`,
-      one_direction:() => 'Faqat bir tomonga qatnaydi',
-      not_daily:(x) => `№${x.train} (${x.dep}) har kuni emas: ${x.daysTxt}`,
-    },
   },
   ru: {
     trains:'Поезда', suburban:'Электрички', flights:'Самолёты',
     title:'Электрички', tz:'время местное',
-    routes:'Маршруты', issues:'Сложности',
+    routes:'Маршруты',
     board:'Табло', dep:'Отправление', arr:'Прибытие', from:c => 'из ' + c,
     emptyStation:'В ближайшие сутки на этой станции рейсов нет.',
     min:'мин', hr:'ч', inPrefix:'через', now:'сейчас',
@@ -314,33 +260,17 @@ const T = {
     cancelled:'отменён', notToday:'сегодня не ходит',
     gone:'ушёл', next:'ближайший',
     nextDay:'+1 сут',
-    groups:{critical:'Движение нарушено', warn:'Путаница в данных', info:'Особенности расписания'},
-    noIssues:'Сейчас сложностей нет.',
     empty:'В этом регионе маршрутов нет.',
     error:'Расписание не загрузилось. Обновите страницу.',
     note:'Время по расписанию перевозчика. Отмены и опоздания — по его же данным, обновляются раз в час. Продажа билетов у перевозчика работает в тестовом режиме.',
     source:'Источник и билеты: ',
     updated:d => 'Обновлено ' + d,
     days:['','пн','вт','ср','чт','пт','сб','вс'],
-    p:{
-      cancelled:(x) => `№${x.train} (${x.dep}) ${x.when} отменён` + (x.reason ? `: ${x.reason}` : ''),
-      all_cancelled:(x) => `${cap(x.when)} отменены все рейсы`,
-      delayed:(x) => `№${x.train} опаздывает на ${x.minutes} мин (${x.when})`,
-      no_trains:(x) => 'В маршруте нет ни одного рейса' + (x.listed ? '' : ' — и он убран из общего списка'),
-      hidden_route:() => 'Маршрут скрыт из общего списка',
-      route_inactive:() => 'Маршрут помечен неактивным',
-      train_inactive:(x) => `№${x.train} помечен неактивным`,
-      stations_swapped:(x) => `У источника перепутаны станции отправления и прибытия: ${x.trains.join(', ')}`,
-      stations_mismatch:(x) => `Рейс идёт не между концами маршрута: ${x.trains.join(', ')} — проверьте станцию`,
-      number_conflict:(x) => `№${x.train} стоит в нескольких маршрутах с разным временем: ${x.variants.join('; ')}`,
-      one_direction:() => 'Рейсы только в одну сторону',
-      not_daily:(x) => `№${x.train} (${x.dep}) не каждый день: ${x.daysTxt}`,
-    },
   },
   en: {
     trains:'Trains', suburban:'Suburban', flights:'Flights',
     title:'Suburban', tz:'local time',
-    routes:'Routes', issues:'Issues',
+    routes:'Routes',
     board:'Board', dep:'Departures', arr:'Arrivals', from:c => 'from ' + c,
     emptyStation:'No trains at this station within 24 hours.',
     min:'min', hr:'h', inPrefix:'in', now:'now',
@@ -349,33 +279,16 @@ const T = {
     cancelled:'cancelled', notToday:'not running today',
     gone:'departed', next:'next',
     nextDay:'+1 day',
-    groups:{critical:'Service disrupted', warn:'Conflicting data', info:'Timetable notes'},
-    noIssues:'No issues right now.',
     empty:'No routes in this region.',
     error:'Schedule failed to load. Please refresh.',
     note:'Operator timetable. Cancellations and delays come from the operator too, refreshed hourly. The operator\'s ticketing system is running in test mode.',
     source:'Source and tickets: ',
     updated:d => 'Updated ' + d,
     days:['','Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
-    p:{
-      cancelled:(x) => `No. ${x.train} (${x.dep}) cancelled ${x.when}` + (x.reason ? `: ${x.reason}` : ''),
-      all_cancelled:(x) => `All trains cancelled ${x.when}`,
-      delayed:(x) => `No. ${x.train} running ${x.minutes} min late (${x.when})`,
-      no_trains:(x) => 'No trains on this route' + (x.listed ? '' : ' — and it is hidden from the route list'),
-      hidden_route:() => 'Route is hidden from the route list',
-      route_inactive:() => 'Route is marked inactive',
-      train_inactive:(x) => `No. ${x.train} is marked inactive`,
-      stations_swapped:(x) => `Source has origin and destination swapped: ${x.trains.join(', ')}`,
-      stations_mismatch:(x) => `Train doesn't run between the route ends: ${x.trains.join(', ')} — check the station`,
-      number_conflict:(x) => `No. ${x.train} appears in several routes with different times: ${x.variants.join('; ')}`,
-      one_direction:() => 'One direction only',
-      not_daily:(x) => `No. ${x.train} (${x.dep}) not daily: ${x.daysTxt}`,
-    },
   },
 };
 
 const SEV = {critical:0, warn:1, info:2};
-const cap = s => s ? s[0].toUpperCase() + s.slice(1) : s;
 const esc = s => String(s ?? '').replace(/[&<>"]/g,
   c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -435,16 +348,6 @@ function dateWord(d){
 const todayStr = () => ymd(nowLocal());
 const tomorrowStr = () => { const d = nowLocal(); d.setDate(d.getDate() + 1); return ymd(d); };
 
-function problemText(p){
-  const f = T[lang].p[p.code];
-  if (!f) return p.code;
-  const x = {...p};
-  if (p.date) x.when = dateWord(p.date);
-  if (p.reason) x.reason = p.reason[lang] || p.reason.ru;
-  if (p.days) x.daysTxt = p.days.map(d => T[lang].days[d]).join(', ');
-  return f(x);
-}
-
 /* Проблемы, актуальные сейчас: отмены за прошедшие даты убираем —
    файл мог не обновиться, а вчерашняя отмена никому не нужна. */
 function liveProblems(){
@@ -457,18 +360,7 @@ function problemsOf(id){
     .sort((a, b) => SEV[a.severity] - SEV[b.severity]);
 }
 
-function worst(ps){
-  return ps.reduce((w, p) => SEV[p.severity] < SEV[w] ? p.severity : w, 'info');
-}
-
 /* ---------- отрисовка ---------- */
-
-function flagsHtml(ps, withInfo){
-  const list = ps.filter(p => withInfo || p.severity !== 'info');
-  if (!list.length) return '';
-  return `<ul class="flags">${list.map(p =>
-    `<li class="${p.severity}"><i class="dot"></i><span>${esc(problemText(p))}</span></li>`).join('')}</ul>`;
-}
 
 function tripHtml(r, t, head, ctx){
   const tt = T[lang];
@@ -512,8 +404,6 @@ function routeHtml(r, i){
   const now = nowLocal();
   const ctx = {today: todayStr(), tomorrow: tomorrowStr(), dow: isoDay(now),
                nowMin: now.getHours() * 60 + now.getMinutes()};
-  const ps = problemsOf(r.id);
-
   const cols = ['out', 'in'].map(dir => {
     const trains = r.trains.filter(t => t.dir === dir)
       .sort((a, b) => hm(a.dep) - hm(b.dep));
@@ -540,7 +430,6 @@ function routeHtml(r, i){
 
   return `<section class="route" id="route-${r.id}" style="animation-delay:${Math.min(i, 8) * .04}s">
       <div class="rhead"><h2 class="rname">${esc(rName(r))}</h2>${price}</div>
-      ${flagsHtml(ps, true)}
       ${cols.length ? `<div class="dirs${cols.length === 1 ? ' single' : ''}">${cols.join('')}</div>` : ''}
     </section>`;
 }
@@ -552,32 +441,8 @@ function regionRoutes(slug){
 
 function renderRoutes(){
   const rs = regionRoutes(region);
-  // Маршрут без рейсов карточкой не показываем, он есть во вкладке сложностей.
+  // Маршрут без рейсов карточкой не показываем — показывать нечего.
   return rs.length ? rs.map(routeHtml).join('') : `<div class="empty">${T[lang].empty}</div>`;
-}
-
-function renderIssues(){
-  const tt = T[lang];
-  const byRoute = {};
-  liveProblems().forEach(p => (byRoute[p.route] = byRoute[p.route] || []).push(p));
-  const items = Object.entries(byRoute).map(([id, ps]) => ({r: routeById(+id), ps, sev: worst(ps)}))
-    .filter(x => x.r)
-    .sort((a, b) => SEV[a.sev] - SEV[b.sev] || a.r.id - b.r.id);
-  if (!items.length) return `<div class="empty">${tt.noIssues}</div>`;
-
-  let out = '';
-  for (const sev of ['critical', 'warn', 'info']) {
-    const grp = items.filter(x => x.sev === sev);
-    if (!grp.length) continue;
-    out += `<div class="group">${tt.groups[sev]} · ${grp.length}</div>`;
-    out += grp.map(({r, ps}) => `
-      <div class="issue ${sev}" data-route="${r.id}" role="button" tabindex="0">
-        <div class="top"><span class="rname">${esc(rName(r))}</span>
-          <span class="reg">${esc(regName(r.region))}</span></div>
-        ${flagsHtml(ps, true)}
-      </div>`).join('');
-  }
-  return out;
 }
 
 /* ---------- табло по станции (как у поездов) ---------- */
@@ -724,25 +589,20 @@ function render(){
      <a href="suburban.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="2"/><path d="M9 3l3 4 3-4M5 12h14M8 21l-2 1M16 21l2 1M9 17v.01M15 17v.01"/></svg>${t.suburban}</a>
      <a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${t.flights}</a>`;
 
-  const nCrit = DATA ? new Set(liveProblems().filter(p => p.severity !== 'info').map(p => p.route)).size : 0;
   document.getElementById('btn-board').textContent = t.board;
   document.getElementById('btn-dep').textContent = t.dep;
   document.getElementById('btn-arr').textContent = t.arr;
   document.getElementById('btn-routes').textContent = t.routes;
-  document.getElementById('btn-issues').innerHTML = t.issues +
-    (nCrit ? `<span class="count">${nCrit}</span>` : '');
   document.getElementById('btn-board').setAttribute('aria-pressed', view === 'board');
   document.getElementById('btn-dep').setAttribute('aria-pressed', mode === 'departure');
   document.getElementById('btn-arr').setAttribute('aria-pressed', mode === 'arrival');
   document.getElementById('btn-routes').setAttribute('aria-pressed', view === 'routes');
-  document.getElementById('btn-issues').setAttribute('aria-pressed', view === 'issues');
 
   document.getElementById('tz-label').textContent = t.tz;
   document.getElementById('note').textContent = t.note;
   document.getElementById('source').innerHTML = t.source +
     '<a href="https://ticket.elektropoyezd.uz/schedule" target="_blank" rel="noopener">ticket.elektropoyezd.uz</a>';
 
-  document.getElementById('pick').hidden = view === 'issues';
   document.getElementById('dirwrap').hidden = view !== 'board';
   if (!DATA) return;
 
@@ -758,7 +618,7 @@ function render(){
   }).join('');
 
   document.getElementById('board').innerHTML =
-    view === 'board' ? renderBoard() : view === 'routes' ? renderRoutes() : renderIssues();
+    view === 'board' ? renderBoard() : renderRoutes();
 
   document.getElementById('foot').textContent = t.updated(new Date(DATA.updated).toLocaleString(
     lang === 'en' ? 'en-GB' : lang === 'ru' ? 'ru-RU' : 'uz-UZ',
@@ -775,36 +635,17 @@ function tick(){
 
 /* ---------- события ---------- */
 
-function openRoute(id){
-  const r = routeById(id);
-  if (!r) return;
-  view = 'routes';
-  if (!(r.regions || [r.region]).includes(region)) region = r.region;
-  try { localStorage.setItem('board-region', region); } catch {}
-  render();
-  const el = document.getElementById('route-' + id);
-  if (el) {
-    el.scrollIntoView({behavior:'smooth', block:'start'});
-    el.classList.add('flash');
-    setTimeout(() => el.classList.remove('flash'), 1600);
-  }
-}
-
 function toggleRow(id){
   openRow = openRow === id ? null : id;
   render();
 }
 
 document.getElementById('board').addEventListener('click', e => {
-  const it = e.target.closest('.issue');
-  if (it) { openRoute(+it.dataset.route); return; }
   const row = e.target.closest('.row[data-train]');
   if (row) toggleRow(+row.dataset.train);
 });
 document.getElementById('board').addEventListener('keydown', e => {
   if (e.key !== 'Enter' && e.key !== ' ') return;
-  const it = e.target.closest('.issue');
-  if (it) { e.preventDefault(); openRoute(+it.dataset.route); return; }
   const row = e.target.closest('.row[data-train]');
   if (row) { e.preventDefault(); toggleRow(+row.dataset.train); }
 });
@@ -829,7 +670,6 @@ document.getElementById('btn-board').addEventListener('click', () => { view = 'b
 document.getElementById('btn-dep').addEventListener('click', () => { mode = 'departure'; render(); });
 document.getElementById('btn-arr').addEventListener('click', () => { mode = 'arrival'; render(); });
 document.getElementById('btn-routes').addEventListener('click', () => { view = 'routes'; render(); });
-document.getElementById('btn-issues').addEventListener('click', () => { view = 'issues'; render(); });
 
 /* ---------- тема и язык ---------- */
 
@@ -871,7 +711,6 @@ document.getElementById('langs').addEventListener('click', e => {
   } catch {
     setTheme(false);
   }
-  if (location.hash === '#issues') view = 'issues';
   if (location.hash === '#routes') view = 'routes';
   document.querySelectorAll('#langs button').forEach(x =>
     x.setAttribute('aria-pressed', x.dataset.l === lang));
