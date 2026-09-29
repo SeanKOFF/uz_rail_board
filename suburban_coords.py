@@ -42,6 +42,15 @@ YANDEX_CODE = {
 # id станции -> (широта, долгота, откуда взято), если у Яндекса её нет.
 # Только проверенные координаты (OSM, карта станции), не по памяти.
 MANUAL = {
+    # У Яндекса точка не имеет отношения к нужному Тинчлику (их в
+    # Узбекистане несколько; наш — под Навои, на линии Навои–Учкудук).
+    # Эта — из alta.ru, справочника ЖД-станций: 6–7 км от Навои,
+    # 10 мин пути = 40 км/ч, правдоподобно для первой остановки.
+    127: (40.08884536, 65.31990051, "alta.ru: станция Тинчлик, код 73140 (Навоийская область)"),
+    # У Яндекса точка почти в 100 км от настоящего Шавата (город в
+    # 37 км северо-западнее Ургенча). Эта — из alta.ru: расстояние и
+    # время до Ургенча дают 67 км/ч вместо прежних 115.
+    120: (41.693212, 60.302163, "alta.ru: станция Шават, код 73810"),
     25: (41.62404, 69.93762, "osm:node/12618008915 Chinorkent"),
     142: (41.30047, 69.66655, "osm:node/13766680940 Parkent"),
     124: (39.43951, 67.22976, "osm:node/13717491021 Urgut"),
@@ -78,6 +87,11 @@ def norm(s):
              if w not in {"вокзал", "станция", "ст", "пасс", "пассажирский", "о", "п"}
              and not w.isdigit()]
     return " ".join(words)
+
+
+def hm(s):
+    h, m = s.split(':')[:2]
+    return int(h) * 60 + int(m)
 
 
 def km(a, b):
@@ -135,8 +149,14 @@ def main():
         if not (r["active"] and r["listed"]):
             continue
         for t in r["trains"]:
-            if t["active"]:
-                used.update((t["from"], t["to"]))
+            if not t["active"]:
+                continue
+            used.update((t["from"], t["to"]))
+            # Остановки — тоже нужные станции: без координат их не
+            # поставить на карту, даже если сам рейс уже разложен.
+            for st in t.get("stops") or []:
+                if st.get("station") is not None:
+                    used.add(st["station"])
 
     yandex = uz_rail_stations(load_yandex(args.refresh))
     by_code = {s["code"]: s for s in yandex}
@@ -224,6 +244,41 @@ def main():
                 # не ошибка: кольцевой маршрут или путь сильно в обход
                 print(f"  медленно по прямой, проверить глазами: {line}")
             break                                   # хватает одного поезда на маршрут
+
+    # То же самое по каждому перегону между соседними остановками —
+    # тоньше, чем по концам всего рейса: на кольцевом или сильно
+    # петляющем маршруте средняя скорость выглядит нормальной, а
+    # отдельный перегон с неверной точкой — нет. Каждую пару станций
+    # смотрим один раз, первым же рейсом, где обе точки уже найдены.
+    seen_legs = set()
+    for r in sub["routes"]:
+        for t in r["trains"]:
+            if not t["active"]:
+                continue
+            stops = t.get("stops") or []
+            for a_st, b_st in zip(stops, stops[1:]):
+                pair = frozenset((a_st["station"], b_st["station"]))
+                if pair in seen_legs:
+                    continue
+                if a_st["station"] not in result or b_st["station"] not in result:
+                    continue
+                if not a_st.get("dep") or not b_st.get("arr"):
+                    continue
+                seen_legs.add(pair)
+                a, b = result[a_st["station"]], result[b_st["station"]]
+                mins = (hm(b_st["arr"]) - hm(a_st["dep"])) % 1440
+                if mins <= 0:
+                    continue
+                d = km((a["lat"], a["lon"]), (b["lat"], b["lon"]))
+                v = d / (mins / 60)
+                line = (f"{t['number']} {a['title']} → {b['title']}: {d:.1f} км по прямой "
+                        f"за {mins} мин = {v:.0f} км/ч")
+                if v > MAX_KMH:
+                    problems.append(line + " — быстрее поезда, точка перепутана")
+                elif v < 8:
+                    # порог ниже, чем у целого рейса: перегон короткий,
+                    # пара минут стоянки естественно даёт низкую скорость
+                    print(f"  медленно на перегоне, проверить глазами: {line}")
 
     seen = {}
     for sid, v in result.items():
