@@ -22,33 +22,20 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/common.css">
 <style>
-.row{
-    display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
-    background:var(--card);border:1px solid var(--rule);border-radius:8px;
-    transition:background-color .25s, border-color .16s;
-    padding:14px 16px;margin-bottom:7px;position:relative;overflow:hidden;
-    animation:in .4s both;cursor:pointer;
-  }
+
 .row:nth-child(1){animation-delay:.02s}
 .row:nth-child(2){animation-delay:.06s}
 .row:nth-child(3){animation-delay:.10s}
 .row:nth-child(4){animation-delay:.14s}
 .row:nth-child(5){animation-delay:.18s}
 .row:nth-child(6){animation-delay:.22s}
-@keyframes in{
-from{opacity:0;transform:translateY(4px)}
-to{opacity:1;transform:none}
-}
+
 .row:hover{border-color:var(--tile)}
 .row:focus-visible{outline:2px solid var(--tile);outline-offset:2px}
 .row.open{cursor:default}
-.num{
-    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
-    color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:-.01em;
-  }
-.dest{font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
-.meta{font-size:12px;color:var(--muted);margin-top:4px;
-        display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+
+
+
 .meta .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex:none}
 .meta .ok{color:var(--muted)}
 .meta .ok .dot{background:var(--tile)}
@@ -58,10 +45,7 @@ to{opacity:1;transform:none}
 .meta .bad .dot{background:var(--alarm)}
 .meta .state{display:inline-flex;align-items:center;gap:5px}
 .right{text-align:right;min-width:96px}
-.time{
-    font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;
-    font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em;
-  }
+
 .time.moved{color:var(--muted);text-decoration:line-through;font-size:15px}
 /* Фактическое время — шафраном, как отклонения у поездов. */
   .fact{
@@ -69,11 +53,8 @@ to{opacity:1;transform:none}
     color:var(--saffron);font-variant-numeric:tabular-nums;
     line-height:1;letter-spacing:-.02em;margin-top:3px;
   }
-.in{
-    font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;
-    color:var(--muted);margin-top:5px;
-  }
-.in b{font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
+
+
 .term{
     display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
     color:var(--card);background:var(--ink);padding:3px 7px;border-radius:3px;

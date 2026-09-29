@@ -201,3 +201,43 @@ header{
 .sections a{padding:7px 10px}
 .sections a:not([aria-current="page"]){font-size:0;gap:0}
 }
+
+/* ---- строка табло: общая для поездов, электричек и самолётов ---- */
+@keyframes in{
+from{opacity:0;transform:translateY(4px)}
+to{opacity:1;transform:none}
+}
+.row{
+    display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;
+    background:var(--card);border:1px solid var(--rule);border-radius:8px;
+    transition:background-color .25s, border-color .16s;
+    padding:14px 16px;margin-bottom:7px;position:relative;overflow:hidden;
+    animation:in .4s both;
+  }
+.rail{
+    position:absolute;left:0;bottom:0;height:2px;
+    background:var(--tile);opacity:.55;
+  }
+.rail.soon{background:var(--saffron);opacity:1}
+.num{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+    color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:-.01em;
+  }
+.dest{font-size:16px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.meta{font-size:12px;color:var(--muted);margin-top:4px}
+.meta b{color:var(--ink);font-weight:600}
+.st-tag{color:var(--muted)}
+.time{
+    font-family:'IBM Plex Mono',monospace;font-size:23px;font-weight:600;
+    font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em;
+  }
+.in{
+    font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;
+    color:var(--muted);margin-top:5px;
+  }
+.in b{font-weight:600;color:var(--tile);font-variant-numeric:tabular-nums}
+.in.soon b{color:var(--saffron)}
+.dev{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+    color:var(--saffron);margin-top:3px;
+  }
