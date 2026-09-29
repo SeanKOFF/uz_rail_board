@@ -7,6 +7,7 @@ yo'lovchi tashish» МЧЖ, дочка УТЙ).
     GET /api/routes                    — все маршруты по регионам
     GET /api/routes/{id}?date=Y-M-D    — маршрут с рейсами и статусом
                                          на дату (отмены, опоздания)
+    GET /api/trains/{id}               — остановки рейса, без даты
 Язык ответа задаёт заголовок Accept-Language: ru | uz | en.
 
 Пишет только data/suburban.json — данных Яндекса и табло станций
@@ -76,7 +77,7 @@ class Source:
 
 
 class Fixtures:
-    """Офлайн-снимок: {"list_ru": ..., "r1_ru_2026-09-28": ...}."""
+    """Офлайн-снимок: {"list_ru": ..., "r1_ru_2026-09-28": ..., "train42_ru": ...}."""
 
     def __init__(self, path, today):
         op = gzip.open if path.endswith(".gz") else open
@@ -87,6 +88,8 @@ class Fixtures:
     def fetch(self, path, lang):
         if path == "/routes":
             key = f"list_{lang}"
+        elif path.startswith("/trains/"):
+            key = f"train{path[len('/trains/'):]}_{lang}"
         else:
             rid, _, q = path[len("/routes/"):].partition("?date=")
             key = f"r{rid}_{lang}_{q}"
@@ -149,6 +152,25 @@ def collect(src, today, tomorrow):
     return lists, listed, hidden, details, failed
 
 
+def collect_stops(src, details, today):
+    """Остановки каждого рейса: /api/trains/{id}. Без даты — список
+    стабилен по id рейса, поэтому берём id один раз, из ru-деталей на
+    сегодня, и не привязываем сбор к конкретной дате."""
+    failed = []
+    train_ids = sorted({t["id"] for (rid, lang, date), d in details.items()
+                         if lang == "ru" and date == today
+                         for t in (d.get("trains") or [])})
+    stops = {}  # (train_id, lang) -> [{station, arrival_time, departure_time}, ...]
+    for tid in train_ids:
+        for lang in LANGS:
+            code, j = src.fetch(f"/trains/{tid}", lang)
+            if code != 200 or not j:
+                failed.append(f"/trains/{tid} [{lang}] → {code}")
+                continue
+            stops[(tid, lang)] = (j.get("data") or {}).get("stops") or []
+    return stops, failed
+
+
 def i18n(by_lang, getter):
     out = {}
     for lang in LANGS:
@@ -162,7 +184,8 @@ def i18n(by_lang, getter):
     return out
 
 
-def build(lists, listed, hidden, details, today, tomorrow):
+def build(lists, listed, hidden, details, today, tomorrow, stops=None):
+    stops = stops or {}
     regions = {}   # slug -> {id, slug, name{}}
     stations = {}  # id -> name{}
 
@@ -226,6 +249,20 @@ def build(lists, listed, hidden, details, today, tomorrow):
             if dur is None:
                 dur = (hm(arr) - hm(dep)) % 1440
             days = t.get("operating_day_numbers") or [1, 2, 3, 4, 5, 6, 7]
+            # Остановки не зависят от даты и языка по составу, только
+            # названия внутри меняются — имена регистрируем на всех
+            # языках сразу, а порядок/время берём один раз из ru.
+            for lang in LANGS:
+                for s_ in stops.get((t["id"], lang)) or []:
+                    put_station(s_.get("station"), lang)
+            ru_stops = stops.get((t["id"], "ru"))
+            if ru_stops:
+                item_stops = [
+                    {"station": st_id(s_.get("station")),
+                     "arr": (s_.get("arrival_time") or "")[:5] or None,
+                     "dep": (s_.get("departure_time") or "")[:5] or None}
+                    for s_ in ru_stops
+                ]
             item = {
                 "id": t["id"],
                 "number": str(t.get("train_number") or ""),
@@ -245,6 +282,8 @@ def build(lists, listed, hidden, details, today, tomorrow):
                 item["arr_next_day"] = True
             if str(t["id"]) in status:
                 item["status"] = status[str(t["id"])]
+            if ru_stops:
+                item["stops"] = item_stops
             trains.append(item)
         trains.sort(key=lambda x: (x["dir"] != "out", hm(x["dep"])))
 
@@ -439,7 +478,8 @@ def main():
         print(f"✗ {e}")
         return 1
 
-    regions, stations, routes = build(lists, listed, hidden, details, today, tomorrow)
+    stops, stops_failed = ({}, []) if failed else collect_stops(src, details, today)
+    regions, stations, routes = build(lists, listed, hidden, details, today, tomorrow, stops)
     named, unknown = apply_name_overrides(stations)
     problems = find_problems(routes, today, tomorrow)
     n_trains = sum(len(r["trains"]) for r in routes)
@@ -452,6 +492,16 @@ def main():
         for f in failed:
             print("   ", f)
         return 1
+
+    if stops_failed:
+        # Мягкий отказ: без остановок рейс просто не раскрывается на
+        # странице, расписанию это не мешает — файл всё равно пишем.
+        print(f"\n! Остановки: не получено {len(stops_failed)} ответов "
+              f"— эти рейсы без раскрытия маршрута:")
+        for f in stops_failed[:10]:
+            print("   ", f)
+        if len(stops_failed) > 10:
+            print(f"    … и ещё {len(stops_failed) - 10}")
 
     prev = None
     if os.path.exists(a.out):
