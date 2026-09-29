@@ -267,11 +267,18 @@ def build(lists, listed, hidden, details, today, tomorrow, stops=None):
                 "id": t["id"],
                 "number": str(t.get("train_number") or ""),
                 "dir": "out" if t.get("direction") == "outbound" else "in",
-                # Станции — как их отдаёт источник. Для обратных рейсов
-                # они местами перепутаны; на странице направление берём
-                # из dir, а расхождение уходит в проблемы.
-                "from": st_id(t.get("origin_station")),
-                "to": st_id(t.get("destination_station")),
+                # Концы рейса — из первой/последней остановки, когда они
+                # есть: origin_station/destination_station в /api/routes/{id}
+                # бывают попросту неверны (рейс 7049 там кончается в Ташкент
+                # Южный, хотя это лишь остановка по пути в Ташкент-
+                # Центральный — видно по пустому departure_time только на
+                # настоящей конечной). Без stops остаётся как было; для
+                # обратных рейсов концы местами перепутаны, направление
+                # берём из dir, а расхождение уходит в проблемы.
+                "from": (st_id(ru_stops[0]["station"]) if ru_stops else None)
+                        or st_id(t.get("origin_station")),
+                "to": (st_id(ru_stops[-1]["station"]) if ru_stops else None)
+                        or st_id(t.get("destination_station")),
                 "dep": dep[:5],
                 "arr": arr[:5],
                 "dur": int(dur),
