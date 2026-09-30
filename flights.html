@@ -164,6 +164,7 @@ const GRACE_MIN = {departure: 0, arrival: 30};
 
 let DATA = null;              // {updated, flights:[...]}
 let CITIES = {};              // IATA -> {uz, ru, en}
+let AIRLINES = {};            // код перевозчика -> {uz, ru, en}
 let STATUSES = {};            // код -> {uz, ru, en}
 let mode = 'departure';
 let airport = 'TAS';
@@ -226,6 +227,13 @@ const ORDER = ['TAS','SKD','BHK','UGC','NMA','AZN','FEG',
                'KSQ','NCU','TMJ','NVI','RBZ','OMN','IYO'];
 
 const cityName = iata => (CITIES[iata] && CITIES[iata][lang]) || iata;
+
+/* Имя перевозчика: сначала словарь по коду, потом то, что
+   пришло из источника. Источник пишет неровно и меняется. */
+function carrierName(f){
+  const d = AIRLINES[f.airline_iata];
+  return (d && d[lang]) || f.carrier || f.airline_iata || '';
+}
 
 function statusText(f){
   const dict = STATUSES[f.status_code];
@@ -300,7 +308,7 @@ function detailHtml(f){
   const t = T[lang];
   const items = [
     [t.flight,    f.number],
-    [t.carrier,   f.carrier],
+    [t.carrier,   carrierName(f)],
     [t.terminal,  f.terminal],
     [f.event === 'departure' ? t.checkin : t.baggage, f.baggage],
     [t.codeshare, f.codeshare],
@@ -352,7 +360,7 @@ function rowHtml(f, i){
       <div>
         <div class="dest">${esc(cityName(f.city_iata) || f.city)}</div>
         <div class="meta">
-          <span>${esc(f.carrier || '')}</span>
+          <span>${esc(carrierName(f))}</span>
           ${dayLabel(f.estimated_at || f.scheduled_at)
             ? `<span class="day">${dayLabel(f.estimated_at || f.scheduled_at)}</span>` : ''}
           ${status ? `<span class="state ${tone}"><i class="dot"></i>${esc(status)}</span>` : ''}
@@ -513,14 +521,16 @@ document.getElementById('langs').addEventListener('click', e => {
   setInterval(() => { if (DATA) render(); }, 60000);
 
   try {
-    const [flights, cities, statuses] = await Promise.all([
+    const [flights, cities, statuses, airlines] = await Promise.all([
       fetch('data/flights_live.json').then(r => r.json()),
       fetch('cities.json').then(r => r.json()),
       fetch('statuses.json').then(r => r.json()),
+      fetch('airlines.json').then(r => r.json()),
     ]);
     DATA = flights;
     CITIES = cities;
     STATUSES = statuses;
+    AIRLINES = airlines;
     render();
   } catch (err) {
     document.getElementById('board').innerHTML =

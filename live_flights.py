@@ -212,6 +212,16 @@ def main():
     except FileNotFoundError:
         pass
 
+    try:
+        with open('airlines.json', encoding='utf-8') as f:
+            known = json.load(f)
+        missing = sorted({r['airline_iata'] for r in result
+                          if r['airline_iata'] and r['airline_iata'] not in known})
+        if missing:
+            print(f"нет в airlines.json: {', '.join(missing)}")
+    except FileNotFoundError:
+        pass
+
 
 if __name__ == "__main__":
     main()
