@@ -105,7 +105,7 @@
      "arrival": "03:57",
      "departure": "04:27",
      "stop": 30,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900103",
@@ -118,7 +118,7 @@
      "arrival": "04:55",
      "departure": "05:03",
      "stop": 8,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900102",
@@ -131,7 +131,7 @@
      "arrival": "05:30",
      "departure": "05:36",
      "stop": 6,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2902205",
@@ -144,7 +144,7 @@
      "arrival": "06:56",
      "departure": "06:58",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900970",
@@ -157,7 +157,7 @@
      "arrival": "08:18",
      "departure": "08:40",
      "stop": 22,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900958",
@@ -170,7 +170,7 @@
      "arrival": "08:56",
      "departure": "08:59",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900830",
@@ -183,7 +183,7 @@
      "arrival": "09:23",
      "departure": "09:25",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900725",
@@ -196,7 +196,7 @@
      "arrival": "10:19",
      "departure": "10:21",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900885",
@@ -209,7 +209,7 @@
      "arrival": "10:48",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -441,7 +441,7 @@
      "arrival": "01:04",
      "departure": "01:12",
      "stop": 8,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900260",
@@ -454,7 +454,7 @@
      "arrival": "02:01",
      "departure": "02:03",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -467,7 +467,7 @@
      "arrival": "02:52",
      "departure": "03:20",
      "stop": 28,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900720",
@@ -480,7 +480,7 @@
      "arrival": "04:39",
      "departure": "04:49",
      "stop": 10,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900850",
@@ -493,7 +493,7 @@
      "arrival": "06:10",
      "departure": "06:12",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900002",
@@ -506,7 +506,7 @@
      "arrival": "07:28",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -636,7 +636,7 @@
      "arrival": "00:20",
      "departure": "00:23",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -649,7 +649,7 @@
      "arrival": "01:42",
      "departure": "02:02",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900260",
@@ -662,7 +662,7 @@
      "arrival": "03:02",
      "departure": "03:04",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900930",
@@ -675,7 +675,7 @@
      "arrival": "03:55",
      "departure": "04:10",
      "stop": 15,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900800",
@@ -688,7 +688,7 @@
      "arrival": "05:12",
      "departure": "05:32",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900845",
@@ -701,7 +701,7 @@
      "arrival": "10:41",
      "departure": "10:49",
      "stop": 8,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900790",
@@ -714,7 +714,7 @@
      "arrival": "11:29",
      "departure": "11:39",
      "stop": 10,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900172",
@@ -727,7 +727,7 @@
      "arrival": "12:09",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -838,7 +838,7 @@
      "arrival": "00:07",
      "departure": "00:13",
      "stop": 6,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900800",
@@ -851,7 +851,7 @@
      "arrival": "00:49",
      "departure": "01:09",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900930",
@@ -864,7 +864,7 @@
      "arrival": "02:11",
      "departure": "02:15",
      "stop": 4,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900260",
@@ -877,7 +877,7 @@
      "arrival": "03:01",
      "departure": "03:04",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -890,7 +890,7 @@
      "arrival": "03:53",
      "departure": "04:10",
      "stop": 17,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900720",
@@ -903,7 +903,7 @@
      "arrival": "05:29",
      "departure": "05:31",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900850",
@@ -916,7 +916,7 @@
      "arrival": "07:04",
      "departure": "07:06",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900002",
@@ -929,7 +929,7 @@
      "arrival": "08:22",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -1659,7 +1659,7 @@
      "arrival": "01:01",
      "departure": "01:04",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -1672,7 +1672,7 @@
      "arrival": "02:21",
      "departure": "03:00",
      "stop": 39,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900260",
@@ -1685,7 +1685,7 @@
      "arrival": "04:00",
      "departure": "04:02",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900812",
@@ -1698,7 +1698,7 @@
      "arrival": "04:20",
      "departure": "04:34",
      "stop": 14,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900814",
@@ -1711,7 +1711,7 @@
      "arrival": "04:53",
      "departure": "04:55",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900930",
@@ -1724,7 +1724,7 @@
      "arrival": "05:12",
      "departure": "05:17",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900824",
@@ -1737,7 +1737,7 @@
      "arrival": "05:49",
      "departure": "05:54",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900800",
@@ -1750,7 +1750,7 @@
      "arrival": "06:28",
      "departure": "07:18",
      "stop": 50,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900828",
@@ -1763,7 +1763,7 @@
      "arrival": "08:01",
      "departure": "08:04",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900829",
@@ -1776,7 +1776,7 @@
      "arrival": "08:26",
      "departure": "08:30",
      "stop": 4,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900831",
@@ -1789,7 +1789,7 @@
      "arrival": "08:45",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -2369,7 +2369,7 @@
      "arrival": "01:09",
      "departure": "01:22",
      "stop": 13,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900750",
@@ -2382,7 +2382,7 @@
      "arrival": "03:34",
      "departure": "03:54",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900855",
@@ -2395,7 +2395,7 @@
      "arrival": "05:30",
      "departure": "05:34",
      "stop": 4,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900871",
@@ -2408,7 +2408,7 @@
      "arrival": "07:58",
      "departure": "08:03",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900872",
@@ -2421,7 +2421,7 @@
      "arrival": "08:29",
      "departure": "08:39",
      "stop": 10,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900874",
@@ -2434,7 +2434,7 @@
      "arrival": "09:20",
      "departure": "09:23",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900864",
@@ -2447,7 +2447,7 @@
      "arrival": "09:53",
      "departure": "10:13",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900863",
@@ -2460,7 +2460,7 @@
      "arrival": "10:25",
      "departure": "10:27",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900862",
@@ -2473,7 +2473,7 @@
      "arrival": "10:49",
      "departure": "10:52",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900255",
@@ -2486,7 +2486,7 @@
      "arrival": "11:17",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -2664,7 +2664,7 @@
      "arrival": "01:16",
      "departure": "01:19",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900750",
@@ -2677,7 +2677,7 @@
      "arrival": "02:48",
      "departure": "03:08",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -2690,7 +2690,7 @@
      "arrival": "04:56",
      "departure": "05:29",
      "stop": 33,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900720",
@@ -2703,7 +2703,7 @@
      "arrival": "06:48",
      "departure": "06:51",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900850",
@@ -2716,7 +2716,7 @@
      "arrival": "08:21",
      "departure": "08:24",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900002",
@@ -2729,7 +2729,7 @@
      "arrival": "09:40",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -2857,7 +2857,7 @@
      "arrival": "01:09",
      "departure": "01:22",
      "stop": 13,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900750",
@@ -2870,7 +2870,7 @@
      "arrival": "03:34",
      "departure": "03:54",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900855",
@@ -2883,7 +2883,7 @@
      "arrival": "05:30",
      "departure": "05:34",
      "stop": 4,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900871",
@@ -2896,7 +2896,7 @@
      "arrival": "07:58",
      "departure": "08:03",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900872",
@@ -2909,7 +2909,7 @@
      "arrival": "08:29",
      "departure": "08:39",
      "stop": 10,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900874",
@@ -2922,7 +2922,7 @@
      "arrival": "09:20",
      "departure": "09:23",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900864",
@@ -2935,7 +2935,7 @@
      "arrival": "09:53",
      "departure": "10:24",
      "stop": 31,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900866",
@@ -2948,7 +2948,7 @@
      "arrival": "10:48",
      "departure": "10:51",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900780",
@@ -2961,7 +2961,7 @@
      "arrival": "11:08",
      "departure": "11:22",
      "stop": 14,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900868",
@@ -2974,7 +2974,7 @@
      "arrival": "11:40",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -3152,7 +3152,7 @@
      "arrival": "01:16",
      "departure": "01:19",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900750",
@@ -3165,7 +3165,7 @@
      "arrival": "02:48",
      "departure": "03:08",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -3178,7 +3178,7 @@
      "arrival": "04:56",
      "departure": "05:29",
      "stop": 33,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900720",
@@ -3191,7 +3191,7 @@
      "arrival": "06:48",
      "departure": "06:51",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900850",
@@ -3204,7 +3204,7 @@
      "arrival": "08:21",
      "departure": "08:24",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900002",
@@ -3217,7 +3217,7 @@
      "arrival": "09:40",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -3426,6 +3426,141 @@
      null
     ]
    ]
+  },
+  {
+   "number": "091Ф",
+   "stops": [
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": null,
+     "departure": "18:40",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900688",
+     "title": "Чартак",
+     "names": {
+      "ru": "Чартак",
+      "uz": "Chortoq",
+      "en": "Chartak"
+     },
+     "arrival": "20:15",
+     "departure": "20:18",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900940",
+     "title": "Наманган",
+     "names": {
+      "ru": "Наманган",
+      "uz": "Namangan",
+      "en": "Namangan"
+     },
+     "arrival": "20:45",
+     "departure": "20:50",
+     "stop": 5,
+     "offset": 0
+    },
+    {
+     "code": "2900692",
+     "title": "Чуст",
+     "names": {
+      "ru": "Чуст",
+      "uz": "Chust",
+      "en": "Chust"
+     },
+     "arrival": "21:23",
+     "departure": "21:26",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "21:54",
+     "departure": "21:57",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "23:58",
+     "departure": "00:00",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900001",
+     "title": "Ташкент-Центральный",
+     "names": {
+      "ru": "Ташкент-Центральный",
+      "uz": "Toshkent-Markaziy",
+      "en": "Tashkent-Central"
+     },
+     "arrival": "01:24",
+     "departure": null,
+     "stop": null,
+     "offset": 1
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900680",
+     null,
+     "18:40"
+    ],
+    [
+     "2900688",
+     "20:15",
+     "20:18"
+    ],
+    [
+     "2900940",
+     "20:45",
+     "20:50"
+    ],
+    [
+     "2900692",
+     "21:23",
+     "21:26"
+    ],
+    [
+     "2900693",
+     "21:54",
+     "21:57"
+    ],
+    [
+     "2900679",
+     "23:58",
+     "00:00"
+    ],
+    [
+     "2900001",
+     "01:24",
+     null
+    ]
+   ]
   }
  ],
  "092": [
@@ -3466,9 +3601,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "21:39",
-     "departure": "21:42",
-     "stop": 3,
+     "arrival": "21:36",
+     "departure": "21:40",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -3479,8 +3614,8 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "22:26",
-     "departure": "22:31",
+     "arrival": "22:24",
+     "departure": "22:29",
      "stop": 5,
      "offset": 0
     },
@@ -3492,8 +3627,8 @@
       "uz": "Chortoq",
       "en": "Chartak"
      },
-     "arrival": "22:58",
-     "departure": "23:01",
+     "arrival": "22:56",
+     "departure": "22:59",
      "stop": 3,
      "offset": 0
     },
@@ -3505,7 +3640,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "00:36",
+     "arrival": "00:34",
      "departure": null,
      "stop": null,
      "offset": 1
@@ -3526,22 +3661,22 @@
     ],
     [
      "2900693",
-     "21:39",
-     "21:42"
+     "21:36",
+     "21:40"
     ],
     [
      "2900940",
-     "22:26",
-     "22:31"
+     "22:24",
+     "22:29"
     ],
     [
      "2900688",
-     "22:58",
-     "23:01"
+     "22:56",
+     "22:59"
     ],
     [
      "2900680",
-     "00:36",
+     "00:34",
      null
     ]
    ]
@@ -3560,7 +3695,7 @@
       "en": "Andijan 1"
      },
      "arrival": null,
-     "departure": "16:35",
+     "departure": "16:40",
      "stop": null,
      "offset": 0
     },
@@ -3572,9 +3707,9 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "17:26",
-     "departure": "17:31",
-     "stop": 5,
+     "arrival": "17:29",
+     "departure": "17:33",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -3599,8 +3734,8 @@
       "en": "Pop"
      },
      "arrival": "18:56",
-     "departure": "18:59",
-     "stop": 3,
+     "departure": "19:00",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -3611,8 +3746,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "21:02",
-     "departure": "21:04",
+     "arrival": "21:01",
+     "departure": "21:03",
      "stop": 2,
      "offset": 0
     },
@@ -3624,7 +3759,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "22:31",
+     "arrival": "22:27",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -3636,12 +3771,12 @@
     [
      "2900680",
      null,
-     "16:35"
+     "16:40"
     ],
     [
      "2900920",
-     "17:26",
-     "17:31"
+     "17:29",
+     "17:33"
     ],
     [
      "2900880",
@@ -3651,16 +3786,16 @@
     [
      "2900693",
      "18:56",
-     "18:59"
+     "19:00"
     ],
     [
      "2900679",
-     "21:02",
-     "21:04"
+     "21:01",
+     "21:03"
     ],
     [
      "2900001",
-     "22:31",
+     "22:27",
      null
     ]
    ]
@@ -3679,7 +3814,7 @@
       "en": "Tashkent-Central"
      },
      "arrival": null,
-     "departure": "07:14",
+     "departure": "08:10",
      "stop": null,
      "offset": 0
     },
@@ -3691,8 +3826,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "08:41",
-     "departure": "08:43",
+     "arrival": "09:34",
+     "departure": "09:36",
      "stop": 2,
      "offset": 0
     },
@@ -3704,8 +3839,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "10:46",
-     "departure": "10:49",
+     "arrival": "11:37",
+     "departure": "11:40",
      "stop": 3,
      "offset": 0
     },
@@ -3717,8 +3852,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "11:04",
-     "departure": "11:06",
+     "arrival": "11:55",
+     "departure": "11:57",
      "stop": 2,
      "offset": 0
     },
@@ -3730,8 +3865,8 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "11:39",
-     "departure": "11:44",
+     "arrival": "12:30",
+     "departure": "12:35",
      "stop": 5,
      "offset": 0
     },
@@ -3743,8 +3878,8 @@
       "uz": "Chortoq",
       "en": "Chartak"
      },
-     "arrival": "12:11",
-     "departure": "12:13",
+     "arrival": "13:02",
+     "departure": "13:04",
      "stop": 2,
      "offset": 0
     },
@@ -3756,7 +3891,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "13:48",
+     "arrival": "14:39",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -3768,36 +3903,36 @@
     [
      "2900001",
      null,
-     "07:14"
+     "08:10"
     ],
     [
      "2900679",
-     "08:41",
-     "08:43"
+     "09:34",
+     "09:36"
     ],
     [
      "2900693",
-     "10:46",
-     "10:49"
+     "11:37",
+     "11:40"
     ],
     [
      "2900692",
-     "11:04",
-     "11:06"
+     "11:55",
+     "11:57"
     ],
     [
      "2900940",
-     "11:39",
-     "11:44"
+     "12:30",
+     "12:35"
     ],
     [
      "2900688",
-     "12:11",
-     "12:13"
+     "13:02",
+     "13:04"
     ],
     [
      "2900680",
-     "13:48",
+     "14:39",
      null
     ]
    ]
@@ -3829,8 +3964,8 @@
       "en": "Chartak"
      },
      "arrival": "19:05",
-     "departure": "19:08",
-     "stop": 3,
+     "departure": "19:07",
+     "stop": 2,
      "offset": 0
     },
     {
@@ -3841,9 +3976,9 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "19:35",
-     "departure": "19:40",
-     "stop": 5,
+     "arrival": "19:34",
+     "departure": "19:38",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -3854,8 +3989,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "20:13",
-     "departure": "20:16",
+     "arrival": "20:11",
+     "departure": "20:14",
      "stop": 3,
      "offset": 0
     },
@@ -3867,9 +4002,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "20:31",
-     "departure": "20:36",
-     "stop": 5,
+     "arrival": "20:29",
+     "departure": "20:33",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -3880,8 +4015,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "22:50",
-     "departure": "22:52",
+     "arrival": "22:45",
+     "departure": "22:47",
      "stop": 2,
      "offset": 0
     },
@@ -3893,7 +4028,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "00:27",
+     "arrival": "00:11",
      "departure": null,
      "stop": null,
      "offset": 1
@@ -3910,37 +4045,172 @@
     [
      "2900688",
      "19:05",
-     "19:08"
+     "19:07"
     ],
     [
      "2900940",
-     "19:35",
-     "19:40"
+     "19:34",
+     "19:38"
     ],
     [
      "2900692",
-     "20:13",
-     "20:16"
+     "20:11",
+     "20:14"
     ],
     [
      "2900693",
-     "20:31",
-     "20:36"
+     "20:29",
+     "20:33"
     ],
     [
      "2900679",
-     "22:50",
-     "22:52"
+     "22:45",
+     "22:47"
     ],
     [
      "2900001",
-     "00:27",
+     "00:11",
      null
     ]
    ]
   }
  ],
  "096": [
+  {
+   "number": "096Ф",
+   "stops": [
+    {
+     "code": "2900001",
+     "title": "Ташкент-Центральный",
+     "names": {
+      "ru": "Ташкент-Центральный",
+      "uz": "Toshkent-Markaziy",
+      "en": "Tashkent-Central"
+     },
+     "arrival": null,
+     "departure": "04:55",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "06:19",
+     "departure": "06:22",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "08:23",
+     "departure": "08:27",
+     "stop": 4,
+     "offset": 0
+    },
+    {
+     "code": "2900692",
+     "title": "Чуст",
+     "names": {
+      "ru": "Чуст",
+      "uz": "Chust",
+      "en": "Chust"
+     },
+     "arrival": "08:42",
+     "departure": "08:48",
+     "stop": 6,
+     "offset": 0
+    },
+    {
+     "code": "2900940",
+     "title": "Наманган",
+     "names": {
+      "ru": "Наманган",
+      "uz": "Namangan",
+      "en": "Namangan"
+     },
+     "arrival": "09:21",
+     "departure": "09:26",
+     "stop": 5,
+     "offset": 0
+    },
+    {
+     "code": "2900688",
+     "title": "Чартак",
+     "names": {
+      "ru": "Чартак",
+      "uz": "Chortoq",
+      "en": "Chartak"
+     },
+     "arrival": "09:53",
+     "departure": "09:55",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": "11:30",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900001",
+     null,
+     "04:55"
+    ],
+    [
+     "2900679",
+     "06:19",
+     "06:22"
+    ],
+    [
+     "2900693",
+     "08:23",
+     "08:27"
+    ],
+    [
+     "2900692",
+     "08:42",
+     "08:48"
+    ],
+    [
+     "2900940",
+     "09:21",
+     "09:26"
+    ],
+    [
+     "2900688",
+     "09:53",
+     "09:55"
+    ],
+    [
+     "2900680",
+     "11:30",
+     null
+    ]
+   ]
+  },
   {
    "number": "096Ф",
    "stops": [
@@ -4103,8 +4373,8 @@
       "en": "Chartak"
      },
      "arrival": "19:05",
-     "departure": "19:08",
-     "stop": 3,
+     "departure": "19:07",
+     "stop": 2,
      "offset": 0
     },
     {
@@ -4115,9 +4385,9 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "19:35",
-     "departure": "19:40",
-     "stop": 5,
+     "arrival": "19:34",
+     "departure": "19:38",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -4128,8 +4398,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "20:13",
-     "departure": "20:16",
+     "arrival": "20:11",
+     "departure": "20:14",
      "stop": 3,
      "offset": 0
     },
@@ -4141,9 +4411,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "20:31",
-     "departure": "20:36",
-     "stop": 5,
+     "arrival": "20:29",
+     "departure": "20:33",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -4154,8 +4424,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "22:50",
-     "departure": "22:52",
+     "arrival": "22:45",
+     "departure": "22:47",
      "stop": 2,
      "offset": 0
     },
@@ -4167,7 +4437,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "00:27",
+     "arrival": "00:11",
      "departure": null,
      "stop": null,
      "offset": 1
@@ -4184,31 +4454,31 @@
     [
      "2900688",
      "19:05",
-     "19:08"
+     "19:07"
     ],
     [
      "2900940",
-     "19:35",
-     "19:40"
+     "19:34",
+     "19:38"
     ],
     [
      "2900692",
-     "20:13",
-     "20:16"
+     "20:11",
+     "20:14"
     ],
     [
      "2900693",
-     "20:31",
-     "20:36"
+     "20:29",
+     "20:33"
     ],
     [
      "2900679",
-     "22:50",
-     "22:52"
+     "22:45",
+     "22:47"
     ],
     [
      "2900001",
-     "00:27",
+     "00:11",
      null
     ]
    ]
@@ -4227,7 +4497,7 @@
       "en": "Tashkent-Central"
      },
      "arrival": null,
-     "departure": "07:14",
+     "departure": "08:10",
      "stop": null,
      "offset": 0
     },
@@ -4239,8 +4509,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "08:41",
-     "departure": "08:43",
+     "arrival": "09:34",
+     "departure": "09:36",
      "stop": 2,
      "offset": 0
     },
@@ -4252,8 +4522,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "10:46",
-     "departure": "10:49",
+     "arrival": "11:37",
+     "departure": "11:40",
      "stop": 3,
      "offset": 0
     },
@@ -4265,8 +4535,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "11:04",
-     "departure": "11:06",
+     "arrival": "11:55",
+     "departure": "11:57",
      "stop": 2,
      "offset": 0
     },
@@ -4278,8 +4548,8 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "11:39",
-     "departure": "11:44",
+     "arrival": "12:30",
+     "departure": "12:35",
      "stop": 5,
      "offset": 0
     },
@@ -4291,8 +4561,8 @@
       "uz": "Chortoq",
       "en": "Chartak"
      },
-     "arrival": "12:11",
-     "departure": "12:13",
+     "arrival": "13:02",
+     "departure": "13:04",
      "stop": 2,
      "offset": 0
     },
@@ -4304,7 +4574,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "13:48",
+     "arrival": "14:39",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -4316,36 +4586,36 @@
     [
      "2900001",
      null,
-     "07:14"
+     "08:10"
     ],
     [
      "2900679",
-     "08:41",
-     "08:43"
+     "09:34",
+     "09:36"
     ],
     [
      "2900693",
-     "10:46",
-     "10:49"
+     "11:37",
+     "11:40"
     ],
     [
      "2900692",
-     "11:04",
-     "11:06"
+     "11:55",
+     "11:57"
     ],
     [
      "2900940",
-     "11:39",
-     "11:44"
+     "12:30",
+     "12:35"
     ],
     [
      "2900688",
-     "12:11",
-     "12:13"
+     "13:02",
+     "13:04"
     ],
     [
      "2900680",
-     "13:48",
+     "14:39",
      null
     ]
    ]
@@ -4892,7 +5162,7 @@
      "arrival": "03:12",
      "departure": "06:10",
      "stop": 178,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -5077,6 +5347,321 @@
      "arrival": "01:01",
      "departure": "01:04",
      "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900700",
+     "title": "Самарканд",
+     "names": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+     },
+     "arrival": "02:21",
+     "departure": "03:00",
+     "stop": 39,
+     "offset": 2
+    },
+    {
+     "code": "2900260",
+     "title": "Каттакурган-Пасс.",
+     "names": {
+      "ru": "Каттакурган-Пасс.",
+      "uz": "Kattaqo'rg'on",
+      "en": "Kattakurgan"
+     },
+     "arrival": "04:00",
+     "departure": "04:02",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900812",
+     "title": "Зирабулак",
+     "names": {
+      "ru": "Зирабулак",
+      "uz": "Zirabuloq",
+      "en": "Zirabulak"
+     },
+     "arrival": "04:20",
+     "departure": "04:34",
+     "stop": 14,
+     "offset": 2
+    },
+    {
+     "code": "2900814",
+     "title": "Зиевуддин",
+     "names": {
+      "ru": "Зиевуддин",
+      "uz": "Ziyovuddin",
+      "en": "Ziyovuddin"
+     },
+     "arrival": "04:53",
+     "departure": "04:55",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900930",
+     "title": "Навои",
+     "names": {
+      "ru": "Навои",
+      "uz": "Navoiy",
+      "en": "Navoi"
+     },
+     "arrival": "05:12",
+     "departure": "05:17",
+     "stop": 5,
+     "offset": 2
+    },
+    {
+     "code": "2900824",
+     "title": "Кызылтепа",
+     "names": {
+      "ru": "Кызылтепа",
+      "uz": "Qiziltepa",
+      "en": "Kyzyltepa"
+     },
+     "arrival": "05:49",
+     "departure": "05:54",
+     "stop": 5,
+     "offset": 2
+    },
+    {
+     "code": "2900800",
+     "title": "Бухара 1",
+     "names": {
+      "ru": "Бухара 1",
+      "uz": "Buxoro 1",
+      "en": "Bukhara 1"
+     },
+     "arrival": "06:28",
+     "departure": "06:48",
+     "stop": 20,
+     "offset": 2
+    },
+    {
+     "code": "2900845",
+     "title": "Хазарасп",
+     "names": {
+      "ru": "Хазарасп",
+      "uz": "Hazorasp",
+      "en": "Khazarasp"
+     },
+     "arrival": "12:01",
+     "departure": "12:06",
+     "stop": 5,
+     "offset": 2
+    },
+    {
+     "code": "2900790",
+     "title": "Ургенч",
+     "names": {
+      "ru": "Ургенч",
+      "uz": "Urganch",
+      "en": "Urgench"
+     },
+     "arrival": "12:46",
+     "departure": null,
+     "stop": null,
+     "offset": 2
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900680",
+     null,
+     "15:45"
+    ],
+    [
+     "2900920",
+     "16:36",
+     "16:39"
+    ],
+    [
+     "2900880",
+     "17:28",
+     "17:31"
+    ],
+    [
+     "2900693",
+     "18:05",
+     "18:08"
+    ],
+    [
+     "2900679",
+     "20:19",
+     "20:21"
+    ],
+    [
+     "2900002",
+     "21:48",
+     "22:35"
+    ],
+    [
+     "2900850",
+     "23:47",
+     "23:50"
+    ],
+    [
+     "2900720",
+     "01:01",
+     "01:04"
+    ],
+    [
+     "2900700",
+     "02:21",
+     "03:00"
+    ],
+    [
+     "2900260",
+     "04:00",
+     "04:02"
+    ],
+    [
+     "2900812",
+     "04:20",
+     "04:34"
+    ],
+    [
+     "2900814",
+     "04:53",
+     "04:55"
+    ],
+    [
+     "2900930",
+     "05:12",
+     "05:17"
+    ],
+    [
+     "2900824",
+     "05:49",
+     "05:54"
+    ],
+    [
+     "2900800",
+     "06:28",
+     "06:48"
+    ],
+    [
+     "2900845",
+     "12:01",
+     "12:06"
+    ],
+    [
+     "2900790",
+     "12:46",
+     null
+    ]
+   ]
+  },
+  {
+   "number": "125Ч",
+   "stops": [
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": null,
+     "departure": "15:50",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "16:40",
+     "departure": "16:43",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "17:30",
+     "departure": "17:33",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "18:07",
+     "departure": "18:10",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "20:19",
+     "departure": "20:21",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900002",
+     "title": "Ташкент-Южный",
+     "names": {
+      "ru": "Ташкент-Южный",
+      "uz": "Toshkent-Janubiy",
+      "en": "Tashkent-South"
+     },
+     "arrival": "21:45",
+     "departure": "22:35",
+     "stop": 50,
+     "offset": 0
+    },
+    {
+     "code": "2900850",
+     "title": "Гулистан",
+     "names": {
+      "ru": "Гулистан",
+      "uz": "Guliston",
+      "en": "Gulistan"
+     },
+     "arrival": "23:47",
+     "departure": "23:50",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900720",
+     "title": "Джизак",
+     "names": {
+      "ru": "Джизак",
+      "uz": "Jizzax",
+      "en": "Jizzakh"
+     },
+     "arrival": "01:01",
+     "departure": "01:04",
+     "stop": 3,
      "offset": 1
     },
     {
@@ -5203,22 +5788,22 @@
     [
      "2900680",
      null,
-     "15:45"
+     "15:50"
     ],
     [
      "2900920",
-     "16:36",
-     "16:39"
+     "16:40",
+     "16:43"
     ],
     [
      "2900880",
-     "17:28",
-     "17:31"
+     "17:30",
+     "17:33"
     ],
     [
      "2900693",
-     "18:05",
-     "18:08"
+     "18:07",
+     "18:10"
     ],
     [
      "2900679",
@@ -5227,7 +5812,7 @@
     ],
     [
      "2900002",
-     "21:48",
+     "21:45",
      "22:35"
     ],
     [
@@ -5299,7 +5884,7 @@
       "en": "Andijan 1"
      },
      "arrival": null,
-     "departure": "15:45",
+     "departure": "15:50",
      "stop": null,
      "offset": 0
     },
@@ -5311,8 +5896,8 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "16:36",
-     "departure": "16:39",
+     "arrival": "16:40",
+     "departure": "16:43",
      "stop": 3,
      "offset": 0
     },
@@ -5324,8 +5909,8 @@
       "uz": "Qo'qon 1",
       "en": "Kokand 1"
      },
-     "arrival": "17:28",
-     "departure": "17:31",
+     "arrival": "17:30",
+     "departure": "17:33",
      "stop": 3,
      "offset": 0
     },
@@ -5337,8 +5922,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "18:05",
-     "departure": "18:08",
+     "arrival": "18:07",
+     "departure": "18:10",
      "stop": 3,
      "offset": 0
     },
@@ -5363,9 +5948,9 @@
       "uz": "Toshkent-Janubiy",
       "en": "Tashkent-South"
      },
-     "arrival": "21:48",
+     "arrival": "21:45",
      "departure": "22:35",
-     "stop": 47,
+     "stop": 50,
      "offset": 0
     },
     {
@@ -5531,22 +6116,22 @@
     [
      "2900680",
      null,
-     "15:45"
+     "15:50"
     ],
     [
      "2900920",
-     "16:36",
-     "16:39"
+     "16:40",
+     "16:43"
     ],
     [
      "2900880",
-     "17:28",
-     "17:31"
+     "17:30",
+     "17:33"
     ],
     [
      "2900693",
-     "18:05",
-     "18:08"
+     "18:07",
+     "18:10"
     ],
     [
      "2900679",
@@ -5555,7 +6140,7 @@
     ],
     [
      "2900002",
-     "21:48",
+     "21:45",
      "22:35"
     ],
     [
@@ -5764,8 +6349,8 @@
       "en": "Tashkent-South"
      },
      "arrival": "05:23",
-     "departure": "05:58",
-     "stop": 35,
+     "departure": "06:18",
+     "stop": 55,
      "offset": 1
     },
     {
@@ -5776,9 +6361,9 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "07:25",
-     "departure": "07:28",
-     "stop": 3,
+     "arrival": "07:42",
+     "departure": "07:44",
+     "stop": 2,
      "offset": 1
     },
     {
@@ -5789,8 +6374,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "09:31",
-     "departure": "09:51",
+     "arrival": "10:18",
+     "departure": "10:38",
      "stop": 20,
      "offset": 1
     },
@@ -5802,9 +6387,9 @@
       "uz": "Qo'qon 1",
       "en": "Kokand 1"
      },
-     "arrival": "10:25",
-     "departure": "10:28",
-     "stop": 3,
+     "arrival": "11:12",
+     "departure": "11:16",
+     "stop": 4,
      "offset": 1
     },
     {
@@ -5815,9 +6400,9 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "11:17",
-     "departure": "11:22",
-     "stop": 5,
+     "arrival": "12:03",
+     "departure": "12:09",
+     "stop": 6,
      "offset": 1
     },
     {
@@ -5828,7 +6413,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "12:13",
+     "arrival": "12:59",
      "departure": null,
      "stop": null,
      "offset": 1
@@ -5890,31 +6475,31 @@
     [
      "2900002",
      "05:23",
-     "05:58"
+     "06:18"
     ],
     [
      "2900679",
-     "07:25",
-     "07:28"
+     "07:42",
+     "07:44"
     ],
     [
      "2900693",
-     "09:31",
-     "09:51"
+     "10:18",
+     "10:38"
     ],
     [
      "2900880",
-     "10:25",
-     "10:28"
+     "11:12",
+     "11:16"
     ],
     [
      "2900920",
-     "11:17",
-     "11:22"
+     "12:03",
+     "12:09"
     ],
     [
      "2900680",
-     "12:13",
+     "12:59",
      null
     ]
    ]
@@ -6215,6 +6800,303 @@
      null
     ]
    ]
+  },
+  {
+   "number": "126Ф",
+   "stops": [
+    {
+     "code": "2900172",
+     "title": "Хива",
+     "names": {
+      "ru": "Хива",
+      "uz": "Xiva",
+      "en": "Khiva"
+     },
+     "arrival": null,
+     "departure": "15:33",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900790",
+     "title": "Ургенч",
+     "names": {
+      "ru": "Ургенч",
+      "uz": "Urganch",
+      "en": "Urgench"
+     },
+     "arrival": "16:03",
+     "departure": "16:23",
+     "stop": 20,
+     "offset": 0
+    },
+    {
+     "code": "2900845",
+     "title": "Хазарасп",
+     "names": {
+      "ru": "Хазарасп",
+      "uz": "Hazorasp",
+      "en": "Khazarasp"
+     },
+     "arrival": "17:05",
+     "departure": "17:08",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900800",
+     "title": "Бухара 1",
+     "names": {
+      "ru": "Бухара 1",
+      "uz": "Buxoro 1",
+      "en": "Bukhara 1"
+     },
+     "arrival": "21:40",
+     "departure": "21:55",
+     "stop": 15,
+     "offset": 0
+    },
+    {
+     "code": "2900824",
+     "title": "Кызылтепа",
+     "names": {
+      "ru": "Кызылтепа",
+      "uz": "Qiziltepa",
+      "en": "Kyzyltepa"
+     },
+     "arrival": "22:22",
+     "departure": "22:26",
+     "stop": 4,
+     "offset": 0
+    },
+    {
+     "code": "2900930",
+     "title": "Навои",
+     "names": {
+      "ru": "Навои",
+      "uz": "Navoiy",
+      "en": "Navoi"
+     },
+     "arrival": "22:55",
+     "departure": "23:01",
+     "stop": 6,
+     "offset": 0
+    },
+    {
+     "code": "2900260",
+     "title": "Каттакурган-Пасс.",
+     "names": {
+      "ru": "Каттакурган-Пасс.",
+      "uz": "Kattaqo'rg'on",
+      "en": "Kattakurgan"
+     },
+     "arrival": "23:47",
+     "departure": "23:49",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900700",
+     "title": "Самарканд",
+     "names": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+     },
+     "arrival": "00:45",
+     "departure": "01:30",
+     "stop": 45,
+     "offset": 2
+    },
+    {
+     "code": "2900720",
+     "title": "Джизак",
+     "names": {
+      "ru": "Джизак",
+      "uz": "Jizzax",
+      "en": "Jizzakh"
+     },
+     "arrival": "02:49",
+     "departure": "02:52",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900850",
+     "title": "Гулистан",
+     "names": {
+      "ru": "Гулистан",
+      "uz": "Guliston",
+      "en": "Gulistan"
+     },
+     "arrival": "04:05",
+     "departure": "04:07",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900002",
+     "title": "Ташкент-Южный",
+     "names": {
+      "ru": "Ташкент-Южный",
+      "uz": "Toshkent-Janubiy",
+      "en": "Tashkent-South"
+     },
+     "arrival": "05:23",
+     "departure": "06:18",
+     "stop": 55,
+     "offset": 2
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "07:42",
+     "departure": "07:44",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "10:18",
+     "departure": "10:38",
+     "stop": 20,
+     "offset": 2
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "11:12",
+     "departure": "11:16",
+     "stop": 4,
+     "offset": 2
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "12:03",
+     "departure": "12:09",
+     "stop": 6,
+     "offset": 2
+    },
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": "12:59",
+     "departure": null,
+     "stop": null,
+     "offset": 2
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900172",
+     null,
+     "15:33"
+    ],
+    [
+     "2900790",
+     "16:03",
+     "16:23"
+    ],
+    [
+     "2900845",
+     "17:05",
+     "17:08"
+    ],
+    [
+     "2900800",
+     "21:40",
+     "21:55"
+    ],
+    [
+     "2900824",
+     "22:22",
+     "22:26"
+    ],
+    [
+     "2900930",
+     "22:55",
+     "23:01"
+    ],
+    [
+     "2900260",
+     "23:47",
+     "23:49"
+    ],
+    [
+     "2900700",
+     "00:45",
+     "01:30"
+    ],
+    [
+     "2900720",
+     "02:49",
+     "02:52"
+    ],
+    [
+     "2900850",
+     "04:05",
+     "04:07"
+    ],
+    [
+     "2900002",
+     "05:23",
+     "06:18"
+    ],
+    [
+     "2900679",
+     "07:42",
+     "07:44"
+    ],
+    [
+     "2900693",
+     "10:18",
+     "10:38"
+    ],
+    [
+     "2900880",
+     "11:12",
+     "11:16"
+    ],
+    [
+     "2900920",
+     "12:03",
+     "12:09"
+    ],
+    [
+     "2900680",
+     "12:59",
+     null
+    ]
+   ]
   }
  ],
  "127": [
@@ -6243,8 +7125,8 @@
       "en": "Chartak"
      },
      "arrival": "19:05",
-     "departure": "19:08",
-     "stop": 3,
+     "departure": "19:07",
+     "stop": 2,
      "offset": 0
     },
     {
@@ -6255,9 +7137,9 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "19:35",
-     "departure": "19:40",
-     "stop": 5,
+     "arrival": "19:34",
+     "departure": "19:38",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -6268,8 +7150,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "20:13",
-     "departure": "20:16",
+     "arrival": "20:11",
+     "departure": "20:14",
      "stop": 3,
      "offset": 0
     },
@@ -6281,9 +7163,9 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "20:31",
-     "departure": "20:36",
-     "stop": 5,
+     "arrival": "20:29",
+     "departure": "20:33",
+     "stop": 4,
      "offset": 0
     },
     {
@@ -6294,8 +7176,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "22:50",
-     "departure": "22:52",
+     "arrival": "22:45",
+     "departure": "22:47",
      "stop": 2,
      "offset": 0
     },
@@ -6307,9 +7189,9 @@
       "uz": "Toshkent-Janubiy",
       "en": "Tashkent-South"
      },
-     "arrival": "00:27",
+     "arrival": "00:11",
      "departure": "01:10",
-     "stop": 43,
+     "stop": 59,
      "offset": 1
     },
     {
@@ -6506,6 +7388,411 @@
      "departure": null,
      "stop": null,
      "offset": 1
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900680",
+     null,
+     "17:30"
+    ],
+    [
+     "2900688",
+     "19:05",
+     "19:07"
+    ],
+    [
+     "2900940",
+     "19:34",
+     "19:38"
+    ],
+    [
+     "2900692",
+     "20:11",
+     "20:14"
+    ],
+    [
+     "2900693",
+     "20:29",
+     "20:33"
+    ],
+    [
+     "2900679",
+     "22:45",
+     "22:47"
+    ],
+    [
+     "2900002",
+     "00:11",
+     "01:10"
+    ],
+    [
+     "2900720",
+     "03:34",
+     "03:36"
+    ],
+    [
+     "2900700",
+     "05:25",
+     "05:37"
+    ],
+    [
+     "2900260",
+     "06:26",
+     "06:28"
+    ],
+    [
+     "2900812",
+     "06:46",
+     "06:50"
+    ],
+    [
+     "2900930",
+     "07:22",
+     "07:25"
+    ],
+    [
+     "2900824",
+     "07:57",
+     "07:59"
+    ],
+    [
+     "2900800",
+     "08:33",
+     "08:58"
+    ],
+    [
+     "2900104",
+     "14:31",
+     "15:20"
+    ],
+    [
+     "2900103",
+     "15:48",
+     "16:16"
+    ],
+    [
+     "2900102",
+     "16:43",
+     "16:47"
+    ],
+    [
+     "2900970",
+     "19:50",
+     "20:00"
+    ],
+    [
+     "2900958",
+     "20:16",
+     "20:18"
+    ],
+    [
+     "2900830",
+     "20:42",
+     "20:44"
+    ],
+    [
+     "2900725",
+     "21:38",
+     "21:40"
+    ],
+    [
+     "2900885",
+     "22:07",
+     null
+    ]
+   ]
+  },
+  {
+   "number": "127Ф",
+   "stops": [
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": null,
+     "departure": "17:30",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900688",
+     "title": "Чартак",
+     "names": {
+      "ru": "Чартак",
+      "uz": "Chortoq",
+      "en": "Chartak"
+     },
+     "arrival": "19:05",
+     "departure": "19:08",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900940",
+     "title": "Наманган",
+     "names": {
+      "ru": "Наманган",
+      "uz": "Namangan",
+      "en": "Namangan"
+     },
+     "arrival": "19:35",
+     "departure": "19:40",
+     "stop": 5,
+     "offset": 0
+    },
+    {
+     "code": "2900692",
+     "title": "Чуст",
+     "names": {
+      "ru": "Чуст",
+      "uz": "Chust",
+      "en": "Chust"
+     },
+     "arrival": "20:13",
+     "departure": "20:16",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "20:31",
+     "departure": "20:36",
+     "stop": 5,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "22:50",
+     "departure": "22:52",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900002",
+     "title": "Ташкент-Южный",
+     "names": {
+      "ru": "Ташкент-Южный",
+      "uz": "Toshkent-Janubiy",
+      "en": "Tashkent-South"
+     },
+     "arrival": "00:27",
+     "departure": "01:10",
+     "stop": 43,
+     "offset": 2
+    },
+    {
+     "code": "2900720",
+     "title": "Джизак",
+     "names": {
+      "ru": "Джизак",
+      "uz": "Jizzax",
+      "en": "Jizzakh"
+     },
+     "arrival": "03:34",
+     "departure": "03:36",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900700",
+     "title": "Самарканд",
+     "names": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+     },
+     "arrival": "05:25",
+     "departure": "05:37",
+     "stop": 12,
+     "offset": 2
+    },
+    {
+     "code": "2900260",
+     "title": "Каттакурган-Пасс.",
+     "names": {
+      "ru": "Каттакурган-Пасс.",
+      "uz": "Kattaqo'rg'on",
+      "en": "Kattakurgan"
+     },
+     "arrival": "06:26",
+     "departure": "06:28",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900812",
+     "title": "Зирабулак",
+     "names": {
+      "ru": "Зирабулак",
+      "uz": "Zirabuloq",
+      "en": "Zirabulak"
+     },
+     "arrival": "06:46",
+     "departure": "06:50",
+     "stop": 4,
+     "offset": 2
+    },
+    {
+     "code": "2900930",
+     "title": "Навои",
+     "names": {
+      "ru": "Навои",
+      "uz": "Navoiy",
+      "en": "Navoi"
+     },
+     "arrival": "07:22",
+     "departure": "07:25",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900824",
+     "title": "Кызылтепа",
+     "names": {
+      "ru": "Кызылтепа",
+      "uz": "Qiziltepa",
+      "en": "Kyzyltepa"
+     },
+     "arrival": "07:57",
+     "departure": "07:59",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900800",
+     "title": "Бухара 1",
+     "names": {
+      "ru": "Бухара 1",
+      "uz": "Buxoro 1",
+      "en": "Bukhara 1"
+     },
+     "arrival": "08:33",
+     "departure": "08:58",
+     "stop": 25,
+     "offset": 2
+    },
+    {
+     "code": "2900104",
+     "title": "Мискин",
+     "names": {
+      "ru": "Мискин",
+      "uz": "Miskin",
+      "en": "Miskin"
+     },
+     "arrival": "14:31",
+     "departure": "15:20",
+     "stop": 49,
+     "offset": 2
+    },
+    {
+     "code": "2900103",
+     "title": "Туртгул",
+     "names": {
+      "ru": "Туртгул",
+      "uz": "To'rtko'l",
+      "en": "Turtkul"
+     },
+     "arrival": "15:48",
+     "departure": "16:16",
+     "stop": 28,
+     "offset": 2
+    },
+    {
+     "code": "2900102",
+     "title": "Элликала",
+     "names": {
+      "ru": "Элликала",
+      "uz": "Ellikqal'a",
+      "en": "Ellikkala"
+     },
+     "arrival": "16:43",
+     "departure": "16:47",
+     "stop": 4,
+     "offset": 2
+    },
+    {
+     "code": "2900970",
+     "title": "Нукус",
+     "names": {
+      "ru": "Нукус",
+      "uz": "Nukus",
+      "en": "Nukus"
+     },
+     "arrival": "19:50",
+     "departure": "20:00",
+     "stop": 10,
+     "offset": 2
+    },
+    {
+     "code": "2900958",
+     "title": "Тахиаташ-Пристань",
+     "names": {
+      "ru": "Тахиаташ-Пристань",
+      "uz": "Taxiatosh",
+      "en": "Takhiatash"
+     },
+     "arrival": "20:16",
+     "departure": "20:18",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900830",
+     "title": "Ходжейли",
+     "names": {
+      "ru": "Ходжейли",
+      "uz": "Xo'jayli",
+      "en": "Khojeyli"
+     },
+     "arrival": "20:42",
+     "departure": "20:44",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900725",
+     "title": "Алтынкуль",
+     "names": {
+      "ru": "Алтынкуль",
+      "uz": "Oltinko'l",
+      "en": "Oltinkul"
+     },
+     "arrival": "21:38",
+     "departure": "21:40",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900885",
+     "title": "Кунград",
+     "names": {
+      "ru": "Кунград",
+      "uz": "Qo'ng'irot",
+      "en": "Kungrad"
+     },
+     "arrival": "22:07",
+     "departure": null,
+     "stop": null,
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -6819,8 +8106,8 @@
       "en": "Tashkent-South"
      },
      "arrival": "05:23",
-     "departure": "05:58",
-     "stop": 35,
+     "departure": "06:18",
+     "stop": 55,
      "offset": 1
     },
     {
@@ -6831,9 +8118,9 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "07:25",
-     "departure": "07:28",
-     "stop": 3,
+     "arrival": "07:42",
+     "departure": "07:44",
+     "stop": 2,
      "offset": 1
     },
     {
@@ -6844,8 +8131,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "09:31",
-     "departure": "10:11",
+     "arrival": "10:18",
+     "departure": "10:58",
      "stop": 40,
      "offset": 1
     },
@@ -6857,8 +8144,8 @@
       "uz": "Chust",
       "en": "Chust"
      },
-     "arrival": "10:26",
-     "departure": "10:31",
+     "arrival": "11:13",
+     "departure": "11:18",
      "stop": 5,
      "offset": 1
     },
@@ -6870,8 +8157,8 @@
       "uz": "Namangan",
       "en": "Namangan"
      },
-     "arrival": "11:04",
-     "departure": "11:10",
+     "arrival": "11:51",
+     "departure": "11:57",
      "stop": 6,
      "offset": 1
     },
@@ -6883,8 +8170,8 @@
       "uz": "Chortoq",
       "en": "Chartak"
      },
-     "arrival": "11:37",
-     "departure": "11:39",
+     "arrival": "12:24",
+     "departure": "12:26",
      "stop": 2,
      "offset": 1
     },
@@ -6896,7 +8183,7 @@
       "uz": "Andijon 1",
       "en": "Andijan 1"
      },
-     "arrival": "13:14",
+     "arrival": "14:01",
      "departure": null,
      "stop": null,
      "offset": 1
@@ -6978,36 +8265,36 @@
     [
      "2900002",
      "05:23",
-     "05:58"
+     "06:18"
     ],
     [
      "2900679",
-     "07:25",
-     "07:28"
+     "07:42",
+     "07:44"
     ],
     [
      "2900693",
-     "09:31",
-     "10:11"
+     "10:18",
+     "10:58"
     ],
     [
      "2900692",
-     "10:26",
-     "10:31"
+     "11:13",
+     "11:18"
     ],
     [
      "2900940",
-     "11:04",
-     "11:10"
+     "11:51",
+     "11:57"
     ],
     [
      "2900688",
-     "11:37",
-     "11:39"
+     "12:24",
+     "12:26"
     ],
     [
      "2900680",
-     "13:14",
+     "14:01",
      null
     ]
    ]
@@ -7093,6 +8380,375 @@
      "arrival": "22:31",
      "departure": "23:43",
      "stop": 72,
+     "offset": 0
+    },
+    {
+     "code": "2900850",
+     "title": "Гулистан",
+     "names": {
+      "ru": "Гулистан",
+      "uz": "Guliston",
+      "en": "Gulistan"
+     },
+     "arrival": "00:55",
+     "departure": "00:58",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900720",
+     "title": "Джизак",
+     "names": {
+      "ru": "Джизак",
+      "uz": "Jizzax",
+      "en": "Jizzakh"
+     },
+     "arrival": "02:09",
+     "departure": "02:13",
+     "stop": 4,
+     "offset": 2
+    },
+    {
+     "code": "2900700",
+     "title": "Самарканд",
+     "names": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+     },
+     "arrival": "03:30",
+     "departure": "03:48",
+     "stop": 18,
+     "offset": 2
+    },
+    {
+     "code": "2900205",
+     "title": "Гумбаз",
+     "names": {
+      "ru": "Гумбаз",
+      "uz": "Gumbaz",
+      "en": "Gumbaz"
+     },
+     "arrival": "02:20",
+     "departure": "02:28",
+     "stop": 8,
+     "offset": 2
+    },
+    {
+     "code": "2900788",
+     "title": "Айрытам",
+     "names": {
+      "ru": "Айрытам",
+      "uz": "Ayritom",
+      "en": "Ayritom"
+     },
+     "arrival": "04:58",
+     "departure": "05:00",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900750",
+     "title": "Карши",
+     "names": {
+      "ru": "Карши",
+      "uz": "Qarshi",
+      "en": "Karshi"
+     },
+     "arrival": "06:06",
+     "departure": "06:36",
+     "stop": 30,
+     "offset": 2
+    },
+    {
+     "code": "2900855",
+     "title": "Дехконобод",
+     "names": {
+      "ru": "Дехконобод",
+      "uz": "Dehqonobod",
+      "en": "Dehkanabad"
+     },
+     "arrival": "08:12",
+     "departure": "08:15",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900861",
+     "title": "Окработ",
+     "names": {
+      "ru": "Окработ",
+      "uz": "Oqrabot",
+      "en": "Okrabot"
+     },
+     "arrival": "09:32",
+     "departure": "09:52",
+     "stop": 20,
+     "offset": 2
+    },
+    {
+     "code": "2900871",
+     "title": "Дарбанд",
+     "names": {
+      "ru": "Дарбанд",
+      "uz": "Darband",
+      "en": "Darband"
+     },
+     "arrival": "10:39",
+     "departure": "10:44",
+     "stop": 5,
+     "offset": 2
+    },
+    {
+     "code": "2900872",
+     "title": "Бойсун",
+     "names": {
+      "ru": "Бойсун",
+      "uz": "Boysun",
+      "en": "Boysun"
+     },
+     "arrival": "11:10",
+     "departure": "11:15",
+     "stop": 5,
+     "offset": 2
+    },
+    {
+     "code": "2900864",
+     "title": "Кумкурган",
+     "names": {
+      "ru": "Кумкурган",
+      "uz": "Qumqo'rg'on",
+      "en": "Kumkurgan"
+     },
+     "arrival": "12:22",
+     "departure": "12:32",
+     "stop": 10,
+     "offset": 2
+    },
+    {
+     "code": "2900863",
+     "title": "Сурханы",
+     "names": {
+      "ru": "Сурханы",
+      "uz": "Surxon",
+      "en": "Surkhon"
+     },
+     "arrival": "12:44",
+     "departure": "12:46",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900862",
+     "title": "Джаркурган",
+     "names": {
+      "ru": "Джаркурган",
+      "uz": "Jarqo'rg'on",
+      "en": "Jarkurgan"
+     },
+     "arrival": "13:08",
+     "departure": "13:11",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900255",
+     "title": "Термез",
+     "names": {
+      "ru": "Термез",
+      "uz": "Termiz",
+      "en": "Termez"
+     },
+     "arrival": "13:36",
+     "departure": null,
+     "stop": null,
+     "offset": 2
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900680",
+     null,
+     "16:35"
+    ],
+    [
+     "2900920",
+     "17:26",
+     "17:31"
+    ],
+    [
+     "2900880",
+     "18:20",
+     "18:22"
+    ],
+    [
+     "2900693",
+     "18:56",
+     "18:59"
+    ],
+    [
+     "2900679",
+     "21:02",
+     "21:04"
+    ],
+    [
+     "2900002",
+     "22:31",
+     "23:43"
+    ],
+    [
+     "2900850",
+     "00:55",
+     "00:58"
+    ],
+    [
+     "2900720",
+     "02:09",
+     "02:13"
+    ],
+    [
+     "2900700",
+     "03:30",
+     "03:48"
+    ],
+    [
+     "2900205",
+     "02:20",
+     "02:28"
+    ],
+    [
+     "2900788",
+     "04:58",
+     "05:00"
+    ],
+    [
+     "2900750",
+     "06:06",
+     "06:36"
+    ],
+    [
+     "2900855",
+     "08:12",
+     "08:15"
+    ],
+    [
+     "2900861",
+     "09:32",
+     "09:52"
+    ],
+    [
+     "2900871",
+     "10:39",
+     "10:44"
+    ],
+    [
+     "2900872",
+     "11:10",
+     "11:15"
+    ],
+    [
+     "2900864",
+     "12:22",
+     "12:32"
+    ],
+    [
+     "2900863",
+     "12:44",
+     "12:46"
+    ],
+    [
+     "2900862",
+     "13:08",
+     "13:11"
+    ],
+    [
+     "2900255",
+     "13:36",
+     null
+    ]
+   ]
+  },
+  {
+   "number": "129Ф",
+   "stops": [
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": null,
+     "departure": "16:40",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "17:29",
+     "departure": "17:33",
+     "stop": 4,
+     "offset": 0
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "18:20",
+     "departure": "18:22",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "18:56",
+     "departure": "19:00",
+     "stop": 4,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "21:01",
+     "departure": "21:03",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900002",
+     "title": "Ташкент-Южный",
+     "names": {
+      "ru": "Ташкент-Южный",
+      "uz": "Toshkent-Janubiy",
+      "en": "Tashkent-South"
+     },
+     "arrival": "22:27",
+     "departure": "23:43",
+     "stop": 76,
      "offset": 0
     },
     {
@@ -7284,12 +8940,12 @@
     [
      "2900680",
      null,
-     "16:35"
+     "16:40"
     ],
     [
      "2900920",
-     "17:26",
-     "17:31"
+     "17:29",
+     "17:33"
     ],
     [
      "2900880",
@@ -7299,16 +8955,16 @@
     [
      "2900693",
      "18:56",
-     "18:59"
+     "19:00"
     ],
     [
      "2900679",
-     "21:02",
-     "21:04"
+     "21:01",
+     "21:03"
     ],
     [
      "2900002",
-     "22:31",
+     "22:27",
      "23:43"
     ],
     [
@@ -7385,6 +9041,375 @@
   }
  ],
  "130": [
+  {
+   "number": "130Ф",
+   "stops": [
+    {
+     "code": "2900255",
+     "title": "Термез",
+     "names": {
+      "ru": "Термез",
+      "uz": "Termiz",
+      "en": "Termez"
+     },
+     "arrival": null,
+     "departure": "17:10",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900862",
+     "title": "Джаркурган",
+     "names": {
+      "ru": "Джаркурган",
+      "uz": "Jarqo'rg'on",
+      "en": "Jarkurgan"
+     },
+     "arrival": "17:35",
+     "departure": "17:37",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900863",
+     "title": "Сурханы",
+     "names": {
+      "ru": "Сурханы",
+      "uz": "Surxon",
+      "en": "Surkhon"
+     },
+     "arrival": "18:00",
+     "departure": "18:02",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900864",
+     "title": "Кумкурган",
+     "names": {
+      "ru": "Кумкурган",
+      "uz": "Qumqo'rg'on",
+      "en": "Kumkurgan"
+     },
+     "arrival": "18:14",
+     "departure": "18:24",
+     "stop": 10,
+     "offset": 0
+    },
+    {
+     "code": "2900872",
+     "title": "Бойсун",
+     "names": {
+      "ru": "Бойсун",
+      "uz": "Boysun",
+      "en": "Boysun"
+     },
+     "arrival": "19:32",
+     "departure": "19:38",
+     "stop": 6,
+     "offset": 0
+    },
+    {
+     "code": "2900871",
+     "title": "Дарбанд",
+     "names": {
+      "ru": "Дарбанд",
+      "uz": "Darband",
+      "en": "Darband"
+     },
+     "arrival": "20:04",
+     "departure": "20:09",
+     "stop": 5,
+     "offset": 0
+    },
+    {
+     "code": "2900861",
+     "title": "Окработ",
+     "names": {
+      "ru": "Окработ",
+      "uz": "Oqrabot",
+      "en": "Okrabot"
+     },
+     "arrival": "21:01",
+     "departure": "21:21",
+     "stop": 20,
+     "offset": 0
+    },
+    {
+     "code": "2900855",
+     "title": "Дехконобод",
+     "names": {
+      "ru": "Дехконобод",
+      "uz": "Dehqonobod",
+      "en": "Dehkanabad"
+     },
+     "arrival": "22:35",
+     "departure": "22:38",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900750",
+     "title": "Карши",
+     "names": {
+      "ru": "Карши",
+      "uz": "Qarshi",
+      "en": "Karshi"
+     },
+     "arrival": "00:07",
+     "departure": "00:27",
+     "stop": 20,
+     "offset": 2
+    },
+    {
+     "code": "2900788",
+     "title": "Айрытам",
+     "names": {
+      "ru": "Айрытам",
+      "uz": "Ayritom",
+      "en": "Ayritom"
+     },
+     "arrival": "01:21",
+     "departure": "01:28",
+     "stop": 7,
+     "offset": 2
+    },
+    {
+     "code": "2900700",
+     "title": "Самарканд",
+     "names": {
+      "ru": "Самарканд",
+      "uz": "Samarqand",
+      "en": "Samarkand"
+     },
+     "arrival": "02:26",
+     "departure": "02:40",
+     "stop": 14,
+     "offset": 2
+    },
+    {
+     "code": "2900720",
+     "title": "Джизак",
+     "names": {
+      "ru": "Джизак",
+      "uz": "Jizzax",
+      "en": "Jizzakh"
+     },
+     "arrival": "03:59",
+     "departure": "04:01",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900850",
+     "title": "Гулистан",
+     "names": {
+      "ru": "Гулистан",
+      "uz": "Guliston",
+      "en": "Gulistan"
+     },
+     "arrival": "05:14",
+     "departure": "05:17",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900002",
+     "title": "Ташкент-Южный",
+     "names": {
+      "ru": "Ташкент-Южный",
+      "uz": "Toshkent-Janubiy",
+      "en": "Tashkent-South"
+     },
+     "arrival": "06:33",
+     "departure": "08:10",
+     "stop": 97,
+     "offset": 2
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "09:34",
+     "departure": "09:36",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "11:37",
+     "departure": "11:40",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "12:14",
+     "departure": "12:17",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900709",
+     "title": "Алтыарык",
+     "names": {
+      "ru": "Алтыарык",
+      "uz": "Oltiariq",
+      "en": "Oltiariq"
+     },
+     "arrival": "12:51",
+     "departure": "12:53",
+     "stop": 2,
+     "offset": 2
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "13:10",
+     "departure": "13:13",
+     "stop": 3,
+     "offset": 2
+    },
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": "14:03",
+     "departure": null,
+     "stop": null,
+     "offset": 2
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900255",
+     null,
+     "17:10"
+    ],
+    [
+     "2900862",
+     "17:35",
+     "17:37"
+    ],
+    [
+     "2900863",
+     "18:00",
+     "18:02"
+    ],
+    [
+     "2900864",
+     "18:14",
+     "18:24"
+    ],
+    [
+     "2900872",
+     "19:32",
+     "19:38"
+    ],
+    [
+     "2900871",
+     "20:04",
+     "20:09"
+    ],
+    [
+     "2900861",
+     "21:01",
+     "21:21"
+    ],
+    [
+     "2900855",
+     "22:35",
+     "22:38"
+    ],
+    [
+     "2900750",
+     "00:07",
+     "00:27"
+    ],
+    [
+     "2900788",
+     "01:21",
+     "01:28"
+    ],
+    [
+     "2900700",
+     "02:26",
+     "02:40"
+    ],
+    [
+     "2900720",
+     "03:59",
+     "04:01"
+    ],
+    [
+     "2900850",
+     "05:14",
+     "05:17"
+    ],
+    [
+     "2900002",
+     "06:33",
+     "08:10"
+    ],
+    [
+     "2900679",
+     "09:34",
+     "09:36"
+    ],
+    [
+     "2900693",
+     "11:37",
+     "11:40"
+    ],
+    [
+     "2900880",
+     "12:14",
+     "12:17"
+    ],
+    [
+     "2900709",
+     "12:51",
+     "12:53"
+    ],
+    [
+     "2900920",
+     "13:10",
+     "13:13"
+    ],
+    [
+     "2900680",
+     "14:03",
+     null
+    ]
+   ]
+  },
   {
    "number": "130Ф",
    "stops": [
@@ -8846,7 +10871,7 @@
      "arrival": "00:43",
      "departure": "00:45",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900930",
@@ -8859,7 +10884,7 @@
      "arrival": "01:26",
      "departure": "01:30",
      "stop": 4,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900824",
@@ -8872,7 +10897,7 @@
      "arrival": "01:57",
      "departure": "02:00",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900800",
@@ -8885,7 +10910,7 @@
      "arrival": "02:27",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -9352,6 +11377,105 @@
      null
     ]
    ]
+  },
+  {
+   "number": "729Ь",
+   "stops": [
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": null,
+     "departure": "15:33",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "16:10",
+     "departure": "16:13",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "16:45",
+     "departure": "16:48",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "17:16",
+     "departure": "17:18",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900001",
+     "title": "Ташкент-Центральный",
+     "names": {
+      "ru": "Ташкент-Центральный",
+      "uz": "Toshkent-Markaziy",
+      "en": "Tashkent-Central"
+     },
+     "arrival": "19:55",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900680",
+     null,
+     "15:33"
+    ],
+    [
+     "2900920",
+     "16:10",
+     "16:13"
+    ],
+    [
+     "2900880",
+     "16:45",
+     "16:48"
+    ],
+    [
+     "2900693",
+     "17:16",
+     "17:18"
+    ],
+    [
+     "2900001",
+     "19:55",
+     null
+    ]
+   ]
   }
  ],
  "730": [
@@ -9570,6 +11694,105 @@
      null
     ]
    ]
+  },
+  {
+   "number": "730З",
+   "stops": [
+    {
+     "code": "2900001",
+     "title": "Ташкент-Центральный",
+     "names": {
+      "ru": "Ташкент-Центральный",
+      "uz": "Toshkent-Markaziy",
+      "en": "Tashkent-Central"
+     },
+     "arrival": null,
+     "departure": "07:20",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "09:56",
+     "departure": "09:59",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "10:26",
+     "departure": "10:29",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "11:02",
+     "departure": "11:05",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": "11:42",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900001",
+     null,
+     "07:20"
+    ],
+    [
+     "2900693",
+     "09:56",
+     "09:59"
+    ],
+    [
+     "2900880",
+     "10:26",
+     "10:29"
+    ],
+    [
+     "2900920",
+     "11:02",
+     "11:05"
+    ],
+    [
+     "2900680",
+     "11:42",
+     null
+    ]
+   ]
   }
  ],
  "731": [
@@ -9585,7 +11808,7 @@
       "en": "Andijan 1"
      },
      "arrival": null,
-     "departure": "06:35",
+     "departure": "06:50",
      "stop": null,
      "offset": 0
     },
@@ -9597,8 +11820,8 @@
       "uz": "Marg'ilon",
       "en": "Margilan"
      },
-     "arrival": "07:20",
-     "departure": "07:23",
+     "arrival": "07:34",
+     "departure": "07:37",
      "stop": 3,
      "offset": 0
     },
@@ -9610,8 +11833,8 @@
       "uz": "Oltiariq",
       "en": "Oltiariq"
      },
-     "arrival": "07:40",
-     "departure": "07:42",
+     "arrival": "07:54",
+     "departure": "07:56",
      "stop": 2,
      "offset": 0
     },
@@ -9623,9 +11846,9 @@
       "uz": "Qo'qon 1",
       "en": "Kokand 1"
      },
-     "arrival": "08:16",
-     "departure": "08:20",
-     "stop": 4,
+     "arrival": "08:28",
+     "departure": "08:31",
+     "stop": 3,
      "offset": 0
     },
     {
@@ -9636,8 +11859,8 @@
       "uz": "Pop",
       "en": "Pop"
      },
-     "arrival": "08:52",
-     "departure": "08:55",
+     "arrival": "09:03",
+     "departure": "09:06",
      "stop": 3,
      "offset": 0
     },
@@ -9649,8 +11872,8 @@
       "uz": "Angren",
       "en": "Angren"
      },
-     "arrival": "11:47",
-     "departure": "11:49",
+     "arrival": "11:42",
+     "departure": "11:44",
      "stop": 2,
      "offset": 0
     },
@@ -9662,7 +11885,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "13:15",
+     "arrival": "13:07",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -9674,42 +11897,177 @@
     [
      "2900680",
      null,
-     "06:35"
+     "06:50"
     ],
     [
      "2900920",
-     "07:20",
-     "07:23"
+     "07:34",
+     "07:37"
     ],
     [
      "2900709",
-     "07:40",
-     "07:42"
+     "07:54",
+     "07:56"
     ],
     [
      "2900880",
-     "08:16",
-     "08:20"
+     "08:28",
+     "08:31"
     ],
     [
      "2900693",
-     "08:52",
-     "08:55"
+     "09:03",
+     "09:06"
     ],
     [
      "2900679",
-     "11:47",
-     "11:49"
+     "11:42",
+     "11:44"
     ],
     [
      "2900001",
-     "13:15",
+     "13:07",
      null
     ]
    ]
   }
  ],
  "732": [
+  {
+   "number": "732Ф",
+   "stops": [
+    {
+     "code": "2900001",
+     "title": "Ташкент-Центральный",
+     "names": {
+      "ru": "Ташкент-Центральный",
+      "uz": "Toshkent-Markaziy",
+      "en": "Tashkent-Central"
+     },
+     "arrival": null,
+     "departure": "17:50",
+     "stop": null,
+     "offset": 0
+    },
+    {
+     "code": "2900679",
+     "title": "Ангрен",
+     "names": {
+      "ru": "Ангрен",
+      "uz": "Angren",
+      "en": "Angren"
+     },
+     "arrival": "19:28",
+     "departure": "19:31",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900693",
+     "title": "Пап",
+     "names": {
+      "ru": "Пап",
+      "uz": "Pop",
+      "en": "Pop"
+     },
+     "arrival": "21:36",
+     "departure": "21:40",
+     "stop": 4,
+     "offset": 0
+    },
+    {
+     "code": "2900880",
+     "title": "Коканд 1",
+     "names": {
+      "ru": "Коканд 1",
+      "uz": "Qo'qon 1",
+      "en": "Kokand 1"
+     },
+     "arrival": "22:12",
+     "departure": "22:15",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900709",
+     "title": "Алтыарык",
+     "names": {
+      "ru": "Алтыарык",
+      "uz": "Oltiariq",
+      "en": "Oltiariq"
+     },
+     "arrival": "22:47",
+     "departure": "22:49",
+     "stop": 2,
+     "offset": 0
+    },
+    {
+     "code": "2900920",
+     "title": "Маргилан",
+     "names": {
+      "ru": "Маргилан",
+      "uz": "Marg'ilon",
+      "en": "Margilan"
+     },
+     "arrival": "23:06",
+     "departure": "23:09",
+     "stop": 3,
+     "offset": 0
+    },
+    {
+     "code": "2900680",
+     "title": "Андижан 1",
+     "names": {
+      "ru": "Андижан 1",
+      "uz": "Andijon 1",
+      "en": "Andijan 1"
+     },
+     "arrival": "23:53",
+     "departure": null,
+     "stop": null,
+     "offset": 0
+    }
+   ],
+   "cut_before": 0,
+   "cut_after": 0,
+   "signature": [
+    [
+     "2900001",
+     null,
+     "17:50"
+    ],
+    [
+     "2900679",
+     "19:28",
+     "19:31"
+    ],
+    [
+     "2900693",
+     "21:36",
+     "21:40"
+    ],
+    [
+     "2900880",
+     "22:12",
+     "22:15"
+    ],
+    [
+     "2900709",
+     "22:47",
+     "22:49"
+    ],
+    [
+     "2900920",
+     "23:06",
+     "23:09"
+    ],
+    [
+     "2900680",
+     "23:53",
+     null
+    ]
+   ]
+  },
   {
    "number": "732Ф",
    "stops": [
@@ -9923,7 +12281,7 @@
       "uz": "Toshkent-Markaziy",
       "en": "Tashkent-Central"
      },
-     "arrival": "15:06",
+     "arrival": "15:12",
      "departure": null,
      "stop": null,
      "offset": 0
@@ -9959,7 +12317,7 @@
     ],
     [
      "2900001",
-     "15:06",
+     "15:12",
      null
     ]
    ]
@@ -10970,7 +13328,7 @@
      "arrival": "00:01",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
