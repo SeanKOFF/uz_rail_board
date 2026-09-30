@@ -53,7 +53,10 @@ FIELDS = {
     # дата факта — непусто при переходе через полночь
     "estimated_date": r'<span class="estimated-date">\s*([^<\s][^<]*?)\s*</span>',
     "status": r'<div class="flight-status"[^>]*>\s*<span[^>]*>\s*(.*?)\s*</span>',
-    "number": r'<span\s+class="highlight">\s*(.*?)\s*</span>',
+    # Номер лежит в ссылке на карточку рейса; class="highlight"
+    # точный, у обёртки класс highlight--reverted и не совпадает.
+    "number": r'class="highlight"[^>]*>\s*(.*?)\s*</',
+    "flight_id": r'/flight/(\d+)',
     "carrier": r'<span\s+class="desc[^"]*">\s*(.*?)\s*</span>',
     "terminal": r'<div class="terminal[^"]*">.*?<span>\s*(.*?)\s*</span>',
     "airline_iata": r'/airlines/([A-Z0-9]{2})\.png',
