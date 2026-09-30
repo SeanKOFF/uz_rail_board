@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Наблюдение за свободными местами в Афросиёбе — eticket.uzrailpass.uz.
+Наблюдение за свободными местами в скоростных поездах — eticket.uzrailpass.uz.
+Афросиёб (Ташкент, Самарканд, Бухара) и Джалолиддин Мангуберди (Ургенч, Хива).
 
 Это не сборщик для страницы, а измерительный прибор на неделю-две. Он
 отвечает на вопросы, от которых зависят «охотник за билетами» и календарь
@@ -52,7 +53,10 @@ STATE = "data/seats_state.json"
 LOG = "data/seats_log.jsonl"
 UA = "tabloda.uz/1.0 (+https://tabloda.uz)"
 TZ = timezone(timedelta(hours=5))  # Ташкент, перевода часов нет
-BRAND = "afrosiyob"                # сравнение без учёта регистра
+# Скоростные бренды, подстрока без учёта регистра. В ответе 30.09:
+# "Afrosiyob" и "Jaloliddin Manguberdi" (752Ж). До 01.10 писался только
+# Афросиёб, поэтому направления с Ургенчем в журнале стартуют позже.
+BRANDS = ("afrosiyob", "manguberdi")
 PAUSE = 0.5                        # между запросами: чужой сервер
 TIMEOUT = 20
 MAX_REQUESTS = 260                 # потолок за прогон, ~4 минуты
@@ -173,7 +177,8 @@ def diff(state_seats, task, trains):
     """Применить ответ по одной задаче. -> список событий."""
     events = []
     for t in trains:
-        if BRAND not in str(t.get("brand", "")).lower():
+        brand = str(t.get("brand", "")).lower()
+        if not any(b in brand for b in BRANDS):
             continue
         key = train_key(task, t)
         new = seats_of(t)
