@@ -32,6 +32,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -137,6 +138,16 @@ def hm(s):
     return s
 
 
+PHONE = re.compile(r"\s*\(\d{2}\)\s*\d{3}-\d{2}-\d{2}")
+
+
+def strip_phone(s):
+    """Телефон перевозчика источник дописывает в название маршрута:
+    это не свойство рейса, а чужой контакт, в публичный репозиторий
+    его не пишем."""
+    return PHONE.sub("", s).strip() if isinstance(s, str) else s
+
+
 def norm(t):
     dep = hm(t.get("departure_at"))
     if not dep:
@@ -145,7 +156,7 @@ def norm(t):
     return {
         "d": str(t.get("trip_date") or dep[:10]),
         "dep": dep,
-        "route": t.get("route_name_ru"),
+        "route": strip_phone(t.get("route_name_ru")),
         "carrier": t.get("transporter_name"),
         "platform": None if plat in (None, "") else str(plat),
         "status": t.get("status"),
@@ -265,7 +276,12 @@ def load_state(path):
     if not os.path.exists(path):
         return None
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        state = json.load(f)
+    # состояние, записанное до правки, чистим тем же способом, иначе первый
+    # прогон увидит «изменилось название маршрута» у каждого такого рейса
+    for t in (state.get("trips") or {}).values():
+        t["route"] = strip_phone(t.get("route"))
+    return state
 
 
 def dump_state(path, state):

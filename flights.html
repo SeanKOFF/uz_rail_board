@@ -301,8 +301,8 @@ function upcoming(){
 
 /* ---------- отрисовка ---------- */
 
-const esc = s => String(s ?? '').replace(/[&<>"]/g,
-  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s ?? '').replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function detailHtml(f){
   const t = T[lang];

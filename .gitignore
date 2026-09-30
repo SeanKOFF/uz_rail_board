@@ -12,3 +12,9 @@ __pycache__/
 *.bak
 patch_*.py
 tests/*.json.gz
+
+# Разовые пробники, не часть проекта.
+bus_probe*.py
+check_pairs.py
+fix_number.py
+probe_zero.py

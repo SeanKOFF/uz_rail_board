@@ -272,8 +272,8 @@ const T = {
 };
 
 const SEV = {critical:0, warn:1, info:2};
-const esc = s => String(s ?? '').replace(/[&<>"]/g,
-  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s ?? '').replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 /* ---------- время ---------- */
 
@@ -375,8 +375,8 @@ function tripHtml(r, t, head, ctx){
     sub.push(`${esc(stName(ends[0]))} → ${esc(stName(ends[1]))}`);
 
   return `<div class="${cls.join(' ')}">
-      <span class="t">${t.dep}</span>
-      <span class="arr">→ ${t.arr}${t.arr_next_day ? ' <small>' + tt.nextDay + '</small>' : ''} · ${durTxt(t.dur)}</span>
+      <span class="t">${esc(t.dep)}</span>
+      <span class="arr">→ ${esc(t.arr)}${t.arr_next_day ? ' <small>' + tt.nextDay + '</small>' : ''} · ${durTxt(t.dur)}</span>
       <span class="n">№${esc(t.number)}</span>
       ${sub.length ? `<div class="sub">${sub.join(' · ')}</div>` : ''}
     </div>`;

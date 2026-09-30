@@ -240,6 +240,8 @@ function liveOf(t){
   return rows.find(r => (r.number.match(/^\d+/) || [''])[0] === digits &&
                         (r.time_local === t.time_local || r.planned === t.time_local)) || null;
 }
+const esc = s => String(s ?? '').replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cityName = ru => (NAMES[ru] && NAMES[ru][lang]) || ru;
 
 /* Уточнение вокзала внутри города: Ташкент-Южный, Бухара 1 */
@@ -381,11 +383,11 @@ function routeHtml(t){
   const items = r.stops.map(st => {
     const mine = st.code === here;
     const times = [st.arrival, st.departure].filter(Boolean).join(' — ');
-    const wait = st.stop ? `<span class="stop">${st.stop} ${T[lang].min}</span>` : '';
+    const wait = st.stop ? `<span class="stop">${esc(st.stop)} ${T[lang].min}</span>` : '';
     const name = (st.names && st.names[lang]) || st.title;
     return `<li class="${mine ? 'here' : ''}">
-      <span class="rt">${times}</span>
-      <span class="rn">${name}</span>${wait}</li>`;
+      <span class="rt">${esc(times)}</span>
+      <span class="rn">${esc(name)}</span>${wait}</li>`;
   }).join('');
 
   const cut = (r.cut_before + r.cut_after)
@@ -443,23 +445,23 @@ function render(){
       };
     }
     row.innerHTML = `
-      <div class="num">${t.number}</div>
+      <div class="num">${esc(t.number)}</div>
       <div>
-        <div class="dest">${t.brand ? `<span class="brand${t.fast?' fast':''}">${t.brand}</span>` : ''}${trainTitle(t)}</div>
-        <div class="meta"><span class="st-tag">${stationName(t.station)}${t.through ? ' · ' + T[lang].through : ''}</span>${t.tomorrow ? ` · <b>${T[lang].tomorrow}</b>` : ''}</div>
+        <div class="dest">${t.brand ? `<span class="brand${t.fast?' fast':''}">${esc(t.brand)}</span>` : ''}${esc(trainTitle(t))}</div>
+        <div class="meta"><span class="st-tag">${esc(stationName(t.station))}${t.through ? ' · ' + T[lang].through : ''}</span>${t.tomorrow ? ` · <b>${T[lang].tomorrow}</b>` : ''}</div>
       </div>
       ${t.at <= 60 ? `<div class="rail${c.soon?' soon':''}" style="width:${Math.max(3, 100 - t.at * 100 / 60)}%"></div>` : ''}
       <div class="right">
-        <div class="time">${t.time_local}</div>
+        <div class="time">${esc(t.time_local)}</div>
         <div class="in${c.soon?' soon':''}">${T[lang].inPrefix} <b>${c.text}</b></div>
         ${(() => {
           const l = liveOf(t);
           if (!l) return '';
           const dev = l.deviation
-            ? `<div class="dev">${l.deviation > 0 ? '+' : ''}${l.deviation} ${T[lang].min}</div>`
+            ? `<div class="dev">${l.deviation > 0 ? '+' : ''}${esc(l.deviation)} ${T[lang].min}</div>`
             : '';
           const pf = l.platform
-            ? `<div class="platform">${T[lang].track} ${l.platform}</div>`
+            ? `<div class="platform">${T[lang].track} ${esc(l.platform)}</div>`
             : '';
           return dev + pf;
         })()}
@@ -525,7 +527,7 @@ function applyLang(){
     `<a href="suburban.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="10" rx="2"/><path d="M9 3l3 4 3-4M5 12h14M8 21l-2 1M16 21l2 1M9 17v.01M15 17v.01"/></svg>${T[lang].suburban}</a>` +
     `<a href="flights.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5L2 12z"/></svg>${T[lang].flights}</a>`;
 
-  document.getElementById('place').innerHTML = city ? cityName(city.ru) : '';
+  document.getElementById('place').textContent = city ? cityName(city.ru) : '';
   setCityToggle();
   document.querySelectorAll('#langs button').forEach(b =>
     b.setAttribute('aria-pressed', b.dataset.lang === lang));
@@ -600,7 +602,7 @@ function buildCities(){
     b.onclick = () => {
       city = c;
       try { localStorage.setItem('board-city', c.id); } catch (e) { /* не страшно */ }
-      document.getElementById('place').innerHTML = cityName(c.ru);
+      document.getElementById('place').textContent = cityName(c.ru);
       closeCityList();
       buildCities();
       render();

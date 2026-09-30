@@ -10,8 +10,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="assets/common.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
   .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--tile);
     text-decoration:none;font-weight:600;margin:4px 0 14px}
@@ -221,6 +223,9 @@ function buildAnchors(rawStops, anchorDateMs, anchorOffsetDays, coordsByCode){
     }));
 }
 
+const esc = s => String(s ?? '').replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
 function titleOf(a){
   return (a.raw.names && a.raw.names[lang]) || a.raw.title;
 }
@@ -290,7 +295,7 @@ function buildMap(){
     const m = L.circleMarker([a.lat, a.lon], {
       radius: 5, color: muted, weight: 1.5, fillColor: card, fillOpacity: 1,
     }).addTo(mapInstance);
-    m.bindTooltip(titleOf(a), { permanent: true, direction: 'top', offset: [0, -6], className: 'stop-tooltip' });
+    m.bindTooltip(esc(titleOf(a)), { permanent: true, direction: 'top', offset: [0, -6], className: 'stop-tooltip' });
     return m;
   });
 
@@ -328,7 +333,7 @@ function onLangChange(){
   document.getElementById('train-head').textContent =
     `${window.__trainNumber} · ${titleOf(anchors[0])} → ${titleOf(anchors[anchors.length - 1])}`;
   document.getElementById('approx-note').textContent = T[lang].approx;
-  stopMarkers.forEach((m, i) => m.setTooltipContent(titleOf(anchors[i])));
+  stopMarkers.forEach((m, i) => m.setTooltipContent(esc(titleOf(anchors[i]))));
   updateDynamic();
 }
 
@@ -364,7 +369,7 @@ function init(){
 
   window.__trainNumber = p.number;
   box.innerHTML = `
-    <div class="train-head" id="train-head">${p.number} · ${titleOf(anchors[0])} → ${titleOf(anchors[anchors.length - 1])}</div>
+    <div class="train-head" id="train-head">${esc(p.number)} · ${esc(titleOf(anchors[0]))} → ${esc(titleOf(anchors[anchors.length - 1]))}</div>
     <div class="train-status" id="status-text"></div>
     <div class="map-card"><div id="leaflet-map"></div></div>
     <div class="approx-note" id="approx-note">${T[lang].approx}</div>
