@@ -85,6 +85,9 @@ class Blocked(Exception):
     pass
 
 
+NOTES = []   # необычные ответы — печатаются в лог прогона, чтобы разобрать на данных
+
+
 def fetch(dep, arv, date):
     """-> (HTTP-код, список поездов | None, ошибка | None)"""
     body = json.dumps({
@@ -112,7 +115,19 @@ def fetch(dep, arv, date):
         return code, None, "не JSON: " + raw[:200].decode("utf-8", "replace")
     if not j.get("data"):
         return code, None, json.dumps(j.get("error"), ensure_ascii=False)[:200]
-    return code, j["data"]["directions"]["forward"]["trains"] or [], None
+    try:
+        fwd = (j["data"].get("directions") or {}).get("forward")
+        if fwd is None:
+            # 30.09 в Actions пришёл ответ без directions.forward. Предположение:
+            # так источник отвечает, когда поездов на дату нет. Не проверено —
+            # сырой ответ уходит в лог. Считаем пустым списком; если раньше
+            # поезда на эту пару были, run() отбракует ответ как сбой.
+            NOTES.append(f"{dep}→{arv} {date}: нет forward, ответ: "
+                         + raw[:300].decode("utf-8", "replace"))
+            return code, [], None
+        return code, fwd.get("trains") or [], None
+    except (AttributeError, TypeError) as e:
+        return code, None, f"неожиданная структура ({e!r}): " + raw[:200].decode("utf-8", "replace")
 
 
 def seats_of(train):
@@ -232,6 +247,10 @@ def run(dry_run):
             results[task] = trains
         time.sleep(PAUSE)
 
+    for note in NOTES[:5]:
+        print(f"  · {note}")
+    if len(NOTES) > 5:
+        print(f"  · ещё {len(NOTES) - 5} ответов без forward")
     for task, code, err in errors[:5]:
         dep, arv, d = task.split("|")
         print(f"  ✗ {names.get(dep)}→{names.get(arv)} {d}: HTTP {code} {err}")
