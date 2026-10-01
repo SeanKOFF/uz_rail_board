@@ -1,0 +1,13 @@
+# Живое табло станций: каждый час, 7-я минута.
+[Unit]
+Description=tabloda.uz: расписание для live-sync.yml
+
+[Timer]
+OnCalendar=*-*-* *:07:00 UTC
+Unit=gh-dispatch@live-sync.yml.service
+AccuracySec=1s
+# пропущенные, пока сервер был выключен, не догонять
+Persistent=false
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,13 @@
+# Замер автобусов: каждые 3 часа (UTC 00, 03, 06…), 17-я минута.
+[Unit]
+Description=tabloda.uz: расписание для buses-watch.yml
+
+[Timer]
+OnCalendar=*-*-* 00/3:17:00 UTC
+Unit=gh-dispatch@buses-watch.yml.service
+AccuracySec=1s
+# пропущенные, пока сервер был выключен, не догонять
+Persistent=false
+
+[Install]
+WantedBy=timers.target

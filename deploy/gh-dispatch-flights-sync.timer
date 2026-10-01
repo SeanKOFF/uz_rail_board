@@ -1,0 +1,13 @@
+# Табло аэропортов: каждый час, 27-я минута.
+[Unit]
+Description=tabloda.uz: расписание для flights-sync.yml
+
+[Timer]
+OnCalendar=*-*-* *:27:00 UTC
+Unit=gh-dispatch@flights-sync.yml.service
+AccuracySec=1s
+# пропущенные, пока сервер был выключен, не догонять
+Persistent=false
+
+[Install]
+WantedBy=timers.target

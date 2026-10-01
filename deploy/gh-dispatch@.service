@@ -1,0 +1,12 @@
+# Запуск одного workflow в GitHub по команде таймера. %i — имя файла workflow.
+# Установка — README, раздел «Запуск по расписанию с Hetzner».
+[Unit]
+Description=tabloda.uz: запустить workflow %i в GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+DynamicUser=yes
+EnvironmentFile=/opt/tabloda-dispatch/dispatch.env
+ExecStart=/usr/bin/python3 /opt/tabloda-dispatch/gh_dispatch.py %i

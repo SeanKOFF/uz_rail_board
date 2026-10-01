@@ -1,0 +1,13 @@
+# Электрички: каждый час, 47-я минута.
+[Unit]
+Description=tabloda.uz: расписание для suburban-sync.yml
+
+[Timer]
+OnCalendar=*-*-* *:47:00 UTC
+Unit=gh-dispatch@suburban-sync.yml.service
+AccuracySec=1s
+# пропущенные, пока сервер был выключен, не догонять
+Persistent=false
+
+[Install]
+WantedBy=timers.target

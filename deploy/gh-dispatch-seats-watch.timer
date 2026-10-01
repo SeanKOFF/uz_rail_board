@@ -1,0 +1,13 @@
+# Замер мест: каждые 20 минут, 2, 22, 42-я минута.
+[Unit]
+Description=tabloda.uz: расписание для seats-watch.yml
+
+[Timer]
+OnCalendar=*-*-* *:02,22,42:00 UTC
+Unit=gh-dispatch@seats-watch.yml.service
+AccuracySec=1s
+# пропущенные, пока сервер был выключен, не догонять
+Persistent=false
+
+[Install]
+WantedBy=timers.target
