@@ -285,7 +285,7 @@
  ],
  "samarkand": [
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "03.10.2026",
    "time_local": "01:30",
@@ -295,7 +295,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "03.10.2026",
    "time_local": "01:30",
@@ -591,6 +591,16 @@
    "time_local": "18:00",
    "platform": null,
    "sold_out": true,
+   "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "359Щ",
+   "route": "САМАРКАНД - ВОЛЖСКИЙ",
+   "date": "09.10.2026",
+   "time_local": "23:01",
+   "platform": null,
+   "sold_out": false,
    "planned": null,
    "deviation": null
   }
