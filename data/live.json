@@ -1,36 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "730ФЗ",
-   "route": "ТАШКЕНТ - КАКАНД-АНДИЖАН",
-   "date": "02.10.2026",
-   "time_local": "07:20",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "07:20",
-   "deviation": null
-  },
-  {
-   "number": "766Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
-   "date": "02.10.2026",
-   "time_local": "07:30",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "07:30",
-   "deviation": null
-  },
-  {
-   "number": "768Ф",
-   "route": "ТАШКЕНТ --САМАРКАНД",
-   "date": "02.10.2026",
-   "time_local": "07:55",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "07:55",
-   "deviation": null
-  },
-  {
    "number": "770Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "02.10.2026",
@@ -128,6 +98,36 @@
    "platform": null,
    "sold_out": false,
    "planned": "07:00",
+   "deviation": null
+  },
+  {
+   "number": "730ФЗ",
+   "route": "ТАШКЕНТ - КАКАНД-АНДИЖАН",
+   "date": "03.10.2026",
+   "time_local": "07:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:20",
+   "deviation": null
+  },
+  {
+   "number": "766Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
+   "date": "03.10.2026",
+   "time_local": "07:30",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:30",
+   "deviation": null
+  },
+  {
+   "number": "768Ф",
+   "route": "ТАШКЕНТ --САМАРКАНД",
+   "date": "03.10.2026",
+   "time_local": "07:55",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:55",
    "deviation": null
   },
   {
@@ -607,16 +607,6 @@
  ],
  "urgench": [
   {
-   "number": "751М",
-   "route": "ХИВА - ТОШКЕНТ-ЙУ",
-   "date": "02.10.2026",
-   "time_local": "07:40",
-   "platform": null,
-   "sold_out": false,
-   "planned": "07:40",
-   "deviation": null
-  },
-  {
    "number": "707Ф",
    "route": "ХИВА - БУХОРО 1",
    "date": "02.10.2026",
@@ -684,6 +674,16 @@
    "platform": null,
    "sold_out": false,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "751М",
+   "route": "ХИВА - ТОШКЕНТ-ЙУ",
+   "date": "03.10.2026",
+   "time_local": "07:40",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:40",
    "deviation": null
   },
   {
