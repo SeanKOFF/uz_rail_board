@@ -607,16 +607,6 @@
  ],
  "urgench": [
   {
-   "number": "707Ф",
-   "route": "ХИВА - БУХОРО 1",
-   "date": "02.10.2026",
-   "time_local": "10:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "058З",
    "route": "ТОШКЕНТ ЖА - ШОВОТ",
    "date": "02.10.2026",
