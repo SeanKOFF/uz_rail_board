@@ -218,7 +218,7 @@
    "date": "03.10.2026",
    "time_local": "22:35",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "22:35",
    "deviation": null
   },
@@ -284,16 +284,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "129Ф",
-   "route": "САМАРКАНД - ТЕРМИЗ",
-   "date": "03.10.2026",
-   "time_local": "03:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:48",
-   "deviation": null
-  },
   {
    "number": "058Ь",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
@@ -708,16 +698,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "359Щ",
-   "route": "БУХАРА -ВОЛЖСКИЙ",
-   "date": "03.10.2026",
-   "time_local": "03:35",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "БУХАРА -ХИВА",
