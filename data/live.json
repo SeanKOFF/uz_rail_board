@@ -285,26 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "125Ф",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "03.10.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": true,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
-   "date": "03.10.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
    "number": "129Ф",
    "route": "САМАРКАНД - ТЕРМИЗ",
    "date": "03.10.2026",
