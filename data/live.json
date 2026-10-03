@@ -470,7 +470,7 @@
    "date": "05.10.2026",
    "time_local": "09:23",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "09:23",
    "deviation": null
   },
@@ -894,7 +894,7 @@
    "date": "05.10.2026",
    "time_local": "11:14",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "11:14",
    "deviation": null
   },
