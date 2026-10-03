@@ -295,16 +295,6 @@
  ],
  "samarkand": [
   {
-   "number": "751М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "03.10.2026",
-   "time_local": "12:51",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:51",
-   "deviation": null
-  },
-  {
    "number": "763Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "03.10.2026",
@@ -340,7 +330,7 @@
    "date": "04.10.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": false,
+   "sold_out": true,
    "planned": "02:02",
    "deviation": null
   },
@@ -425,6 +415,16 @@
    "deviation": null
   },
   {
+   "number": "751М",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "04.10.2026",
+   "time_local": "12:51",
+   "platform": null,
+   "sold_out": false,
+   "planned": "12:51",
+   "deviation": null
+  },
+  {
    "number": "773Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "04.10.2026",
@@ -455,8 +455,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "05.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -465,8 +465,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "05.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -627,16 +627,6 @@
  ],
  "urgench": [
   {
-   "number": "125Ф",
-   "route": "АНДИЖОН 1 - ХИВА",
-   "date": "03.10.2026",
-   "time_local": "12:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:56",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "ТОШКЕНТ-ЙУ - ХИВА",
    "date": "03.10.2026",
@@ -694,6 +684,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "11:39",
+   "deviation": null
+  },
+  {
+   "number": "125Ф",
+   "route": "АНДИЖОН 1 - ХИВА",
+   "date": "04.10.2026",
+   "time_local": "12:56",
+   "platform": null,
+   "sold_out": false,
+   "planned": "12:56",
    "deviation": null
   },
   {
