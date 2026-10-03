@@ -899,6 +899,16 @@
    "deviation": null
   },
   {
+   "number": "128Ф",
+   "route": "БУХАРА -АНДИЖОН 1",
+   "date": "05.10.2026",
+   "time_local": "21:55",
+   "platform": null,
+   "sold_out": false,
+   "planned": "21:55",
+   "deviation": null
+  },
+  {
    "number": "126Ч",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "05.10.2026",
@@ -909,13 +919,13 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
-   "route": "БУХАРА -АНДИЖОН 1",
+   "number": "071Ф",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
    "date": "05.10.2026",
-   "time_local": "21:55",
+   "time_local": "22:51",
    "platform": null,
    "sold_out": false,
-   "planned": "21:55",
+   "planned": "22:51",
    "deviation": null
   },
   {
