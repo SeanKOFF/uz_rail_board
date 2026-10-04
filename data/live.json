@@ -637,16 +637,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ч",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "04.10.2026",
-   "time_local": "11:39",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:39",
-   "deviation": null
-  },
-  {
    "number": "125Ф",
    "route": "АНДИЖОН 1 - ХИВА",
    "date": "04.10.2026",
