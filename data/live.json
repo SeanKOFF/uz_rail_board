@@ -939,16 +939,6 @@
  ],
  "bukhara": [
   {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
-   "date": "04.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
    "number": "125Ф",
    "route": "БУХАРА -ХИВА",
    "date": "04.10.2026",
@@ -1041,6 +1031,16 @@
   {
    "number": "058З",
    "route": "БУХАРА -ШОВОТ",
+   "date": "05.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
+   "deviation": null
+  },
+  {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
    "date": "05.10.2026",
    "time_local": "05:32",
    "platform": null,
@@ -1266,18 +1266,6 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
-   "deviation": null
-  }
- ],
- "qarshi": [
-  {
-   "number": "130Ф",
-   "route": "ТЕРМИЗ - АНДИЖОН 1",
-   "date": "06.10.2026",
-   "time_local": "00:27",
-   "platform": null,
-   "sold_out": true,
-   "planned": "00:27",
    "deviation": null
   }
  ],
