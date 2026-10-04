@@ -285,28 +285,8 @@
  ],
  "samarkand": [
   {
-   "number": "126Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "05.10.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "058З",
-   "route": "САМАРКАНД - ШОВОТ",
-   "date": "05.10.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "05.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -315,8 +295,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "05.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -385,7 +365,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "06.10.2026",
    "time_local": "01:30",
@@ -395,7 +375,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "06.10.2026",
    "time_local": "01:30",
@@ -492,6 +472,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "19:48",
+   "deviation": null
+  },
+  {
+   "number": "126Ф",
+   "route": "САМАРКАНД - АНДИЖОН 1",
+   "date": "07.10.2026",
+   "time_local": "01:30",
+   "platform": null,
+   "sold_out": false,
+   "planned": "01:30",
    "deviation": null
   },
   {
@@ -759,18 +749,8 @@
  ],
  "bukhara": [
   {
-   "number": "056Ж",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "05.10.2026",
-   "time_local": "01:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:09",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
+   "number": "058З",
+   "route": "БУХАРА -ШОВОТ",
    "date": "05.10.2026",
    "time_local": "05:32",
    "platform": null,
@@ -779,8 +759,8 @@
    "deviation": null
   },
   {
-   "number": "058З",
-   "route": "БУХАРА -ШОВОТ",
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
    "date": "05.10.2026",
    "time_local": "05:32",
    "platform": null,
@@ -859,7 +839,7 @@
    "deviation": null
   },
   {
-   "number": "076Ф",
+   "number": "125Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
@@ -869,7 +849,7 @@
    "deviation": null
   },
   {
-   "number": "125Ф",
+   "number": "076Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
@@ -889,8 +869,8 @@
    "deviation": null
   },
   {
-   "number": "126Ф",
-   "route": "БУХАРА -АНДИЖОН 1",
+   "number": "076Ж",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
    "date": "06.10.2026",
    "time_local": "21:55",
    "platform": null,
@@ -899,8 +879,8 @@
    "deviation": null
   },
   {
-   "number": "076Ж",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
+   "number": "126Ф",
+   "route": "БУХАРА -АНДИЖОН 1",
    "date": "06.10.2026",
    "time_local": "21:55",
    "platform": null,
@@ -956,6 +936,16 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "056Ж",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
+   "date": "08.10.2026",
+   "time_local": "01:09",
+   "platform": null,
+   "sold_out": false,
+   "planned": "01:09",
    "deviation": null
   },
   {
