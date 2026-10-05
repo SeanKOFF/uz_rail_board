@@ -305,7 +305,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "06.10.2026",
    "time_local": "01:30",
@@ -315,7 +315,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "06.10.2026",
    "time_local": "01:30",
@@ -415,6 +415,16 @@
    "deviation": null
   },
   {
+   "number": "752Ж",
+   "route": "САМАРКАНД - ХИВА",
+   "date": "06.10.2026",
+   "time_local": "09:23",
+   "platform": null,
+   "sold_out": true,
+   "planned": "09:23",
+   "deviation": null
+  },
+  {
    "number": "751М",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "06.10.2026",
@@ -445,8 +455,8 @@
    "deviation": null
   },
   {
-   "number": "076Ж",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
+   "number": "126Ф",
+   "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "07.10.2026",
    "time_local": "01:30",
    "platform": null,
@@ -455,8 +465,8 @@
    "deviation": null
   },
   {
-   "number": "126Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
+   "number": "076Ж",
+   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
    "date": "07.10.2026",
    "time_local": "01:30",
    "platform": null,
@@ -759,7 +769,7 @@
  ],
  "bukhara": [
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "05.10.2026",
    "time_local": "21:55",
@@ -769,7 +779,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "05.10.2026",
    "time_local": "21:55",
@@ -819,7 +829,7 @@
    "deviation": null
   },
   {
-   "number": "076Ф",
+   "number": "125Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
@@ -829,7 +839,7 @@
    "deviation": null
   },
   {
-   "number": "125Ф",
+   "number": "076Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
@@ -846,6 +856,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "10:57",
+   "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "БУХАРА -ХИВА",
+   "date": "06.10.2026",
+   "time_local": "11:14",
+   "platform": null,
+   "sold_out": true,
+   "planned": "11:14",
    "deviation": null
   },
   {
