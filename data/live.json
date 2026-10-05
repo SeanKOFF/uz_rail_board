@@ -779,26 +779,6 @@
  ],
  "bukhara": [
   {
-   "number": "058З",
-   "route": "БУХАРА -ШОВОТ",
-   "date": "05.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
-   "date": "05.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
    "number": "125Ч",
    "route": "БУХАРА -УРГАНЧ",
    "date": "05.10.2026",
@@ -869,7 +849,27 @@
    "deviation": null
   },
   {
-   "number": "125Ф",
+   "number": "058З",
+   "route": "БУХАРА -ШОВОТ",
+   "date": "06.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
+   "deviation": null
+  },
+  {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
+   "date": "06.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
+   "deviation": null
+  },
+  {
+   "number": "076Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
@@ -879,7 +879,7 @@
    "deviation": null
   },
   {
-   "number": "076Ф",
+   "number": "125Ф",
    "route": "БУХАРА -ХИВА",
    "date": "06.10.2026",
    "time_local": "06:48",
