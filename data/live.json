@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ",
-   "date": "05.10.2026",
-   "time_local": "14:41",
-   "platform": "2",
-   "sold_out": false,
-   "planned": "14:41",
-   "deviation": null
-  },
-  {
    "number": "732Ф",
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "05.10.2026",
@@ -138,6 +128,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "10:05",
+   "deviation": null
+  },
+  {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "date": "06.10.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
    "deviation": null
   },
   {
@@ -607,26 +607,6 @@
  ],
  "urgench": [
   {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "05.10.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
-  {
-   "number": "126Ч",
-   "route": "УРГАНЧ - АНДИЖОН 1",
-   "date": "05.10.2026",
-   "time_local": "14:50",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:50",
-   "deviation": null
-  },
-  {
    "number": "125Ч",
    "route": "АНДИЖОН 1 - УРГАНЧ",
    "date": "05.10.2026",
@@ -687,6 +667,16 @@
    "deviation": null
   },
   {
+   "number": "752Ж",
+   "route": "ТОШКЕНТ-ЙУ - ХИВА",
+   "date": "06.10.2026",
+   "time_local": "14:22",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:22",
+   "deviation": null
+  },
+  {
    "number": "654Х",
    "route": "БЕЙНЕУ - УРГАНЧ",
    "date": "06.10.2026",
@@ -744,6 +734,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "19:20",
+   "deviation": null
+  },
+  {
+   "number": "126Ч",
+   "route": "УРГАНЧ - АНДИЖОН 1",
+   "date": "08.10.2026",
+   "time_local": "14:50",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:50",
    "deviation": null
   },
   {
@@ -1036,18 +1036,6 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
-   "deviation": null
-  }
- ],
- "qarshi": [
-  {
-   "number": "763Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "05.10.2026",
-   "time_local": "17:29",
-   "platform": null,
-   "sold_out": true,
-   "planned": "17:29",
    "deviation": null
   }
  ],
