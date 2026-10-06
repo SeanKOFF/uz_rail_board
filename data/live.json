@@ -105,7 +105,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "06.10.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -125,7 +125,7 @@
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "06.10.2026",
    "time_local": "17:50",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "17:50",
    "deviation": null
@@ -135,7 +135,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "06.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
