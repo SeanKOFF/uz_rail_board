@@ -173,16 +173,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "127Ф",
-   "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
-   "date": "07.10.2026",
-   "time_local": "01:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:10",
-   "deviation": null
-  },
-  {
    "number": "126Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "07.10.2026",
