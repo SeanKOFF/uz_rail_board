@@ -1,26 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "124Ф",
-   "route": "ТОШКЕНТ-УРГЕНЧ-НУКУС-ВОЛГОГРАД",
-   "date": "07.10.2026",
-   "time_local": "00:10",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "00:10",
-   "deviation": null
-  },
-  {
-   "number": "305 Ф",
-   "route": "ТАШКЕНТ - МОСКВА",
-   "date": "07.10.2026",
-   "time_local": "00:32",
-   "platform": "5",
-   "sold_out": false,
-   "planned": "00:32",
-   "deviation": null
-  },
-  {
    "number": "096Ф",
    "route": "ТОШКЕНТ-НАМАНГАН-АНДИЖОН",
    "date": "07.10.2026",
@@ -158,6 +138,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "20:32",
+   "deviation": null
+  },
+  {
+   "number": "305 Ф",
+   "route": "ТАШКЕНТ - МОСКВА",
+   "date": "09.10.2026",
+   "time_local": "00:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "00:32",
    "deviation": null
   },
   {
