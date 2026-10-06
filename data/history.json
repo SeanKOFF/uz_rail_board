@@ -7900,5 +7900,32 @@
   "planned": "17:30",
   "actual": "17:20",
   "deviation": -10
+ },
+ {
+  "at": "2026-10-06 07:07",
+  "station": "andijan",
+  "number": "125Ч",
+  "date": "06.10.2026",
+  "planned": "15:50",
+  "actual": "15:36",
+  "deviation": -14
+ },
+ {
+  "at": "2026-10-06 07:07",
+  "station": "andijan",
+  "number": "129Ф",
+  "date": "06.10.2026",
+  "planned": "16:40",
+  "actual": "16:30",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-06 07:07",
+  "station": "andijan",
+  "number": "127Ф",
+  "date": "06.10.2026",
+  "planned": "17:30",
+  "actual": "17:20",
+  "deviation": -10
  }
 ]

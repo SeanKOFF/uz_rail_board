@@ -417,16 +417,6 @@
  ],
  "urgench": [
   {
-   "number": "058З",
-   "route": "ТОШКЕНТ ЖА - ШОВОТ",
-   "date": "06.10.2026",
-   "time_local": "11:59",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:59",
-   "deviation": null
-  },
-  {
    "number": "125Ф",
    "route": "АНДИЖОН 1 - ХИВА",
    "date": "06.10.2026",
@@ -548,16 +538,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "752Ж",
-   "route": "БУХАРА -ХИВА",
-   "date": "06.10.2026",
-   "time_local": "11:14",
-   "platform": null,
-   "sold_out": true,
-   "planned": "11:14",
-   "deviation": null
-  },
   {
    "number": "126Ф",
    "route": "БУХАРА -АНДИЖОН 1",
