@@ -5,7 +5,7 @@
    "route": "ТОШКЕНТ-УРГЕНЧ-НУКУС-ВОЛГОГРАД",
    "date": "07.10.2026",
    "time_local": "00:10",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "00:10",
    "deviation": null
@@ -25,7 +25,7 @@
    "route": "ТОШКЕНТ-НАМАНГАН-АНДИЖОН",
    "date": "07.10.2026",
    "time_local": "04:55",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "04:55",
    "deviation": null
@@ -41,7 +41,7 @@
    "deviation": null
   },
   {
-   "number": "764 Ф",
+   "number": "764Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "07.10.2026",
    "time_local": "06:33",
@@ -52,7 +52,7 @@
   },
   {
    "number": "752Ж",
-   "route": "ТАШКЕНТ -САМАРКАНД -ХИВА",
+   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
    "date": "07.10.2026",
    "time_local": "07:00",
    "platform": "1",
@@ -62,7 +62,7 @@
   },
   {
    "number": "730ФЗ",
-   "route": "ТАШКЕНТ - КАКАНД-АНДИЖАН",
+   "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "07.10.2026",
    "time_local": "07:20",
    "platform": "3",
@@ -125,7 +125,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "07.10.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -172,10 +172,10 @@
   },
   {
    "number": "302Ф",
-   "route": "Ташкент-душанбе",
+   "route": "Ташкент-Душанбе",
    "date": "13.10.2026",
    "time_local": "14:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "14:48",
    "deviation": null
