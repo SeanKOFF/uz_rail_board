@@ -235,16 +235,6 @@
  ],
  "samarkand": [
   {
-   "number": "129Ф",
-   "route": "САМАРКАНД - ТЕРМИЗ",
-   "date": "08.10.2026",
-   "time_local": "03:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:48",
-   "deviation": null
-  },
-  {
    "number": "056Ж",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
    "date": "08.10.2026",
@@ -360,7 +350,7 @@
    "date": "10.10.2026",
    "time_local": "03:00",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "03:00",
    "deviation": null
   },
