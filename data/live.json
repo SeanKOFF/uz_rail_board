@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "096Ф",
-   "route": "ТОШКЕНТ-НАМАНГАН-АНДИЖОН",
-   "date": "07.10.2026",
-   "time_local": "04:55",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "04:55",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "07.10.2026",
@@ -224,16 +214,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "124Ф",
-   "route": "САМАРКАНД - ВОЛЖСКИЙ",
-   "date": "07.10.2026",
-   "time_local": "04:58",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:58",
-   "deviation": null
-  },
   {
    "number": "127Ф",
    "route": "САМАРКАНД - КУНГИРОТ",
