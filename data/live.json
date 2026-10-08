@@ -380,7 +380,7 @@
    "date": "10.10.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "02:02",
    "deviation": null
   },
