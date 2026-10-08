@@ -255,36 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "130Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "09.10.2026",
-   "time_local": "02:40",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:40",
-   "deviation": null
-  },
-  {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
-   "date": "09.10.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
-   "date": "09.10.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
    "number": "056Ж",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
    "date": "09.10.2026",
