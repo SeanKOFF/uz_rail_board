@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "08.10.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "08.10.2026",
@@ -128,6 +118,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "17:50",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "09.10.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
    "deviation": null
   },
   {
@@ -497,36 +497,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ж",
-   "route": "ХИВА - ТОШКЕНТ ЖА",
-   "date": "08.10.2026",
-   "time_local": "19:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": null
-  },
-  {
-   "number": "754Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "08.10.2026",
-   "time_local": "19:31",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
-   "number": "653М",
-   "route": "УРГАНЧ - БЕЙНЕУ",
-   "date": "08.10.2026",
-   "time_local": "20:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "751М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
    "date": "09.10.2026",
@@ -597,6 +567,26 @@
    "deviation": null
   },
   {
+   "number": "056Ж",
+   "route": "ХИВА - ТОШКЕНТ ЖА",
+   "date": "10.10.2026",
+   "time_local": "19:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:20",
+   "deviation": null
+  },
+  {
+   "number": "754Ж",
+   "route": "ТОШКЕНТ-ЙУ - ХИВА",
+   "date": "10.10.2026",
+   "time_local": "19:31",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
+   "deviation": null
+  },
+  {
    "number": "123Ф",
    "route": "ВОЛГОГР 1 - ТОШКЕНТ-ЙУ",
    "date": "11.10.2026",
@@ -614,6 +604,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "15:42",
+   "deviation": null
+  },
+  {
+   "number": "653М",
+   "route": "УРГАНЧ - БЕЙНЕУ",
+   "date": "11.10.2026",
+   "time_local": "20:00",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
    "deviation": null
   }
  ],
