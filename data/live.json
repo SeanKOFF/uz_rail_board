@@ -245,16 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "127Ф",
-   "route": "САМАРКАНД - КУНГИРОТ",
-   "date": "08.10.2026",
-   "time_local": "05:37",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:37",
-   "deviation": null
-  },
-  {
    "number": "764Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "08.10.2026",
@@ -325,8 +315,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "09.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -335,8 +325,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "09.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -452,6 +442,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "04:58",
+   "deviation": null
+  },
+  {
+   "number": "127Ф",
+   "route": "САМАРКАНД - КУНГИРОТ",
+   "date": "11.10.2026",
+   "time_local": "05:37",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:37",
    "deviation": null
   },
   {
@@ -619,16 +619,6 @@
  ],
  "bukhara": [
   {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
-   "date": "08.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
    "number": "125Ч",
    "route": "БУХАРА -УРГАНЧ",
    "date": "08.10.2026",
@@ -729,6 +719,16 @@
    "deviation": null
   },
   {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
+   "date": "09.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
+   "deviation": null
+  },
+  {
    "number": "072Ф",
    "route": "БУХАРА -ОЛОТ",
    "date": "09.10.2026",
@@ -766,6 +766,16 @@
    "platform": null,
    "sold_out": false,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
+   "date": "10.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
    "deviation": null
   },
   {
