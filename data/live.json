@@ -1,31 +1,11 @@
 {
  "tashkent-central": [
   {
-   "number": "764Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
-   "date": "09.10.2026",
-   "time_local": "06:33",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:33",
-   "deviation": null
-  },
-  {
-   "number": "752Ж",
-   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
-   "date": "09.10.2026",
-   "time_local": "07:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "07:00",
-   "deviation": null
-  },
-  {
    "number": "730ФЗ",
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "09.10.2026",
    "time_local": "07:20",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "07:20",
    "deviation": null
@@ -35,7 +15,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "09.10.2026",
    "time_local": "07:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:30",
    "deviation": null
@@ -45,7 +25,7 @@
    "route": "ТАШКЕНТ --САМАРКАНД",
    "date": "09.10.2026",
    "time_local": "07:55",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:55",
    "deviation": null
@@ -55,7 +35,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "09.10.2026",
    "time_local": "08:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "08:30",
    "deviation": null
@@ -65,7 +45,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "09.10.2026",
    "time_local": "08:37",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "08:37",
    "deviation": null
@@ -75,7 +55,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "09.10.2026",
    "time_local": "08:58",
-   "platform": null,
+   "platform": "6",
    "sold_out": false,
    "planned": "08:58",
    "deviation": null
@@ -105,7 +85,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "09.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
@@ -115,9 +95,29 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "09.10.2026",
    "time_local": "20:32",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "20:32",
+   "deviation": null
+  },
+  {
+   "number": "764Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
+   "date": "10.10.2026",
+   "time_local": "06:33",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:33",
+   "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
+   "date": "10.10.2026",
+   "time_local": "07:00",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:00",
    "deviation": null
   },
   {
@@ -162,26 +162,6 @@
   }
  ],
  "tashkent-south": [
-  {
-   "number": "126Ч",
-   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
-   "date": "09.10.2026",
-   "time_local": "06:18",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:18",
-   "deviation": null
-  },
-  {
-   "number": "128Ф",
-   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
-   "date": "09.10.2026",
-   "time_local": "06:18",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:18",
-   "deviation": null
-  },
   {
    "number": "130Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
@@ -250,6 +230,26 @@
    "platform": null,
    "sold_out": false,
    "planned": "23:43",
+   "deviation": null
+  },
+  {
+   "number": "126Ч",
+   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
+   "date": "10.10.2026",
+   "time_local": "06:18",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:18",
+   "deviation": null
+  },
+  {
+   "number": "128Ф",
+   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
+   "date": "10.10.2026",
+   "time_local": "06:18",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:18",
    "deviation": null
   },
   {
@@ -748,16 +748,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "125Ч",
-   "route": "БУХАРА -УРГАНЧ",
-   "date": "09.10.2026",
-   "time_local": "06:48",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:48",
-   "deviation": null
-  },
   {
    "number": "072Ф",
    "route": "БУХАРА -ОЛОТ",
