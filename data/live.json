@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "732Ф",
-   "route": "ТОШКЕНТ -АНДИЖАН",
-   "date": "09.10.2026",
-   "time_local": "17:50",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:50",
-   "deviation": null
-  },
-  {
    "number": "772Ф",
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "09.10.2026",
@@ -128,6 +118,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "14:41",
+   "deviation": null
+  },
+  {
+   "number": "732Ф",
+   "route": "ТОШКЕНТ -АНДИЖАН",
+   "date": "10.10.2026",
+   "time_local": "17:50",
+   "platform": null,
+   "sold_out": false,
+   "planned": "17:50",
    "deviation": null
   },
   {
@@ -274,16 +274,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "753М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "09.10.2026",
-   "time_local": "17:16",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "763Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
@@ -502,6 +492,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "08:56",
+   "deviation": null
+  },
+  {
+   "number": "753М",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "11.10.2026",
+   "time_local": "17:16",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
    "deviation": null
   },
   {
@@ -1003,7 +1003,7 @@
   {
    "number": "763Ф",
    "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "09.10.2026",
+   "date": "10.10.2026",
    "time_local": "17:29",
    "platform": null,
    "sold_out": true,
@@ -1012,16 +1012,6 @@
   }
  ],
  "andijan": [
-  {
-   "number": "127Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "09.10.2026",
-   "time_local": "17:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:30",
-   "deviation": -10
-  },
   {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
@@ -1040,6 +1030,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "16:40",
+   "deviation": -10
+  },
+  {
+   "number": "127Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "10.10.2026",
+   "time_local": "17:20",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "17:30",
    "deviation": -10
   }
  ]
