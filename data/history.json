@@ -11689,5 +11689,59 @@
   "planned": "17:30",
   "actual": "17:20",
   "deviation": -10
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "samarkand",
+  "number": "751М",
+  "date": "10.10.2026",
+  "planned": "12:51",
+  "actual": "13:01",
+  "deviation": 10
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "urgench",
+  "number": "056Ч",
+  "date": "10.10.2026",
+  "planned": "11:39",
+  "actual": "11:35",
+  "deviation": -4
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "urgench",
+  "number": "058Ь",
+  "date": "12.10.2026",
+  "planned": "19:20",
+  "actual": "19:23",
+  "deviation": 3
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "andijan",
+  "number": "125Ч",
+  "date": "10.10.2026",
+  "planned": "15:50",
+  "actual": "15:36",
+  "deviation": -14
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "andijan",
+  "number": "129Ф",
+  "date": "10.10.2026",
+  "planned": "16:40",
+  "actual": "16:30",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-09 22:09",
+  "station": "andijan",
+  "number": "127Ф",
+  "date": "10.10.2026",
+  "planned": "17:30",
+  "actual": "17:20",
+  "deviation": -10
  }
 ]
