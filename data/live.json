@@ -285,16 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "751М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "10.10.2026",
-   "time_local": "13:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:51",
-   "deviation": 10
-  },
-  {
    "number": "754Ж",
    "route": "САМАРКАНД - ХИВА",
    "date": "10.10.2026",
@@ -597,16 +587,6 @@
  ],
  "urgench": [
   {
-   "number": "125Ф",
-   "route": "АНДИЖОН 1 - ХИВА",
-   "date": "10.10.2026",
-   "time_local": "12:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:56",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "ТОШКЕНТ-ЙУ - ХИВА",
    "date": "10.10.2026",
@@ -675,6 +655,16 @@
    "sold_out": false,
    "planned": "11:39",
    "deviation": -4
+  },
+  {
+   "number": "125Ф",
+   "route": "АНДИЖОН 1 - ХИВА",
+   "date": "11.10.2026",
+   "time_local": "12:56",
+   "platform": null,
+   "sold_out": false,
+   "planned": "12:56",
+   "deviation": null
   },
   {
    "number": "123Ф",
