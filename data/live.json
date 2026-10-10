@@ -415,6 +415,16 @@
    "deviation": null
   },
   {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "11.10.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
+   "deviation": null
+  },
+  {
    "number": "123Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "12.10.2026",
