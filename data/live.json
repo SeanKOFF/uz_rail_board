@@ -245,16 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "056Ж",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "11.10.2026",
-   "time_local": "04:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:10",
-   "deviation": null
-  },
-  {
    "number": "124Ф",
    "route": "САМАРКАНД - ВОЛЖСКИЙ",
    "date": "11.10.2026",
