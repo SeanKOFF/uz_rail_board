@@ -285,16 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "754Ж",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "10.10.2026",
-   "time_local": "13:43",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "763Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "10.10.2026",
@@ -413,6 +403,16 @@
    "sold_out": false,
    "planned": "08:56",
    "deviation": null
+  },
+  {
+   "number": "751М",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "11.10.2026",
+   "time_local": "13:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "12:51",
+   "deviation": 10
   },
   {
    "number": "753М",
