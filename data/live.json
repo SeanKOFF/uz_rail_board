@@ -829,16 +829,6 @@
  ],
  "bukhara": [
   {
-   "number": "751М",
-   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
-   "date": "11.10.2026",
-   "time_local": "10:57",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:57",
-   "deviation": null
-  },
-  {
    "number": "423Р",
    "route": "БУХАРА -ДУШАНБЕ 1",
    "date": "11.10.2026",
@@ -1136,6 +1126,18 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  }
+ ],
+ "qarshi": [
+  {
+   "number": "130Ф",
+   "route": "ТЕРМИЗ - АНДИЖОН 1",
+   "date": "13.10.2026",
+   "time_local": "00:27",
+   "platform": null,
+   "sold_out": true,
+   "planned": "00:27",
    "deviation": null
   }
  ],
