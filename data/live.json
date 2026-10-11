@@ -265,16 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "123Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "12.10.2026",
-   "time_local": "00:33",
-   "platform": null,
-   "sold_out": false,
-   "planned": "00:33",
-   "deviation": null
-  },
-  {
    "number": "126Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "12.10.2026",
@@ -400,7 +390,7 @@
    "date": "13.10.2026",
    "time_local": "03:00",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "03:00",
    "deviation": null
   },
@@ -440,7 +430,7 @@
    "date": "14.10.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "02:02",
    "deviation": null
   },
