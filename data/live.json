@@ -587,26 +587,6 @@
  ],
  "urgench": [
   {
-   "number": "753М",
-   "route": "ХИВА - ТОШКЕНТ-ЙУ",
-   "date": "11.10.2026",
-   "time_local": "11:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "11.10.2026",
-   "time_local": "11:35",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:39",
-   "deviation": -4
-  },
-  {
    "number": "125Ф",
    "route": "АНДИЖОН 1 - ХИВА",
    "date": "11.10.2026",
@@ -939,7 +919,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "12.10.2026",
    "time_local": "21:55",
@@ -949,7 +929,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "12.10.2026",
    "time_local": "21:55",
@@ -976,6 +956,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "06:48",
+   "deviation": null
+  },
+  {
+   "number": "751М",
+   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
+   "date": "13.10.2026",
+   "time_local": "10:57",
+   "platform": null,
+   "sold_out": false,
+   "planned": "10:57",
    "deviation": null
   },
   {
