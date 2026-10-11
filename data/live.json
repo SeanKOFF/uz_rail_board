@@ -265,26 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "126Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "12.10.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "058З",
-   "route": "САМАРКАНД - ШОВОТ",
-   "date": "12.10.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
    "number": "071Ф",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
    "date": "12.10.2026",
@@ -417,6 +397,16 @@
   {
    "number": "076Ж",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
+   "date": "14.10.2026",
+   "time_local": "01:30",
+   "platform": null,
+   "sold_out": false,
+   "planned": "01:30",
+   "deviation": null
+  },
+  {
+   "number": "126Ф",
+   "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "14.10.2026",
    "time_local": "01:30",
    "platform": null,
@@ -709,18 +699,8 @@
  ],
  "bukhara": [
   {
-   "number": "056Ж",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "12.10.2026",
-   "time_local": "01:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:09",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
+   "number": "058З",
+   "route": "БУХАРА -ШОВОТ",
    "date": "12.10.2026",
    "time_local": "05:32",
    "platform": null,
@@ -729,8 +709,8 @@
    "deviation": null
   },
   {
-   "number": "058З",
-   "route": "БУХАРА -ШОВОТ",
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
    "date": "12.10.2026",
    "time_local": "05:32",
    "platform": null,
@@ -759,7 +739,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "12.10.2026",
    "time_local": "21:55",
@@ -769,7 +749,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "12.10.2026",
    "time_local": "21:55",
@@ -866,6 +846,16 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "056Ж",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
+   "date": "15.10.2026",
+   "time_local": "01:09",
+   "platform": null,
+   "sold_out": false,
+   "planned": "01:09",
    "deviation": null
   },
   {
