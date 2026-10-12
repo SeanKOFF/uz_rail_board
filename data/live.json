@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "754Ж",
-   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
-   "date": "12.10.2026",
-   "time_local": "11:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "001Ф",
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "12.10.2026",
@@ -129,6 +119,16 @@
    "sold_out": false,
    "planned": "08:58",
    "deviation": null
+  },
+  {
+   "number": "754Ж",
+   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
+   "date": "15.10.2026",
+   "time_local": "11:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": null,
+   "deviation": null
   }
  ],
  "tashkent-south": [
@@ -178,7 +178,7 @@
    "date": "12.10.2026",
    "time_local": "22:35",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "22:35",
    "deviation": null
   },
@@ -537,16 +537,6 @@
  ],
  "urgench": [
   {
-   "number": "058З",
-   "route": "ТОШКЕНТ ЖА - ШОВОТ",
-   "date": "12.10.2026",
-   "time_local": "11:59",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:59",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "ТОШКЕНТ-ЙУ - ХИВА",
    "date": "12.10.2026",
@@ -594,6 +584,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "07:40",
+   "deviation": null
+  },
+  {
+   "number": "058З",
+   "route": "ТОШКЕНТ ЖА - ШОВОТ",
+   "date": "13.10.2026",
+   "time_local": "11:59",
+   "platform": null,
+   "sold_out": false,
+   "planned": "11:59",
    "deviation": null
   },
   {
