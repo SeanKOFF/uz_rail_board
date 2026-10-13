@@ -649,16 +649,6 @@
  ],
  "bukhara": [
   {
-   "number": "058Ь",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "14.10.2026",
-   "time_local": "01:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:09",
-   "deviation": null
-  },
-  {
    "number": "319Щ",
    "route": "БУХАРА -ВОЛЖСКИЙ",
    "date": "14.10.2026",
