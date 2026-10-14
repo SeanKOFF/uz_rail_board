@@ -1,0 +1,11 @@
+# Раз в сутки в 12:10 по Ташкенту (07:10 UTC) — журнал за прошедшие сутки.
+[Unit]
+Description=tabloda.uz: расписание выгрузки точечного замера
+
+[Timer]
+OnCalendar=*-*-* 07:10:00 UTC
+Persistent=true
+Unit=tabloda-seats-upload.service
+
+[Install]
+WantedBy=timers.target

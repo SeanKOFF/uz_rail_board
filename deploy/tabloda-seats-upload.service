@@ -1,0 +1,13 @@
+# Выгрузка журнала точечного замера за вчера в репозиторий (data/seats_windows/).
+[Unit]
+Description=tabloda.uz: выгрузка журнала точечного замера
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+DynamicUser=yes
+StateDirectory=tabloda-seats
+WorkingDirectory=/opt/tabloda-seats
+EnvironmentFile=/opt/tabloda-dispatch/dispatch.env
+ExecStart=/usr/bin/python3 /opt/tabloda-seats/seats_windows.py --upload
