@@ -245,16 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "710Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "14.10.2026",
-   "time_local": "12:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:00",
-   "deviation": null
-  },
-  {
    "number": "716Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "14.10.2026",
@@ -370,7 +360,7 @@
    "date": "15.10.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": false,
+   "sold_out": true,
    "planned": "02:02",
    "deviation": null
   },
@@ -587,16 +577,6 @@
  ],
  "urgench": [
   {
-   "number": "056Ч",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "14.10.2026",
-   "time_local": "11:35",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:39",
-   "deviation": -4
-  },
-  {
    "number": "125Ф",
    "route": "АНДИЖОН 1 - ХИВА",
    "date": "14.10.2026",
@@ -645,6 +625,16 @@
    "sold_out": false,
    "planned": "19:20",
    "deviation": 3
+  },
+  {
+   "number": "056Ч",
+   "route": "ТОШКЕНТ ЖА - ХИВА",
+   "date": "15.10.2026",
+   "time_local": "11:35",
+   "platform": null,
+   "sold_out": false,
+   "planned": "11:39",
+   "deviation": -4
   },
   {
    "number": "126Ч",
