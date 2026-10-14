@@ -133,16 +133,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "129Ф",
-   "route": "ТАШКЕНТ ЮЖ -ТЕРМИЗ",
-   "date": "14.10.2026",
-   "time_local": "23:43",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:43",
-   "deviation": null
-  },
-  {
    "number": "127Ф",
    "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
    "date": "15.10.2026",
@@ -213,7 +203,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "16.10.2026",
    "time_local": "06:18",
@@ -223,7 +213,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "16.10.2026",
    "time_local": "06:18",
@@ -240,6 +230,16 @@
    "platform": null,
    "sold_out": true,
    "planned": "22:35",
+   "deviation": null
+  },
+  {
+   "number": "129Ф",
+   "route": "ТАШКЕНТ ЮЖ -ТЕРМИЗ",
+   "date": "16.10.2026",
+   "time_local": "23:43",
+   "platform": null,
+   "sold_out": false,
+   "planned": "23:43",
    "deviation": null
   }
  ],
@@ -608,16 +608,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "054Ф",
-   "route": "БУХАРА -КУНГИРОТ",
-   "date": "14.10.2026",
-   "time_local": "23:37",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:37",
-   "deviation": null
-  },
   {
    "number": "056Ж",
    "route": "БУХАРА -ТОШКЕНТ ЖА",
