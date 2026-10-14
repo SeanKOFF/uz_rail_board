@@ -1,59 +1,5 @@
 [
  {
-  "at": "2026-09-03 11:09",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
-  "at": "2026-09-03 16:22",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
-  "at": "2026-09-03 19:47",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
-  "at": "2026-09-03 22:31",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
-  "at": "2026-09-04 00:57",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
-  "at": "2026-09-04 05:49",
-  "station": "urgench",
-  "number": "076Ж",
-  "date": "08.09.2026",
-  "planned": "16:15",
-  "actual": "16:23",
-  "deviation": 8
- },
- {
   "at": "2026-09-04 11:12",
   "station": "urgench",
   "number": "076Ж",
@@ -17997,6 +17943,60 @@
   "date": "15.10.2026",
   "planned": "16:40",
   "actual": "16:30",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "urgench",
+  "number": "056Ж",
+  "date": "14.10.2026",
+  "planned": "19:20",
+  "actual": "19:23",
+  "deviation": 3
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "urgench",
+  "number": "056Ч",
+  "date": "15.10.2026",
+  "planned": "11:39",
+  "actual": "11:35",
+  "deviation": -4
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "urgench",
+  "number": "058Ь",
+  "date": "16.10.2026",
+  "planned": "19:20",
+  "actual": "19:23",
+  "deviation": 3
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "andijan",
+  "number": "125Ч",
+  "date": "15.10.2026",
+  "planned": "15:50",
+  "actual": "15:36",
+  "deviation": -14
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "andijan",
+  "number": "129Ф",
+  "date": "15.10.2026",
+  "planned": "16:40",
+  "actual": "16:30",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-14 13:10",
+  "station": "andijan",
+  "number": "127Ф",
+  "date": "15.10.2026",
+  "planned": "17:30",
+  "actual": "17:20",
   "deviation": -10
  }
 ]
