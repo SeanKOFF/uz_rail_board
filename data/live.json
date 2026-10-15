@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ",
-   "date": "15.10.2026",
-   "time_local": "14:41",
-   "platform": "2",
-   "sold_out": false,
-   "planned": "14:41",
-   "deviation": null
-  },
-  {
    "number": "732Ф",
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "15.10.2026",
@@ -118,6 +108,16 @@
    "platform": "6",
    "sold_out": false,
    "planned": "08:58",
+   "deviation": null
+  },
+  {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "date": "16.10.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
    "deviation": null
   },
   {
@@ -460,7 +460,7 @@
    "date": "17.10.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": false,
+   "sold_out": true,
    "planned": "02:02",
    "deviation": null
   },
@@ -557,26 +557,6 @@
  ],
  "urgench": [
   {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "15.10.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
-  {
-   "number": "126Ч",
-   "route": "УРГАНЧ - АНДИЖОН 1",
-   "date": "15.10.2026",
-   "time_local": "14:50",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:50",
-   "deviation": null
-  },
-  {
    "number": "123Ф",
    "route": "ВОЛГОГР 1 - ТОШКЕНТ-ЙУ",
    "date": "15.10.2026",
@@ -644,6 +624,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "11:59",
+   "deviation": null
+  },
+  {
+   "number": "126Ч",
+   "route": "УРГАНЧ - АНДИЖОН 1",
+   "date": "16.10.2026",
+   "time_local": "14:50",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:50",
    "deviation": null
   },
   {
@@ -916,6 +906,18 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  }
+ ],
+ "qarshi": [
+  {
+   "number": "703Ф",
+   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
+   "date": "15.10.2026",
+   "time_local": "05:40",
+   "platform": null,
+   "sold_out": true,
+   "planned": "05:40",
    "deviation": null
   }
  ],
