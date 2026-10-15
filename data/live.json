@@ -255,36 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "752Ж",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "15.10.2026",
-   "time_local": "09:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:23",
-   "deviation": null
-  },
-  {
-   "number": "766Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "15.10.2026",
-   "time_local": "09:53",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:53",
-   "deviation": null
-  },
-  {
-   "number": "770Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "15.10.2026",
-   "time_local": "10:59",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:59",
-   "deviation": null
-  },
-  {
    "number": "710Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "15.10.2026",
@@ -495,6 +465,16 @@
    "deviation": null
   },
   {
+   "number": "764Ф",
+   "route": "САМАРКАНД - КАРШИ",
+   "date": "16.10.2026",
+   "time_local": "08:56",
+   "platform": null,
+   "sold_out": false,
+   "planned": "08:56",
+   "deviation": null
+  },
+  {
    "number": "753М",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "16.10.2026",
@@ -525,8 +505,8 @@
    "deviation": null
   },
   {
-   "number": "125Ф",
-   "route": "САМАРКАНД - ХИВА",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "17.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -535,8 +515,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ф",
+   "route": "САМАРКАНД - ХИВА",
    "date": "17.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -739,16 +719,6 @@
  ],
  "bukhara": [
   {
-   "number": "751М",
-   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
-   "date": "15.10.2026",
-   "time_local": "10:57",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:57",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "БУХАРА -ХИВА",
    "date": "15.10.2026",
@@ -789,7 +759,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "15.10.2026",
    "time_local": "21:55",
@@ -799,7 +769,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "15.10.2026",
    "time_local": "21:55",
@@ -946,6 +916,16 @@
    "platform": null,
    "sold_out": false,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "127Ф",
+   "route": "БУХАРА -КУНГИРОТ",
+   "date": "18.10.2026",
+   "time_local": "08:58",
+   "platform": null,
+   "sold_out": false,
+   "planned": "08:58",
    "deviation": null
   },
   {
