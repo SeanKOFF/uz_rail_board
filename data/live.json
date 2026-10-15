@@ -255,16 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "15.10.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
    "number": "709Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "15.10.2026",
@@ -422,6 +412,16 @@
    "platform": null,
    "sold_out": false,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "16.10.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
    "deviation": null
   },
   {
