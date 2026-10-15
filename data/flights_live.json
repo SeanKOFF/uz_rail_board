@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T22:32:17.386835+00:00",
+  "updated": "2026-10-15T22:34:00.760010+00:00",
   "flights": [
     {
       "airport": "TAS",
@@ -5189,6 +5189,28 @@
       "status_code": "on_time",
       "status_time": null,
       "scheduled_at": "2026-10-18T03:20:00+05:00",
+      "estimated_at": null,
+      "city": "Moskva",
+      "city_iata": "VKO"
+    },
+    {
+      "airport": "TAS",
+      "event": "arrival",
+      "date": "18.10.2026",
+      "scheduled": "03:30",
+      "estimated": null,
+      "estimated_date": null,
+      "status": "Jadval bo’yicha",
+      "number": "HY614",
+      "flight_id": "334897",
+      "carrier": "Uzbekistan Airways",
+      "terminal": "T2",
+      "airline_iata": "HY",
+      "baggage": null,
+      "codeshare": "",
+      "status_code": "on_time",
+      "status_time": null,
+      "scheduled_at": "2026-10-18T03:30:00+05:00",
       "estimated_at": null,
       "city": "Moskva",
       "city_iata": "VKO"
@@ -12012,6 +12034,28 @@
       "estimated_at": null,
       "city": "Toshkent",
       "city_iata": "TAS"
+    },
+    {
+      "airport": "BHK",
+      "event": "arrival",
+      "date": "18.10.2026",
+      "scheduled": "03:30",
+      "estimated": null,
+      "estimated_date": null,
+      "status": "Jadval bo’yicha",
+      "number": "HY9608",
+      "flight_id": "334896",
+      "carrier": "Uzbekistan Airways",
+      "terminal": null,
+      "airline_iata": "HY",
+      "baggage": null,
+      "codeshare": "",
+      "status_code": "on_time",
+      "status_time": null,
+      "scheduled_at": "2026-10-18T03:30:00+05:00",
+      "estimated_at": null,
+      "city": "Moskva",
+      "city_iata": "VKO"
     },
     {
       "airport": "BHK",
