@@ -1,5 +1,5 @@
 {
-"ts": "2026-10-16T02:17+05:00",
+"ts": "2026-10-16T02:21+05:00",
 "window": ["2026-10-16", "2026-10-17", "2026-10-18"],
 "trips": {
 "0:126743": {"d":"2026-10-16","dep":"2026-10-16 08:45","route":"Ташкент - Карши","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":144,"seats":51,"sold":33,"api":0},
@@ -72,7 +72,7 @@
 "0:127874": {"d":"2026-10-16","dep":"2026-10-16 14:00","route":"Ташкент - Самарканд","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":55,"seats":51,"sold":46,"api":0},
 "0:127875": {"d":"2026-10-17","dep":"2026-10-17 14:00","route":"Ташкент - Самарканд","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":55,"seats":51,"sold":6,"api":0},
 "0:127876": {"d":"2026-10-18","dep":"2026-10-18 14:00","route":"Ташкент - Самарканд","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":55,"seats":51,"sold":2,"api":0},
-"0:127997": {"d":"2026-10-16","dep":"2026-10-16 11:00","route":"Ташкент - Мирбазар","carrier":"\"ASADBEK KAMFORT TRANS\" MCHJ","platform":"13","status":10,"bus":"ASIA STAR 59","route_id":154,"seats":59,"sold":8,"api":0},
+"0:127997": {"d":"2026-10-16","dep":"2026-10-16 11:00","route":"Ташкент - Мирбазар","carrier":"\"ASADBEK KAMFORT TRANS\" MCHJ","platform":"13","status":10,"bus":"ASIA STAR 59","route_id":154,"seats":59,"sold":9,"api":0},
 "0:128011": {"d":"2026-10-16","dep":"2026-10-16 20:30","route":"Ташкент - Карши","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"9","status":10,"bus":"YUTONG 51","route_id":144,"seats":51,"sold":50,"api":0},
 "0:128015": {"d":"2026-10-16","dep":"2026-10-16 22:15","route":"Ташкент - Карши","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"9","status":10,"bus":"YUTONG 51","route_id":144,"seats":51,"sold":21,"api":0},
 "0:128017": {"d":"2026-10-16","dep":"2026-10-16 21:45","route":"Ташкент - Шахрисабз","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"10","status":10,"bus":"YUTONG 51","route_id":227,"seats":51,"sold":15,"api":0},
@@ -161,7 +161,7 @@
 "5:63605": {"d":"2026-10-16","dep":"2026-10-16 06:40","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":36,"api":5},
 "5:63606": {"d":"2026-10-17","dep":"2026-10-17 06:40","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":21,"api":5},
 "5:63607": {"d":"2026-10-18","dep":"2026-10-18 06:40","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":7,"api":5},
-"5:63636": {"d":"2026-10-16","dep":"2026-10-16 08:20","route":"Ташкент - Навои - Учкудук","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 59","route_id":230,"seats":59,"sold":39,"api":5},
+"5:63636": {"d":"2026-10-16","dep":"2026-10-16 08:20","route":"Ташкент - Навои - Учкудук","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 59","route_id":230,"seats":59,"sold":40,"api":5},
 "5:63637": {"d":"2026-10-17","dep":"2026-10-17 08:20","route":"Ташкент - Навои - Учкудук","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":230,"seats":55,"sold":5,"api":5},
 "5:63638": {"d":"2026-10-18","dep":"2026-10-18 08:20","route":"Ташкент - Навои - Учкудук","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":230,"seats":55,"sold":4,"api":5},
 "5:63667": {"d":"2026-10-16","dep":"2026-10-16 11:20","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":15,"api":5},
