@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "305 Ф",
-   "route": "ТАШКЕНТ - МОСКВА",
-   "date": "17.10.2026",
-   "time_local": "00:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "00:32",
-   "deviation": null
-  },
-  {
    "number": "764Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "17.10.2026",
