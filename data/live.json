@@ -275,26 +275,6 @@
  ],
  "samarkand": [
   {
-   "number": "765Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "16.10.2026",
-   "time_local": "18:15",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:15",
-   "deviation": null
-  },
-  {
-   "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "16.10.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
    "number": "709Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "16.10.2026",
@@ -355,7 +335,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "17.10.2026",
    "time_local": "01:30",
@@ -365,7 +345,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "17.10.2026",
    "time_local": "01:30",
@@ -452,6 +432,16 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "763Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "17.10.2026",
+   "time_local": "18:49",
+   "platform": null,
+   "sold_out": false,
+   "planned": "18:49",
    "deviation": null
   },
   {
