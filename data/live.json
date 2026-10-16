@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "16.10.2026",
-   "time_local": "20:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "20:32",
-   "deviation": null
-  },
-  {
    "number": "305 Ф",
    "route": "ТАШКЕНТ - МОСКВА",
    "date": "17.10.2026",
@@ -139,29 +129,19 @@
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
+  },
+  {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "17.10.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
+   "deviation": null
   }
  ],
  "tashkent-south": [
-  {
-   "number": "082Ф",
-   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
-   "date": "16.10.2026",
-   "time_local": "21:12",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:12",
-   "deviation": null
-  },
-  {
-   "number": "080Ф",
-   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
-   "date": "16.10.2026",
-   "time_local": "21:13",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:13",
-   "deviation": null
-  },
   {
    "number": "125Ф",
    "route": "ТАШКЕНТ ЮЖ -ХИВА",
@@ -223,6 +203,26 @@
    "deviation": null
   },
   {
+   "number": "082Ф",
+   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
+   "date": "17.10.2026",
+   "time_local": "21:12",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:12",
+   "deviation": null
+  },
+  {
+   "number": "080Ф",
+   "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
+   "date": "17.10.2026",
+   "time_local": "21:13",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:13",
+   "deviation": null
+  },
+  {
    "number": "127Ф",
    "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
    "date": "18.10.2026",
@@ -275,26 +275,6 @@
  ],
  "samarkand": [
   {
-   "number": "715Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "16.10.2026",
-   "time_local": "20:24",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:24",
-   "deviation": null
-  },
-  {
-   "number": "054Ф",
-   "route": "САМАРКАНД - КУНГИРОТ",
-   "date": "16.10.2026",
-   "time_local": "20:36",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:36",
-   "deviation": null
-  },
-  {
    "number": "772Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "16.10.2026",
@@ -315,7 +295,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "17.10.2026",
    "time_local": "01:30",
@@ -325,7 +305,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "17.10.2026",
    "time_local": "01:30",
@@ -422,6 +402,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "18:49",
+   "deviation": null
+  },
+  {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "17.10.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
    "deviation": null
   },
   {
