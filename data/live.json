@@ -310,7 +310,7 @@
    "date": "18.10.2026",
    "time_local": "03:00",
    "platform": null,
-   "sold_out": false,
+   "sold_out": true,
    "planned": "03:00",
    "deviation": null
   },
