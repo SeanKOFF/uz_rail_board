@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "124Ф",
-   "route": "Ташкент-Волжский",
-   "date": "18.10.2026",
-   "time_local": "00:10",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "00:10",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "18.10.2026",
