@@ -1,13 +1,13 @@
 {
  "tashkent-central": [
   {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "17.10.2026",
-   "time_local": "20:32",
-   "platform": "3",
+   "number": "124Ф",
+   "route": "Ташкент-Волжский",
+   "date": "18.10.2026",
+   "time_local": "00:10",
+   "platform": "1",
    "sold_out": false,
-   "planned": "20:32",
+   "planned": "00:10",
    "deviation": null
   },
   {
@@ -115,9 +115,19 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "18.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
+   "deviation": null
+  },
+  {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "18.10.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
    "deviation": null
   },
   {
@@ -275,26 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "715Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "17.10.2026",
-   "time_local": "20:24",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:24",
-   "deviation": null
-  },
-  {
-   "number": "054Ф",
-   "route": "САМАРКАНД - КУНГИРОТ",
-   "date": "17.10.2026",
-   "time_local": "20:36",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:36",
-   "deviation": null
-  },
-  {
    "number": "772Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "17.10.2026",
@@ -350,7 +340,7 @@
    "date": "18.10.2026",
    "time_local": "03:00",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "03:00",
    "deviation": null
   },
@@ -405,6 +395,16 @@
    "deviation": null
   },
   {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "18.10.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
+   "deviation": null
+  },
+  {
    "number": "123Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "19.10.2026",
@@ -425,8 +425,8 @@
    "deviation": null
   },
   {
-   "number": "125Ч",
-   "route": "САМАРКАНД - УРГАНЧ",
+   "number": "072Ф",
+   "route": "САМАРКАНД - ОЛОТ",
    "date": "19.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -435,8 +435,8 @@
    "deviation": null
   },
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
+   "number": "125Ч",
+   "route": "САМАРКАНД - УРГАНЧ",
    "date": "19.10.2026",
    "time_local": "03:00",
    "platform": null,
@@ -475,7 +475,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "20.10.2026",
    "time_local": "01:30",
@@ -485,7 +485,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "САМАРКАНД - АНДИЖОН 1",
    "date": "20.10.2026",
    "time_local": "01:30",
