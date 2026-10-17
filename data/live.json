@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "17.10.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "17.10.2026",
@@ -118,6 +108,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "17:50",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "18.10.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
    "deviation": null
   },
   {
@@ -274,26 +274,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "709Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "17.10.2026",
-   "time_local": "19:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:23",
-   "deviation": null
-  },
-  {
-   "number": "777Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "17.10.2026",
-   "time_local": "20:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:01",
-   "deviation": null
-  },
   {
    "number": "715Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
@@ -536,26 +516,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "056Ж",
-   "route": "ХИВА - ТОШКЕНТ ЖА",
-   "date": "17.10.2026",
-   "time_local": "19:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:20",
-   "deviation": 3
-  },
-  {
-   "number": "754Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "17.10.2026",
-   "time_local": "19:31",
-   "platform": null,
-   "sold_out": true,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "ТОШКЕНТ ЖА - ХИВА",
