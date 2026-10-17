@@ -609,16 +609,6 @@
  ],
  "bukhara": [
   {
-   "number": "054Ф",
-   "route": "БУХАРА -КУНГИРОТ",
-   "date": "17.10.2026",
-   "time_local": "23:37",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:37",
-   "deviation": null
-  },
-  {
    "number": "056Ж",
    "route": "БУХАРА -ТОШКЕНТ ЖА",
    "date": "18.10.2026",
