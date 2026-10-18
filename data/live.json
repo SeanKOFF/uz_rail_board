@@ -265,26 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "765Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "18.10.2026",
-   "time_local": "18:15",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:15",
-   "deviation": null
-  },
-  {
-   "number": "773Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "18.10.2026",
-   "time_local": "18:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:49",
-   "deviation": null
-  },
-  {
    "number": "709Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "18.10.2026",
@@ -709,16 +689,6 @@
  ],
  "bukhara": [
   {
-   "number": "423Щ",
-   "route": "БУХАРА -МОСКВА ПАВ",
-   "date": "18.10.2026",
-   "time_local": "18:26",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "123Ф",
    "route": "БУХАРА -ТОШКЕНТ-ЙУ",
    "date": "18.10.2026",
@@ -933,6 +903,16 @@
    "route": "БУХАРА -КУЛЯБ",
    "date": "25.10.2026",
    "time_local": "15:20",
+   "platform": null,
+   "sold_out": true,
+   "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "423Щ",
+   "route": "БУХАРА -МОСКВА ПАВ",
+   "date": "01.11.2026",
+   "time_local": "18:26",
    "platform": null,
    "sold_out": true,
    "planned": null,
