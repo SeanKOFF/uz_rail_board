@@ -143,16 +143,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "054",
-   "route": "ТАШКЕНТ-КУНГИРАД",
-   "date": "18.10.2026",
-   "time_local": "16:00",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "16:00",
-   "deviation": null
-  },
-  {
    "number": "082Ф",
    "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
    "date": "18.10.2026",
@@ -190,6 +180,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "06:18",
+   "deviation": null
+  },
+  {
+   "number": "054",
+   "route": "ТАШКЕНТ-КУНГИРАД",
+   "date": "19.10.2026",
+   "time_local": "16:00",
+   "platform": "3",
+   "sold_out": false,
+   "planned": "16:00",
    "deviation": null
   },
   {
