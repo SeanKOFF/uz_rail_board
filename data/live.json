@@ -75,7 +75,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "19.10.2026",
    "time_local": "07:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:30",
    "deviation": null
@@ -85,7 +85,7 @@
    "route": "ТАШКЕНТ --САМАРКАНД",
    "date": "19.10.2026",
    "time_local": "07:55",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:55",
    "deviation": null
@@ -95,7 +95,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "19.10.2026",
    "time_local": "08:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "08:30",
    "deviation": null
@@ -105,7 +105,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "19.10.2026",
    "time_local": "08:37",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "08:37",
    "deviation": null
@@ -115,7 +115,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "19.10.2026",
    "time_local": "08:58",
-   "platform": null,
+   "platform": "5",
    "sold_out": false,
    "planned": "08:58",
    "deviation": null
@@ -125,7 +125,7 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "19.10.2026",
    "time_local": "11:20",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": null,
    "deviation": null
@@ -135,7 +135,7 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "22.10.2026",
    "time_local": "06:10",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:10",
    "deviation": null
