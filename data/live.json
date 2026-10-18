@@ -115,7 +115,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "19.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
@@ -648,16 +648,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "054Ф",
-   "route": "БУХАРА -КУНГИРОТ",
-   "date": "18.10.2026",
-   "time_local": "23:37",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:37",
-   "deviation": null
-  },
   {
    "number": "056Ж",
    "route": "БУХАРА -ТОШКЕНТ ЖА",
