@@ -45,7 +45,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "19.10.2026",
    "time_local": "06:33",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:33",
    "deviation": null
@@ -65,7 +65,7 @@
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "19.10.2026",
    "time_local": "07:20",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "07:20",
    "deviation": null
@@ -264,26 +264,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "752Ж",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "18.10.2026",
-   "time_local": "09:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:23",
-   "deviation": null
-  },
-  {
-   "number": "766Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "18.10.2026",
-   "time_local": "09:53",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:53",
-   "deviation": null
-  },
   {
    "number": "770Ф",
    "route": "САМАРКАНД - БУХОРО 1",
