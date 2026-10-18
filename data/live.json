@@ -15,7 +15,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "18.10.2026",
    "time_local": "20:32",
-   "platform": "3",
+   "platform": "6",
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
@@ -264,16 +264,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "709Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "18.10.2026",
-   "time_local": "19:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:23",
-   "deviation": null
-  },
   {
    "number": "777Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
