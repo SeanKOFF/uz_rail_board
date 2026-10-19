@@ -255,16 +255,6 @@
  ],
  "samarkand": [
   {
-   "number": "716Ф",
-   "route": "САМАРКАНД - КАРШИ",
-   "date": "19.10.2026",
-   "time_local": "12:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:30",
-   "deviation": null
-  },
-  {
    "number": "751М",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "19.10.2026",
