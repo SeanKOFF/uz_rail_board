@@ -1,6 +1,16 @@
 {
  "tashkent-central": [
   {
+   "number": "778Ф",
+   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
+   "date": "19.10.2026",
+   "time_local": "06:09",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "06:10",
+   "deviation": -1
+  },
+  {
    "number": "764Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "19.10.2026",
@@ -129,16 +139,6 @@
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
-  },
-  {
-   "number": "778Ф",
-   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
-   "date": "22.10.2026",
-   "time_local": "06:10",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "06:10",
-   "deviation": null
   }
  ],
  "tashkent-south": [
@@ -264,36 +264,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "771Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "19.10.2026",
-   "time_local": "05:21",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:21",
-   "deviation": null
-  },
-  {
-   "number": "080Ь",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "19.10.2026",
-   "time_local": "05:29",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:29",
-   "deviation": null
-  },
-  {
-   "number": "082Г",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "19.10.2026",
-   "time_local": "05:29",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:29",
-   "deviation": null
-  },
   {
    "number": "711Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
@@ -799,26 +769,6 @@
  ],
  "bukhara": [
   {
-   "number": "058З",
-   "route": "БУХАРА -ШОВОТ",
-   "date": "19.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
-   "date": "19.10.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
    "number": "125Ч",
    "route": "БУХАРА -УРГАНЧ",
    "date": "19.10.2026",
@@ -906,6 +856,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "01:09",
+   "deviation": null
+  },
+  {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
+   "date": "20.10.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
    "deviation": null
   },
   {
