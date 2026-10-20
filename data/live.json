@@ -205,16 +205,6 @@
  ],
  "samarkand": [
   {
-   "number": "056Ч",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "21.10.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
    "number": "072Ф",
    "route": "САМАРКАНД - ОЛОТ",
    "date": "21.10.2026",
