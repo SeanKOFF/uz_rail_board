@@ -376,6 +376,7 @@ class Hunter:
         m = u.get("message") or {}
         chat = (m.get("chat") or {}).get("id")
         text = (m.get("text") or "").strip()
+        text = self.MENU_TEXTS.get(text, text)      # кнопки под полем ввода
         if chat is None or not text.startswith("/"):
             return
         cmd = text.split()[0].split("@")[0].lower()
@@ -383,7 +384,8 @@ class Hunter:
             known = self._allowed(chat)
             self.send(chat, f"Закрытая бета: бот сообщает о появлении мест на скоростные поезда. "
                             f"Ваш id: {chat}." + ("" if known else " Передайте его владельцу бота, "
-                            "если хотите получать уведомления."))
+                            "если хотите получать уведомления."),
+                      self.MENU_KB if known else None)
             if not known:
                 f = m.get("from") or {}
                 self.warn(f"/start от нового пользователя: id {chat}, {f.get('first_name', '')} "
@@ -396,9 +398,7 @@ class Hunter:
                 t_, rows_ = self._from_screen()
                 self.send(chat, t_, {"inline_keyboard": rows_})
             else:
-                self.send(chat, "Что сделать?", {"inline_keyboard": [[
-                    {"text": "➕ Добавить подписку", "callback_data": "w|n"},
-                    {"text": "📋 Мои подписки", "callback_data": "w|l"}]]})
+                self.send(chat, "Кнопки меню — под полем ввода.", self.MENU_KB)
         elif cmd == "/list":
             self.send(chat, self._list_text(chat), self._kb(self._list_markup(chat)))
         elif cmd == "/resume":
@@ -659,13 +659,16 @@ class Hunter:
         if notify:                                   # сообщить приглашённому (если он уже нажал /start)
             res = self.send(target, "Вас пригласили в закрытую бету бота: он сообщает о появлении мест на "
                                     "скоростные поезда. Добавить подписку: /watch Откуда Куда дата, например "
-                                    "/watch Ташкент Самарканд 25.10. Ваши подписки: /list.")
+                                    "/watch Ташкент Самарканд 25.10. Ваши подписки: /list.", self.MENU_KB)
             if isinstance(res, tuple) and not res[0]:
                 done += (f"\nБот не смог написать ему ({res[1]}): пусть сначала нажмёт /start, "
                          "приглашение уже сохранено.")
         return done
 
     # --- кнопочное меню (патч seats-menu): станции и даты выбираются нажатиями
+    MENU_KB = {"keyboard": [[{"text": "➕ Добавить подписку"}, {"text": "📋 Мои подписки"}]],
+               "resize_keyboard": True, "is_persistent": True}
+    MENU_TEXTS = {"➕ Добавить подписку": "/watch", "📋 Мои подписки": "/list"}
     MENU_CITIES = ("Ташкент", "Самарканд", "Бухара", "Ургенч")    # где ходят скоростные поезда
     PAGE_DAYS = 14
 
