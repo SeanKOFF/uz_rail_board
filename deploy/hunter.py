@@ -687,7 +687,12 @@ class Hunter:
         try:
             self.api("editMessageText", body)
         except Exception as e:                  # «message is not modified» и т. п. — не страшно
-            print(f"✗ меню: {type(e).__name__}", flush=True)
+            detail = ""
+            try:
+                detail = e.read().decode("utf-8", "replace")[:200]
+            except Exception:
+                pass
+            print(f"✗ меню: {type(e).__name__} {getattr(e, 'code', '')} {detail}", flush=True)
 
     @staticmethod
     def _kb(rows):
@@ -753,6 +758,14 @@ class Hunter:
         return rows
 
     def _on_menu(self, cq):
+        t0 = time.time()
+        try:
+            return self._on_menu_inner(cq)
+        finally:
+            chat_ = ((cq.get("message") or {}).get("chat") or {}).get("id")
+            print(f"меню: {cq.get('data')} чат {chat_} за {int((time.time() - t0) * 1000)} мс", flush=True)
+
+    def _on_menu_inner(self, cq):
         data = cq.get("data") or ""
         msg = cq.get("message") or {}
         chat = (msg.get("chat") or {}).get("id")
@@ -762,6 +775,7 @@ class Hunter:
             body = {"callback_query_id": cq.get("id")}
             if text:
                 body["text"] = text
+                print(f"меню: всплывающий ответ «{text}»", flush=True)
             try:
                 self.api("answerCallbackQuery", body)
             except Exception:
