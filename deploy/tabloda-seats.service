@@ -8,6 +8,8 @@ Wants=network-online.target
 [Service]
 DynamicUser=yes
 StateDirectory=tabloda-seats
+# оповещения в Telegram (TG_TOKEN, TG_CHAT); файла может не быть — тогда только журнал
+EnvironmentFile=-/opt/tabloda-seats/alert.env
 WorkingDirectory=/opt/tabloda-seats
 ExecStart=/usr/bin/python3 -u /opt/tabloda-seats/seats_windows.py
 Restart=on-failure

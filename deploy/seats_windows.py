@@ -31,6 +31,16 @@ gap — сколько секунд прошло с прошлого опрос�
     python3 seats_windows.py --plan           # окна и нагрузка, без сети
     python3 seats_windows.py --upload [ДАТА]  # выгрузить журнал за сутки в репозиторий
                                               # (по умолчанию — вчера)
+    python3 seats_windows.py --cert           # срок действия сертификата источника
+    python3 seats_windows.py --alert-test     # тестовое сообщение в Telegram
+
+Оповещения (TG_TOKEN и TG_CHAT из /opt/tabloda-seats/alert.env; без них — только
+строка ⚠ в журнале службы): сертификат источника истекает через <7 дней (раз в
+сутки, проверка каждые 6 ч); источник отдаёт неверный/просроченный сертификат
+(сразу, после первой серии из 5 ошибок); любая другая недоступность — после 3 серий
+подряд (~30 мин; ночное обслуживание в 02:31–02:34 укладывается в одну серию);
+«снова отвечает» — когда ответы вернулись. 18.10 сертификат источника был просрочен
+с 05:00 до 09:16 по Ташкенту, и мы узнали об этом только из разбора журнала.
 
 Выгрузка: GitHub Contents API, путь data/seats_windows/ДАТА.jsonl, нужен
 GH_TOKEN с правом Contents: Read and write. Без него — ✗ 403, журнал остаётся
@@ -41,11 +51,14 @@ import base64
 import json
 import os
 import signal
+import socket
+import ssl
 import sys
 import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta
+from urllib.parse import urlparse
 
 import seats_watch as W   # fetch, seats_of, diff, had_trains, station_codes — один источник правды
 
@@ -55,6 +68,9 @@ REPO = os.environ.get("GH_REPO", "SeanKOFF/uz_rail_board")
 GH_API = os.environ.get("GH_API", "https://api.github.com")
 PAUSE = 0.5
 STOP = False
+TG_TOKEN = os.environ.get("TG_TOKEN", "")
+TG_CHAT = os.environ.get("TG_CHAT", "")
+CERT_WARN_DAYS = 7
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
 # Направления частых окон: главные из seats_watch плюс Ташкент⇄Ургенч (Мангуберди).
 # 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос.
@@ -125,6 +141,52 @@ def due_tasks(t, codes, sched, last, orig=None):
                   key=lambda x: x[2])                    # частые окна первыми
 
 
+# ---------------------------------------------------------------- оповещения
+
+def alert(text):
+    """Строка ⚠ в журнал службы и, если заданы TG_TOKEN и TG_CHAT, сообщение в Telegram."""
+    print(f"⚠ {text}", flush=True)
+    if not (TG_TOKEN and TG_CHAT):
+        return False
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", method="POST",
+        data=json.dumps({"chat_id": TG_CHAT, "text": "tabloda.uz, замер мест: " + text}).encode(),
+        headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return r.status == 200
+    except Exception as e:     # токен в тексте исключения может быть — печатаем только тип и код
+        print(f"✗ в Telegram не отправлено: {type(e).__name__} {getattr(e, 'code', '')}", flush=True)
+        return False
+
+
+def cert_left(host=None, port=443, ctx=None):
+    """-> (дней до конца сертификата, строка notAfter). Бросает ssl.SSLCertVerificationError,
+    если сертификат уже просрочен или не проходит проверку (проверку не отключаем)."""
+    host = host or urlparse(W.API).hostname
+    ctx = ctx or ssl.create_default_context()
+    with socket.create_connection((host, port), timeout=15) as s:
+        with ctx.wrap_socket(s, server_hostname=host) as t:
+            na = t.getpeercert()["notAfter"]
+    return (ssl.cert_time_to_seconds(na) - time.time()) / 86400, na
+
+
+def check_cert(warned_day):
+    """Печатает срок сертификата; предупреждает не чаще раза в сутки. -> дата последнего предупреждения."""
+    try:
+        days, na = cert_left()
+    except Exception as e:
+        print(f"✗ сертификат источника не проверить: {type(e).__name__} {str(e)[:150]}", flush=True)
+        return warned_day
+    print(f"сертификат источника действует до {na}: {days:.0f} дн", flush=True)
+    today = now().date().isoformat()
+    if days < CERT_WARN_DAYS and warned_day != today:
+        alert(f"сертификат источника ({urlparse(W.API).hostname}) истекает через {days:.0f} дн "
+              f"({na}). Если не обновят — замер встанет, пока не обновят.")
+        return today
+    return warned_day
+
+
 # ---------------------------------------------------------------- состояние и журнал
 
 def load_state():
@@ -172,9 +234,13 @@ def run():
     codes = W.station_codes()
     seats, sched, orig, last = load_state()
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
+    pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
     while not STOP:
         t = now()
+        if time.time() - cert_at > 6 * 3600:
+            cert_at = time.time()
+            cert_warned = check_cert(cert_warned)
         todo = due_tasks(t, codes, sched, last, orig)
         if not todo:
             time.sleep(5)
@@ -194,11 +260,27 @@ def run():
         line = {"ts": now().isoformat(timespec="seconds"), "w": w, "t": task, "st": code}
         if prev:
             line["gap"] = round(t0 - prev)
+        if trains is not None:                 # источник ответил — серия ошибок кончилась
+            if alerted:
+                alert(f"источник снова отвечает (перерыв {round((time.time() - out_since) / 60)} мин)")
+            pauses, alerted, out_since = 0, False, None
         if trains is None:
             line["err"] = (err or "")[:200]
             fails += 1
             if fails >= 5:
                 print("✗ 5 ошибок подряд — пауза 10 минут", flush=True)
+                pauses += 1
+                out_since = out_since or time.time()
+                bad_cert = "CERTIFICATE_VERIFY_FAILED" in (err or "")
+                if not alerted and (bad_cert or pauses >= 3):
+                    alerted = True
+                    if bad_cert:
+                        alert("источник отдаёт сертификат, который не проходит проверку "
+                              "(просрочен?). Данные не пишутся, проверку не отключаем. "
+                              f"Последняя ошибка: {(err or '')[:160]}")
+                    else:
+                        alert(f"источник не отвечает уже ~{pauses * 10} мин. "
+                              f"Последняя ошибка: HTTP {code} {(err or '')[:160]}")
                 time.sleep(600)
                 fails = 0
         elif not trains and W.had_trains(seats, task):
@@ -293,6 +375,17 @@ def main():
     a = sys.argv[1:]
     if a[:1] == ["--plan"]:
         cmd_plan()
+    elif a[:1] == ["--cert"]:
+        try:
+            days, na = cert_left()
+            print(f"сертификат источника действует до {na}: {days:.0f} дн")
+        except Exception as e:
+            print(f"✗ {type(e).__name__}: {str(e)[:200]}")
+            sys.exit(1)
+    elif a[:1] == ["--alert-test"]:
+        if not (TG_TOKEN and TG_CHAT):
+            sys.exit("✗ нет TG_TOKEN или TG_CHAT (см. /opt/tabloda-seats/alert.env)")
+        sys.exit(0 if alert("проверка связи, ничего делать не нужно") else 1)
     elif a[:1] == ["--upload"]:
         day = a[1] if len(a) > 1 else (now().date() - timedelta(days=1)).isoformat()
         sys.exit(0 if upload(day) else 1)

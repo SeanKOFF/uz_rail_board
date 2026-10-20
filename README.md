@@ -183,6 +183,32 @@ journalctl -u tabloda-seats -f                 # раз в час «за час:
 sudo systemctl start tabloda-seats-upload      # выгрузить вчерашний журнал сейчас
 ```
 
+### Оповещения
+
+18.10 у источника с 05:00 до 09:16 по Ташкенту был просрочен сертификат (новый — с
+18.10 00:00 GMT до 4.05.2027), и о сбое мы узнали только из журнала. Теперь замер сам
+пишет в Telegram: сертификат источника истекает меньше чем через 7 дней (проверка
+каждые 6 ч, не чаще раза в сутки); источник отдаёт сертификат, не прошедший проверку
+(сразу); любая другая недоступность дольше ~30 мин; «снова отвечает». Ночное
+обслуживание источника в 02:31–02:34 одиночной серии ошибок не даёт оповещения.
+Проверку сертификата это не отключает.
+
+Настройка (один раз): в Telegram создать бота у @BotFather, получить токен; написать
+боту любое сообщение и открыть `https://api.telegram.org/bot<ТОКЕН>/getUpdates` —
+в ответе `"chat":{"id":…}`. Токен и id — в `/opt/tabloda-seats/alert.env` (создаётся
+установщиком, права 600, не перезаписывается):
+
+    TG_TOKEN=…
+    TG_CHAT=…
+
+```bash
+sudo systemctl restart tabloda-seats
+sudo sh -c 'set -a; . /opt/tabloda-seats/alert.env; set +a; cd /opt/tabloda-seats && python3 seats_windows.py --alert-test'
+cd /opt/tabloda-seats && python3 seats_windows.py --cert    # срок сертификата прямо сейчас
+```
+
+Без `alert.env` оповещения идут только строкой ⚠ в `journalctl -u tabloda-seats`.
+
 Повторный запуск установщика обновляет код и юниты. Остановить замер —
 `sudo systemctl disable --now tabloda-seats tabloda-seats-upload.timer`.
 

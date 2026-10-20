@@ -22,6 +22,13 @@ chmod 644 "$DIR"/*.py "$DIR"/*.json
 python3 -c "import ast; [ast.parse(open('$DIR/'+f).read()) for f in ('seats_watch.py','seats_windows.py')]"
 (cd "$DIR" && python3 seats_windows.py --plan)
 
+if [ ! -e "$DIR/alert.env" ]; then      # существующий файл с токеном не трогаем
+  ( umask 077; printf '%s\n' '# Оповещения в Telegram. Раскомментируй и заполни, затем: systemctl restart tabloda-seats' \
+      '#TG_TOKEN=' '#TG_CHAT=' > "$DIR/alert.env" )
+fi
+chmod 600 "$DIR/alert.env"
+grep -q '^TG_TOKEN=.' "$DIR/alert.env" || echo "! оповещения в Telegram не настроены — $DIR/alert.env"
+
 [ -s /opt/tabloda-dispatch/dispatch.env ] || echo "! нет /opt/tabloda-dispatch/dispatch.env — выгрузка в репозиторий работать не будет"
 cp "$DIR"/units/* "$UNITS/"
 systemctl daemon-reload
