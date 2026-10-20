@@ -370,6 +370,8 @@ class Hunter:
     def handle_update(self, u):
         cq = u.get("callback_query")
         if cq:
+            if (cq.get("data") or "").startswith("w|"):
+                return self._on_menu(cq)
             return self._on_button(cq)
         m = u.get("message") or {}
         chat = (m.get("chat") or {}).get("id")
@@ -386,8 +388,19 @@ class Hunter:
                 f = m.get("from") or {}
                 self.warn(f"/start от нового пользователя: id {chat}, {f.get('first_name', '')} "
                           f"@{f.get('username', '')}")
+        elif cmd == "/menu" or (cmd == "/watch" and len(text.split()) == 1):
+            if not self._allowed(chat):
+                self.send(chat, f"Доступ по приглашению. Ваш id: {chat} — передайте его владельцу бота.")
+            elif cmd == "/watch":
+                self._w()[chat] = {"f": None, "t": None, "ds": set(), "pg": 0}
+                t_, rows_ = self._from_screen()
+                self.send(chat, t_, {"inline_keyboard": rows_})
+            else:
+                self.send(chat, "Что сделать?", {"inline_keyboard": [[
+                    {"text": "➕ Добавить подписку", "callback_data": "w|n"},
+                    {"text": "📋 Мои подписки", "callback_data": "w|l"}]]})
         elif cmd == "/list":
-            self.send(chat, self._list_text(chat))
+            self.send(chat, self._list_text(chat), self._kb(self._list_markup(chat)))
         elif cmd == "/resume":
             with self.lock:
                 mine = [x for x in self.mutes if x[0] == chat]
@@ -410,7 +423,7 @@ class Hunter:
             self.send(chat, reply)
         else:
             self.send(chat, "Команды: /list — ваши подписки, /watch — добавить, /unwatch — убрать, "
-                            "/resume — вернуть снятые даты, /start — ваш id.")
+                            "/resume — вернуть снятые даты, /menu — кнопки, /start — ваш id.")
 
     # --- подписки из бота: /watch и /unwatch (патч seats-watch-cmd)
     def _allowed(self, chat):
@@ -651,6 +664,183 @@ class Hunter:
                 done += (f"\nБот не смог написать ему ({res[1]}): пусть сначала нажмёт /start, "
                          "приглашение уже сохранено.")
         return done
+
+    # --- кнопочное меню (патч seats-menu): станции и даты выбираются нажатиями
+    MENU_CITIES = ("Ташкент", "Самарканд", "Бухара", "Ургенч")    # где ходят скоростные поезда
+    PAGE_DAYS = 14
+
+    def _w(self):
+        if not hasattr(self, "_wiz"):
+            self._wiz = {}                      # чат -> выбор в процессе; после рестарта старые кнопки «устарели»
+        return self._wiz
+
+    def _cities(self):
+        return [k for k in self.MENU_CITIES if k in self.codes]
+
+    def _screen(self, chat, mid, text, rows):
+        body = {"chat_id": chat, "message_id": mid, "text": text, "disable_web_page_preview": True}
+        if rows is not None:
+            body["reply_markup"] = {"inline_keyboard": rows}
+        try:
+            self.api("editMessageText", body)
+        except Exception as e:                  # «message is not modified» и т. п. — не страшно
+            print(f"✗ меню: {type(e).__name__}", flush=True)
+
+    @staticmethod
+    def _kb(rows):
+        return None if rows is None else {"inline_keyboard": rows}
+
+    @staticmethod
+    def _grid(btns, n):
+        return [btns[j:j + n] for j in range(0, len(btns), n)]
+
+    def _from_screen(self):
+        btns = [{"text": c, "callback_data": f"w|f|{i}"} for i, c in enumerate(self._cities())]
+        rows = self._grid(btns, 2) + [[{"text": "Отмена", "callback_data": "w|c"}]]
+        return "Откуда едем?", rows
+
+    def _to_screen(self, st):
+        cs = self._cities()
+        btns = [{"text": c, "callback_data": f"w|t|{i}"} for i, c in enumerate(cs) if i != st["f"]]
+        rows = self._grid(btns, 2) + [[{"text": "‹ Назад", "callback_data": "w|b"},
+                                        {"text": "Отмена", "callback_data": "w|c"}]]
+        return f"Откуда: {cs[st['f']]}. Куда?", rows
+
+    def _dates_screen(self, st, note=""):
+        cs = self._cities()
+        today = datetime.now(TZ).date()
+        wd = ("пн", "вт", "ср", "чт", "пт", "сб", "вс")
+        total = HORIZON + 1
+        a = st["pg"] * self.PAGE_DAYS
+        b = min(a + self.PAGE_DAYS, total)
+        btns = []
+        for k in range(a, b):
+            d = today + timedelta(days=k)
+            mark = "✓ " if d.isoformat() in st["ds"] else ""
+            btns.append({"text": f"{mark}{wd[d.weekday()]} {d:%d.%m}", "callback_data": f"w|d|{d.isoformat()}"})
+        rows = self._grid(btns, 4)
+        nav = []
+        if st["pg"] > 0:
+            nav.append({"text": "‹ Раньше", "callback_data": f"w|p|{st['pg'] - 1}"})
+        if b < total:
+            nav.append({"text": "Позже ›", "callback_data": f"w|p|{st['pg'] + 1}"})
+        if nav:
+            rows.append(nav)
+        rows.append([{"text": f"Готово ({len(st['ds'])})", "callback_data": "w|ok"}])
+        rows.append([{"text": "‹ Назад", "callback_data": "w|b"}, {"text": "Отмена", "callback_data": "w|c"}])
+        chosen = self._fmt_dates(st["ds"]) if st["ds"] else "пока ничего"
+        text = ((note + "\n\n") if note else "") + (f"{cs[st['f']]} → {cs[st['t']]}\n"
+                "Отметьте даты (повторное нажатие снимает), затем «Готово».\n" f"Выбрано: {chosen}")
+        return text, rows
+
+    def _list_markup(self, chat):
+        if not self._allowed(chat):
+            return None
+        today = datetime.now(TZ).date().isoformat()
+        rows = []
+        for s in self.subs:
+            if s["chat"] != chat:
+                continue
+            for d in sorted(x for x in s["dates"] if x >= today):
+                label = (f"✖ {self.names.get(s['dep'], s['dep'])} → {self.names.get(s['arv'], s['arv'])} "
+                         f"{d[8:10]}.{d[5:7]}")
+                rows.append([{"text": label, "callback_data": f"w|u|{s['dep']}|{s['arv']}|{d}"}])
+        rows = rows[:12]
+        rows.append([{"text": "➕ Добавить подписку", "callback_data": "w|n"}])
+        return rows
+
+    def _on_menu(self, cq):
+        data = cq.get("data") or ""
+        msg = cq.get("message") or {}
+        chat = (msg.get("chat") or {}).get("id")
+        mid = msg.get("message_id")
+
+        def ack(text=None):
+            body = {"callback_query_id": cq.get("id")}
+            if text:
+                body["text"] = text
+            try:
+                self.api("answerCallbackQuery", body)
+            except Exception:
+                pass
+
+        if chat is None or mid is None or not self._allowed(chat):
+            return ack("Доступ по приглашению")
+        p = data.split("|")
+        cs, st = self._cities(), self._w().get(chat)
+        today = datetime.now(TZ).date()
+        who = {"from": cq.get("from") or {}}
+        try:
+            act = p[1]
+            if act == "n":
+                self._w()[chat] = st = {"f": None, "t": None, "ds": set(), "pg": 0}
+                text, rows = self._from_screen()
+            elif act == "l":
+                text, rows = self._list_text(chat), self._list_markup(chat)
+            elif act == "c":
+                self._w().pop(chat, None)
+                text, rows = "Отменено. /menu — открыть заново.", None
+            elif act == "u" and len(p) == 5:
+                dep, arv, d = p[2], p[3], p[4]
+                date.fromisoformat(d)
+                nm = lambda c: self.names.get(c, c)
+                text = self._edit_subs(chat, who, [nm(dep), nm(arv), f"{d[8:10]}.{d[5:7]}"], add=False)
+                rows = self._list_markup(chat)
+            elif act in ("f", "t", "d", "p", "b", "ok"):
+                if st is None:
+                    return ack("Меню устарело — откройте заново: /watch")
+                if act == "f":
+                    i = int(p[2])
+                    if not 0 <= i < len(cs):
+                        raise ValueError
+                    st["f"], st["t"] = i, None
+                    text, rows = self._to_screen(st)
+                elif act == "t":
+                    i = int(p[2])
+                    if st["f"] is None or i == st["f"] or not 0 <= i < len(cs):
+                        raise ValueError
+                    st["t"], st["pg"] = i, 0
+                    text, rows = self._dates_screen(st)
+                elif st["f"] is None or (act != "b" and st["t"] is None):
+                    raise ValueError
+                elif act == "d":
+                    d = date.fromisoformat(p[2])
+                    if not today <= d <= today + timedelta(days=HORIZON):
+                        raise ValueError
+                    st["ds"] ^= {d.isoformat()}
+                    text, rows = self._dates_screen(st)
+                elif act == "p":
+                    n = int(p[2])
+                    if not 0 <= n * self.PAGE_DAYS <= HORIZON:
+                        raise ValueError
+                    st["pg"] = n
+                    text, rows = self._dates_screen(st)
+                elif act == "b":
+                    if st["t"] is not None:
+                        st["t"] = None
+                        text, rows = self._to_screen(st)
+                    else:
+                        st["f"] = None
+                        text, rows = self._from_screen()
+                else:                                         # ok
+                    if not st["ds"]:
+                        return ack("Сначала отметьте хотя бы одну дату")
+                    toks = [cs[st["f"]], cs[st["t"]]] + [f"{x[8:10]}.{x[5:7]}" for x in sorted(st["ds"])]
+                    res = self._edit_subs(chat, who, toks, add=True)
+                    if res.startswith("Добавлено"):
+                        self._w().pop(chat, None)
+                        text, rows = res, self._list_markup(chat)
+                    else:                                     # потолок, сбой записи и т. п. — остаёмся на датах
+                        text, rows = self._dates_screen(st, note=res)
+            else:
+                raise ValueError
+        except (ValueError, IndexError, TypeError):
+            return ack("Кнопка не распознана")
+        except Exception as e:
+            print(f"✗ меню: {type(e).__name__} {e}", flush=True)
+            return ack("Не получилось, попробуйте ещё раз")
+        ack()
+        self._screen(chat, mid, text, rows)
 
     def _list_text(self, chat):
         mine = [s for s in self.subs if s["chat"] == chat]
