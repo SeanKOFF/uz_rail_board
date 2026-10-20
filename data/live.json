@@ -235,16 +235,6 @@
  ],
  "samarkand": [
   {
-   "number": "710Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "20.10.2026",
-   "time_local": "12:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:00",
-   "deviation": null
-  },
-  {
    "number": "716Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "20.10.2026",
@@ -658,16 +648,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "752Ж",
-   "route": "БУХАРА -ХИВА",
-   "date": "20.10.2026",
-   "time_local": "11:14",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:14",
-   "deviation": null
-  },
   {
    "number": "126Ф",
    "route": "БУХАРА -АНДИЖОН 1",
