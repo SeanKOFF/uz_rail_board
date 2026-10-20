@@ -183,7 +183,7 @@ class Hunter:
     def _load_mutes(self):
         try:
             with open(self.mutes_path, encoding="utf-8") as f:
-                today = date.today().isoformat()
+                today = datetime.now(TZ).date().isoformat()
                 return {tuple(x) for x in json.load(f) if x[3] >= today}
         except (OSError, ValueError, IndexError, TypeError):
             return set()
@@ -393,15 +393,175 @@ class Hunter:
             for x in mine:
                 self.set_mute(*x, on=False)
             self.send(chat, f"Возвращено дат: {len(mine)}." if mine else "Снятых дат нет.")
+        elif cmd in ("/watch", "/unwatch"):
+            try:
+                reply = self._edit_subs(chat, m, text.split()[1:], add=(cmd == "/watch"))
+            except Exception as e:
+                print(f"✗ {cmd}: {type(e).__name__} {e}", flush=True)
+                reply = "Не получилось обработать команду."
+            self.send(chat, reply)
         else:
-            self.send(chat, "Команды: /list — ваши подписки, /resume — вернуть снятые даты, "
-                            "/start — ваш id.")
+            self.send(chat, "Команды: /list — ваши подписки, /watch — добавить, /unwatch — убрать, "
+                            "/resume — вернуть снятые даты, /start — ваш id.")
+
+    # --- подписки из бота: /watch и /unwatch (патч seats-watch-cmd)
+    def _allowed(self, chat):
+        return chat == self.owner or any(s["chat"] == chat for s in self.subs)
+
+    def _station_key(self, word):
+        norm = lambda x: x.strip().lower().replace("ё", "е")
+        w = norm(word)
+        cand = [k for k in self.codes if norm(k) == w] or [k for k in self.codes if norm(k).startswith(w)]
+        return cand[0] if cand and len({self.codes[k] for k in cand}) == 1 else None
+
+    def _user_dates(self, tokens, today, past_ok=False):
+        """«25.10» или «25.10..27.10» -> множество ISO-дат. ValueError — текст для человека."""
+        import re
+        out = set()
+        for t in tokens:
+            a, _, b = t.partition("..")
+            ds = []
+            for part in (a, b or a):
+                m = re.fullmatch(r"(\d{1,2})\.(\d{1,2})", part)
+                if not m:
+                    raise ValueError(f"Не понял дату «{t}», нужен вид 25.10 или 25.10..27.10.")
+                try:
+                    d = date(today.year, int(m.group(2)), int(m.group(1)))
+                except ValueError:
+                    raise ValueError(f"Нет такой даты: «{part}».")
+                if d < today and (today - d).days > 200:     # 05.01 в конце декабря — это следующий год
+                    d = d.replace(year=d.year + 1)
+                ds.append(d)
+            if ds[1] < ds[0] or (ds[1] - ds[0]).days > 30:
+                raise ValueError(f"Диапазон «{t}» неверный или длиннее 31 дня.")
+            if ds[0] < today and not past_ok:
+                raise ValueError(f"Дата {ds[0]:%d.%m} уже прошла.")
+            out |= {(ds[0] + timedelta(days=i)).isoformat() for i in range((ds[1] - ds[0]).days + 1)}
+        return out
+
+    @staticmethod
+    def _fmt_dates(ds):
+        ds = sorted(ds)
+        f = lambda d: f"{d[8:10]}.{d[5:7]}"
+        return ", ".join(f(d) for d in ds) if len(ds) <= 6 else f"{f(ds[0])}…{f(ds[-1])} ({len(ds)} дат)"
+
+    def _edit_subs(self, chat, m, args, add):
+        """/watch Откуда Куда дата [мин_мест] и /unwatch Откуда Куда [дата] -> текст ответа."""
+        import re
+        if not self._allowed(chat):
+            return f"Доступ по приглашению. Ваш id: {chat} — передайте его владельцу бота."
+        today = datetime.now(TZ).date()
+        usage = ("Формат: /watch Откуда Куда дата [мин_мест]\n"
+                 "Пример: /watch Ташкент Самарканд 25.10 2\n"
+                 "Диапазон дат: 25.10..27.10. Убрать: /unwatch Откуда Куда [дата].")
+        dtok = [a for a in args if re.fullmatch(r"\d{1,2}\.\d{1,2}(\.\.\d{1,2}\.\d{1,2})?", a)]
+        rest = [a for a in args if a not in dtok]
+        nums = [a for a in rest if a.isdigit()]
+        words = [a for a in rest if not a.isdigit()]
+        if len(words) != 2 or len(nums) > 1 or (add and not dtok) or (nums and not add):
+            return usage
+        n = int(nums[0]) if nums else None
+        if n is not None and not 1 <= n <= 50:
+            return "Мин. мест — число от 1 до 50."
+        keys = [self._station_key(w) for w in words]
+        for w, k in zip(words, keys):
+            if k is None:
+                return f"Не знаю станцию «{w}». Доступные: " + ", ".join(sorted(self.codes))[:600]
+        fk, tk = keys
+        dep, arv = self.codes[fk], self.codes[tk]
+        if dep == arv:
+            return "Откуда и куда совпадают."
+        try:
+            dates = self._user_dates(dtok, today, past_ok=not add)
+        except ValueError as e:
+            return str(e)
+        iso_today = today.isoformat()
+        with self.lock:
+            try:
+                with open(CONF, encoding="utf-8") as f:
+                    data = json.load(f)
+            except (OSError, ValueError) as e:
+                self.warn(f"/watch: subs.json не прочитан: {type(e).__name__} {e}")
+                return "Не получилось прочитать файл подписок, владельцу сообщено."
+            raw = data.setdefault("subs", [])
+            same = [x for x in raw if str(x.get("chat")) == str(chat)
+                    and self.codes.get(x.get("from")) == dep and self.codes.get(x.get("to")) == arv]
+            if add:
+                if same:
+                    e0 = same[0]
+                    try:
+                        old = parse_dates(e0["dates"])
+                    except Exception:
+                        old = set()
+                    e0["dates"] = sorted(d for d in old | dates if d >= iso_today)
+                    if n:
+                        e0["min"] = n
+                    shown_min = e0.get("min", 1)
+                else:
+                    nm = (next((x.get("name") for x in raw if str(x.get("chat")) == str(chat) and x.get("name")), None)
+                          or (m.get("from") or {}).get("first_name") or str(chat))
+                    raw.append({"chat": chat, "name": nm, "from": fk, "to": tk,
+                                "dates": sorted(dates), "min": n or 1})
+                    shown_min = n or 1
+                done = f"Добавлено: {self.names.get(dep, dep)} → {self.names.get(arv, arv)}, " \
+                       f"{self._fmt_dates(dates)}. Мест от {shown_min}."
+            else:
+                if not same:
+                    return "Такой подписки нет."
+                removed = set()
+                for x in same:
+                    try:
+                        old = parse_dates(x["dates"])
+                    except Exception:
+                        old = set()
+                    if dates:
+                        left = old - dates
+                        removed |= old & dates
+                        if left:
+                            x["dates"] = sorted(left)
+                        else:
+                            raw.remove(x)
+                    else:
+                        removed |= old
+                        raw.remove(x)
+                if dates and not removed:
+                    return "Этих дат в подписке нет."
+                done = f"Снято: {self.names.get(dep, dep)} → {self.names.get(arv, arv)}" + \
+                       (f", {self._fmt_dates(removed)}." if dates else ", вся подписка.")
+            tmp = CONF + ".tmp"
+            try:
+                with open(tmp, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                subs, _ = load_subs(tmp, self.codes)
+                if add:                           # потолки — те же, что в tasks()
+                    lim = (today + timedelta(days=HORIZON)).isoformat()
+                    trip = lambda ss: {(s["dep"], s["arv"], d) for s in ss for d in s["dates"]
+                                       if iso_today <= d <= lim
+                                       and (s["chat"], s["dep"], s["arv"], d) not in self.mutes}
+                    mine = trip([s for s in subs if s["chat"] == chat])
+                    if len(mine) > MAX_PER_CHAT:
+                        os.remove(tmp)
+                        return (f"Потолок: не больше {MAX_PER_CHAT} дат на человека, с этой подпиской вышло "
+                                f"{len(mine)}. Уберите лишнее: /unwatch Откуда Куда дата.")
+                    if len(trip(subs)) > MAX_TOTAL:
+                        os.remove(tmp)
+                        return "Общий потолок опроса исчерпан, подписка не добавлена. Напишите владельцу бота."
+                os.replace(tmp, CONF)
+            except OSError as e:
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                self.warn(f"/watch: subs.json не записан: {type(e).__name__} {e}")
+                return "Не получилось сохранить подписку, владельцу сообщено."
+            self.subs, self.mtime, self.checked, self.active_key = subs, None, 0, None
+        return done + "\n\n" + self._list_text(chat)
 
     def _list_text(self, chat):
         mine = [s for s in self.subs if s["chat"] == chat]
         if not mine:
             return "Подписок нет."
-        today = date.today().isoformat()
+        today = datetime.now(TZ).date().isoformat()
         lines = []
         for s in mine:
             ds = sorted(d for d in s["dates"] if d >= today)
