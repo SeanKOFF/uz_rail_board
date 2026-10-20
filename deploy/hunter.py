@@ -24,7 +24,8 @@ seats_windows.py (тот же опрос, те же события — отде�
   new     у пары+даты, где поезда уже были, появился ещё один поезд (возможно,
           замена номера: 778Ф → 778Ж)
 
-Опрос подписок — «hunt», раз в HUNT_EVERY секунд, только даты в пределах
+Опрос подписок — «hunt», раз в HUNT_EVERY секунд (по умолчанию 120: одиночные возвраты
+живут 1–5 минут, при шаге 4 минуты половина пролетала бы мимо), только даты в пределах
 горизонта продаж (0…59 дней). Потолки: MAX_PER_CHAT пар «направление+дата» на
 человека и MAX_TOTAL всего, лишнее не опрашивается (владельцу — одно ⚠).
 
@@ -44,12 +45,20 @@ CONF = os.environ.get("HUNT_CONFIG", os.path.join(HERE, "subs.json"))
 TG_API = os.environ.get("TG_API", "https://api.telegram.org")
 SITE = "https://eticket.uzrailpass.uz"
 TZ = timezone(timedelta(hours=5))
-HUNT_EVERY = 240          # сек между опросами одной пары+даты
+HUNT_EVERY = int(os.environ.get("HUNT_EVERY", 120))   # сек между опросами одной пары+даты (HUNT_EVERY в alert.env)
 STALE = 900               # сек: если прошлый опрос пары+даты был раньше — «было 0» не доверяем
 HORIZON = 59              # дней вперёд, где продажа открыта
 MAX_PER_CHAT = 8
 MAX_TOTAL = 12
 WD = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
+
+
+def seats_word(n):
+    """1 место, 2–4 места, 5+ мест (11–14 — мест)."""
+    n = abs(int(n))
+    if n % 100 in range(11, 15):
+        return f"{n} мест"
+    return f"{n} " + ("место" if n % 10 == 1 else "места" if n % 10 in (2, 3, 4) else "мест")
 
 
 # ---------------------------------------------------------------- Telegram
@@ -238,7 +247,7 @@ class Hunter:
             for key, tot, prev in sorted(rows, key=lambda r: r[0].split("|")[4]):
                 num, tm = key.split("|")[3:5]
                 cls = {k[4:]: v for k, v in seats.get(key, {}).items() if k.startswith("cls:")}
-                row = f"  {num} {tm} — {tot} мест" + (f" (было {prev})" if kind == "seats" and prev is not None else "")
+                row = f"  {num} {tm} — {seats_word(tot)}" + (f" (было {prev})" if kind == "seats" and prev is not None else "")
                 if cls and sum(cls.values()) == tot:      # разбивка по классам верна не у всех поездов
                     row += " · " + ", ".join(f"{k} {v}" for k, v in sorted(cls.items()))
                 out.append(row)
