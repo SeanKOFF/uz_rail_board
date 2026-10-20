@@ -237,11 +237,20 @@ cd /opt/tabloda-seats && python3 seats_windows.py --cert    # срок серт�
 не опрашивается, владельцу приходит ⚠). Это ≤ 720 запросов в сутки на пару+дату поверх
 замера в окнах.
 
-Как добавить знакомого: он открывает бота в Telegram и нажимает /start, затем
+Кнопка и команды. Под сообщением о местах на дату — кнопка «Купил — снять эту дату»:
+пара+дата снимается только для нажавшего и перестаёт опрашиваться (если больше никому
+не нужна); сообщение редактируется, кнопка пропадает. Снятые даты лежат в `mutes.json`
+рядом с состоянием (переживают перезапуск, прошедшие даты чистятся при чтении), в
+`subs.json` ничего не меняется. Команды: `/list` — свои подписки (со снятыми датами),
+`/resume` — вернуть снятые, `/start` — ответить id чата. Для этого сервис держит
+фоновый long polling (`getUpdates`, поток `Listener` в `hunter.py`); пока сервис
+работает, `--who` получает 409 или пусто — он не нужен.
+
+Как добавить знакомого: он открывает бота в Telegram и нажимает /start — бот отвечает
+ему «Ваш id», а владельцу приходит ⚠ с id, именем и @username. Дальше:
 
 ```bash
-sudo sh -c 'set -a; . /opt/tabloda-seats/alert.env; set +a; cd /opt/tabloda-seats && python3 seats_windows.py --who'
-sudo nano /opt/tabloda-seats/subs.json                 # chat — из вывода --who
+sudo nano /opt/tabloda-seats/subs.json                 # chat — id из ⚠
 sudo sh -c 'set -a; . /opt/tabloda-seats/alert.env; set +a; cd /opt/tabloda-seats && python3 seats_windows.py --hunt-status --send'
 ```
 

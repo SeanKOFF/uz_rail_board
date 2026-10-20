@@ -31,10 +31,21 @@ seats_windows.py (тот же опрос, те же события — отде�
 
     python3 seats_windows.py --who            # кто писал боту: id чатов для subs.json
     python3 seats_windows.py --hunt-status    # что сейчас по подпискам (--send — разослать)
+
+Бот слушает сообщения (поток Listener внутри сервиса, getUpdates):
+  кнопка «Купил — снять эту дату» под сообщением — пара+дата снимается у этого
+          человека (mutes.json в каталоге состояния), опрос по ней прекращается,
+          если больше никому не нужна; остальные подписки и подписчики не затронуты
+  /start  отвечает человеку его id, владельцу (TG_CHAT) сообщает, кто пришёл
+  /list   подписки человека и снятые даты
+  /resume вернуть снятые даты
+Пока работает сервис, `--who` может получить 409: обновления разбирает сервис —
+достаточно, чтобы человек нажал /start.
 """
 
 import json
 import os
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -71,12 +82,14 @@ def tg(token, method, body, timeout=15):
         return json.loads(r.read() or b"{}")
 
 
-def tg_send(token, chat, text):
-    """-> (ok, пояснение). Токена в пояснении нет."""
+def tg_send(token, chat, text, markup=None):
+    """-> (ok, пояснение). Токена в пояснении нет. markup — inline-клавиатура."""
+    body_ = {"chat_id": chat, "text": text, "disable_web_page_preview": True}
+    if markup:
+        body_["reply_markup"] = markup
     for attempt in (1, 2):
         try:
-            tg(token, "sendMessage", {"chat_id": chat, "text": text,
-                                      "disable_web_page_preview": True})
+            tg(token, "sendMessage", body_)
             return True, ""
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "replace")
@@ -152,14 +165,43 @@ def load_subs(path, codes):
 # ---------------------------------------------------------------- охотник
 
 class Hunter:
-    def __init__(self, codes, token, send=None, alert=print):
+    def __init__(self, codes, token, send=None, alert=print, api=None, owner=None, state_dir=None):
         self.codes = codes
         self.names = {v: k for k, v in codes.items()}
-        self.send = send or (lambda chat, text: tg_send(token, chat, text))
+        self.send = send or (lambda chat, text, markup=None: tg_send(token, chat, text, markup))
+        self.api = api or (lambda method, body: tg(token, method, body))
         self.alert = alert                     # сообщение владельцу (сбои конфига, чат недоступен)
+        self.owner = int(owner) if str(owner or "").lstrip("-").isdigit() else None
         self.subs, self.mtime, self.checked = [], None, 0
         self.active, self.active_key = {}, None
         self.cool, self.said, self.dead = {}, set(), set()
+        self.lock = threading.Lock()
+        self.mutes_path = os.path.join(state_dir or os.environ.get("STATE_DIRECTORY") or HERE, "mutes.json")
+        self.mutes = self._load_mutes()
+
+    # --- снятые кнопкой даты: (чат, откуда, куда, дата)
+    def _load_mutes(self):
+        try:
+            with open(self.mutes_path, encoding="utf-8") as f:
+                today = date.today().isoformat()
+                return {tuple(x) for x in json.load(f) if x[3] >= today}
+        except (OSError, ValueError, IndexError, TypeError):
+            return set()
+
+    def _save_mutes(self):
+        tmp = self.mutes_path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(sorted(self.mutes), f, ensure_ascii=False)
+        os.replace(tmp, self.mutes_path)
+
+    def set_mute(self, chat, dep, arv, d, on=True):
+        with self.lock:
+            (self.mutes.add if on else self.mutes.discard)((chat, dep, arv, d))
+            self.active_key = None            # список задач пересчитается
+            try:
+                self._save_mutes()
+            except OSError as e:
+                self.warn(f"mutes.json не записан: {e}")
 
     # --- конфиг и список опрашиваемых задач
     def reload(self):
@@ -196,6 +238,8 @@ class Hunter:
         lim = today + timedelta(days=HORIZON)
         for s in self.subs:
             for d in sorted(s["dates"]):
+                if (s["chat"], s["dep"], s["arv"], d) in self.mutes:
+                    continue
                 if today.isoformat() <= d <= lim.isoformat():
                     per_chat.setdefault(s["chat"], []).append((d, s))
         for chat, lst in per_chat.items():
@@ -257,7 +301,7 @@ class Hunter:
         out.append(SITE)
         return "\n".join(out)
 
-    def _deliver(self, s, task, items, seats, resumed=False, cool=True):
+    def _deliver(self, s, task, items, seats, resumed=False, cool=True, button=False):
         """-> число отправленных сообщений (0 или 1)."""
         if s["chat"] in self.dead:
             return 0
@@ -267,7 +311,12 @@ class Hunter:
                      if now - self.cool.get((s["chat"], i[1]), 0) >= s["cool"] or i[2] >= 10]
         if not items:
             return 0
-        ok, why = self.send(s["chat"], self._text(task, items, seats, resumed))
+        markup = None
+        if button:                               # снять эту дату после покупки
+            dep_, arv_, d_ = task.split("|")
+            markup = {"inline_keyboard": [[{"text": "Купил — снять эту дату",
+                                            "callback_data": f"d|{dep_}|{arv_}|{d_}"}]]}
+        ok, why = self.send(s["chat"], self._text(task, items, seats, resumed), markup)
         if ok:
             for _, key, _, _ in items:
                 self.cool[(s["chat"], key)] = now
@@ -305,7 +354,7 @@ class Hunter:
         for s in self.active.get(task, []):      # подписки на эту дату
             mine = [e for e in ev if self._match(s, e[1], e[2])]
             if mine:
-                sent += self._deliver(s, task, mine, seats, resumed)
+                sent += self._deliver(s, task, mine, seats, resumed, button=True)
                 told.add(s["chat"])
         opened = [e for e in ev if e[0] == "opened"]
         for s in self.subs:                      # «новые даты» по направлению
@@ -314,3 +363,111 @@ class Hunter:
                 if mine:
                     sent += self._deliver(s, task, mine, seats, resumed, cool=False)
         return sent
+
+
+    # --- сообщения и кнопки от людей
+    def handle_update(self, u):
+        cq = u.get("callback_query")
+        if cq:
+            return self._on_button(cq)
+        m = u.get("message") or {}
+        chat = (m.get("chat") or {}).get("id")
+        text = (m.get("text") or "").strip()
+        if chat is None or not text.startswith("/"):
+            return
+        cmd = text.split()[0].split("@")[0].lower()
+        if cmd == "/start":
+            known = any(s["chat"] == chat for s in self.subs) or chat == self.owner
+            self.send(chat, f"Закрытая бета: бот сообщает о появлении мест на скоростные поезда. "
+                            f"Ваш id: {chat}." + ("" if known else " Передайте его владельцу бота, "
+                            "если хотите получать уведомления."))
+            if not known:
+                f = m.get("from") or {}
+                self.warn(f"/start от нового пользователя: id {chat}, {f.get('first_name', '')} "
+                          f"@{f.get('username', '')}")
+        elif cmd == "/list":
+            self.send(chat, self._list_text(chat))
+        elif cmd == "/resume":
+            with self.lock:
+                mine = [x for x in self.mutes if x[0] == chat]
+            for x in mine:
+                self.set_mute(*x, on=False)
+            self.send(chat, f"Возвращено дат: {len(mine)}." if mine else "Снятых дат нет.")
+        else:
+            self.send(chat, "Команды: /list — ваши подписки, /resume — вернуть снятые даты, "
+                            "/start — ваш id.")
+
+    def _list_text(self, chat):
+        mine = [s for s in self.subs if s["chat"] == chat]
+        if not mine:
+            return "Подписок нет."
+        today = date.today().isoformat()
+        lines = []
+        for s in mine:
+            ds = sorted(d for d in s["dates"] if d >= today)
+            off = [d for d in ds if (chat, s["dep"], s["arv"], d) in self.mutes]
+            on = [d for d in ds if d not in off]
+            fmt = lambda xs: ", ".join(f"{d[8:10]}.{d[5:7]}" for d in xs) or "—"
+            lines.append(f"{self.names.get(s['dep'], s['dep'])} → {self.names.get(s['arv'], s['arv'])}: "
+                         f"{fmt(on)}" + (f" (снято: {fmt(off)})" if off else "")
+                         + (" · новые даты" if s["new"] else ""))
+        return "Ваши подписки:\n" + "\n".join(lines)
+
+    def _on_button(self, cq):
+        data = cq.get("data") or ""
+        msg = cq.get("message") or {}
+        chat = (msg.get("chat") or {}).get("id")
+        try:
+            kind, dep, arv, d = data.split("|")
+            date.fromisoformat(d)
+            if kind != "d" or chat is None:
+                raise ValueError
+        except ValueError:
+            self.api("answerCallbackQuery", {"callback_query_id": cq.get("id"), "text": "Кнопка не распознана"})
+            return
+        self.set_mute(chat, dep, arv, d)
+        label = f"{self.names.get(dep, dep)} → {self.names.get(arv, arv)}, {d[8:10]}.{d[5:7]}"
+        print(f"кнопка: чат {chat} снял {label}", flush=True)
+        self.api("answerCallbackQuery", {"callback_query_id": cq.get("id"),
+                                         "text": f"Готово: {label} снято"})
+        if msg.get("message_id") and msg.get("text"):     # убрать кнопку, оставить текст
+            try:
+                self.api("editMessageText", {"chat_id": chat, "message_id": msg["message_id"],
+                                             "text": msg["text"] + f"\n\nПодписка на эту дату снята ({label}). "
+                                                                   "Вернуть: /resume",
+                                             "disable_web_page_preview": True})
+            except Exception as e:
+                print(f"✗ сообщение не обновлено: {type(e).__name__}", flush=True)
+
+
+class Listener(threading.Thread):
+    """Слушает сообщения и кнопки (getUpdates, long polling) и передаёт их охотнику."""
+
+    def __init__(self, hunter, token):
+        super().__init__(daemon=True)
+        self.hunter, self.token, self.stopped, self.offset = hunter, token, False, None
+
+    def run(self):
+        errs = 0
+        while not self.stopped:
+            try:
+                body = {"timeout": 25, "allowed_updates": ["message", "callback_query"]}
+                if self.offset:
+                    body["offset"] = self.offset
+                t0 = time.time()
+                res = tg(self.token, "getUpdates", body, timeout=40).get("result", [])
+                errs = 0
+                if not res and time.time() - t0 < 1:      # долгий опрос не держится — не крутиться вхолостую
+                    time.sleep(2)
+            except Exception as e:
+                errs += 1
+                if errs in (1, 10):
+                    print(f"✗ getUpdates: {type(e).__name__} {getattr(e, 'code', '')}", flush=True)
+                time.sleep(min(5 * errs, 60))
+                continue
+            for u in res:
+                self.offset = u["update_id"] + 1
+                try:
+                    self.hunter.handle_update(u)
+                except Exception as e:       # один плохой апдейт не должен убить слушателя
+                    print(f"✗ обработка обновления: {type(e).__name__} {e}", flush=True)

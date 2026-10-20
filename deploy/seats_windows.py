@@ -236,7 +236,10 @@ def run():
     os.makedirs(DATA, exist_ok=True)
     codes = W.station_codes()
     seats, sched, orig, last, empty = load_state()
-    hunter = H.Hunter(codes, TG_TOKEN, alert=alert)
+    hunter = H.Hunter(codes, TG_TOKEN, alert=alert, owner=TG_CHAT, state_dir=DATA)
+    listener = H.Listener(hunter, TG_TOKEN) if TG_TOKEN else None
+    if listener:
+        listener.start()
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
@@ -324,6 +327,8 @@ def run():
             print(f"за час: {n} запросов", flush=True)
             n, last_report = 0, time.time()
         time.sleep(PAUSE)
+    if listener:
+        listener.stopped = True
     save_state(seats, sched, orig, last, empty)
     print("остановлен", flush=True)
 
@@ -374,7 +379,10 @@ def upload(day):
 def cmd_hunt_status(send):
     """Один раз опросить пары+даты из подписок и показать (и с --send разослать) текущие места."""
     codes = W.station_codes()
-    hunter = H.Hunter(codes, TG_TOKEN, alert=alert)
+    sd = DATA                                   # снятые кнопкой даты лежат в каталоге состояния сервиса
+    if "STATE_DIRECTORY" not in os.environ and os.path.isdir("/var/lib/tabloda-seats"):
+        sd = "/var/lib/tabloda-seats"
+    hunter = H.Hunter(codes, TG_TOKEN, alert=alert, owner=TG_CHAT, state_dir=sd)
     active = hunter.tasks(now().date())
     if not active:
         print("подписок нет (или все даты вне горизонта продаж): см. subs.json")
