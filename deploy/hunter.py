@@ -4,8 +4,9 @@
 seats_windows.py (тот же опрос, те же события — отдельного опроса «для бота» нет),
 только на стандартной библиотеке.
 
-Подписки — файл subs.json рядом со скриптом (/opt/tabloda-seats/subs.json), правится
-вручную, перечитывается раз в минуту без перезапуска сервиса:
+Подписки — файл subs.json в каталоге состояния (/var/lib/tabloda-seats/subs.json, путь
+задаёт HUNT_CONFIG), правится ботом (/watch, /unwatch) или вручную через sudo,
+перечитывается раз в минуту без перезапуска сервиса:
 
     {"subs": [
       {"chat": 123456789, "name": "Sean",
@@ -52,7 +53,7 @@ import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CONF = os.environ.get("HUNT_CONFIG", os.path.join(HERE, "subs.json"))
+CONF = os.environ.get("HUNT_CONFIG") or os.path.join(os.environ.get("STATE_DIRECTORY") or HERE, "subs.json")
 TG_API = os.environ.get("TG_API", "https://api.telegram.org")
 SITE = "https://eticket.uzrailpass.uz"
 TZ = timezone(timedelta(hours=5))
@@ -480,6 +481,8 @@ class Hunter:
             try:
                 with open(CONF, encoding="utf-8") as f:
                     data = json.load(f)
+            except FileNotFoundError:               # свежий сервер: файла ещё нет, начинаем с пустого
+                data = {"subs": []}
             except (OSError, ValueError) as e:
                 self.warn(f"/watch: subs.json не прочитан: {type(e).__name__} {e}")
                 return "Не получилось прочитать файл подписок, владельцу сообщено."

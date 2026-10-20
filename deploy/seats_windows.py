@@ -385,7 +385,7 @@ def cmd_hunt_status(send):
     hunter = H.Hunter(codes, TG_TOKEN, alert=alert, owner=TG_CHAT, state_dir=sd)
     active = hunter.tasks(now().date())
     if not active:
-        print("подписок нет (или все даты вне горизонта продаж): см. subs.json")
+        print("подписок нет (или все даты вне горизонта продаж): см. subs.json, /watch в боте")
         return
     text = {}
     for task in sorted(active, key=lambda k: (k.split("|")[2], k)):

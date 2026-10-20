@@ -30,8 +30,6 @@ chmod 600 "$DIR/alert.env"
 grep -q '^TG_TOKEN=.' "$DIR/alert.env" || echo "! оповещения в Telegram не настроены — $DIR/alert.env"
 
 # подписки охотника: читает процесс сервиса (DynamicUser) — файл 644; существующий не трогаем
-[ -e "$DIR/subs.json" ] || printf '{"subs": []}\n' > "$DIR/subs.json"
-chmod 644 "$DIR/subs.json"
 curl -fsSL "$RAW/deploy/subs.example.json" -o "$DIR/subs.example.json" || true
 
 [ -s /opt/tabloda-dispatch/dispatch.env ] || echo "! нет /opt/tabloda-dispatch/dispatch.env — выгрузка в репозиторий работать не будет"
