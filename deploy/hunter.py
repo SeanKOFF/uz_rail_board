@@ -776,10 +776,14 @@ class Hunter:
             if text:
                 body["text"] = text
                 print(f"меню: всплывающий ответ «{text}»", flush=True)
-            try:
-                self.api("answerCallbackQuery", body)
-            except Exception:
-                pass
+            def send_ack():                 # не держим Listener, если Telegram отвечает медленно
+                t1 = time.time()
+                try:
+                    self.api("answerCallbackQuery", body)
+                except Exception as e:
+                    print(f"✗ меню: ответ на нажатие не ушёл ({type(e).__name__}) "
+                          f"за {int((time.time() - t1) * 1000)} мс", flush=True)
+            threading.Thread(target=send_ack, daemon=True).start()
 
         if chat is None or mid is None or not self._allowed(chat):
             return ack("Доступ по приглашению")
