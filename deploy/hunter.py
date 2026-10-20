@@ -378,7 +378,7 @@ class Hunter:
             return
         cmd = text.split()[0].split("@")[0].lower()
         if cmd == "/start":
-            known = any(s["chat"] == chat for s in self.subs) or chat == self.owner
+            known = self._allowed(chat)
             self.send(chat, f"Закрытая бета: бот сообщает о появлении мест на скоростные поезда. "
                             f"Ваш id: {chat}." + ("" if known else " Передайте его владельцу бота, "
                             "если хотите получать уведомления."))
@@ -394,6 +394,13 @@ class Hunter:
             for x in mine:
                 self.set_mute(*x, on=False)
             self.send(chat, f"Возвращено дат: {len(mine)}." if mine else "Снятых дат нет.")
+        elif cmd in ("/invite", "/uninvite"):
+            try:
+                reply = self._invite(chat, text.split()[1:], add=(cmd == "/invite"))
+            except Exception as e:
+                print(f"✗ {cmd}: {type(e).__name__} {e}", flush=True)
+                reply = "Не получилось обработать команду."
+            self.send(chat, reply)
         elif cmd in ("/watch", "/unwatch"):
             try:
                 reply = self._edit_subs(chat, m, text.split()[1:], add=(cmd == "/watch"))
@@ -407,7 +414,8 @@ class Hunter:
 
     # --- подписки из бота: /watch и /unwatch (патч seats-watch-cmd)
     def _allowed(self, chat):
-        return chat == self.owner or any(s["chat"] == chat for s in self.subs)
+        return (chat == self.owner or any(s["chat"] == chat for s in self.subs)
+                or chat in self._invited_ids())
 
     def _station_key(self, word):
         norm = lambda x: x.strip().lower().replace("ё", "е")
@@ -559,6 +567,90 @@ class Hunter:
                 return "Не получилось сохранить подписку, владельцу сообщено."
             self.subs, self.mtime, self.checked, self.active_key = subs, None, 0, None
         return done + "\n\n" + self._list_text(chat)
+
+    # --- приглашения (патч seats-invite): владелец пускает людей без правки файла
+    def _invited_ids(self):
+        try:
+            with open(CONF, encoding="utf-8") as f:
+                return {int(x["chat"]) for x in json.load(f).get("invited", [])}
+        except Exception:
+            return set()
+
+    def _invite(self, chat, args, add):
+        """/invite id [имя], /invite (список), /uninvite id — только владельцу -> текст ответа."""
+        if self.owner is None or chat != self.owner:
+            return "Команда только для владельца бота."
+        usage = "/invite id [имя] — пригласить, /invite — список, /uninvite id — убрать вместе с подписками."
+        target = None
+        if args or not add:
+            try:
+                target = int(args[0])
+            except (ValueError, IndexError):
+                return usage
+        name = " ".join(args[1:]).strip()
+        notify = False
+        with self.lock:
+            try:
+                with open(CONF, encoding="utf-8") as f:
+                    data = json.load(f)
+            except FileNotFoundError:
+                data = {"subs": []}
+            except (OSError, ValueError) as e:
+                self.warn(f"/invite: subs.json не прочитан: {type(e).__name__} {e}")
+                return "Не получилось прочитать файл подписок, владельцу сообщено."
+            inv = data.setdefault("invited", [])
+            raw = data.setdefault("subs", [])
+            if add and target is None:               # список
+                names = {}
+                for x in raw:
+                    names.setdefault(str(x.get("chat")), x.get("name") or "")
+                lines = [f"{x.get('chat')} {x.get('name') or ''}".strip() for x in inv]
+                out = "Приглашены:\n" + "\n".join(lines) if lines else "Приглашённых нет."
+                if names:
+                    out += "\n\nЕсть подписки у:\n" + "\n".join(f"{c} {n}".strip() for c, n in names.items())
+                return out
+            if add:
+                found = [x for x in inv if str(x.get("chat")) == str(target)]
+                if found:
+                    if name:
+                        found[0]["name"] = name
+                    done = f"{target} уже приглашён."
+                else:
+                    inv.append({"chat": target, "name": name or str(target)})
+                    done = f"Приглашён: {target}" + (f" ({name})." if name else ".")
+                    notify = True
+            else:
+                if target == self.owner:
+                    return "Владельца убирать нельзя."
+                n_inv = len(inv)
+                data["invited"] = [x for x in inv if str(x.get("chat")) != str(target)]
+                n_subs = sum(1 for x in raw if str(x.get("chat")) == str(target))
+                data["subs"] = [x for x in raw if str(x.get("chat")) != str(target)]
+                if n_inv == len(data["invited"]) and not n_subs:
+                    return "Такого id нет среди приглашённых и подписчиков."
+                done = f"Убрано: {target}, подписок удалено: {n_subs}."
+            tmp = CONF + ".tmp"
+            try:
+                with open(tmp, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                subs, _ = load_subs(tmp, self.codes)
+                os.replace(tmp, CONF)
+            except OSError as e:
+                try:
+                    os.remove(tmp)
+                except OSError:
+                    pass
+                self.warn(f"/invite: subs.json не записан: {type(e).__name__} {e}")
+                return "Не получилось сохранить, владельцу сообщено."
+            self.subs, self.mtime, self.checked, self.active_key = subs, None, 0, None
+        if notify:                                   # сообщить приглашённому (если он уже нажал /start)
+            res = self.send(target, "Вас пригласили в закрытую бету бота: он сообщает о появлении мест на "
+                                    "скоростные поезда. Добавить подписку: /watch Откуда Куда дата, например "
+                                    "/watch Ташкент Самарканд 25.10. Ваши подписки: /list.")
+            if isinstance(res, tuple) and not res[0]:
+                done += (f"\nБот не смог написать ему ({res[1]}): пусть сначала нажмёт /start, "
+                         "приглашение уже сохранено.")
+        return done
 
     def _list_text(self, chat):
         mine = [s for s in self.subs if s["chat"] == chat]
