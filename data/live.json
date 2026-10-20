@@ -235,16 +235,6 @@
  ],
  "samarkand": [
   {
-   "number": "770Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "20.10.2026",
-   "time_local": "10:59",
-   "platform": null,
-   "sold_out": false,
-   "planned": "10:59",
-   "deviation": null
-  },
-  {
    "number": "710Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "20.10.2026",
