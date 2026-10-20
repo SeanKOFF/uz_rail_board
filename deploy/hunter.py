@@ -45,6 +45,7 @@ TG_API = os.environ.get("TG_API", "https://api.telegram.org")
 SITE = "https://eticket.uzrailpass.uz"
 TZ = timezone(timedelta(hours=5))
 HUNT_EVERY = 240          # сек между опросами одной пары+даты
+STALE = 900               # сек: если прошлый опрос пары+даты был раньше — «было 0» не доверяем
 HORIZON = 59              # дней вперёд, где продажа открыта
 MAX_PER_CHAT = 8
 MAX_TOTAL = 12
@@ -226,9 +227,10 @@ class Hunter:
         dep, arv, d = task.split("|")
         dd = date.fromisoformat(d)
         titles = {"opened": "Открылась продажа" + (" после паузы" if resumed else ""),
-                  "seats": "Появились места", "new": "Новый поезд в выдаче (возможно, замена номера)"}
+                  "seats": "Появились места", "new": "Новый поезд в выдаче (возможно, замена номера)",
+                  "now": "Сейчас есть места (прошлая проверка была давно — когда они появились, неизвестно)"}
         out = [f"{self.names.get(dep, dep)} → {self.names.get(arv, arv)}, {WD[dd.weekday()]} {dd:%d.%m}"]
-        for kind in ("opened", "seats", "new"):
+        for kind in ("opened", "seats", "new", "now"):
             rows = [(k, tot, prev) for kd, k, tot, prev in items if kd == kind]
             if not rows:
                 continue
@@ -266,9 +268,11 @@ class Hunter:
         self.warn(f"в чат {s['chat']} ({s['name']}) не доставлено: {why}")
         return 0
 
-    def after(self, task, before, was_empty, seats):
+    def after(self, task, before, was_empty, seats, stale=False):
         """Вызывать после применения ответа по задаче. before — snapshot до diff,
-        was_empty — раньше на эту пару+дату приходил пустой список. -> число отправленных."""
+        was_empty — раньше на эту пару+дату приходил пустой список, stale — прошлый
+        опрос был слишком давно (первый после подписки, рестарта или сбоя): тогда «было 0»
+        устарело, и времени появления мест мы не знаем. -> число отправленных."""
         dep, arv, d = task.split("|")
         now_t = self.snapshot(seats, task)
         had = bool(before)
@@ -284,6 +288,8 @@ class Hunter:
                 ev.append(("seats", key, tot, 0))
         if not ev:
             return 0
+        if stale:                                # честно: «есть», а не «появились»
+            ev = [("now", key, tot, None) for _, key, tot, _ in ev]
         sent, told = 0, set()
         prevday = (date.fromisoformat(d) - timedelta(days=1)).isoformat()
         resumed = not any(k.startswith(f"{dep}|{arv}|{prevday}|") for k in seats)
