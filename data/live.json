@@ -589,18 +589,6 @@
    "deviation": null
   }
  ],
- "qarshi": [
-  {
-   "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "20.10.2026",
-   "time_local": "05:40",
-   "platform": null,
-   "sold_out": true,
-   "planned": "05:40",
-   "deviation": null
-  }
- ],
  "andijan": [
   {
    "number": "125Ч",
