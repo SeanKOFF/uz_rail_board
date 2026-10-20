@@ -13,6 +13,8 @@
           привязана к станции начала, а не к опрашиваемой
     eve   20:30–23:30  каждые 2 мин    Ургенч⇄Ташкент, завтрашняя дата (751М
           Ургенч→Ташкент 07:40: вечером 17.10 +74, 18.10 +19 мест, живут <1 ч)
+    hunt  круглосуточно, каждые 4 мин  пары+даты из подписок subs.json (см. hunter.py),
+          только в пределах горизонта продаж; уведомления шлёт тот же цикл
     open  06:30–11:30  каждые 5 мин    все 12 направлений, дата +59
     sched раз в час                    направления WIN, сегодня и завтра —
           чтобы знать время отправлений для окна pre
@@ -33,6 +35,8 @@ gap — сколько секунд прошло с прошлого опрос�
                                               # (по умолчанию — вчера)
     python3 seats_windows.py --cert           # срок действия сертификата источника
     python3 seats_windows.py --alert-test     # тестовое сообщение в Telegram
+    python3 seats_windows.py --who            # кто писал боту: id чатов для subs.json
+    python3 seats_windows.py --hunt-status [--send]   # что сейчас по подпискам
 
 Оповещения (TG_TOKEN и TG_CHAT из /opt/tabloda-seats/alert.env; без них — только
 строка ⚠ в журнале службы): сертификат источника истекает через <7 дней (раз в
@@ -60,6 +64,7 @@ import urllib.request
 from datetime import datetime, timedelta
 from urllib.parse import urlparse
 
+import hunter as H            # подписки и уведомления в Telegram
 import seats_watch as W   # fetch, seats_of, diff, had_trains, station_codes — один источник правды
 
 DATA = os.environ.get("STATE_DIRECTORY", os.path.expanduser("~/tabloda-seats"))
@@ -87,7 +92,7 @@ def mod(t):
 
 # ---------------------------------------------------------------- окна
 
-def due_tasks(t, codes, sched, last, orig=None):
+def due_tasks(t, codes, sched, last, orig=None, hunt=()):
     """-> список (окно, задача, интервал_сек) для того, что пора опросить.
     sched: {задача: [[номер, "ГГГГ-ММ-ДДTЧЧ:ММ" отправления с запрошенной станции], ...]}
     orig:  {"номер|дата": самое раннее известное отправление этого поезда}"""
@@ -131,6 +136,9 @@ def due_tasks(t, codes, sched, last, orig=None):
         for dep, arv in allp:
             add("open", f"{dep}|{arv}|{d}", 300)
 
+    for task in hunt:                                     # hunt: подписки
+        add("hunt", task, H.HUNT_EVERY)
+
     for dep, arv in main:                                 # sched
         for i in (0, 1):
             add("sched", f"{dep}|{arv}|{t.date() + timedelta(days=i)}", 3600)
@@ -138,7 +146,7 @@ def due_tasks(t, codes, sched, last, orig=None):
     ts = t.timestamp()
     return sorted(((w, task, every) for task, (w, every) in want.items()
                    if ts - last.get(task, 0) >= every * 0.95),
-                  key=lambda x: x[2])                    # частые окна первыми
+                  key=lambda x: (x[2], last.get(x[1], 0)))   # частые окна первыми, среди равных — давно не опрошенные
 
 
 # ---------------------------------------------------------------- оповещения
@@ -148,16 +156,10 @@ def alert(text):
     print(f"⚠ {text}", flush=True)
     if not (TG_TOKEN and TG_CHAT):
         return False
-    req = urllib.request.Request(
-        f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", method="POST",
-        data=json.dumps({"chat_id": TG_CHAT, "text": "tabloda.uz, замер мест: " + text}).encode(),
-        headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return r.status == 200
-    except Exception as e:     # токен в тексте исключения может быть — печатаем только тип и код
-        print(f"✗ в Telegram не отправлено: {type(e).__name__} {getattr(e, 'code', '')}", flush=True)
-        return False
+    ok, why = H.tg_send(TG_TOKEN, TG_CHAT, "tabloda.uz, замер мест: " + text)
+    if not ok:
+        print(f"✗ в Telegram не отправлено: {why}", flush=True)
+    return ok
 
 
 def cert_left(host=None, port=443, ctx=None):
@@ -196,23 +198,24 @@ def load_state():
         # расписание старого формата (список "ЧЧ:ММ") отбрасываем: через час соберётся заново
         sched = {k: v for k, v in s.get("sched", {}).items()
                  if v and all(isinstance(x, list) for x in v)}
-        return s.get("seats", {}), sched, s.get("orig", {}), s.get("last", {})
+        return s.get("seats", {}), sched, s.get("orig", {}), s.get("last", {}), s.get("empty", {})
     except FileNotFoundError:
-        return {}, {}, {}, {}
+        return {}, {}, {}, {}, {}
 
 
-def save_state(seats, sched, orig, last):
+def save_state(seats, sched, orig, last, empty):
     today = now().date().isoformat()
     seats = {k: v for k, v in seats.items() if k.split("|")[2] >= today}
     sched = {k: v for k, v in sched.items() if k.split("|")[2] >= today}
     orig = {k: v for k, v in orig.items() if k.split("|")[1] >= today}
     last = {k: v for k, v in last.items() if k.split("|")[2] >= today}
+    empty = {k: v for k, v in empty.items() if k.split("|")[2] >= today}
     tmp = STATE + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump({"seats": seats, "sched": sched, "orig": orig, "last": last},
+        json.dump({"seats": seats, "sched": sched, "orig": orig, "last": last, "empty": empty},
                   f, ensure_ascii=False, separators=(",", ":"))
     os.replace(tmp, STATE)
-    return seats, sched, orig, last
+    return seats, sched, orig, last, empty
 
 
 def dep_iso(x):
@@ -232,7 +235,8 @@ def log(line):
 def run():
     os.makedirs(DATA, exist_ok=True)
     codes = W.station_codes()
-    seats, sched, orig, last = load_state()
+    seats, sched, orig, last, empty = load_state()
+    hunter = H.Hunter(codes, TG_TOKEN, alert=alert)
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
@@ -241,7 +245,8 @@ def run():
         if time.time() - cert_at > 6 * 3600:
             cert_at = time.time()
             cert_warned = check_cert(cert_warned)
-        todo = due_tasks(t, codes, sched, last, orig)
+        hunt = hunter.tasks(t.date())
+        todo = due_tasks(t, codes, sched, last, orig, hunt)
         if not todo:
             time.sleep(5)
             continue
@@ -253,7 +258,7 @@ def run():
             code, trains, err = W.fetch(dep, arv, d)
         except W.Blocked as e:
             print(f"✗ {e} на {task} — похоже на блокировку, останавливаюсь", flush=True)
-            save_state(seats, sched, orig, last)
+            save_state(seats, sched, orig, last, empty)
             sys.exit(3)
         prev, last[task] = last.get(task), t0
         n += 1
@@ -288,9 +293,19 @@ def run():
         else:
             fails = 0
             line["n"] = len(trains)
+            before = hunter.snapshot(seats, task) if hunter.subs else {}
+            was_empty = task in empty
             ev = W.diff(seats, task, trains)
             if ev:
                 line["ev"] = ev
+            if any(b in str(x.get("brand", "")).lower() for x in trains for b in W.BRANDS):
+                empty.pop(task, None)
+            else:
+                empty[task] = int(time.time())     # «поездов нет»: потом появятся — продажа открылась
+            if hunter.subs:
+                sent = hunter.after(task, before, was_empty, seats)
+                if sent:
+                    line["tg"] = sent
             mine = [x for x in trains
                     if any(b in str(x.get("brand", "")).lower() for b in W.BRANDS) and dep_iso(x)]
             horizon = (now().date() + timedelta(days=7)).isoformat()
@@ -302,13 +317,13 @@ def run():
                 sched[task] = sorted([x.get("number", ""), dep_iso(x)] for x in mine)
         log(line)
         if time.time() - last_save > 600:
-            seats, sched, orig, last = save_state(seats, sched, orig, last)
+            seats, sched, orig, last, empty = save_state(seats, sched, orig, last, empty)
             last_save = time.time()
         if time.time() - last_report > 3600:
             print(f"за час: {n} запросов", flush=True)
             n, last_report = 0, time.time()
         time.sleep(PAUSE)
-    save_state(seats, sched, orig, last)
+    save_state(seats, sched, orig, last, empty)
     print("остановлен", flush=True)
 
 
@@ -355,6 +370,44 @@ def upload(day):
     return False
 
 
+def cmd_hunt_status(send):
+    """Один раз опросить пары+даты из подписок и показать (и с --send разослать) текущие места."""
+    codes = W.station_codes()
+    hunter = H.Hunter(codes, TG_TOKEN, alert=alert)
+    active = hunter.tasks(now().date())
+    if not active:
+        print("подписок нет (или все даты вне горизонта продаж): см. subs.json")
+        return
+    text = {}
+    for task in sorted(active, key=lambda k: (k.split("|")[2], k)):
+        dep, arv, d = task.split("|")
+        try:
+            code, trains, err = W.fetch(dep, arv, d)
+        except W.Blocked as e:
+            sys.exit(f"✗ {e} — похоже на блокировку")
+        time.sleep(PAUSE)
+        dd = datetime.fromisoformat(d)
+        head = f"{hunter.names.get(dep, dep)} → {hunter.names.get(arv, arv)}, {H.WD[dd.weekday()]} {dd:%d.%m}"
+        if trains is None:
+            text[task] = f"{head}: ошибка запроса ({(err or '')[:80]})"
+            continue
+        ours = [x for x in trains if any(b in str(x.get("brand", "")).lower() for b in W.BRANDS)]
+        rows = [f"  {x.get('number', '')} {dep_iso(x)[11:16]} — "
+                f"{sum(v for k, v in W.seats_of(x).items() if k.startswith('car:'))} мест"
+                for x in sorted(ours, key=dep_iso)]
+        text[task] = head + (":\n" + "\n".join(rows) if rows else ": поездов нет (продажа не открыта)")
+    by_chat = {}
+    for task, subs in active.items():
+        for s in subs:
+            by_chat.setdefault((s["chat"], s["name"]), []).append(task)
+    for (chat, name), tasks in by_chat.items():
+        msg = "Сейчас по подпискам:\n" + "\n".join(text[t] for t in sorted(tasks, key=lambda k: k.split("|")[2]))
+        print(f"--- {name} ({chat})\n{msg}")
+        if send:
+            ok, why = H.tg_send(TG_TOKEN, chat, msg)
+            print("  отправлено" if ok else f"  ✗ не отправлено: {why}")
+
+
 def cmd_plan():
     print("Окна и примерная нагрузка в сутки:")
     print("  mid    23:55–00:40, раз в минуту, 6 напр. × 6 дат      ~1650")
@@ -362,6 +415,7 @@ def cmd_plan():
     print("         маршрута), раз в 2 мин")
     print("  eve    20:30–23:30, раз в 2 мин, Ургенч⇄Ташкент, завтра         ~180")
     print("  open   06:30–11:30, раз в 5 мин, 12 напр., дата +59    ~720")
+    print("  hunt   подписки (subs.json), раз в 4 мин, круглосуточно  до 360 на пару+дату, не больше 12 пар+дат")
     print("  sched  раз в час, 6 напр. × сегодня/завтра              ~290")
     print("Итого ~4000–4500 запросов в сутки, строго по одному.")
 
@@ -386,6 +440,16 @@ def main():
         if not (TG_TOKEN and TG_CHAT):
             sys.exit("✗ нет TG_TOKEN или TG_CHAT (см. /opt/tabloda-seats/alert.env)")
         sys.exit(0 if alert("проверка связи, ничего делать не нужно") else 1)
+    elif a[:1] == ["--who"]:
+        if not TG_TOKEN:
+            sys.exit("✗ нет TG_TOKEN (см. /opt/tabloda-seats/alert.env)")
+        seen = H.who(TG_TOKEN)
+        if not seen:
+            print("пока никто не писал боту: пусть откроют его в Telegram и нажмут /start")
+        for chat, (first, user, text) in seen.items():
+            print(f"chat {chat}  {first}  @{user}  «{text}»")
+    elif a[:1] == ["--hunt-status"]:
+        cmd_hunt_status("--send" in a)
     elif a[:1] == ["--upload"]:
         day = a[1] if len(a) > 1 else (now().date() - timedelta(days=1)).isoformat()
         sys.exit(0 if upload(day) else 1)

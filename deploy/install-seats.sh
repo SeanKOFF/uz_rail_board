@@ -12,14 +12,14 @@ UNITS=${UNITS:-/etc/systemd/system}
 
 [ "$(id -u)" = 0 ] || { echo "✗ запускать через sudo"; exit 1; }
 mkdir -p "$DIR/units"
-for f in seats_watch.py stations.json deploy/seats_windows.py; do
+for f in seats_watch.py stations.json deploy/seats_windows.py deploy/hunter.py; do
   curl -fsSL "$RAW/$f" -o "$DIR/$(basename $f).new" && mv "$DIR/$(basename $f).new" "$DIR/$(basename $f)"
 done
 for u in tabloda-seats.service tabloda-seats-upload.service tabloda-seats-upload.timer; do
   curl -fsSL "$RAW/deploy/$u" -o "$DIR/units/$u"
 done
 chmod 644 "$DIR"/*.py "$DIR"/*.json
-python3 -c "import ast; [ast.parse(open('$DIR/'+f).read()) for f in ('seats_watch.py','seats_windows.py')]"
+python3 -c "import ast; [ast.parse(open('$DIR/'+f).read()) for f in ('seats_watch.py','seats_windows.py','hunter.py')]"
 (cd "$DIR" && python3 seats_windows.py --plan)
 
 if [ ! -e "$DIR/alert.env" ]; then      # существующий файл с токеном не трогаем
@@ -28,6 +28,11 @@ if [ ! -e "$DIR/alert.env" ]; then      # существующий файл с �
 fi
 chmod 600 "$DIR/alert.env"
 grep -q '^TG_TOKEN=.' "$DIR/alert.env" || echo "! оповещения в Telegram не настроены — $DIR/alert.env"
+
+# подписки охотника: читает процесс сервиса (DynamicUser) — файл 644; существующий не трогаем
+[ -e "$DIR/subs.json" ] || printf '{"subs": []}\n' > "$DIR/subs.json"
+chmod 644 "$DIR/subs.json"
+curl -fsSL "$RAW/deploy/subs.example.json" -o "$DIR/subs.example.json" || true
 
 [ -s /opt/tabloda-dispatch/dispatch.env ] || echo "! нет /opt/tabloda-dispatch/dispatch.env — выгрузка в репозиторий работать не будет"
 cp "$DIR"/units/* "$UNITS/"
