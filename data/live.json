@@ -205,16 +205,6 @@
  ],
  "samarkand": [
   {
-   "number": "072Ф",
-   "route": "САМАРКАНД - ОЛОТ",
-   "date": "21.10.2026",
-   "time_local": "03:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "03:00",
-   "deviation": null
-  },
-  {
    "number": "124Ф",
    "route": "САМАРКАНД - ВОЛЖСКИЙ",
    "date": "21.10.2026",
