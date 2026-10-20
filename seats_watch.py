@@ -198,6 +198,19 @@ def had_trains(state_seats, task):
     return any(k.startswith(prefix) for k in state_seats)
 
 
+def all_departed(state_seats, task, now_ts):
+    """Все известные поезда этой пары и даты уже ушли: пустой ответ — штатный (сегодня
+    после последнего поезда), а не сбой источника."""
+    prefix = task + "|"
+    d = task.split("|")[2]
+    deps = []
+    for k in state_seats:
+        if k.startswith(prefix):
+            tm = k.split("|")[4] or "00:00"
+            deps.append(datetime.fromisoformat(f"{d}T{tm}").replace(tzinfo=TZ).timestamp())
+    return bool(deps) and max(deps) < now_ts
+
+
 # ---------------------------------------------------------------- прогон
 
 def load_state():
@@ -235,7 +248,7 @@ def run(dry_run):
         print("  ✓ нечего опрашивать, ничего не пишу")
         return
 
-    results, errors, suspicious = {}, [], []
+    results, errors, suspicious, gone = {}, [], [], []
     for i, task in enumerate(todo):
         dep, arv, d = task.split("|")
         try:
@@ -247,7 +260,8 @@ def run(dry_run):
         if trains is None:
             errors.append((task, code, err))
         elif not trains and had_trains(state["seats"], task):
-            suspicious.append(task)
+            # сегодня после последнего поезда пусто штатно; иначе похоже на сбой
+            (gone if all_departed(state["seats"], task, now) else suspicious).append(task)
         else:
             results[task] = trains
         time.sleep(PAUSE)
@@ -269,6 +283,8 @@ def run(dry_run):
     events = []
     for task, trains in results.items():
         events += diff(state["seats"], task, trains)
+        state["polled"][task] = now
+    for task in gone:                 # опрошено, пусто как и должно быть — не созревает снова до интервала
         state["polled"][task] = now
 
     # прошедшие даты больше не нужны
