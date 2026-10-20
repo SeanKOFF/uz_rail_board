@@ -235,16 +235,6 @@
  ],
  "samarkand": [
   {
-   "number": "058Ь",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "20.10.2026",
-   "time_local": "04:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "04:10",
-   "deviation": null
-  },
-  {
    "number": "778Ж",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "20.10.2026",
@@ -623,7 +613,7 @@
   {
    "number": "703Ф",
    "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "19.10.2026",
+   "date": "20.10.2026",
    "time_local": "05:40",
    "platform": null,
    "sold_out": true,
