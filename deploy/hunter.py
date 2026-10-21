@@ -303,6 +303,87 @@ class Hunter:
             cur[key] = prices
         self.__dict__.setdefault("_cur", {})[task] = cur
 
+    def _cls_part(self, key, tot, seats, cur):
+        """«, эконом, 311 000 сум» или « (бизнес 3 по 455 000 сум, эконом 33 по 311 000 сум)»; пусто, если
+        разбивка по классам не сходится с итогом (она верна не у всех поездов)."""
+        cls = {k[4:]: v for k, v in seats.get(key, {}).items() if k.startswith("cls:")}
+        if not cls or sum(cls.values()) != tot:
+            return ""
+        pr = cur.get(key, {})
+        parts = [(self.CLASS_NAMES.get(k, k), v, self._money(pr[k]) if pr.get(k) else "")
+                 for k, v in sorted(cls.items())]
+        if len(parts) == 1:
+            return f", {parts[0][0]}" + (f", {parts[0][2]}" if parts[0][2] else "")
+        return " (" + ", ".join(f"{n} {v}" + (f" по {m}" if m else "") for n, v, m in parts) + ")"
+
+    # --- отчёт «что есть сейчас» сразу после добавления подписки
+    def _want_info(self, chat, dep, arv, dates):
+        today = datetime.now(TZ).date()
+        lim = (today + timedelta(days=HORIZON)).isoformat()
+        tasks = []
+        for d in sorted(dates):
+            if today.isoformat() <= d <= lim:
+                if (chat, dep, arv, d) in self.mutes:       # человек снова просит дату, снятую «Купил»
+                    self.set_mute(chat, dep, arv, d, on=False)
+                tasks.append(f"{dep}|{arv}|{d}")
+        if tasks:
+            with self.lock:
+                self.__dict__.setdefault("_batches", []).append(
+                    {"chat": chat, "dep": dep, "arv": arv, "tasks": tasks, "res": {}, "ts": time.time()})
+
+    def _day_lines(self, task, seats, cur, now_dt):
+        dep, arv, d = task.split("|")
+        dd = date.fromisoformat(d)
+        out = [f"{WD[dd.weekday()]} {dd:%d.%m}:"]
+        gone = lambda k: d == now_dt.date().isoformat() and k.split("|")[4] < f"{now_dt:%H:%M}"
+        keys = sorted((k for k in cur if not gone(k)), key=lambda k: k.split("|")[4])
+        if not keys:
+            return out + ["  скоростных поездов в выдаче пока нет (продажа, возможно, ещё не открыта)"]
+        have = [(k, self.total(seats, k)) for k in keys]
+        zero = [k for k, t in have if t <= 0]
+        have = [(k, t) for k, t in have if t > 0]
+        for k, t in have[:8]:
+            num, tm = k.split("|")[3:5]
+            out.append(f"  {num} {tm} — {seats_word(t)}" + self._cls_part(k, t, seats, cur))
+        if len(have) > 8:
+            out.append(f"  и ещё поездов с местами: {len(have) - 8}")
+        if zero:
+            out.append("  Мест нет: " + ", ".join(f"{k.split('|')[3]} {k.split('|')[4]}" for k in zero))
+        return out
+
+    def info(self, task, seats):
+        """После note(): если по этой дате ждёт отчёт — собрать его; когда ответили все даты пачки —
+        отправить одним сообщением. Ошибки не должны останавливать опрос."""
+        try:
+            self._info(task, seats)
+        except Exception as e:
+            print(f"✗ отчёт «сейчас»: {type(e).__name__} {e}", flush=True)
+
+    def _info(self, task, seats):
+        self._just = set()                    # чаты, которым этот опрос уже показан в отчёте (after их не дублирует)
+        if not self.__dict__.get("_batches"):
+            return
+        cur = self.__dict__.get("_cur", {}).get(task, {})
+        now_dt, ready = datetime.now(TZ), []
+        with self.lock:
+            for b in list(self._batches):
+                if task in b["tasks"]:
+                    self._just.add((b["chat"], task))
+                    b["res"].setdefault(task, self._day_lines(task, seats, cur, now_dt))
+                if len(b["res"]) == len(b["tasks"]) or time.time() - b["ts"] > 1800:
+                    self._batches.remove(b)
+                    ready.append(b)
+        for b in ready:
+            if not b["res"]:
+                continue
+            body = [ln for t in b["tasks"] for ln in b["res"].get(t, [])]
+            text = (f"{self.names.get(b['dep'], b['dep'])} → {self.names.get(b['arv'], b['arv'])}: "
+                    "что есть сейчас на выбранные даты\n" + "\n".join(body) +
+                    "\nДальше бот пришлёт сообщение, когда места появятся там, где сейчас 0.")
+            res = self.send(b["chat"], text[:3900], {"inline_keyboard": [[{"text": "Открыть сайт", "url": SITE}]]})
+            if isinstance(res, tuple) and not res[0]:
+                self.warn(f"в чат {b['chat']} отчёт не доставлен: {res[1]}")
+
     def _text(self, task, items, seats, resumed=False, chat=None):
         """Одно сообщение на пару+дату: что случилось за этот опрос (полночная пачка — один абзац)."""
         dep, arv, d = task.split("|")
@@ -323,16 +404,7 @@ class Hunter:
             for key, tot in sorted(rows, key=lambda r: r[0].split("|")[4]):
                 shown.add(key)
                 num, tm = key.split("|")[3:5]
-                cls = {k[4:]: v for k, v in seats.get(key, {}).items() if k.startswith("cls:")}
-                row = f"  {num} {tm} — {seats_word(tot)}"
-                if cls and sum(cls.values()) == tot:      # разбивка по классам верна не у всех поездов
-                    pr = cur.get(key, {})
-                    parts = [(self.CLASS_NAMES.get(k, k), v, self._money(pr[k]) if pr.get(k) else "")
-                             for k, v in sorted(cls.items())]
-                    if len(parts) == 1:
-                        row += f", {parts[0][0]}" + (f", {parts[0][2]}" if parts[0][2] else "")
-                    else:
-                        row += " (" + ", ".join(f"{n} {v}" + (f" по {m}" if m else "") for n, v, m in parts) + ")"
+                row = f"  {num} {tm} — {seats_word(tot)}" + self._cls_part(key, tot, seats, cur)
                 if kind == "seats" and chat is not None:
                     n_ = 1 + sum(1 for t_ in hist.get((chat, key), []) if now_ts - t_ < 86400)
                     if n_ >= 2:
@@ -406,7 +478,7 @@ class Hunter:
         resumed = not any(k.startswith(f"{dep}|{arv}|{prevday}|") for k in seats)
         for s in self.active.get(task, []):      # подписки на эту дату
             mine = [e for e in ev if self._match(s, e[1], e[2])]
-            if mine:
+            if mine and (s["chat"], task) not in self.__dict__.get("_just", ()):   # уже показано в отчёте «сейчас»
                 sent += self._deliver(s, task, mine, seats, resumed, button=True)
                 told.add(s["chat"])
         opened = [e for e in ev if e[0] == "opened"]
@@ -631,6 +703,9 @@ class Hunter:
                 self.warn(f"/watch: subs.json не записан: {type(e).__name__} {e}")
                 return "Не получилось сохранить подписку, владельцу сообщено."
             self.subs, self.mtime, self.checked, self.active_key = subs, None, 0, None
+        if add:
+            self._want_info(chat, dep, arv, dates)
+            done += "\nСейчас проверю, есть ли места на эти даты, и пришлю отдельным сообщением."
         return done + "\n\n" + self._list_text(chat)
 
     # --- приглашения (патч seats-invite): владелец пускает людей без правки файла
