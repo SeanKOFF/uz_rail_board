@@ -62,6 +62,7 @@ STALE = 900               # сек: если прошлый опрос пары+
 HORIZON = 59              # дней вперёд, где продажа открыта
 MAX_PER_CHAT = 8
 MAX_TOTAL = 12
+MAX_PER_ROUTE = int(os.environ.get("MAX_PER_ROUTE", 2))   # дат на одно направление (кроме владельца)
 WD = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
 
 
@@ -245,6 +246,18 @@ class Hunter:
                     per_chat.setdefault(s["chat"], []).append((d, s))
         for chat, lst in per_chat.items():
             lst.sort(key=lambda x: x[0])
+            if chat != self.owner:               # не больше MAX_PER_ROUTE дат на направление
+                seen, kept = {}, []
+                for d, s in lst:
+                    k = (s["dep"], s["arv"])
+                    seen[k] = seen.get(k, 0) + 1
+                    if seen[k] <= MAX_PER_ROUTE:
+                        kept.append((d, s))
+                    else:
+                        self.warn(f"subs.json: у чата {chat} больше {MAX_PER_ROUTE} дат на направление "
+                                  f"{self.names.get(s['dep'], s['dep'])} → {self.names.get(s['arv'], s['arv'])}, "
+                                  f"{d} не опрашивается")
+                lst = kept
             if len(lst) > MAX_PER_CHAT:
                 self.warn(f"subs.json: у чата {chat} {len(lst)} дат, опрашиваю первые {MAX_PER_CHAT}")
             for d, s in lst[:MAX_PER_CHAT]:
@@ -686,6 +699,14 @@ class Hunter:
                     trip = lambda ss: {(s["dep"], s["arv"], d) for s in ss for d in s["dates"]
                                        if iso_today <= d <= lim
                                        and (s["chat"], s["dep"], s["arv"], d) not in self.mutes}
+                    if chat != self.owner:                # лимит дат на одно направление (снятые «Купил» не считаются)
+                        route = {d for s in subs if s["chat"] == chat and s["dep"] == dep and s["arv"] == arv
+                                 for d in s["dates"] if d >= iso_today and (chat, dep, arv, d) not in self.mutes}
+                        if len(route) > MAX_PER_ROUTE:
+                            os.remove(tmp)
+                            return (f"Лимит: не больше {MAX_PER_ROUTE} дат на одно направление, с этой подпиской "
+                                    f"вышло {len(route)}. Уберите лишнюю кнопкой ✖ в «Мои подписки» "
+                                    "(или /unwatch Откуда Куда дата).")
                     mine = trip([s for s in subs if s["chat"] == chat])
                     if len(mine) > MAX_PER_CHAT:
                         os.remove(tmp)
@@ -865,7 +886,7 @@ class Hunter:
         rows.append([{"text": "‹ Назад", "callback_data": "w|b"}, {"text": "Отмена", "callback_data": "w|c"}])
         chosen = self._fmt_dates(st["ds"]) if st["ds"] else "пока ничего"
         text = ((note + "\n\n") if note else "") + (f"{cs[st['f']]} → {cs[st['t']]}\n"
-                "Отметьте даты (повторное нажатие снимает), затем «Готово».\n" f"Выбрано: {chosen}")
+                f"Отметьте даты (повторное нажатие снимает), не больше {MAX_PER_ROUTE} на направление, затем «Готово».\n" f"Выбрано: {chosen}")
         return text, rows
 
     def _list_markup(self, chat):
@@ -955,6 +976,13 @@ class Hunter:
                     d = date.fromisoformat(p[2])
                     if not today <= d <= today + timedelta(days=HORIZON):
                         raise ValueError
+                    if chat != self.owner and d.isoformat() not in st["ds"]:
+                        dep_, arv_ = self.codes[cs[st["f"]]], self.codes[cs[st["t"]]]
+                        have = {x for s_ in self.subs if s_["chat"] == chat and s_["dep"] == dep_ and s_["arv"] == arv_
+                                for x in s_["dates"] if x >= today.isoformat() and (chat, dep_, arv_, x) not in self.mutes}
+                        if len(have | st["ds"] | {d.isoformat()}) > MAX_PER_ROUTE:
+                            return ack(f"Не больше {MAX_PER_ROUTE} дат на направление"
+                                       + (f" (уже подписано: {len(have)})" if have else ""))
                     st["ds"] ^= {d.isoformat()}
                     text, rows = self._dates_screen(st)
                 elif act == "p":
