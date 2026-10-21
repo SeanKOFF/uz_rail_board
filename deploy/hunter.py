@@ -276,30 +276,79 @@ class Hunter:
                 return False
         return True
 
-    def _text(self, task, items, seats, resumed=False):
+    CLASS_NAMES = {"2Е": "эконом", "1С": "бизнес"}      # прочие коды (например 1В) показываем как пришли
+
+    @staticmethod
+    def _money(vals):
+        vals = sorted(vals)
+        f = lambda v: f"{v:,}".replace(",", " ")
+        return f"{f(vals[0])} сум" if len(vals) == 1 else f"{f(vals[0])}–{f(vals[-1])} сум"
+
+    def note(self, task, by_key):
+        """Свежий ответ источника по паре+дате: цены по классам и поезда, что есть в выдаче сейчас.
+        Хранится только в памяти (формат состояния и журнала не меняется)."""
+        cur = {}
+        for key, t in by_key.items():
+            prices = {}
+            for c in t.get("cars") or []:
+                for tf in c.get("tariffs") or []:
+                    try:
+                        if int(tf.get("freeSeats") or 0) <= 0:
+                            continue
+                        p = int(float(str(tf.get("tariff")).replace(" ", "")))
+                    except (TypeError, ValueError):
+                        continue
+                    if p > 0:
+                        prices.setdefault(str(tf.get("classServiceType", "?")), set()).add(p)
+            cur[key] = prices
+        self.__dict__.setdefault("_cur", {})[task] = cur
+
+    def _text(self, task, items, seats, resumed=False, chat=None):
         """Одно сообщение на пару+дату: что случилось за этот опрос (полночная пачка — один абзац)."""
         dep, arv, d = task.split("|")
         dd = date.fromisoformat(d)
         titles = {"opened": "Открылась продажа" + (" после паузы" if resumed else ""),
                   "seats": "Появились места", "new": "Новый поезд в выдаче (возможно, замена номера)",
                   "now": "Сейчас есть места (прошлая проверка была давно — когда они появились, неизвестно)"}
+        cur = self.__dict__.get("_cur", {}).get(task, {})
+        hist = self.__dict__.get("_hist", {})
+        now_ts = time.time()
         out = [f"{self.names.get(dep, dep)} → {self.names.get(arv, arv)}, {WD[dd.weekday()]} {dd:%d.%m}"]
+        shown = set()
         for kind in ("opened", "seats", "new", "now"):
-            rows = [(k, tot, prev) for kd, k, tot, prev in items if kd == kind]
+            rows = [(k, tot) for kd, k, tot, prev in items if kd == kind]
             if not rows:
                 continue
             out.append(titles[kind] + ":")
-            for key, tot, prev in sorted(rows, key=lambda r: r[0].split("|")[4]):
+            for key, tot in sorted(rows, key=lambda r: r[0].split("|")[4]):
+                shown.add(key)
                 num, tm = key.split("|")[3:5]
                 cls = {k[4:]: v for k, v in seats.get(key, {}).items() if k.startswith("cls:")}
-                row = f"  {num} {tm} — {seats_word(tot)}" + (f" (было {prev})" if kind == "seats" and prev is not None else "")
+                row = f"  {num} {tm} — {seats_word(tot)}"
                 if cls and sum(cls.values()) == tot:      # разбивка по классам верна не у всех поездов
-                    row += " · " + ", ".join(f"{k} {v}" for k, v in sorted(cls.items()))
+                    pr = cur.get(key, {})
+                    parts = [(self.CLASS_NAMES.get(k, k), v, self._money(pr[k]) if pr.get(k) else "")
+                             for k, v in sorted(cls.items())]
+                    if len(parts) == 1:
+                        row += f", {parts[0][0]}" + (f", {parts[0][2]}" if parts[0][2] else "")
+                    else:
+                        row += " (" + ", ".join(f"{n} {v}" + (f" по {m}" if m else "") for n, v, m in parts) + ")"
+                if kind == "seats" and chat is not None:
+                    n_ = 1 + sum(1 for t_ in hist.get((chat, key), []) if now_ts - t_ < 86400)
+                    if n_ >= 2:
+                        row += f" · снова, {n_}-й раз за сутки"
                 out.append(row)
-        out.append(f"Замечено {datetime.now(TZ):%H:%M:%S}."
-                   + (" Такие места обычно разбирают за считаные минуты."
-                      if any(kd == "seats" for kd, *_ in items) else ""))
-        out.append(SITE)
+        if cur:                                            # только поезда из свежего ответа, ушедшие не показываем
+            now_dt = datetime.now(TZ)
+            gone = lambda k: d == now_dt.date().isoformat() and k.split("|")[4] < f"{now_dt:%H:%M}"
+            more = sorted(((k, t) for k, t in self.snapshot(seats, task).items()
+                           if k in cur and k not in shown and t > 0 and not gone(k)),
+                          key=lambda x: x[0].split("|")[4])
+            if more:
+                out.append("Ещё на эту дату: " + "; ".join(
+                    f"{k.split('|')[3]} {k.split('|')[4]} — {seats_word(t)}" for k, t in more[:4])
+                    + (f" и ещё {len(more) - 4}" if len(more) > 4 else ""))
+        out.append(f"Замечено {datetime.now(TZ):%H:%M:%S}.")
         return "\n".join(out)
 
     def _deliver(self, s, task, items, seats, resumed=False, cool=True, button=False):
@@ -312,15 +361,18 @@ class Hunter:
                      if now - self.cool.get((s["chat"], i[1]), 0) >= s["cool"] or i[2] >= 10]
         if not items:
             return 0
-        markup = None
+        markup = {"inline_keyboard": [[{"text": "Открыть сайт", "url": SITE}]]}
         if button:                               # снять эту дату после покупки
             dep_, arv_, d_ = task.split("|")
-            markup = {"inline_keyboard": [[{"text": "Купил — снять эту дату",
-                                            "callback_data": f"d|{dep_}|{arv_}|{d_}"}]]}
-        ok, why = self.send(s["chat"], self._text(task, items, seats, resumed), markup)
+            markup["inline_keyboard"].append([{"text": "Купил — снять эту дату",
+                                            "callback_data": f"d|{dep_}|{arv_}|{d_}"}])
+        ok, why = self.send(s["chat"], self._text(task, items, seats, resumed, chat=s["chat"]), markup)
         if ok:
-            for _, key, _, _ in items:
+            for kd_, key, _, _ in items:
                 self.cool[(s["chat"], key)] = now
+                if kd_ == "seats":                       # для пометки «снова, N-й раз за сутки»
+                    h_ = self.__dict__.setdefault("_hist", {}).setdefault((s["chat"], key), [])
+                    h_[:] = [t_ for t_ in h_ if now - t_ < 86400] + [now]
             return 1
         if why.startswith("HTTP 403"):          # пользователь заблокировал бота / не нажал /start
             self.dead.add(s["chat"])

@@ -307,6 +307,8 @@ def run():
                 empty[task] = int(time.time())     # «поездов нет»: потом появятся — продажа открылась
             if hunter.subs:
                 stale = prev is None or t0 - prev > H.STALE
+                hunter.note(task, {W.train_key(task, x): x for x in trains
+                                   if any(b in str(x.get("brand", "")).lower() for b in W.BRANDS)})
                 sent = hunter.after(task, before, was_empty, seats, stale)
                 if sent:
                     line["tg"] = sent
