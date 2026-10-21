@@ -225,16 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "752Ж",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "21.10.2026",
-   "time_local": "09:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:23",
-   "deviation": null
-  },
-  {
    "number": "766Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "21.10.2026",
