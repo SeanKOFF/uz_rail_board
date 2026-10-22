@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "22.10.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "22.10.2026",
@@ -131,6 +121,16 @@
    "deviation": 50
   },
   {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "23.10.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
+   "deviation": null
+  },
+  {
    "number": "754Ж",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "24.10.2026",
@@ -245,26 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "709Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "22.10.2026",
-   "time_local": "19:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:23",
-   "deviation": null
-  },
-  {
-   "number": "777Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "22.10.2026",
-   "time_local": "20:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:01",
-   "deviation": null
-  },
-  {
    "number": "715Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "22.10.2026",
@@ -322,6 +302,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "17:16",
+   "deviation": null
+  },
+  {
+   "number": "777Ф",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "23.10.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
    "deviation": null
   },
   {
@@ -496,26 +486,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "754Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "22.10.2026",
-   "time_local": "19:31",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:31",
-   "deviation": null
-  },
-  {
-   "number": "653М",
-   "route": "УРГАНЧ - БЕЙНЕУ",
-   "date": "22.10.2026",
-   "time_local": "20:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "753М",
    "route": "ХИВА - ТОШКЕНТ-ЙУ",
