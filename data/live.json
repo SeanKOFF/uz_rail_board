@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "22.10.2026",
-   "time_local": "20:32",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "20:32",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "23.10.2026",
@@ -131,6 +121,16 @@
    "deviation": null
   },
   {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "23.10.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
+   "deviation": null
+  },
+  {
    "number": "754Ж",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "24.10.2026",
@@ -142,16 +142,6 @@
   }
  ],
  "tashkent-south": [
-  {
-   "number": "082Ф",
-   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
-   "date": "22.10.2026",
-   "time_local": "21:12",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "21:12",
-   "deviation": null
-  },
   {
    "number": "080Ф",
    "route": "ТАШКЕНТ ЮЖ-ТЕРМИЗ",
@@ -180,6 +170,16 @@
    "platform": "3",
    "sold_out": false,
    "planned": "16:00",
+   "deviation": null
+  },
+  {
+   "number": "082Ф",
+   "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
+   "date": "23.10.2026",
+   "time_local": "21:12",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "21:12",
    "deviation": null
   },
   {
@@ -244,26 +244,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "715Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "22.10.2026",
-   "time_local": "20:24",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:24",
-   "deviation": null
-  },
-  {
-   "number": "054Ф",
-   "route": "САМАРКАНД - КУНГИРОТ",
-   "date": "22.10.2026",
-   "time_local": "20:36",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:36",
-   "deviation": null
-  },
   {
    "number": "772Ф",
    "route": "САМАРКАНД - БУХОРО 1",
@@ -588,16 +568,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "123Ф",
-   "route": "БУХАРА -ТОШКЕНТ-ЙУ",
-   "date": "22.10.2026",
-   "time_local": "21:11",
-   "platform": null,
-   "sold_out": false,
-   "planned": "21:11",
-   "deviation": null
-  },
   {
    "number": "054Ф",
    "route": "БУХАРА -КУНГИРОТ",
