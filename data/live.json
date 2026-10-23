@@ -143,16 +143,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "125Ч",
-   "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
-   "date": "23.10.2026",
-   "time_local": "22:35",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "22:35",
-   "deviation": null
-  },
-  {
    "number": "054",
    "route": "ТАШКЕНТ-КУНГИРАД",
    "date": "24.10.2026",
@@ -180,6 +170,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "21:13",
+   "deviation": null
+  },
+  {
+   "number": "125Ч",
+   "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
+   "date": "24.10.2026",
+   "time_local": "22:35",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "22:35",
    "deviation": null
   },
   {
@@ -213,7 +213,7 @@
    "deviation": null
   },
   {
-   "number": "128Ф",
+   "number": "126Ч",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "27.10.2026",
    "time_local": "06:18",
@@ -223,7 +223,7 @@
    "deviation": null
   },
   {
-   "number": "126Ч",
+   "number": "128Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
    "date": "27.10.2026",
    "time_local": "06:18",
@@ -264,26 +264,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "772Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "23.10.2026",
-   "time_local": "22:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "22:23",
-   "deviation": null
-  },
-  {
-   "number": "359Щ",
-   "route": "САМАРКАНД - ВОЛЖСКИЙ",
-   "date": "23.10.2026",
-   "time_local": "23:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "071Ф",
    "route": "САМАРКАНД - ТОШКЕНТ ЖА",
@@ -609,16 +589,6 @@
  ],
  "bukhara": [
   {
-   "number": "071Ф",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "23.10.2026",
-   "time_local": "22:51",
-   "platform": null,
-   "sold_out": false,
-   "planned": "22:51",
-   "deviation": null
-  },
-  {
    "number": "054Ф",
    "route": "БУХАРА -КУНГИРОТ",
    "date": "23.10.2026",
@@ -676,6 +646,16 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "071Ф",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
+   "date": "25.10.2026",
+   "time_local": "22:51",
+   "platform": null,
+   "sold_out": false,
+   "planned": "22:51",
    "deviation": null
   },
   {
