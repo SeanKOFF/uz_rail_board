@@ -265,16 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "777Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "23.10.2026",
-   "time_local": "20:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:01",
-   "deviation": null
-  },
-  {
    "number": "715Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "23.10.2026",
