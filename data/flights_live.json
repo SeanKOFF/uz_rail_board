@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T18:29:19.641562+00:00",
+  "updated": "2026-10-23T18:35:14.192640+00:00",
   "flights": [
     {
       "airport": "TAS",
@@ -4892,7 +4892,7 @@
       "scheduled": "22:30",
       "estimated": "22:34",
       "estimated_date": null,
-      "status": "Parvoz uchibketdi",
+      "status": "Parvoz kechiktirildi",
       "number": "MU856",
       "flight_id": "337106",
       "carrier": "MU",
@@ -4900,7 +4900,7 @@
       "airline_iata": "MU",
       "baggage": "39 - 44",
       "codeshare": "",
-      "status_code": "departed",
+      "status_code": "delayed",
       "status_time": null,
       "scheduled_at": "2026-10-23T22:30:00+05:00",
       "estimated_at": "2026-10-23T22:34:00+05:00",
@@ -14914,28 +14914,6 @@
       "status_time": null,
       "scheduled_at": "2026-10-25T21:40:00+05:00",
       "estimated_at": null,
-      "city": "Toshkent",
-      "city_iata": "TAS"
-    },
-    {
-      "airport": "NCU",
-      "event": "departure",
-      "date": "23.10.2026",
-      "scheduled": "22:30",
-      "estimated": "22:30",
-      "estimated_date": null,
-      "status": "Parvoz uchibketdi",
-      "number": "HY18",
-      "flight_id": "337103",
-      "carrier": "Uzbekistan Airways",
-      "terminal": null,
-      "airline_iata": "HY",
-      "baggage": "3 - 5",
-      "codeshare": "",
-      "status_code": "departed",
-      "status_time": null,
-      "scheduled_at": "2026-10-23T22:30:00+05:00",
-      "estimated_at": "2026-10-23T22:30:00+05:00",
       "city": "Toshkent",
       "city_iata": "TAS"
     },
