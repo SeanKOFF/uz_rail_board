@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "752Ж",
-   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
-   "date": "24.10.2026",
-   "time_local": "07:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "07:00",
-   "deviation": null
-  },
-  {
    "number": "730Ф",
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "24.10.2026",
@@ -138,6 +128,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "06:09",
+   "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
+   "date": "26.10.2026",
+   "time_local": "07:00",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:00",
    "deviation": null
   }
  ],
