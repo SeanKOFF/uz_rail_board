@@ -1,26 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "778Ф",
-   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
-   "date": "24.10.2026",
-   "time_local": "06:09",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:09",
-   "deviation": null
-  },
-  {
-   "number": "764Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
-   "date": "24.10.2026",
-   "time_local": "06:33",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:33",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
    "date": "24.10.2026",
@@ -138,6 +118,26 @@
    "platform": null,
    "sold_out": false,
    "planned": "20:32",
+   "deviation": null
+  },
+  {
+   "number": "764Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
+   "date": "25.10.2026",
+   "time_local": "06:33",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:33",
+   "deviation": null
+  },
+  {
+   "number": "778Ф",
+   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
+   "date": "26.10.2026",
+   "time_local": "06:09",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:09",
    "deviation": null
   }
  ],
