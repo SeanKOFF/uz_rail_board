@@ -1,41 +1,5 @@
 [
  {
-  "at": "2026-10-12 04:08",
-  "station": "andijan",
-  "number": "125Ч",
-  "date": "12.10.2026",
-  "planned": "15:50",
-  "actual": "15:36",
-  "deviation": -14
- },
- {
-  "at": "2026-10-12 04:08",
-  "station": "andijan",
-  "number": "129Ф",
-  "date": "12.10.2026",
-  "planned": "16:40",
-  "actual": "16:30",
-  "deviation": -10
- },
- {
-  "at": "2026-10-12 04:08",
-  "station": "andijan",
-  "number": "127Ф",
-  "date": "12.10.2026",
-  "planned": "17:30",
-  "actual": "17:20",
-  "deviation": -10
- },
- {
-  "at": "2026-10-12 05:08",
-  "station": "samarkand",
-  "number": "751М",
-  "date": "13.10.2026",
-  "planned": "12:51",
-  "actual": "13:01",
-  "deviation": 10
- },
- {
   "at": "2026-10-12 05:08",
   "station": "urgench",
   "number": "058Ь",
@@ -17992,6 +17956,42 @@
  },
  {
   "at": "2026-10-26 01:08",
+  "station": "andijan",
+  "number": "127Ф",
+  "date": "26.10.2026",
+  "planned": "17:30",
+  "actual": "17:20",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-26 02:07",
+  "station": "tashkent-central",
+  "number": "732Ф",
+  "date": "26.10.2026",
+  "planned": "17:50",
+  "actual": "18:40",
+  "deviation": 50
+ },
+ {
+  "at": "2026-10-26 02:07",
+  "station": "andijan",
+  "number": "125Ч",
+  "date": "26.10.2026",
+  "planned": "15:50",
+  "actual": "15:36",
+  "deviation": -14
+ },
+ {
+  "at": "2026-10-26 02:07",
+  "station": "andijan",
+  "number": "129Ф",
+  "date": "26.10.2026",
+  "planned": "16:40",
+  "actual": "16:30",
+  "deviation": -10
+ },
+ {
+  "at": "2026-10-26 02:07",
   "station": "andijan",
   "number": "127Ф",
   "date": "26.10.2026",
