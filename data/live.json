@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "712Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
-   "date": "27.10.2026",
-   "time_local": "20:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:32",
-   "deviation": null
-  },
-  {
    "number": "778Ф",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "28.10.2026",
@@ -131,6 +121,16 @@
    "deviation": null
   },
   {
+   "number": "712Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
+   "date": "28.10.2026",
+   "time_local": "20:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:32",
+   "deviation": null
+  },
+  {
    "number": "754Ж",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "29.10.2026",
@@ -225,26 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "715Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "27.10.2026",
-   "time_local": "20:24",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:24",
-   "deviation": null
-  },
-  {
-   "number": "054Ф",
-   "route": "САМАРКАНД - КУНГИРОТ",
-   "date": "27.10.2026",
-   "time_local": "20:36",
-   "platform": null,
-   "sold_out": false,
-   "planned": "20:36",
-   "deviation": null
-  },
-  {
    "number": "772Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "27.10.2026",
@@ -292,6 +272,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "08:33",
+   "deviation": null
+  },
+  {
+   "number": "777М",
+   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "date": "28.10.2026",
+   "time_local": "20:01",
+   "platform": null,
+   "sold_out": false,
+   "planned": "20:01",
    "deviation": null
   },
   {
