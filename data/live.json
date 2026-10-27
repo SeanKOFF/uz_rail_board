@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ",
-   "date": "27.10.2026",
-   "time_local": "14:41",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:41",
-   "deviation": null
-  },
-  {
    "number": "732Ф",
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "27.10.2026",
@@ -128,6 +118,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "08:58",
+   "deviation": null
+  },
+  {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "date": "28.10.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
    "deviation": null
   },
   {
@@ -457,16 +457,6 @@
  ],
  "urgench": [
   {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ЙУ - ХИВА",
-   "date": "27.10.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
-  {
    "number": "654Х",
    "route": "БЕЙНЕУ - УРГАНЧ",
    "date": "27.10.2026",
@@ -746,6 +736,18 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
+   "deviation": null
+  }
+ ],
+ "qarshi": [
+  {
+   "number": "703Ф",
+   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
+   "date": "27.10.2026",
+   "time_local": "05:40",
+   "platform": null,
+   "sold_out": true,
+   "planned": "05:40",
    "deviation": null
   }
  ],
