@@ -225,26 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "716Ф",
-   "route": "САМАРКАНД - КАРШИ",
-   "date": "27.10.2026",
-   "time_local": "12:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:30",
-   "deviation": null
-  },
-  {
-   "number": "751М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "27.10.2026",
-   "time_local": "13:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "13:01",
-   "deviation": null
-  },
-  {
    "number": "769Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "27.10.2026",
@@ -476,26 +456,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "125Ф",
-   "route": "АНДИЖОН 1 - ХИВА",
-   "date": "27.10.2026",
-   "time_local": "12:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:56",
-   "deviation": null
-  },
-  {
-   "number": "076Ф",
-   "route": "ТОШКЕНТ ЖА - ХИВА",
-   "date": "27.10.2026",
-   "time_local": "12:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:56",
-   "deviation": null
-  },
   {
    "number": "752Ж",
    "route": "ТОШКЕНТ-ЙУ - ХИВА",
@@ -786,18 +746,6 @@
    "platform": null,
    "sold_out": true,
    "planned": null,
-   "deviation": null
-  }
- ],
- "qarshi": [
-  {
-   "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "27.10.2026",
-   "time_local": "05:40",
-   "platform": null,
-   "sold_out": true,
-   "planned": "05:40",
    "deviation": null
   }
  ],
