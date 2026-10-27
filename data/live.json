@@ -143,16 +143,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "127Ф",
-   "route": "ТАШКЕНТ ЮЖ -КУНГИРОТ",
-   "date": "28.10.2026",
-   "time_local": "01:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:10",
-   "deviation": null
-  },
-  {
    "number": "054",
    "route": "ТАШКЕНТ-КУНГИРАД",
    "date": "28.10.2026",
@@ -214,16 +204,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "056Ч",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "28.10.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
   {
    "number": "124Ф",
    "route": "САМАРКАНД - ВОЛЖСКИЙ",
