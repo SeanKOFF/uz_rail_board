@@ -719,17 +719,19 @@
    "deviation": null
   }
  ],
- "andijan": [
+ "qarshi": [
   {
-   "number": "127Ф",
-   "route": "ANDIJON - TOSHKENT",
+   "number": "703Ф",
+   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
    "date": "27.10.2026",
-   "time_local": "17:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:30",
-   "deviation": -10
-  },
+   "time_local": "05:40",
+   "platform": null,
+   "sold_out": true,
+   "planned": "05:40",
+   "deviation": null
+  }
+ ],
+ "andijan": [
   {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
@@ -748,6 +750,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "16:40",
+   "deviation": -10
+  },
+  {
+   "number": "127Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "28.10.2026",
+   "time_local": "17:20",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "17:30",
    "deviation": -10
   }
  ]
