@@ -225,36 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "301З",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "27.10.2026",
-   "time_local": "09:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:22",
-   "deviation": null
-  },
-  {
-   "number": "752Ж",
-   "route": "САМАРКАНД - ХИВА",
-   "date": "27.10.2026",
-   "time_local": "09:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:23",
-   "deviation": null
-  },
-  {
-   "number": "766Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "27.10.2026",
-   "time_local": "09:53",
-   "platform": null,
-   "sold_out": false,
-   "planned": "09:53",
-   "deviation": null
-  },
-  {
    "number": "770Ф",
    "route": "САМАРКАНД - БУХОРО 1",
    "date": "27.10.2026",
