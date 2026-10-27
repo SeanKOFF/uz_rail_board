@@ -1,5 +1,5 @@
 {
-"ts": "2026-10-27T05:17+05:00",
+"ts": "2026-10-27T05:25+05:00",
 "window": ["2026-10-27", "2026-10-28", "2026-10-29"],
 "trips": {
 "0:126754": {"d":"2026-10-27","dep":"2026-10-27 08:45","route":"Ташкент - Карши","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":144,"seats":51,"sold":12,"api":0},
@@ -64,7 +64,7 @@
 "0:127846": {"d":"2026-10-29","dep":"2026-10-29 14:15","route":"Ташкент - Навои - Канимех","carrier":"\"TOURIST AND SERVICE\" MCHJ","platform":"13","status":10,"bus":"BONLUCK 53","route_id":180,"seats":53,"sold":16,"api":0},
 "0:127886": {"d":"2026-10-28","dep":"2026-10-28 14:00","route":"Ташкент - Самарканд","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":55,"seats":51,"sold":7,"api":0},
 "0:127887": {"d":"2026-10-29","dep":"2026-10-29 14:00","route":"Ташкент - Самарканд","carrier":"OOO\"UzAutoTransService\" (ICHKI) 3%","platform":"8","status":10,"bus":"YUTONG 51","route_id":55,"seats":51,"sold":7,"api":0},
-"1:7573": {"d":"2026-10-27","dep":"2026-10-27 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":52,"api":1},
+"1:7573": {"d":"2026-10-27","dep":"2026-10-27 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":51,"api":1},
 "1:7574": {"d":"2026-10-28","dep":"2026-10-28 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":13,"api":1},
 "1:7575": {"d":"2026-10-29","dep":"2026-10-29 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":8,"api":1},
 "1:7604": {"d":"2026-10-27","dep":"2026-10-27 08:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":32,"api":1},
