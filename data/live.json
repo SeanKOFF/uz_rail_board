@@ -225,16 +225,6 @@
  ],
  "samarkand": [
   {
-   "number": "359Ж",
-   "route": "САМАРКАНД - ХУДЖАНД",
-   "date": "28.10.2026",
-   "time_local": "18:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "765Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "28.10.2026",
@@ -721,16 +711,6 @@
  ],
  "andijan": [
   {
-   "number": "127Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "28.10.2026",
-   "time_local": "17:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:30",
-   "deviation": -10
-  },
-  {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
    "date": "29.10.2026",
@@ -748,6 +728,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "16:40",
+   "deviation": -10
+  },
+  {
+   "number": "127Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "29.10.2026",
+   "time_local": "17:20",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "17:30",
    "deviation": -10
   }
  ]
