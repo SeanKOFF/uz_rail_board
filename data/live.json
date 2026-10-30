@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "732Ф",
-   "route": "ТОШКЕНТ -АНДИЖАН",
-   "date": "30.10.2026",
-   "time_local": "18:40",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "17:50",
-   "deviation": 50
-  },
-  {
    "number": "772Ф",
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "30.10.2026",
@@ -25,7 +15,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "30.10.2026",
    "time_local": "20:32",
-   "platform": "3",
+   "platform": "6",
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
@@ -139,6 +129,16 @@
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
+  },
+  {
+   "number": "732Ф",
+   "route": "ТОШКЕНТ -АНДИЖАН",
+   "date": "31.10.2026",
+   "time_local": "18:40",
+   "platform": null,
+   "sold_out": false,
+   "planned": "17:50",
+   "deviation": 50
   }
  ],
  "tashkent-south": [
