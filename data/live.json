@@ -1,6 +1,16 @@
 {
  "tashkent-central": [
   {
+   "number": "315Ф",
+   "route": "ТАШКЕНТ - КАЗАНЬ",
+   "date": "31.10.2026",
+   "time_local": "00:32",
+   "platform": "3",
+   "sold_out": false,
+   "planned": "00:32",
+   "deviation": null
+  },
+  {
    "number": "778Ф",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "31.10.2026",
@@ -105,7 +115,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "31.10.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -125,7 +135,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "31.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
@@ -135,7 +145,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "31.10.2026",
    "time_local": "20:32",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
