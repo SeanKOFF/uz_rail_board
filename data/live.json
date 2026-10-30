@@ -347,16 +347,6 @@
  ],
  "urgench": [
   {
-   "number": "753М",
-   "route": "ХИВА - ТОШКЕНТ-ЙУ",
-   "date": "30.10.2026",
-   "time_local": "11:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:32",
-   "deviation": null
-  },
-  {
    "number": "654Х",
    "route": "БЕЙНЕУ - УРГАНЧ",
    "date": "31.10.2026",
