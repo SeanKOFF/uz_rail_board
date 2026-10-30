@@ -1,26 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "764Ф",
-   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
-   "date": "30.10.2026",
-   "time_local": "06:33",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "06:33",
-   "deviation": null
-  },
-  {
-   "number": "752Ж",
-   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
-   "date": "30.10.2026",
-   "time_local": "07:00",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "07:00",
-   "deviation": null
-  },
-  {
    "number": "730Ф",
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "30.10.2026",
@@ -85,7 +65,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "30.10.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -95,7 +75,7 @@
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "30.10.2026",
    "time_local": "18:40",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "17:50",
    "deviation": 50
@@ -105,7 +85,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "30.10.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
@@ -115,7 +95,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "30.10.2026",
    "time_local": "20:32",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
@@ -125,9 +105,29 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "31.10.2026",
    "time_local": "06:09",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:09",
+   "deviation": null
+  },
+  {
+   "number": "764Ф",
+   "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
+   "date": "31.10.2026",
+   "time_local": "06:33",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "06:33",
+   "deviation": null
+  },
+  {
+   "number": "752Ж",
+   "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
+   "date": "31.10.2026",
+   "time_local": "07:00",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:00",
    "deviation": null
   },
   {
