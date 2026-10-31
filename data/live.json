@@ -153,16 +153,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "125Ч",
-   "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
-   "date": "31.10.2026",
-   "time_local": "22:35",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "22:35",
-   "deviation": null
-  },
-  {
    "number": "054",
    "route": "ТАШКЕНТ-КУНГИРАД",
    "date": "01.11.2026",
@@ -190,6 +180,16 @@
    "platform": "1",
    "sold_out": false,
    "planned": "21:13",
+   "deviation": null
+  },
+  {
+   "number": "125Ч",
+   "route": "ТАШКЕНТ ЮЖ -УРГАНЧ",
+   "date": "01.11.2026",
+   "time_local": "22:35",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "22:35",
    "deviation": null
   },
   {
