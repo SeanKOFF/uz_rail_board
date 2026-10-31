@@ -5,7 +5,7 @@
    "route": "ТОШКЕНТ -АНДИЖАН",
    "date": "31.10.2026",
    "time_local": "18:40",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "17:50",
    "deviation": 50
@@ -35,7 +35,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "01.11.2026",
    "time_local": "06:33",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:33",
    "deviation": null
@@ -45,7 +45,7 @@
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "01.11.2026",
    "time_local": "07:20",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "07:20",
    "deviation": null
@@ -55,7 +55,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "01.11.2026",
    "time_local": "07:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:30",
    "deviation": null
@@ -65,7 +65,7 @@
    "route": "ТАШКЕНТ --САМАРКАНД",
    "date": "01.11.2026",
    "time_local": "07:55",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:55",
    "deviation": null
@@ -75,7 +75,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "01.11.2026",
    "time_local": "08:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "08:30",
    "deviation": null
@@ -85,7 +85,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "01.11.2026",
    "time_local": "08:37",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "08:37",
    "deviation": null
@@ -95,7 +95,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "01.11.2026",
    "time_local": "08:58",
-   "platform": null,
+   "platform": "5",
    "sold_out": false,
    "planned": "08:58",
    "deviation": null
@@ -105,7 +105,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "01.11.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -115,7 +115,7 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "02.11.2026",
    "time_local": "06:09",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:09",
    "deviation": null
@@ -125,7 +125,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
    "date": "02.11.2026",
    "time_local": "07:00",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:00",
    "deviation": null
@@ -135,7 +135,7 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "02.11.2026",
    "time_local": "11:20",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "11:20",
    "deviation": null
@@ -347,16 +347,6 @@
  ],
  "urgench": [
   {
-   "number": "654Х",
-   "route": "БЕЙНЕУ - УРГАНЧ",
-   "date": "31.10.2026",
-   "time_local": "16:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "058З",
    "route": "ТОШКЕНТ ЖА - ШОВОТ",
    "date": "02.11.2026",
@@ -491,16 +481,6 @@
  ],
  "andijan": [
   {
-   "number": "129Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "31.10.2026",
-   "time_local": "16:30",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "16:40",
-   "deviation": -10
-  },
-  {
    "number": "127Ф",
    "route": "ANDIJON - TOSHKENT",
    "date": "31.10.2026",
@@ -519,6 +499,16 @@
    "sold_out": false,
    "planned": "15:50",
    "deviation": -14
+  },
+  {
+   "number": "129Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "01.11.2026",
+   "time_local": "16:30",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "16:40",
+   "deviation": -10
   }
  ]
 }
