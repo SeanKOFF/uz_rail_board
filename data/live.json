@@ -235,26 +235,6 @@
  ],
  "samarkand": [
   {
-   "number": "126Ф",
-   "route": "САМАРКАНД - АНДИЖОН 1",
-   "date": "02.11.2026",
-   "time_local": "01:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "01:30",
-   "deviation": null
-  },
-  {
-   "number": "058З",
-   "route": "САМАРКАНД - ШОВОТ",
-   "date": "02.11.2026",
-   "time_local": "02:02",
-   "platform": null,
-   "sold_out": false,
-   "planned": "02:02",
-   "deviation": null
-  },
-  {
    "number": "129Ф",
    "route": "САМАРКАНД - ТЕРМИЗ",
    "date": "02.11.2026",
