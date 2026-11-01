@@ -1,5 +1,5 @@
 {
-"ts": "2026-11-01T05:06+05:00",
+"ts": "2026-11-01T05:17+05:00",
 "window": ["2026-11-01", "2026-11-02", "2026-11-03"],
 "trips": {
 "0:128205": {"d":"2026-11-01","dep":"2026-11-01 19:00","route":"Ташкент - Термез","carrier":"OOO AVTOSTAR BERKUTSK","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":26,"api":0},
@@ -81,7 +81,7 @@
 "1:10494": {"d":"2026-11-01","dep":"2026-11-01 19:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":16,"api":1},
 "1:10495": {"d":"2026-11-02","dep":"2026-11-02 19:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":1,"api":1},
 "1:10496": {"d":"2026-11-03","dep":"2026-11-03 19:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":8,"api":1},
-"1:10614": {"d":"2026-11-01","dep":"2026-11-01 20:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":25,"api":1},
+"1:10614": {"d":"2026-11-01","dep":"2026-11-01 20:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":27,"api":1},
 "1:10615": {"d":"2026-11-02","dep":"2026-11-02 20:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":4,"api":1},
 "1:10616": {"d":"2026-11-03","dep":"2026-11-03 20:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":9,"api":1},
 "1:10734": {"d":"2026-11-01","dep":"2026-11-01 22:00","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":44,"api":1},
