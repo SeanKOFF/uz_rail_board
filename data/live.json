@@ -469,16 +469,6 @@
  ],
  "bukhara": [
   {
-   "number": "752Ж",
-   "route": "БУХАРА -ХИВА",
-   "date": "03.11.2026",
-   "time_local": "11:14",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:14",
-   "deviation": null
-  },
-  {
    "number": "126Ф",
    "route": "БУХАРА -АНДИЖОН 1",
    "date": "03.11.2026",
