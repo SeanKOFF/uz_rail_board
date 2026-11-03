@@ -215,16 +215,6 @@
  ],
  "samarkand": [
   {
-   "number": "710Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "03.11.2026",
-   "time_local": "12:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:00",
-   "deviation": null
-  },
-  {
    "number": "716Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "03.11.2026",
@@ -546,18 +536,6 @@
    "platform": null,
    "sold_out": false,
    "planned": "05:32",
-   "deviation": null
-  }
- ],
- "qarshi": [
-  {
-   "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "03.11.2026",
-   "time_local": "05:40",
-   "platform": null,
-   "sold_out": true,
-   "planned": "05:40",
    "deviation": null
   }
  ],
