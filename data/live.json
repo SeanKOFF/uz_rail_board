@@ -5,7 +5,7 @@
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
    "date": "05.11.2026",
    "time_local": "06:09",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:09",
    "deviation": null
@@ -15,7 +15,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "05.11.2026",
    "time_local": "06:33",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "06:33",
    "deviation": null
@@ -25,7 +25,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -УРГЕНЧ-ХИВА",
    "date": "05.11.2026",
    "time_local": "07:00",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:00",
    "deviation": null
@@ -35,7 +35,7 @@
    "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
    "date": "05.11.2026",
    "time_local": "07:20",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "07:20",
    "deviation": null
@@ -45,7 +45,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "05.11.2026",
    "time_local": "07:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:30",
    "deviation": null
@@ -55,7 +55,7 @@
    "route": "ТАШКЕНТ --САМАРКАНД",
    "date": "05.11.2026",
    "time_local": "07:55",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "07:55",
    "deviation": null
@@ -65,7 +65,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "05.11.2026",
    "time_local": "08:30",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "08:30",
    "deviation": null
@@ -125,7 +125,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "05.11.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
