@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T09:36:18.830875+00:00",
+  "updated": "2026-11-06T09:38:14.506346+00:00",
   "flights": [
     {
       "airport": "TAS",
@@ -12740,6 +12740,28 @@
       "city_iata": "LED"
     },
     {
+      "airport": "UGC",
+      "event": "departure",
+      "date": "08.11.2026",
+      "scheduled": "14:35",
+      "estimated": null,
+      "estimated_date": null,
+      "status": "Jadval bo’yicha",
+      "number": "U62618",
+      "flight_id": "342713",
+      "carrier": "URAL AIRLINES",
+      "terminal": null,
+      "airline_iata": "U6",
+      "baggage": null,
+      "codeshare": "",
+      "status_code": "on_time",
+      "status_time": null,
+      "scheduled_at": "2026-11-08T14:35:00+05:00",
+      "estimated_at": null,
+      "city": "Moskva",
+      "city_iata": "ZIA"
+    },
+    {
       "airport": "NMA",
       "event": "arrival",
       "date": "06.11.2026",
@@ -14190,6 +14212,28 @@
       "estimated_at": null,
       "city": "Toshkent",
       "city_iata": "TAS"
+    },
+    {
+      "airport": "KSQ",
+      "event": "departure",
+      "date": "08.11.2026",
+      "scheduled": "14:35",
+      "estimated": null,
+      "estimated_date": null,
+      "status": "Jadval bo’yicha",
+      "number": "U62128",
+      "flight_id": "342712",
+      "carrier": "URAL AIRLINES",
+      "terminal": null,
+      "airline_iata": "U6",
+      "baggage": null,
+      "codeshare": "",
+      "status_code": "on_time",
+      "status_time": null,
+      "scheduled_at": "2026-11-08T14:35:00+05:00",
+      "estimated_at": null,
+      "city": "Moskva",
+      "city_iata": "DME"
     },
     {
       "airport": "NCU",
