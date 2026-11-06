@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "730Ф",
-   "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
-   "date": "06.11.2026",
-   "time_local": "07:20",
-   "platform": "2",
-   "sold_out": false,
-   "planned": "07:20",
-   "deviation": null
-  },
-  {
    "number": "766Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -БУХАРА",
    "date": "06.11.2026",
@@ -138,6 +128,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "07:00",
+   "deviation": null
+  },
+  {
+   "number": "730Ф",
+   "route": "ТАШКЕНТ - КОКАНД-АНДИЖАН",
+   "date": "07.11.2026",
+   "time_local": "07:20",
+   "platform": null,
+   "sold_out": false,
+   "planned": "07:20",
    "deviation": null
   },
   {
