@@ -285,26 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "716Ф",
-   "route": "САМАРКАНД - КАРШИ",
-   "date": "08.11.2026",
-   "time_local": "12:30",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:30",
-   "deviation": null
-  },
-  {
-   "number": "751М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "08.11.2026",
-   "time_local": "13:01",
-   "platform": null,
-   "sold_out": false,
-   "planned": "13:01",
-   "deviation": null
-  },
-  {
    "number": "769Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
    "date": "08.11.2026",
@@ -719,16 +699,6 @@
  ],
  "bukhara": [
   {
-   "number": "423Р",
-   "route": "БУХАРА -ДУШАНБЕ 1",
-   "date": "08.11.2026",
-   "time_local": "12:49",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
    "number": "054Ф",
    "route": "БУХАРА -КУНГИРОТ",
    "date": "08.11.2026",
@@ -893,6 +863,16 @@
    "route": "БУХАРА -КУЛЯБ",
    "date": "15.11.2026",
    "time_local": "15:20",
+   "platform": null,
+   "sold_out": true,
+   "planned": null,
+   "deviation": null
+  },
+  {
+   "number": "423Р",
+   "route": "БУХАРА -ДУШАНБЕ 1",
+   "date": "22.11.2026",
+   "time_local": "12:49",
    "platform": null,
    "sold_out": true,
    "planned": null,
