@@ -1,5 +1,5 @@
 {
-"ts": "2026-11-08T05:17+05:00",
+"ts": "2026-11-08T05:34+05:00",
 "window": ["2026-11-08", "2026-11-09", "2026-11-10"],
 "trips": {
 "0:128209": {"d":"2026-11-09","dep":"2026-11-09 19:00","route":"Ташкент - Термез","carrier":"OOO AVTOSTAR BERKUTSK","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":9,"api":0},
@@ -16,7 +16,7 @@
 "0:128318": {"d":"2026-11-09","dep":"2026-11-09 18:00","route":"Ташкент - Джаркурган","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"10","status":10,"bus":"YUTONG 51","route_id":168,"seats":51,"sold":8,"api":0},
 "0:128319": {"d":"2026-11-10","dep":"2026-11-10 18:00","route":"Ташкент - Джаркурган","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"10","status":10,"bus":"YUTONG 51","route_id":168,"seats":51,"sold":3,"api":0},
 "0:128347": {"d":"2026-11-08","dep":"2026-11-08 18:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":28,"api":0},
-"0:128348": {"d":"2026-11-09","dep":"2026-11-09 18:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":9,"api":0},
+"0:128348": {"d":"2026-11-09","dep":"2026-11-09 18:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":10,"api":0},
 "0:128349": {"d":"2026-11-10","dep":"2026-11-10 18:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":2,"api":0},
 "0:128373": {"d":"2026-11-08","dep":"2026-11-08 19:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":26,"api":0},
 "0:128374": {"d":"2026-11-10","dep":"2026-11-10 19:00","route":"Ташкент - Термез","carrier":"OOO\"UzAutoTransService\" (ICHKI) 1%","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":2,"api":0},
