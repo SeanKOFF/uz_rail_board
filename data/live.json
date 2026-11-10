@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "302З",
-   "route": "ТАШКЕНТ - ДУШАНБЕ",
-   "date": "10.11.2026",
-   "time_local": "14:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "14:48",
-   "deviation": null
-  },
-  {
    "number": "772Ф",
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "10.11.2026",
@@ -159,6 +149,16 @@
    "sold_out": false,
    "planned": "18:40",
    "deviation": -50
+  },
+  {
+   "number": "302З",
+   "route": "ТАШКЕНТ - ДУШАНБЕ",
+   "date": "17.11.2026",
+   "time_local": "14:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:48",
+   "deviation": null
   }
  ],
  "tashkent-south": [
