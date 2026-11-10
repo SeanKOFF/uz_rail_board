@@ -163,16 +163,6 @@
  ],
  "tashkent-south": [
   {
-   "number": "054",
-   "route": "ТАШКЕНТ-КУНГИРАД",
-   "date": "10.11.2026",
-   "time_local": "16:00",
-   "platform": "3",
-   "sold_out": false,
-   "planned": "16:00",
-   "deviation": null
-  },
-  {
    "number": "082Ф",
    "route": "ТАШКЕНТ ЮЖ-САРИОСИЙО",
    "date": "10.11.2026",
@@ -210,6 +200,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "01:10",
+   "deviation": null
+  },
+  {
+   "number": "054",
+   "route": "ТАШКЕНТ-КУНГИРАД",
+   "date": "11.11.2026",
+   "time_local": "16:00",
+   "platform": "3",
+   "sold_out": false,
+   "planned": "16:00",
    "deviation": null
   },
   {
@@ -749,29 +749,7 @@
    "deviation": null
   }
  ],
- "qarshi": [
-  {
-   "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
-   "date": "10.11.2026",
-   "time_local": "05:40",
-   "platform": null,
-   "sold_out": true,
-   "planned": "05:40",
-   "deviation": null
-  }
- ],
  "andijan": [
-  {
-   "number": "125Ч",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "10.11.2026",
-   "time_local": "15:36",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "15:50",
-   "deviation": -14
-  },
   {
    "number": "129Ф",
    "route": "ANDIJON - TOSHKENT",
@@ -791,6 +769,16 @@
    "sold_out": false,
    "planned": "17:45",
    "deviation": -25
+  },
+  {
+   "number": "125Ч",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "11.11.2026",
+   "time_local": "15:36",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "15:50",
+   "deviation": -14
   }
  ]
 }
