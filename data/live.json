@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "778Ф",
-   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
-   "date": "10.11.2026",
-   "time_local": "06:09",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "06:09",
-   "deviation": null
-  },
-  {
    "number": "764Ф",
    "route": "ТАШКЕНТ -САМАРКАНД -КАРШИ",
    "date": "10.11.2026",
@@ -131,6 +121,16 @@
    "deviation": null
   },
   {
+   "number": "778Ф",
+   "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА",
+   "date": "11.11.2026",
+   "time_local": "06:09",
+   "platform": null,
+   "sold_out": false,
+   "planned": "06:09",
+   "deviation": null
+  },
+  {
    "number": "754Ж",
    "route": "ТАШКЕНТ - САМАРКАНД -БУХАРА-ХИВА",
    "date": "12.11.2026",
@@ -162,26 +162,6 @@
   }
  ],
  "tashkent-south": [
-  {
-   "number": "128Ф",
-   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
-   "date": "10.11.2026",
-   "time_local": "06:18",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:18",
-   "deviation": null
-  },
-  {
-   "number": "126Ч",
-   "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
-   "date": "10.11.2026",
-   "time_local": "06:18",
-   "platform": null,
-   "sold_out": false,
-   "planned": "06:18",
-   "deviation": null
-  },
   {
    "number": "130Ф",
    "route": "ТАШКЕНТ ЮЖ -АНДИЖОН 1",
