@@ -245,16 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "769Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
-   "date": "11.11.2026",
-   "time_local": "16:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:56",
-   "deviation": null
-  },
-  {
    "number": "359Ж",
    "route": "САМАРКАНД - ХУДЖАНД",
    "date": "11.11.2026",
@@ -266,7 +256,7 @@
   },
   {
    "number": "765Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "11.11.2026",
    "time_local": "18:15",
    "platform": null,
@@ -276,7 +266,7 @@
   },
   {
    "number": "709Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "11.11.2026",
    "time_local": "19:23",
    "platform": null,
@@ -286,7 +276,7 @@
   },
   {
    "number": "715Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "11.11.2026",
    "time_local": "20:24",
    "platform": null,
@@ -436,7 +426,7 @@
   },
   {
    "number": "763Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "16.11.2026",
    "time_local": "18:49",
    "platform": null,
@@ -486,7 +476,7 @@
   },
   {
    "number": "777М",
-   "route": "САМАРКАНД - ТОШКЕНТ-ЙУ",
+   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "17.11.2026",
    "time_local": "20:01",
    "platform": null,
@@ -732,7 +722,7 @@
  "qarshi": [
   {
    "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ЙУ",
+   "route": "КАРШИ - ТОШКЕНТ-ШИ",
    "date": "11.11.2026",
    "time_local": "05:40",
    "platform": null,
@@ -742,16 +732,6 @@
   }
  ],
  "andijan": [
-  {
-   "number": "129Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "11.11.2026",
-   "time_local": "16:30",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "16:34",
-   "deviation": -4
-  },
   {
    "number": "127Ф",
    "route": "ANDIJON - TOSHKENT",
@@ -771,6 +751,16 @@
    "sold_out": false,
    "planned": "15:50",
    "deviation": -14
+  },
+  {
+   "number": "129Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "12.11.2026",
+   "time_local": "16:30",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "16:34",
+   "deviation": -4
   }
  ]
 }
