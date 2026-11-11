@@ -1,6 +1,16 @@
 {
  "tashkent-central": [
   {
+   "number": "0732Ф",
+   "route": "ТАШКЕНТ-АНДИЖАН",
+   "date": "11.11.2026",
+   "time_local": "18:40",
+   "platform": "2",
+   "sold_out": false,
+   "planned": null,
+   "deviation": null
+  },
+  {
    "number": "772Ф",
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "11.11.2026",
@@ -244,16 +254,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "359Ж",
-   "route": "САМАРКАНД - ХУДЖАНД",
-   "date": "11.11.2026",
-   "time_local": "18:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "765Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
@@ -733,16 +733,6 @@
  ],
  "andijan": [
   {
-   "number": "127Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "11.11.2026",
-   "time_local": "17:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:45",
-   "deviation": -25
-  },
-  {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
    "date": "12.11.2026",
@@ -761,6 +751,16 @@
    "sold_out": false,
    "planned": "16:34",
    "deviation": -4
+  },
+  {
+   "number": "127Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "12.11.2026",
+   "time_local": "17:20",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "17:45",
+   "deviation": -25
   }
  ]
 }
