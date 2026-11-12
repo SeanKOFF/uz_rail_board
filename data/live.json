@@ -5,7 +5,7 @@
    "route": "ТАШКЕНТ-МОСКВА",
    "date": "13.11.2026",
    "time_local": "00:32",
-   "platform": null,
+   "platform": "3",
    "sold_out": false,
    "planned": "00:32",
    "deviation": null
@@ -105,7 +105,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "13.11.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -578,16 +578,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "054Ф",
-   "route": "БУХАРА -КУНГИРОТ",
-   "date": "12.11.2026",
-   "time_local": "23:37",
-   "platform": null,
-   "sold_out": false,
-   "planned": "23:37",
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "БУХАРА -ХИВА",
