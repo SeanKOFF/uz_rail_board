@@ -265,16 +265,6 @@
  ],
  "samarkand": [
   {
-   "number": "765Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "12.11.2026",
-   "time_local": "18:15",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:15",
-   "deviation": null
-  },
-  {
    "number": "709Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "12.11.2026",
