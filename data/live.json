@@ -285,16 +285,6 @@
  ],
  "samarkand": [
   {
-   "number": "710Ф",
-   "route": "САМАРКАНД - БУХОРО 1",
-   "date": "13.11.2026",
-   "time_local": "12:00",
-   "platform": null,
-   "sold_out": false,
-   "planned": "12:00",
-   "deviation": null
-  },
-  {
    "number": "716Ф",
    "route": "САМАРКАНД - КАРШИ",
    "date": "13.11.2026",
@@ -616,16 +606,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "753М",
-   "route": "ХИВА - ТОШКЕНТ-ШИ",
-   "date": "13.11.2026",
-   "time_local": "11:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "11:32",
-   "deviation": null
-  },
   {
    "number": "752Ж",
    "route": "ТОШКЕНТ-ШИ - ХИВА",
