@@ -15,7 +15,7 @@
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "13.11.2026",
    "time_local": "20:32",
-   "platform": "3",
+   "platform": "6",
    "sold_out": false,
    "planned": "20:32",
    "deviation": null
@@ -135,7 +135,7 @@
    "route": "ТАШКЕНТ -АЛМАТЫ",
    "date": "14.11.2026",
    "time_local": "14:41",
-   "platform": null,
+   "platform": "2",
    "sold_out": false,
    "planned": "14:41",
    "deviation": null
@@ -284,16 +284,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "765Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "13.11.2026",
-   "time_local": "18:15",
-   "platform": null,
-   "sold_out": false,
-   "planned": "18:15",
-   "deviation": null
-  },
   {
    "number": "709Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
