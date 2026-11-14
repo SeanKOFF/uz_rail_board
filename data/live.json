@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "772Ф",
-   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
-   "date": "14.11.2026",
-   "time_local": "19:48",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "19:48",
-   "deviation": null
-  },
-  {
    "number": "712Ф",
    "route": "ТАШКЕНТ -САМАРКАНД-КАРШИ -БУХАРА",
    "date": "14.11.2026",
@@ -108,6 +98,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "14:41",
+   "deviation": null
+  },
+  {
+   "number": "772Ф",
+   "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
+   "date": "15.11.2026",
+   "time_local": "19:48",
+   "platform": null,
+   "sold_out": false,
+   "planned": "19:48",
    "deviation": null
   },
   {
@@ -294,16 +294,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "709Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "14.11.2026",
-   "time_local": "19:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "19:23",
-   "deviation": null
-  },
   {
    "number": "715Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
@@ -530,7 +520,7 @@
    "date": "18.11.2026",
    "time_local": "02:02",
    "platform": null,
-   "sold_out": false,
+   "sold_out": true,
    "planned": "02:02",
    "deviation": null
   },
