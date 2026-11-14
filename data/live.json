@@ -228,7 +228,7 @@
    "date": "16.11.2026",
    "time_local": "22:35",
    "platform": null,
-   "sold_out": true,
+   "sold_out": false,
    "planned": "22:35",
    "deviation": null
   },
@@ -628,16 +628,6 @@
   }
  ],
  "bukhara": [
-  {
-   "number": "329Щ",
-   "route": "БУХАРА -ВОЛЖСКИЙ",
-   "date": "15.11.2026",
-   "time_local": "03:38",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "БУХАРА -ХИВА",
