@@ -1,13 +1,13 @@
 {
  "tashkent-central": [
   {
-   "number": "001Ф",
-   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "number": "732З",
+   "route": "ТОШКЕНТ СЕВЕРНЫЙ - АНДИЖАН",
    "date": "14.11.2026",
-   "time_local": "14:41",
-   "platform": "2",
+   "time_local": "18:40",
+   "platform": "1",
    "sold_out": false,
-   "planned": "14:41",
+   "planned": "18:40",
    "deviation": null
   },
   {
@@ -108,6 +108,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "08:58",
+   "deviation": null
+  },
+  {
+   "number": "001Ф",
+   "route": "ТАШКЕНТ -АЛМАТЫ",
+   "date": "15.11.2026",
+   "time_local": "14:41",
+   "platform": null,
+   "sold_out": false,
+   "planned": "14:41",
    "deviation": null
   },
   {
@@ -586,16 +596,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ШИ - ХИВА",
-   "date": "14.11.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
   {
    "number": "058З",
    "route": "ТОШКЕНТ ЖА - ШОВОТ",
