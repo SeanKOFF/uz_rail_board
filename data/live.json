@@ -699,16 +699,6 @@
  ],
  "bukhara": [
   {
-   "number": "071Ф",
-   "route": "БУХАРА -ТОШКЕНТ ЖА",
-   "date": "15.11.2026",
-   "time_local": "22:51",
-   "platform": null,
-   "sold_out": false,
-   "planned": "22:51",
-   "deviation": null
-  },
-  {
    "number": "054Ф",
    "route": "БУХАРА -КУНГИРОТ",
    "date": "15.11.2026",
@@ -729,8 +719,8 @@
    "deviation": null
   },
   {
-   "number": "058З",
-   "route": "БУХАРА -ШОВОТ",
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
    "date": "16.11.2026",
    "time_local": "05:32",
    "platform": null,
@@ -739,8 +729,8 @@
    "deviation": null
   },
   {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
+   "number": "058З",
+   "route": "БУХАРА -ШОВОТ",
    "date": "16.11.2026",
    "time_local": "05:32",
    "platform": null,
@@ -866,6 +856,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "21:11",
+   "deviation": null
+  },
+  {
+   "number": "071Ф",
+   "route": "БУХАРА -ТОШКЕНТ ЖА",
+   "date": "19.11.2026",
+   "time_local": "22:51",
+   "platform": null,
+   "sold_out": false,
+   "planned": "22:51",
    "deviation": null
   },
   {
