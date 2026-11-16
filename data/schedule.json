@@ -1,6 +1,6 @@
 {
  "station": "Ташкент",
- "generated_at": "2026-11-09T17:20:00+05:00",
+ "generated_at": "2026-11-16T17:10:59+05:00",
  "source": "https://eticket.railway.uz/ru/pages/schedule",
  "note": "Время по расписанию. Фактические задержки не учитываются.",
  "trains": [
@@ -1229,24 +1229,6 @@
    ]
   },
   {
-   "number": "072Ф",
-   "direction": "arrival",
-   "title": "из Ташкента-Южного",
-   "brand": null,
-   "fast": false,
-   "time_local": "02:21",
-   "days": "134567",
-   "via": null,
-   "station": "samarkand",
-   "through": true,
-   "cities": [
-    "Ташкент"
-   ],
-   "quals": [
-    "south"
-   ]
-  },
-  {
    "number": "071Ф",
    "direction": "arrival",
    "title": "из Алата",
@@ -1262,6 +1244,24 @@
    ],
    "quals": [
     ""
+   ]
+  },
+  {
+   "number": "072Ф",
+   "direction": "arrival",
+   "title": "из Ташкента-Южного",
+   "brand": null,
+   "fast": false,
+   "time_local": "02:21",
+   "days": "134567",
+   "via": null,
+   "station": "samarkand",
+   "through": true,
+   "cities": [
+    "Ташкент"
+   ],
+   "quals": [
+    "south"
    ]
   },
   {
@@ -2399,24 +2399,6 @@
    ]
   },
   {
-   "number": "305Й",
-   "direction": "arrival",
-   "title": "из Москвы (Павелецкий вокзал)",
-   "brand": null,
-   "fast": false,
-   "time_local": "04:55",
-   "days": "24",
-   "via": null,
-   "station": "tashkent-central",
-   "through": false,
-   "cities": [
-    "Москва"
-   ],
-   "quals": [
-    ""
-   ]
-  },
-  {
    "number": "096Ф",
    "direction": "departure",
    "title": "Андижан 1",
@@ -2450,6 +2432,24 @@
    ],
    "quals": [
     "pass"
+   ]
+  },
+  {
+   "number": "305Й",
+   "direction": "arrival",
+   "title": "из Москвы (Павелецкий вокзал)",
+   "brand": null,
+   "fast": false,
+   "time_local": "04:55",
+   "days": "24",
+   "via": null,
+   "station": "tashkent-central",
+   "through": false,
+   "cities": [
+    "Москва"
+   ],
+   "quals": [
+    ""
    ]
   },
   {
@@ -3145,7 +3145,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "06:10",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "tashkent-central",
    "through": false,
@@ -4261,7 +4261,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "08:23",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -4369,7 +4369,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "08:33",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -4747,7 +4747,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "09:32",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -4783,7 +4783,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "09:35",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -5107,7 +5107,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "10:10",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "bukhara",
    "through": false,
@@ -8359,7 +8359,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "18:14",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "bukhara",
    "through": false,
@@ -8665,7 +8665,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "18:49",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -8737,7 +8737,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "18:52",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "navoi",
    "through": true,
@@ -9151,7 +9151,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "19:51",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -9295,7 +9295,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "20:01",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "samarkand",
    "through": true,
@@ -10087,7 +10087,7 @@
    "brand": "Afrosiyob",
    "fast": true,
    "time_local": "22:16",
-   "days": "4567",
+   "days": "567",
    "via": null,
    "station": "tashkent-central",
    "through": false,
