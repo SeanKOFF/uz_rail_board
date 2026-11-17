@@ -245,16 +245,6 @@
  ],
  "samarkand": [
   {
-   "number": "769Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "17.11.2026",
-   "time_local": "16:56",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:56",
-   "deviation": null
-  },
-  {
    "number": "765Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
    "date": "17.11.2026",
@@ -486,36 +476,6 @@
   }
  ],
  "urgench": [
-  {
-   "number": "654Х",
-   "route": "БЕЙНЕУ - УРГАНЧ",
-   "date": "17.11.2026",
-   "time_local": "16:20",
-   "platform": null,
-   "sold_out": false,
-   "planned": null,
-   "deviation": null
-  },
-  {
-   "number": "076Ж",
-   "route": "ХИВА - ТОШКЕНТ ЖА",
-   "date": "17.11.2026",
-   "time_local": "16:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:23",
-   "deviation": null
-  },
-  {
-   "number": "126Ф",
-   "route": "ХИВА - АНДИЖОН 1",
-   "date": "17.11.2026",
-   "time_local": "16:23",
-   "platform": null,
-   "sold_out": false,
-   "planned": "16:23",
-   "deviation": null
-  },
   {
    "number": "056Ч",
    "route": "ТОШКЕНТ ЖА - ХИВА",
@@ -769,29 +729,7 @@
    "deviation": null
   }
  ],
- "qarshi": [
-  {
-   "number": "703Ф",
-   "route": "КАРШИ - ТОШКЕНТ-ШИ",
-   "date": "17.11.2026",
-   "time_local": "05:40",
-   "platform": null,
-   "sold_out": true,
-   "planned": "05:40",
-   "deviation": null
-  }
- ],
  "andijan": [
-  {
-   "number": "129Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "17.11.2026",
-   "time_local": "16:30",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "16:34",
-   "deviation": -4
-  },
   {
    "number": "127Ф",
    "route": "ANDIJON - TOSHKENT",
@@ -811,6 +749,16 @@
    "sold_out": false,
    "planned": "15:50",
    "deviation": -14
+  },
+  {
+   "number": "129Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "18.11.2026",
+   "time_local": "16:30",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "16:34",
+   "deviation": -4
   }
  ]
 }
