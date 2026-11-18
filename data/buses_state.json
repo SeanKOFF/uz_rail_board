@@ -1,5 +1,5 @@
 {
-"ts": "2026-11-18T05:17+05:00",
+"ts": "2026-11-18T05:56+05:00",
 "window": ["2026-11-18", "2026-11-19", "2026-11-20"],
 "trips": {
 "0:128214": {"d":"2026-11-19","dep":"2026-11-19 19:00","route":"Ташкент - Термез","carrier":"OOO AVTOSTAR BERKUTSK","platform":"8","status":10,"bus":"YUTONG 51","route_id":198,"seats":51,"sold":7,"api":0},
@@ -42,7 +42,7 @@
 "0:128658": {"d":"2026-11-20","dep":"2026-11-20 17:30","route":"Ташкент - Нукус","carrier":"\"NUKUS AVTOVOKZAL\" MCHJ","platform":"20","status":10,"bus":"ZHONG TONG 59","route_id":248,"seats":59,"sold":4,"api":0},
 "0:128677": {"d":"2026-11-18","dep":"2026-11-18 09:15","route":"Ташкент - Самарканд - Джума","carrier":"\"TITAN 2020\"","platform":"12","status":10,"bus":"ZHONG TONG 59","route_id":165,"seats":59,"sold":18,"api":0},
 "0:128678": {"d":"2026-11-20","dep":"2026-11-20 09:15","route":"Ташкент - Самарканд - Джума","carrier":"\"TITAN 2020\"","platform":"12","status":10,"bus":"YUTONG 51 T2020","route_id":165,"seats":51,"sold":2,"api":0},
-"0:128701": {"d":"2026-11-18","dep":"2026-11-18 07:00","route":"Ташкент - Зармитан","carrier":"\"BEST DILNURA LOGISTICS\" MCHJ","platform":"11","status":10,"bus":"YUTONG 51","route_id":169,"seats":51,"sold":23,"api":0},
+"0:128701": {"d":"2026-11-18","dep":"2026-11-18 07:00","route":"Ташкент - Зармитан","carrier":"\"BEST DILNURA LOGISTICS\" MCHJ","platform":"11","status":10,"bus":"YUTONG 51","route_id":169,"seats":51,"sold":24,"api":0},
 "0:128702": {"d":"2026-11-19","dep":"2026-11-19 07:00","route":"Ташкент - Зармитан","carrier":"\"BEST DILNURA LOGISTICS\" MCHJ","platform":"11","status":10,"bus":"YUTONG 51","route_id":169,"seats":51,"sold":11,"api":0},
 "0:128703": {"d":"2026-11-20","dep":"2026-11-20 07:00","route":"Ташкент - Зармитан","carrier":"\"BEST DILNURA LOGISTICS\" MCHJ","platform":"11","status":10,"bus":"YUTONG 51","route_id":169,"seats":51,"sold":15,"api":0},
 "0:128731": {"d":"2026-11-18","dep":"2026-11-18 08:00","route":"Ташкент - Нурата","carrier":"\"BEST DILNURA LOGISTICS\" MCHJ","platform":"11","status":10,"bus":"YUTONG (49)","route_id":222,"seats":49,"sold":11,"api":0},
@@ -110,10 +110,10 @@
 "1:11173": {"d":"2026-11-18","dep":"2026-11-18 23:15","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":15,"api":1},
 "1:11174": {"d":"2026-11-19","dep":"2026-11-19 23:15","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":6,"api":1},
 "1:11175": {"d":"2026-11-20","dep":"2026-11-20 23:15","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":25,"api":1},
-"1:8983": {"d":"2026-11-18","dep":"2026-11-18 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":47,"api":1},
+"1:8983": {"d":"2026-11-18","dep":"2026-11-18 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":49,"api":1},
 "1:8984": {"d":"2026-11-19","dep":"2026-11-19 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":9,"api":1},
 "1:8985": {"d":"2026-11-20","dep":"2026-11-20 07:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":5,"api":1},
-"1:9043": {"d":"2026-11-18","dep":"2026-11-18 08:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":33,"api":1},
+"1:9043": {"d":"2026-11-18","dep":"2026-11-18 08:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":35,"api":1},
 "1:9044": {"d":"2026-11-19","dep":"2026-11-19 08:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":10,"api":1},
 "1:9045": {"d":"2026-11-20","dep":"2026-11-20 08:30","route":"Ташкент-Каракуль-Олот","carrier":null,"platform":null,"status":null,"bus":"AllComfort Comfort Olot","route_id":null,"seats":51,"sold":5,"api":1},
 "1:9103": {"d":"2026-11-18","dep":"2026-11-18 09:30","route":"Ташкент-Бухара","carrier":null,"platform":null,"status":null,"bus":"All Comfort Comfort Class","route_id":null,"seats":51,"sold":29,"api":1},
@@ -136,7 +136,7 @@
 "2:52757": {"d":"2026-11-19","dep":"2026-11-19 09:50","route":"Ташкент - Хатирчи","carrier":"\"ALHAMID-777\" MCHJ","platform":"13","status":10,"bus":"AL-HAMID ZHONGTONG 59","route_id":193,"seats":59,"sold":2,"api":2},
 "2:52772": {"d":"2026-11-19","dep":"2026-11-19 16:30","route":"Ташкент - Хатирчи","carrier":"\"ALHAMID-777\" MCHJ","platform":"14","status":10,"bus":"AL-HAMID ZHONGTONG 59","route_id":193,"seats":59,"sold":6,"api":2},
 "2:52787": {"d":"2026-11-19","dep":"2026-11-19 22:00","route":"Ташкент - Хатирчи","carrier":"\"ALHAMID-777\" MCHJ","platform":"14","status":10,"bus":"AL-HAMID ZHONGTONG 59","route_id":193,"seats":59,"sold":4,"api":2},
-"4:62628": {"d":"2026-11-18","dep":"2026-11-18 15:00","route":"Ташкент - Хива","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":244,"seats":51,"sold":18,"api":4},
+"4:62628": {"d":"2026-11-18","dep":"2026-11-18 15:00","route":"Ташкент - Хива","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":244,"seats":51,"sold":23,"api":4},
 "4:62629": {"d":"2026-11-19","dep":"2026-11-19 15:00","route":"Ташкент - Хива","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":244,"seats":51,"sold":7,"api":4},
 "4:62630": {"d":"2026-11-20","dep":"2026-11-20 15:00","route":"Ташкент - Хива","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":244,"seats":51,"sold":6,"api":4},
 "4:62658": {"d":"2026-11-18","dep":"2026-11-18 18:30","route":"Ташкент - Шават (граница)","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":266,"seats":51,"sold":8,"api":4},
@@ -147,7 +147,7 @@
 "4:62690": {"d":"2026-11-20","dep":"2026-11-20 19:30","route":"Ташкент - Хива","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":239,"seats":51,"sold":3,"api":4},
 "4:62840": {"d":"2026-11-19","dep":"2026-11-19 23:30","route":"Ташкент - Ургенч","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":245,"seats":51,"sold":2,"api":4},
 "4:62841": {"d":"2026-11-20","dep":"2026-11-20 23:30","route":"Ташкент - Ургенч","carrier":"\"Comfort Auto Hamkor\" MCHJ","platform":"29","status":10,"bus":"ZHONG TONG 51","route_id":245,"seats":51,"sold":5,"api":4},
-"5:64350": {"d":"2026-11-18","dep":"2026-11-18 06:50","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":21,"api":5},
+"5:64350": {"d":"2026-11-18","dep":"2026-11-18 06:50","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":24,"api":5},
 "5:64351": {"d":"2026-11-19","dep":"2026-11-19 06:50","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":8,"api":5},
 "5:64352": {"d":"2026-11-20","dep":"2026-11-20 06:50","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 55  255-277-744-233","route_id":229,"seats":55,"sold":4,"api":5},
 "5:64380": {"d":"2026-11-18","dep":"2026-11-18 08:20","route":"Ташкент - Навои - Учкудук","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"2","status":10,"bus":"ZHONG TONG 59","route_id":230,"seats":59,"sold":30,"api":5},
@@ -171,7 +171,7 @@
 "5:64560": {"d":"2026-11-18","dep":"2026-11-18 20:30","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"1","status":10,"bus":"ZHONG TONG 36 СПАЛЬНЫЙ САЛОН","route_id":229,"seats":36,"sold":14,"api":5},
 "5:64561": {"d":"2026-11-19","dep":"2026-11-19 20:30","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"1","status":10,"bus":"ZHONG TONG 36 СПАЛЬНЫЙ САЛОН","route_id":229,"seats":36,"sold":3,"api":5},
 "5:64562": {"d":"2026-11-20","dep":"2026-11-20 20:30","route":"Ташкент - Навои - Зарафшан","carrier":"\"ERKIN EMINA EXPRESS TOUR\" MCHJ","platform":"1","status":10,"bus":"ZHONG TONG 36 СПАЛЬНЫЙ САЛОН","route_id":229,"seats":36,"sold":15,"api":5},
-"7:54335": {"d":"2026-11-18","dep":"2026-11-18 08:00","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"ZHONG TONG 59","route_id":193,"seats":59,"sold":21,"api":7},
+"7:54335": {"d":"2026-11-18","dep":"2026-11-18 08:00","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"ZHONG TONG 59","route_id":193,"seats":59,"sold":22,"api":7},
 "7:54336": {"d":"2026-11-20","dep":"2026-11-20 08:00","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":3,"api":7},
 "7:54351": {"d":"2026-11-20","dep":"2026-11-20 08:50","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":2,"api":7},
 "7:54365": {"d":"2026-11-18","dep":"2026-11-18 09:50","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 53","route_id":193,"seats":53,"sold":13,"api":7},
@@ -180,10 +180,10 @@
 "7:54381": {"d":"2026-11-20","dep":"2026-11-20 09:00","route":"Ташкент - Кадан","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":199,"seats":51,"sold":7,"api":7},
 "7:54395": {"d":"2026-11-18","dep":"2026-11-18 11:00","route":"Ташкент - Мирбазар","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 53","route_id":195,"seats":53,"sold":3,"api":7},
 "7:54396": {"d":"2026-11-20","dep":"2026-11-20 11:00","route":"Ташкент - Мирбазар","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 51","route_id":195,"seats":51,"sold":3,"api":7},
-"7:54410": {"d":"2026-11-18","dep":"2026-11-18 16:00","route":"Ташкент - Кадан","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 51","route_id":199,"seats":51,"sold":20,"api":7},
+"7:54410": {"d":"2026-11-18","dep":"2026-11-18 16:00","route":"Ташкент - Кадан","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 51","route_id":199,"seats":51,"sold":21,"api":7},
 "7:54411": {"d":"2026-11-20","dep":"2026-11-20 16:00","route":"Ташкент - Кадан","carrier":"\"Hunarmand\" MChJ","platform":"14","status":10,"bus":"YUTONG 51","route_id":199,"seats":51,"sold":9,"api":7},
 "7:54425": {"d":"2026-11-18","dep":"2026-11-18 16:30","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":10,"api":7},
 "7:54426": {"d":"2026-11-20","dep":"2026-11-20 16:30","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":17,"api":7},
-"7:54569": {"d":"2026-11-18","dep":"2026-11-18 22:00","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":4,"api":7}
+"7:54569": {"d":"2026-11-18","dep":"2026-11-18 22:00","route":"Ташкент - Хатирчи","carrier":"\"Hunarmand\" MChJ","platform":"13","status":10,"bus":"YUTONG 51","route_id":193,"seats":51,"sold":5,"api":7}
 }
 }
