@@ -275,26 +275,6 @@
  ],
  "samarkand": [
   {
-   "number": "703Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "19.11.2026",
-   "time_local": "08:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "08:10",
-   "deviation": null
-  },
-  {
-   "number": "711Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "19.11.2026",
-   "time_local": "08:10",
-   "platform": null,
-   "sold_out": false,
-   "planned": "08:10",
-   "deviation": null
-  },
-  {
    "number": "752Ж",
    "route": "САМАРКАНД - ХИВА",
    "date": "19.11.2026",
