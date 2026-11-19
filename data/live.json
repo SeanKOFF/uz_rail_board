@@ -115,7 +115,7 @@
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "19.11.2026",
    "time_local": "19:48",
-   "platform": null,
+   "platform": "1",
    "sold_out": false,
    "planned": "19:48",
    "deviation": null
@@ -274,36 +274,6 @@
   }
  ],
  "samarkand": [
-  {
-   "number": "771Ф",
-   "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
-   "date": "19.11.2026",
-   "time_local": "05:21",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:21",
-   "deviation": null
-  },
-  {
-   "number": "082Г",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "19.11.2026",
-   "time_local": "05:29",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:29",
-   "deviation": null
-  },
-  {
-   "number": "080Ь",
-   "route": "САМАРКАНД - ТОШКЕНТ ЖА",
-   "date": "19.11.2026",
-   "time_local": "05:29",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:29",
-   "deviation": null
-  },
   {
    "number": "703Ф",
    "route": "САМАРКАНД - ТОШКЕНТ-ШИ",
@@ -809,16 +779,6 @@
  ],
  "bukhara": [
   {
-   "number": "056Ч",
-   "route": "БУХАРА -ХИВА",
-   "date": "19.11.2026",
-   "time_local": "05:32",
-   "platform": null,
-   "sold_out": false,
-   "planned": "05:32",
-   "deviation": null
-  },
-  {
    "number": "072Ф",
    "route": "БУХАРА -ОЛОТ",
    "date": "19.11.2026",
@@ -896,6 +856,16 @@
    "platform": null,
    "sold_out": false,
    "planned": "23:37",
+   "deviation": null
+  },
+  {
+   "number": "056Ч",
+   "route": "БУХАРА -ХИВА",
+   "date": "20.11.2026",
+   "time_local": "05:32",
+   "platform": null,
+   "sold_out": false,
+   "planned": "05:32",
    "deviation": null
   },
   {
