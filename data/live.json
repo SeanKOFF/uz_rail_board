@@ -671,16 +671,6 @@
  ],
  "andijan": [
   {
-   "number": "127Ф",
-   "route": "ANDIJON - TOSHKENT",
-   "date": "23.11.2026",
-   "time_local": "17:20",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:45",
-   "deviation": -25
-  },
-  {
    "number": "125Ч",
    "route": "ANDIJON - TOSHKENT",
    "date": "24.11.2026",
@@ -699,6 +689,16 @@
    "sold_out": false,
    "planned": "16:34",
    "deviation": -4
+  },
+  {
+   "number": "127Ф",
+   "route": "ANDIJON - TOSHKENT",
+   "date": "24.11.2026",
+   "time_local": "17:20",
+   "platform": "1",
+   "sold_out": false,
+   "planned": "17:45",
+   "deviation": -25
   }
  ]
 }
