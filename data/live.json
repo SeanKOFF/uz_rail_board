@@ -1,16 +1,6 @@
 {
  "tashkent-central": [
   {
-   "number": "734Ф",
-   "route": "ТОШКЕНТ -НАМАНГАН-АНДИЖАН",
-   "date": "23.11.2026",
-   "time_local": "17:50",
-   "platform": "1",
-   "sold_out": false,
-   "planned": "17:55",
-   "deviation": -5
-  },
-  {
    "number": "772Ф",
    "route": "TАШКЕНТ - САМАРКАНД-БУХАРА",
    "date": "23.11.2026",
@@ -149,6 +139,16 @@
    "sold_out": false,
    "planned": "18:40",
    "deviation": null
+  },
+  {
+   "number": "734Ф",
+   "route": "ТОШКЕНТ -НАМАНГАН-АНДИЖАН",
+   "date": "29.11.2026",
+   "time_local": "17:50",
+   "platform": null,
+   "sold_out": false,
+   "planned": "17:55",
+   "deviation": -5
   }
  ],
  "tashkent-south": [
