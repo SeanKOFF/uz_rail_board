@@ -1886,7 +1886,7 @@
      "arrival": "01:01",
      "departure": "01:04",
      "stop": 3,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -1899,7 +1899,7 @@
      "arrival": "02:21",
      "departure": "03:00",
      "stop": 39,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900260",
@@ -1912,7 +1912,7 @@
      "arrival": "04:00",
      "departure": "04:02",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900812",
@@ -1925,7 +1925,7 @@
      "arrival": "04:20",
      "departure": "04:34",
      "stop": 14,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900814",
@@ -1938,7 +1938,7 @@
      "arrival": "04:53",
      "departure": "04:55",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900930",
@@ -1951,7 +1951,7 @@
      "arrival": "05:12",
      "departure": "05:17",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900824",
@@ -1964,7 +1964,7 @@
      "arrival": "05:49",
      "departure": "05:54",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900800",
@@ -1977,7 +1977,7 @@
      "arrival": "06:28",
      "departure": "06:48",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900845",
@@ -1990,7 +1990,7 @@
      "arrival": "12:01",
      "departure": "12:06",
      "stop": 5,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900790",
@@ -2003,7 +2003,7 @@
      "arrival": "12:46",
      "departure": "12:56",
      "stop": 10,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900172",
@@ -2016,7 +2016,7 @@
      "arrival": "13:26",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -3472,7 +3472,7 @@
      "arrival": "00:29",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 0,
@@ -7760,7 +7760,7 @@
      "arrival": "00:16",
      "departure": "00:41",
      "stop": 25,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900750",
@@ -7773,7 +7773,7 @@
      "arrival": "06:34",
      "departure": "06:54",
      "stop": 20,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900700",
@@ -7786,7 +7786,7 @@
      "arrival": "08:42",
      "departure": "09:22",
      "stop": 40,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900720",
@@ -7799,7 +7799,7 @@
      "arrival": "11:01",
      "departure": "11:03",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900850",
@@ -7812,7 +7812,7 @@
      "arrival": "12:26",
      "departure": "12:28",
      "stop": 2,
-     "offset": 1
+     "offset": 2
     },
     {
      "code": "2900001",
@@ -7825,7 +7825,7 @@
      "arrival": "13:51",
      "departure": null,
      "stop": null,
-     "offset": 1
+     "offset": 2
     }
    ],
    "cut_before": 1,
@@ -9756,226 +9756,6 @@
    ]
   }
  ],
- "753": [
-  {
-   "number": "753М",
-   "stops": [
-    {
-     "code": "2900172",
-     "title": "Хива",
-     "names": {
-      "ru": "Хива",
-      "uz": "Xiva",
-      "en": "Khiva"
-     },
-     "arrival": null,
-     "departure": "11:00",
-     "stop": null,
-     "offset": 0
-    },
-    {
-     "code": "2900790",
-     "title": "Ургенч",
-     "names": {
-      "ru": "Ургенч",
-      "uz": "Urganch",
-      "en": "Urgench"
-     },
-     "arrival": "11:20",
-     "departure": "11:32",
-     "stop": 12,
-     "offset": 0
-    },
-    {
-     "code": "2900800",
-     "title": "Бухара 1",
-     "names": {
-      "ru": "Бухара 1",
-      "uz": "Buxoro 1",
-      "en": "Bukhara 1"
-     },
-     "arrival": "15:15",
-     "departure": "15:35",
-     "stop": 20,
-     "offset": 0
-    },
-    {
-     "code": "2900700",
-     "title": "Самарканд",
-     "names": {
-      "ru": "Самарканд",
-      "uz": "Samarqand",
-      "en": "Samarkand"
-     },
-     "arrival": "17:06",
-     "departure": "17:16",
-     "stop": 10,
-     "offset": 0
-    },
-    {
-     "code": "2900775",
-     "title": "Даштобод",
-     "names": {
-      "ru": "Даштобод",
-      "uz": "Dashtobod",
-      "en": "Dashtobod"
-     },
-     "arrival": "18:22",
-     "departure": "18:23",
-     "stop": 1,
-     "offset": 0
-    },
-    {
-     "code": "2900001",
-     "title": "Ташкент-Центральный",
-     "names": {
-      "ru": "Ташкент-Центральный",
-      "uz": "Toshkent-Markaziy",
-      "en": "Tashkent-Central"
-     },
-     "arrival": "19:36",
-     "departure": null,
-     "stop": null,
-     "offset": 0
-    }
-   ],
-   "cut_before": 0,
-   "cut_after": 0,
-   "signature": [
-    [
-     "2900172",
-     null,
-     "11:00"
-    ],
-    [
-     "2900790",
-     "11:20",
-     "11:32"
-    ],
-    [
-     "2900800",
-     "15:15",
-     "15:35"
-    ],
-    [
-     "2900700",
-     "17:06",
-     "17:16"
-    ],
-    [
-     "2900775",
-     "18:22",
-     "18:23"
-    ],
-    [
-     "2900001",
-     "19:36",
-     null
-    ]
-   ]
-  }
- ],
- "754": [
-  {
-   "number": "754Ж",
-   "stops": [
-    {
-     "code": "2900001",
-     "title": "Ташкент-Центральный",
-     "names": {
-      "ru": "Ташкент-Центральный",
-      "uz": "Toshkent-Markaziy",
-      "en": "Tashkent-Central"
-     },
-     "arrival": null,
-     "departure": "11:20",
-     "stop": null,
-     "offset": 0
-    },
-    {
-     "code": "2900700",
-     "title": "Самарканд",
-     "names": {
-      "ru": "Самарканд",
-      "uz": "Samarqand",
-      "en": "Samarkand"
-     },
-     "arrival": "13:33",
-     "departure": "13:43",
-     "stop": 10,
-     "offset": 0
-    },
-    {
-     "code": "2900800",
-     "title": "Бухара 1",
-     "names": {
-      "ru": "Бухара 1",
-      "uz": "Buxoro 1",
-      "en": "Bukhara 1"
-     },
-     "arrival": "15:27",
-     "departure": "15:47",
-     "stop": 20,
-     "offset": 0
-    },
-    {
-     "code": "2900790",
-     "title": "Ургенч",
-     "names": {
-      "ru": "Ургенч",
-      "uz": "Urganch",
-      "en": "Urgench"
-     },
-     "arrival": "19:21",
-     "departure": "19:31",
-     "stop": 10,
-     "offset": 0
-    },
-    {
-     "code": "2900172",
-     "title": "Хива",
-     "names": {
-      "ru": "Хива",
-      "uz": "Xiva",
-      "en": "Khiva"
-     },
-     "arrival": "19:51",
-     "departure": null,
-     "stop": null,
-     "offset": 0
-    }
-   ],
-   "cut_before": 0,
-   "cut_after": 0,
-   "signature": [
-    [
-     "2900001",
-     null,
-     "11:20"
-    ],
-    [
-     "2900700",
-     "13:33",
-     "13:43"
-    ],
-    [
-     "2900800",
-     "15:27",
-     "15:47"
-    ],
-    [
-     "2900790",
-     "19:21",
-     "19:31"
-    ],
-    [
-     "2900172",
-     "19:51",
-     null
-    ]
-   ]
-  }
- ],
  "763": [
   {
    "number": "763Ф",
@@ -11161,87 +10941,6 @@
      null
     ]
    ]
-  },
-  {
-   "number": "777М",
-   "stops": [
-    {
-     "code": "2900800",
-     "title": "Бухара 1",
-     "names": {
-      "ru": "Бухара 1",
-      "uz": "Buxoro 1",
-      "en": "Bukhara 1"
-     },
-     "arrival": null,
-     "departure": "18:15",
-     "stop": null,
-     "offset": 0
-    },
-    {
-     "code": "2900930",
-     "title": "Навои",
-     "names": {
-      "ru": "Навои",
-      "uz": "Navoiy",
-      "en": "Navoi"
-     },
-     "arrival": "18:49",
-     "departure": "18:52",
-     "stop": 3,
-     "offset": 0
-    },
-    {
-     "code": "2900700",
-     "title": "Самарканд",
-     "names": {
-      "ru": "Самарканд",
-      "uz": "Samarqand",
-      "en": "Samarkand"
-     },
-     "arrival": "19:51",
-     "departure": "20:01",
-     "stop": 10,
-     "offset": 0
-    },
-    {
-     "code": "2900001",
-     "title": "Ташкент-Центральный",
-     "names": {
-      "ru": "Ташкент-Центральный",
-      "uz": "Toshkent-Markaziy",
-      "en": "Tashkent-Central"
-     },
-     "arrival": "22:16",
-     "departure": null,
-     "stop": null,
-     "offset": 0
-    }
-   ],
-   "cut_before": 0,
-   "cut_after": 0,
-   "signature": [
-    [
-     "2900800",
-     null,
-     "18:15"
-    ],
-    [
-     "2900930",
-     "18:49",
-     "18:52"
-    ],
-    [
-     "2900700",
-     "19:51",
-     "20:01"
-    ],
-    [
-     "2900001",
-     "22:16",
-     null
-    ]
-   ]
   }
  ],
  "778": [
@@ -11308,87 +11007,6 @@
      "2900001",
      null,
      "06:10"
-    ],
-    [
-     "2900700",
-     "08:23",
-     "08:33"
-    ],
-    [
-     "2900930",
-     "09:32",
-     "09:35"
-    ],
-    [
-     "2900800",
-     "10:10",
-     null
-    ]
-   ]
-  },
-  {
-   "number": "778Ж",
-   "stops": [
-    {
-     "code": "2900001",
-     "title": "Ташкент-Центральный",
-     "names": {
-      "ru": "Ташкент-Центральный",
-      "uz": "Toshkent-Markaziy",
-      "en": "Tashkent-Central"
-     },
-     "arrival": null,
-     "departure": "06:09",
-     "stop": null,
-     "offset": 0
-    },
-    {
-     "code": "2900700",
-     "title": "Самарканд",
-     "names": {
-      "ru": "Самарканд",
-      "uz": "Samarqand",
-      "en": "Samarkand"
-     },
-     "arrival": "08:23",
-     "departure": "08:33",
-     "stop": 10,
-     "offset": 0
-    },
-    {
-     "code": "2900930",
-     "title": "Навои",
-     "names": {
-      "ru": "Навои",
-      "uz": "Navoiy",
-      "en": "Navoi"
-     },
-     "arrival": "09:32",
-     "departure": "09:35",
-     "stop": 3,
-     "offset": 0
-    },
-    {
-     "code": "2900800",
-     "title": "Бухара 1",
-     "names": {
-      "ru": "Бухара 1",
-      "uz": "Buxoro 1",
-      "en": "Bukhara 1"
-     },
-     "arrival": "10:10",
-     "departure": null,
-     "stop": null,
-     "offset": 0
-    }
-   ],
-   "cut_before": 0,
-   "cut_after": 0,
-   "signature": [
-    [
-     "2900001",
-     null,
-     "06:09"
     ],
     [
      "2900700",

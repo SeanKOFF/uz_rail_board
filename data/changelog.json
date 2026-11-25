@@ -1,352 +1,352 @@
 [
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
   "number": "734Ф",
   "direction": "arrival",
   "detail": "01:00 из Ташкента"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
   "number": "733Ф",
   "direction": "departure",
   "detail": "05:55 Наманган — Ташкент"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
   "number": "733Ф",
   "direction": "arrival",
   "detail": "12:42 из Андижана"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
   "number": "734Ф",
   "direction": "departure",
   "detail": "17:55 Наманган — Андижан"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "076Ж",
+  "number": "076Ф",
   "direction": "arrival",
-  "detail": "05:23 из Хивы"
+  "detail": "13:26 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "076Ж",
+  "number": "076Ф",
   "direction": "arrival",
-  "detail": "04:05 из Хивы"
+  "detail": "12:46 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "076Ж",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "04:07 Ташкент-Южный"
+  "detail": "12:56 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "076Ж",
-  "direction": "arrival",
-  "detail": "02:49 из Хивы"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "02:52 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "arrival",
-  "detail": "00:45 из Хивы"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "01:30 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "arrival",
-  "detail": "22:55 из Хивы"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "23:01 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "arrival",
-  "detail": "21:32 из Хивы"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "21:55 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "arrival",
-  "detail": "15:55 из Хивы"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "16:23 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "076Ж",
-  "direction": "departure",
-  "detail": "15:32 Ташкент-Южный"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "12:46 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "06:28 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "06:48 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "05:12 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "05:17 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "02:21 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "03:00 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "01:01 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "01:04 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "23:47 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "23:50 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "21:58 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "22:35 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "17:30 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "17:33 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "arrival",
-  "detail": "16:40 из Андижана 1"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "16:43 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "125Ч",
-  "direction": "departure",
-  "detail": "15:50 Ургенч"
- },
- {
-  "checked_at": "2026-11-16T17:10:59+05:00",
-  "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "arrival",
   "detail": "06:28 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "07:18 Алат"
+  "detail": "06:48 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "arrival",
   "detail": "05:12 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "05:17 Алат"
+  "detail": "05:17 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "arrival",
   "detail": "02:21 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "03:00 Алат"
+  "detail": "03:00 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "arrival",
   "detail": "01:01 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "01:04 Алат"
+  "detail": "01:04 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "arrival",
   "detail": "23:47 из Ташкента-Южного"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "23:50 Алат"
+  "detail": "23:50 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "072Ф",
+  "number": "076Ф",
   "direction": "departure",
-  "detail": "22:34 Алат"
+  "detail": "22:34 Хива"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "058Ь",
+  "number": "125Ф",
   "direction": "arrival",
-  "detail": "08:22 из Шавата"
+  "detail": "13:26 из Андижана 1"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "058Ь",
+  "number": "125Ф",
   "direction": "arrival",
-  "detail": "07:04 из Шавата"
+  "detail": "12:46 из Андижана 1"
  },
  {
-  "checked_at": "2026-11-16T17:10:59+05:00",
+  "checked_at": "2026-11-25T14:29:42+05:00",
   "kind": "added",
-  "number": "058Ь",
+  "number": "125Ф",
   "direction": "departure",
-  "detail": "07:06 Ташкент-Южный"
+  "detail": "12:56 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "06:28 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "06:48 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "05:12 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "05:17 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "02:21 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "03:00 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "01:01 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "01:04 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "23:47 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "23:50 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "21:58 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "22:35 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "17:30 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "17:33 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "arrival",
+  "detail": "16:40 из Андижана 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "16:43 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "125Ф",
+  "direction": "departure",
+  "detail": "15:50 Хива"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "14:01 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "11:51 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "departure",
+  "detail": "11:57 Андижан 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "05:23 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "departure",
+  "detail": "06:18 Андижан 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "04:05 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "departure",
+  "detail": "04:07 Андижан 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "02:49 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "departure",
+  "detail": "02:52 Андижан 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "00:45 из Кунграда"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "departure",
+  "detail": "01:30 Андижан 1"
+ },
+ {
+  "checked_at": "2026-11-25T14:29:42+05:00",
+  "kind": "added",
+  "number": "128Ф",
+  "direction": "arrival",
+  "detail": "22:55 из Кунграда"
  }
 ]
