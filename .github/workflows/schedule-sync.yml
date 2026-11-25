@@ -68,7 +68,17 @@ jobs:
             git config user.email "bot@users.noreply.github.com"
             git add data/ seed.json
             git commit -m "Расписание: сверка $(date +%d.%m.%Y)"
-            git push
+            # Пока шла сверка, соседние запуски и выгрузка с Hetzner успели
+            # сделать коммиты: подтягиваем и повторяем (как в остальных workflow).
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase --autostash && git push; then ok=1; break; fi
+              sleep $((i * 5))
+            done
+            if [[ "$ok" != 1 ]]; then
+              echo "::error::push не прошёл после 3 попыток"
+              exit 1
+            fi
           else
             echo "Изменений нет."
           fi
