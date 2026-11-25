@@ -40,6 +40,8 @@ seats_windows.py (тот же опрос, те же события — отде�
   /start  отвечает человеку его id, владельцу (TG_CHAT) сообщает, кто пришёл
   /list   подписки человека и снятые даты
   /resume вернуть снятые даты
+  /pay_test, /refund_test  только владелец: счёт на 1 звезду (Telegram Stars) и возврат —
+          проверка механики оплаты, платежи пишутся в payments.json каталога состояния
 Пока работает сервис, `--who` может получить 409: обновления разбирает сервис —
 достаточно, чтобы человек нажал /start.
 """
@@ -101,6 +103,14 @@ def tg(token, method, body, timeout=15):
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.loads(r.read() or b"{}")
+
+
+def tg_err(e):
+    """Текст ошибки Telegram из HTTPError (description), без токена."""
+    try:
+        return f"HTTP {e.code} " + str(json.loads(e.read().decode("utf-8", "replace")).get("description", ""))[:150]
+    except Exception:
+        return type(e).__name__
 
 
 def tg_send(token, chat, text, markup=None):
@@ -199,6 +209,7 @@ class Hunter:
         self.lock = threading.Lock()
         self.mutes_path = os.path.join(state_dir or os.environ.get("STATE_DIRECTORY") or HERE, "mutes.json")
         self.mutes = self._load_mutes()
+        self.pay_path = os.path.join(state_dir or os.environ.get("STATE_DIRECTORY") or HERE, "payments.json")
 
     # --- снятые кнопкой даты: (чат, откуда, куда, дата)
     def _load_mutes(self):
@@ -524,12 +535,17 @@ class Hunter:
 
     # --- сообщения и кнопки от людей
     def handle_update(self, u):
+        pq = u.get("pre_checkout_query")
+        if pq:
+            return self._on_pre_checkout(pq)
         cq = u.get("callback_query")
         if cq:
             if (cq.get("data") or "").startswith("w|"):
                 return self._on_menu(cq)
             return self._on_button(cq)
         m = u.get("message") or {}
+        if m.get("successful_payment"):
+            return self._on_paid(m)
         chat = (m.get("chat") or {}).get("id")
         text = (m.get("text") or "").strip()
         text = self.MENU_TEXTS.get(text, text)      # кнопки под полем ввода
@@ -570,6 +586,14 @@ class Hunter:
                 print(f"✗ {cmd}: {type(e).__name__} {e}", flush=True)
                 reply = "Не получилось обработать команду."
             self.send(chat, reply)
+        elif cmd in ("/pay_test", "/refund_test") and chat == self.owner:
+            try:
+                reply = self._pay_test(chat) if cmd == "/pay_test" else self._refund_test(chat)
+            except Exception as e:
+                print(f"✗ {cmd}: {type(e).__name__} {e}", flush=True)
+                reply = "Не получилось обработать команду."
+            if reply:
+                self.send(chat, reply)
         elif cmd in ("/watch", "/unwatch"):
             try:
                 reply = self._edit_subs(chat, m, text.split()[1:], add=(cmd == "/watch"))
@@ -580,6 +604,93 @@ class Hunter:
         else:
             self.send(chat, "Команды: /list — ваши подписки, /watch — добавить, /unwatch — убрать, "
                             "/resume — вернуть снятые даты, /menu — кнопки, /start — ваш id.")
+
+    # --- оплата звёздами (Telegram Stars): пока только проверка механики для владельца
+    PAY_PREFIX = "test|"
+
+    def _pay_rows(self):
+        try:
+            with open(self.pay_path, encoding="utf-8") as f:
+                rows = json.load(f)
+            return rows if isinstance(rows, list) else []
+        except (OSError, ValueError):
+            return []
+
+    def _pay_write(self, rows):
+        tmp = self.pay_path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(rows, f, ensure_ascii=False)
+        os.replace(tmp, self.pay_path)
+
+    def _pay_test(self, chat):
+        """Счёт на 1 звезду. -> текст ответа при ошибке, None если счёт отправлен."""
+        try:
+            self.api("sendInvoice", {
+                "chat_id": chat, "title": "Тест оплаты звёздами",
+                "description": "Проверка механики: 1 звезда. Вернуть её можно командой /refund_test.",
+                "payload": f"{self.PAY_PREFIX}{chat}|{int(time.time())}",
+                "currency": "XTR", "provider_token": "",
+                "prices": [{"label": "Тест", "amount": 1}]})
+            return None
+        except urllib.error.HTTPError as e:
+            return f"Счёт не создан: {tg_err(e)}"
+        except Exception as e:
+            return f"Счёт не создан: {type(e).__name__}"
+
+    def _on_pre_checkout(self, pq):
+        """Ответить на pre_checkout_query (Telegram ждёт 10 с). Принимаем только тестовый счёт владельца."""
+        uid = (pq.get("from") or {}).get("id")
+        ok = (pq.get("currency") == "XTR" and pq.get("total_amount") == 1
+              and str(pq.get("invoice_payload") or "").startswith(self.PAY_PREFIX)
+              and uid is not None and uid == self.owner)
+        body = {"pre_checkout_query_id": pq.get("id"), "ok": ok}
+        if not ok:
+            body["error_message"] = "Оплата сейчас недоступна."
+        try:
+            self.api("answerPreCheckoutQuery", body)
+        except Exception as e:
+            print(f"✗ answerPreCheckoutQuery: {type(e).__name__} {getattr(e, 'code', '')}", flush=True)
+
+    def _on_paid(self, m):
+        """Сообщение successful_payment: записать платёж (charge id нужен для возврата)."""
+        chat = (m.get("chat") or {}).get("id")
+        sp = m.get("successful_payment") or {}
+        if chat is None or not sp.get("telegram_payment_charge_id"):
+            return self.warn(f"successful_payment без чата или charge id: {str(m)[:200]}")
+        row = {"ts": int(time.time()), "chat": chat, "cur": sp.get("currency"),
+               "amount": sp.get("total_amount"), "payload": sp.get("invoice_payload"),
+               "charge": sp.get("telegram_payment_charge_id"), "refunded": False}
+        with self.lock:
+            self._pay_write(self._pay_rows() + [row])
+        test = str(row["payload"] or "").startswith(self.PAY_PREFIX)
+        if not test:       # неожиданный платёж не теряем молча
+            self.warn(f"неожиданный платёж: чат {chat}, {row['amount']} {row['cur']}, "
+                      f"payload {row['payload']!r}, charge {row['charge']}")
+        self.send(chat, f"Оплата получена: {row['amount']} ⭐." + (" Вернуть: /refund_test" if test else ""))
+
+    def _refund_test(self, chat):
+        """Вернуть последнюю невозвращённую тестовую оплату этого чата. -> текст ответа."""
+        with self.lock:
+            mine = [r for r in self._pay_rows() if r.get("chat") == chat and not r.get("refunded")
+                    and str(r.get("payload") or "").startswith(self.PAY_PREFIX) and r.get("charge")]
+        if not mine:
+            return "Нечего возвращать: тестовых оплат без возврата нет."
+        charge, amount = mine[-1]["charge"], mine[-1].get("amount")
+        try:                                       # сеть — вне замка, чтобы не задерживать охоту
+            res = self.api("refundStarPayment", {"user_id": chat, "telegram_payment_charge_id": charge})
+        except urllib.error.HTTPError as e:
+            return f"Возврат не прошёл: {tg_err(e)}"
+        except Exception as e:
+            return f"Возврат не прошёл: {type(e).__name__}"
+        if not (res.get("ok") and res.get("result") is True):
+            return f"Возврат не прошёл: ответ Telegram {str(res)[:120]}"
+        with self.lock:
+            rows = self._pay_rows()
+            for r in rows:
+                if r.get("charge") == charge:
+                    r["refunded"] = int(time.time())
+            self._pay_write(rows)
+        return f"Возвращено: {amount} ⭐."
 
     # --- подписки из бота: /watch и /unwatch (патч seats-watch-cmd)
     def _allowed(self, chat):
@@ -1091,7 +1202,7 @@ class Listener(threading.Thread):
         errs = 0
         while not self.stopped:
             try:
-                body = {"timeout": 25, "allowed_updates": ["message", "callback_query"]}
+                body = {"timeout": 25, "allowed_updates": ["message", "callback_query", "pre_checkout_query"]}
                 if self.offset:
                     body["offset"] = self.offset
                 t0 = time.time()
