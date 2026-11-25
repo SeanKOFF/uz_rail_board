@@ -5,7 +5,8 @@
 (Actions, раз в 20 минут) и даёт время событий с точностью до минуты.
 
 Окна (время ташкентское):
-    mid   23:55–00:40  каждую минуту   6 направлений (WIN), даты +0…+5
+    mid   23:55–00:40  дата +4 каждую минуту, даты +0…+3 и +5 каждые 6 мин;
+                       6 направлений (WIN)
     pre   за 150–50 мин до отправления, каждые 2 мин, только пара «направление+дата»
           с таким поездом (направления WIN, сегодня и завтра). Отсчёт идёт и от
           отправления с запрошенной станции ("pre"), и от отправления со станции
@@ -70,6 +71,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from collections import deque
 from datetime import datetime, timedelta
 from urllib.parse import urlparse
 
@@ -91,6 +93,12 @@ CERT_WARN_DAYS = 7
 FRESH = (("data/seats_state.json", 3 * 3600, "Места"),
          ("data/flights_live.json", 4 * 3600, "Аэропорты"))
 FRESH_EVERY = 600
+# Лимит источника с 24.11 (гипотеза): ~150 запросов с одного адреса за 5–10 минут, 151-й — 429.
+# 24.11 в 23:59:02 службу остановили ровно на 151-м (150 за последние 5 и за 10 минут), два прогона
+# Actions 25.11 — тоже на 151-м. До 24.11 ~13:30 пики в 190 за 5 минут проходили. Сами держимся
+# ниже: не больше LIMIT_N запросов за любые LIMIT_WIN секунд (запас 20% от 150 при окне 10 минут).
+LIMIT_N = 120
+LIMIT_WIN = 600
 BLOCK_WAIT = 1800    # секунд ждать после 403/429 от источника
 BLOCK_TRIES = 3      # столько 403/429 подряд (без нормального ответа между) — остановиться, код 3
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
@@ -126,8 +134,8 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
     if m >= 23 * 60 + 55 or m <= 40:                       # mid
         base = (t + timedelta(minutes=10)).date()
         for dep, arv in main:
-            for i in range(6):
-                add("mid", f"{dep}|{arv}|{base + timedelta(days=i)}", 60)
+            for i in range(6):          # пачка — на дату +4: её каждую минуту, остальные реже
+                add("mid", f"{dep}|{arv}|{base + timedelta(days=i)}", 60 if i == 4 else 360)
 
     def left(iso):
         return (datetime.fromisoformat(iso).replace(tzinfo=W.TZ) - t).total_seconds() / 60
@@ -167,6 +175,13 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
 
 
 # ---------------------------------------------------------------- оповещения
+
+def over_limit(sent, now_ts):
+    """sent — deque времён наших запросов; True, если за последние LIMIT_WIN секунд их уже LIMIT_N."""
+    while sent and sent[0] < now_ts - LIMIT_WIN:
+        sent.popleft()
+    return len(sent) >= LIMIT_N
+
 
 def alert(text):
     """Строка ⚠ в журнал службы и, если заданы TG_TOKEN и TG_CHAT, сообщение в Telegram."""
@@ -297,6 +312,7 @@ def run():
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     fresh_at, fresh_down = 0, False
     blocks, block_since = 0, None
+    sent = deque()                                 # времена запросов для ограничителя нагрузки
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
     while not STOP:
         t = now()
@@ -306,6 +322,9 @@ def run():
         if time.time() - fresh_at > FRESH_EVERY:
             fresh_at = time.time()
             fresh_down = check_fresh(fresh_down)
+        if over_limit(sent, time.time()):             # место в окне освободится само
+            time.sleep(5)
+            continue
         hunt = hunter.tasks(t.date())
         todo = due_tasks(t, codes, sched, last, orig, hunt)
         if not todo:
@@ -315,6 +334,7 @@ def run():
         dep, arv, d = task.split("|")
         W.NOTES.clear()
         t0 = time.time()
+        sent.append(t0)
         try:
             code, trains, err = W.fetch(dep, arv, d)
         except W.Blocked as e:
@@ -500,14 +520,14 @@ def cmd_hunt_status(send):
 
 def cmd_plan():
     print("Окна и примерная нагрузка в сутки:")
-    print("  mid    23:55–00:40, раз в минуту, 6 напр. × 6 дат      ~1650")
+    print("  mid    23:55–00:40, +4 дня раз в минуту, остальные раз в 6 мин  ~500")
     print("  pre    за 150–50 мин до отправления (и от станции начала       ~1200–1400")
     print("         маршрута), раз в 2 мин")
     print("  eve    20:30–23:30, раз в 2 мин, Ургенч⇄Ташкент, завтра         ~180")
     print("  open   06:30–11:30, раз в 5 мин, 12 напр., дата +59    ~720")
     print("  hunt   подписки (subs.json), раз в 2 мин, круглосуточно  до 720 на пару+дату, не больше 12 пар+дат")
     print("  sched  раз в час, 6 напр. × сегодня/завтра              ~290")
-    print("Итого ~4000–4500 запросов в сутки, строго по одному.")
+    print(f"Итого ~3000 запросов в сутки, строго по одному; не больше {LIMIT_N} за {LIMIT_WIN} с.")
 
 
 def main():

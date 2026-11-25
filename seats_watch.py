@@ -59,7 +59,7 @@ TZ = timezone(timedelta(hours=5))  # Ташкент, перевода часов
 BRANDS = ("afrosiyob", "manguberdi")
 PAUSE = 0.5                        # между запросами: чужой сервер
 TIMEOUT = 20
-MAX_REQUESTS = 260                 # потолок за прогон, ~4 минуты
+MAX_REQUESTS = 120                 # потолок за прогон; источник с 24.11 отказывает на 151-м запросе
 EXIT_BLOCKED = 3
 
 CITIES = ["Ташкент", "Самарканд", "Бухара", "Ургенч"]
