@@ -34,6 +34,7 @@ gap — сколько секунд прошло с прошлого опрос�
     python3 seats_windows.py --upload [ДАТА]  # выгрузить журнал за сутки в репозиторий
                                               # (по умолчанию — вчера)
     python3 seats_windows.py --cert           # срок действия сертификата источника
+    python3 seats_windows.py --fresh          # давно ли в репозитории коммиты Actions
     python3 seats_windows.py --alert-test     # тестовое сообщение в Telegram
     python3 seats_windows.py --who            # кто писал боту: id чатов для subs.json
     python3 seats_windows.py --hunt-status [--send]   # что сейчас по подпискам
@@ -45,6 +46,12 @@ gap — сколько секунд прошло с прошлого опрос�
 подряд (~30 мин; ночное обслуживание в 02:31–02:34 укладывается в одну серию);
 «снова отвечает» — когда ответы вернулись. 18.10 сертификат источника был просрочен
 с 05:00 до 09:16 по Ташкенту, и мы узнали об этом только из разбора журнала.
+Ещё одно оповещение — «Actions молчат»: раз в 10 минут по публичному API GitHub смотрится
+возраст последних коммитов data/seats_state.json (Места) и data/flights_live.json
+(Аэропорты); если оба старше порогов (3 и 4 ч) — сообщение, потом «снова пошли». Один
+файл старше порога — не тревога (так выглядит сбой источника, о нём говорят другие
+оповещения). 24.11 с 16:07 коммитов не было больше суток: у GitHub не доходили письма на
+привязанный адрес, об остановке узнали сами.
 
 Выгрузка: GitHub Contents API, путь data/seats_windows/ДАТА.jsonl, нужен
 GH_TOKEN с правом Contents: Read and write. Без него — ✗ 403, журнал остаётся
@@ -76,6 +83,12 @@ STOP = False
 TG_TOKEN = os.environ.get("TG_TOKEN", "")
 TG_CHAT = os.environ.get("TG_CHAT", "")
 CERT_WARN_DAYS = 7
+# Свежесть коммитов Actions: (файл, порог в секундах, как назвать). Проверка раз в 10 минут,
+# тревога, когда старше порога ОБА файла. Самые длинные паузы за октябрь–ноябрь: Места 1,4 ч
+# (4 ч 20.11 — сбой источника), Аэропорты 3 ч.
+FRESH = (("data/seats_state.json", 3 * 3600, "Места"),
+         ("data/flights_live.json", 4 * 3600, "Аэропорты"))
+FRESH_EVERY = 600
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
 # Направления частых окон: главные из seats_watch плюс Ташкент⇄Ургенч (Мангуберди).
 # 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос.
@@ -189,6 +202,42 @@ def check_cert(warned_day):
     return warned_day
 
 
+def repo_age(path):
+    """-> секунд с последнего коммита в main, менявшего path (публичный API, без токена);
+    None, если GitHub не ответил или лимит запросов — тогда ничего не решаем."""
+    url = f"{GH_API}/repos/{REPO}/commits?path={path}&sha=main&per_page=1"
+    req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json",
+                                               "User-Agent": "tabloda.uz-seats/1.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            rows = json.loads(r.read() or b"[]")
+        iso = rows[0]["commit"]["committer"]["date"]
+        return time.time() - datetime.fromisoformat(iso.replace("Z", "+00:00")).timestamp()
+    except Exception:
+        return None
+
+
+def fmt_age(sec):
+    h = sec / 3600
+    return f"{h:.1f} ч" if h < 48 else f"{h / 24:.1f} сут"
+
+
+def check_fresh(was_down):
+    """Раз в FRESH_EVERY: оповещает, когда коммиты Actions пропали / вернулись.
+    -> новое значение was_down (True — уже сообщили, что молчат)."""
+    ages = [(repo_age(path), limit, name) for path, limit, name in FRESH]
+    if any(a is None for a, _, _ in ages):
+        return was_down
+    down = all(a > limit for a, limit, _ in ages)
+    detail = ", ".join(f"{name} — {fmt_age(a)}" for a, _, name in ages)
+    if down and not was_down:
+        alert(f"в репозитории давно нет коммитов Actions ({detail} назад). Проверьте вкладку Actions "
+              f"(не отключены ли workflow), токен диспетчера и почту GitHub.")
+    elif was_down and not down:
+        alert(f"коммиты Actions снова идут ({detail} назад).")
+    return down
+
+
 # ---------------------------------------------------------------- состояние и журнал
 
 def load_state():
@@ -242,12 +291,16 @@ def run():
         listener.start()
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
+    fresh_at, fresh_down = 0, False
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
     while not STOP:
         t = now()
         if time.time() - cert_at > 6 * 3600:
             cert_at = time.time()
             cert_warned = check_cert(cert_warned)
+        if time.time() - fresh_at > FRESH_EVERY:
+            fresh_at = time.time()
+            fresh_down = check_fresh(fresh_down)
         hunt = hunter.tasks(t.date())
         todo = due_tasks(t, codes, sched, last, orig, hunt)
         if not todo:
@@ -448,6 +501,12 @@ def main():
         except Exception as e:
             print(f"✗ {type(e).__name__}: {str(e)[:200]}")
             sys.exit(1)
+    elif a[:1] == ["--fresh"]:
+        for path, limit, name in FRESH:
+            age = repo_age(path)
+            print(f"{name} ({path}): " + ("GitHub не ответил" if age is None else
+                  f"последний коммит {fmt_age(age)} назад, порог {limit // 3600} ч"
+                  + (" — СТАРЕЕ" if age > limit else "")))
     elif a[:1] == ["--alert-test"]:
         if not (TG_TOKEN and TG_CHAT):
             sys.exit("✗ нет TG_TOKEN или TG_CHAT (см. /opt/tabloda-seats/alert.env)")
