@@ -92,6 +92,9 @@ CERT_WARN_DAYS = 7
 # (4 ч 20.11 — сбой источника), Аэропорты 3 ч.
 FRESH = (("data/seats_state.json", 3 * 3600, "Места"),
          ("data/flights_live.json", 4 * 3600, "Аэропорты"))
+# Места отдельно: молчит только seats-watch (24–25.11 — 24,7 ч при свежих Аэропортах) — тревога
+# уже после SEATS_ALONE. Самая длинная пауза из-за источника с 25.10 — 4 ч.
+SEATS_ALONE = 6 * 3600
 FRESH_EVERY = 600
 # Лимит источника с 24.11 (гипотеза): ~150 запросов с одного адреса за 5–10 минут, 151-й — 429.
 # 24.11 в 23:59:02 службу остановили ровно на 151-м (150 за последние 5 и за 10 минут), два прогона
@@ -247,7 +250,7 @@ def check_fresh(was_down):
     ages = [(repo_age(path), limit, name) for path, limit, name in FRESH]
     if any(a is None for a, _, _ in ages):
         return was_down
-    down = all(a > limit for a, limit, _ in ages)
+    down = all(a > limit for a, limit, _ in ages) or ages[0][0] > SEATS_ALONE
     detail = ", ".join(f"{name} — {fmt_age(a)}" for a, _, name in ages)
     if down and not was_down:
         alert(f"в репозитории давно нет коммитов Actions ({detail} назад). Проверьте вкладку Actions "
