@@ -55,7 +55,9 @@ gap — сколько секунд прошло с прошлого опрос�
 
 Выгрузка: GitHub Contents API, путь data/seats_windows/ДАТА.jsonl, нужен
 GH_TOKEN с правом Contents: Read and write. Без него — ✗ 403, журнал остаётся
-на сервере. На HTTP 403/429 от источника — выход с кодом 3 без перезапуска.
+на сервере. На HTTP 403/429 от источника — ждём 30 минут и пробуем снова; три такие
+остановки подряд (ни одного нормального ответа между ними) — выход с кодом 3 без
+перезапуска. 24.11 в 23:59 один 429 останавливал службу сразу, и сутки данных ушли.
 """
 
 import base64
@@ -89,6 +91,8 @@ CERT_WARN_DAYS = 7
 FRESH = (("data/seats_state.json", 3 * 3600, "Места"),
          ("data/flights_live.json", 4 * 3600, "Аэропорты"))
 FRESH_EVERY = 600
+BLOCK_WAIT = 1800    # секунд ждать после 403/429 от источника
+BLOCK_TRIES = 3      # столько 403/429 подряд (без нормального ответа между) — остановиться, код 3
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
 # Направления частых окон: главные из seats_watch плюс Ташкент⇄Ургенч (Мангуберди).
 # 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос.
@@ -292,6 +296,7 @@ def run():
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     fresh_at, fresh_down = 0, False
+    blocks, block_since = 0, None
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
     while not STOP:
         t = now()
@@ -313,9 +318,29 @@ def run():
         try:
             code, trains, err = W.fetch(dep, arv, d)
         except W.Blocked as e:
-            print(f"✗ {e} на {task} — похоже на блокировку, останавливаюсь", flush=True)
-            save_state(seats, sched, orig, last, empty)
-            sys.exit(3)
+            blocks += 1
+            block_since = block_since or time.time()
+            code_ = str(e).split()[-1]
+            log({"ts": now().isoformat(timespec="seconds"), "w": w, "t": task,
+                 "st": int(code_) if code_.isdigit() else 0, "err": "blocked"})
+            print(f"✗ {e} на {task} — похоже на блокировку ({blocks} из {BLOCK_TRIES})", flush=True)
+            if blocks >= BLOCK_TRIES:
+                alert(f"источник отвечает {e} уже {blocks} раза подряд — замер остановлен (код 3). "
+                      f"Когда лимит снимется: sudo systemctl restart tabloda-seats")
+                save_state(seats, sched, orig, last, empty)
+                sys.exit(3)
+            if blocks == 1:
+                alert(f"источник ответил {e} (похоже на лимит запросов или блокировку) — жду {BLOCK_WAIT // 60} мин "
+                      f"и пробую снова")
+            for _ in range(max(BLOCK_WAIT // 5, 1)):      # ждём короткими шагами, чтобы слышать остановку
+                if STOP:
+                    break
+                time.sleep(5)
+            continue
+        if block_since:                       # после 403/429 источник ответил нормально
+            alert(f"источник снова отвечает (после {blocks} отказ(ов), "
+                  f"{round((time.time() - block_since) / 60)} мин)")
+            blocks, block_since = 0, None
         prev, last[task] = last.get(task), t0
         n += 1
         line = {"ts": now().isoformat(timespec="seconds"), "w": w, "t": task, "st": code}
