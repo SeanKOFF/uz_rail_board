@@ -59,9 +59,8 @@ TZ = timezone(timedelta(hours=5))  # Ташкент, перевода часов
 BRANDS = ("afrosiyob", "manguberdi")
 PAUSE = 0.5                        # между запросами: чужой сервер
 TIMEOUT = 20
-MAX_REQUESTS = 120                 # потолок за прогон; источник с 24.11 отказывает на 151-м запросе
+MAX_REQUESTS = 70                  # потолок за прогон; 25.11 с ~14:40 бан на 81-м запросе (до этого 120 проходили)
 EXIT_BLOCKED = 3
-SKIP_BLOCKED = 5                   # пауза после пропущенного запроса с 403/429, сек
 
 CITIES = ["Ташкент", "Самарканд", "Бухара", "Ургенч"]
 MAIN = [("Ташкент", "Самарканд"), ("Самарканд", "Ташкент"),
@@ -255,27 +254,22 @@ def run(dry_run):
         return
 
     results, errors, suspicious, gone = {}, [], [], []
-    blocked_row, blocked_all = 0, 0
     for i, task in enumerate(todo):
         dep, arv, d = task.split("|")
         try:
             code, trains, err = fetch(dep, arv, d)
-            blocked_row = 0
         except Blocked as e:
-            # Один отказ мог быть именно на этом запросе (25.11: четыре прогона подряд падали на одном и том
-            # же 81-м и ничего не писали). Пропускаем его один раз и идём дальше; два отказа подряд или три
-            # за прогон — настоящая блокировка, ничего не пишем.
-            blocked_row += 1
-            blocked_all += 1
+            # 25.11 источник отвечает 429 с Retry-After ~900 (обратный отсчёт: следующий запрос через 6 с получил
+            # 893) — это бан адреса на ~15 минут, он приходил на 81-м запросе в каждом прогоне. Дальше стучаться
+            # бессмысленно. Ответы, уже полученные до бана, настоящие: пишем их (прогон и так неполный — 120
+            # из 744, каждая пара+дата независима), остальное придёт в следующих прогонах.
             where = f"{names.get(dep)}→{names.get(arv)} {d} (запрос №{i + 1})"
-            if blocked_row >= 2 or blocked_all >= 3:
-                print(f"  ✗ {e} на {where}: {blocked_row} подряд, {blocked_all} за прогон — "
-                      f"похоже на блокировку, ничего не пишу. {e.detail}")
+            if i == 0:
+                print(f"  ✗ {e} на {where} — бан с первого запроса, ничего не пишу. {e.detail}")
                 sys.exit(EXIT_BLOCKED)
-            print(f"  ✗ {e} на {where} — пропускаю, иду дальше. {e.detail}")
-            errors.append((task, str(e).split()[-1], "пропущен: отказ источника"))
-            time.sleep(SKIP_BLOCKED)
-            continue
+            print(f"  ✗ {e} на {where} — бан адреса, останавливаюсь; записываю {i} полученных ответов. {e.detail}")
+            todo = todo[:i]
+            break
         if trains is None:
             errors.append((task, code, err))
         elif not trains and had_trains(state["seats"], task):

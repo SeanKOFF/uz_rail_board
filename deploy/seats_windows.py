@@ -64,6 +64,7 @@ GH_TOKEN с правом Contents: Read and write. Без него — ✗ 403, 
 import base64
 import json
 import os
+import re
 import signal
 import socket
 import ssl
@@ -96,17 +97,23 @@ FRESH = (("data/seats_state.json", 3 * 3600, "Места"),
 # уже после SEATS_ALONE. Самая длинная пауза из-за источника с 25.10 — 4 ч.
 SEATS_ALONE = 6 * 3600
 FRESH_EVERY = 600
-# Лимит источника с 24.11 (гипотеза): ~150 запросов с одного адреса за 5–10 минут, 151-й — 429.
-# 24.11 в 23:59:02 службу остановили ровно на 151-м (150 за последние 5 и за 10 минут), два прогона
-# Actions 25.11 — тоже на 151-м. До 24.11 ~13:30 пики в 190 за 5 минут проходили. Сами держимся
-# ниже: не больше LIMIT_N запросов за любые LIMIT_WIN секунд (запас 20% от 150 при окне 10 минут).
-LIMIT_N = 120
-LIMIT_WIN = 600
-BLOCK_WAIT = 1800    # секунд ждать после 403/429 от источника
+# Лимит источника: с 24.11 ~13:30 бан на 151-м запросе (24.11 23:59:02 — 150 за 5 и за 10 минут),
+# с 25.11 ~14:40 — на 81-м (прогоны Actions по 120 до этого проходили). Ответ 429 несёт Retry-After ~900
+# и обратный отсчёт (899 → 893 за 6 с): бан адреса на ~15 минут. Окно считаем равным 900 с и держимся
+# ниже: не больше LIMIT_N запросов за любые LIMIT_WIN секунд (70 — ~12% запаса от 80). Меняется в
+# alert.env: LIMIT_N=…, LIMIT_WIN=… (перезапуск службы).
+LIMIT_N = int(os.environ.get("LIMIT_N", 70))
+LIMIT_WIN = int(os.environ.get("LIMIT_WIN", 900))
+# В полночном окне пачка (шаг 75 с) должна получать запросы в срок. Иначе другие задачи выбирают бюджет, пока
+# пачка ещё не созрела, и потом она ждёт, пока окно освободится. Поэтому в mid задачи с шагом ≥ 120 с идут,
+# только пока в окне занято не больше LIMIT_MID_MID, а с шагом ≥ 300 с — не больше LIMIT_MID_LOW.
+LIMIT_MID_MID = LIMIT_N * 5 // 7
+LIMIT_MID_LOW = LIMIT_N // 4
+BLOCK_WAIT = 1800    # секунд ждать после 403/429 от источника, если Retry-After не прислали
 BLOCK_TRIES = 3      # столько 403/429 подряд (без нормального ответа между) — остановиться, код 3
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
 # Направления частых окон: главные из seats_watch плюс Ташкент⇄Ургенч (Мангуберди).
-# 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос.
+# 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос (ограничитель держит ≤ LIMIT_N за LIMIT_WIN).
 WIN = W.MAIN + [("Ташкент", "Ургенч"), ("Ургенч", "Ташкент")]
 
 
@@ -120,12 +127,18 @@ def mod(t):
 
 # ---------------------------------------------------------------- окна
 
+def in_mid(t):
+    m = t.hour * 60 + t.minute
+    return m >= 23 * 60 + 55 or m <= 40
+
+
 def due_tasks(t, codes, sched, last, orig=None, hunt=()):
     """-> список (окно, задача, интервал_сек) для того, что пора опросить.
     sched: {задача: [[номер, "ГГГГ-ММ-ДДTЧЧ:ММ" отправления с запрошенной станции], ...]}
     orig:  {"номер|дата": самое раннее известное отправление этого поезда}"""
     orig = orig or {}
     main = [(codes[a], codes[b]) for a, b in WIN]
+    mainpairs = {(codes[a], codes[b]) for a, b in W.MAIN}      # Таш⇄Сам, Таш⇄Бух
     allp = [(codes[a], codes[b]) for a, b in W.ALL]
     m = mod(t)
     want = {}
@@ -134,11 +147,13 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
         if task not in want or every < want[task][1]:
             want[task] = (w, every)
 
-    if m >= 23 * 60 + 55 or m <= 40:                       # mid
+    if in_mid(t):                                          # mid
         base = (t + timedelta(minutes=10)).date()
         for dep, arv in main:
             for i in range(6):          # пачка — на дату +4: её каждую минуту, остальные реже
-                add("mid", f"{dep}|{arv}|{base + timedelta(days=i)}", 60 if i == 4 else 360)
+                # у Ургенча полуночной пачки нет (16–24.11) — раз в 6 минут, бюджет запросов под основные пары
+                add("mid", f"{dep}|{arv}|{base + timedelta(days=i)}",
+                    75 if i == 4 and (dep, arv) in mainpairs else 360)
 
     def left(iso):
         return (datetime.fromisoformat(iso).replace(tzinfo=W.TZ) - t).total_seconds() / 60
@@ -179,11 +194,17 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
 
 # ---------------------------------------------------------------- оповещения
 
-def over_limit(sent, now_ts):
-    """sent — deque времён наших запросов; True, если за последние LIMIT_WIN секунд их уже LIMIT_N."""
+def ban_wait(e):
+    """Сколько ждать после 403/429: Retry-After источника + 30 с (но не больше BLOCK_WAIT), иначе BLOCK_WAIT."""
+    m = re.search(r"Retry-After=(\d+)", getattr(e, "detail", "") or "")
+    return min(max(int(m.group(1)) + 30, 60), BLOCK_WAIT) if m else BLOCK_WAIT
+
+
+def over_limit(sent, now_ts, cap=None):
+    """sent — deque времён наших запросов; True, если за последние LIMIT_WIN секунд их уже cap (LIMIT_N)."""
     while sent and sent[0] < now_ts - LIMIT_WIN:
         sent.popleft()
-    return len(sent) >= LIMIT_N
+    return len(sent) >= (LIMIT_N if cap is None else cap)
 
 
 def alert(text):
@@ -330,6 +351,10 @@ def run():
             continue
         hunt = hunter.tasks(t.date())
         todo = due_tasks(t, codes, sched, last, orig, hunt)
+        if in_mid(t):                                         # бюджет оставляем пачке
+            nw = time.time()
+            todo = [x for x in todo if not over_limit(
+                sent, nw, LIMIT_N if x[2] < 120 else LIMIT_MID_MID if x[2] < 300 else LIMIT_MID_LOW)]
         if not todo:
             time.sleep(5)
             continue
@@ -352,10 +377,11 @@ def run():
                       f"Когда лимит снимется: sudo systemctl restart tabloda-seats")
                 save_state(seats, sched, orig, last, empty)
                 sys.exit(3)
+            wait = ban_wait(e)
             if blocks == 1:
-                alert(f"источник ответил {e} (похоже на лимит запросов или блокировку) — жду {BLOCK_WAIT // 60} мин "
-                      f"и пробую снова")
-            for _ in range(max(BLOCK_WAIT // 5, 1)):      # ждём короткими шагами, чтобы слышать остановку
+                alert(f"источник ответил {e} (бан адреса на ~15 минут или лимит запросов) — жду {round(wait / 60)} мин "
+                      f"и пробую снова. {getattr(e, 'detail', '')[:120]}")
+            for _ in range(max(wait // 5, 1)):            # ждём короткими шагами, чтобы слышать остановку
                 if STOP:
                     break
                 time.sleep(5)
@@ -523,7 +549,7 @@ def cmd_hunt_status(send):
 
 def cmd_plan():
     print("Окна и примерная нагрузка в сутки:")
-    print("  mid    23:55–00:40, +4 дня раз в минуту, остальные раз в 6 мин  ~500")
+    print("  mid    23:55–00:40, +4 дня раз в 75 с (Таш⇄Сам, Таш⇄Бух), остальное раз в 6 мин  ~250")
     print("  pre    за 150–50 мин до отправления (и от станции начала       ~1200–1400")
     print("         маршрута), раз в 2 мин")
     print("  eve    20:30–23:30, раз в 2 мин, Ургенч⇄Ташкент, завтра         ~180")
