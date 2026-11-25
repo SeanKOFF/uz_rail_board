@@ -411,9 +411,9 @@ def run():
                 hunter.note(task, {W.train_key(task, x): x for x in trains
                                    if any(b in str(x.get("brand", "")).lower() for b in W.BRANDS)})
                 hunter.info(task, seats)
-                sent = hunter.after(task, before, was_empty, seats, stale)
-                if sent:
-                    line["tg"] = sent
+                msgs = hunter.after(task, before, was_empty, seats, stale)
+                if msgs:
+                    line["tg"] = msgs
             mine = [x for x in trains
                     if any(b in str(x.get("brand", "")).lower() for b in W.BRANDS) and dep_iso(x)]
             horizon = (now().date() + timedelta(days=7)).isoformat()
