@@ -61,6 +61,7 @@ PAUSE = 0.5                        # между запросами: чужой �
 TIMEOUT = 20
 MAX_REQUESTS = 120                 # потолок за прогон; источник с 24.11 отказывает на 151-м запросе
 EXIT_BLOCKED = 3
+SKIP_BLOCKED = 5                   # пауза после пропущенного запроса с 403/429, сек
 
 CITIES = ["Ташкент", "Самарканд", "Бухара", "Ургенч"]
 MAIN = [("Ташкент", "Самарканд"), ("Самарканд", "Ташкент"),
@@ -86,7 +87,7 @@ def station_codes():
 # ---------------------------------------------------------------- сеть
 
 class Blocked(Exception):
-    pass
+    detail = ""        # Retry-After и начало тела ответа 403/429 — для лога; текст ошибки не меняем (его разбирает замер)
 
 
 NOTES = []   # необычные ответы — печатаются в лог прогона, чтобы разобрать на данных
@@ -109,7 +110,12 @@ def fetch(dep, arv, date):
             raw, code = r.read(), r.status
     except urllib.error.HTTPError as e:
         if e.code in (403, 429):
-            raise Blocked(f"HTTP {e.code}")
+            b = Blocked(f"HTTP {e.code}")
+            try:
+                b.detail = f"Retry-After={e.headers.get('Retry-After')}, тело: " + e.read()[:150].decode("utf-8", "replace")
+            except Exception:
+                pass
+            raise b
         return e.code, None, e.read()[:200].decode("utf-8", "replace")
     except Exception as e:
         return 0, None, repr(e)[:200]
@@ -249,14 +255,27 @@ def run(dry_run):
         return
 
     results, errors, suspicious, gone = {}, [], [], []
+    blocked_row, blocked_all = 0, 0
     for i, task in enumerate(todo):
         dep, arv, d = task.split("|")
         try:
             code, trains, err = fetch(dep, arv, d)
+            blocked_row = 0
         except Blocked as e:
-            print(f"  ✗ {e} на {names.get(dep)}→{names.get(arv)} {d} после {i} запросов — "
-                  f"похоже на блокировку, ничего не пишу")
-            sys.exit(EXIT_BLOCKED)
+            # Один отказ мог быть именно на этом запросе (25.11: четыре прогона подряд падали на одном и том
+            # же 81-м и ничего не писали). Пропускаем его один раз и идём дальше; два отказа подряд или три
+            # за прогон — настоящая блокировка, ничего не пишем.
+            blocked_row += 1
+            blocked_all += 1
+            where = f"{names.get(dep)}→{names.get(arv)} {d} (запрос №{i + 1})"
+            if blocked_row >= 2 or blocked_all >= 3:
+                print(f"  ✗ {e} на {where}: {blocked_row} подряд, {blocked_all} за прогон — "
+                      f"похоже на блокировку, ничего не пишу. {e.detail}")
+                sys.exit(EXIT_BLOCKED)
+            print(f"  ✗ {e} на {where} — пропускаю, иду дальше. {e.detail}")
+            errors.append((task, str(e).split()[-1], "пропущен: отказ источника"))
+            time.sleep(SKIP_BLOCKED)
+            continue
         if trains is None:
             errors.append((task, code, err))
         elif not trains and had_trains(state["seats"], task):
