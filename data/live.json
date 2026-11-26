@@ -497,16 +497,6 @@
  ],
  "urgench": [
   {
-   "number": "752Ж",
-   "route": "ТОШКЕНТ-ШИ - ХИВА",
-   "date": "26.11.2026",
-   "time_local": "14:22",
-   "platform": null,
-   "sold_out": false,
-   "planned": "14:22",
-   "deviation": null
-  },
-  {
    "number": "123Ф",
    "route": "ВОЛГОГР 1 - ТОШКЕНТ-ШИ",
    "date": "26.11.2026",
