@@ -42,6 +42,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -59,7 +60,7 @@ TZ = timezone(timedelta(hours=5))  # Ташкент, перевода часов
 BRANDS = ("afrosiyob", "manguberdi")
 PAUSE = 0.5                        # между запросами: чужой сервер
 TIMEOUT = 20
-MAX_REQUESTS = 70                  # потолок за прогон; 25.11 с ~14:40 бан на 81-м запросе (до этого 120 проходили)
+MAX_REQUESTS = 50                  # потолок за прогон; бан на 81-м запросе 25.11 вечером, на 61-м 26.11 утром
 EXIT_BLOCKED = 3
 
 CITIES = ["Ташкент", "Самарканд", "Бухара", "Ургенч"]
@@ -270,6 +271,14 @@ def run(dry_run):
             print(f"  ✗ {e} на {where} — бан адреса, останавливаюсь; записываю {i} полученных ответов. {e.detail}")
             todo = todo[:i]
             break
+        if code == 424 and "ехнический перерыв" in (err or ""):
+            # Источник сам объявляет перерыв (02:10–02:45 каждую ночь, 17–18.11 12:00–12:45, 30–31.10 14:55–15:15):
+            # HTTP 424 с startTime/endTime. Это не сбой — красный прогон шлёт письма и ничего не даёт.
+            win = re.search(r'"startTime":"([^"]+)","endTime":"([^"]+)"', err or "")
+            print(f"  · технический перерыв источника"
+                  + (f" {win.group(1)}–{win.group(2)}" if win else "") + f" (запрос №{i + 1}) — останавливаюсь")
+            todo = todo[:i]
+            break
         if trains is None:
             errors.append((task, code, err))
         elif not trains and had_trains(state["seats"], task):
@@ -279,6 +288,9 @@ def run(dry_run):
             results[task] = trains
         time.sleep(PAUSE)
 
+    if not todo:
+        print("  ✓ нечего записывать, состояние не менял")
+        return
     for note in NOTES[:5]:
         print(f"  · {note}")
     if len(NOTES) > 5:
