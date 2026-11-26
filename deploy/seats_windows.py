@@ -102,15 +102,24 @@ FRESH_EVERY = 600
 # и обратный отсчёт (899 → 893 за 6 с): бан адреса на ~15 минут. Окно считаем равным 900 с и держимся
 # ниже: не больше LIMIT_N запросов за любые LIMIT_WIN секунд (70 — ~12% запаса от 80). Меняется в
 # alert.env: LIMIT_N=…, LIMIT_WIN=… (перезапуск службы).
-LIMIT_N = int(os.environ.get("LIMIT_N", 70))
+LIMIT_N = int(os.environ.get("LIMIT_N", 50))
 LIMIT_WIN = int(os.environ.get("LIMIT_WIN", 900))
 # В полночном окне пачка (шаг 75 с) должна получать запросы в срок. Иначе другие задачи выбирают бюджет, пока
 # пачка ещё не созрела, и потом она ждёт, пока окно освободится. Поэтому в mid задачи с шагом ≥ 120 с идут,
 # только пока в окне занято не больше LIMIT_MID_MID, а с шагом ≥ 300 с — не больше LIMIT_MID_LOW.
 LIMIT_MID_MID = LIMIT_N * 5 // 7
 LIMIT_MID_LOW = LIMIT_N // 4
-BLOCK_WAIT = 1800    # секунд ждать после 403/429 от источника, если Retry-After не прислали
-BLOCK_TRIES = 3      # столько 403/429 подряд (без нормального ответа между) — остановиться, код 3
+# Бан 26.11: 00:10 (Retry-After ~900) → 00:29 → 00:59 → 01:29, после третьего подряд служба вышла с кодом 3.
+# Проверка в 14:48 по Ташкенту: HTTP 429 с retry-after 34906 (9 ч 42 мин) и телом "riskCode":"RISK_DENIED",
+# "Booking is temporarily restricted" — это не счётчик запросов, а антифрод-система источника: срок растёт с
+# каждым повтором (15 мин → 30 мин → ~23 ч). Причины: (1) после ожидания накопившиеся задачи ушли залпом (17 запросов за 18 с) —
+# второй бан; (2) ожидание обрезалось 30 минутами, а Retry-After мог быть больше — два бана подряд на
+# первом же запросе после паузы. Теперь: ждём Retry-After целиком (до BLOCK_WAIT_MAX), повторный бан сразу
+# после паузы — ждём вдвое дольше, не выходим никогда, после бана полчаса идём медленно (PENALTY_GAP).
+BLOCK_WAIT = 1800        # секунд ждать после 403/429, если Retry-After не прислали
+BLOCK_WAIT_MAX = 24 * 3600
+PENALTY_SEC = 1800       # после бана столько секунд — не чаще одного запроса за PENALTY_GAP
+PENALTY_GAP = 90
 EVE = [("Ургенч", "Ташкент"), ("Ташкент", "Ургенч")]   # вечернее окно (751М)
 # Направления частых окон: главные из seats_watch плюс Ташкент⇄Ургенч (Мангуберди).
 # 6 направлений × 6 дат = 36 запросов в минуту в полночь при ~1 с на запрос (ограничитель держит ≤ LIMIT_N за LIMIT_WIN).
@@ -153,7 +162,7 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
             for i in range(6):          # пачка — на дату +4: её каждую минуту, остальные реже
                 # у Ургенча полуночной пачки нет (16–24.11) — раз в 6 минут, бюджет запросов под основные пары
                 add("mid", f"{dep}|{arv}|{base + timedelta(days=i)}",
-                    75 if i == 4 and (dep, arv) in mainpairs else 360)
+                    90 if i == 4 and (dep, arv) in mainpairs else 360)
 
     def left(iso):
         return (datetime.fromisoformat(iso).replace(tzinfo=W.TZ) - t).total_seconds() / 60
@@ -194,10 +203,24 @@ def due_tasks(t, codes, sched, last, orig=None, hunt=()):
 
 # ---------------------------------------------------------------- оповещения
 
-def ban_wait(e):
-    """Сколько ждать после 403/429: Retry-After источника + 30 с (но не больше BLOCK_WAIT), иначе BLOCK_WAIT."""
+def ban_ra(e):
+    """Retry-After из ответа 403/429 (секунды) или None."""
     m = re.search(r"Retry-After=(\d+)", getattr(e, "detail", "") or "")
-    return min(max(int(m.group(1)) + 30, 60), BLOCK_WAIT) if m else BLOCK_WAIT
+    return int(m.group(1)) if m else None
+
+
+def fmt_wait(sec):
+    return f"{sec / 3600:.1f} ч" if sec >= 7200 else f"{round(sec / 60)} мин"
+
+
+def ban_wait(e, prev=0):
+    """Сколько ждать после 403/429: Retry-After + 30 с целиком (до BLOCK_WAIT_MAX), иначе BLOCK_WAIT.
+    prev — сколько ждали в прошлый раз, если бан повторился сразу после паузы: тогда вдвое дольше."""
+    ra = ban_ra(e)
+    wait = ra + 30 if ra else BLOCK_WAIT
+    if prev:
+        wait = max(wait, prev * 2)
+    return min(max(wait, 60), BLOCK_WAIT_MAX)
 
 
 def over_limit(sent, now_ts, cap=None):
@@ -335,7 +358,7 @@ def run():
     fails, n, last_save, last_report = 0, 0, time.time(), time.time()
     pauses, alerted, out_since, cert_at, cert_warned = 0, False, None, 0, None
     fresh_at, fresh_down = 0, False
-    blocks, block_since = 0, None
+    blocks, block_since, last_wait, penalty_until, last_req = 0, None, 0, 0, 0
     sent = deque()                                 # времена запросов для ограничителя нагрузки
     print(f"старт: состояние {len(seats)} поездо-дат, журнал в {DATA}", flush=True)
     while not STOP:
@@ -348,6 +371,9 @@ def run():
             fresh_down = check_fresh(fresh_down)
         if over_limit(sent, time.time()):             # место в окне освободится само
             time.sleep(5)
+            continue
+        if time.time() < penalty_until and time.time() - last_req < PENALTY_GAP:
+            time.sleep(5)                             # после бана идём медленно, накопившееся не выпускаем залпом
             continue
         hunt = hunter.tasks(t.date())
         todo = due_tasks(t, codes, sched, last, orig, hunt)
@@ -363,33 +389,31 @@ def run():
         W.NOTES.clear()
         t0 = time.time()
         sent.append(t0)
+        last_req = t0
         try:
             code, trains, err = W.fetch(dep, arv, d)
         except W.Blocked as e:
             blocks += 1
             block_since = block_since or time.time()
             code_ = str(e).split()[-1]
+            wait = ban_wait(e, last_wait if blocks > 1 else 0)
             log({"ts": now().isoformat(timespec="seconds"), "w": w, "t": task,
-                 "st": int(code_) if code_.isdigit() else 0, "err": "blocked"})
-            print(f"✗ {e} на {task} — похоже на блокировку ({blocks} из {BLOCK_TRIES})", flush=True)
-            if blocks >= BLOCK_TRIES:
-                alert(f"источник отвечает {e} уже {blocks} раза подряд — замер остановлен (код 3). "
-                      f"Когда лимит снимется: sudo systemctl restart tabloda-seats")
-                save_state(seats, sched, orig, last, empty)
-                sys.exit(3)
-            wait = ban_wait(e)
-            if blocks == 1:
-                alert(f"источник ответил {e} (бан адреса на ~15 минут или лимит запросов) — жду {round(wait / 60)} мин "
+                 "st": int(code_) if code_.isdigit() else 0, "err": "blocked", "ra": ban_ra(e), "wait": wait})
+            print(f"✗ {e} на {task} — бан ({blocks}-й подряд), Retry-After={ban_ra(e)}, жду {fmt_wait(wait)}", flush=True)
+            if blocks in (1, 2, 3, 5, 8):             # не засыпаем Telegram, но видно, что бан затягивается
+                alert(f"источник ответил {e} ({blocks}-й раз подряд, Retry-After={ban_ra(e)}) — жду {fmt_wait(wait)} "
                       f"и пробую снова. {getattr(e, 'detail', '')[:120]}")
+            last_wait = wait
             for _ in range(max(wait // 5, 1)):            # ждём короткими шагами, чтобы слышать остановку
                 if STOP:
                     break
                 time.sleep(5)
+            penalty_until = time.time() + PENALTY_SEC
             continue
         if block_since:                       # после 403/429 источник ответил нормально
             alert(f"источник снова отвечает (после {blocks} отказ(ов), "
                   f"{round((time.time() - block_since) / 60)} мин)")
-            blocks, block_since = 0, None
+            blocks, block_since, last_wait = 0, None, 0
         prev, last[task] = last.get(task), t0
         n += 1
         line = {"ts": now().isoformat(timespec="seconds"), "w": w, "t": task, "st": code}
@@ -549,7 +573,7 @@ def cmd_hunt_status(send):
 
 def cmd_plan():
     print("Окна и примерная нагрузка в сутки:")
-    print("  mid    23:55–00:40, +4 дня раз в 75 с (Таш⇄Сам, Таш⇄Бух), остальное раз в 6 мин  ~250")
+    print("  mid    23:55–00:40, +4 дня раз в 90 с (Таш⇄Сам, Таш⇄Бух), остальное раз в 6 мин  ~250")
     print("  pre    за 150–50 мин до отправления (и от станции начала       ~1200–1400")
     print("         маршрута), раз в 2 мин")
     print("  eve    20:30–23:30, раз в 2 мин, Ургенч⇄Ташкент, завтра         ~180")

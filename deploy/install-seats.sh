@@ -36,8 +36,12 @@ curl -fsSL "$RAW/deploy/subs.example.json" -o "$DIR/subs.example.json" || true
 cp "$DIR"/units/* "$UNITS/"
 systemctl daemon-reload
 systemctl enable tabloda-seats.service tabloda-seats-upload.timer >/dev/null
-systemctl restart tabloda-seats.service
 systemctl start tabloda-seats-upload.timer
+if [ -n "${NO_RESTART:-}" ]; then          # файлы обновлены, службу не трогаем (источник банит: первый же запрос продлит бан)
+  echo "✓ файлы обновлены, служба не перезапускалась (NO_RESTART). Запуск: sudo systemctl start tabloda-seats"
+  exit 0
+fi
+systemctl restart tabloda-seats.service
 sleep 3
 systemctl --no-pager --lines=5 status tabloda-seats.service || true
 echo "✓ готово. Журнал службы: journalctl -u tabloda-seats -f"
