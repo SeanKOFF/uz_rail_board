@@ -42,6 +42,10 @@ seats_windows.py (тот же опрос, те же события — отде�
   /resume вернуть снятые даты
   /pay_test, /refund_test  только владелец: счёт на 1 звезду (Telegram Stars) и возврат —
           проверка механики оплаты, платежи пишутся в payments.json каталога состояния
+  STAR_PRICE=N (alert.env) — платные подписки: N звёзд за дату, счёт на каждую выбранную дату;
+          подписка включается после оплаты; если до даты отправления ни разу не пришло «Появились
+          места» (0 → N), на следующий день звезда возвращается сама. /paysupport — вопросы по оплате,
+          владельцу ещё /payments и /refund_pay N (ручной возврат)
 Пока работает сервис, `--who` может получить 409: обновления разбирает сервис —
 достаточно, чтобы человек нажал /start.
 """
@@ -84,6 +88,8 @@ HORIZON = 59              # дней вперёд, где продажа отк�
 MAX_PER_CHAT = 8
 MAX_TOTAL = 12
 MAX_PER_ROUTE = int(os.environ.get("MAX_PER_ROUTE", 2))   # дат на одно направление (кроме владельца)
+STAR_PRICE = int(os.environ.get("STAR_PRICE", 0))         # звёзд за одну дату подписки; 0 — подписки бесплатные (alert.env)
+PAY_OWNER = os.environ.get("PAY_OWNER") == "1"            # владелец тоже платит (проверка механики); иначе он бесплатно
 WD = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
 
 
@@ -483,6 +489,8 @@ class Hunter:
                                             "callback_data": f"d|{dep_}|{arv_}|{d_}"}])
         ok, why = self.send(s["chat"], self._text(task, items, seats, resumed, chat=s["chat"]), markup)
         if ok:
+            if any(i[0] in ("seats", "opened", "new") for i in items):    # 0 → N: оплаченная дата «нашла» место
+                self._mark_found(s["chat"], task)
             for kd_, key, _, _ in items:
                 self.cool[(s["chat"], key)] = now
                 if kd_ == "seats":                       # для пометки «снова, N-й раз за сутки»
@@ -594,6 +602,18 @@ class Hunter:
                 reply = "Не получилось обработать команду."
             if reply:
                 self.send(chat, reply)
+        elif cmd == "/paysupport":
+            self._paysupport(chat, m, text)
+        elif cmd in ("/payments", "/refund_pay") and chat == self.owner:
+            try:
+                reply = self._payments(text.split()[1:], refund=(cmd == "/refund_pay"))
+            except Exception as e:
+                print(f"✗ {cmd}: {type(e).__name__} {e}", flush=True)
+                reply = "Не получилось обработать команду."
+            self.send(chat, reply)
+        elif cmd == "/watch" and self._paid(chat):
+            self.send(chat, f"Подписка платная: {STAR_PRICE} ⭐ за дату. Оформить: /menu → «➕ Добавить подписку» "
+                            "(выбираете направление и даты, бот выставит счёт).")
         elif cmd in ("/watch", "/unwatch"):
             try:
                 reply = self._edit_subs(chat, m, text.split()[1:], add=(cmd == "/watch"))
@@ -603,7 +623,8 @@ class Hunter:
             self.send(chat, reply)
         else:
             self.send(chat, "Команды: /list — ваши подписки, /watch — добавить, /unwatch — убрать, "
-                            "/resume — вернуть снятые даты, /menu — кнопки, /start — ваш id.")
+                            "/resume — вернуть снятые даты, /menu — кнопки, /start — ваш id."
+                            + (" /paysupport — вопрос по оплате." if STAR_PRICE > 0 else ""))
 
     # --- оплата звёздами (Telegram Stars): пока только проверка механики для владельца
     PAY_PREFIX = "test|"
@@ -640,12 +661,16 @@ class Hunter:
     def _on_pre_checkout(self, pq):
         """Ответить на pre_checkout_query (Telegram ждёт 10 с). Принимаем только тестовый счёт владельца."""
         uid = (pq.get("from") or {}).get("id")
-        ok = (pq.get("currency") == "XTR" and pq.get("total_amount") == 1
-              and str(pq.get("invoice_payload") or "").startswith(self.PAY_PREFIX)
-              and uid is not None and uid == self.owner)
-        body = {"pre_checkout_query_id": pq.get("id"), "ok": ok}
+        payload = str(pq.get("invoice_payload") or "")
+        if payload.startswith(self.SUB_PREFIX):
+            ok, why = self._sub_ok(uid, pq.get("currency"), pq.get("total_amount"), payload)
+        else:
+            ok, why = (pq.get("currency") == "XTR" and pq.get("total_amount") == 1
+                       and payload.startswith(self.PAY_PREFIX)
+                       and uid is not None and uid == self.owner), "Оплата сейчас недоступна."
+        body = {"pre_checkout_query_id": pq.get("id"), "ok": bool(ok)}
         if not ok:
-            body["error_message"] = "Оплата сейчас недоступна."
+            body["error_message"] = why
         try:
             self.api("answerPreCheckoutQuery", body)
         except Exception as e:
@@ -660,8 +685,15 @@ class Hunter:
         row = {"ts": int(time.time()), "chat": chat, "cur": sp.get("currency"),
                "amount": sp.get("total_amount"), "payload": sp.get("invoice_payload"),
                "charge": sp.get("telegram_payment_charge_id"), "refunded": False}
+        sub = self._sub_payload(row["payload"])
+        if sub and sub[0] == chat:
+            row.update(kind="sub", dep=sub[1], arv=sub[2], date=sub[3])
+        else:
+            sub = None
         with self.lock:
             self._pay_write(self._pay_rows() + [row])
+        if sub:
+            return self._paid_sub(chat, m, row)
         test = str(row["payload"] or "").startswith(self.PAY_PREFIX)
         if not test:       # неожиданный платёж не теряем молча
             self.warn(f"неожиданный платёж: чат {chat}, {row['amount']} {row['cur']}, "
@@ -676,21 +708,205 @@ class Hunter:
         if not mine:
             return "Нечего возвращать: тестовых оплат без возврата нет."
         charge, amount = mine[-1]["charge"], mine[-1].get("amount")
-        try:                                       # сеть — вне замка, чтобы не задерживать охоту
-            res = self.api("refundStarPayment", {"user_id": chat, "telegram_payment_charge_id": charge})
-        except urllib.error.HTTPError as e:
-            return f"Возврат не прошёл: {tg_err(e)}"
-        except Exception as e:
-            return f"Возврат не прошёл: {type(e).__name__}"
-        if not (res.get("ok") and res.get("result") is True):
-            return f"Возврат не прошёл: ответ Telegram {str(res)[:120]}"
+        ok, why = self._refund_charge(chat, charge)
+        return f"Возвращено: {amount} ⭐." if ok else why
+
+    def _pay_update(self, charge, **fields):
         with self.lock:
             rows = self._pay_rows()
             for r in rows:
                 if r.get("charge") == charge:
-                    r["refunded"] = int(time.time())
+                    r.update(fields)
             self._pay_write(rows)
-        return f"Возвращено: {amount} ⭐."
+
+    def _refund_charge(self, chat, charge):
+        """refundStarPayment + пометка в payments.json. -> (успех, текст ошибки «Возврат не прошёл: …»)."""
+        try:                                       # сеть — вне замка, чтобы не задерживать охоту
+            res = self.api("refundStarPayment", {"user_id": chat, "telegram_payment_charge_id": charge})
+        except urllib.error.HTTPError as e:
+            return False, f"Возврат не прошёл: {tg_err(e)}"
+        except Exception as e:
+            return False, f"Возврат не прошёл: {type(e).__name__}"
+        if not (res.get("ok") and res.get("result") is True):
+            return False, f"Возврат не прошёл: ответ Telegram {str(res)[:120]}"
+        self._pay_update(charge, refunded=int(time.time()))
+        return True, ""
+
+    # --- платные подписки: 1 дата = STAR_PRICE звёзд; звезда остаётся, если на дату хоть раз пришло 0 → N
+    SUB_PREFIX = "sub|"
+
+    def _paid(self, chat):
+        return STAR_PRICE > 0 and (chat != self.owner or PAY_OWNER)
+
+    @staticmethod
+    def _sub_payload(payload):
+        """«sub|чат|откуда|куда|дата|время» -> (чат, откуда, куда, дата) или None."""
+        p = str(payload or "").split("|")
+        try:
+            if len(p) == 6 and p[0] == "sub":
+                date.fromisoformat(p[4])
+                return int(p[1]), p[2], p[3], p[4]
+        except ValueError:
+            pass
+        return None
+
+    def _route_dates(self, chat, dep, arv, iso_today):
+        return {d for s in self.subs if s["chat"] == chat and s["dep"] == dep and s["arv"] == arv
+                for d in s["dates"] if d >= iso_today and (chat, dep, arv, d) not in self.mutes}
+
+    def _sub_ok(self, uid, cur, total, payload):
+        """pre_checkout_query по подписке (ответить надо за 10 с — без сети). -> (ок, причина)."""
+        sub = self._sub_payload(payload)
+        if not sub:
+            return False, "Счёт не распознан, откройте меню заново."
+        chat, dep, arv, d = sub
+        if cur != "XTR" or STAR_PRICE <= 0 or total != STAR_PRICE or uid != chat or not self._paid(chat):
+            return False, "Цена или условия изменились, откройте меню заново."
+        today = datetime.now(TZ).date()
+        if not today <= date.fromisoformat(d) <= today + timedelta(days=HORIZON):
+            return False, "Эта дата вне периода продажи."
+        if dep not in self.names or arv not in self.names or dep == arv:
+            return False, "Направление не распознано."
+        have = self._route_dates(chat, dep, arv, today.isoformat())
+        if d in have:
+            return False, "Эта дата уже в подписке."
+        if chat != self.owner and len(have | {d}) > MAX_PER_ROUTE:
+            return False, f"Не больше {MAX_PER_ROUTE} дат на направление."
+        with self.lock:
+            if any(r.get("kind") == "sub" and r.get("chat") == chat and (r.get("dep"), r.get("arv"), r.get("date")) == (dep, arv, d)
+                   and not r.get("refunded") and not r.get("settled") for r in self._pay_rows()):
+                return False, "Эта дата уже оплачена."
+        return True, ""
+
+    def _sub_invoices(self, chat, fname, tname, dates):
+        """Счёт на каждую дату. -> текст для экрана."""
+        dep, arv = self.codes[fname], self.codes[tname]
+        today = datetime.now(TZ).date().isoformat()
+        have = self._route_dates(chat, dep, arv, today)
+        lines, sent_n = [], 0
+        for d in sorted(dates):
+            dd = f"{d[8:10]}.{d[5:7]}"
+            if d in have:
+                lines.append(f"{dd}: уже в подписке.")
+                continue
+            if chat != self.owner and len(have | {d}) > MAX_PER_ROUTE:
+                lines.append(f"{dd}: не больше {MAX_PER_ROUTE} дат на направление.")
+                continue
+            have = have | {d}
+            try:
+                self.api("sendInvoice", {
+                    "chat_id": chat, "title": f"Подписка {fname}–{tname} {dd}"[:32],
+                    "description": (f"Бот следит за местами {fname} → {tname} на {dd} и напишет, когда места появятся "
+                                    "там, где сейчас 0. Если до даты отправления ни разу не появятся, звезда "
+                                    "вернётся на следующий день.")[:255],
+                    "payload": f"{self.SUB_PREFIX}{chat}|{dep}|{arv}|{d}|{int(time.time())}",
+                    "currency": "XTR", "provider_token": "",
+                    "prices": [{"label": f"Подписка {dd}", "amount": STAR_PRICE}]})
+                sent_n += 1
+            except urllib.error.HTTPError as e:
+                lines.append(f"{dd}: счёт не создан ({tg_err(e)}).")
+            except Exception as e:
+                lines.append(f"{dd}: счёт не создан ({type(e).__name__}).")
+        head = (f"{fname} → {tname}: выставлено счетов: {sent_n} по {STAR_PRICE} ⭐. Подписка на дату включится "
+                "после оплаты. Если до даты отправления ни разу не появятся места, звезда вернётся сама."
+                if sent_n else f"{fname} → {tname}: счёт не выставлен.")
+        return head + ("\n" + "\n".join(lines) if lines else "")
+
+    def _paid_sub(self, chat, m, row):
+        """Оплата прошла: включить подписку; не получилось — сразу вернуть звезду."""
+        d = row["date"]
+        reply = self._edit_subs(chat, m, [self.names[row["dep"]], self.names[row["arv"]], f"{d[8:10]}.{d[5:7]}"], add=True)
+        if reply.startswith("Добавлено"):
+            self.send(chat, f"Оплата получена: {row['amount']} ⭐. " + reply + "\n\nЕсли до даты отправления ни разу "
+                                                                         "не появятся места, звезда вернётся сама.")
+            return
+        ok, why = self._refund_charge(chat, row["charge"])
+        self.send(chat, "Оплата получена, но подписку включить не удалось: " + reply.split("\n")[0]
+                  + (" Звезда возвращена." if ok else " Возврат не прошёл, владельцу сообщено."))
+        if not ok:
+            self.warn(f"оплата подписки без подписки, возврат не прошёл: чат {chat}, charge {row['charge']}: {why}")
+
+    def _mark_found(self, chat, task):
+        """Сообщение 0 → N ушло: оплаченная дата «нашла» место, звезда остаётся."""
+        try:
+            dep, arv, d = task.split("|")
+            with self.lock:
+                rows = self._pay_rows()
+                hit = [r for r in rows if r.get("kind") == "sub" and r.get("chat") == chat and not r.get("refunded")
+                       and not r.get("found") and (r.get("dep"), r.get("arv"), r.get("date")) == (dep, arv, d)]
+                for r in hit:
+                    r["found"] = int(time.time())
+                if hit:
+                    self._pay_write(rows)
+        except Exception as e:
+            print(f"✗ отметка «нашли»: {type(e).__name__} {e}", flush=True)
+
+    def settle(self):
+        """Раз в час, в отдельном потоке: оплаченные даты, прошедшие без «Появились места», — вернуть звезду."""
+        if time.time() - self.__dict__.get("_settled", 0) < 3600:
+            return
+        self._settled = time.time()
+        threading.Thread(target=self._settle_run, daemon=True).start()
+
+    def _settle_run(self):
+        try:
+            today = datetime.now(TZ).date().isoformat()
+            with self.lock:
+                due = [r for r in self._pay_rows() if r.get("kind") == "sub" and not r.get("refunded")
+                       and not r.get("settled") and str(r.get("date")) < today]
+            for r in due:
+                if r.get("found"):
+                    self._pay_update(r["charge"], settled=int(time.time()))        # звезда остаётся
+                    continue
+                ok, why = self._refund_charge(r["chat"], r["charge"])
+                if not ok:
+                    self.warn(f"возврат за подписку не прошёл: чат {r['chat']}, {r['date']}: {why}")
+                    continue
+                d = r["date"]
+                self.send(r["chat"], f"{self.names.get(r['dep'], r['dep'])} → {self.names.get(r['arv'], r['arv'])}, "
+                                     f"{d[8:10]}.{d[5:7]}: места ни разу не появились, звезда возвращена.")
+        except Exception as e:
+            print(f"✗ возвраты за подписки: {type(e).__name__} {e}", flush=True)
+
+    def _paysupport(self, chat, m, text):
+        """/paysupport (требование Telegram): ответить человеку, обращение — владельцу."""
+        arg = text.split(None, 1)[1].strip() if len(text.split(None, 1)) > 1 else ""
+        self.send(chat, "Оплата звёздами: бот выставляет счёт на каждую дату подписки. Если до даты отправления ни "
+                        "разу не появились места, звезда возвращается сама на следующий день. Другая проблема с оплатой: "
+                        "напишите одним сообщением «/paysupport что случилось», владелец бота ответит."
+                        + ("" if not arg else "\n\nВаше обращение передано владельцу."))
+        if arg and self.owner and chat != self.owner:
+            f = m.get("from") or {}
+            self.send(self.owner, f"/paysupport от {f.get('first_name', '')} @{f.get('username', '')} (чат {chat}): {arg[:500]}")
+
+    def _payments(self, args, refund):
+        """Владельцу: /payments — последние платежи с номерами, /refund_pay N — вернуть платёж N вручную."""
+        with self.lock:
+            rows = self._pay_rows()
+        if refund:
+            if len(args) != 1 or not args[0].isdigit() or not 1 <= int(args[0]) <= len(rows):
+                return "Формат: /refund_pay N — номер из /payments."
+            r = rows[int(args[0]) - 1]
+            if r.get("refunded"):
+                return "Этот платёж уже возвращён."
+            ok, why = self._refund_charge(r["chat"], r["charge"])
+            if not ok:
+                return why
+            if r.get("kind") == "sub":
+                self.send(r["chat"], "Платёж за подписку возвращён владельцем бота.")
+            return f"Возвращено: {r.get('amount')} ⭐ (чат {r['chat']})."
+        if not rows:
+            return "Платежей нет."
+        out = []
+        for i, r in enumerate(rows, 1):
+            if i <= len(rows) - 10:
+                continue
+            st = ("возвращён" if r.get("refunded") else "звезда остаётся" if r.get("found") or r.get("settled")
+                  else "ждёт даты" if r.get("kind") == "sub" else "тест")
+            what = (f"{self.names.get(r.get('dep'), r.get('dep'))}→{self.names.get(r.get('arv'), r.get('arv'))} {r.get('date')}"
+                    if r.get("kind") == "sub" else "тест")
+            out.append(f"{i}. чат {r.get('chat')}, {r.get('amount')} ⭐, {what}: {st}")
+        return "Последние платежи:\n" + "\n".join(out)
 
     # --- подписки из бота: /watch и /unwatch (патч seats-watch-cmd)
     def _allowed(self, chat):
@@ -1131,6 +1347,11 @@ class Hunter:
                 else:                                         # ok
                     if not st["ds"]:
                         return ack("Сначала отметьте хотя бы одну дату")
+                    if self._paid(chat):                      # платно: счёт на каждую дату, подписка — после оплаты
+                        text, rows = self._sub_invoices(chat, cs[st["f"]], cs[st["t"]], st["ds"]), None
+                        self._w().pop(chat, None)
+                        ack()
+                        return self._screen(chat, mid, text, rows)
                     toks = [cs[st["f"]], cs[st["t"]]] + [f"{x[8:10]}.{x[5:7]}" for x in sorted(st["ds"])]
                     res = self._edit_subs(chat, who, toks, add=True)
                     if res.startswith("Добавлено"):

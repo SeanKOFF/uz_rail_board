@@ -376,6 +376,7 @@ def run():
             time.sleep(5)                             # после бана идём медленно, накопившееся не выпускаем залпом
             continue
         hunt = hunter.tasks(t.date())
+        hunter.settle()                                       # возвраты за подписки без «0 → N» (раз в час, в потоке)
         todo = due_tasks(t, codes, sched, last, orig, hunt)
         if in_mid(t):                                         # бюджет оставляем пачке
             nw = time.time()
