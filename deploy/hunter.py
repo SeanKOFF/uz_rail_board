@@ -46,15 +46,34 @@ seats_windows.py (тот же опрос, те же события — отде�
 
 import json
 import os
+import socket
 import threading
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONF = os.environ.get("HUNT_CONFIG") or os.path.join(os.environ.get("STATE_DIRECTORY") or HERE, "subs.json")
 TG_API = os.environ.get("TG_API", "https://api.telegram.org")
+TG_HOST = urllib.parse.urlsplit(TG_API).hostname
+
+# На сервере IPv6 до Telegram иногда не отвечает. urllib пробует адреса по очереди, и когда
+# первым идёт IPv6, каждый вызов ждёт весь таймаут (15 с), потом уходит на IPv4: кнопки
+# отвечают с задержкой, ответ на нажатие приходит «слишком старым». Для хоста Telegram ставим
+# IPv4 первым; IPv6 остаётся запасным. Остальные хосты не трогаем.
+_getaddrinfo = socket.getaddrinfo
+
+
+def _ipv4_first(host, *args, **kw):
+    res = _getaddrinfo(host, *args, **kw)
+    if host == TG_HOST:
+        res = sorted(res, key=lambda r: r[0] != socket.AF_INET)
+    return res
+
+
+socket.getaddrinfo = _ipv4_first
 SITE = "https://eticket.uzrailpass.uz"
 TZ = timezone(timedelta(hours=5))
 HUNT_EVERY = int(os.environ.get("HUNT_EVERY", 120))   # сек между опросами одной пары+даты (HUNT_EVERY в alert.env)
